@@ -41,6 +41,17 @@ body,
   @include box(100vw, auto);
   background-color: #fbfafb;
   min-height: 100vh;
+  @include make-flex($just: flex-start);
+}
+
+.Content {
+  @include box();
+  padding: 64px 20px 20px 20px;
+  max-width: $maxWidth;
+
+  @include respondAt(585px) {
+    padding-top: 115px;
+  }
 }
 
 // global needs

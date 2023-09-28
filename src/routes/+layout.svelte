@@ -3,7 +3,9 @@
 </script>
 
 <Header />
-<slot />
+<main class="Content">
+  <slot />
+</main>
 
 <style lang="scss" global>
   @import "../styles/root/global.scss";

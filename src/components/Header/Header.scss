@@ -21,9 +21,6 @@
   @include respondAt(585px) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    // template area
-    // left right
-    // middle middle
     grid-template-areas:
       "left right"
       "middle middle";

@@ -1,0 +1,30 @@
+.Prof {
+  &__header {
+    gap: 25px;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 7px;
+    @include make-flex();
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("/assets/images/NoiseGradient1.png");
+
+    h2 {
+      color: white;
+      font-weight: 700;
+      font-size: 24px;
+      font-family: "Open Sans", sans-serif;
+    }
+    p {
+      color: white;
+      font-weight: 400;
+      font-size: 18px;
+    }
+
+    &--top {
+      @include make-flex($align: flex-start);
+      gap: 10px;
+    }
+  }
+}
