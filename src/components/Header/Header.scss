@@ -1,0 +1,202 @@
+.Header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "left middle right";
+
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 5;
+  position: fixed;
+  padding: 13px 20px;
+  @include box(100%, 64px);
+  background: #ffffff;
+  border-bottom: 1px solid #dedede;
+
+  @include respondAt(585px) {
+    height: unset;
+    gap: 20px;
+  }
+
+  @include respondAt(585px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    // template area
+    // left right
+    // middle middle
+    grid-template-areas:
+      "left right"
+      "middle middle";
+  }
+
+  &__left {
+    font-size: 20px;
+    font-weight: 400;
+    @include box(auto);
+    @include make-flex($align: flex-start, $just: flex-end);
+
+    grid-area: left;
+
+    &--title {
+      font-family: "Nohemi", sans-serif;
+      font-size: 30px;
+      font-weight: 500;
+    }
+  }
+
+  &__middle {
+    &--desktop,
+    &--mobile {
+      user-select: none;
+      li {
+        list-style: none;
+        @include make-flex();
+        font-family: "Poppins", sans-serif;
+
+        a {
+          color: #9f9e9f;
+          text-decoration: none;
+          font-size: 16px;
+          font-weight: 500;
+        }
+        &.active {
+          a {
+            color: #000000;
+          }
+        }
+      }
+    }
+
+    &--desktop {
+      @include make-flex($dir: row);
+      gap: 35px;
+      position: relative;
+      grid-area: middle;
+
+      @include respondAt(585px) {
+        display: none;
+      }
+
+      li {
+        & > p {
+          color: #c2c2c2;
+        }
+        & > span {
+          font-size: 11px;
+          font-weight: 500;
+          text-decoration: none;
+          color: #c2c2c2;
+          position: absolute;
+          bottom: -8px;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    &--mobile {
+      top: 0;
+      display: none;
+      cursor: pointer;
+      grid-area: middle;
+      position: relative;
+
+      @include respondAt(585px) {
+        display: block;
+      }
+
+      summary {
+        padding: 10px;
+        border-radius: 5px;
+        @include make-flex();
+        @include box(auto, 32px);
+        border: 1px solid #dedede;
+      }
+      & > ul {
+        gap: 10px;
+        padding: 10px;
+        cursor: pointer;
+        list-style: none;
+        border-radius: 5px;
+        position: absolute;
+        @include make-flex();
+        top: calc(100% + 11px);
+        @include box(100%, auto);
+        background-color: white;
+        border: 1px solid #dedede;
+
+        &::after,
+        &::before {
+          content: " ";
+          position: absolute;
+          clip-path: polygon(50% 0, 100% 100%, 0 100%);
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        &::after {
+          width: 18px;
+          height: 10px;
+          background-color: #dedede;
+          top: -11px;
+        }
+
+        &::before {
+          background-color: #ffffff;
+          width: 17px;
+          height: 10px;
+          z-index: 1;
+          top: -9.5px;
+        }
+
+        li {
+          @include box(100%, 30px);
+          @include make-flex($dir: row, $just: flex-start);
+          padding: 0 5px;
+
+          &.active {
+            background-color: #f5f5f5;
+            border-radius: 3px;
+
+            a {
+              color: #000000;
+            }
+          }
+          & > p {
+            color: #c2c2c2;
+          }
+          & > span {
+            font-size: 11px;
+            font-weight: 500;
+            text-decoration: none;
+            color: #c2c2c2;
+            position: relative;
+            bottom: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            gap: 10px;
+          }
+
+          a {
+            @include box();
+            @include make-flex($align: flex-start);
+          }
+        }
+      }
+    }
+  }
+
+  &__right {
+    @include make-flex($dir: row, $just: flex-end);
+    @include box(auto);
+    gap: 20px;
+    grid-area: right;
+
+    a,
+    img {
+      padding: 0;
+      margin: 0;
+      @include box(33px);
+    }
+  }
+}

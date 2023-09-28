@@ -1,0 +1,52 @@
+// @import "./fonts.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #000000;
+
+  transition: color 0.1s ease-in-out;
+}
+
+::-webkit-scrollbar {
+  background: transparent;
+}
+::-webkit-scrollbar {
+  @include box($scrollbarWidth, $scrollbarWidth);
+}
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+// ::selection {
+//   background: var(--textSelectionColor);
+// }
+
+html {
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-family: "Aeonik", monospace;
+  font-size: 15.5px;
+  @include make-flex($just: flex-start);
+  @include box(100vw, auto);
+  min-height: 100vh;
+}
+
+body,
+#app {
+  @include box(100vw, auto);
+  background-color: #fbfafb;
+  min-height: 100vh;
+}
+
+// global needs
+*[data-mandatory] {
+  &:after {
+    content: " *";
+    color: red;
+  }
+}
