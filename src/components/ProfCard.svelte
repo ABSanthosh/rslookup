@@ -1,7 +1,7 @@
 <script lang="ts">
   import SchoolChip from "$components/SchoolChip.svelte";
   import SubChip from "$components/SubChip.svelte";
-  import { dept, profColors,profStructure } from "$utils/prof";
+  import { dept, profColors, profStructure } from "$utils/prof";
 
   export let { name, role, room, block, website, school, department, img } =
     $$props;
@@ -12,8 +12,6 @@
     .match(/(^\S|\S$)?/g)
     .join("")
     .toUpperCase();
-
-  console.log(department, profColors[profStructure[school]?.color]);
 </script>
 
 <div class="ProfCard Col--a-start gap-20">
@@ -31,12 +29,17 @@
     </div>
   </div>
   <div class="ProfCard__middle Col--a-start gap-10">
-    <SchoolChip label={school} color={profColors[profStructure[school]?.color] || profColors.gray} />
+    <SchoolChip
+      label={school}
+      color={profColors[profStructure[school]?.color] || profColors.gray}
+    />
     {#if department !== ""}
-      <SubChip label={department} color={profColors[profStructure[school]?.color] || profColors.gray} />
+      <SubChip
+        label={department}
+        color={profColors[profStructure[school]?.color] || profColors.gray}
+      />
     {/if}
   </div>
-
   <div class="ProfCard__bottom Row--end w-100">
     <a
       href={website}

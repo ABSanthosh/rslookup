@@ -1,6 +1,16 @@
 <script>
-  import ProfCard from "$components/ProfCard/ProfCard.svelte";
+  import ProfCard from "$components/ProfCard.svelte";
   import prof from "$data/prof.json";
+  import Fuse from "fuse.js";
+
+  import { flip } from "svelte/animate";
+  import { fade } from "svelte/transition";
+
+  const filteredProf = new Fuse(prof, {
+    keys: ["name"],
+  });
+
+  $: searchResult = prof;
 </script>
 
 <div class="Prof__header">
@@ -11,11 +21,29 @@
       through hallways or frantically searching for room numbers.
     </p>
   </div>
-  <div class="Prof__header--bottom" />
+  <div class="Prof__header--bottom">
+    <div class="Prof__search">
+      <img src="/assets/images/search.svg" alt="search" />
+      <input
+        type="text"
+        placeholder="Search for a professor"
+        on:input={(e) => {
+          if (e.target.value === "") {
+            searchResult = prof;
+            return;
+          }
+
+          $: searchResult = filteredProf
+            .search(e.target.value)
+            .map((item) => item.item);
+        }}
+      />
+    </div>
+  </div>
 </div>
 
 <div class="Prof__content">
-  {#each prof as { name, role, room, block, website, school, department, img }}
+  {#each searchResult as { name, role, room, block, website, school, department, img } (`${name}-${role}`)}
     <ProfCard
       {name}
       {role}
@@ -27,16 +55,6 @@
       {img}
     />
   {/each}
-  <!-- <ProfCard
-    name="Sumit Tiwari"
-    role="Assistant Professor"
-    room="C212G"
-    block="C"
-    website=""
-    school="SCHOOL OF ENGINEERING"
-    department="DEPARTMENT OF MECHANICAL ENGINEERING"
-    img=""
-  /> -->
 </div>
 
 <style lang="scss" src="../../styles/routes/prof.scss"></style>

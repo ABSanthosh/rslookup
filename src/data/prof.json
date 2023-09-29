@@ -60,16 +60,6 @@
     "img": "-"
   },
   {
-    "name": "Sudhanshu Singh",
-    "role": "Associate Manager Registrar's Office",
-    "room": "D012.4",
-    "block": "D",
-    "website": "",
-    "school": "Admin",
-    "department": "",
-    "img": "-"
-  },
-  {
     "name": "Anand Sharma",
     "role": "Director",
     "room": "D014",
@@ -1200,16 +1190,6 @@
     "img": "https://snu.edu.in/site/assets/files/6225/ajit-kumar.340x340.1600x0.webp"
   },
   {
-    "name": "Rajeev Kumar Singh",
-    "role": "Associate Professor",
-    "room": "B220B",
-    "block": "B",
-    "website": "https://snu.edu.in/faculty/rajeev-kumar-singh/",
-    "school": "School Of Engineering",
-    "department": "Department Of Computer Science And Engineering",
-    "img": "https://snu.edu.in/site/assets/files/4842/rajeev-kumar.340x340.1600x0.webp"
-  },
-  {
     "name": "Neha Gupta",
     "role": "Assistant Professor",
     "room": "A111F",
@@ -1248,16 +1228,6 @@
     "school": "School Of Natural Sciences",
     "department": "Department Of Mathematics",
     "img": "https://snu.edu.in/site/assets/files/6248/pardeep-kumar.340x340.1600x0.webp"
-  },
-  {
-    "name": "Niteesh Sahni",
-    "role": "Associate Professor",
-    "room": "A111M",
-    "block": "A",
-    "website": "https://snu.edu.in/faculty/niteesh-sahni/",
-    "school": "School Of Natural Sciences",
-    "department": "Department Of Mathematics",
-    "img": "https://snu.edu.in/site/assets/files/6212/niteesh_sahni.340x340.1600x0.webp"
   },
   {
     "name": "TSSRK Rao",
@@ -3238,16 +3208,6 @@
     "school": "School Of Engineering",
     "department": "Department Of Electrical Engineering",
     "img": "https://snu.edu.in/site/assets/files/4916/venkat.340x340.1600x0.webp"
-  },
-  {
-    "name": "Pradeep Kumar",
-    "role": "Assistant Professor",
-    "room": "A111K",
-    "block": "A",
-    "website": "https://snu.edu.in/faculty/pradeep-kumar/",
-    "school": "School Of Natural Sciences",
-    "department": "Department Of Mathematics",
-    "img": "https://snu.edu.in/site/assets/files/6248/pardeep-kumar.340x340.1600x0.webp"
   },
   {
     "name": "Kareem Abdul Waheed",

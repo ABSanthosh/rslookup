@@ -26,6 +26,36 @@
       @include make-flex($align: flex-start);
       gap: 10px;
     }
+
+    &--bottom {
+      @include make-flex($align: flex-end);
+      gap: 10px;
+      @include box($height: 30px);
+    }
+  }
+  &__search {
+    @include box();
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 50%;
+      @include box(15px, 15px);
+      left: 10px;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    input {
+      @include box();
+      border-radius: 8px;
+      padding: 10px 6px 10px 32px;
+      font-size: 15px;
+      outline: none;
+      border: none;
+      background-color: #ffffff;
+      color: #000000;
+    }
   }
 
   &__content {
