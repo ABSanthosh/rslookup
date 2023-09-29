@@ -7,5 +7,8 @@
   </div>
   <div class="Lab__header--bottom" />
 </div>
+<div class="Lab__content">
+  
+</div>
 
 <style lang="scss" src="../../styles/routes/lab.scss"></style>

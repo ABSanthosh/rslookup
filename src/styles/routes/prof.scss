@@ -27,4 +27,16 @@
       gap: 10px;
     }
   }
+
+  &__content {
+    @include box();
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // grid-template-rows: ;
+    gap: 18px;
+
+    @include respondAt(800px) {
+      grid-template-columns: 1fr;
+    }
+  }
 }
