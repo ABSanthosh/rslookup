@@ -1,0 +1,16 @@
+[data-theme="light"] {
+  --scroll: var(--gray-7);
+  --body: var(--gray-1);
+  --background: white;
+  --foreground: var(--gray-12);
+  --border: var(--gray-5);
+
+  --inactiveLink: var(--gray-10);
+  --activeLink: var(--gray-12);
+  --disabledLink: var(--gray-8);
+
+  --activeNav: var(--gray-3);
+  --buttonHover: var(--gray-2);
+
+  --headerText: white;
+}

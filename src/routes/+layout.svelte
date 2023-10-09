@@ -1,7 +1,9 @@
 <script lang="ts">
-  import Header from "$components/Header/Header.svelte";
+  import { onMount } from "svelte";
   import { fly } from "svelte/transition";
+  import { theme } from "$lib/ThemeStore";
   import { cubicIn, cubicOut } from "svelte/easing";
+  import Header from "$components/Header/Header.svelte";
 
   export let data;
 
@@ -11,7 +13,25 @@
 
   const transitionIn = { easing: cubicOut, x: x, duration, delay };
   const transitionOut = { easing: cubicIn, x: -x, duration };
+
+  onMount(() => {
+    theme.subscribe((value) => {
+      if (document) {
+        document.documentElement.setAttribute("data-theme", value);
+      }
+    });
+  });
 </script>
+
+<svelte:head>
+  <title>rslookup</title>
+  <meta charset="utf-8" />
+  <meta name="color-scheme" content={$theme} />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="/theme/light.css" />
+  <link rel="stylesheet" href="/theme/dark.css" />
+</svelte:head>
 
 <Header />
 {#key data.pathname}

@@ -1,0 +1,15 @@
+[data-theme="dark"] {
+  --scroll: var(--gray-7);
+  --body: var(--gray-12);
+  --background: var(--gray-12);
+  --foreground: white;
+  --border: var(--gray-11);
+
+  --inactiveLink: var(--gray-8);
+  --activeLink: white;
+  --disabledLink: var(--gray-10);
+
+  --activeNav: var(--gray-11);
+
+  --headerText: white;
+}

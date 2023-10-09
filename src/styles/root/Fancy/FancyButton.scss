@@ -1,0 +1,27 @@
+.FancyButton {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  color: #344054;
+  font-size: 15px;
+  @include box(auto, 32px);
+
+  @include make-flex($dir: row);
+  padding: 8px 10px;
+  gap: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  outline: none;
+
+  &:hover {
+    background-color: var(--buttonHover);
+  }
+  &:disabled {
+    background-color: var(--buttonHover);
+    color: var(--disabledLink);
+    border: 1px solid (--border);
+    cursor: not-allowed;
+  }
+}

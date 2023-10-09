@@ -11,6 +11,8 @@
     background-repeat: no-repeat;
     transition: padding 0.1s ease-in-out;
 
+    border: 1px solid var(--border);
+
     h2 {
       color: inherit;
       font-weight: 900;
@@ -24,26 +26,26 @@
     }
 
     &--top {
-      color: white;
-      @include make-flex($align: flex-start);
       gap: 10px;
+      color: var(--headerText);
+      @include make-flex($align: flex-start);
     }
 
     &--bottom {
-      @include make-flex($align: flex-end);
       gap: 10px;
       @include box($height: 40px);
+      @include make-flex($align: flex-end);
     }
 
     &--sticky {
       position: fixed;
-      bottom: calc(100% - 132px);
+      bottom: calc(100% - 133px);
       padding: 30px 16px 16px 16px;
       max-width: calc($maxWidth - 40px);
       width: calc(100% - 40px);
 
       @include respondAt(585px) {
-        bottom: calc(100% - 125px);
+        bottom: calc(100% - 120px);
         padding: 10px;
       }
     }
@@ -61,7 +63,7 @@
     font-weight: 500;
     outline: none;
     border: none;
-    background-color: #ffffff;
+    background-color: var(--headerText);
     color: #000000;
     background-image: url("/assets/images/search.svg");
     background-repeat: no-repeat;

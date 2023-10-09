@@ -3,11 +3,10 @@
     background-image: url("/assets/images/NoiseGradient3.png");
   }
   &__content {
+    gap: 18px;
     @include box();
     display: grid;
     grid-template-columns: 1fr 1fr;
-    // grid-template-rows: ;
-    gap: 18px;
 
     @include respondAt(800px) {
       grid-template-columns: 1fr;
