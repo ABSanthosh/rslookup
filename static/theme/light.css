@@ -13,4 +13,6 @@
   --buttonHover: var(--gray-2);
 
   --headerText: white;
+
+  --subText: var(--gray-9)
 }

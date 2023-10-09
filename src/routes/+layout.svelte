@@ -4,6 +4,7 @@
   import { theme } from "$lib/ThemeStore";
   import { cubicIn, cubicOut } from "svelte/easing";
   import Header from "$components/Header/Header.svelte";
+  import Footer from "$components/Footer.svelte";
 
   export let data;
 
@@ -39,6 +40,7 @@
     <slot />
   </main>
 {/key}
+<Footer />
 
 <style lang="scss" global>
   @import "../styles/root/global.scss";
