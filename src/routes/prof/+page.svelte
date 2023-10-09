@@ -15,6 +15,9 @@
       const header = document.querySelector(".Prof__header")!;
       const content = document.querySelector(".Prof__content")!;
       const threshold = window.innerWidth > 585 ? 183 : 200;
+
+      if (!header || !content) return;
+
       if (window.scrollY >= threshold) {
         header.classList.add("Prof__header--sticky");
         content.classList.add("Prof__content--sticky");

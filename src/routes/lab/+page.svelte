@@ -5,8 +5,10 @@
     document.addEventListener("scroll", () => {
       const header = document.querySelector(".Lab__header")!;
       const content = document.querySelector(".Lab__content")!;
-      // console.log(window.scrollY);
       const threshold = window.innerWidth > 585 ? 183 : 200;
+
+      if (!header || !content) return;
+
       if (window.scrollY >= threshold) {
         header.classList.add("Lab__header--sticky");
         content.classList.add("Lab__content--sticky");
