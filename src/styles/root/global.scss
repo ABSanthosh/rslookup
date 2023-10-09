@@ -29,8 +29,7 @@
 html {
   overflow-y: auto;
   overflow-x: hidden;
-  font-family: "Aeonik", monospace;
-  font-size: 15.5px;
+  font-family: "Satoshi", "Helvetica Neue", "Helvetica", Arial, sans-serif;
   @include make-flex($just: flex-start);
   @include box(100vw, auto);
   min-height: 100vh;
@@ -50,12 +49,7 @@ body,
   @include make-flex($just: flex-start);
   padding: 64px 20px 20px 20px;
   max-width: $maxWidth;
-
   gap: 25px;
-
-  @include respondAt(585px) {
-    padding-top: 115px;
-  }
 }
 
 // global needs

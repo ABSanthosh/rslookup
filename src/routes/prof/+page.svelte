@@ -1,16 +1,33 @@
-<script>
+<script lang="ts">
   import ProfCard from "$components/ProfCard.svelte";
   import prof from "$data/prof.json";
   import Fuse from "fuse.js";
-
-  import { flip } from "svelte/animate";
-  import { fade } from "svelte/transition";
+  import { onMount } from "svelte";
 
   const filteredProf = new Fuse(prof, {
     keys: ["name"],
   });
 
-  $: searchResult = prof;
+  $: searchResult = prof.slice(0, 50);
+
+  onMount(() => {
+    document.addEventListener("scroll", () => {
+      const header = document.querySelector(".Prof__header")!;
+      const content = document.querySelector(".Prof__content")!;
+      const threshold = window.innerWidth > 585 ? 183 : 200;
+      if (window.scrollY >= threshold) {
+        header.classList.add("Prof__header--sticky");
+        content.classList.add("Prof__content--sticky");
+      } else {
+        header.classList.remove("Prof__header--sticky");
+        content.classList.remove("Prof__content--sticky");
+      }
+    });
+
+    return () => {
+      document.removeEventListener("scroll", () => {});
+    };
+  });
 </script>
 
 <div class="Prof__header">
@@ -22,8 +39,6 @@
     </p>
   </div>
   <div class="Prof__header--bottom">
-    <!-- <div> -->
-    <!-- <img src="/assets/images/search.svg" alt="search" /> -->
     <input
       class="Prof__search"
       type="text"
@@ -43,23 +58,13 @@
           .map((item) => item.item);
       }}
     />
-    <!-- </div> -->
   </div>
 </div>
 
 <div class="Prof__content">
-  <!-- {#each searchResult as { name, role, room, block, website, school, department, img } (`${name}-${role}`)}
-    <ProfCard
-      {name}
-      {role}
-      {room}
-      {block}
-      {website}
-      {school}
-      {department}
-      {img}
-    />
-  {/each} -->
+  {#each searchResult as result (`${result.name}-${result.role}`)}
+    <ProfCard profResult={result} />
+  {/each}
 </div>
 
 <style lang="scss" src="../../styles/routes/prof.scss"></style>

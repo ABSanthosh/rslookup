@@ -1,0 +1,77 @@
+.Prof,
+.Lab {
+  &__header {
+    gap: 40px;
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 30px;
+    @include make-flex();
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: padding 0.1s ease-in-out;
+
+    h2 {
+      color: inherit;
+      font-weight: 900;
+      font-size: 32px;
+    }
+    p {
+      color: inherit;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    &--top {
+      color: white;
+      @include make-flex($align: flex-start);
+      gap: 10px;
+    }
+
+    &--bottom {
+      @include make-flex($align: flex-end);
+      gap: 10px;
+      @include box($height: 40px);
+    }
+
+    &--sticky {
+      position: fixed;
+      bottom: calc(100% - 132px);
+      padding: 30px 16px 16px 16px;
+      max-width: calc($maxWidth - 40px);
+      width: calc(100% - 40px);
+
+      @include respondAt(585px) {
+        bottom: calc(100% - 125px);
+        padding: 10px;
+      }
+    }
+
+    @include respondAt(585px) {
+      border-radius: 20px;
+    }
+  }
+  &__search {
+    @include box();
+    @include make-flex();
+    border-radius: 40px;
+    padding: 0 24px 0 38px;
+    font-size: 17px;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    background-color: #ffffff;
+    color: #000000;
+    background-image: url("/assets/images/search.svg");
+    background-repeat: no-repeat;
+    background-position: 11px center;
+    background-size: 16px;
+  }
+
+  &__content {
+    &--sticky {
+      margin-top: 280px;
+    }
+  }
+}

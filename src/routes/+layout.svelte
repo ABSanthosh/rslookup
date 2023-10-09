@@ -22,4 +22,5 @@
 
 <style lang="scss" global>
   @import "../styles/root/global.scss";
+  @import "../styles/routes/dirLayout.scss";
 </style>

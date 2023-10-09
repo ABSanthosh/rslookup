@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: "left middle right";
+  align-items: center;
 
   top: 0;
   right: 0;
@@ -15,15 +16,8 @@
 
   @include respondAt(585px) {
     height: unset;
+    grid-template-columns: auto 1fr auto;
     gap: 20px;
-  }
-
-  @include respondAt(585px) {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas:
-      "left right"
-      "middle middle";
   }
 
   &__left {
@@ -97,6 +91,7 @@
       cursor: pointer;
       grid-area: middle;
       position: relative;
+      @include box(auto, 32px);
 
       @include respondAt(585px) {
         display: block;
@@ -106,7 +101,8 @@
         padding: 10px;
         border-radius: 5px;
         @include make-flex();
-        @include box(auto, 32px);
+        @include box();
+
         border: 1px solid #dedede;
       }
       & > ul {

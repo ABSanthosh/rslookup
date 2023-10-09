@@ -1,55 +1,7 @@
 .Prof {
   &__header {
-    gap: 40px;
-    // height: 310px;
-    padding: 30px;
-    margin-top: 20px;
-    border-radius: 30px;
-    @include make-flex();
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url("/assets/images/ProfBG.svg");
-
-    h2 {
-      color: white;
-      font-weight: 900;
-      font-size: 32px;
-      font-family: "Satoshi", "Helvetica Neue", "Helvetica", Arial, sans-serif;
-    }
-    p {
-      color: white;
-      font-weight: 500;
-      font-size: 20px;
-    }
-
-    &--top {
-      @include make-flex($align: flex-start);
-      gap: 10px;
-    }
-
-    &--bottom {
-      @include make-flex($align: flex-end);
-      gap: 10px;
-      @include box($height: 40px);
-    }
+    background-image: url("/assets/images/NoiseGradient3.png");
   }
-  &__search {
-    @include box();
-    @include make-flex();
-    border-radius: 40px;
-    padding: 0 24px 0 38px;
-    font-size: 15px;
-    outline: none;
-    border: none;
-    background-color: #ffffff;
-    color: #000000;
-    background-image: url("/assets/images/search.svg");
-    background-repeat: no-repeat;
-    background-position: 11px center;
-    background-size: 16px;
-  }
-
   &__content {
     @include box();
     display: grid;

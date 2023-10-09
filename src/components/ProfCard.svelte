@@ -4,8 +4,9 @@
   import { profColors, profStructure } from "$utils/prof";
   import type { ProfItem } from "$types/Prof.types";
 
-  export let { name, role, room, block, website, school, department, img } =
-    $$props as ProfItem;
+  export let profResult = $$props as ProfItem;
+
+  let { name, role, room, website, school, department, img } = profResult;
 
   let profile = name
     .match(/(\b\S)?/g)!
@@ -18,7 +19,14 @@
 <div class="ProfCard Col--a-start gap-20">
   <div class="ProfCard__top Row--start gap-15">
     {#if img === "-"}
-      <h2 class="ProfCard__top--profile">
+      <h2
+        class="ProfCard__top--profile"
+        style="background-color: #{profColors[profStructure[school]?.color]
+          ?.secondary || profColors.gray.secondary};
+        color: #{profColors[profStructure[school]?.color]?.primary ||
+          profColors.gray.primary}
+        "
+      >
         {profile}
       </h2>
     {:else}
@@ -58,7 +66,7 @@
   .ProfCard {
     @include box();
     padding: 15px;
-    border-radius: 7px;
+    border-radius: 20px;
     border: 1px solid #dedede;
     background: #fff;
     font-family: "Montserrat", sans-serif;
@@ -80,7 +88,7 @@
         border-radius: 50%;
         background: #6b91fb;
         color: #fff;
-        font-weight: 500;
+        // font-weight: 500;
         text-align: center;
         line-height: 55px;
         @include make-flex();
