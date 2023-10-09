@@ -16,7 +16,7 @@
   @include box($scrollbarWidth, $scrollbarWidth);
 }
 ::-webkit-scrollbar-thumb {
-  background: #ffffff;
+  background: #646464;
   border-radius: 10px;
 }
 ::-webkit-scrollbar-track {
@@ -34,6 +34,7 @@ html {
   @include make-flex($just: flex-start);
   @include box(100vw, auto);
   min-height: 100vh;
+  scrollbar-gutter: stable;
 }
 
 body,

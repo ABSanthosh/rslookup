@@ -27,8 +27,6 @@
 
   let isDetailsOpen = false;
 
-  // if isDetailsOpen is true, then close it on click outside
-
   onMount(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -46,6 +44,10 @@
     };
   });
 </script>
+
+<svelte:head>
+  <title>rslookup | {currentPage?.name}</title>
+</svelte:head>
 
 <header class="Header">
   <div class="Header__left">

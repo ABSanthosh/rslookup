@@ -29,6 +29,7 @@ const config = {
       $styles: "src/styles/routes",
       $data: "src/data",
       $utils: "src/utils",
+      $types: "src/types",
     },
   },
 };

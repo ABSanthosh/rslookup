@@ -1,5 +1,8 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
+  import { browser } from "$app/environment";
 
-  goto("/prof");
+  $: if (browser) {
+    goto("/prof");
+  }
 </script>

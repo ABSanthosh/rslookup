@@ -1,4 +1,6 @@
-export const dept = {
+export const dept: {
+  [key: string]: string;
+} = {
   "Department Of Chemical Engineering": "DOCE",
   "Department Of Civil Engineering": "DOCE",
   "Department Of Computer Science And Engineering": "DOCSE",
@@ -25,7 +27,13 @@ export const dept = {
   "Department Of Sociology": "DOS",
 };
 
-export const profStructure = {
+export const profStructure: {
+  [key: string]: {
+    slug: string;
+    color: string;
+    departments: string[];
+  };
+} = {
   "School Of Engineering": {
     slug: "SOE",
     color: "blue",
@@ -76,26 +84,30 @@ export const profStructure = {
   },
 };
 
-
-export const profColors = {
-    blue: {
-      primary: "6b91fb",
-      secondary: "edf2fe",
-    },
-    green: {
-      primary: "618B4C",
-      secondary: "EFF7ED",
-    },
-    yellow: {
-      primary: "AF8A30",
-      secondary: "FAEFD3",
-    },
-    red: {
-      primary: "AF3F36",
-      secondary: "F8E8E7",
-    },
-    gray: {
-      primary: "4A4B56",
-      secondary: "EDEDF0",
-    },
+export const profColors: {
+  [key: string]: {
+    primary: string;
+    secondary: string;
   };
+} = {
+  blue: {
+    primary: "6b91fb",
+    secondary: "edf2fe",
+  },
+  green: {
+    primary: "618B4C",
+    secondary: "EFF7ED",
+  },
+  yellow: {
+    primary: "AF8A30",
+    secondary: "FAEFD3",
+  },
+  red: {
+    primary: "AF3F36",
+    secondary: "F8E8E7",
+  },
+  gray: {
+    primary: "4A4B56",
+    secondary: "EDEDF0",
+  },
+};

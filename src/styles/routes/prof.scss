@@ -1,25 +1,26 @@
 .Prof {
   &__header {
-    gap: 25px;
-    padding: 15px;
+    gap: 40px;
+    // height: 310px;
+    padding: 30px;
     margin-top: 20px;
-    border-radius: 7px;
+    border-radius: 30px;
     @include make-flex();
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url("/assets/images/NoiseGradient1.png");
+    background-image: url("/assets/images/ProfBG.svg");
 
     h2 {
       color: white;
-      font-weight: 700;
-      font-size: 24px;
-      font-family: "Open Sans", sans-serif;
+      font-weight: 900;
+      font-size: 32px;
+      font-family: "Satoshi", "Helvetica Neue", "Helvetica", Arial, sans-serif;
     }
     p {
       color: white;
-      font-weight: 400;
-      font-size: 18px;
+      font-weight: 500;
+      font-size: 20px;
     }
 
     &--top {
@@ -30,32 +31,23 @@
     &--bottom {
       @include make-flex($align: flex-end);
       gap: 10px;
-      @include box($height: 30px);
+      @include box($height: 40px);
     }
   }
   &__search {
     @include box();
-    position: relative;
-
-    img {
-      position: absolute;
-      top: 50%;
-      @include box(15px, 15px);
-      left: 10px;
-      transform: translateY(-50%);
-      pointer-events: none;
-    }
-
-    input {
-      @include box();
-      border-radius: 8px;
-      padding: 10px 6px 10px 32px;
-      font-size: 15px;
-      outline: none;
-      border: none;
-      background-color: #ffffff;
-      color: #000000;
-    }
+    @include make-flex();
+    border-radius: 40px;
+    padding: 0 24px 0 38px;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    background-color: #ffffff;
+    color: #000000;
+    background-image: url("/assets/images/search.svg");
+    background-repeat: no-repeat;
+    background-position: 11px center;
+    background-size: 16px;
   }
 
   &__content {

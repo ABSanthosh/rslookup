@@ -1,15 +1,16 @@
 <script lang="ts">
   import SchoolChip from "$components/SchoolChip.svelte";
   import SubChip from "$components/SubChip.svelte";
-  import { dept, profColors, profStructure } from "$utils/prof";
+  import { profColors, profStructure } from "$utils/prof";
+  import type { ProfItem } from "$types/Prof.types";
 
   export let { name, role, room, block, website, school, department, img } =
-    $$props;
+    $$props as ProfItem;
 
   let profile = name
-    .match(/(\b\S)?/g)
+    .match(/(\b\S)?/g)!
     .join("")
-    .match(/(^\S|\S$)?/g)
+    .match(/(^\S|\S$)?/g)!
     .join("")
     .toUpperCase();
 </script>

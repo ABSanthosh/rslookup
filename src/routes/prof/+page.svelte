@@ -22,28 +22,33 @@
     </p>
   </div>
   <div class="Prof__header--bottom">
-    <div class="Prof__search">
-      <img src="/assets/images/search.svg" alt="search" />
-      <input
-        type="text"
-        placeholder="Search for a professor"
-        on:input={(e) => {
-          if (e.target.value === "") {
-            searchResult = prof;
-            return;
-          }
+    <!-- <div> -->
+    <!-- <img src="/assets/images/search.svg" alt="search" /> -->
+    <input
+      class="Prof__search"
+      type="text"
+      placeholder="Search for a professor"
+      on:input={(e) => {
+        if (!(e.target instanceof HTMLInputElement)) {
+          return;
+        }
 
-          $: searchResult = filteredProf
-            .search(e.target.value)
-            .map((item) => item.item);
-        }}
-      />
-    </div>
+        if (e.target.value === "") {
+          searchResult = prof;
+          return;
+        }
+
+        $: searchResult = filteredProf
+          .search(e.target.value)
+          .map((item) => item.item);
+      }}
+    />
+    <!-- </div> -->
   </div>
 </div>
 
 <div class="Prof__content">
-  {#each searchResult as { name, role, room, block, website, school, department, img } (`${name}-${role}`)}
+  <!-- {#each searchResult as { name, role, room, block, website, school, department, img } (`${name}-${role}`)}
     <ProfCard
       {name}
       {role}
@@ -54,7 +59,7 @@
       {department}
       {img}
     />
-  {/each}
+  {/each} -->
 </div>
 
 <style lang="scss" src="../../styles/routes/prof.scss"></style>
