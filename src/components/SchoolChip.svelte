@@ -6,8 +6,8 @@
   class="SchoolChip"
   data-type={color.primary}
   style={`
-        --type-primary: #${color.primary};
-        --type-secondary: #${color.secondary};
+        --type-primary: ${color.primary};
+        --type-secondary: ${color.secondary};
     `}
 >
   {label}

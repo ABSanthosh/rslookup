@@ -6,15 +6,23 @@
           href="https://github.com/ABSanthosh/rslookup"
           target="_blank"
           rel="noopener noreferrer"
+          class="FancyLink"
+          data-type="Bracket"
         >
-          GitHub repo
+          Github repo
         </a>
       </span>
     </div>
     <div class="FooterWrapper__right">
       <p class="FooterWrapper__right--title">
         Made with ❤️ by
-        <a href="santhosh.is-a.dev" target="_blank" rel="noopener noreferrer">
+        <a
+          class="FancyLink"
+          data-type="Bracket"
+          href="https://santhosh.is-a.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Santhosh
         </a>
       </p>
@@ -29,8 +37,9 @@
     margin-top: 70px;
     font-weight: 500;
     @include make-flex();
+    color: var(--foreground);
     @include box(100vw, 60px);
-    border: 0.5px solid var(--border);
+    border-top: 0.5px solid var(--border);
     background-color: var(--background);
 
     @include respondAt(650px) {
@@ -38,19 +47,30 @@
     }
 
     &__left {
-      & > span,
-      a {
+      & > span {
         font-style: italic;
         color: var(--subText);
+        @include make-flex($dir: row);
+        gap: 3px;
+      }
+      a {
+        font-style: italic;
+      }
+    }
+
+    &__right {
+      &--title {
+        @include make-flex($dir: row);
+        gap: 3px;
       }
     }
 
     &__container {
-      @include make-flex($dir: row, $just: space-between);
+      gap: 20px;
       @include box();
       max-width: $maxWidth;
       padding: $extraPadding;
-      gap: 20px;
+      @include make-flex($dir: row, $just: space-between);
       @include respondAt(650px) {
         flex-direction: column;
       }

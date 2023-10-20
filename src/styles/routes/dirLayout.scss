@@ -34,7 +34,21 @@
     &--bottom {
       gap: 10px;
       @include box($height: 40px);
-      @include make-flex($align: flex-end);
+      @include make-flex($dir: row, $align: flex-end);
+
+      & > button {
+        @include box(40px, 40px);
+        border-radius: 50%;
+        @include make-flex();
+        padding: 11.5px;
+        background-color: var(--headerText);
+        color: #000000;
+
+        &:hover {
+          background-color: var(--headerText);
+          color: #000000;
+        }
+      }
     }
 
     &--sticky {

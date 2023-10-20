@@ -1,18 +1,37 @@
 [data-theme="light"] {
   --scroll: var(--gray-7);
-  --body: var(--gray-1);
+  --body: white;
   --background: white;
   --foreground: var(--gray-12);
+  --hover: var(--gray-3);
   --border: var(--gray-5);
 
-  --inactiveLink: var(--gray-10);
-  --activeLink: var(--gray-12);
-  --disabledLink: var(--gray-8);
+  --inactiveLink: var(--gray-11);
+  --activeLink: black;
+  --disabledLink: var(--gray-9);
 
   --activeNav: var(--gray-3);
   --buttonHover: var(--gray-2);
 
   --headerText: white;
 
-  --subText: var(--gray-9)
+  --subText: var(--gray-9);
+  --lightViolet: var(--plum-11);
+
+  /* Chip Colors */
+  --bluePrimary: #6b91fb;
+  --blueSecondary: #edf2fe;
+  --greenPrimary: #618b4c;
+  --greenSecondary: #eff7ed;
+  --yellowPrimary: #af8a30;
+  --yellowSecondary: #faefd3;
+  --redPrimary: #af3f36;
+  --redSecondary: #f8e8e7;
+  --grayPrimary: #4a4b56;
+  --graySecondary: #ededf0;
+
+  /* profButton */
+  --bottomABG: #010001;
+  --bottomAFG: #ffffff;
+  --bottomADisable: #a3a3a3;
 }

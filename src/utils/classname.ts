@@ -4,8 +4,7 @@
  * @returns string
  */
 export default function cn(
-    ...classNames: (string | undefined | null | false | number)[]
-  ) {
-    return classNames.filter(Boolean).join(" ");
-  }
-  
+  ...classNames: (string | undefined | null | false | number)[]
+) {
+  return classNames.filter(Boolean).join(" ");
+}

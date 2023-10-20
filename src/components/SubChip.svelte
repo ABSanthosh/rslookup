@@ -6,7 +6,7 @@
   class="SubChip"
   data-color={color.primary}
   style={`
-        --type-color: #${color.primary};
+        --type-color: ${color.primary};
     `}
 >
   {label}
@@ -21,9 +21,9 @@
     text-align: start;
     align-items: center;
     border-radius: 25px;
-    background: #ffffff;
+    background: var(--background);
     @include box(auto, auto);
-    border: 1px solid #dedede;
+    border: 1px solid var(--border);
     grid-template-columns: 10px 1fr;
 
     // $blue: #6b91fb;

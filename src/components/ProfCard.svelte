@@ -21,9 +21,9 @@
     {#if img === "-"}
       <h2
         class="ProfCard__top--profile"
-        style="background-color: #{profColors[profStructure[school]?.color]
+        style="background-color: {profColors[profStructure[school]?.color]
           ?.secondary || profColors.gray.secondary};
-        color: #{profColors[profStructure[school]?.color]?.primary ||
+        color: {profColors[profStructure[school]?.color]?.primary ||
           profColors.gray.primary}
         "
       >
@@ -52,7 +52,7 @@
   <div class="ProfCard__bottom Row--end w-100">
     <a
       href={website}
-      class:disabled={website === ""}
+      class:disabled={website === "" || website === "-"}
       class="Row--between gap-10"
       target="_blank"
       rel="noopener noreferrer"
@@ -67,9 +67,9 @@
     @include box();
     padding: 15px;
     border-radius: 20px;
-    border: 1px solid #dedede;
-    background: #fff;
-    font-family: "Montserrat", sans-serif;
+    border: 1px solid var(--border);
+    background: var(--background);
+    font-family: "Inter", sans-serif;
 
     &__top {
       img {
@@ -86,9 +86,6 @@
       &--profile {
         @include box(55px, 55px);
         border-radius: 50%;
-        background: #6b91fb;
-        color: #fff;
-        // font-weight: 500;
         text-align: center;
         line-height: 55px;
         @include make-flex();
@@ -104,18 +101,18 @@
 
     &__bottom {
       a {
-        // color: #91999e;
         font-size: 16px;
         font-weight: 400;
         text-decoration: none;
         border-radius: 30px;
-        background: #010001;
+        background: var(--bottomABG);
         padding: 5px 10px;
-        color: #fff;
+        color: var(--bottomAFG);
+        // border: 1px solid #ffffff;
 
         &.disabled {
-          background: #a3a3a3;
-          color: #ffffff;
+          background: var(--bottomADisable);
+          color: var(--headerText);
           cursor: not-allowed;
         }
 

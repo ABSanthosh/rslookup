@@ -91,23 +91,23 @@ export const profColors: {
   };
 } = {
   blue: {
-    primary: "6b91fb",
-    secondary: "edf2fe",
+    primary: "var(--bluePrimary)",
+    secondary: "var(--blueSecondary)",
   },
   green: {
-    primary: "618B4C",
-    secondary: "EFF7ED",
+    primary: "var(--greenPrimary)",
+    secondary: "var(--greenSecondary)",
   },
   yellow: {
-    primary: "AF8A30",
-    secondary: "FAEFD3",
+    primary: "var(--yellowPrimary)",
+    secondary: "var(--yellowSecondary)",
   },
   red: {
-    primary: "AF3F36",
-    secondary: "F8E8E7",
+    primary: "var(--redPrimary)",
+    secondary: "var(--redSecondary)",
   },
   gray: {
-    primary: "4A4B56",
-    secondary: "EDEDF0",
+    primary: "var(--grayPrimary)",
+    secondary: "var(--graySecondary)",
   },
 };

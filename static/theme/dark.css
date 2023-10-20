@@ -3,6 +3,7 @@
   --body: var(--gray-12);
   --background: var(--gray-12);
   --foreground: white;
+  --hover: var(--gray-8);
   --border: var(--gray-11);
 
   --inactiveLink: var(--gray-8);
@@ -10,6 +11,27 @@
   --disabledLink: var(--gray-10);
 
   --activeNav: var(--gray-11);
+  --buttonHover: var(--gray-11);
 
   --headerText: white;
+
+  --subText: var(--gray-7);
+  --lightViolet: var(--plum-9);
+
+  /* Chip Colors */
+  --bluePrimary: #6b91fb;
+  --blueSecondary: #303849;
+  --greenPrimary: #618b4c;
+  --greenSecondary: #22301e;
+  --yellowPrimary: #d6a222;
+  --yellowSecondary: #302b20;
+  --redPrimary: #cd564d;
+  --redSecondary: #2f1f1e;
+  --grayPrimary: #a1a1a3;
+  --graySecondary: #2e2e2e;
+
+  /* profButton */
+  --bottomABG: #4f4f4f;
+  --bottomAFG: #ffffff;
+  --bottomADisable: #323232;
 }
