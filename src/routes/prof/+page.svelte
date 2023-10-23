@@ -4,13 +4,17 @@
   import prof from "$data/prof.json";
   import Dialog from "$components/Dialog.svelte";
   import ProfCard from "$components/ProfCard.svelte";
+  import { schools, dept } from "$utils/prof";
 
   const filteredProf = new Fuse(prof, {
     keys: ["name"],
   });
 
   $: searchResult = prof.slice(0, 50);
-  let showOptionsDialog = false;
+  let showOptionsDialog = true;
+  $: searchInFocus = false;
+  $: schoolSelected = "All";
+  $: departmentSelected = "All";
 
   onMount(() => {
     document.addEventListener("scroll", () => {
@@ -20,7 +24,7 @@
 
       if (!header || !content) return;
 
-      if (window.scrollY >= threshold) {
+      if (window.scrollY >= threshold || searchInFocus) {
         header.classList.add("Prof__header--sticky");
         content.classList.add("Prof__content--sticky");
       } else {
@@ -35,7 +39,7 @@
   });
 </script>
 
-<div class="Prof__header">
+<div class="Prof__header" class:Prof__header--sticky={searchInFocus}>
   <div class="Prof__header--top">
     <h2>Where's My Prof?</h2>
     <p>
@@ -44,26 +48,54 @@
     </p>
   </div>
   <div class="Prof__header--bottom">
-    <input
-      class="Prof__search"
-      type="text"
-      placeholder="Search for a professor"
-      on:input={(e) => {
-        if (!(e.target instanceof HTMLInputElement)) {
-          return;
-        }
+    {#if showOptionsDialog}
+      <select
+        class="FancySelect"
+        bind:value={departmentSelected}
+        on:change={() => {
+          console.log(dept[departmentSelected]);
+          showOptionsDialog = false;
+        }}
+      >
+        {#each Object.keys(dept) as item}
+          <option value={item}>{item}</option>
+        {/each}
+      </select>
+    {:else}
+      <input
+        class="Prof__search"
+        type="text"
+        placeholder="Search for a professor"
+        on:focus={() => {
+          searchInFocus = true;
 
-        if (e.target.value === "") {
-          searchResult = prof;
-          return;
-        }
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        }}
+        on:blur={() => (searchInFocus = false)}
+        on:input={(e) => {
+          if (!(e.target instanceof HTMLInputElement)) {
+            return;
+          }
 
-        $: searchResult = filteredProf
-          .search(e.target.value)
-          .map((item) => item.item);
-      }}
-    />
-    <button class="FancyButton" on:click={() => (showOptionsDialog = true)}>
+          if (e.target.value === "") {
+            searchResult = prof;
+            return;
+          }
+
+          $: searchResult = filteredProf
+            .search(e.target.value)
+            .map((item) => item.item);
+        }}
+      />
+    {/if}
+    <button
+      class="FancyButton"
+      class:active={schoolSelected !== "All"}
+      on:click={() => (showOptionsDialog = !showOptionsDialog)}
+    >
       <svg
         width="20"
         height="17"
@@ -79,17 +111,50 @@
         />
       </svg>
 
-      <Dialog bind:showModal={showOptionsDialog}>
+      <!-- <Dialog bind:showModal={showOptionsDialog}>
         <h1 slot="title">Filters</h1>
         <div class="Prof__options">
-          This is amazingly simple! (press esc to close)
+          <div class="Prof__options--select">
+            svelte-ignore a11y-label-has-associated-control
+            <label>School</label>
+            <select
+              class="FancySelect"
+              bind:value={schoolSelected}
+              on:change={() => {
+                console.log(schools[schoolSelected].slug);
+                // add school[schoolSelected].slug to the url as a query param on top of the existing query params
+
+                if (departmentSelected !== "All") {
+                }
+              }}
+            >
+              {#each Object.keys(schools) as item}
+                <option value={item}>{item}</option>
+              {/each}
+            </select>
+          </div>
+          <div class="Prof__options--select">
+            svelte-ignore a11y-label-has-associated-control
+            <label>Department</label>
+            <select
+              class="FancySelect"
+              bind:value={departmentSelected}
+              on:change={() => {
+                console.log(dept[departmentSelected]);
+              }}
+            >
+              {#each Object.keys(dept) as item}
+                <option value={item}>{item}</option>
+              {/each}
+            </select>
+          </div>
         </div>
-      </Dialog>
+      </Dialog> -->
     </button>
   </div>
 </div>
 
-<div class="Prof__content">
+<div class="Prof__content" class:Prof__content--sticky={searchInFocus}>
   {#each searchResult as result (`${result.name}-${result.role}`)}
     <ProfCard profResult={result} />
   {/each}

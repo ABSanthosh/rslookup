@@ -1,7 +1,7 @@
 <script lang="ts">
   import SchoolChip from "$components/SchoolChip.svelte";
   import SubChip from "$components/SubChip.svelte";
-  import { profColors, profStructure } from "$utils/prof";
+  import { profColors, schools } from "$utils/prof";
   import type { ProfItem } from "$types/Prof.types";
 
   export let profResult = $$props as ProfItem;
@@ -21,9 +21,9 @@
     {#if img === "-"}
       <h2
         class="ProfCard__top--profile"
-        style="background-color: {profColors[profStructure[school]?.color]
+        style="background-color: {profColors[schools[school]?.color]
           ?.secondary || profColors.gray.secondary};
-        color: {profColors[profStructure[school]?.color]?.primary ||
+        color: {profColors[schools[school]?.color]?.primary ||
           profColors.gray.primary}
         "
       >
@@ -40,12 +40,12 @@
   <div class="ProfCard__middle Col--a-start gap-10">
     <SchoolChip
       label={school}
-      color={profColors[profStructure[school]?.color] || profColors.gray}
+      color={profColors[schools[school]?.color] || profColors.gray}
     />
     {#if department !== ""}
       <SubChip
         label={department}
-        color={profColors[profStructure[school]?.color] || profColors.gray}
+        color={profColors[schools[school]?.color] || profColors.gray}
       />
     {/if}
   </div>
@@ -108,7 +108,6 @@
         background: var(--bottomABG);
         padding: 5px 10px;
         color: var(--bottomAFG);
-        // border: 1px solid #ffffff;
 
         &.disabled {
           background: var(--bottomADisable);

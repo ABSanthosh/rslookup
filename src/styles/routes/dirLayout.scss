@@ -9,7 +9,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    transition: padding 0.1s ease-in-out;
+    transition: padding 0.1s ease-in-out, bottom 0.5s ease-in-out;
 
     border: 1px solid var(--border);
 
@@ -59,13 +59,20 @@
       width: calc(100% - 40px);
 
       @include respondAt(585px) {
-        bottom: calc(100% - 120px);
-        padding: 10px;
+        bottom: calc(100% - 118px);
+        width: 100vw;
+        padding: 9px !important;
+        padding-right: 15px !important;
+        border-radius: 0 !important;
+        border-left: 1px solid transparent;
+        border-top: 1px solid transparent;
+        border-right: 1px solid transparent;
       }
     }
 
     @include respondAt(585px) {
       border-radius: 20px;
+      padding: 20px;
     }
   }
   &__search {
@@ -87,7 +94,8 @@
 
   &__content {
     &--sticky {
-      margin-top: 280px;
+      // margin-top: 280px;
+      margin-top: 70px;
     }
   }
 }

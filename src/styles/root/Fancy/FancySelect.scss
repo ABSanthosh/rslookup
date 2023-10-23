@@ -1,0 +1,14 @@
+.FancySelect {
+  outline: none;
+  cursor: pointer;
+  padding: 0 35px 0 10px;
+  font-size: 15px;
+  appearance: none;
+  border-radius: 5px;
+  @include box(auto, 35px);
+  border: 1px solid var(--border);
+  background-position: right 5px top 50%;
+  background-color: var(--background);
+  background-image: var(--downArrow);
+  background-repeat: no-repeat;
+}

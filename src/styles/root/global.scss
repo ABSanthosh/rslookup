@@ -1,4 +1,5 @@
 @import "../root/Fancy/FancyButton.scss";
+@import "../root/Fancy/FancySelect.scss";
 @import "../root/Fancy/FancyLink.scss";
 @import "@radix-ui/colors/gray.css";
 @import "@radix-ui/colors/plum.css";
@@ -35,6 +36,7 @@ html {
   @include box(100vw, auto);
   min-height: 100vh;
   scrollbar-gutter: stable;
+  scroll-behavior: smooth;
 }
 
 body,

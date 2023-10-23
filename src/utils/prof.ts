@@ -1,6 +1,7 @@
 export const dept: {
   [key: string]: string;
 } = {
+  All: "all",
   "Department Of Chemical Engineering": "DOCE",
   "Department Of Civil Engineering": "DOCE",
   "Department Of Computer Science And Engineering": "DOCSE",
@@ -27,13 +28,18 @@ export const dept: {
   "Department Of Sociology": "DOS",
 };
 
-export const profStructure: {
+export const schools: {
   [key: string]: {
     slug: string;
     color: string;
     departments: string[];
   };
 } = {
+  All: {
+    slug: "all",
+    color: "gray",
+    departments: [],
+  },
   "School Of Engineering": {
     slug: "SOE",
     color: "blue",
