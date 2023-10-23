@@ -1,14 +1,12 @@
 @import "../root/Fancy/FancyButton.scss";
 @import "../root/Fancy/FancySelect.scss";
 @import "../root/Fancy/FancyLink.scss";
-@import "@radix-ui/colors/gray.css";
-@import "@radix-ui/colors/plum.css";
+@import "../root/fonts.scss";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: background-color 0.1s ease-in-out;
 }
 
 ::-webkit-scrollbar {

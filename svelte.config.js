@@ -11,7 +11,6 @@ const config = {
       prependData: `
       @use "src/styles/root/_variables" as *;
 			@import "src/styles/root/_mixins.scss";
-			@import "src/styles/root/fonts.scss";
 			`,
     },
     postcss: {

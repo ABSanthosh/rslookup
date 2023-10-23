@@ -48,10 +48,11 @@
 
     &__left {
       & > span {
+        gap: 3px;
         font-style: italic;
         color: var(--subText);
         @include make-flex($dir: row);
-        gap: 3px;
+        flex-wrap: wrap;
       }
       a {
         font-style: italic;

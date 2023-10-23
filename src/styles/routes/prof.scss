@@ -1,28 +1,7 @@
 .Prof {
-  &__header {
-    background-image: url("/assets/images/NoiseGradient3.png");
-
-    &--bottom {
-      select {
-        @include box();
-      }
-
-      & > button {
-        position: relative;
-        &.active {
-          &::before {
-            content: " ";
-            position: absolute;
-            top: 0;
-            right: 0;
-            @include box(10px, 10px);
-            border-radius: 50%;
-            background-color: var(--bluePrimary);
-          }
-        }
-      }
-    }
-  }
+  // &__header {
+  //   background-image: url("/assets/images/NoiseGradient3.png");
+  // }
   &__content {
     gap: 18px;
     @include box();
@@ -31,32 +10,6 @@
 
     @include respondAt(800px) {
       grid-template-columns: 1fr;
-    }
-  }
-
-  &__options {
-    @include box();
-    min-width: 355px;
-    @include make-flex($align: flex-start);
-
-    gap: 20px;
-
-    @include respondAt(495px) {
-      min-width: 70vw;
-    }
-
-    &--select {
-      @include box();
-      @include make-flex($align: flex-start);
-      gap: 7px;
-
-      & > label {
-        font-size: 17px;
-      }
-
-      & > select {
-        width: 100%;
-      }
     }
   }
 }

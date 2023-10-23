@@ -1,9 +1,9 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { fly } from "svelte/transition";
-  import { theme } from "$lib/ThemeStore";
   import { cubicIn, cubicOut } from "svelte/easing";
-  import Header from "$components/Header/Header.svelte";
+  import { theme } from "$lib/ThemeStore";
+  import Header from "$components/Header.svelte";
   import Footer from "$components/Footer.svelte";
 
   export let data;
@@ -28,7 +28,10 @@
   <title>rslookup</title>
   <meta charset="utf-8" />
   <meta name="color-scheme" content={$theme} />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+    name="viewport"
+  />
 
   <link rel="stylesheet" href="/theme/light.css" />
   <link rel="stylesheet" href="/theme/dark.css" />

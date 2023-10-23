@@ -34,7 +34,6 @@
   },
   "type": "module",
   "dependencies": {
-    "@radix-ui/colors": "^3.0.0",
     "fuse.js": "^6.6.2"
   }
 }

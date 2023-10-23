@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import Header from "$components/Header.svelte";
 
   onMount(() => {
     document.addEventListener("scroll", () => {
@@ -24,18 +25,6 @@
   });
 </script>
 
-<div class="Lab__header">
-  <div class="Lab__header--top">
-    <h2>Where's My Lab?</h2>
-    <p>
-      Finding your designated lab spaces with ease. No more wandering around
-      campus, feeling lost and bewildered.
-    </p>
-  </div>
-  <div class="Lab__header--bottom">
-    <input class="Lab__search" type="text" placeholder="Search for a lab" />
-  </div>
-</div>
 <div class="Lab__content" />
 
 <style lang="scss" src="../../styles/routes/lab.scss"></style>
