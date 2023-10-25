@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from "$app/stores";
   import { onMount } from "svelte";
-  import { afterNavigate, goto } from "$app/navigation";
+  import { afterNavigate } from "$app/navigation";
   import { theme } from "$lib/ThemeStore";
   import { query } from "$lib/ParamStore";
 
@@ -40,7 +40,7 @@
     const handleClickOutside = (event: MouseEvent) => {
       if (
         isDetailsOpen &&
-        !(event.target as Element)?.closest(".Header__middle")
+        !(event.target as Element)?.closest(".FancyMenu.Header__tabs")
       ) {
         isDetailsOpen = false;
       }
@@ -94,14 +94,14 @@
     {/if}
   </div>
   <hr />
-  <details class="Header__tabs" bind:open={isDetailsOpen}>
+  <details class="FancyMenu Header__tabs" bind:open={isDetailsOpen}>
     <summary>
       <p>
         {currentPage?.name}
       </p>
       <span data-icon={String.fromCharCode(currentPage?.icon || 0)} />
     </summary>
-    <ul>
+    <ul class="FancyMenu__content" data-align="right">
       {#each ROUTES as { name, path, isAvailable }, i}
         <li
           class:active={$page.url.pathname === `/${path}`}
@@ -134,6 +134,8 @@
 
 <style lang="scss">
   .Header {
+    --__BG: var(--elevatedBG);
+
     display: grid;
     grid-template-columns: 1fr auto auto auto auto;
     align-items: center;
@@ -146,7 +148,7 @@
     gap: 10px;
     padding: 16px 20px;
     @include box(100%, 64px);
-    background: var(--background);
+    background: var(--__BG);
     // border-bottom: 1px solid var(--border);
     box-shadow: var(--headerBorder);
 
@@ -221,12 +223,12 @@
         border-radius: 6px;
         padding: 0 24px 0 30px;
         color: var(--foreground);
-        border: 1px solid var(--border);
-        box-shadow: var(--buttonBorder);
-        transition-property: background-color, border-color;
         transition-duration: 0.1s;
+        background-color: var(--__BG);
+        border: 1px solid var(--border);
+        box-shadow: var(--buttonShadow);
         transition-timing-function: ease-in-out;
-        background-color: var(--background);
+        transition-property: background-color, border-color;
 
         @include respondAt(700px) {
           padding: 0;
@@ -255,38 +257,11 @@
         }
       }
     }
+
     &__tabs {
-      @include box();
-      min-width: 150px;
-      position: relative;
-
       $responsiveWidth: 600px;
-
-      @include respondAt($responsiveWidth) {
-        min-width: auto;
-      }
-
       summary {
-        @include box();
-        cursor: pointer;
-        user-select: none;
-        position: relative;
-        border-radius: 6px;
-        padding: 0 24px 0 10px;
-        color: var(--foreground);
-        border: 1px solid var(--border);
-        box-shadow: var(--buttonBorder);
-        background-color: var(--background);
-        @include make-flex($align: flex-start);
-
-        &::-webkit-details-marker {
-          display: none;
-        }
-
-        @include respondAt($responsiveWidth) {
-          padding-left: 5px;
-        }
-
+        background-color: var(--__BG);
         & > span {
           display: none;
           @include respondAt($responsiveWidth) {
@@ -299,70 +274,9 @@
             display: none;
           }
         }
-
-        &:hover:not(:disabled) {
-          background-color: var(--buttonHoverBG);
-        }
-
-        &::after,
-        &::before {
-          right: 2px;
-          content: " ";
-          font-size: 19px;
-          position: absolute;
-          font-family: "Icons";
-          color: var(--iconColor);
-        }
-
-        &::after {
-          top: 0.5px;
-          content: "\e5c7";
-        }
-
-        &::before {
-          bottom: 0.5px;
-          content: "\e5c5";
-        }
       }
+
       & > ul {
-        gap: 5px;
-        right: 0;
-        padding: 10px;
-        list-style: none;
-        border-radius: 12px;
-        position: absolute;
-        @include make-flex();
-        top: calc(100% + 11px);
-        @include box(auto, auto);
-        border: 1px solid var(--border);
-        background-color: var(--popoverBG);
-
-        --__right: 17px;
-
-        &::after,
-        &::before {
-          content: " ";
-          position: absolute;
-          clip-path: polygon(50% 0, 100% 100%, 0 100%);
-          right: var(--__right);
-        }
-
-        &::after {
-          width: 18px;
-          height: 10px;
-          background-color: var(--border);
-          top: -11px;
-        }
-
-        &::before {
-          background-color: var(--popoverBG);
-          width: 17px;
-          height: 10px;
-          z-index: 1;
-          top: -9.5px;
-          right: calc(var(--__right) + 0.5px);
-        }
-
         li {
           gap: 7px;
           padding: 6px 8px;
@@ -408,6 +322,7 @@
         padding: 7px;
         @include make-flex();
         @include box(32px, 32px);
+        background-color: var(--__BG);
 
         &::before {
           font-size: 18px;

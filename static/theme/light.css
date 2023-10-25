@@ -1,16 +1,11 @@
 [data-theme="light"] {
-  --body: white;
-  --hover: var(--gray-3);
-
   --inactiveLink: var(--gray-11);
   --activeLink: black;
   --disabledLink: var(--gray-9);
 
-  --headerText: white;
-
-  --subText: var(--gray-9);
-
   /* ======= */
+  --body: white;
+
   --scroll: #d0d0d0;
   --lightViolet: #953ea3;
 
@@ -21,13 +16,16 @@
 
   --buttonHoverBorder: #1f232826;
   --buttonHoverBG: #d0d7de52;
-  --buttonBorder: #d0d7de;
   --buttonShadow: #1f23280a 0px 1px 0px 0px, #ffffff40 0px 1px 0px 0px inset;
 
   --popoverBG: #ffffff;
+  --elevatedBG: #f6f8fa;
+  --subElevatedBG: #1f232814;
+  --elevatedShadow: #8c959f33 0px 8px 24px 0px;
+  --ProfCardBG: #ffffff;
 
-  --headerBorder: rgb(208, 215, 222) 0px -1px 0px 0px inset;
   --iconColor: #656d76;
+  --headerBorder: rgb(208, 215, 222) 0px -1px 0px 0px inset;
 
   /* Chip Colors */
   --bluePrimary: #6b91fb;

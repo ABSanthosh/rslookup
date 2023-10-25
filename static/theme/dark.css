@@ -1,33 +1,32 @@
 [data-theme="dark"] {
-  --body: var(--gray-12);
-  --hover: var(--gray-8);
-
   --inactiveLink: var(--gray-8);
   --activeLink: white;
   --disabledLink: var(--gray-10);
 
-  --headerText: white;
-
-  --subText: var(--gray-7);
-
   /* ======= */
+  --body: #030303;
+
   --scroll: gray;
   --lightViolet: #ab4aba;
 
-  --border: #464748;
+  --border: #343536;
   --activeNav: rgba(177, 186, 196, 0.12);
   --background: #010409;
   --foreground: #e6edf3;
 
   --buttonHoverBorder: #8b949e;
   --buttonHoverBG: #2c323982;
-  --buttonBorder: #30363d;
   --buttonShadow: #00000000 0px 0px 0px 0px, #00000000 0px 0px 0px 0px;
 
   --popoverBG: #141618;
+  --elevatedBG: #1a1a1b;
+  --subElevatedBG: rgb(48, 54, 61);
+  --elevatedShadow: #010409 0px 8px 24px 0px;
+  --ProfCardBG: #1a1a1b;
 
-  --headerBorder: rgb(48, 54, 61) 0px -1px 0px 0px inset;
   --iconColor: #7d8590;
+  --headerBG: #1a1a1b;
+  --headerBorder: rgb(48, 54, 61) 0px -1px 0px 0px inset;
 
   /* Chip Colors */
   --bluePrimary: #6b91fb;

@@ -1,7 +1,58 @@
 .Prof {
-  // &__header {
-  //   background-image: url("/assets/images/NoiseGradient3.png");
-  // }
+  &__filter {
+    min-width: unset;
+    @include box(auto, 32px);
+    & > summary {
+      gap: 8px;
+      padding: 5px 12px;
+      background-color: var(--elevatedBG);
+
+      &::before {
+        position: relative;
+      }
+
+      & > span {
+        flex-shrink: 0;
+        font-size: 12px;
+        font-weight: 500;
+        border-radius: 50%;
+        @include make-flex();
+        @include box(20px, 20px);
+        background-color: var(--subElevatedBG);
+      }
+    }
+
+    &--content {
+      gap: 8px;
+      @include respondAt(421px) {
+        width: 80vw;
+      }
+    }
+
+    &--item {
+      gap: 8px;
+      padding: 8px;
+      @include box();
+      cursor: pointer;
+      border-radius: 5px;
+      white-space: nowrap;
+      border: 1px solid transparent;
+      @include make-flex($dir: row, $just: flex-start);
+      &:hover {
+        background-color: var(--buttonHoverBG);
+      }
+
+      @include respondAt(421px) {
+        white-space: normal;
+      }
+
+      &.active {
+        color: var(--type-primary);
+        background: var(--type-secondary);
+        border: 1px solid var(--type-primary);
+      }
+    }
+  }
   &__content {
     gap: 18px;
     @include box();

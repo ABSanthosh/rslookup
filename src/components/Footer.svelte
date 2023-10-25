@@ -40,7 +40,7 @@
     color: var(--foreground);
     @include box(100vw, 60px);
     border-top: 0.5px solid var(--border);
-    background-color: var(--background);
+    background-color: var(--elevatedBG);
 
     @include respondAt(650px) {
       height: auto;

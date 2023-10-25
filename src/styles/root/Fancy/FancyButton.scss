@@ -6,7 +6,7 @@
   @include box(auto, 32px);
   box-shadow: var(--buttonShadow);
   background-color: var(--background);
-  border: 1.2px solid var(--buttonBorder);
+  border: 1.2px solid var(--border);
 
   gap: 10px;
   outline: none;
@@ -17,8 +17,8 @@
 
   &:hover:not(:disabled) {
     color: var(--buttonHoverFG);
-    background-color: var(--buttonHoverBG);
     border: 1px solid var(--buttonHoverBorder);
+    background-color: var(--buttonHoverBG) !important;
   }
   &:disabled {
     cursor: not-allowed;

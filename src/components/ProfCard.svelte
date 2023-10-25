@@ -68,7 +68,7 @@
     padding: 15px;
     border-radius: 20px;
     border: 1px solid var(--border);
-    background: var(--background);
+    background: var(--ProfCardBG);
     font-family: "Inter", sans-serif;
 
     &__top {

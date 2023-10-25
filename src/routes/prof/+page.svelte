@@ -2,62 +2,104 @@
   import Fuse from "fuse.js";
   import prof from "$data/prof.json";
   import ProfCard from "$components/ProfCard.svelte";
+  import { afterNavigate } from "$app/navigation";
   import { onMount } from "svelte";
   import { query } from "$lib/ParamStore";
+  import { profColors, schools } from "$utils/prof";
 
-  const filteredProf = new Fuse(prof, {
+  let filters = Object.keys(schools).map((item) => {
+    return {
+      name: item,
+      checked: true,
+      slug: schools[item].slug,
+      color: schools[item].color,
+    };
+  });
+
+  $: filteredProf = prof.filter((item) =>
+    filters
+      .filter((item) => item.checked)
+      .map((item) => item.name)
+      .includes(item.school)
+  );
+
+  $: profSearch = new Fuse(filteredProf, {
     keys: ["name"],
   });
 
-  $: searchResult = prof.slice(0, 50);
-
-  // const { page } = getStores();
+  $: searchResult = filteredProf.slice(0, 50);
+  let isFilterOpen = true;
 
   onMount(() => {
     query.subscribe((q) => {
       if (q === "") {
-        searchResult = prof.slice(0, 50);
+        searchResult = filteredProf.slice(0, 50);
         return;
       }
-      searchResult = filteredProf.search(q).map((item) => item.item);
+      searchResult = profSearch.search(q).map((item) => item.item);
       window.scrollTo({
         top: 0,
         behavior: "smooth",
       });
     });
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        isFilterOpen &&
+        !(event.target as Element)?.closest(".FancyMenu.Prof__filter")
+      ) {
+        isFilterOpen = false;
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  });
+  afterNavigate(() => {
+    isFilterOpen = false;
   });
 </script>
 
-<!-- <div class="Prof__header">
-  <div class="Prof__header--top">
-    <h2>Where's My Prof?</h2>
-    <p>
-      Locate your professors on campus hassle-free. Say goodbye to wandering
-      through hallways or frantically searching for room numbers.
-    </p>
-  </div>
-  <div class="Prof__header--bottom">
-    <input
-      class="Prof__search"
-      type="text"
-      placeholder="Search for a professor"
-      on:input={(e) => {
-        if (!(e.target instanceof HTMLInputElement)) {
-          return;
-        }
+<div class="Prof__header Row--between w-100">
+  <h2>Where's My Prof?</h2>
+  <details class="FancyMenu Prof__filter" bind:open={isFilterOpen}>
+    <summary data-no-marker data-icon={String.fromCharCode(57682)}>
+      Filters
+      <span>
+        {filters.filter((item) => item.checked).length}
+      </span>
+    </summary>
+    <div class="FancyMenu__content Prof__filter--content" data-align="right">
+      {#each filters as filterItem}
+        <label
+          for={filterItem.slug}
+          class="Prof__filter--item"
+          class:active={filterItem.checked}
+          style={`
+          --type-primary: ${profColors[filterItem.color].primary};
+          --type-secondary: ${profColors[filterItem.color].secondary};
+          `}
+        >
+          <input
+            type="checkbox"
+            id={filterItem.slug}
+            checked={filterItem.checked}
+            disabled={filterItem.checked &&
+              filters.filter((item) => item.checked).length === 1}
+            on:change={() => {
+              filterItem.checked = !filterItem.checked;
+            }}
+          />
 
-        if (e.target.value === "") {
-          searchResult = prof;
-          return;
-        }
-
-        $: searchResult = filteredProf
-          .search(e.target.value)
-          .map((item) => item.item);
-      }}
-    />
-  </div>
-</div> -->
+          {filterItem.name}
+        </label>
+      {/each}
+    </div>
+  </details>
+</div>
 
 <div class="Prof__content">
   {#each searchResult as result (`${result.name}-${result.role}`)}
