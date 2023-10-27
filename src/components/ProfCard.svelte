@@ -50,15 +50,18 @@
     {/if}
   </div>
   <div class="ProfCard__bottom Row--end w-100">
-    <a
-      href={website}
-      class:disabled={website === "" || website === "-"}
-      class="Row--between gap-10"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      website
-    </a>
+    {#if website === "" || website === "-"}
+      <span class="disabled Row--between gap-10">website</span>
+    {:else}
+      <a
+        href={website}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="Row--between gap-10"
+      >
+        website
+      </a>
+    {/if}
   </div>
 </div>
 
@@ -100,7 +103,8 @@
     }
 
     &__bottom {
-      a {
+      a,
+      span {
         font-size: 16px;
         font-weight: 400;
         padding: 5px 10px;
