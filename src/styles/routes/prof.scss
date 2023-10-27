@@ -1,6 +1,7 @@
 .Prof {
   &__filter {
     &--item {
+      user-select: none;
       &.active {
         color: var(--type-primary);
         background: var(--type-secondary);

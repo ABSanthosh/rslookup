@@ -19,12 +19,16 @@
     };
   });
 
-  $: filteredProf = prof.filter((item) =>
-    filters
-      .filter((item) => item.checked)
-      .map((item) => item.name)
-      .includes(item.school)
-  );
+  $: filteredSchools = filters
+    .filter((item) => item.checked)
+    .map((item) => item.name);
+
+  $: filteredProf = prof.filter((item) => {
+    if (!Object.keys(schools).includes(item.school)) {
+      return filteredSchools.includes("Miscellaneous");
+    }
+    return filteredSchools.includes(item.school);
+  });
 
   $: profSearch = new Fuse(filteredProf, {
     keys: ["name"],
@@ -121,7 +125,8 @@
     <option value="10">10</option>
     <option value="20">20</option>
     <option value="50">50</option>
-    <option value={`${prof.length}`}>All ({prof.length})</option>
+    <option value={`${filteredProf.length}`}>All ({filteredProf.length})</option
+    >
   </select>
 </div>
 

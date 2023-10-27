@@ -34,6 +34,11 @@ export const schools: {
     departments: string[];
   };
 } = {
+  Miscellaneous: {
+    slug: "misc",
+    color: "gray",
+    departments: [],
+  },
   "School Of Engineering": {
     slug: "SOE",
     color: "blue",
