@@ -2,11 +2,13 @@
   import Fuse from "fuse.js";
   import { onMount } from "svelte";
   import prof from "$data/prof.json";
+  import { flip } from "svelte/animate";
   import { query } from "$lib/ParamStore";
+  import { flipAnimate } from "$lib/FlipAnimate";
   import { afterNavigate } from "$app/navigation";
+  import { clickOutside } from "$lib/ClickOutside";
   import { profColors, schools } from "$utils/prof";
   import ProfCard from "$components/ProfCard.svelte";
-  import { clickOutside } from "$lib/ClickOutside";
 
   $: pageSize = 10;
   let isFilterOpen = false;
@@ -49,7 +51,6 @@
         behavior: "smooth",
       });
     });
-
   });
   afterNavigate(() => {
     isFilterOpen = false;
@@ -59,10 +60,10 @@
 <div class="Prof__header Row--between w-100">
   <h2>Where's My Prof?</h2>
   <details
-  use:clickOutside
-  bind:open={isFilterOpen}
-  class="FancyMenu Prof__filter"
-  on:outclick={() => (isFilterOpen = false)}
+    use:clickOutside
+    bind:open={isFilterOpen}
+    class="FancyMenu Prof__filter"
+    on:outclick={() => (isFilterOpen = false)}
   >
     <summary data-no-marker data-icon={String.fromCharCode(57682)}>
       Filters
@@ -101,9 +102,12 @@
 
 <div class="Prof__content">
   {#each searchResult as result (`${result.name}-${result.role}`)}
-    <!-- <span> -->
-    <ProfCard profResult={result} />
-    <!-- </span> -->
+    <span
+      animate:flip={{ duration: 250 }}
+      use:flipAnimate={{ key: `${result.name}-${result.role}` }}
+    >
+      <ProfCard profResult={result} />
+    </span>
   {/each}
 </div>
 

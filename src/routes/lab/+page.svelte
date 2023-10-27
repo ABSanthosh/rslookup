@@ -2,8 +2,10 @@
   import Fuse from "fuse.js";
   import { onMount } from "svelte";
   import labs from "$data/labs.json";
+  import { flip } from "svelte/animate";
   import { query } from "$lib/ParamStore";
   import { AcademicBlocks } from "$utils/labs";
+  import { flipAnimate } from "$lib/FlipAnimate";
   import { afterNavigate } from "$app/navigation";
   import { clickOutside } from "$lib/ClickOutside";
 
@@ -89,11 +91,16 @@
 
 <ul class="Lab__content">
   {#each searchResult as lab (`${lab.name}-${lab.room}`)}
-    <li class="Lab__content--item">
-      <h4>{lab.name}</h4>
-      <hr />
-      <span>{lab.room}</span>
-    </li>
+    <span
+      animate:flip={{ duration: 250 }}
+      use:flipAnimate={{ key: `${lab.name}-${lab.room}` }}
+    >
+      <li class="Lab__content--item">
+        <h4>{lab.name}</h4>
+        <hr />
+        <span>{lab.room}</span>
+      </li>
+    </span>
   {/each}
 </ul>
 
