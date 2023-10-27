@@ -104,6 +104,7 @@
         font-size: 16px;
         font-weight: 400;
         padding: 5px 10px;
+        user-select: none;
         border-radius: 30px;
         text-decoration: none;
         color: var(--bottomAFG);

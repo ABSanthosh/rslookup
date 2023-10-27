@@ -103,21 +103,23 @@
     </summary>
     <ul class="FancyMenu__content" data-align="right">
       {#each ROUTES as { name, path, isAvailable }, i}
-        <li
-          class:active={$page.url.pathname === `/${path}`}
-          data-icon={String.fromCharCode(ROUTES[i].icon)}
-        >
-          {#if isAvailable}
-            <a href={path} on:click={() => (currentPage = ROUTES[i])}>
-              {name}
-            </a>
-          {:else}
+        {#if isAvailable}
+          <a
+            href={path}
+            on:click={() => (currentPage = ROUTES[i])}
+            data-icon={String.fromCharCode(ROUTES[i].icon)}
+            class:active={$page.url.pathname === `/${path}`}
+          >
+            {name}
+          </a>
+        {:else}
+          <div data-icon={String.fromCharCode(ROUTES[i].icon)}>
             <p>
               {name}
             </p>
             <span> (coming soon) </span>
-          {/if}
-        </li>
+          </div>
+        {/if}
       {/each}
     </ul>
   </details>
@@ -274,33 +276,34 @@
       }
 
       & > ul {
-        li {
+        & > a,
+        & > div {
           gap: 7px;
           padding: 6px 8px;
           user-select: none;
           border-radius: 6px;
           white-space: nowrap;
+          text-decoration: none;
+          color: var(--foreground);
           @include box(100%, 30px);
           @include make-flex($dir: row, $just: flex-start);
-
+        }
+        a {
           &:hover {
             background-color: var(--buttonHoverBG);
           }
           &.active {
             background-color: var(--activeNav);
           }
+        }
+        & > div {
+          cursor: not-allowed;
           & > span {
             position: relative;
+            white-space: nowrap;
             bottom: 0;
             gap: 10px;
             font-size: 12px;
-          }
-
-          a {
-            @include box();
-            text-decoration: none;
-            color: var(--foreground);
-            @include make-flex($align: flex-start);
           }
         }
       }

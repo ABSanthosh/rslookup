@@ -26,8 +26,10 @@
   --ProfCardBG: #1a1a1b;
 
   --iconColor: #7d8590;
-  --headerBG: #1a1a1b;
   --headerBorder: rgb(48, 54, 61) 0px -1px 0px 0px inset;
+
+  --LabHover: #292929;
+  --LabSeparator: #3e3e3e;
 
   /* Chip Colors */
   --bluePrimary: #6b91fb;

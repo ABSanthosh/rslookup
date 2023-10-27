@@ -1,40 +1,127 @@
 [
-  { "name": "Soft Matter Physics Lab", "room": "A001", "block": "A" },
-  { "name": "Wet Laboratory ", "room": "A003", "block": "A" },
-  { "name": "Fab Lab", "room": "A004", "block": "A" },
-  { "name": "FESEM Lab", "room": "A005 ", "block": "A" },
-  { "name": "Examination Room", "room": "A006", "block": "A" },
-  { "name": "Spintronics Lab", "room": "A007", "block": "A" },
+  {
+    "name": "Soft Matter Physics Lab",
+    "room": "A001",
+    "block": "A"
+  },
+  {
+    "name": "Wet Laboratory ",
+    "room": "A003",
+    "block": "A"
+  },
+  {
+    "name": "Fab Lab",
+    "room": "A004",
+    "block": "A"
+  },
+  {
+    "name": "FESEM Lab",
+    "room": "A005 ",
+    "block": "A"
+  },
+  {
+    "name": "Examination Room",
+    "room": "A006",
+    "block": "A"
+  },
+  {
+    "name": "Spintronics Lab",
+    "room": "A007",
+    "block": "A"
+  },
   {
     "name": "Nanoscience and Energy Research Lab (NERL)",
     "room": "A008",
     "block": "A"
   },
-  { "name": "Quantum Optics Lab", "room": "A009", "block": "A" },
-  { "name": "2D Materials and Devices Lab", "room": "A010", "block": "A" },
-  { "name": "Microstructure Lab", "room": "A011", "block": "A" },
-  { "name": "Surface and Nanoscience Lab", "room": "A013", "block": "A" },
-  { "name": "Theoretical Research Lab", "room": "A013", "block": "A" },
-  { "name": "Data Centre", "room": "A019", "block": "A" },
-  { "name": "Environmental Lab", "room": "A021.1", "block": "A" },
-  { "name": "CISS Office", "room": "A021.2", "block": "A" },
-  { "name": "Physics Laboratory ", "room": "A101", "block": "A" },
-  { "name": "Physics Lab", "room": "A103", "block": "A" },
+  {
+    "name": "Quantum Optics Lab",
+    "room": "A009",
+    "block": "A"
+  },
+  {
+    "name": "2D Materials and Devices Lab",
+    "room": "A010",
+    "block": "A"
+  },
+  {
+    "name": "Microstructure Lab",
+    "room": "A011",
+    "block": "A"
+  },
+  {
+    "name": "Surface and Nanoscience Lab",
+    "room": "A013",
+    "block": "A"
+  },
+  {
+    "name": "Theoretical Research Lab",
+    "room": "A013",
+    "block": "A"
+  },
+  {
+    "name": "Data Centre",
+    "room": "A019",
+    "block": "A"
+  },
+  {
+    "name": "Environmental Lab",
+    "room": "A021.1",
+    "block": "A"
+  },
+  {
+    "name": "CISS Office",
+    "room": "A021.2",
+    "block": "A"
+  },
+  {
+    "name": "Conference Room ",
+    "room": "A021A",
+    "block": "A"
+  },
+  {
+    "name": "Store Room",
+    "room": "A023L",
+    "block": "A"
+  },
+  {
+    "name": "Conference Room",
+    "room": "A023M",
+    "block": "A"
+  },
+  {
+    "name": "Physics Laboratory ",
+    "room": "A101",
+    "block": "A"
+  },
+  {
+    "name": "Physics Lab",
+    "room": "A103",
+    "block": "A"
+  },
   {
     "name": "Molecular Simulation Lab, Chemistry",
     "room": "A104",
     "block": "A"
   },
-  { "name": "Advanced Physics Laboratory", "room": "A105", "block": "A" },
+  {
+    "name": "Advanced Physics Laboratory",
+    "room": "A105",
+    "block": "A"
+  },
   {
     "name": "DST FIST Mathematics Computational Lab",
     "room": "A107",
     "block": "A"
   },
-  { "name": "Computational Physics Lab", "room": "A112", "block": "A" },
   {
-    "name": "Theoretical Astro-Particle Physics Group",
-    "room": "A112B",
+    "name": "Conference Room ",
+    "room": "A111O",
+    "block": "A"
+  },
+  {
+    "name": "Computational Physics Lab",
+    "room": "A112",
     "block": "A"
   },
   {
@@ -42,13 +129,41 @@
     "room": "A112B",
     "block": "A"
   },
-  { "name": "Electronics Physics Lab", "room": "A114B", "block": "A" },
-  { "name": "DST - FIST", "room": "A118", "block": "A" },
-  { "name": "Ultrafast Spectroscopy Lab", "room": "A201", "block": "A" },
-  { "name": "Catalysis Lab", "room": "A203", "block": "A" },
-  { "name": "Central Store Room", "room": "A204", "block": "A" },
-  { "name": "ChemBioTech & Biomimetic Lab", "room": "A205", "block": "A" },
-  { "name": "Nano Material Laboratory ", "room": "A206", "block": "A" },
+  {
+    "name": "Electronics Physics Lab",
+    "room": "A114B",
+    "block": "A"
+  },
+  {
+    "name": "DST - FIST",
+    "room": "A118",
+    "block": "A"
+  },
+  {
+    "name": "Ultrafast Spectroscopy Lab",
+    "room": "A201",
+    "block": "A"
+  },
+  {
+    "name": "Catalysis Lab",
+    "room": "A203",
+    "block": "A"
+  },
+  {
+    "name": "Central Store Room",
+    "room": "A204",
+    "block": "A"
+  },
+  {
+    "name": "ChemBioTech & Biomimetic Lab",
+    "room": "A205",
+    "block": "A"
+  },
+  {
+    "name": "Nano Material Laboratory ",
+    "room": "A206",
+    "block": "A"
+  },
   {
     "name": "Electrochemical Energy Research Lab",
     "room": "A207",
@@ -59,8 +174,16 @@
     "room": "A208",
     "block": "A"
   },
-  { "name": "Instrument Lab", "room": "A209", "block": "A" },
-  { "name": "Multi-Functional Composites Lab", "room": "A212", "block": "A" },
+  {
+    "name": "Instrument Lab",
+    "room": "A209",
+    "block": "A"
+  },
+  {
+    "name": "Multi-Functional Composites Lab",
+    "room": "A212",
+    "block": "A"
+  },
   {
     "name": "Natural Product Synthesis and Asymmetric Catalysis Laboratory ",
     "room": "A213",
@@ -71,84 +194,386 @@
     "room": "A215",
     "block": "A"
   },
-  { "name": "Molecular Diversity & Synthesis", "room": "A217A", "block": "A" },
-  { "name": "Organic Chemistry Lab", "room": "A217B", "block": "A" },
+  {
+    "name": "Molecular Diversity & Synthesis",
+    "room": "A217A",
+    "block": "A"
+  },
+  {
+    "name": "Organic Chemistry Lab",
+    "room": "A217B",
+    "block": "A"
+  },
   {
     "name": "Radical Chemistry & Metalloradical Catalysis Laboratory",
     "room": "A221",
     "block": "A"
   },
-  { "name": "Music Room ", "room": "A222", "block": "A" },
-  { "name": "Research Scholar Area", "room": "A225", "block": "A" },
-  { "name": "BMS Room", "room": "A225.1", "block": "A" },
-  { "name": "Virology Lab", "room": "A301", "block": "A" },
-  { "name": "Plant Molecular Biology Lab", "room": "A303", "block": "A" },
-  { "name": "Sterilization Room", "room": "A304", "block": "A" },
-  { "name": "Structure Biology Lab & Cold Room", "room": "A306", "block": "A" },
-  { "name": "Cancer Biology Lab", "room": "A307", "block": "A" },
+  {
+    "name": "Music Room ",
+    "room": "A222",
+    "block": "A"
+  },
+  {
+    "name": "Research Scholar Area",
+    "room": "A225",
+    "block": "A"
+  },
+  {
+    "name": "BMS Room",
+    "room": "A225.1",
+    "block": "A"
+  },
+  {
+    "name": "Conference Room",
+    "room": "A227K",
+    "block": "A"
+  },
+  {
+    "name": "Virology Lab",
+    "room": "A301",
+    "block": "A"
+  },
+  {
+    "name": "Plant Molecular Biology Lab",
+    "room": "A303",
+    "block": "A"
+  },
+  {
+    "name": "Sterilization Room",
+    "room": "A304",
+    "block": "A"
+  },
+  {
+    "name": "Structure Biology Lab & Cold Room",
+    "room": "A306",
+    "block": "A"
+  },
+  {
+    "name": "Cancer Biology Lab",
+    "room": "A307",
+    "block": "A"
+  },
   {
     "name": "Translational Bioinformatics & Computational Genomics Research Lab",
     "room": "A313",
     "block": "A"
   },
-  { "name": "Bioinformatics Teaching Lab", "room": "A315", "block": "A" },
-  { "name": "DLS Post-Doc Space", "room": "A320", "block": "A" },
-  { "name": "Faculty Area", "room": "A321", "block": "A" },
-  { "name": "X-RAY Film Developer", "room": "A322", "block": "A" },
-  { "name": "Virtual Reality (VR) Lab", "room": "B002", "block": "B" },
-  { "name": "Design Studio 1", "room": "B003", "block": "B" },
-  { "name": "Preview Theatre", "room": "B004", "block": "B" },
-  { "name": "TV Studio & Editing Rooms", "room": "B006", "block": "B" },
-  { "name": "Sound Studio", "room": "B008", "block": "B" },
-  { "name": "Dance Studio", "room": "B015", "block": "B" },
-  { "name": "Design Project Lab", "room": "B019", "block": "B" },
-  { "name": "Design Studio 2", "room": "B102", "block": "B" },
-  { "name": "SME PhD Lab", "room": "B103", "block": "B" },
-  { "name": "SME PhD Lab", "room": "B105", "block": "B" },
-  { "name": "Laboratory", "room": "B110", "block": "B" },
-  { "name": "CoEE Laboratory 2", "room": "B110", "block": "B" },
-  { "name": "Computer Laboratory (Teaching)", "room": "B113", "block": "B" },
-  { "name": "CoEE Cell Culture Facility ", "room": "B116", "block": "B" },
-  { "name": "CoEE Laboratory 1", "room": "B120", "block": "B" },
-  { "name": "CoEE Laboratory 1", "room": "B120", "block": "B" },
-  { "name": "Math Library", "room": "B121", "block": "B" },
-  { "name": "Postgraduate Lab", "room": "B204", "block": "B" },
-  { "name": "Advanced Undergraduate Lab", "room": "B208", "block": "B" },
-  { "name": "General Chemistry Lab", "room": "B212", "block": "B" },
-  { "name": "Instruments Room", "room": "B213", "block": "B" },
-  { "name": "General Chemistry Lab", "room": "B214", "block": "B" },
-  { "name": "Mass Spectrometry Facility / FTIR", "room": "B215", "block": "B" },
+  {
+    "name": "Bioinformatics Teaching Lab",
+    "room": "A315",
+    "block": "A"
+  },
+  {
+    "name": "DLS Post-Doc Space",
+    "room": "A320",
+    "block": "A"
+  },
+  {
+    "name": "Faculty Area",
+    "room": "A321",
+    "block": "A"
+  },
+  {
+    "name": "Conference Room",
+    "room": "A321N",
+    "block": "A"
+  },
+  {
+    "name": "X-RAY Film Developer",
+    "room": "A322",
+    "block": "A"
+  },
+  {
+    "name": "Virtual Reality (VR) Lab",
+    "room": "B002",
+    "block": "B"
+  },
+  {
+    "name": "Design Studio 1",
+    "room": "B003",
+    "block": "B"
+  },
+  {
+    "name": "3D Fabrication Studio",
+    "room": "B003",
+    "block": "B"
+  },
+  {
+    "name": "Preview Theatre",
+    "room": "B004",
+    "block": "B"
+  },
+  {
+    "name": "TV Studio & Editing Rooms",
+    "room": "B006",
+    "block": "B"
+  },
+  {
+    "name": "Studio",
+    "room": "B006A",
+    "block": "B"
+  },
+  {
+    "name": "PCR",
+    "room": "B006B",
+    "block": "B"
+  },
+  {
+    "name": "Editing Room lI",
+    "room": "B006D",
+    "block": "B"
+  },
+  {
+    "name": "Editing Room I",
+    "room": "B006E",
+    "block": "B"
+  },
+  {
+    "name": "Sound Studio",
+    "room": "B008",
+    "block": "B"
+  },
+  {
+    "name": "Sound Editing I",
+    "room": "B008A",
+    "block": "B"
+  },
+  {
+    "name": "Sound Editing II",
+    "room": "B008B",
+    "block": "B"
+  },
+  {
+    "name": "Control Room",
+    "room": "B008C",
+    "block": "B"
+  },
+  {
+    "name": "Control Room (MOOC Room)",
+    "room": "B008D",
+    "block": "B"
+  },
+  {
+    "name": "Dance Studio",
+    "room": "B015",
+    "block": "B"
+  },
+  {
+    "name": "Design Project Lab",
+    "room": "B019",
+    "block": "B"
+  },
+  {
+    "name": "Conference Room",
+    "room": "B022B",
+    "block": "B"
+  },
+  {
+    "name": "Design Studio 2",
+    "room": "B102",
+    "block": "B"
+  },
+  {
+    "name": "SME PhD Lab",
+    "room": "B103",
+    "block": "B"
+  },
+  {
+    "name": "SME PhD Lab",
+    "room": "B105",
+    "block": "B"
+  },
+  {
+    "name": "Laboratory",
+    "room": "B110",
+    "block": "B"
+  },
+  {
+    "name": "CoEE Laboratory 2",
+    "room": "B110",
+    "block": "B"
+  },
+  {
+    "name": "Computer Laboratory (Teaching)",
+    "room": "B113",
+    "block": "B"
+  },
+  {
+    "name": "CoEE Cell Culture Facility ",
+    "room": "B116",
+    "block": "B"
+  },
+  {
+    "name": "CoEE Laboratory 1",
+    "room": "B120",
+    "block": "B"
+  },
+  {
+    "name": "Math Library",
+    "room": "B121",
+    "block": "B"
+  },
+  {
+    "name": "Director SNS & Director IQAC",
+    "room": "B122C",
+    "block": "B"
+  },
+  {
+    "name": "Postgraduate Lab",
+    "room": "B204",
+    "block": "B"
+  },
+  {
+    "name": "Advanced Undergraduate Lab",
+    "room": "B208",
+    "block": "B"
+  },
+  {
+    "name": "General Chemistry Lab",
+    "room": "B212",
+    "block": "B"
+  },
+  {
+    "name": "Instruments Room",
+    "room": "B213",
+    "block": "B"
+  },
+  {
+    "name": "General Chemistry Lab",
+    "room": "B214",
+    "block": "B"
+  },
+  {
+    "name": "Mass Spectrometry Facility / FTIR",
+    "room": "B215",
+    "block": "B"
+  },
   {
     "name": "Chemical Engineering Process Control Lab",
     "room": "B216",
     "block": "B"
   },
-  { "name": "Admin Store", "room": "B223", "block": "B" },
-  { "name": "Biomass Conversion Lab", "room": "B302", "block": "B" },
-  { "name": "Chemical Reaction Engineering Lab", "room": "B304", "block": "B" },
+  {
+    "name": "Conference Room ",
+    "room": "B220A",
+    "block": "B"
+  },
+  {
+    "name": "Director SOE & Internal Complaints Committee",
+    "room": "B220A",
+    "block": "B"
+  },
+  {
+    "name": "Conference Room",
+    "room": "B222A",
+    "block": "B"
+  },
+  {
+    "name": "Store Room",
+    "room": "B222G",
+    "block": "B"
+  },
+  {
+    "name": "Visiting Faculty",
+    "room": "B222H",
+    "block": "B"
+  },
+  {
+    "name": "Visiting Faculty",
+    "room": "B222I",
+    "block": "B"
+  },
+  {
+    "name": "Admin Store",
+    "room": "B223",
+    "block": "B"
+  },
+  {
+    "name": "Biomass Conversion Lab",
+    "room": "B302",
+    "block": "B"
+  },
+  {
+    "name": "Chemical Reaction Engineering Lab",
+    "room": "B304",
+    "block": "B"
+  },
   {
     "name": "Microbiology and Industrial Biotechnology Lab",
     "room": "B308",
     "block": "B"
   },
-  { "name": "Laboratory ", "room": "B310", "block": "B" },
-  { "name": "BioTech Laboratory", "room": "B310", "block": "B" },
-  { "name": "SME Computer Lab", "room": "B313", "block": "B" },
-  { "name": "Laboratory ", "room": "B314", "block": "B" },
-  { "name": "Seminar Hall", "room": "B315", "block": "B" },
-  { "name": "Maintenance Room", "room": "B315A", "block": "B" },
   {
-    "name": "SNU - Dassault Syst\u00e8mes COE (SDC)",
+    "name": "Laboratory ",
+    "room": "B310",
+    "block": "B"
+  },
+  {
+    "name": "BioTech Laboratory",
+    "room": "B310",
+    "block": "B"
+  },
+  {
+    "name": "SME Computer Lab",
+    "room": "B313",
+    "block": "B"
+  },
+  {
+    "name": "Laboratory ",
+    "room": "B314",
+    "block": "B"
+  },
+  {
+    "name": "Seminar Hall",
+    "room": "B315",
+    "block": "B"
+  },
+  {
+    "name": "Maintenance Room",
+    "room": "B315A",
+    "block": "B"
+  },
+  {
+    "name": "SNU - Dassault Systèmes COE (SDC)",
     "room": "B322",
     "block": "B"
   },
-  { "name": "Production laboratory ", "room": "C001", "block": "C" },
-  { "name": "Advanced Manufacturing Laboratory", "room": "C004", "block": "C" },
-  { "name": "Manufacturing Process Lab", "room": "C005", "block": "C" },
-  { "name": "Strength of Materials Lab", "room": "C006", "block": "C" },
-  { "name": "Hydraulic Engineering", "room": "C009", "block": "C" },
-  { "name": "Fluid Machinery Laboratory", "room": "C010", "block": "C" },
-  { "name": "Fluid Mechanics", "room": "C013A ", "block": "C" },
+  {
+    "name": "Production laboratory ",
+    "room": "C001",
+    "block": "C"
+  },
+  {
+    "name": "Advanced Manufacturing Laboratory",
+    "room": "C004",
+    "block": "C"
+  },
+  {
+    "name": "Manufacturing Process Lab",
+    "room": "C005",
+    "block": "C"
+  },
+  {
+    "name": "Strength of Materials Lab",
+    "room": "C006",
+    "block": "C"
+  },
+  {
+    "name": "Hydraulic Engineering",
+    "room": "C009",
+    "block": "C"
+  },
+  {
+    "name": "Fluid Machinery Laboratory",
+    "room": "C010",
+    "block": "C"
+  },
+  {
+    "name": "Fluid Mechanics",
+    "room": "C013A ",
+    "block": "C"
+  },
   {
     "name": "Material Science & Engineering Lab",
     "room": "C013B",
@@ -159,45 +584,126 @@
     "room": "C014A",
     "block": "C"
   },
-  { "name": "Experimental Soil Mechanics Lab", "room": "C014B", "block": "C" },
-  { "name": "Environmental Engineering Lab", "room": "C017", "block": "C" },
-  { "name": "Seminar Hall", "room": "C021", "block": "C" },
-  { "name": "Fabrication and Project Lab", "room": "C101B", "block": "C" },
-  { "name": "Embedded Electronics Lab", "room": "C105", "block": "C" },
-  { "name": "Power Electronics Laboratory", "room": "C106", "block": "C" },
-  { "name": "Survey and Geology Laboratory ", "room": "C109", "block": "C" },
-  { "name": "Mechatronics Laboratory ", "room": "C111", "block": "C" },
+  {
+    "name": "Experimental Soil Mechanics Lab",
+    "room": "C014B",
+    "block": "C"
+  },
+  {
+    "name": "Environmental Engineering Lab",
+    "room": "C017",
+    "block": "C"
+  },
+  {
+    "name": "Seminar Hall",
+    "room": "C021",
+    "block": "C"
+  },
+  {
+    "name": "Nanoelectronics Computation Laboratory",
+    "room": "C101A",
+    "block": "C"
+  },
+  {
+    "name": "Fabrication and Project Lab",
+    "room": "C101B",
+    "block": "C"
+  },
+  {
+    "name": "Embedded Electronics Lab",
+    "room": "C105",
+    "block": "C"
+  },
+  {
+    "name": "Power Electronics Laboratory",
+    "room": "C106",
+    "block": "C"
+  },
+  {
+    "name": "Survey and Geology Laboratory ",
+    "room": "C109",
+    "block": "C"
+  },
+  {
+    "name": "Mechatronics Laboratory ",
+    "room": "C111",
+    "block": "C"
+  },
   {
     "name": "Theory of Machine & Vibration Laboratory ",
     "room": "C112",
     "block": "C"
   },
-  { "name": "Surface Science and Tribology Lab", "room": "C113", "block": "C" },
-  { "name": "Advanced Materials Synthesis Lab", "room": "C114", "block": "C" },
+  {
+    "name": "Surface Science and Tribology Lab",
+    "room": "C113",
+    "block": "C"
+  },
+  {
+    "name": "Advanced Materials Synthesis Lab",
+    "room": "C114",
+    "block": "C"
+  },
   {
     "name": "Bio-Inspired Robotics and Design (BIRD) Lab",
     "room": "C115",
     "block": "C"
   },
-  { "name": "Software & Hardware Laboratory", "room": "C116", "block": "C" },
-  { "name": "Drawing Hall", "room": "C117", "block": "C" },
-  { "name": "Air Quality Laboratory", "room": "C118", "block": "C" },
-  { "name": "Electronics Laboratory 1", "room": "C201", "block": "C" },
-  { "name": "Electronic Laboratory 2", "room": "C205", "block": "C" },
+  {
+    "name": "Software & Hardware Laboratory",
+    "room": "C116",
+    "block": "C"
+  },
+  {
+    "name": "Drawing Hall",
+    "room": "C117",
+    "block": "C"
+  },
+  {
+    "name": "Air Quality Laboratory",
+    "room": "C118",
+    "block": "C"
+  },
+  {
+    "name": "Electronics Laboratory 1",
+    "room": "C201",
+    "block": "C"
+  },
+  {
+    "name": "Electronic Laboratory 2",
+    "room": "C205",
+    "block": "C"
+  },
   {
     "name": "Measurement and Control System Laboratory ",
     "room": "C206",
     "block": "C"
   },
-  { "name": "Microwave Engineering Laboratory ", "room": "C209", "block": "C" },
-  { "name": "Communication Engineering Lab", "room": "C217", "block": "C" },
+  {
+    "name": "Microwave Engineering Laboratory ",
+    "room": "C209",
+    "block": "C"
+  },
+  {
+    "name": "Communication Engineering Lab",
+    "room": "C217",
+    "block": "C"
+  },
   {
     "name": "VLSI Technology and Design Lab (Department of Electrical Engineering)",
     "room": "C303",
     "block": "C"
   },
-  { "name": "LANGUAGE LAB", "room": "C305", "block": "C" },
-  { "name": "IoT and Wireless Laboratory ", "room": "C307", "block": "C" },
+  {
+    "name": "LANGUAGE LAB",
+    "room": "C305",
+    "block": "C"
+  },
+  {
+    "name": "IoT and Wireless Laboratory ",
+    "room": "C307",
+    "block": "C"
+  },
   {
     "name": "Chemical Engineering Computational Lab",
     "room": "C308",
@@ -208,103 +714,219 @@
     "room": "C309",
     "block": "C"
   },
-  { "name": "Disaster Management Lab", "room": "C310", "block": "C" },
-  { "name": "General Purpose Lab 3", "room": "C312", "block": "C" },
-  { "name": "Big Data Analytics Center", "room": "C313", "block": "C" },
-  { "name": "Discussion and TA Room", "room": "C314", "block": "C" },
+  {
+    "name": "Disaster Management Lab",
+    "room": "C310",
+    "block": "C"
+  },
+  {
+    "name": "General Purpose Lab 3",
+    "room": "C312",
+    "block": "C"
+  },
+  {
+    "name": "Big Data Analytics Center",
+    "room": "C313",
+    "block": "C"
+  },
+  {
+    "name": "Discussion and TA Room",
+    "room": "C314",
+    "block": "C"
+  },
   {
     "name": "Cloud Computing and Big Data Laboratory ",
     "room": "C315",
     "block": "C"
   },
-  { "name": "AI & ML Lab", "room": "C317", "block": "C" },
-  { "name": "Research Scholar Lab", "room": "C319", "block": "C" },
-  { "name": "LOUNGE", "room": "C323", "block": "C" },
+  {
+    "name": "AI & ML Lab",
+    "room": "C317",
+    "block": "C"
+  },
+  {
+    "name": "Research Scholar Lab",
+    "room": "C319",
+    "block": "C"
+  },
+  {
+    "name": "Conference Room",
+    "room": "C321B",
+    "block": "C"
+  },
+  {
+    "name": "Office Space",
+    "room": "C321D",
+    "block": "C"
+  },
+  {
+    "name": "LOUNGE",
+    "room": "C323",
+    "block": "C"
+  },
   {
     "name": "Heat and Mass Transfer / Refrigeration and Air Conditioning Laboratory",
     "room": "D004",
     "block": "D"
   },
-  { "name": "Electrical Machine Laboratory", "room": "D013", "block": "D" },
-  { "name": "Energy Labaratory ", "room": "D017", "block": "D" },
-  { "name": "CAD Lab", "room": "D018", "block": "D" },
-  { "name": "Admin helpdesk", "room": "D030", "block": "D" },
-  { "name": "Staff Room", "room": "D032", "block": "D" },
-  { "name": "University Office", "room": "D034", "block": "D" },
-  { "name": "Archaeology Laboratory", "room": "D105", "block": "D" },
-  { "name": "Microfluidics Laboratory ", "room": "D113A", "block": "D" },
-  { "name": "Mass Transfer Laboratory ", "room": "D113B", "block": "D" },
-  { "name": "Informatics Laboratory", "room": "D114", "block": "D" },
+  {
+    "name": "ODS Helpdesk",
+    "room": "D010C",
+    "block": "D"
+  },
+  {
+    "name": "OCJ Workstation",
+    "room": "D010D",
+    "block": "D"
+  },
+  {
+    "name": "Anti-Ragging Cell",
+    "room": "D010E",
+    "block": "D"
+  },
+  {
+    "name": "Students Grievances Redressal Cell",
+    "room": "D010F",
+    "block": "D"
+  },
+  {
+    "name": "Electrical Machine Laboratory",
+    "room": "D013",
+    "block": "D"
+  },
+  {
+    "name": "Energy Labaratory ",
+    "room": "D017",
+    "block": "D"
+  },
+  {
+    "name": "CAD Lab",
+    "room": "D018",
+    "block": "D"
+  },
+  {
+    "name": "Admin helpdesk",
+    "room": "D030",
+    "block": "D"
+  },
+  {
+    "name": "Staff Room",
+    "room": "D032",
+    "block": "D"
+  },
+  {
+    "name": "University Office",
+    "room": "D034",
+    "block": "D"
+  },
+  {
+    "name": "Conference Room",
+    "room": "D036P",
+    "block": "D"
+  },
+  {
+    "name": "Archaeology Laboratory",
+    "room": "D105",
+    "block": "D"
+  },
+  {
+    "name": "Microfluidics Laboratory ",
+    "room": "D113A",
+    "block": "D"
+  },
+  {
+    "name": "Mass Transfer Laboratory ",
+    "room": "D113B",
+    "block": "D"
+  },
+  {
+    "name": "Informatics Laboratory",
+    "room": "D114",
+    "block": "D"
+  },
   {
     "name": "Advanced Materials & Building Energy Laboratory",
     "room": "D117A",
     "block": "D"
   },
-  { "name": "Sustainability and Polymers Lab", "room": "D117B", "block": "D" },
-  { "name": "Meeting Room", "room": "D128", "block": "D" },
+  {
+    "name": "Sustainability and Polymers Lab",
+    "room": "D117B",
+    "block": "D"
+  },
+  {
+    "name": "Meeting Room",
+    "room": "D128",
+    "block": "D"
+  },
   {
     "name": "Digital Signal Processing Laboratory ",
     "room": "D213",
     "block": "D"
   },
-  { "name": "Meeting Room ", "room": "D303", "block": "D" },
-  { "name": "Reserved for Economics PhD only", "room": "D305", "block": "D" },
+  {
+    "name": "English Department",
+    "room": "D236B",
+    "block": "D"
+  },
+  {
+    "name": "Meeting Room ",
+    "room": "D303",
+    "block": "D"
+  },
+  {
+    "name": "Reserved for Economics PhD only",
+    "room": "D305",
+    "block": "D"
+  },
   {
     "name": "Reserved for PhD Students History, Sociology, IR, English",
     "room": "D307",
     "block": "D"
   },
-  { "name": "General Purpose Laboratory 1", "room": "D313", "block": "D" },
-  { "name": "Meeting Room", "room": "D314", "block": "D" },
-  { "name": "General Purpose Laboratory-2", "room": "D317", "block": "D" },
-  { "name": "Meeting Room", "room": "D318", "block": "D" },
-  { "name": "Dining Room", "room": "D320", "block": "D" },
-  { "name": "Board Room", "room": "D322", "block": "D" },
-  { "name": "Court Room", "room": "D326", "block": "D" },
-  { "name": "Meeting Room ", "room": "D330", "block": "D" },
   {
-    "name": "Nanoelectronics Computation Laboratory",
-    "room": "C101A",
-    "block": "C"
+    "name": "General Purpose Laboratory 1",
+    "room": "D313",
+    "block": "D"
   },
-  { "name": "Conference Room", "room": "C321B", "block": "C" },
-  { "name": "Office Space", "room": "C321D", "block": "C" },
-  { "name": "Department Meeting Room 1", "room": "D334A", "block": "D" },
-  { "name": "Conference Room", "room": "A321N", "block": "A" },
-  { "name": "Conference Room", "room": "A227K", "block": "A" },
-  { "name": "Conference Room", "room": "B222A", "block": "B" },
-  { "name": "Store Room", "room": "B222G", "block": "B" },
-  { "name": "Visiting Faculty", "room": "B222H", "block": "B" },
-  { "name": "Visiting Faculty", "room": "B222I", "block": "B" },
-  { "name": "Conference Room ", "room": "B220A", "block": "B" },
   {
-    "name": "Director SOE & Internal Complaints Committee",
-    "room": "B220A",
-    "block": "B"
+    "name": "Meeting Room",
+    "room": "D314",
+    "block": "D"
   },
-  { "name": "Conference Room ", "room": "A111O", "block": "A" },
-  { "name": "Director SNS & Director IQAC", "room": "B122C", "block": "B" },
-  { "name": "Conference Room ", "room": "A021A", "block": "A" },
-  { "name": "Studio", "room": "B006A", "block": "B" },
-  { "name": "PCR", "room": "B006B", "block": "B" },
-  { "name": "Editing Room lI", "room": "B006D", "block": "B" },
-  { "name": "Editing Room I", "room": "B006E", "block": "B" },
-  { "name": "Store Room", "room": "A023L", "block": "A" },
-  { "name": "Conference Room", "room": "A023M", "block": "A" },
-  { "name": "Conference Room", "room": "B022B", "block": "B" },
-  { "name": "Conference Room", "room": "D036P", "block": "D" },
-  { "name": "English Department", "room": "D236B", "block": "D" },
-  { "name": "Sound Editing I", "room": "B008A", "block": "B" },
-  { "name": "Sound Editing II", "room": "B008B", "block": "B" },
-  { "name": "Control Room", "room": "B008C", "block": "B" },
-  { "name": "Control Room (MOOC Room)", "room": "B008D", "block": "B" },
-  { "name": "3D Fabrication Studio", "room": "B003", "block": "B" },
-  { "name": "ODS Helpdesk", "room": "D010C", "block": "D" },
-  { "name": "OCJ Workstation", "room": "D010D", "block": "D" },
-  { "name": "Anti-Ragging Cell", "room": "D010E", "block": "D" },
   {
-    "name": "Students Grievances Redressal Cell",
-    "room": "D010F",
+    "name": "General Purpose Laboratory-2",
+    "room": "D317",
+    "block": "D"
+  },
+  {
+    "name": "Meeting Room",
+    "room": "D318",
+    "block": "D"
+  },
+  {
+    "name": "Dining Room",
+    "room": "D320",
+    "block": "D"
+  },
+  {
+    "name": "Board Room",
+    "room": "D322",
+    "block": "D"
+  },
+  {
+    "name": "Court Room",
+    "room": "D326",
+    "block": "D"
+  },
+  {
+    "name": "Meeting Room ",
+    "room": "D330",
+    "block": "D"
+  },
+  {
+    "name": "Department Meeting Room 1",
+    "room": "D334A",
     "block": "D"
   }
 ]

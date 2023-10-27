@@ -1,14 +1,15 @@
 <script lang="ts">
   import Fuse from "fuse.js";
-  import prof from "$data/prof.json";
-  import ProfCard from "$components/ProfCard.svelte";
-  import { afterNavigate } from "$app/navigation";
   import { onMount } from "svelte";
+  import prof from "$data/prof.json";
   import { query } from "$lib/ParamStore";
+  import { afterNavigate } from "$app/navigation";
   import { profColors, schools } from "$utils/prof";
-  import GoTop from "$components/GoTop.svelte";
+  import ProfCard from "$components/ProfCard.svelte";
 
   $: pageSize = 10;
+  let isFilterOpen = false;
+
   let filters = Object.keys(schools).map((item) => {
     return {
       name: item,
@@ -30,12 +31,11 @@
   });
 
   $: searchResult = filteredProf.slice(0, pageSize);
-  let isFilterOpen = false;
 
   onMount(() => {
     query.subscribe((q) => {
       if (q === "") {
-        searchResult = filteredProf.slice(0, 50);
+        searchResult = filteredProf.slice(0, pageSize);
         return;
       }
       searchResult = profSearch.search(q).map((item) => item.item);
@@ -109,14 +109,13 @@
   {/each}
 </div>
 
-<div class="Prof__bottom Row--end w-100">
+<div class="Row--end w-100">
   <select
     class="FancySelect"
     value={`${pageSize}`}
     on:change={(e) => {
       // @ts-ignore
       pageSize = Number(e.target.value);
-      // searchResult = filteredProf.slice(0, pageSize);
     }}
   >
     <option value="10">10</option>
@@ -125,7 +124,5 @@
     <option value={`${prof.length}`}>All ({prof.length})</option>
   </select>
 </div>
-
-<GoTop />
 
 <style lang="scss" src="../../styles/routes/prof.scss"></style>

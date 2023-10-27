@@ -28,6 +28,9 @@
   --iconColor: #656d76;
   --headerBorder: rgb(208, 215, 222) 0px -1px 0px 0px inset;
 
+  --LabHover: #f3f3f3;
+  --LabSeparator: #dedede;
+
   /* Chip Colors */
   --bluePrimary: #6b91fb;
   --blueSecondary: #edf2fe;

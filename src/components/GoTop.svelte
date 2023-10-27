@@ -25,7 +25,10 @@
   class:hidden={isHidden}
   data-icon={String.fromCharCode(58840)}
   on:click={() => {
-    document.body.scrollIntoView();
+    document.body.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   }}
 />
 
