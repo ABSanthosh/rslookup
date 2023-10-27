@@ -110,9 +110,10 @@
         color: var(--bottomAFG);
 
         &.disabled {
-          background: var(--bottomADisable);
-          color: var(--headerText);
           cursor: not-allowed;
+          color: var(--disabledColor);
+          text-decoration: line-through;
+          background: var(--bottomADisable);
         }
 
         &::after {

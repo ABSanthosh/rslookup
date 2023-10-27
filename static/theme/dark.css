@@ -14,8 +14,9 @@
   --background: #010409;
   --foreground: #e6edf3;
 
+  --disabledColor: #a3a3a3;
   --buttonHoverBorder: #8b949e;
-  --buttonHoverBG: #2c323982;
+  --buttonHoverBG: #2f3337;
   --buttonShadow: #00000000 0px 0px 0px 0px, #00000000 0px 0px 0px 0px;
 
   --popoverBG: #141618;

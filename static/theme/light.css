@@ -7,15 +7,16 @@
   --body: white;
 
   --scroll: #d0d0d0;
-  --lightViolet: #953ea3;
+  --lightViolet: #d087dc;
 
   --border: #d0d7de;
   --activeNav: #f1f2f4;
   --background: white;
   --foreground: #1f2328;
 
+  --disabledColor: #eaeaea;
   --buttonHoverBorder: #1f232826;
-  --buttonHoverBG: #d0d7de52;
+  --buttonHoverBG: #eaecee;
   --buttonShadow: #1f23280a 0px 1px 0px 0px, #ffffff40 0px 1px 0px 0px inset;
 
   --popoverBG: #ffffff;

@@ -34,7 +34,7 @@
   $extraPadding: 20px;
 
   .FooterWrapper {
-    margin-top: 70px;
+    margin-top: auto;
     font-weight: 500;
     @include make-flex();
     color: var(--foreground);

@@ -46,6 +46,10 @@ body,
   @include make-flex($just: flex-start);
 }
 
+#app {
+  min-height: 100vh;
+}
+
 .Content {
   @include box();
   @include make-flex($just: flex-start);

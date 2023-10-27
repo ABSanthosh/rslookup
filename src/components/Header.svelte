@@ -223,12 +223,9 @@
         border-radius: 6px;
         padding: 0 24px 0 30px;
         color: var(--foreground);
-        transition-duration: 0.1s;
         background-color: var(--__BG);
         border: 1px solid var(--border);
         box-shadow: var(--buttonShadow);
-        transition-timing-function: ease-in-out;
-        transition-property: background-color, border-color;
 
         @include respondAt(700px) {
           padding: 0;

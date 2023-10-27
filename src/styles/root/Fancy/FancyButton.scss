@@ -4,9 +4,10 @@
   font-size: 15px;
   border-radius: 6px;
   @include box(auto, 32px);
+  color: var(--foreground);
   box-shadow: var(--buttonShadow);
-  background-color: var(--background);
   border: 1.2px solid var(--border);
+  background-color: var(--background);
 
   gap: 10px;
   outline: none;
@@ -16,7 +17,7 @@
   transition: all 0.1s ease-in-out;
 
   &:hover:not(:disabled) {
-    color: var(--buttonHoverFG);
+    color: var(--subElevatedBG);
     border: 1px solid var(--buttonHoverBorder);
     background-color: var(--buttonHoverBG) !important;
   }

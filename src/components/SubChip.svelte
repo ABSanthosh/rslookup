@@ -21,7 +21,7 @@
     text-align: start;
     align-items: center;
     border-radius: 25px;
-    background: var(--background);
+    background: var(--elevatedBG);
     @include box(auto, auto);
     border: 1px solid var(--border);
     grid-template-columns: 10px 1fr;
