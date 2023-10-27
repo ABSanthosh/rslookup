@@ -5,6 +5,7 @@
   import { query } from "$lib/ParamStore";
   import { AcademicBlocks } from "$utils/labs";
   import { afterNavigate } from "$app/navigation";
+  import { clickOutside } from "$lib/ClickOutside";
 
   $: pageSize = 10;
   let isFilterOpen = false;
@@ -41,21 +42,6 @@
         behavior: "smooth",
       });
     });
-
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        isFilterOpen &&
-        !(event.target as Element)?.closest(".FancyMenu.Lab__filter")
-      ) {
-        isFilterOpen = false;
-      }
-    };
-
-    document.addEventListener("click", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
   });
   afterNavigate(() => {
     isFilterOpen = false;
@@ -64,7 +50,12 @@
 
 <div class="Lab__header Row--between w-100">
   <h2>Where's My Lab?</h2>
-  <details class="FancyMenu Lab__filter" bind:open={isFilterOpen}>
+  <details
+    use:clickOutside
+    bind:open={isFilterOpen}
+    class="FancyMenu Lab__filter"
+    on:outclick={() => (isFilterOpen = false)}
+  >
     <summary data-no-marker data-icon={String.fromCharCode(57682)}>
       Filters
       <span>

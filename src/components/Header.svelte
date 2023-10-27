@@ -4,6 +4,7 @@
   import { afterNavigate } from "$app/navigation";
   import { theme } from "$lib/ThemeStore";
   import { query } from "$lib/ParamStore";
+  import { clickOutside } from "$lib/ClickOutside";
 
   const ROUTES = [
     {
@@ -35,23 +36,6 @@
   );
 
   let isDetailsOpen = false;
-
-  onMount(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        isDetailsOpen &&
-        !(event.target as Element)?.closest(".FancyMenu.Header__tabs")
-      ) {
-        isDetailsOpen = false;
-      }
-    };
-
-    document.addEventListener("click", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  });
 
   afterNavigate(() => {
     isDetailsOpen = false;
@@ -94,7 +78,12 @@
     {/if}
   </div>
   <hr />
-  <details class="FancyMenu Header__tabs" bind:open={isDetailsOpen}>
+  <details
+    use:clickOutside
+    bind:open={isDetailsOpen}
+    class="FancyMenu Header__tabs"
+    on:outclick={() => (isDetailsOpen = false)}
+  >
     <summary>
       <p>
         {currentPage?.name}

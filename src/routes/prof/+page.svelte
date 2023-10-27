@@ -6,6 +6,7 @@
   import { afterNavigate } from "$app/navigation";
   import { profColors, schools } from "$utils/prof";
   import ProfCard from "$components/ProfCard.svelte";
+  import { clickOutside } from "$lib/ClickOutside";
 
   $: pageSize = 10;
   let isFilterOpen = false;
@@ -49,20 +50,6 @@
       });
     });
 
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        isFilterOpen &&
-        !(event.target as Element)?.closest(".FancyMenu.Prof__filter")
-      ) {
-        isFilterOpen = false;
-      }
-    };
-
-    document.addEventListener("click", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
   });
   afterNavigate(() => {
     isFilterOpen = false;
@@ -71,7 +58,12 @@
 
 <div class="Prof__header Row--between w-100">
   <h2>Where's My Prof?</h2>
-  <details class="FancyMenu Prof__filter" bind:open={isFilterOpen}>
+  <details
+  use:clickOutside
+  bind:open={isFilterOpen}
+  class="FancyMenu Prof__filter"
+  on:outclick={() => (isFilterOpen = false)}
+  >
     <summary data-no-marker data-icon={String.fromCharCode(57682)}>
       Filters
       <span>
@@ -109,7 +101,9 @@
 
 <div class="Prof__content">
   {#each searchResult as result (`${result.name}-${result.role}`)}
+    <!-- <span> -->
     <ProfCard profResult={result} />
+    <!-- </span> -->
   {/each}
 </div>
 
