@@ -103,11 +103,12 @@
       a {
         font-size: 16px;
         font-weight: 400;
-        text-decoration: none;
-        border-radius: 30px;
-        background: var(--bottomABG);
         padding: 5px 10px;
+        border-radius: 30px;
+        text-decoration: none;
         color: var(--bottomAFG);
+        background: var(--bottomABG);
+        transition: box-shadow 0.3s;
 
         &.disabled {
           cursor: not-allowed;
@@ -115,7 +116,11 @@
           text-decoration: line-through;
           background: var(--bottomADisable);
         }
-
+        &:hover:not(:disabled) {
+          // border: 1px solid var(--buttonHoverBorder);
+          // background-color: var(--buttonHoverBG) !important;
+          box-shadow: var(--elevatedShadow);
+        }
         &::after {
           content: " ";
           display: block;
