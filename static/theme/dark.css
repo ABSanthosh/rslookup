@@ -24,6 +24,7 @@
   --subElevatedBG: rgb(48, 54, 61);
   --subText: #91999e;
   --elevatedShadow: #010409 0px 8px 24px 0px;
+  --toastShadow: 0px 3px 35px 4px rgba(129, 129, 129, 0.25);
   --ProfCardBG: #1a1a1b;
 
   --iconColor: #7d8590;

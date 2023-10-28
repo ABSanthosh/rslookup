@@ -3,6 +3,7 @@
   import SubChip from "$components/SubChip.svelte";
   import { profColors, schools } from "$utils/prof";
   import type { ProfItem } from "$types/Prof.types";
+  import { ToastStore, addToast } from "$lib/ToastStore";
 
   export let profResult = $$props as ProfItem;
 
@@ -15,6 +16,11 @@
     .match(/(^\S|\S$)?/g)!
     .join("")
     .toUpperCase();
+
+  const clipboardMail = async () => {
+    addToast({ message: "Copied to clipboard!", timeout: 1500 });
+    await navigator.clipboard.writeText(mail);
+  };
 </script>
 
 <div class="ProfCard Col--a-start gap-20">
@@ -58,10 +64,10 @@
     <div data-icon={String.fromCharCode(57688)}>
       <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
       <p
-        on:keydown={async () => await navigator.clipboard.writeText(mail)}
-        on:keyup={async () => await navigator.clipboard.writeText(mail)}
-        on:keypress={async () => await navigator.clipboard.writeText(mail)}
-        on:click={async () => await navigator.clipboard.writeText(mail)}
+        on:keydown={async () => await clipboardMail()}
+        on:keyup={async () => await clipboardMail()}
+        on:keypress={async () => await clipboardMail()}
+        on:click={async () => await clipboardMail()}
       >
         {mail}
       </p>

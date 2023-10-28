@@ -6,6 +6,8 @@
   import Header from "$components/Header.svelte";
   import Footer from "$components/Footer.svelte";
   import { cubicIn, cubicOut } from "svelte/easing";
+  import Toast from "$components/Toast.svelte";
+  import { ToastStore } from "$lib/ToastStore";
 
   export let data;
 
@@ -23,6 +25,7 @@
       }
     });
   });
+
 </script>
 
 <svelte:head>
@@ -45,6 +48,11 @@
   </main>
 {/key}
 <GoTop />
+{#if $ToastStore}
+  {#each $ToastStore as toast (toast.id)}
+    <Toast message={toast.message} />
+  {/each}
+{/if}
 <Footer />
 
 <style lang="scss" global>
