@@ -30,7 +30,6 @@
     },
   ] as const;
 
-  // subscribable store that contains the current page
   $: currentPage = ROUTES.find(
     (route) => route.path === $page.url.pathname.slice(1)
   );

@@ -7,4 +7,6 @@ export interface ProfItem {
   school: string;
   department: string;
   img: string;
+  mail: string;
+  gImage: string;
 }

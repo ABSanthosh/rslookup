@@ -6,7 +6,8 @@
 
   export let profResult = $$props as ProfItem;
 
-  let { name, role, room, website, school, department, img } = profResult;
+  let { name, role, room, website, school, department, img, mail, gImage } =
+    profResult;
 
   let profile = name
     .match(/(\b\S)?/g)!
@@ -30,7 +31,11 @@
         {profile}
       </h2>
     {:else}
-      <img src={img} alt={name} />
+      <picture>
+        <source srcset={img} type="image/jpeg" />
+        <source srcset={gImage} type="image/webp" />
+        <img src={img} alt={name} />
+      </picture>
     {/if}
     <div class="Col--a-start gap-5">
       <h3>{name}</h3>
@@ -49,7 +54,18 @@
       />
     {/if}
   </div>
-  <div class="ProfCard__bottom Row--end w-100">
+  <div class="ProfCard__bottom Row--between w-100 gap-10">
+    <div data-icon={String.fromCharCode(57688)}>
+      <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+      <p
+        on:keydown={async () => await navigator.clipboard.writeText(mail)}
+        on:keyup={async () => await navigator.clipboard.writeText(mail)}
+        on:keypress={async () => await navigator.clipboard.writeText(mail)}
+        on:click={async () => await navigator.clipboard.writeText(mail)}
+      >
+        {mail}
+      </p>
+    </div>
     {#if website === "" || website === "-"}
       <span class="disabled Row--between gap-10">website</span>
     {:else}
@@ -70,8 +86,8 @@
     @include box();
     padding: 15px;
     border-radius: 20px;
-    border: 1px solid var(--border);
     background: var(--ProfCardBG);
+    border: 1px solid var(--border);
     font-family: "Inter", sans-serif;
 
     &__top {
@@ -96,9 +112,34 @@
       }
 
       span {
-        color: #91999e;
+        color: var(--subText);
         font-size: 16px;
         font-weight: 400;
+      }
+    }
+
+    &__bottom {
+      margin-top: auto;
+      & > div {
+        p {
+          cursor: pointer;
+          overflow: hidden;
+          white-space: nowrap;
+          display: inline-block;
+          text-overflow: ellipsis;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        gap: 6px;
+        font-size: 14px;
+        color: var(--subText);
+        @include box(calc(55%));
+        @include make-flex($dir: row, $just: flex-start);
+        &::before {
+          font-size: 18px;
+        }
       }
     }
 
@@ -115,15 +156,7 @@
         background: var(--bottomABG);
         transition: box-shadow 0.3s;
 
-        &.disabled {
-          cursor: not-allowed;
-          color: var(--disabledColor);
-          text-decoration: line-through;
-          background: var(--bottomADisable);
-        }
         &:hover:not(:disabled) {
-          // border: 1px solid var(--buttonHoverBorder);
-          // background-color: var(--buttonHoverBG) !important;
           box-shadow: var(--elevatedShadow);
         }
         &::after {
@@ -135,6 +168,14 @@
           background-repeat: no-repeat;
           background-size: contain;
           background-position: center;
+        }
+      }
+      span {
+        &.disabled {
+          cursor: not-allowed;
+          color: var(--disabledColor);
+          text-decoration: line-through;
+          background: var(--bottomADisable);
         }
       }
     }

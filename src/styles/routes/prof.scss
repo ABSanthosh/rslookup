@@ -11,9 +11,19 @@
   }
   &__content {
     gap: 18px;
-    @include box();
+    min-width: 0;
     display: grid;
+    @include box();
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(50px, auto) 1fr;
+
+
+    & > span {
+      max-width: 100%;
+      overflow-x: hidden;
+      @include make-flex();
+      @include box($height: max(100%, fit-content));
+    }
 
     @include respondAt(800px) {
       grid-template-columns: 1fr;
