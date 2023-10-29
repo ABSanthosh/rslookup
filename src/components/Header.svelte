@@ -35,6 +35,7 @@
   );
 
   let isDetailsOpen = false;
+  let searchInput: HTMLInputElement;
 
   afterNavigate(() => {
     isDetailsOpen = false;
@@ -52,6 +53,7 @@
   <div class="Header__search" data-icon={String.fromCharCode(59574)}>
     <input
       type="text"
+      bind:this={searchInput}
       placeholder={`Search for a ${currentPage?.name.toLowerCase()}`}
       bind:value={$query}
       on:input={(e) => {
@@ -72,6 +74,7 @@
         data-icon={String.fromCharCode(58829)}
         on:click={() => {
           query.set("");
+          searchInput.focus();
         }}
       />
     {/if}
@@ -137,9 +140,8 @@
     position: fixed;
     gap: 10px;
     padding: 16px 20px;
-    @include box(100%, 64px);
     background: var(--__BG);
-    // border-bottom: 1px solid var(--border);
+    @include box(100%, 64px);
     box-shadow: var(--headerBorder);
 
     & > hr {
@@ -187,16 +189,18 @@
         right: 1px;
         border: none;
         outline: none;
-        @include box(auto, calc(100% - 2px));
         cursor: pointer;
-        font-size: 18px;
         position: absolute;
         @include make-flex();
         border-radius: 0 6px 6px 0;
         transform: translateY(-50%);
         background-color: transparent;
+        @include box(26px, calc(100% - 2px));
         border-left: 1px solid var(--border);
 
+        &::before {
+          font-size: 16px;
+        }
         &:hover {
           background-color: var(--buttonHoverBG);
         }

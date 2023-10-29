@@ -91,16 +91,15 @@
 
 <ul class="Lab__content">
   {#each searchResult as lab (`${lab.name}-${lab.room}`)}
-    <span
+    <li
+      class="Lab__content--item"
       animate:flip={{ duration: 250 }}
       use:flipAnimate={{ key: `${lab.name}-${lab.room}` }}
     >
-      <li class="Lab__content--item">
-        <h4>{lab.name}</h4>
-        <hr />
-        <span>{lab.room}</span>
-      </li>
-    </span>
+      <h4>{lab.name}</h4>
+      <hr />
+      <span>{lab.room}</span>
+    </li>
   {/each}
 </ul>
 

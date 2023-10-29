@@ -40,7 +40,7 @@
       <picture>
         <source srcset={img} type="image/jpeg" />
         <source srcset={gImage} type="image/webp" />
-        <img src={img} alt={name} />
+        <img src={img} alt={name} loading="lazy" />
       </picture>
     {/if}
     <div class="Col--a-start gap-5">
