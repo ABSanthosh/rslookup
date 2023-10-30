@@ -60,7 +60,13 @@
 
 <header class="Header">
   <div class="Header__left">
-    <p class="Header__left--title">rslookup</p>
+    <a
+      class="Header__left--title"
+      href="/"
+      data-icon={String.fromCharCode(58848)}
+    >
+      rslookup
+    </a>
   </div>
   {#if currentPage?.showSearch}
     <div
@@ -173,20 +179,41 @@
 
     &__left {
       gap: 5px;
+      flex-grow: 1;
       font-size: 20px;
       overflow: hidden;
       font-weight: 400;
       @include box(auto);
-      flex-grow: 1;
+      margin-left: -13px;
+      padding-left: 13px;
       white-space: nowrap;
       text-overflow: ellipsis;
       @include make-flex($dir: row, $just: flex-start);
-
       &--title {
-        font-family: "Nohemi", sans-serif;
         font-size: 30px;
         font-weight: 500;
+        user-select: none;
+        line-height: 100%;
+        position: relative;
+        margin-bottom: -4px;
+        text-decoration: none;
         color: var(--foreground);
+        font-family: "Nohemi", sans-serif;
+        &::before {
+          left: 0;
+          top: 50%;
+          opacity: 0;
+          position: absolute;
+          transform: translate(0px, -50%);
+          transition: opacity 0.3s, transform 0.3s ease;
+        }
+
+        &:hover {
+          &::before {
+            opacity: 1;
+            transform: translate(-14px, -50%);
+          }
+        }
       }
     }
 
