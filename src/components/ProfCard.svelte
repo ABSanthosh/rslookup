@@ -1,9 +1,9 @@
 <script lang="ts">
-  import SchoolChip from "$components/SchoolChip.svelte";
   import SubChip from "$components/SubChip.svelte";
   import { profColors, schools } from "$utils/prof";
   import type { ProfItem } from "$types/Prof.types";
-  import { ToastStore, addToast } from "$lib/ToastStore";
+  import copyToClipboard from "$utils/CopyToClipboard";
+  import SchoolChip from "$components/SchoolChip.svelte";
 
   export let profResult = $$props as ProfItem;
 
@@ -16,11 +16,6 @@
     .match(/(^\S|\S$)?/g)!
     .join("")
     .toUpperCase();
-
-  const clipboardMail = async () => {
-    addToast({ message: "Copied to clipboard!", timeout: 1500 });
-    await navigator.clipboard.writeText(mail);
-  };
 </script>
 
 <div class="ProfCard Col--a-start gap-20">
@@ -64,10 +59,10 @@
     <div data-icon={String.fromCharCode(57688)}>
       <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
       <p
-        on:keydown={async () => await clipboardMail()}
-        on:keyup={async () => await clipboardMail()}
-        on:keypress={async () => await clipboardMail()}
-        on:click={async () => await clipboardMail()}
+        on:keydown={async () => await copyToClipboard(mail)}
+        on:keyup={async () => await copyToClipboard(mail)}
+        on:keypress={async () => await copyToClipboard(mail)}
+        on:click={async () => await copyToClipboard(mail)}
       >
         {mail}
       </p>
@@ -98,8 +93,8 @@
 
     &__top {
       img {
-        width: 55px;
-        height: 55px;
+        @include box(55px, 55px);
+        max-width: 55px;
         object-fit: cover;
         border-radius: 50%;
       }

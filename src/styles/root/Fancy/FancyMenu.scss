@@ -60,12 +60,12 @@
 
   &__content {
     gap: 5px;
-    right: 0;
     z-index: 3;
     padding: 8px;
     list-style: none;
-    border-radius: 10px;
+    user-select: none;
     position: absolute;
+    border-radius: 10px;
     @include make-flex();
     top: calc(100% + 8px);
     @include box(auto, auto);
@@ -78,12 +78,24 @@
     --__height: 7px;
 
     &[data-align="right"] {
+      right: 0;
       &::after {
         right: var(--__right);
       }
 
       &::before {
         right: calc(var(--__right) + 0.5px);
+      }
+    }
+
+    &[data-align="left"] {
+      left: 0;
+      &::after {
+        left: var(--__right);
+      }
+
+      &::before {
+        left: calc(var(--__right) + 0.5px);
       }
     }
 

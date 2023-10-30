@@ -1,0 +1,156 @@
+[
+  {
+    "name": "Parking 1",
+    "lat": "28.524594587184747",
+    "lng": "77.57424234998685",
+    "time": {
+      "from": "",
+      "to": ""
+    },
+    "mail": "",
+    "phone": ""
+  },
+  {
+    "name": "Parking 2",
+    "lat": "28.527301354032247",
+    "lng": "77.5778278741055",
+    "time": {
+      "from": "",
+      "to": ""
+    },
+    "mail": "",
+    "phone": ""
+  },
+  {
+    "name": "Inner gate",
+    "lat": "28.52557469189724",
+    "lng": "77.57167205184763",
+    "time": {
+      "from": "",
+      "to": ""
+    },
+    "mail": "",
+    "phone": ""
+  },
+  {
+    "name": "Mini Mart",
+    "lat": "28.5249342",
+    "lng": "77.5714668",
+    "time": {
+      "from": "",
+      "to": ""
+    },
+    "mail": "",
+    "phone": ""
+  },
+  {
+    "name": "Cycle Repair",
+    "lat": "28.5274325",
+    "lng": "77.5728886",
+    "time": {
+      "from": "",
+      "to": ""
+    },
+    "mail": "",
+    "phone": ""
+  },
+  {
+    "name": "Happy Green",
+    "lat": "28.528499732186184",
+    "lng": "77.57745138205067",
+    "time": {
+      "from": "",
+      "to": ""
+    },
+    "mail": "",
+    "phone": ""
+  },
+  {
+    "name": "Adidas",
+    "lat": "28.5274375",
+    "lng": "77.5726823",
+    "time": {
+      "from": "",
+      "to": ""
+    },
+    "mail": "",
+    "phone": ""
+  },
+  {
+    "name": "Supermarket",
+    "lat": "28.5274311",
+    "lng": "77.5728078",
+    "time": {
+      "from": "",
+      "to": ""
+    },
+    "mail": "",
+    "phone": ""
+  },
+  {
+    "name": "HDFC Bank",
+    "lat": "28.5247548",
+    "lng": "77.5715031",
+    "time": {
+      "from": "",
+      "to": ""
+    },
+    "mail": "",
+    "phone": ""
+  },
+  {
+    "name": "Blue Circle",
+    "lat": "28.5265408",
+    "lng": "77.5722039",
+    "time": {
+      "from": "",
+      "to": ""
+    },
+    "mail": "",
+    "phone": ""
+  },
+  {
+    "name": "Unisex Salon",
+    "lat": "28.5247548",
+    "lng": "77.57146",
+    "time": {
+      "from": "",
+      "to": ""
+    },
+    "mail": "",
+    "phone": ""
+  },
+  {
+    "name": "India Post",
+    "lat": "28.532908123793092",
+    "lng": "77.57603655290646",
+    "time": {
+      "from": "",
+      "to": ""
+    },
+    "mail": "",
+    "phone": ""
+  },
+  {
+    "name": "Medical Store",
+    "lat": "28.5276063",
+    "lng": "77.5726312",
+    "time": {
+      "from": "",
+      "to": ""
+    },
+    "mail": "",
+    "phone": ""
+  },
+  {
+    "name": "Books and Stationary",
+    "lat": "28.5276063",
+    "lng": "77.5726312",
+    "time": {
+      "from": "",
+      "to": ""
+    },
+    "mail": "",
+    "phone": ""
+  }
+]

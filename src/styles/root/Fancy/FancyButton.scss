@@ -14,7 +14,7 @@
   cursor: pointer;
   padding: 8px 10px;
   @include make-flex($dir: row);
-  transition: all 0.1s ease-in-out;
+  // transition: all 0.1s ease-in-out;
 
   &:hover:not(:disabled) {
     color: var(--subElevatedBG);

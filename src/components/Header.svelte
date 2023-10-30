@@ -1,10 +1,10 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import { onMount } from "svelte";
-  import { afterNavigate } from "$app/navigation";
   import { theme } from "$lib/ThemeStore";
   import { query } from "$lib/ParamStore";
+  import { afterNavigate } from "$app/navigation";
   import { clickOutside } from "$lib/ClickOutside";
+  import { fade } from "svelte/transition";
 
   const ROUTES = [
     {
@@ -12,6 +12,7 @@
       path: "prof",
       icon: 59389,
       title: "Where's My Prof?",
+      showSearch: true,
       isAvailable: true,
     },
     {
@@ -19,6 +20,15 @@
       path: "lab",
       icon: 59962,
       title: "Where's My Lab?",
+      showSearch: true,
+      isAvailable: true,
+    },
+    {
+      name: "Amenities",
+      path: "amenity",
+      icon: 59601,
+      title: "Where's My Amenity?",
+      showSearch: false,
       isAvailable: true,
     },
     {
@@ -26,6 +36,7 @@
       path: "course",
       icon: 62779,
       title: "Where's My Course?",
+      showSearch: false,
       isAvailable: false,
     },
   ] as const;
@@ -39,6 +50,7 @@
 
   afterNavigate(() => {
     isDetailsOpen = false;
+    query.set("");
   });
 </script>
 
@@ -50,36 +62,43 @@
   <div class="Header__left">
     <p class="Header__left--title">rslookup</p>
   </div>
-  <div class="Header__search" data-icon={String.fromCharCode(59574)}>
-    <input
-      type="text"
-      bind:this={searchInput}
-      placeholder={`Search for a ${currentPage?.name.toLowerCase()}`}
-      bind:value={$query}
-      on:input={(e) => {
-        if (!(e.target instanceof HTMLInputElement)) {
-          return;
-        }
+  {#if currentPage?.showSearch}
+    <div
+      transition:fade
+      class="Header__search"
+      data-icon={String.fromCharCode(59574)}
+    >
+      <input
+        type="text"
+        bind:this={searchInput}
+        placeholder={`Search for a ${currentPage?.name.toLowerCase()}`}
+        bind:value={$query}
+        on:input={(e) => {
+          if (!(e.target instanceof HTMLInputElement)) {
+            return;
+          }
 
-        if (e.target.value === "") {
-          query.set("");
-          return;
-        }
+          if (e.target.value === "") {
+            query.set("");
+            return;
+          }
 
-        query.set(e.target.value);
-      }}
-    />
-    {#if $query !== ""}
-      <button
-        data-icon={String.fromCharCode(58829)}
-        on:click={() => {
-          query.set("");
-          searchInput.focus();
+          query.set(e.target.value);
         }}
       />
-    {/if}
-  </div>
-  <hr />
+      {#if $query !== ""}
+        <button
+          data-icon={String.fromCharCode(58829)}
+          on:click={() => {
+            query.set("");
+            searchInput.focus();
+          }}
+        />
+      {/if}
+    </div>
+    <hr />
+  {/if}
+
   <details
     use:clickOutside
     bind:open={isDetailsOpen}
@@ -129,8 +148,9 @@
   .Header {
     --__BG: var(--elevatedBG);
 
-    display: grid;
-    grid-template-columns: 1fr auto auto auto auto;
+    // display: grid;
+    // grid-template-columns: 1fr auto auto auto auto;
+    @include make-flex($dir: row);
     align-items: center;
 
     top: 0;
@@ -142,7 +162,8 @@
     padding: 16px 20px;
     background: var(--__BG);
     @include box(100%, 64px);
-    box-shadow: var(--headerBorder);
+    // box-shadow: var(--headerBorder);
+    border-bottom: 1px solid var(--border);
 
     & > hr {
       background: var(--border);
@@ -156,6 +177,7 @@
       overflow: hidden;
       font-weight: 400;
       @include box(auto);
+      flex-grow: 1;
       white-space: nowrap;
       text-overflow: ellipsis;
       @include make-flex($dir: row, $just: flex-start);
@@ -171,6 +193,7 @@
     &__search {
       @include box();
       position: relative;
+      max-width: 260px;
       &::before {
         top: 50%;
         left: 7px;

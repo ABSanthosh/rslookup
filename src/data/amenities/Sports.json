@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Basketball Court-1",
+    "lat": "28.5249742",
+    "lng": "77.5718354"
+  },
+  {
+    "name": "Basketball Court-2",
+    "lat": "28.524264",
+    "lng": "77.5714902"
+  },
+  {
+    "name": "Football Field",
+    "lat": "28.5233855",
+    "lng": "77.5713738"
+  },
+  {
+    "name": "Tennis Court",
+    "lat": "28.5237367",
+    "lng": "77.5692795"
+  },
+  {
+    "name": "Volleyball Court",
+    "lat": "28.5244348",
+    "lng": "77.5706511"
+  },
+  {
+    "name": "Cricket Ground",
+    "lat": "28.526007",
+    "lng": "77.5709629"
+  },
+  {
+    "name": "Squash Court",
+    "lat": "28.5255896",
+    "lng": "77.5759983"
+  },
+  {
+    "name": "Table Tennis Court",
+    "lat": "28.5255896",
+    "lng": "77.5759983"
+  },
+  {
+    "name": "Horseback Riding",
+    "lat": "28.518782",
+    "lng": "77.57357"
+  },
+  {
+    "name": "Golf Course",
+    "lat": "28.5282225",
+    "lng": "77.572396"
+  },
+  {
+    "name": "Badminton Court (Indoor)",
+    "lat": "28.5255896",
+    "lng": "77.5759983"
+  },
+  {
+    "name": "Indoor Sports Complex (ISC)",
+    "lat": "28.5212659",
+    "lng": "77.5709869"
+  },
+  {
+    "name": "Badminton Court (Outdoor)",
+    "lat": "28.5249742",
+    "lng": "77.5718354"
+  }
+]

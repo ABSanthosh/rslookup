@@ -51,11 +51,13 @@ body,
 }
 
 .Content {
-  @include box();
-  @include make-flex($just: flex-start);
-  padding: 64px 20px 20px 20px;
-  max-width: $maxWidth;
-  gap: 15px;
+  &--maxWidth {
+    @include box();
+    @include make-flex($just: flex-start);
+    padding: 64px 20px 20px 20px;
+    max-width: $maxWidth;
+    gap: 15px;
+  }
 }
 
 // global needs
@@ -81,6 +83,20 @@ body,
   }
   &--around {
     @include make-flex($dir: row, $just: space-around);
+  }
+
+  &--a-start {
+    @include make-flex($dir: row, $align: flex-start);
+  }
+
+  &--a-end {
+    @include make-flex($dir: row, $align: flex-end);
+  }
+  &--j-start {
+    @include make-flex($dir: row, $just: flex-start);
+  }
+  &--j-end {
+    @include make-flex($dir: row, $just: flex-end);
   }
 }
 
