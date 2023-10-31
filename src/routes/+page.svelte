@@ -52,14 +52,6 @@
     <hr />
   </div>
   <div class="Category__content">
-    <!-- <div class="Category__content--item">
-      <h2>Where's My Prof?</h2>
-      <p>
-        Locate your professors on campus hassle-free. Say goodbye to wandering
-        through hallways or frantically searching for room numbers.
-      </p>
-      <a href="/prof">Explore!</a>
-    </div> -->
     {#each CategoryItems as item}
       {#if !item.disabled}
         <div
@@ -89,7 +81,6 @@
 
 <style lang="scss">
   .Hero {
-    //   @include make-flex($just: space-between);
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     @include box();
@@ -151,12 +142,10 @@
     }
 
     &__content {
-      @include box($height: auto);
-      // display: grid;
-      // grid-template-columns: 1fr 1fr;
-      @include make-flex();
-      margin-top: 20px;
       gap: 20px;
+      margin-top: 20px;
+      @include make-flex();
+      @include box($height: auto);
 
       &--item {
         gap: 20px;
@@ -170,12 +159,12 @@
         background-repeat: no-repeat;
 
         h2 {
-          color: white;
-          font-weight: 900;
-          font-size: 32px;
-          @include box($height: auto);
-          display: grid;
           gap: 10px;
+          display: grid;
+          color: white;
+          font-size: 32px;
+          font-weight: 900;
+          @include box($height: auto);
           grid-template-columns: 1fr 23px;
         }
         p {
