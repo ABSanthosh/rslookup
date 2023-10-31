@@ -29,7 +29,7 @@
   const contentLayout: {
     [key: string]: string;
   } = {
-    "/": "Content--Home",
+    "/": "Content--maxWidth",
     "/prof": "Content--maxWidth",
     "/lab": "Content--maxWidth",
     "/amenity": "Content--maxWidth",

@@ -13,6 +13,7 @@
   --activeNav: rgba(177, 186, 196, 0.12);
   --background: #010409;
   --foreground: #e6edf3;
+  --invertedForeground: #e6edf3;
 
   --disabledColor: #a3a3a3;
   --buttonHoverBorder: #8b949e;
@@ -32,6 +33,7 @@
 
   --LabHover: #292929;
   --LabSeparator: #3e3e3e;
+  --footerBG: #1a1a1b;
 
   /* Chip Colors */
   --bluePrimary: #6b91fb;

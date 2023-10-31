@@ -45,6 +45,8 @@
     (route) => route.path === $page.url.pathname.slice(1)
   );
 
+  $: isHome = $page.url.pathname === "/";
+
   let isDetailsOpen = false;
   let searchInput: HTMLInputElement;
 
@@ -63,7 +65,7 @@
     <a
       class="Header__left--title"
       href="/"
-      data-icon={String.fromCharCode(58848)}
+      data-icon={isHome ? "" : String.fromCharCode(58848)}
     >
       rslookup
     </a>
@@ -105,40 +107,42 @@
     <hr />
   {/if}
 
-  <details
-    use:clickOutside
-    bind:open={isDetailsOpen}
-    class="FancyMenu Header__tabs"
-    on:outclick={() => (isDetailsOpen = false)}
-  >
-    <summary>
-      <p>
-        {currentPage?.name}
-      </p>
-      <span data-icon={String.fromCharCode(currentPage?.icon || 0)} />
-    </summary>
-    <ul class="FancyMenu__content" data-align="right">
-      {#each ROUTES as { name, path, isAvailable }, i}
-        {#if isAvailable}
-          <a
-            href={path}
-            on:click={() => (currentPage = ROUTES[i])}
-            data-icon={String.fromCharCode(ROUTES[i].icon)}
-            class:active={$page.url.pathname === `/${path}`}
-          >
-            {name}
-          </a>
-        {:else}
-          <div data-icon={String.fromCharCode(ROUTES[i].icon)}>
-            <p>
+  {#if !isHome}
+    <details
+      use:clickOutside
+      bind:open={isDetailsOpen}
+      class="FancyMenu Header__tabs"
+      on:outclick={() => (isDetailsOpen = false)}
+    >
+      <summary>
+        <p>
+          {currentPage?.name}
+        </p>
+        <span data-icon={String.fromCharCode(currentPage?.icon || 0)} />
+      </summary>
+      <ul class="FancyMenu__content" data-align="right">
+        {#each ROUTES as { name, path, isAvailable }, i}
+          {#if isAvailable}
+            <a
+              href={path}
+              on:click={() => (currentPage = ROUTES[i])}
+              data-icon={String.fromCharCode(ROUTES[i].icon)}
+              class:active={$page.url.pathname === `/${path}`}
+            >
               {name}
-            </p>
-            <span> (coming soon) </span>
-          </div>
-        {/if}
-      {/each}
-    </ul>
-  </details>
+            </a>
+          {:else}
+            <div data-icon={String.fromCharCode(ROUTES[i].icon)}>
+              <p>
+                {name}
+              </p>
+              <span> (coming soon) </span>
+            </div>
+          {/if}
+        {/each}
+      </ul>
+    </details>
+  {/if}
   <div class="Header__right">
     <button
       class="FancyButton"
@@ -154,21 +158,18 @@
   .Header {
     --__BG: var(--elevatedBG);
 
-    // display: grid;
-    // grid-template-columns: 1fr auto auto auto auto;
-    @include make-flex($dir: row);
     align-items: center;
+    @include make-flex($dir: row);
 
     top: 0;
-    right: 0;
     left: 0;
+    right: 0;
+    gap: 10px;
     z-index: 5;
     position: fixed;
-    gap: 10px;
     padding: 16px 20px;
     background: var(--__BG);
     @include box(100%, 64px);
-    // box-shadow: var(--headerBorder);
     border-bottom: 1px solid var(--border);
 
     & > hr {
@@ -189,21 +190,23 @@
       white-space: nowrap;
       text-overflow: ellipsis;
       @include make-flex($dir: row, $just: flex-start);
+      margin-bottom: -1px;
       &--title {
         font-size: 30px;
         font-weight: 500;
         user-select: none;
         line-height: 100%;
         position: relative;
-        margin-bottom: -4px;
+        margin-bottom: 5px;
+
         text-decoration: none;
         color: var(--foreground);
-        font-family: "Nohemi", sans-serif;
+        font-family: "Fraunces", serif;
         &::before {
           left: 0;
-          top: 50%;
           opacity: 0;
           position: absolute;
+          top: calc(50% + 3px);
           transform: translate(0px, -50%);
           transition: opacity 0.3s, transform 0.3s ease;
         }

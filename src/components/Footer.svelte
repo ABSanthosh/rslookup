@@ -1,4 +1,13 @@
-<footer class="FooterWrapper">
+<script lang="ts">
+  import { page } from "$app/stores";
+
+  $: isHome = $page.url.pathname === "/";
+</script>
+
+<footer class="FooterWrapper {isHome ? 'FooterWrapper--home' : ''}">
+  <!-- {#if isHome}
+    <h1>rslookup</h1>
+  {/if} -->
   <div class="FooterWrapper__container">
     <div class="FooterWrapper__left">
       <span>
@@ -46,6 +55,48 @@
       height: auto;
     }
 
+    &--home {
+      @include box(100%, 60px);
+      // @include box(100%, 430px);
+      // background-color: var(--footerBG);
+
+      // @include respondAt(900px) {
+      //   height: 300px;
+      // }
+      // @include respondAt(700px) {
+      //   height: 250px;
+      // }
+      @include respondAt(650px) {
+        height: auto;
+      }
+    }
+
+    // & > h1 {
+    //   font-weight: 500;
+    //   user-select: none;
+    //   line-height: 100%;
+    //   position: relative;
+    //   margin: auto;
+
+    //   text-decoration: none;
+    //   color: var(--foreground);
+    //   font-family: "Fraunces", serif;
+    //   max-width: $maxWidth;
+    //   padding: $extraPadding;
+
+    //   font-size: 10em;
+    //   transition: font-size 0.3s ease;
+    //   @include respondAt(900px) {
+    //     font-size: 8em;
+    //   }
+    //   @include respondAt(700px) {
+    //     font-size: 6em;
+    //   }
+    //   @include respondAt(510px) {
+    //     font-size: 4em;
+    //   }
+    // }
+
     &__left {
       & > span {
         gap: 3px;
@@ -60,6 +111,7 @@
     }
 
     &__right {
+      color: var(--foreground);
       &--title {
         @include make-flex($dir: row);
         gap: 3px;
@@ -68,7 +120,7 @@
 
     &__container {
       gap: 20px;
-      @include box();
+      @include box($height: auto);
       max-width: $maxWidth;
       padding: $extraPadding;
       @include make-flex($dir: row, $just: space-between);
