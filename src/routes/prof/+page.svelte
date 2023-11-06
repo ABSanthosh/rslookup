@@ -45,7 +45,10 @@
         searchResult = filteredProf.slice(0, pageSize);
         return;
       }
-      searchResult = profSearch.search(q).map((item) => item.item);
+      searchResult = profSearch
+        .search(q)
+        .map((item) => item.item)
+        .slice(0, 10);
       window.scrollTo({
         top: 0,
         behavior: "smooth",

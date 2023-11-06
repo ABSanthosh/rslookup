@@ -6,7 +6,7 @@
         "Locate your professors on campus hassle-free. Say goodbye to wandering through hallways or frantically searching for room numbers.",
       href: "/prof",
       disabled: false,
-      background: "url('/assets/images/NoiseGradient1.png')",
+      background: "linear-gradient(-45deg, #89f7fe 0%, #66a6ff 100%)",
     },
     {
       name: "Where's My Lab?",
@@ -14,7 +14,7 @@
         "Finding your designated lab spaces with ease. No more wandering around campus, feeling lost and bewildered.",
       href: "/lab",
       disabled: false,
-      background: "url('/assets/images/NoiseGradient2.jpg')",
+      background: "linear-gradient(-45deg, #FFC796 0%, #FF6B95 100%)",
     },
     {
       name: "Where's My Amenity?",
@@ -22,7 +22,7 @@
         "Find every amenity on campus, from Academic Blocks to Cafeterias, all in one place.",
       href: "/amenity",
       disabled: false,
-      background: "url('/assets/images/NoiseGradient3.png')",
+      background: "linear-gradient(-45deg, #2575fc 0%, #6a11cb 100%)",
     },
     {
       name: "Where's My Course?(Coming Soon)",
@@ -30,7 +30,7 @@
         "Its exam season and you are back to messaging your seniors for past papers? Not anymore.",
       href: "/course",
       disabled: true,
-      background: "url('/assets/images/NoiseGradient4.jpg')",
+      background: "linear-gradient(-45deg, #e5b2ca 0%, #7028e4 100%)",
     },
   ];
 </script>
@@ -53,10 +53,11 @@
   </div>
   <div class="Category__content">
     {#each CategoryItems as item}
-      {#if !item.disabled}
+      {#if item.disabled}
         <div
+          data-active={item.disabled}
           class="Category__content--item"
-          style="background-image: {item.background};"
+          style="--background-image: {item.background};"
         >
           <h2>{item.name}</h2>
           <p>
@@ -66,8 +67,9 @@
       {:else}
         <a
           class="Category__content--item"
-          style="background-image: {item.background};"
           href={item.href}
+          data-active={item.disabled}
+          style="--background-image: {item.background};"
         >
           <h2>{item.name}</h2>
           <p>
@@ -133,61 +135,82 @@
       @include make-flex($dir: row);
 
       & > hr {
-        background: var(--LabSeparator);
-        @include box(auto, 1px);
         flex-grow: 1;
-
         border: none;
+        @include box(auto, 1px);
+        background: var(--LabSeparator);
       }
     }
 
     &__content {
-      gap: 20px;
+      gap: 30px;
+      display: grid;
       margin-top: 20px;
-      @include make-flex();
+      margin-bottom: 50px;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
       @include box($height: auto);
+      @include respondAt(905px) {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
 
       &--item {
+        &[data-active="true"] {
+          cursor: not-allowed;
+        }
         gap: 20px;
-        min-height: 180px;
         @include box();
         padding: 30px;
-        border-radius: 30px;
+        min-height: 240px;
+        position: relative;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        background: var(--background);
+        border: 1px solid var(--border);
         @include make-flex($just: flex-start, $align: flex-start);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
 
         h2 {
           gap: 10px;
           display: grid;
-          color: white;
+          color: var(--foreground);
           font-size: 32px;
           font-weight: 900;
           @include box($height: auto);
           grid-template-columns: 1fr 23px;
+
+          @include respondAt(450px) {
+            font-size: 28px;
+          }
         }
         p {
-          color: white;
+          color: var(--foreground);
           font-weight: 500;
           font-size: 20px;
           line-height: 28px;
+          @include respondAt(450px) {
+            font-size: 18px;
+          }
         }
-        text-decoration: none;
         &:hover {
+          box-shadow: var(--toastShadow);
+          background: var(--background-image);
+          p {
+            color: white;
+          }
           h2 {
+            color: white;
             &::after {
               transform: scale(1.4);
               background-color: aliceblue;
             }
             &::before {
               transform: scale(1.4);
-              filter: invert(1);
             }
           }
         }
-        h2 {
+        &[data-active="false"]h2 {
           position: relative;
+
           &::after,
           &::before {
             content: " ";
@@ -199,6 +222,8 @@
           }
 
           &::before {
+            filter: invert(1);
+
             right: 0;
             z-index: 1;
             position: absolute;
