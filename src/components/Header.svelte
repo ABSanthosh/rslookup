@@ -57,7 +57,9 @@
 </script>
 
 <svelte:head>
-  <title>rslookup | {currentPage?.name}</title>
+  <title
+    >rslookup {currentPage !== undefined ? `| ${currentPage?.name}` : ""}</title
+  >
 </svelte:head>
 
 <header class="Header">
