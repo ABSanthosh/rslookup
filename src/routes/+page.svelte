@@ -153,19 +153,24 @@
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       }
 
+      @include respondAt(345px) {
+        grid-template-columns: 1fr;
+      }
+
       &--item {
         &[data-active="true"] {
           cursor: not-allowed;
         }
         gap: 20px;
-        @include box();
+        z-index: 1;
         padding: 30px;
+        @include box();
         min-height: 240px;
         position: relative;
         border-radius: 10px;
         text-decoration: none;
-        transition: all 0.3s ease;
-        background: var(--background);
+        // transition: all 0.3s ease;
+        background-color: var(--background);
         border: 1px solid var(--border);
         @include make-flex($just: flex-start, $align: flex-start);
 
@@ -191,9 +196,25 @@
             font-size: 18px;
           }
         }
+
+        &::before {
+          top: 0;
+          left: 0;
+          opacity: 0;
+          content: "";
+          z-index: -1;
+          @include box();
+          position: absolute;
+          border-radius: 9px;
+          transition: opacity 0.3s ease-out;
+        }
         &:hover {
           box-shadow: var(--toastShadow);
-          background: var(--background-image);
+
+          &::before {
+            opacity: 1;
+            background: var(--background-image);
+          }
           p {
             color: white;
           }
