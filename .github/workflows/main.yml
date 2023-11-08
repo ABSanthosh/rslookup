@@ -1,9 +1,17 @@
 name: Build Repo Structure
 
 on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: "Log level"
+        required: true
+        default: "warning"
+      tags:
+        description: "Test scenario tags"
   push:
     paths:
-      - '/'
+      - "/"
     branches:
       - rs-data
 
@@ -16,7 +24,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           path: rs-data
-          
+
       - name: Generate Structure
         run: |
           output_file="./structure.json"
@@ -26,7 +34,7 @@ jobs:
           echo -n "\"type\": \"folder\"," >> "$output_file"
           echo -n "\"path\": \"/\"," >> "$output_file"
           echo -n "\"children\": [" >> "$output_file"
-          
+
           first=true
           while IFS= read -r -d $'\0' entry; do
               if [ "$first" = false ]; then
@@ -34,10 +42,10 @@ jobs:
               else
                   first=false
               fi
-          
+
               echo -n "{" >> "$output_file"
               echo -n "\"name\": \"$(basename "$entry")\"," >> "$output_file"
-          
+
               if [ -d "$entry" ]; then
                   echo -n "\"type\": \"folder\"," >> "$output_file"
                   echo -n "\"path\": \"$entry\"," >> "$output_file"
@@ -45,13 +53,13 @@ jobs:
                   echo -n "\"type\": \"file\"," >> "$output_file"
                   echo -n "\"path\": \"$entry\"" >> "$output_file"
               fi
-          
+
               echo -n "}" >> "$output_file"
           done < <(find . -maxdepth 1 -mindepth 1 -print0)
-          
+
           echo -n "]" >> "$output_file"
           echo -n "}" >> "$output_file"
-    
+
       - name: Commit changes
         run: |
           git config --global user.email "a.b.santhosh02@gmail.com"
