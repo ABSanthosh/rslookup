@@ -1,19 +1,13 @@
 name: Build Repo Structure
-run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Create file
+      - name: Create data file
         run: |
-          printf "Hello\nWorld\n" > hw.txt
-      - name: Show file content
-        run: |
-          pwd
-          ls -la
-          cat hw.txt
+          tree -J > hw.txt
       - name: Commit report
         run: |
             git config --global user.name 'ABSanthosh'
