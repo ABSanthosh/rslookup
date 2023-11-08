@@ -18,5 +18,6 @@ jobs:
         run: |
             git config --global user.name 'ABSanthosh'
             git config --global user.email 'ABSanthosh@users.noreply.github.com'
+            git add .
             git commit -am "Test commit"
             git push
