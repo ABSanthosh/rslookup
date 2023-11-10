@@ -6,14 +6,12 @@
 
   $: folders = data.pwd as IResItem | null;
 
-  const isPdf = (filename: string) => {
-    return (
-      filename
-        .substring(filename.lastIndexOf(".") + 1, filename.length)
-        .toLowerCase() === "pdf"
+  const isViewerFriendly = (filename: string) => {
+    const extensions = ["pdf", "doc", "docx", "ppt", "pptx", "xls", "xlsx"];
+    return extensions.includes(
+      filename.substring(filename.lastIndexOf(".") + 1, filename.length)
     );
   };
-
 </script>
 
 <div class="Course__header w-100">
@@ -59,7 +57,7 @@
               {item.name}
             </span>
             <span class="Row--center h-100 gap-10">
-              {#if isPdf(item.name)}
+              {#if isViewerFriendly(item.name)}
                 <a
                   class="FancyButton"
                   target="_blank"
