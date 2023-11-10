@@ -5,6 +5,15 @@
   export let data;
 
   $: folders = data.pwd as IResItem | null;
+
+  const isPdf = (filename: string) => {
+    return (
+      filename
+        .substring(filename.lastIndexOf(".") + 1, filename.length)
+        .toLowerCase() === "pdf"
+    );
+  };
+
 </script>
 
 <div class="Course__header w-100">
@@ -32,9 +41,9 @@
       {#each folders.contents as item (item.name)}
         {#if item.type === "directory"}
           <li class="Course__table--item">
+            <!-- data-sveltekit-replacestate -->
             <a
               href={`/course${data.basePath}/${item.name}`}
-              data-sveltekit-replacestate
               data-icon-after={String.fromCharCode(58828)}
             >
               <span class="Row--start gap-10">
@@ -49,14 +58,26 @@
               <TypeIcon type={item.type} />
               {item.name}
             </span>
-            <a
-              class="FancyButton"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://raw.githubusercontent.com/ABSanthosh/rslookup/rs-data{data.basePath}/{item.name}"
-            >
-              Download
-            </a>
+            <span class="Row--center h-100 gap-10">
+              {#if isPdf(item.name)}
+                <a
+                  class="FancyButton"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/ABSanthosh/rslookup/rs-data{data.basePath}/{item.name}"
+                >
+                  Preview (β)
+                </a>
+              {/if}
+              <a
+                class="FancyButton"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://raw.githubusercontent.com/ABSanthosh/rslookup/rs-data{data.basePath}/{item.name}"
+              >
+                Download
+              </a>
+            </span>
           </li>
         {/if}
       {/each}

@@ -27,6 +27,7 @@ export async function load({ url }: { url: URL }): Promise<{
 
   let folderStructure: IResItem = (await resources.json())[0];
   folderStructure.name = "course";
+  folderStructure.contents = folderStructure.contents.filter((item) => item.name !== "resources.json")
 
   let keys = decodeURIComponent(url.pathname)
     .split("/")
