@@ -28,12 +28,7 @@
 
   const contentLayout: {
     [key: string]: string;
-  } = {
-    "/": "Content--maxWidth",
-    "/prof": "Content--maxWidth",
-    "/lab": "Content--maxWidth",
-    "/amenity": "Content--maxWidth",
-  };
+  } = {};
 </script>
 
 <svelte:head>
@@ -52,7 +47,7 @@
 <Header />
 {#key data.pathname}
   <main
-    class={contentLayout[data.pathname]}
+    class={contentLayout[data.pathname] ?? "Content--maxWidth"}
     in:fly={transitionIn}
     out:fly={transitionOut}
   >

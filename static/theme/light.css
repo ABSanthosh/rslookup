@@ -34,7 +34,11 @@
   --LabHover: #f3f3f3;
   --LabSeparator: #dedede;
   --footerBG: #24292e;
-  
+
+  --tableHeaderFG: #656d76;
+  --tableHeaderBG: #f6f8fa;
+
+  --folderIconColor: #54aeff;
 
   /* Chip Colors */
   --bluePrimary: #6b91fb;
