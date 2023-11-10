@@ -25,7 +25,7 @@
       background: "linear-gradient(-45deg, #2575fc 0%, #6a11cb 100%)",
     },
     {
-      name: "Where's My Course?(Coming Soon)",
+      name: "Where's My Course?",
       description:
         "Its exam season and you are back to messaging your seniors for past papers? Not anymore.",
       href: "/course",
