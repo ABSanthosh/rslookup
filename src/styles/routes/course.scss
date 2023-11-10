@@ -97,7 +97,9 @@
       gap: 15px;
       @include make-flex($dir: row, $just: space-between);
       padding: 5.5px 5.5px 5.5px 16px;
-      & > a {
+      a {
+        overflow: hidden;
+        text-align: center;
         width: auto;
         flex-shrink: 0;
       }
