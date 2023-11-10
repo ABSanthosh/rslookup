@@ -37,12 +37,15 @@
       icon: 62779,
       title: "Where's My Course?",
       showSearch: false,
-      isAvailable: false,
+      isAvailable: true,
     },
   ] as const;
 
+  // currentPage use the root of the url to determine the current page
+  // this is because the url can be /course/... or /course
+  // so we need to remove the trailing slash
   $: currentPage = ROUTES.find(
-    (route) => route.path === $page.url.pathname.slice(1)
+    (route) => route.path === $page.url.pathname.slice(1).split("/")[0]
   );
 
   $: isHome = $page.url.pathname === "/";
@@ -57,9 +60,9 @@
 </script>
 
 <svelte:head>
-  <title
-    >rslookup {currentPage !== undefined ? `| ${currentPage?.name}` : ""}</title
-  >
+  <title>
+    rslookup {currentPage !== undefined ? `| ${currentPage?.name}` : ""}
+  </title>
 </svelte:head>
 
 <header class="Header">
@@ -126,7 +129,7 @@
         {#each ROUTES as { name, path, isAvailable }, i}
           {#if isAvailable}
             <a
-              href={path}
+              href="/{path}"
               on:click={() => (currentPage = ROUTES[i])}
               data-icon={String.fromCharCode(ROUTES[i].icon)}
               class:active={$page.url.pathname === `/${path}`}

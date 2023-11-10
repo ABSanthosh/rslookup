@@ -29,7 +29,7 @@
       description:
         "Its exam season and you are back to messaging your seniors for past papers? Not anymore.",
       href: "/course",
-      disabled: true,
+      disabled: false,
       background: "linear-gradient(-45deg, #e5b2ca 0%, #7028e4 100%)",
     },
   ];

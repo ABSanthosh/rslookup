@@ -1,0 +1,106 @@
+.Course {
+  &__header {
+    @include make-flex($align: flex-start);
+    margin: 40px 0 10px 0;
+    gap: 10px;
+
+    & > h2 {
+      font-size: 40px;
+      font-weight: 900;
+      color: var(--foreground);
+    }
+
+    & > p {
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--subText);
+    }
+  }
+
+  &__bottom {
+    @include make-flex($dir: row, $align: flex-start);
+    gap: 24px;
+
+    @include respondAt(630px) {
+      flex-direction: column;
+    }
+  }
+
+  &__table {
+    --__borderRadius: 6px;
+    --__headerBorderRadius: var(--__borderRadius) var(--__borderRadius) 0 0;
+
+    overflow: unset;
+    list-style: none;
+    @include box($height: auto);
+    border: 1px solid var(--border);
+    border-radius: var(--__borderRadius);
+
+    &--header {
+      font-size: 12px;
+      padding: 0 16px;
+      @include box($height: 40px);
+      color: var(--tableHeaderFG);
+      @include make-flex($align: flex-start);
+      background-color: var(--tableHeaderBG);
+      border-radius: var(--__headerBorderRadius);
+    }
+
+    &--item {
+      font-size: 14px;
+      font-weight: 400;
+      text-align: left;
+      @include box($height: 40px);
+      border-top: 1px solid var(--border);
+
+      & > a,
+      & > span {
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      a {
+        gap: 15px;
+        @include box();
+        padding: 0 16px;
+        position: relative;
+        text-decoration: none;
+        color: var(--foreground);
+        @include make-flex($dir: row, $just: space-between);
+        &::after {
+          right: 0;
+          opacity: 0;
+          position: absolute;
+          top: 50%;
+          transform: translate(-20px, -50%);
+          transition: opacity 0.3s, transform 0.3s ease;
+        }
+
+        &:hover {
+          &::after {
+            opacity: 1;
+            transform: translate(-15px, -50%);
+          }
+        }
+      }
+
+      &:last-child {
+        border-radius: 0 0 var(--__borderRadius) var(--__borderRadius);
+      }
+
+      &:hover {
+        background-color: var(--elevatedBG);
+      }
+    }
+
+    &--file {
+      gap: 15px;
+      @include make-flex($dir: row, $just: space-between);
+      padding: 5.5px 5.5px 5.5px 16px;
+      & > a {
+        width: auto;
+        flex-shrink: 0;
+      }
+    }
+  }
+}
