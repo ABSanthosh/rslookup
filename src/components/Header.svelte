@@ -202,6 +202,7 @@
         user-select: none;
         line-height: 100%;
         position: relative;
+        font-style: italic;
         margin-bottom: 5px;
 
         text-decoration: none;

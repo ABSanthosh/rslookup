@@ -43,7 +43,12 @@
       lab locations, campus amenities, and past course materials.
     </p>
   </div>
-  <div class="Hero__right" />
+  <div class="Hero__right">
+    <img
+      src="https://media.giphy.com/media/I3rbjijgss7D2Oab2A/giphy.gif"
+      alt="hero neko gif"
+    />
+  </div>
 </section>
 <section class="Category">
   <div class="Category__top">
@@ -99,9 +104,10 @@
       gap: 15px;
 
       & > h1 {
+        font-size: 8em;
+        font-style: italic;
         color: var(--foreground);
         font-family: "Fraunces", serif;
-        font-size: 8em;
         transition: font-size 0.3s ease;
         @include respondAt(900px) {
           font-size: 8em;
@@ -121,6 +127,30 @@
         font-family: "Montserrat", sans-serif;
         @include respondAt(580px) {
           text-align: unset;
+        }
+      }
+    }
+    @include respondAt(870px) {
+      @include make-flex();
+      gap: 30px;
+      min-height: 65vh;
+    }
+    &__right {
+      @include make-flex($align: flex-end);
+      @include box();
+
+      & > img {
+        margin-top: 100px;
+        @include box(auto, 55%);
+
+        @include respondAt(905px) {
+          height: 50%;
+        }
+
+        @include respondAt(870px) {
+          margin-top: 0px;
+          @include box(80vw, auto);
+          max-width: 200px;
         }
       }
     }
