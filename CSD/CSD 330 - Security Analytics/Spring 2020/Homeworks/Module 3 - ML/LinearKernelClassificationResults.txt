@@ -1,0 +1,131 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -E 1.0 -C 250007" -calibrator "weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4"
+Relation:     phishing
+Instances:    11055
+Attributes:   31
+              having_IP_Address
+              URL_Length
+              Shortining_Service
+              having_At_Symbol
+              double_slash_redirecting
+              Prefix_Suffix
+              having_Sub_Domain
+              SSLfinal_State
+              Domain_registeration_length
+              Favicon
+              port
+              HTTPS_token
+              Request_URL
+              URL_of_Anchor
+              Links_in_tags
+              SFH
+              Submitting_to_email
+              Abnormal_URL
+              Redirect
+              on_mouseover
+              RightClick
+              popUpWidnow
+              Iframe
+              age_of_domain
+              DNSRecord
+              web_traffic
+              Page_Rank
+              Google_Index
+              Links_pointing_to_page
+              Statistical_report
+              Result
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: -1, 1
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         1.0171 * (normalized) having_IP_Address=1
+ +       0.104  * (normalized) URL_Length=1
+ +      -0.1083 * (normalized) URL_Length=0
+ +       0.0043 * (normalized) URL_Length=-1
+ +       0.9642 * (normalized) Shortining_Service=-1
+ +      -0.3383 * (normalized) having_At_Symbol=-1
+ +      -0.0861 * (normalized) double_slash_redirecting=1
+ +       2.8103 * (normalized) Prefix_Suffix=1
+ +      -0.3012 * (normalized) having_Sub_Domain=-1
+ +      -0.2096 * (normalized) having_Sub_Domain=0
+ +       0.5108 * (normalized) having_Sub_Domain=1
+ +      -0.3387 * (normalized) SSLfinal_State=-1
+ +       1.7732 * (normalized) SSLfinal_State=1
+ +      -1.4345 * (normalized) SSLfinal_State=0
+ +      -0.2545 * (normalized) Domain_registeration_length=1
+ +       0.0019 * (normalized) Favicon=-1
+ +      -0.4459 * (normalized) port=-1
+ +      -0.557  * (normalized) HTTPS_token=1
+ +      -0.3005 * (normalized) Request_URL=-1
+ +      -1.9801 * (normalized) URL_of_Anchor=-1
+ +       0.4882 * (normalized) URL_of_Anchor=0
+ +       1.4918 * (normalized) URL_of_Anchor=1
+ +       0.1477 * (normalized) Links_in_tags=1
+ +      -0.5259 * (normalized) Links_in_tags=-1
+ +       0.3782 * (normalized) Links_in_tags=0
+ +      -0.4834 * (normalized) SFH=-1
+ +       0.1862 * (normalized) SFH=1
+ +       0.2972 * (normalized) SFH=0
+ +      -0.3205 * (normalized) Submitting_to_email=1
+ +      -0.2824 * (normalized) Abnormal_URL=1
+ +      -0.8414 * (normalized) Redirect=1
+ +      -0.2421 * (normalized) on_mouseover=-1
+ +       0.1403 * (normalized) RightClick=-1
+ +       0.3223 * (normalized) popUpWidnow=-1
+ +       0.1504 * (normalized) Iframe=-1
+ +       0.0725 * (normalized) age_of_domain=1
+ +       0.9232 * (normalized) DNSRecord=1
+ +       0.127  * (normalized) web_traffic=-1
+ +      -0.6017 * (normalized) web_traffic=0
+ +       0.4747 * (normalized) web_traffic=1
+ +       0.1649 * (normalized) Page_Rank=1
+ +      -0.8231 * (normalized) Google_Index=-1
+ +       0.5623 * (normalized) Links_pointing_to_page=1
+ +      -0.3823 * (normalized) Links_pointing_to_page=0
+ +      -0.1801 * (normalized) Links_pointing_to_page=-1
+ +       0.1828 * (normalized) Statistical_report=1
+ -       0.8852
+
+Number of kernel evaluations: 63622517 (46.764% cached)
+
+
+
+Time taken to build model: 15.45 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       10370               93.8037 %
+Incorrectly Classified Instances       685                6.1963 %
+Kappa statistic                          0.8742
+Mean absolute error                      0.062 
+Root mean squared error                  0.2489
+Relative absolute error                 12.5554 %
+Root relative squared error             50.1107 %
+Total Number of Instances            11055     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.920    0.047    0.939      0.920    0.929      0.874    0.936     0.899     -1
+                 0.953    0.080    0.937      0.953    0.945      0.874    0.936     0.919     1
+Weighted Avg.    0.938    0.066    0.938      0.938    0.938      0.874    0.936     0.910     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 4504  394 |    a = -1
+  291 5866 |    b = 1
+

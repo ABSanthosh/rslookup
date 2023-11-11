@@ -1,0 +1,5 @@
+/*Sum of n terms of a Fibonacci series.*/
+
+fibo_n(1,0).
+fibo_n(2,1).
+fibo_n(N,X) :- fibo_n(N-1,X1),fibo_n(N-2,X2), X is (X1+X2).

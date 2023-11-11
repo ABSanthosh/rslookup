@@ -1,0 +1,2 @@
+len([],0).
+len([X|Tail],Count):-len([Tail,Prev]),Count is Prev+1.

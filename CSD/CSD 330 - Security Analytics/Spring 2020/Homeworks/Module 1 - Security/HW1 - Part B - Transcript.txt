@@ -1,0 +1,944 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200203171716
+Username: KABIRKANHASPECT\kabir
+RunAs User: KABIRKANHASPECT\kabir
+Configuration Name: 
+Machine: KABIRKANHASPECT (Microsoft Windows NT 10.0.18362.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 24416
+PSVersion: 5.1.18362.145
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.145
+BuildVersion: 10.0.18362.145
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\kabir\OneDrive\Documents\PowerShell_transcript.KABIRKANHASPECT.Nqc7jg7w.20200203171716.txt
+PS C:\Users\kabir> resolve-dnsname uh.edu -type DNSKEY
+
+Name                        Type TTL   Section    PrimaryServer               NameAdministrator           SerialNumber
+----                        ---- ---   -------    -------------               -----------------           ------------
+uh.edu                      SOA  899   Authority  uhgrid2.e.uh.edu            reza.uh.edu                 2010015245
+
+
+PS C:\Users\kabir> resolve-dnsname uh.edu -type DS
+
+Name                        Type TTL   Section    PrimaryServer               NameAdministrator           SerialNumber
+----                        ---- ---   -------    -------------               -----------------           ------------
+edu                         SOA  900   Authority  a.edu-servers.net           nstld.verisign-grs.com      1580730517
+
+
+PS C:\Users\kabir> resolve-dnsname uh.edu -type DNSKEY -DnssecOk
+
+Name                        Type TTL   Section    PrimaryServer               NameAdministrator           SerialNumber
+----                        ---- ---   -------    -------------               -----------------           ------------
+uh.edu                      SOA  867   Authority  uhgrid2.e.uh.edu            reza.uh.edu                 2010015245
+
+
+PS C:\Users\kabir> nmap uh.edu
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-02-03 17:19 India Standard Time
+Nmap scan report for uh.edu (129.7.97.54)
+Host is up (0.27s latency).
+rDNS record for 129.7.97.54: www.uh.edu
+Not shown: 987 closed ports
+PORT     STATE    SERVICE
+53/tcp   filtered domain
+80/tcp   open     http
+135/tcp  filtered msrpc
+139/tcp  filtered netbios-ssn
+443/tcp  open     https
+445/tcp  filtered microsoft-ds
+1433/tcp filtered ms-sql-s
+1434/tcp filtered ms-sql-m
+2000/tcp open     cisco-sccp
+3389/tcp filtered ms-wbt-server
+5060/tcp open     sip
+8008/tcp open     http
+8010/tcp open     xmpp
+
+Nmap done: 1 IP address (1 host up) scanned in 17.29 seconds
+PS C:\Users\kabir> nmap -sV uh.edu
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-02-03 17:20 India Standard Time
+Stats: 0:01:17 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 66.67% done; ETC: 17:22 (0:00:28 remaining)
+Stats: 0:02:19 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 83.33% done; ETC: 17:23 (0:00:24 remaining)
+Stats: 0:02:39 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 100.00% done; ETC: 17:23 (0:00:00 remaining)
+Stats: 0:03:16 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 91.67% done; ETC: 17:24 (0:00:01 remaining)
+Nmap scan report for uh.edu (129.7.97.54)
+Host is up (0.31s latency).
+Not shown: 987 closed ports
+PORT     STATE    SERVICE        VERSION
+53/tcp   filtered domain
+80/tcp   open     http
+135/tcp  filtered msrpc
+139/tcp  filtered netbios-ssn
+443/tcp  open     ssl/http       Apache httpd
+445/tcp  filtered microsoft-ds
+1433/tcp filtered ms-sql-s
+1434/tcp filtered ms-sql-m
+2000/tcp open     tcpwrapped
+3389/tcp filtered ms-wbt-server
+5060/tcp open     tcpwrapped
+8008/tcp open     http
+8010/tcp open     ssl/http-proxy FortiGate Web Filtering Service
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprint
+s at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port80-TCP:V=7.80%I=7%D=2/3%Time=5E380941%P=i686-pc-windows-windows%r(H
+SF:TTPOptions,F7,"HTTP/1\.0\x20307\x20Temporary\x20Redirect\r\nLocation:\x
+SF:20https://uh\.edu/\r\nContent-Type:\x20text/html\r\nCache-Control:\x20p
+SF:rivate\r\nConnection:\x20close\r\nDate:\x20Mon,\x2003\x20Feb\x202020\x2
+SF:011:51:29\x20GMT\r\n\r\n<head><body>\x20This\x20object\x20may\x20be\x20
+SF:found\x20<a\x20HREF=\"https://uh\.edu/\">here</a>\x20</body>")%r(RTSPRe
+SF:quest,70,"HTTP/1\.1\x20200\x20OK\r\nContent-Type:\x20text/html\r\nPragm
+SF:a:\x20no-cache\r\nRefresh:\x201;\x20URL=\r\nConnection:\x20Close\r\n\r\
+SF:n<HTML></HTML>")%r(FourOhFourRequest,137,"HTTP/1\.0\x20302\x20Object\x2
+SF:0Moved\r\nDate:\x20Mon,\x2003\x20Feb\x202020\x2011:51:34\x20GMT\r\nLoca
+SF:tion:\x20https://uh\.edu/nice%20ports%2C/Tri%6Eity\.txt%2ebak\r\nConten
+SF:t-Type:\x20text/html\r\nCache-Control:\x20private\r\nConnection:\x20clo
+SF:se\r\n\r\n<head><body>\x20This\x20object\x20may\x20be\x20found\x20<a\x2
+SF:0HREF=\"https://uh\.edu/nice%20ports%2C/Tri%6Eity\.txt%2ebak\">here</a>
+SF:\x20</body>")%r(Help,D0,"HTTP/1\.1\x20307\x20Temporary\x20Redirect\r\nL
+SF:ocation:\x20https://uh\.edu\r\nContent-Type:\x20text/html\r\nCache-Cont
+SF:rol:\x20private\r\nConnection:\x20close\r\n\r\n<head><body>\x20This\x20
+SF:object\x20may\x20be\x20found\x20<a\x20HREF=\"https://uh\.edu\">here</a>
+SF:\x20</body>")%r(TerminalServerCookie,D0,"HTTP/1\.1\x20307\x20Temporary\
+SF:x20Redirect\r\nLocation:\x20https://uh\.edu\r\nContent-Type:\x20text/ht
+SF:ml\r\nCache-Control:\x20private\r\nConnection:\x20close\r\n\r\n<head><b
+SF:ody>\x20This\x20object\x20may\x20be\x20found\x20<a\x20HREF=\"https://uh
+SF:\.edu\">here</a>\x20</body>")%r(Kerberos,D0,"HTTP/1\.1\x20307\x20Tempor
+SF:ary\x20Redirect\r\nLocation:\x20https://uh\.edu\r\nContent-Type:\x20tex
+SF:t/html\r\nCache-Control:\x20private\r\nConnection:\x20close\r\n\r\n<hea
+SF:d><body>\x20This\x20object\x20may\x20be\x20found\x20<a\x20HREF=\"https:
+SF://uh\.edu\">here</a>\x20</body>")%r(SMBProgNeg,D0,"HTTP/1\.1\x20307\x20
+SF:Temporary\x20Redirect\r\nLocation:\x20https://uh\.edu\r\nContent-Type:\
+SF:x20text/html\r\nCache-Control:\x20private\r\nConnection:\x20close\r\n\r
+SF:\n<head><body>\x20This\x20object\x20may\x20be\x20found\x20<a\x20HREF=\"
+SF:https://uh\.edu\">here</a>\x20</body>");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port8008-TCP:V=7.80%I=7%D=2/3%Time=5E38093B%P=i686-pc-windows-windows%r
+SF:(GetRequest,CC,"HTTP/1\.1\x20302\x20Found\r\nLocation:\x20https://:8010
+SF:/\r\nConnection:\x20close\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-XSS-Pr
+SF:otection:\x201;\x20mode=block\r\nX-Content-Type-Options:\x20nosniff\r\n
+SF:Content-Security-Policy:\x20frame-ancestors\r\n\r\n")%r(FourOhFourReque
+SF:st,EF,"HTTP/1\.1\x20302\x20Found\r\nLocation:\x20https://:8010/nice%20p
+SF:orts%2C/Tri%6Eity\.txt%2ebak\r\nConnection:\x20close\r\nX-Frame-Options
+SF::\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Content-T
+SF:ype-Options:\x20nosniff\r\nContent-Security-Policy:\x20frame-ancestors\
+SF:r\n\r\n")%r(GenericLines,CB,"HTTP/1\.1\x20302\x20Found\r\nLocation:\x20
+SF:https://:8010\r\nConnection:\x20close\r\nX-Frame-Options:\x20SAMEORIGIN
+SF:\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Content-Type-Options:\x2
+SF:0nosniff\r\nContent-Security-Policy:\x20frame-ancestors\r\n\r\n")%r(HTT
+SF:POptions,CB,"HTTP/1\.1\x20302\x20Found\r\nLocation:\x20https://:8010\r\
+SF:nConnection:\x20close\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-XSS-Protec
+SF:tion:\x201;\x20mode=block\r\nX-Content-Type-Options:\x20nosniff\r\nCont
+SF:ent-Security-Policy:\x20frame-ancestors\r\n\r\n")%r(RTSPRequest,CB,"HTT
+SF:P/1\.1\x20302\x20Found\r\nLocation:\x20https://:8010\r\nConnection:\x20
+SF:close\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20m
+SF:ode=block\r\nX-Content-Type-Options:\x20nosniff\r\nContent-Security-Pol
+SF:icy:\x20frame-ancestors\r\n\r\n")%r(SIPOptions,CB,"HTTP/1\.1\x20302\x20
+SF:Found\r\nLocation:\x20https://:8010\r\nConnection:\x20close\r\nX-Frame-
+SF:Options:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Co
+SF:ntent-Type-Options:\x20nosniff\r\nContent-Security-Policy:\x20frame-anc
+SF:estors\r\n\r\n");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 198.06 seconds
+PS C:\Users\kabir> Resolve-DnsName uh.edu
+
+Name                                           Type   TTL   Section    IPAddress
+----                                           ----   ---   -------    ---------
+uh.edu                                         A      10759 Answer     129.7.97.54
+
+
+PS C:\Users\kabir> nmap 129.7.97.48/29
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-02-03 17:32 India Standard Time
+Stats: 0:01:17 elapsed; 0 hosts completed (8 up), 8 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 56.88% done; ETC: 17:34 (0:00:58 remaining)
+Stats: 0:02:00 elapsed; 0 hosts completed (8 up), 8 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 85.92% done; ETC: 17:34 (0:00:20 remaining)
+Nmap scan report for ramp.research.uh.edu (129.7.97.48)
+Host is up (0.25s latency).
+Not shown: 987 closed ports
+PORT     STATE    SERVICE
+53/tcp   filtered domain
+80/tcp   open     http
+135/tcp  filtered msrpc
+139/tcp  filtered netbios-ssn
+443/tcp  open     https
+445/tcp  filtered microsoft-ds
+1433/tcp filtered ms-sql-s
+1434/tcp filtered ms-sql-m
+2000/tcp open     cisco-sccp
+3389/tcp filtered ms-wbt-server
+5060/tcp open     sip
+8008/tcp open     http
+8010/tcp open     xmpp
+
+Nmap scan report for mysitedev.uh.edu (129.7.97.49)
+Host is up (0.26s latency).
+Not shown: 987 closed ports
+PORT     STATE    SERVICE
+53/tcp   filtered domain
+80/tcp   open     http
+135/tcp  filtered msrpc
+139/tcp  filtered netbios-ssn
+443/tcp  open     https
+445/tcp  filtered microsoft-ds
+1433/tcp filtered ms-sql-s
+1434/tcp filtered ms-sql-m
+2000/tcp open     cisco-sccp
+3389/tcp filtered ms-wbt-server
+5060/tcp open     sip
+8008/tcp open     http
+8010/tcp open     xmpp
+
+Nmap scan report for sharedev.uh.edu (129.7.97.50)
+Host is up (0.26s latency).
+Not shown: 987 closed ports
+PORT     STATE    SERVICE
+53/tcp   filtered domain
+80/tcp   open     http
+135/tcp  filtered msrpc
+139/tcp  filtered netbios-ssn
+443/tcp  open     https
+445/tcp  filtered microsoft-ds
+1433/tcp filtered ms-sql-s
+1434/tcp filtered ms-sql-m
+2000/tcp open     cisco-sccp
+3389/tcp filtered ms-wbt-server
+5060/tcp open     sip
+8008/tcp open     http
+8010/tcp open     xmpp
+
+Nmap scan report for mysite.uh.edu (129.7.97.51)
+Host is up (0.25s latency).
+Not shown: 987 closed ports
+PORT     STATE    SERVICE
+53/tcp   filtered domain
+80/tcp   open     http
+135/tcp  filtered msrpc
+139/tcp  filtered netbios-ssn
+443/tcp  open     https
+445/tcp  filtered microsoft-ds
+1433/tcp filtered ms-sql-s
+1434/tcp filtered ms-sql-m
+2000/tcp open     cisco-sccp
+3389/tcp filtered ms-wbt-server
+5060/tcp open     sip
+8008/tcp open     http
+8010/tcp open     xmpp
+
+Nmap scan report for share.uh.edu (129.7.97.52)
+Host is up (0.25s latency).
+Not shown: 987 closed ports
+PORT     STATE    SERVICE
+53/tcp   filtered domain
+80/tcp   open     http
+135/tcp  filtered msrpc
+139/tcp  filtered netbios-ssn
+443/tcp  open     https
+445/tcp  filtered microsoft-ds
+1433/tcp filtered ms-sql-s
+1434/tcp filtered ms-sql-m
+2000/tcp open     cisco-sccp
+3389/tcp filtered ms-wbt-server
+5060/tcp open     sip
+8008/tcp open     http
+8010/tcp open     xmpp
+
+Nmap scan report for auth.my.uh.edu (129.7.97.53)
+Host is up (0.26s latency).
+Not shown: 986 closed ports
+PORT     STATE    SERVICE
+53/tcp   filtered domain
+80/tcp   open     http
+135/tcp  filtered msrpc
+139/tcp  filtered netbios-ssn
+443/tcp  open     https
+445/tcp  filtered microsoft-ds
+1433/tcp filtered ms-sql-s
+1434/tcp filtered ms-sql-m
+2000/tcp open     cisco-sccp
+3389/tcp filtered ms-wbt-server
+5060/tcp open     sip
+8008/tcp open     http
+8010/tcp open     xmpp
+8443/tcp filtered https-alt
+
+Nmap scan report for campusnet.uh.edu (129.7.97.54)
+Host is up (0.25s latency).
+Not shown: 987 closed ports
+PORT     STATE    SERVICE
+53/tcp   filtered domain
+80/tcp   open     http
+135/tcp  filtered msrpc
+139/tcp  filtered netbios-ssn
+443/tcp  open     https
+445/tcp  filtered microsoft-ds
+1433/tcp filtered ms-sql-s
+1434/tcp filtered ms-sql-m
+2000/tcp open     cisco-sccp
+3389/tcp filtered ms-wbt-server
+5060/tcp open     sip
+8008/tcp open     http
+8010/tcp open     xmpp
+
+Nmap scan report for ssl.uh.edu (129.7.97.55)
+Host is up (0.25s latency).
+Not shown: 987 closed ports
+PORT     STATE    SERVICE
+53/tcp   filtered domain
+80/tcp   open     http
+135/tcp  filtered msrpc
+139/tcp  filtered netbios-ssn
+443/tcp  open     https
+445/tcp  filtered microsoft-ds
+1433/tcp filtered ms-sql-s
+1434/tcp filtered ms-sql-m
+2000/tcp open     cisco-sccp
+3389/tcp filtered ms-wbt-server
+5060/tcp open     sip
+8008/tcp open     http
+8010/tcp open     xmpp
+
+Nmap done: 8 IP addresses (8 hosts up) scanned in 144.04 seconds
+PS C:\Users\kabir> nmap 129.7.97.48/29 -sn
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-02-03 17:36 India Standard Time
+Nmap scan report for ramp.research.uh.edu (129.7.97.48)
+Host is up (0.0040s latency).
+Nmap scan report for mysitedev.uh.edu (129.7.97.49)
+Host is up (0.0020s latency).
+Nmap scan report for sharedev.uh.edu (129.7.97.50)
+Host is up (0.0030s latency).
+Nmap scan report for mysite.uh.edu (129.7.97.51)
+Host is up (0.0030s latency).
+Nmap scan report for share.uh.edu (129.7.97.52)
+Host is up (0.0020s latency).
+Nmap scan report for auth.my.uh.edu (129.7.97.53)
+Host is up (0.0030s latency).
+Nmap scan report for m.uh.edu (129.7.97.54)
+Host is up (0.0020s latency).
+Nmap scan report for ssl.uh.edu (129.7.97.55)
+Host is up (0.0040s latency).
+Nmap done: 8 IP addresses (8 hosts up) scanned in 0.78 seconds
+PS C:\Users\kabir> Get-NetIPAddress -InterfaceAlias Wi-Fi
+
+
+IPAddress         : fe80::2424:8298:8387:3789%5
+InterfaceIndex    : 5
+InterfaceAlias    : Wi-Fi
+AddressFamily     : IPv6
+Type              : Unicast
+PrefixLength      : 64
+PrefixOrigin      : WellKnown
+SuffixOrigin      : Link
+AddressState      : Preferred
+ValidLifetime     : Infinite ([TimeSpan]::MaxValue)
+PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+IPAddress         : 10.6.3.8
+InterfaceIndex    : 5
+InterfaceAlias    : Wi-Fi
+AddressFamily     : IPv4
+Type              : Unicast
+PrefixLength      : 20
+PrefixOrigin      : Dhcp
+SuffixOrigin      : Dhcp
+AddressState      : Preferred
+ValidLifetime     : 1.11:37:42
+PreferredLifetime : 1.11:37:42
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+
+
+PS C:\Users\kabir> cd .\Downloads\john-1.9.0-jumbo-1-win64\
+PS C:\Users\kabir\Downloads\john-1.9.0-jumbo-1-win64> ls
+
+
+    Directory: C:\Users\kabir\Downloads\john-1.9.0-jumbo-1-win64
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----       16-05-2019     21:43                john-1.9.0-jumbo-1-win64
+
+
+PS C:\Users\kabir\Downloads\john-1.9.0-jumbo-1-win64> cd .\john-1.9.0-jumbo-1-win64\
+PS C:\Users\kabir\Downloads\john-1.9.0-jumbo-1-win64\john-1.9.0-jumbo-1-win64> ls
+
+
+    Directory: C:\Users\kabir\Downloads\john-1.9.0-jumbo-1-win64\john-1.9.0-jumbo-1-win64
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----       16-05-2019     21:43                doc
+d-----       14-05-2019     23:14                etc
+d-----       16-05-2019     21:45                run
+-a----       16-05-2019     21:42           7453 README.md
+
+
+PS C:\Users\kabir\Downloads\john-1.9.0-jumbo-1-win64\john-1.9.0-jumbo-1-win64> cd .\run\
+PS C:\Users\kabir\Downloads\john-1.9.0-jumbo-1-win64\john-1.9.0-jumbo-1-win64\run> .\john.bash_completion
+>> TerminatingError(): "Program 'john.bash_completion' failed to run: No application is associated with the specified file for this operationAt line:1 char:1
++ .\john.bash_completion
++ ~~~~~~~~~~~~~~~~~~~~~~."
+Program 'john.bash_completion' failed to run: No application is associated with the specified file for this operationAt 
+line:1 char:1
++ .\john.bash_completion
++ ~~~~~~~~~~~~~~~~~~~~~~.
+At line:1 char:1
++ .\john.bash_completion
++ ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (:) [], ApplicationFailedException
+    + FullyQualifiedErrorId : NativeCommandFailed
+Program 'john.bash_completion' failed to run: No application is associated with the specified file for this
+operationAt line:1 char:1
++ .\john.bash_completion
++ ~~~~~~~~~~~~~~~~~~~~~~.
+At line:1 char:1
++ .\john.bash_completion
++ ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (:) [], ApplicationFailedException
+    + FullyQualifiedErrorId : NativeCommandFailed
+
+PS C:\Users\kabir\Downloads\john-1.9.0-jumbo-1-win64\john-1.9.0-jumbo-1-win64\run> .\john.exe
+John the Ripper 1.9.0-jumbo-1 OMP [cygwin 64-bit x86_64 AVX2 AC]
+Copyright (c) 1996-2019 by Solar Designer and others
+Homepage: http://www.openwall.com/john/
+
+Usage: john [OPTIONS] [PASSWORD-FILES]
+--single[=SECTION[,..]]    "single crack" mode, using default or named rules
+--single=:rule[,..]        same, using "immediate" rule(s)
+--wordlist[=FILE] --stdin  wordlist mode, read words from FILE or stdin
+                  --pipe   like --stdin, but bulk reads, and allows rules
+--loopback[=FILE]          like --wordlist, but extract words from a .pot file
+--dupe-suppression         suppress all dupes in wordlist (and force preload)
+--prince[=FILE]            PRINCE mode, read words from FILE
+--encoding=NAME            input encoding (eg. UTF-8, ISO-8859-1). See also
+                           doc/ENCODINGS and --list=hidden-options.
+--rules[=SECTION[,..]]     enable word mangling rules (for wordlist or PRINCE
+                           modes), using default or named rules
+--rules=:rule[;..]]        same, using "immediate" rule(s)
+--rules-stack=SECTION[,..] stacked rules, applied after regular rules or to
+                           modes that otherwise don't support rules
+--rules-stack=:rule[;..]   same, using "immediate" rule(s)
+--incremental[=MODE]       "incremental" mode [using section MODE]
+--mask[=MASK]              mask mode using MASK (or default from john.conf)
+--markov[=OPTIONS]         "Markov" mode (see doc/MARKOV)
+--external=MODE            external mode or word filter
+--subsets[=CHARSET]        "subsets" mode (see doc/SUBSETS)
+--stdout[=LENGTH]          just output candidate passwords [cut at LENGTH]
+--restore[=NAME]           restore an interrupted session [called NAME]
+--session=NAME             give a new session the NAME
+--status[=NAME]            print status of a session [called NAME]
+--make-charset=FILE        make a charset file. It will be overwritten
+--show[=left]              show cracked passwords [if =left, then uncracked]
+--test[=TIME]              run tests and benchmarks for TIME seconds each
+--users=[-]LOGIN|UID[,..]  [do not] load this (these) user(s) only
+--groups=[-]GID[,..]       load users [not] of this (these) group(s) only
+--shells=[-]SHELL[,..]     load users with[out] this (these) shell(s) only
+--salts=[-]COUNT[:MAX]     load salts with[out] COUNT [to MAX] hashes
+--costs=[-]C[:M][,...]     load salts with[out] cost value Cn [to Mn]. For
+                           tunable cost parameters, see doc/OPTIONS
+--save-memory=LEVEL        enable memory saving, at LEVEL 1..3
+--node=MIN[-MAX]/TOTAL     this node's number range out of TOTAL count
+--fork=N                   fork N processes
+--pot=NAME                 pot file to use
+--list=WHAT                list capabilities, see --list=help or doc/OPTIONS
+--devices=N[,..]           set OpenCL device(s) (see --list=opencl-devices)
+--format=NAME              force hash of type NAME. The supported formats can
+                           be seen with --list=formats and --list=subformats
+PS C:\Users\kabir\Downloads\john-1.9.0-jumbo-1-win64\john-1.9.0-jumbo-1-win64\run> ./john.exe C:\Windows\System32\config
+Using default input encoding: UTF-8
+No password hashes loaded (see FAQ)
+PS C:\Users\kabir\Downloads\john-1.9.0-jumbo-1-win64\john-1.9.0-jumbo-1-win64\run> ls
+
+
+    Directory: C:\Users\kabir\Downloads\john-1.9.0-jumbo-1-win64\john-1.9.0-jumbo-1-win64\run
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----       16-05-2019     21:45                dns
+d-----       14-05-2019     23:14                kernels
+d-----       14-05-2019     22:37                lib
+d-----       16-05-2019     21:43                rules
+-a----       14-05-2019     22:37          11530 1password2john.py
+-a----       14-05-2019     22:37          83936 7z2john.pl
+-a----       14-05-2019     22:37           3897 adxcsouf2john.py
+-a----       14-05-2019     22:37           2403 aem2john.py
+-a----       14-05-2019     22:37            894 aix2john.pl
+-a----       14-05-2019     22:37           2085 aix2john.py
+-a----       14-05-2019     22:37        4086722 alnum.chr
+-a----       14-05-2019     22:37        4174257 alnumspace.chr
+-a----       14-05-2019     22:37        1950539 alpha.chr
+-a----       14-05-2019     22:37           1369 andotp2john.py
+-a----       14-05-2019     22:37           3456 androidbackup2john.py
+-a----       14-05-2019     22:37           7449 androidfde2john.py
+-a----       14-05-2019     22:37           1710 ansible2john.py
+-a----       14-05-2019     22:37            732 apex2john.py
+-a----       14-05-2019     22:37           2028 applenotes2john.py
+-a----       14-05-2019     22:37           1448 aruba2john.py
+-a----       14-05-2019     22:37        5720262 ascii.chr
+-a----       14-05-2019     22:37           6294 axcrypt2john.py
+-a----       14-05-2019     23:14           9216 base64conv.exe
+-a----       14-05-2019     22:37          10535 benchmark-unify
+-a----       14-05-2019     22:37          10174 bestcrypt2john.py
+-a----       14-05-2019     22:37          33770 bitcoin2john.py
+-a----       14-05-2019     23:14          46592 bitlocker2john.exe
+-a----       14-05-2019     22:37           2720 bitshares2john.py
+-a----       14-05-2019     22:37           4318 bitwarden2john.py
+-a----       14-05-2019     22:37           7755 bks2john.py
+-a----       14-05-2019     22:37           2686 blockchain2john.py
+-a----       14-05-2019     23:14          12288 calc_stat.exe
+-a----       14-05-2019     22:37          26741 ccache2john.py
+-a----       14-05-2019     22:37           6491 cisco2john.pl
+-a----       14-05-2019     22:37            898 codepage.pl
+-a----       14-05-2019     23:14          90112 cprepair.exe
+-a----       14-05-2019     22:37            881 cracf2john.py
+-a----       22-02-2017     11:52          65043 cygbz2-1.dll
+-a----       03-09-2017     10:48          39955 cygcrypt-0.dll
+-a----       04-04-2019     00:40         198163 cygcrypt-2.dll
+-a----       11-03-2019     22:29        2410515 cygcrypto-1.0.0.dll
+-a----       11-03-2019     10:22        2498067 cygcrypto-1.1.dll
+-a----       09-12-2018     05:31          71699 cyggcc_s-seh-1.dll
+-a----       21-01-2017     22:55         539667 cyggmp-10.dll
+-a----       09-12-2018     05:33         151571 cyggomp-1.dll
+-a----       01-01-2018     17:25         110099 cygOpenCL-1.dll
+-a----       11-03-2019     22:29         417811 cygssl-1.0.0.dll
+-a----       11-03-2019     10:22         507411 cygssl-1.1.dll
+-a----       06-04-2019     19:50        3492318 cygwin1.dll
+-a----       04-03-2017     02:15          85011 cygz.dll
+-a----       14-05-2019     22:37           2538 dashlane2john.py
+-a----       14-05-2019     22:37           3771 deepsound2john.py
+-a----       14-05-2019     22:37           4099 dictionary.rfc2865
+-a----       14-05-2019     22:37         465097 digits.chr
+-a----       14-05-2019     22:37           7365 diskcryptor2john.py
+-a----       14-05-2019     23:14          18944 dmg2john.exe
+-a----       14-05-2019     22:37           5250 dmg2john.py
+-a----       14-05-2019     22:37          26225 DPAPImk2john.py
+-a----       16-05-2019     21:43          56547 dumb16.conf
+-a----       16-05-2019     21:43          98484 dumb32.conf
+-a----       16-05-2019     21:43          61646 dynamic.conf
+-a----       16-05-2019     21:43           9019 dynamic_disabled.conf
+-a----       16-05-2019     21:43           9720 dynamic_flat_sse_formats.conf
+-a----       14-05-2019     22:37           2054 ecryptfs2john.py
+-a----       14-05-2019     22:37           5085 ejabberd2john.py
+-a----       14-05-2019     22:37           9574 electrum2john.py
+-a----       14-05-2019     22:37           2718 encfs2john.py
+-a----       14-05-2019     22:37           1093 enpass2john.py
+-a----       14-05-2019     22:37           3775 ethereum2john.py
+-a----       14-05-2019     22:37           1726 filezilla2john.py
+-a----       14-05-2019     22:37          98999 fuzz.dic
+-a----       14-05-2019     22:37           3324 fuzz_option.pl
+-a----       14-05-2019     22:37           3440 geli2john.py
+-a----       14-05-2019     22:37           1868 genincstats.rb
+-a----       14-05-2019     23:14          51200 genmkvpwd.exe
+-a----       14-05-2019     23:14           9216 gpg2john.exe
+-a----       14-05-2019     23:14          18432 hccap2john.exe
+-a----       14-05-2019     22:37           7096 hccapx2john.py
+-a----       14-05-2019     22:37            428 hextoraw.pl
+-a----       14-05-2019     22:37           1060 htdigest2john.py
+-a----       16-05-2019     21:43           7880 hybrid.conf
+-a----       14-05-2019     22:37           1304 ibmiscanner2john.py
+-a----       14-05-2019     22:37            711 ikescan2john.py
+-a----       14-05-2019     22:37           1626 ios7tojohn.pl
+-a----       14-05-2019     22:37           5715 itunes_backup2john.pl
+-a----       14-05-2019     22:37           4811 iwork2john.py
+-a----       14-05-2019     22:55        7000064 john-avx-non-omp.exe
+-a----       14-05-2019     22:59        7046656 john-avx.exe
+-a----       14-05-2019     23:10        7059456 john-avx2-non-omp.exe
+-a----       14-05-2019     22:41        7023616 john-sse2-non-omp.exe
+-a----       14-05-2019     22:45        7068672 john-sse2.exe
+-a----       14-05-2019     22:48        7031808 john-sse41-non-omp.exe
+-a----       14-05-2019     22:51        7077888 john-sse41.exe
+-a----       14-05-2019     23:03        7040512 john-xop-non-omp.exe
+-a----       14-05-2019     23:06        7086080 john-xop.exe
+-a----       14-05-2019     22:37          32333 john.bash_completion
+-a----       16-05-2019     21:43         115655 john.conf
+-a----       14-05-2019     23:14        7104000 john.exe
+-a----       14-05-2019     22:37           4492 john.zsh_completion
+-a----       14-05-2019     22:37           3620 jtrconf.pm
+-a----       14-05-2019     22:37          35525 jtr_rulez.pm
+-a----       14-05-2019     22:37           1110 kdcdump2john.py
+-a----       14-05-2019     23:14          46592 keepass2john.exe
+-a----       14-05-2019     22:37           2956 keychain2john.py
+-a----       14-05-2019     22:37           3408 keyring2john.py
+-a----       14-05-2019     22:37           5417 keystore2john.py
+-a----       14-05-2019     22:37           2325 kirbi2john.py
+-a----       14-05-2019     22:37            837 known_hosts2john.py
+-a----       16-05-2019     21:43          23157 korelogic.conf
+-a----       14-05-2019     22:37           9682 krb2john.py
+-a----       14-05-2019     22:37           4432 kwallet2john.py
+-a----       14-05-2019     22:37        1466791 lanman.chr
+-a----       14-05-2019     22:37           4299 lastpass2john.py
+-a----       14-05-2019     22:37        7449800 latin1.chr
+-a----       14-05-2019     22:37            472 ldif2john.pl
+-a----       14-05-2019     22:37           2628 leet.pl
+-a----       14-05-2019     22:37           5645 libreoffice2john.py
+-a----       14-05-2019     22:37            878 lion2john-alt.pl
+-a----       14-05-2019     22:37            994 lion2john.pl
+-a----       14-05-2019     22:37        1184244 lm_ascii.chr
+-a----       14-05-2019     22:37           1527 lotus2john.py
+-a----       14-05-2019     22:37        1161863 lower.chr
+-a----       14-05-2019     22:37        2464980 lowernum.chr
+-a----       14-05-2019     22:37        1209621 lowerspace.chr
+-a----       14-05-2019     22:37           4426 luks2john.py
+-a----       14-05-2019     22:37           2603 mac2john-alt.py
+-a----       14-05-2019     22:37          24612 mac2john.py
+-a----       14-05-2019     22:37           1432 mailer
+-a----       14-05-2019     22:37            842 makechr
+-a----       14-05-2019     22:37           2297 mcafee_epo2john.py
+-a----       14-05-2019     23:14          11264 mkvcalcproba.exe
+-a----       14-05-2019     22:37           1373 monero2john.py
+-a----       14-05-2019     22:37           2495 money2john.py
+-a----       14-05-2019     22:37           1055 mongodb2john.js
+-a----       14-05-2019     22:37           2576 mozilla2john.py
+-a----       14-05-2019     22:37          56632 multibit2john.py
+-a----       14-05-2019     22:37            943 neo2john.py
+-a----       14-05-2019     22:37           9676 netntlm.pl
+-a----       14-05-2019     22:37           5190 netscreen.py
+-a----       14-05-2019     22:37          11395 network2john.lua
+-a----       14-05-2019     22:37         131690 office2john.py
+-a----       14-05-2019     22:37           3073 openbsd_softraid2john.py
+-a----       14-05-2019     22:37           3792 openssl2john.py
+-a----       14-05-2019     22:37        4051581 oui.txt
+-a----       14-05-2019     22:37           2846 padlock2john.py
+-a----       16-05-2019     21:43          29884 password.lst
+-a----       14-05-2019     22:37         200895 pass_gen.pl
+-a----       14-05-2019     22:37          56777 pcap2john.py
+-a----       14-05-2019     22:37          59776 pdf2john.pl
+-a----       14-05-2019     22:37           4735 pem2john.py
+-a----       14-05-2019     22:37           3303 pfx2john.py
+-a----       14-05-2019     22:37           9861 pgpdisk2john.py
+-a----       14-05-2019     22:37           2751 pgpsda2john.py
+-a----       14-05-2019     22:37           9381 pgpwde2john.py
+-a----       14-05-2019     22:37           4172 potcheck.pl
+-a----       14-05-2019     22:37           1463 prosody2john.py
+-a----       14-05-2019     22:37           2481 pse2john.py
+-a----       14-05-2019     22:37           1337 ps_token2john.py
+-a----       14-05-2019     23:14          18432 putty2john.exe
+-a----       14-05-2019     22:37           1684 pwsafe2john.py
+-a----       14-05-2019     23:14          13312 racf2john.exe
+-a----       14-05-2019     22:37           7165 radius2john.pl
+-a----       14-05-2019     22:37           2274 radius2john.py
+-a----       14-05-2019     23:14           9216 rar2john.exe
+-a----       14-05-2019     23:14          13312 raw2dyna.exe
+-a----       16-05-2019     21:43           6087 regex_alphabets.conf
+-a----       14-05-2019     22:37           8146 relbench
+-a----       16-05-2019     21:43          56156 repeats16.conf
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\Users\kabir\Downloads\john-1.9.0-jumbo-1-win64\john-1.9.0-jumbo-1-win64\run> .\john.exe C:\WINDOWS\System32\config\SAM
+fopen: C:\WINDOWS\System32\config\SAM: Device or resource busy
+PS C:\Users\kabir\Downloads\john-1.9.0-jumbo-1-win64\john-1.9.0-jumbo-1-win64\run> $x = $(pwd)
+PS C:\Users\kabir\Downloads\john-1.9.0-jumbo-1-win64\john-1.9.0-jumbo-1-win64\run> echo $x
+
+Path
+----
+C:\Users\kabir\Downloads\john-1.9.0-jumbo-1-win64\john-1.9.0-jumbo-1-win64\run
+
+
+PS C:\Users\kabir\Downloads\john-1.9.0-jumbo-1-win64\john-1.9.0-jumbo-1-win64\run> cd ~
+PS C:\Users\kabir> code .
+
+PS C:\Users\kabir> ls
+
+
+    Directory: C:\Users\kabir
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----       09-03-2019     11:19                .anaconda
+d-----       02-04-2019     21:50                .android
+d-----       02-04-2019     14:55                .AndroidStudio3.3
+d-----       20-01-2019     16:33                .CLion2018.3
+d-----       10-03-2019     18:16                .conda
+d-----       06-02-2019     11:14                .config
+d-----       28-01-2019     15:02                .docker
+d-----       16-11-2019     16:02                .github
+d-----       02-04-2019     20:17                .gradle
+d-----       20-01-2019     13:25                .IntelliJIdea2018.3
+d-----       24-11-2019     20:22                .IntelliJIdea2019.2
+d-----       06-12-2019     13:40                .IntelliJIdea2019.3
+d-----       10-03-2019     17:23                .ipynb_checkpoints
+d-----       09-03-2019     11:22                .ipython
+d-----       10-03-2019     17:01                .keras
+d-----       06-02-2019     11:16                .m2
+d-----       10-03-2019     12:38                .matplotlib
+d-----       27-04-2019     23:22                .oracle_jre_usage
+d-----       08-02-2019     15:58                .PyCharm2018.3
+d-----       02-12-2019     14:22                .ssh
+d-----       27-04-2019     23:23                .VirtualBox
+d-----       18-11-2019     00:32                .vscode
+d-r---       15-12-2019     17:53                3D Objects
+d-----       10-03-2019     16:22                Anaconda3
+d-----       28-12-2019     18:53                CLionProjects
+d-r---       15-12-2019     17:53                Contacts
+d-r---       28-01-2020     13:10                Creative Cloud Files
+d-----       19-12-2019     12:09                Desktop
+d-----       17-12-2019     13:00                Documents
+d-r---       03-02-2020     15:15                Downloads
+d-r---       15-12-2019     17:53                Favorites
+d-----       12-01-2020     19:52                IdeaProjects
+d-r---       15-12-2019     17:53                Links
+d-----       18-11-2019     19:44                ML
+d-r---       15-12-2019     17:53                Music
+d-----       19-11-2019     01:26                my-reactapp
+dar--l       20-01-2020     19:13                OneDrive
+d-----       31-03-2019     23:09                public
+d-----       08-02-2019     16:01                PycharmProjects
+d-----       19-11-2019     02:46                ReactApps
+d-----       29-10-2018     13:35                Roaming
+d-r---       15-12-2019     17:53                Saved Games
+d-r---       15-12-2019     17:53                Searches
+d-r---       24-12-2019     20:03                Videos
+-a----       18-11-2019     20:03             63 .gitconfig
+-a----       17-11-2019     15:50             19 .node_repl_history
+-a----       03-02-2020     17:51           1292 etc-shadow.txt
+-a----       16-11-2019     16:02             58 README.md
+
+
+PS C:\Users\kabir> & "$x.Path/john.exe" ./etc-shadow
+& : The term 'C:\Users\kabir\Downloads\john-1.9.0-jumbo-1-win64\john-1.9.0-jumbo-1-win64\run.Path/john.exe' is not 
+recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a 
+path was included, verify that the path is correct and try again.
+At line:1 char:3
++ & "$x.Path/john.exe" ./etc-shadow
++   ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\kabir\...n.Path/john.exe:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+& : The term 'C:\Users\kabir\Downloads\john-1.9.0-jumbo-1-win64\john-1.9.0-jumbo-1-win64\run.Path/john.exe' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a
+path was included, verify that the path is correct and try again.
+At line:1 char:3
++ & "$x.Path/john.exe" ./etc-shadow
++   ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\kabir\...n.Path/john.exe:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\kabir> & "$x/john.exe" ./etc-shadow
+stat: ./etc-shadow: No such file or directory
+PS C:\Users\kabir> & "$x/john.exe" $(ls etc-shadow)
+ls : Cannot find path 'C:\Users\kabir\etc-shadow' because it does not exist.
+At line:1 char:19
++ & "$x/john.exe" $(ls etc-shadow)
++                   ~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\kabir\etc-shadow:String) [Get-ChildItem], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+ls : Cannot find path 'C:\Users\kabir\etc-shadow' because it does not exist.
+At line:1 char:19
++ & "$x/john.exe" $(ls etc-shadow)
++                   ~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\kabir\etc-shadow:String) [Get-ChildItem], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+
+John the Ripper 1.9.0-jumbo-1 OMP [cygwin 64-bit x86_64 AVX2 AC]
+Copyright (c) 1996-2019 by Solar Designer and others
+Homepage: http://www.openwall.com/john/
+
+Usage: john [OPTIONS] [PASSWORD-FILES]
+--single[=SECTION[,..]]    "single crack" mode, using default or named rules
+--single=:rule[,..]        same, using "immediate" rule(s)
+--wordlist[=FILE] --stdin  wordlist mode, read words from FILE or stdin
+                  --pipe   like --stdin, but bulk reads, and allows rules
+--loopback[=FILE]          like --wordlist, but extract words from a .pot file
+--dupe-suppression         suppress all dupes in wordlist (and force preload)
+--prince[=FILE]            PRINCE mode, read words from FILE
+--encoding=NAME            input encoding (eg. UTF-8, ISO-8859-1). See also
+                           doc/ENCODINGS and --list=hidden-options.
+--rules[=SECTION[,..]]     enable word mangling rules (for wordlist or PRINCE
+                           modes), using default or named rules
+--rules=:rule[;..]]        same, using "immediate" rule(s)
+--rules-stack=SECTION[,..] stacked rules, applied after regular rules or to
+                           modes that otherwise don't support rules
+--rules-stack=:rule[;..]   same, using "immediate" rule(s)
+--incremental[=MODE]       "incremental" mode [using section MODE]
+--mask[=MASK]              mask mode using MASK (or default from john.conf)
+--markov[=OPTIONS]         "Markov" mode (see doc/MARKOV)
+--external=MODE            external mode or word filter
+--subsets[=CHARSET]        "subsets" mode (see doc/SUBSETS)
+--stdout[=LENGTH]          just output candidate passwords [cut at LENGTH]
+--restore[=NAME]           restore an interrupted session [called NAME]
+--session=NAME             give a new session the NAME
+--status[=NAME]            print status of a session [called NAME]
+--make-charset=FILE        make a charset file. It will be overwritten
+--show[=left]              show cracked passwords [if =left, then uncracked]
+--test[=TIME]              run tests and benchmarks for TIME seconds each
+--users=[-]LOGIN|UID[,..]  [do not] load this (these) user(s) only
+--groups=[-]GID[,..]       load users [not] of this (these) group(s) only
+--shells=[-]SHELL[,..]     load users with[out] this (these) shell(s) only
+--salts=[-]COUNT[:MAX]     load salts with[out] COUNT [to MAX] hashes
+--costs=[-]C[:M][,...]     load salts with[out] cost value Cn [to Mn]. For
+                           tunable cost parameters, see doc/OPTIONS
+--save-memory=LEVEL        enable memory saving, at LEVEL 1..3
+--node=MIN[-MAX]/TOTAL     this node's number range out of TOTAL count
+--fork=N                   fork N processes
+--pot=NAME                 pot file to use
+--list=WHAT                list capabilities, see --list=help or doc/OPTIONS
+--devices=N[,..]           set OpenCL device(s) (see --list=opencl-devices)
+--format=NAME              force hash of type NAME. The supported formats can
+                           be seen with --list=formats and --list=subformats
+PS C:\Users\kabir> & "$x/john.exe" $(ls ./etc-shadow)
+ls : Cannot find path 'C:\Users\kabir\etc-shadow' because it does not exist.
+At line:1 char:19
++ & "$x/john.exe" $(ls ./etc-shadow)
++                   ~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\kabir\etc-shadow:String) [Get-ChildItem], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+ls : Cannot find path 'C:\Users\kabir\etc-shadow' because it does not exist.
+At line:1 char:19
++ & "$x/john.exe" $(ls ./etc-shadow)
++                   ~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\kabir\etc-shadow:String) [Get-ChildItem], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+
+John the Ripper 1.9.0-jumbo-1 OMP [cygwin 64-bit x86_64 AVX2 AC]
+Copyright (c) 1996-2019 by Solar Designer and others
+Homepage: http://www.openwall.com/john/
+
+Usage: john [OPTIONS] [PASSWORD-FILES]
+--single[=SECTION[,..]]    "single crack" mode, using default or named rules
+--single=:rule[,..]        same, using "immediate" rule(s)
+--wordlist[=FILE] --stdin  wordlist mode, read words from FILE or stdin
+                  --pipe   like --stdin, but bulk reads, and allows rules
+--loopback[=FILE]          like --wordlist, but extract words from a .pot file
+--dupe-suppression         suppress all dupes in wordlist (and force preload)
+--prince[=FILE]            PRINCE mode, read words from FILE
+--encoding=NAME            input encoding (eg. UTF-8, ISO-8859-1). See also
+                           doc/ENCODINGS and --list=hidden-options.
+--rules[=SECTION[,..]]     enable word mangling rules (for wordlist or PRINCE
+                           modes), using default or named rules
+--rules=:rule[;..]]        same, using "immediate" rule(s)
+--rules-stack=SECTION[,..] stacked rules, applied after regular rules or to
+                           modes that otherwise don't support rules
+--rules-stack=:rule[;..]   same, using "immediate" rule(s)
+--incremental[=MODE]       "incremental" mode [using section MODE]
+--mask[=MASK]              mask mode using MASK (or default from john.conf)
+--markov[=OPTIONS]         "Markov" mode (see doc/MARKOV)
+--external=MODE            external mode or word filter
+--subsets[=CHARSET]        "subsets" mode (see doc/SUBSETS)
+--stdout[=LENGTH]          just output candidate passwords [cut at LENGTH]
+--restore[=NAME]           restore an interrupted session [called NAME]
+--session=NAME             give a new session the NAME
+--status[=NAME]            print status of a session [called NAME]
+--make-charset=FILE        make a charset file. It will be overwritten
+--show[=left]              show cracked passwords [if =left, then uncracked]
+--test[=TIME]              run tests and benchmarks for TIME seconds each
+--users=[-]LOGIN|UID[,..]  [do not] load this (these) user(s) only
+--groups=[-]GID[,..]       load users [not] of this (these) group(s) only
+--shells=[-]SHELL[,..]     load users with[out] this (these) shell(s) only
+--salts=[-]COUNT[:MAX]     load salts with[out] COUNT [to MAX] hashes
+--costs=[-]C[:M][,...]     load salts with[out] cost value Cn [to Mn]. For
+                           tunable cost parameters, see doc/OPTIONS
+--save-memory=LEVEL        enable memory saving, at LEVEL 1..3
+--node=MIN[-MAX]/TOTAL     this node's number range out of TOTAL count
+--fork=N                   fork N processes
+--pot=NAME                 pot file to use
+--list=WHAT                list capabilities, see --list=help or doc/OPTIONS
+--devices=N[,..]           set OpenCL device(s) (see --list=opencl-devices)
+--format=NAME              force hash of type NAME. The supported formats can
+                           be seen with --list=formats and --list=subformats
+PS C:\Users\kabir> ls .\etc-shadow.txt
+
+
+    Directory: C:\Users\kabir
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----       03-02-2020     17:51           1292 etc-shadow.txt
+
+
+PS C:\Users\kabir> & "$x/john.exe" $(ls ./etc-shadow.txt)
+Warning: detected hash type "HMAC-SHA256", but the string is also recognized as "HMAC-SHA512"
+Use the "--format=HMAC-SHA512" option to force loading these as that type instead
+Warning: only loading hashes of type "HMAC-SHA256", but also saw type "md5crypt"
+Use the "--format=md5crypt" option to force loading hashes of that type instead
+Warning: only loading hashes of type "HMAC-SHA256", but also saw type "md5crypt-long"
+Use the "--format=md5crypt-long" option to force loading hashes of that type instead
+Warning: only loading hashes of type "HMAC-SHA256", but also saw type "md5crypt-opencl"
+Use the "--format=md5crypt-opencl" option to force loading hashes of that type instead
+Using default input encoding: UTF-8
+Loaded 1 password hash (HMAC-SHA256 [password is key, SHA256 256/256 AVX2 8x])
+Will run 8 OpenMP threads
+Proceeding with single, rules:Single
+Press 'q' or Ctrl-C to abort, almost any other key for status
+Almost done: Processing the remaining buffered candidate passwords, if any.
+Warning: Only 29 candidates buffered for the current salt, minimum 64 needed for performance.
+Proceeding with wordlist:/run/password.lst, rules:Wordlist
+Proceeding with incremental:ASCII
+0g 0:00:00:57  3/3 0g/s 5956Kp/s 5956Kc/s 5956KC/s crienta144..curanathai
+0g 0:00:01:12  3/3 0g/s 6554Kp/s 6554Kc/s 6554KC/s almotsk2..alos136a
+0g 0:00:03:44  3/3 0g/s 8764Kp/s 8764Kc/s 8764KC/s esroiia..esdhkdh
+0g 0:00:05:59  3/3 0g/s 8950Kp/s 8950Kc/s 8950KC/s culu20jm..culsmeio
+0g 0:00:21:54  3/3 0g/s 9799Kp/s 9799Kc/s 9799KC/s fj6hai4..fp22825
+0g 0:00:21:56  3/3 0g/s 9797Kp/s 9797Kc/s 9797KC/s hn1nm1c..hn1swg9
+0g 0:00:21:58  3/3 0g/s 9795Kp/s 9795Kc/s 9795KC/s el ovy9..el 13g,
+0g 0:00:22:01  3/3 0g/s 9798Kp/s 9798Kc/s 9798KC/s 41GSO41..41G0mru
+0g 0:00:22:02  3/3 0g/s 9803Kp/s 9803Kc/s 9803KC/s jcz5o2..jczxxs
+0g 0:00:22:04  3/3 0g/s 9801Kp/s 9801Kc/s 9801KC/s gu80z0..gu8ke.
+0g 0:00:22:07  3/3 0g/s 9804Kp/s 9804Kc/s 9804KC/s B4gifk..B4gcor
+0g 0:00:22:10  3/3 0g/s 9807Kp/s 9807Kc/s 9807KC/s chymycrun..chyeacl17
+0g 0:00:24:43  3/3 0g/s 9697Kp/s 9697Kc/s 9697KC/s wf52tro..wf55sfr
+0g 0:03:00:53  3/3 0g/s 3802Kp/s 3802Kc/s 3802KC/s cjpus454..cjput017
+0g 0:03:21:34  3/3 0g/s 3627Kp/s 3627Kc/s 3627KC/s je&bpk..je&geh
+0g 0:03:21:36  3/3 0g/s 3628Kp/s 3628Kc/s 3628KC/s tf-26A..tf-kji
+0g 0:03:21:40  3/3 0g/s 3629Kp/s 3629Kc/s 3629KC/s 6iGJMZ..6yPhly
+0g 0:03:21:42  3/3 0g/s 3630Kp/s 3630Kc/s 3630KC/s zs iq2..zs 50*
+0g 0:03:21:43  3/3 0g/s 3631Kp/s 3631Kc/s 3631KC/s B2zlha..B2zqdt
+0g 0:03:21:47  3/3 0g/s 3633Kp/s 3633Kc/s 3633KC/s sokawu21..sokyus82
+Session aborted
+PS C:\Users\kabir> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\Users\kabir> cd test
+PS C:\Users\kabir\test> bash
+kabir@KabirKanhaSpectreX360 MINGW64 ~/test (master)
+$ cat << EOF > message.txt
+> hello world
+> this is a message to be encrypted
+>
+> EOF
+
+kabir@KabirKanhaSpectreX360 MINGW64 ~/test (master)
+$ cat message.txt
+hello world
+this is a message to be encrypted
+
+
+kabir@KabirKanhaSpectreX360 MINGW64 ~/test (master)
+$ openssl genpkey -out key_rsa.pem -algorithm rsa
+.........................................................................................................+++++
+....................................................................................................................+++++
+
+kabir@KabirKanhaSpectreX360 MINGW64 ~/test (master)
+$ openssl rsa -in key_rsa.pem -pubout > key_rsa.pub.pem
+writing RSA key
+
+kabir@KabirKanhaSpectreX360 MINGW64 ~/test (master)
+$ openssl pkeyutl -encrypt -inkey key_rsa.pub.pem -in message.txt -out encrypted_message -pubin
+
+kabir@KabirKanhaSpectreX360 MINGW64 ~/test (master)
+$ openssl pkeyutl -decrypt -inkey key_rsa.pem -in encrypted_message
+hello world
+this is a message to be encrypted
+
+kabir@KabirKanhaSpectreX360 MINGW64 ~/test (master)
+$ exit
+
+PS C:\Users\kabir> Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20200203223130
+**********************

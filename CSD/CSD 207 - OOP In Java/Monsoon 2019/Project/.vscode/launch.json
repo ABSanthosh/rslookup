@@ -1,0 +1,18 @@
+{
+	"configurations": [
+		{
+			"type": "java",
+			"name": "CodeLens (Launch) - Start",
+			"request": "launch",
+			"mainClass": "Start",
+			"projectName": "OOPiJProj_b3d2ef81"
+		},
+		{
+			"type": "java",
+			"name": "CodeLens (Launch) - Start",
+			"request": "launch",
+			"mainClass": "Start",
+			"projectName": "OOPiJProj_db42bc72"
+		}
+	]
+}

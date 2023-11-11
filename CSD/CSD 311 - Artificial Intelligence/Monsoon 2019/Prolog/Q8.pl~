@@ -1,0 +1,7 @@
+/* Reverse the elements of a list.*/
+
+/*rev([],[]).
+rev([H|T],R) :- append(R,H,R), rev(T,R).*/
+
+rev1([], []).
+rev1([H|T],R1):-rev1(T,T1), append(T1, [H], R1).

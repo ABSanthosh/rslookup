@@ -1,0 +1,51 @@
+//Implementation of Binary Tree
+#include <stdio.h>
+
+typedef struct tree
+{
+   int data;
+   struct tree *left;
+   struct tree *right;
+} tree;
+
+tree *root = NULL;
+
+void main()
+{
+create_node(10);
+create_node(5);
+create_node(20);
+inorder(root);
+}
+void create_node(int elem)
+{
+   tree *new = (tree *) malloc(sizeof(tree));
+
+   if (new == NULL)
+   {
+       printf("Memory not available\n");
+       exit(0);
+   }
+
+   new->data = elem;
+   new->left = NULL;
+   new->right = NULL;
+if(root==NULL)
+root=new;
+else if(root->left==NULL)
+root->left=new;
+else
+root->right=new;
+}
+
+void inorder(tree *root)
+{
+
+   if (root == NULL)
+      return;
+   inorder(root->left);
+   printf(" %d->", root->data);
+   inorder(root->right);
+
+}
+

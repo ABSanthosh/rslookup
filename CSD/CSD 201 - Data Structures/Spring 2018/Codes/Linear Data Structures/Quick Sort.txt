@@ -1,0 +1,43 @@
+#include<stdio.h>
+void main()
+{
+   		 int n, i;
+   		 printf("Enter the size of array");
+    		scanf("%d",&n);
+    		int array[n];
+    		printf("Enter the elements of array : ");
+    		for(i = 0; i < n; i++)
+    		scanf("%d", &array[i]);
+    		quicksort(array, 0, n-1);
+    		printf("Sorted array is: ");
+    		for(i=0; i<n; i++)
+    		printf(" %d", array[i]);
+}
+void quicksort(int array[], int beg, int end)
+{
+int loc, temp, left, right;
+ if(beg < end)
+ {
+	loc = beg;
+        	left = beg;
+        	right = end;
+        	while(left < right)
+        	{
+            		while(array[loc] <= array[right] && loc < right)
+            			right--;
+            		while(array[loc]>array[left])
+            			left++;
+            		if(left<right)
+            		{
+                                		temp = array[left];
+                			array[left] = array[right];
+                			array[right] = temp;
+            		}
+        	}
+        	temp = array[loc];
+        	array[loc] = array[right];
+        	array[right] = temp;
+        	quicksort(array, beg, loc-1);
+        	quicksort(array, loc+1, end);
+    }
+}

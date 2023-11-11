@@ -1,0 +1,142 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#define N 101 //max length of line in input.txt is N-1
+
+struct Node {
+  int data;
+  struct Node *next;
+};
+
+int isEmpty(struct Node *lp) {return (lp==NULL);}
+
+void printList(struct Node *lp) {
+  if (isEmpty(lp)) printf("[ ]\n");
+  else {
+    struct Node *tmp=lp;
+    printf("[ ");
+    while (tmp!=NULL) {printf("%d ", tmp->data); tmp=tmp->next;}
+    printf("]\n");
+  }
+  return;
+}
+
+/* We create a QNode structure using Node that has a pointer to
+the end of the list like a queue along with some essential
+functions that manipulate it so that it is easier to write merge. */
+struct QNode {
+  int data;
+  struct Node *head, *tail;
+};
+
+struct QNode *createQN(void) {
+  //creates an empty QNode
+  struct QNode *qp=malloc(sizeof(struct QNode));
+  qp->head=qp->tail=NULL;
+  return qp;
+}
+
+int isEmptyQN(struct QNode *qp) {return (qp->head==NULL && qp->tail==NULL);}
+
+struct QNode *addLast(struct QNode *qp, int info) {
+  //adds a new Node at the end of qp with data field equal to info
+  struct Node *newp=malloc(sizeof(struct Node));
+  newp->data=info;
+  newp->next=NULL;
+  if (isEmptyQN(qp)) {
+    qp->head=qp->tail=newp;
+  }
+  else {
+    qp->tail->next=newp;
+    qp->tail=newp;
+  }
+  return qp;
+}
+/* mergefn is the recursive helper function for a recursive merge */
+struct QNode *mergefn(struct Node *lp1, struct Node *lp2, struct QNode *qp) {
+  /*FILLED CODE BEGIN*/
+  int e1=isEmpty(lp1), e2=isEmpty(lp2);
+  if (e1 && e2) return qp;
+  if (!e1 && !e2)
+    if (lp1->data<lp2->data) mergefn(lp1->next, lp2, addLast(qp, lp1->data));
+    else mergefn(lp1, lp2->next, addLast(qp, lp2->data));
+  if (e1 && !e2) mergefn(lp1, lp2->next, addLast(qp, lp2->data));
+  if (!e1 && e2) mergefn(lp1->next, lp2, addLast(qp, lp1->data));
+  /*FILLED CODE END*/
+}
+
+struct QNode *mergeRecursive(struct Node *lp1, struct Node *lp2) {
+  //Recursive version of merge using mergefn
+  return mergefn(lp1, lp2, createQN());//FILLED CODE - ARGUMENTS
+}
+
+/* This merge is an iterative merge. */
+struct QNode *mergeIterative(struct Node *lp1, struct Node *lp2) {
+  /*FILLED CODE BEGIN*/
+  //Iterative version of merge
+  struct QNode *qp=createQN();
+  struct Node *tmp1=lp1, *tmp2=lp2;
+  while (!isEmpty(tmp1) && !isEmpty(tmp2)) {
+    if (tmp1->data<tmp2->data) {
+      qp=addLast(qp, tmp1->data);
+      tmp1=tmp1->next;
+    }
+    else {
+      qp=addLast(qp, tmp2->data);
+      tmp2=tmp2->next;
+    }
+  }
+  //Now add the remaining list to qp
+  struct Node *tmp;
+  if (isEmpty(tmp1)) tmp=tmp2;
+  else tmp=tmp1;
+  while (!isEmpty(tmp)) {
+    qp=addLast(qp, tmp->data);
+    tmp=tmp->next;
+  }
+  return qp;
+  /*FILLED CODE END*/
+}
+
+int main(void) {
+  FILE *infile=fopen("input.txt", "r");
+  struct QNode *qp1=createQN(), *qp2=createQN();
+  char str[N], s[10];
+  int ind;
+  // Creates first list
+  fgets(str, N, infile);//reads line
+  ind=0;
+  while (isspace(str[ind])) ind++;//purge initial white space
+  while (str[ind]!='\0') {//enters with non-whitespace char
+    int i=0;
+    while (!isspace(str[ind+i])) {s[i]=str[ind+i]; i++;}//read digits
+    s[i]='\0';
+    qp1=addLast(qp1, atoi(s));//add integer to list
+    ind+=i;
+    while (isspace(str[ind])) ind++;//purge whitespace
+  }
+  // Creates second list
+  /*FILLED CODE BEGIN*/
+  fgets(str, N, infile);//reads line
+  ind=0;
+  while (isspace(str[ind])) ind++;//purge initial white space
+  while (str[ind]!='\0') {//enters with non-whitespace char
+    int i=0;
+    while (!isspace(str[ind+i])) {s[i]=str[ind+i]; i++;}//read digits
+    s[i]='\0';
+    qp2=addLast(qp2, atoi(s));//add integer to list
+    ind+=i;
+    while (isspace(str[ind])) ind++;//purge whitespace
+  }
+  /*FILLED CODE END*/
+  fclose(infile);
+  //print list 1
+  printList(qp1->head);
+  //print list 2
+  printList(qp2->head);
+  printf("Recursive merge = ");
+  printList(mergeRecursive(qp1->head, qp2->head)->head);//FILLED CODE
+  printf("Iterative merge = ");
+  printList(mergeIterative(qp1->head, qp2->head)->head);//FILLED CODE
+  return 0;
+}

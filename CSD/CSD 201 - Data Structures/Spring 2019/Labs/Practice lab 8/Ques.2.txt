@@ -1,0 +1,77 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct bstnode{
+int data;
+struct  bstnode *left;
+struct  bstnode *right;
+}node;
+
+node *insert(node *, int);
+void inorder(node *);
+
+
+void main(){
+int ch,element,h;
+node *root=NULL;
+
+while(1){
+printf("\n1. To insert element in BST\n");
+printf("2. To print inorder of BST\n");
+printf("3. Exit\n");
+printf("Enter your choice\n");
+scanf("%d", &ch);
+switch(ch){
+
+case 1: printf("Enter an element to insert\n");
+        scanf("%d",&element);
+        root=insert(root,element);
+        break;
+case 2: inorder(root);
+        break;
+case 3:
+        exit(0);
+default:  printf("You have entered wrong choice");
+          break;
+}
+}
+}
+
+node *insert(node *root,int element)
+{
+    if(root==NULL)
+    {
+        node *temp=(node *)malloc(sizeof(node));
+        temp->data=element;
+        temp->left=temp->right=NULL;
+        return temp;
+    }
+    else if(element<root->data)
+        root->left=insert(root->left,element);
+    else
+        root->right=insert(root->right,element);
+    return root;
+}
+
+void inorder(node *root)
+{
+    node *s[100];
+    int top=-1;
+    node *p = root;
+
+    while (p != NULL || top!=-1)
+    {
+        while (p !=  NULL)
+        {
+
+            s[++top]=p;
+            p = p->left;
+        }
+
+
+        p = s[top--];
+        printf("%d->",p->data);
+        p = p->right;
+
+    }
+}

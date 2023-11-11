@@ -1,0 +1,112 @@
+#include<stdio.h>
+typedef struct node{
+int data;
+struct node *next;
+}node1;
+node1 *head=NULL;
+void main()
+{
+int ch;
+while(1)
+{
+printf("1. Insert\n");
+printf("2. Delete Duplicates\n");
+printf("3. Display\n");
+printf("4. Exit\n");
+printf("Enter your choice\n");
+scanf("%d",&ch);
+switch(ch)
+{
+case 1: insert();
+	break;
+case 2: del_dup();
+	break;
+case 3: display();
+	break;
+case 4: exit(0);
+}
+}
+}
+
+void insert()
+{
+int n;
+printf("Enter element\n");
+scanf("%d",&n);
+if(head == NULL)
+{
+	head=(node1 *)malloc(sizeof(node1));
+	if(head == NULL)
+	{
+		printf("Memory not allocated\n");
+		exit(0);
+	}
+	head->data=n;
+	head->next = NULL;
+}
+else
+{
+node1 *ptr=(node1 *)malloc(sizeof(node1));
+if(ptr == NULL)
+	{
+		printf("Memory not allocated\n");
+		exit(0);
+	}
+ptr->data=n;
+if(n<=head->data)
+{
+ptr->next=head;
+head=ptr;
+}
+else
+{
+node1 *temp=head;
+while( temp->next!= NULL && temp->next->data<n)
+temp=temp->next;
+ptr->next=temp->next;
+temp->next=ptr;
+}
+}
+}
+
+void del_dup()
+{
+if(head==NULL)
+{
+	printf("List is empty\n");
+	exit(0);
+}
+node1 *temp=head;
+node1 *ptr;
+while(temp->next!=NULL)
+{
+	if(temp->data== temp->next->data)
+	{
+		ptr=temp->next;
+		temp->next=temp->next->next;
+		free(ptr);
+	}
+	else
+		temp=temp->next;
+}
+}
+
+
+
+
+
+void display()
+{
+if(head==NULL)
+{
+	printf("List is empty\n");
+	exit(0);
+}
+node1 *temp=head;
+printf("The Linked List is :\n");
+while(temp!=NULL)
+{
+	printf("%d\n",temp->data);
+	temp=temp->next;
+}
+}

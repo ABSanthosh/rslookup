@@ -1,0 +1,477 @@
+sweet_jason002  : hello there	3
+sweet_jason002  : 28/m/pasadena	3
+sweet_jason002  : youquestion	3
+sweet_jason002  : oh, cool 	3
+sweet_jason002  : how are you todayquestion	3
+sweet_jason002  : it's raining here	3
+sweet_jason002  : can't wait for it to stop	3
+sweet_jason002  : probably on its way there	3
+sweet_jason002  : what's keeping you busyquestion	3
+sweet_jason002  : school todayquestion	3
+sweet_jason002  : school todayquestion	2
+sweet_jason002  : hope you feel better	3
+sweet_jason002  : so what you up to todayquestion	3
+sweet_jason002  : me too	3
+sweet_jason002  : day off today	3
+sweet_jason002  : bored and chatting	3
+sweet_jason002  : how's school for youquestion	3
+sweet_jason002  : how's school for youquestion	2
+sweet_jason002  : keeping up with school workquestion	3
+sweet_jason002  : keeping up with school workquestion	2
+sweet_jason002  : dats cool	3
+sweet_jason002  : i'm glad it's easy for you	3
+sweet_jason002  : u're probably a smart girl	3
+sweet_jason002  : proud of you for saying that	3
+sweet_jason002  : [happy face]	3
+sweet_jason002  : i never thought it was	3
+sweet_jason002  : but i did work hard though	3
+sweet_jason002  : are you in 8th gradequestion	3
+sweet_jason002  : happy birthday to you	3
+sweet_jason002  : hope you had a good celebration	3
+sweet_jason002  : hope you had a good celebration	6
+sweet_jason002  : you have siblingsquestion	3
+sweet_jason002  : oh	3
+sweet_jason002  : you wish you havequestion	3
+sweet_jason002  : [happy face]	3
+sweet_jason002  : how about be/fquestion	3
+sweet_jason002  : boyfriendquestion	4
+sweet_jason002  : boyfriendquestion	3
+sweet_jason002  : what happenedquestion	3
+sweet_jason002  : a classmate question	3
+sweet_jason002  : oh, i c	3
+sweet_jason002  : how old is hequestion	3
+sweet_jason002  : how old is hequestion	2
+sweet_jason002  : oh, cool	3
+sweet_jason002  : i hope so too [happy face]	3
+sweet_jason002  : what kind of guy you likequestion	3
+sweet_jason002  : dat sounds good	3
+sweet_jason002  : how old is too old for youquestion [happy face]	3
+sweet_jason002  : how old is too old for youquestion [happy face]	2
+sweet_jason002  : [happy face]	3
+sweet_jason002  : dats true	3
+sweet_jason002  : i wouldn't either	3
+sweet_jason002  : [happy face]	3
+sweet_jason002  : what would you like to do on a datequestion	3
+sweet_jason002  : i know	3
+sweet_jason002  : too slow too [happy face]	3
+sweet_jason002  : u're going back to school tomorrowquestion	3
+sweet_jason002  : u're going back to school tomorrowquestion	2
+sweet_jason002  : [happy face]	3
+sweet_jason002  : she'll believe you [happy face]	3
+sweet_jason002  : how about "your, you are" dadquestion	7
+sweet_jason002  : how about "your, you are" dadquestion	3
+sweet_jason002  : i c	3
+sweet_jason002  : so who you live withquestion 	3
+sweet_jason002  : just "your, you are" momquestion	7
+sweet_jason002  : just "your, you are" momquestion	3
+sweet_jason002  : apartmentquestion	3
+sweet_jason002  : what makes it coolquestion	3
+sweet_jason002  : the roomsquestion	3
+sweet_jason002  : neighborsquestion	3
+sweet_jason002  : nice	3
+sweet_jason002  : what would you like to do if you get to hang out with a guyquestion	8
+sweet_jason002  : what would you like to do if you get to hang out with a guyquestion	3
+sweet_jason002  : you have a picturequestion	3
+sweet_jason002  : you have a picturequestion	2
+sweet_jason002  : i'm jason, by the way	3
+sweet_jason002  : nice	3
+sweet_jason002  : dats my picture on the right box	3
+sweet_jason002  : dats my picture on the right box	2
+sweet_jason002  : should be on the box on the right	3
+sweet_jason002  : so are you	3
+sweet_jason002  : [happy face]	3
+sweet_jason002  : looking at "your, you are" picture	3
+sweet_jason002  : looking at "your, you are" picture	2
+sweet_jason002  : you are very pretty	3
+sweet_jason002  : you know tae kwon do	3
+sweet_jason002  : dats really neat	3
+sweet_jason002  : [happy face]	3
+sweet_jason002  : is it okay i'm 28question	3
+sweet_jason002  : i'm fine with it 	3
+sweet_jason002  : you come to chat oftenquestion	3
+sweet_jason002  : me too	3
+sweet_jason002  : and i get bored often	3
+sweet_jason002  : i know	3
+sweet_jason002  : what does "your, you are" mom do for livingquestion	7
+sweet_jason002  : what does "your, you are" mom do for livingquestion	3
+sweet_jason002  : wow	3
+sweet_jason002  : so, she's often out question	3
+sweet_jason002  : in the hospitalquestion	3
+sweet_jason002  : wow	3
+sweet_jason002  : who stays home with youquestion	3
+sweet_jason002  : [happy face]	3
+sweet_jason002  : dats true	3
+sweet_jason002  : i like how "your, you are" name is spelled	3
+sweet_jason002  : lissa	3
+sweet_jason002  : very nice	3
+sweet_jason002  : i do	3
+sweet_jason002  : you like moviesquestion	3
+sweet_jason002  : me too	3
+sweet_jason002  : hate horror films	3
+sweet_jason002  : how about romancequestion	3
+sweet_jason002  : are you a romantic personquestion	3
+sweet_jason002  : [happy face]	3
+sweet_jason002  : [happy face]	3
+sweet_jason002  : you like to kissquestion [happy face]	6
+sweet_jason002  : you like to kissquestion [happy face]	3
+sweet_jason002  : love to	3
+sweet_jason002  : yes	3
+sweet_jason002  : i like a girl who loves to kiss	6
+sweet_jason002  : i like a girl who loves to kiss	3
+sweet_jason002  : makes it more sweet and romantic	3
+sweet_jason002  : wish we can hang out [happy face]	8
+sweet_jason002  : wish we can hang out [happy face]	3
+sweet_jason002  : howquestion	3
+sweet_jason002  : wherequestion	3
+sweet_jason002  : i can drive [happy face]	3
+sweet_jason002  : we can watch a movie at "your, you are" place, perhapsquestion	3
+sweet_jason002  : we can talk	3
+sweet_jason002  : watch dvd [happy face]	3
+sweet_jason002  : anything fun	3
+sweet_jason002  : what would you like to doquestion	3
+sweet_jason002  : what do you thinkquestion	3
+sweet_jason002  : i can bring dvd	3
+sweet_jason002  : we can watch together [happy face]	3
+sweet_jason002  : i can rent whatever	3
+sweet_jason002  : what would you like to watchquestion	3
+sweet_jason002  : is that horrorquestion [happy face]	3
+sweet_jason002  : me neither	3
+sweet_jason002  : okay, i can rent that [happy face]	3
+sweet_jason002  : when are you availablequestion	3
+sweet_jason002  : oh, i c	3
+sweet_jason002  : but you have school tomorrow though, rightquestion	3
+sweet_jason002  : but you have school tomorrow though, rightquestion	2
+sweet_jason002  : want to skip another day of schoolquestion [happy face]	3
+sweet_jason002  : want to skip another day of schoolquestion [happy face]	2
+sweet_jason002  : you won't find out until tonight, rightquestion	3
+sweet_jason002  : can i call youquestion	8
+sweet_jason002  : can i call youquestion	3
+sweet_jason002  : can i call youquestion	8
+sweet_jason002  : or should i come online tonight sometimequestion	3
+sweet_jason002  : wow	3
+sweet_jason002  : want to hang out tomorrow anywayquestion	8
+sweet_jason002  : want to hang out tomorrow anywayquestion	3
+sweet_jason002  : [happy face]question	3
+sweet_jason002  : oh, reallyquestion	3
+sweet_jason002  : i'm not sure how long it'll take to get there	3
+sweet_jason002  : what's "your, you are" addressquestion	3
+sweet_jason002  : i'll try to map it	3
+sweet_jason002  : what's the zip codequestion	3
+sweet_jason002  : don't worry about me [happy face]	3
+sweet_jason002  : i'm the safest person you can meet [happy face] 	8
+sweet_jason002  : i'm the safest person you can meet [happy face] 	3
+sweet_jason002  : it's just the way i am [happy face]	3
+sweet_jason002  : i hardly cuzz even	3
+sweet_jason002  : yes, i did	3
+sweet_jason002  : and hour and a half to get there, at least	3
+sweet_jason002  : i can leave before lunch	3
+sweet_jason002  : will you be home by 1pmquestion	3
+sweet_jason002  : wish we can meet at 1pm [happy face]	8
+sweet_jason002  : wish we can meet at 1pm [happy face]	3
+sweet_jason002  : i c	3
+sweet_jason002  : what if you pretend you have headache [happy face]	3
+sweet_jason002  : what if you pretend you have headache [happy face]	6
+sweet_jason002  : how about 1:30pmquestion	3
+sweet_jason002  : [happy face]	3
+sweet_jason002  : you can check first	3
+sweet_jason002  : trying to think	3
+sweet_jason002  : no cell	8
+sweet_jason002  : no cell	3
+sweet_jason002  : maybe i can borrow someone's	3
+sweet_jason002  : but if you call won't that leave a number in "your, you are" phonequestion	8
+sweet_jason002  : but if you call won't that leave a number in "your, you are" phonequestion	3
+sweet_jason002  : but if you call won't that leave a number in "your, you are" phonequestion	8
+sweet_jason002  : but if you call won't that leave a number in "your, you are" phonequestion	8
+sweet_jason002  : hello, dats a good idea	3
+sweet_jason002  : but i can't call you even with a calling card, rightquestion	8
+sweet_jason002  : but i can't call you even with a calling card, rightquestion	3
+sweet_jason002  : but i can't call you even with a calling card, rightquestion	8
+sweet_jason002  : oh, i c	3
+sweet_jason002  : how much time do we havequestion	3
+sweet_jason002  : i have work tomorrow night [sad face]	3
+sweet_jason002  : late afternoon	3
+sweet_jason002  : what time can i be therequestion	3
+sweet_jason002  : 1:30pm	3
+sweet_jason002  : question	3
+sweet_jason002  : just wear normal clothes [happy face]	3
+sweet_jason002  : where do you want me to meet youquestion	8
+sweet_jason002  : where do you want me to meet youquestion	3
+sweet_jason002  : will the neighbors find out about itquestion	3
+sweet_jason002  : us, i meanquestion	3
+sweet_jason002  : you surequestion [happy face]	3
+sweet_jason002  : it's okay to go in "your, you are" house togetherquestion	3
+sweet_jason002  : what's datquestion	3
+sweet_jason002  : question	3
+sweet_jason002  : you want to do itquestion [happy face]	3
+sweet_jason002  : i mean it'll be fun	3
+sweet_jason002  : you sure it's okay for you, rightquestion	3
+sweet_jason002  : i won't get you pregnant, don't worry	6
+sweet_jason002  : i won't get you pregnant, don't worry	3
+sweet_jason002  : shower togetherquestion	3
+sweet_jason002  : you have "your, you are" own shower roomquestion	3
+sweet_jason002  : when's the last time you made love with someonequestion [happy face]	3
+sweet_jason002  : oh, i c [happy face]	3
+sweet_jason002  : dats cool	3
+sweet_jason002  : you have any fantasyquestion	3
+sweet_jason002  : okay	3
+sweet_jason002  : hope everything is okay, lissa	3
+sweet_jason002  : okay [happy face]	3
+sweet_jason002  : [happy face]	3
+sweet_jason002  : glad u're back	3
+sweet_jason002  : everything finequestion	3
+sweet_jason002  : what did she sayquestion	3
+sweet_jason002  : tomorrow tooquestion	3
+sweet_jason002  : [happy face]	3
+sweet_jason002  : u'll stay home tomorrowquestion	3
+sweet_jason002  : what's "your, you are" fantasyquestion	3
+sweet_jason002  : anyquestion	3
+sweet_jason002  : sexual fantasyquestion	6
+sweet_jason002  : sexual fantasyquestion	3
+sweet_jason002  : we'll definitely do that	3
+sweet_jason002  : we'll be adventurous	3
+sweet_jason002  : [happy face]	3
+sweet_jason002  : we'll make it way fun [happy face]	3
+sweet_jason002  : can i call youquestion	8
+sweet_jason002  : can i call youquestion	3
+sweet_jason002  : can i call youquestion	8
+sweet_jason002  : pretend it's wrong numberquestion	8
+sweet_jason002  : pretend it's wrong numberquestion	3
+sweet_jason002  : even for a few secondsquestion [happy face]	3
+sweet_jason002  : i'd love to hear "your, you are" voice	3
+sweet_jason002  : ohhh, i c	3
+sweet_jason002  : i borrowed cell phone	8
+sweet_jason002  : i borrowed cell phone	8
+sweet_jason002  : i borrowed cell phone	3
+sweet_jason002  : i borrowed cell phone	8
+sweet_jason002  : promise to call just one timequestion	3
+sweet_jason002  : promise to call just one timequestion	8
+sweet_jason002  : promise to call me just one time, lissaquestion [sad face]	3
+sweet_jason002  : promise to call me just one time, lissaquestion [sad face]	8
+sweet_jason002  : want to call nowquestion	3
+sweet_jason002  : want to call nowquestion	8
+sweet_jason002  : okay	3
+sweet_jason002  : let me know when u're back	3
+sweet_jason002  : what phone company is itquestion [happy face]	3
+sweet_jason002  : what phone company is itquestion [happy face]	8
+sweet_jason002  : phone card	3
+sweet_jason002  : phone card	8
+sweet_jason002  : what company is itquestion	3
+sweet_jason002  : dats neat	3
+sweet_jason002  : a good card	3
+sweet_jason002  : just curious [happy face]	3
+sweet_jason002  : promise to call just one time, rightquestion	3
+sweet_jason002  : promise to call just one time, rightquestion	8
+sweet_jason002  : or u'll get me in trouble	3
+sweet_jason002  : 626-315-0740 	3
+sweet_jason002  : you therequestion	3
+sweet_jason002  : [happy face]	3
+sweet_jason002  : you sound very sweet	3
+sweet_jason002  : and sexy	6
+sweet_jason002  : and sexy	3
+sweet_jason002  : yes	3
+sweet_jason002  : i do	3
+sweet_jason002  : hold	3
+sweet_jason002  : i'm looking	3
+sweet_jason002  : yes, i see it	3
+sweet_jason002  : so the library is on baristoquestion	3
+sweet_jason002  : so the library is on baristoquestion	6
+sweet_jason002  : or the parking entrance is on baristoquestion	3
+sweet_jason002  : okay	3
+sweet_jason002  : drive it all the way insidequestion	3
+sweet_jason002  : then, where will you bequestion	3
+sweet_jason002  : people won't see usquestion	3
+sweet_jason002  : other people, i meanquestion	3
+sweet_jason002  : i'm way excited	3
+sweet_jason002  : do we have to climb up stairs to get to "your, you are" placequestion	3
+sweet_jason002  : "your, you are" apartmentquestion	3
+sweet_jason002  : people won't' mindquestion	3
+sweet_jason002  : oh, cool [happy face]	3
+sweet_jason002  : so we'll ride to "your, you are" house togetherquestion	3
+sweet_jason002  : or park the car in the libraryquestion	3
+sweet_jason002  : or park the car in the libraryquestion	6
+sweet_jason002  : not sure yet [happy face]	3
+sweet_jason002  : i'll find you	3
+sweet_jason002  : what clothes are you going to wear tomorrowquestion	3
+sweet_jason002  : so i'll spot you easier	3
+sweet_jason002  : something yellow will be cool	3
+sweet_jason002  : okay, pink	3
+sweet_jason002  : bright pinkquestion	3
+sweet_jason002  : anything printed on teh shirtquestion	3
+sweet_jason002  : [happy face]	3
+sweet_jason002  : silly, i mean when i look for you in the library	3
+sweet_jason002  : silly, i mean when i look for you in the library	6
+sweet_jason002  : silly, i mean when i look for you in the library	3
+sweet_jason002  : so i know it's you [happy face]	3
+sweet_jason002  : is it okay for me to approach youquestion	3
+sweet_jason002  : will people think it's weirdquestion	3
+sweet_jason002  : toyota minivan [happy face]	3
+sweet_jason002  : will you be online tomorrow morningquestion	3
+sweet_jason002  : okay	3
+sweet_jason002  : i wayyy excited	3
+sweet_jason002  : you have "your, you are" own bedroomquestion	3
+sweet_jason002  : okay	3
+sweet_jason002  : we'll spend romantic time together tomorrow	3
+sweet_jason002  : i have to leave now	3
+sweet_jason002  : will you be on tonightquestion	3
+sweet_jason002  : latequestion	3
+sweet_jason002  : around 10pm or soquestion	3
+sweet_jason002  : okay	3
+sweet_jason002  : i love you	3
+sweet_jason002  : okay	3
+sweet_jason002  : take care	3
+sweet_jason002  : wish i can kiss "your, you are" lips now	6
+sweet_jason002  : wish i can kiss "your, you are" lips now	3
+sweet_jason002  : how tall are you, by the wayquestion [happy face]	3
+sweet_jason002  : dats awesome [happy face]	3
+sweet_jason002  : we'll have sooo much fun together	3
+sweet_jason002  : bye for now	3
+sweet_jason002  : i'll catch you tonight	3
+sweet_jason002  : take care	3
+sweet_jason002  : by the way, what's "your, you are" brassiere sizequestion [happy face]	3
+sweet_jason002  : by the way, what's "your, you are" brassiere sizequestion [happy face]	6
+sweet_jason002  : by the way, what's "your, you are" brassiere sizequestion [happy face]	6
+sweet_jason002  : [happy face]	3
+sweet_jason002  : u're sexy	6
+sweet_jason002  : u're sexy	3
+sweet_jason002  : okay	3
+sweet_jason002  : bye for now, then	3
+sweet_jason002  : hello, lissa	3
+sweet_jason002  : how have you been tonightquestion	3
+sweet_jason002  : i miss you already	3
+sweet_jason002  : what you up to tonightquestion	3
+sweet_jason002  : me too	3
+sweet_jason002  : getting ready for bed [happy face]	3
+sweet_jason002  : are you going to school tomorrowquestion	3
+sweet_jason002  : are you going to school tomorrowquestion	2
+sweet_jason002  : i am very	3
+sweet_jason002  : "your, you are" mom will let you stay homequestion [happy face]	7
+sweet_jason002  : "your, you are" mom will let you stay homequestion [happy face]	3
+sweet_jason002  : [happy face]	3
+sweet_jason002  : i'll make it better	3
+sweet_jason002  : yes, i will	3
+sweet_jason002  : what you picture us doingquestion	3
+sweet_jason002  : what you picture us doingquestion	2
+sweet_jason002  : [happy face]	3
+sweet_jason002  : reallyquestion [happy face]	3
+sweet_jason002  : how sweet	3
+sweet_jason002  : you share the same shower with "your, you are" momquestion	7
+sweet_jason002  : you share the same shower with "your, you are" momquestion	3
+sweet_jason002  : reallyquestion	3
+sweet_jason002  : neat	3
+sweet_jason002  : in "your, you are" own roomquestion	3
+sweet_jason002  : wow	3
+sweet_jason002  : you have more picturesquestion [happy face]	2
+sweet_jason002  : you have more picturesquestion [happy face]	3
+sweet_jason002  : you have more picturesquestion [happy face]	2
+sweet_jason002  : i love "your, you are" pictures	2
+sweet_jason002  : i love "your, you are" pictures	3
+sweet_jason002  : i love "your, you are" pictures	2
+sweet_jason002  : u're too sweet	3
+sweet_jason002  : you like to take it slowquestion	3
+sweet_jason002  : i'll be gentle with you	3
+sweet_jason002  : all over	3
+sweet_jason002  : you want me to try anything with youquestionquestion	3
+sweet_jason002  : i'm thinking we may not need the movie [happy face]	3
+sweet_jason002  : we'll be busy cuddling	3
+sweet_jason002  : what is it called againquestion [happy face]	3
+sweet_jason002  : what is it called againquestion [happy face]	8
+sweet_jason002  : don't worry	3
+sweet_jason002  : i will never get you preggy [happy face]	6
+sweet_jason002  : i will never get you preggy [happy face]	3
+sweet_jason002  : u're safe with me 	3
+sweet_jason002  : last time you did it was when againquestion [happy face]	3
+sweet_jason002  : what was itquestion	3
+sweet_jason002  : sweet	3
+sweet_jason002  : i can't wait	3
+sweet_jason002  : i'll try to get the movie	3
+sweet_jason002  : i think we can just cuddle under the covers together	3
+sweet_jason002  : [happy face]	3
+sweet_jason002  : shower	3
+sweet_jason002  : and we'll take it slow	3
+sweet_jason002  : if we have time, we can watch the movie together [happy face]	3
+sweet_jason002  : yes we will	3
+sweet_jason002  : what would you likequestion	3
+sweet_jason002  : no, u're not	3
+sweet_jason002  : i will think of you as one	3
+sweet_jason002  : i will never	3
+sweet_jason002  : think of you as one	3
+sweet_jason002  : u're very mature	3
+sweet_jason002  : [happy face]	3
+sweet_jason002  : are youquestion	3
+sweet_jason002  : i'm getting there	3
+sweet_jason002  : i miss you already	3
+sweet_jason002  : wish we can talk on the phone agan	3
+sweet_jason002  : wish we can talk on the phone agan	8
+sweet_jason002  : wish we can talk on the phone agan	8
+sweet_jason002  : again	3
+sweet_jason002  : even for few minutes	3
+sweet_jason002  : i'll get you another one [happy face]	3
+sweet_jason002  : okay	3
+sweet_jason002  : oh	3
+sweet_jason002  : how 'about if you don't pick up the phonequestion [happy face]	3
+sweet_jason002  : how 'about if you don't pick up the phonequestion [happy face]	8
+sweet_jason002  : i love talking to you	3
+sweet_jason002  : i mean when "your, you are" mom calls again [happy face]	7
+sweet_jason002  : i mean when "your, you are" mom calls again [happy face]	3
+sweet_jason002  : i mean when "your, you are" mom calls again [happy face]	8
+sweet_jason002  : we can still chatquestion	3
+sweet_jason002  : or tomorrowquestion	3
+sweet_jason002  : i do not' want you to get busted either	5
+sweet_jason002  : i do not' want you to get busted either	3
+sweet_jason002  : what if i get there around 1:15pmquestion	3
+sweet_jason002  : earlier	3
+sweet_jason002  : what time she usually leavesquestion	3
+sweet_jason002  : so u'll walk there from homequestion	3
+sweet_jason002  : you live in a housequestion	3
+sweet_jason002  : oh, dats right	3
+sweet_jason002  : forgot	3
+sweet_jason002  : i love you	3
+sweet_jason002  : what's "your, you are" last name, by the wayquestion	3
+sweet_jason002  : [happy face]	3
+sweet_jason002  : night, lissa	3
+sweet_jason002  : we can try tomorrow	3
+sweet_jason002  : don't worry	3
+sweet_jason002  : hello	3
+sweet_jason002  : i miss you	3
+sweet_jason002  : [happy face]	3
+sweet_jason002  : how's "your, you are" day todayquestion [happy face]	3
+sweet_jason002  : [sad face]	3
+sweet_jason002  : i'm still glad everything went fine [happy face]	3
+sweet_jason002  : wish we can meet	8
+sweet_jason002  : wish we can meet	3
+sweet_jason002  : what timequestion	3
+sweet_jason002  : you have schoolquestion	3
+sweet_jason002  : you have schoolquestion	2
+sweet_jason002  : will you be online tomorrow morningquestion	3
+sweet_jason002  : [happy face]	3
+sweet_jason002  : so tomorrowquestion	3
+sweet_jason002  : it's okay for you to miss "your, you are" afternoon classquestion	3
+sweet_jason002  : want to meet earlierquestion [happy face]	8
+sweet_jason002  : want to meet earlierquestion [happy face]	3
+sweet_jason002  : what time is sciencequestion	3
+sweet_jason002  : [happy face]	3
+sweet_jason002  : we can meet at the library earlier [happy face]	8
+sweet_jason002  : we can meet at the library earlier [happy face]	3
+sweet_jason002  : we can meet at the library earlier [happy face]	6
+sweet_jason002  : we can talk first, if u'd like	3
+sweet_jason002  : okay [happy face]	3
+sweet_jason002  : 1:15 sounds good	3
+sweet_jason002  : so, we're on tomorrowquestion	3
+sweet_jason002  : wish we can talk on the phone again	3
+sweet_jason002  : wish we can talk on the phone again	8
+sweet_jason002  : wish we can talk on the phone again	8
+sweet_jason002  : oh [happy face]	3
+sweet_jason002  : the computer is in "your, you are" roomquestion	3
+sweet_jason002  : you like oral sexquestion [happy face]	6
+sweet_jason002  : you like oral sexquestion [happy face]	3
+sweet_jason002  : [happy face]	3
+sweet_jason002  : you like giving itquestion	3
+sweet_jason002  : i can give it to you	3
+sweet_jason002  : slowly and gently	3
+sweet_jason002  : would you like it if i give it to youquestion	5
+sweet_jason002  : would you like it if i give it to youquestion	3
+sweet_jason002  : slide my tongue up and downquestion	3
+sweet_jason002  : slide my tongue up and downquestion	6
+sweet_jason002  : [happy face]	3
+sweet_jason002  : we will defnitely do that	3
+sweet_jason002  : okay	3

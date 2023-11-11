@@ -1,0 +1,33 @@
+quin_says  : sucks	6
+quin_says  : sucks	6
+quin_says  : what are you up toquestion	1
+quin_says  : how old are youquestion	2
+quin_says  : how old are youquestion	2
+quin_says  : when do you sart school	2
+quin_says  : did not school start alreadyquestion	2
+quin_says  : that sucks	6
+quin_says  : that sucks	6
+quin_says  : laugh out loud you do not seem like you like "your, you are" mom too much	7
+quin_says  : that sucks	6
+quin_says  : that sucks	6
+quin_says  : laugh out loud i do not know drink sneak out sex smoke anything	6
+quin_says  : this sucks	6
+quin_says  : this sucks	6
+quin_says  : "yes, you" sucks	6
+quin_says  : "yes, you" sucks	6
+quin_says  : is that the middle schoolquestion	2
+quin_says  : is "your, you are" mom upquestion	7
+quin_says  : blah laugh out loud i want to have sex laugh out loud	6
+quin_says  : laugh out loud no not playing	6
+quin_says  : im going to answer the phone	8
+quin_says  : okay hello this is what i will do i will go and try and find the middle school stay online and i will im you from my phone when i get there okayquestion	2
+quin_says  : okay hello this is what i will do i will go and try and find the middle school stay online and i will im you from my phone when i get there okayquestion	8
+quin_says  : i do not want you to go out and wait because i do not know how long it will be laugh out loud	5
+quin_says  : but you have my number so if for some reason you cannot come out or whatever just call okayquestion>	8
+quin_says  : but you have my number so if for some reason you cannot come out or whatever just call okayquestion>	8
+quin_says  : hello im in front of the school	2
+quin_says  : hello im in front of the school	2
+quin_says  : i was like in the parkin lot forever then a cop came in and was like what are you doing laugh out loud so i just said calling a friend and i was lost because ijust moved there	1
+quin_says  : i was like in the parkin lot forever then a cop came in and was like what are you doing laugh out loud so i just said calling a friend and i was lost because ijust moved there	8
+quin_says  : sucks	6
+quin_says  : sucks	6

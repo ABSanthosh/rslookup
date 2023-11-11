@@ -1,0 +1,101 @@
+#include<stdio.h>
+#include <stdbool.h>
+#include <stdlib.h> 
+typedef struct Node
+{
+    struct Node *left, *right;
+    int info;
+    bool rthread;
+}Node;
+ 
+struct Node *insert(struct Node *root, int data)
+{
+    Node *ptr = root;
+    Node *parse = NULL; 
+    while (ptr != NULL)
+    {
+       
+        if (data == (ptr->info))
+        {
+            printf("Duplicate Key !\n");
+            return root;
+        }
+        parse = ptr; 
+
+        if(!(data < ptr->info))
+        {
+            if (ptr->rthread == false)
+                ptr = ptr -> right;
+            else
+                break;
+        }
+    }
+ 
+    Node *tmp = (Node*) malloc(sizeof(Node));
+    tmp -> info = data;
+  
+    tmp -> rthread = true;
+ 
+    if (parse == NULL)
+    {
+        root = tmp;
+        tmp -> left = NULL;
+        tmp -> right = NULL;
+    }
+    
+    else
+    {
+        tmp -> left = parse;
+        tmp -> right = parse -> right;
+        parse -> rthread = false;
+        parse -> right = tmp;
+    }
+ 
+    return root;
+}
+ 
+struct Node *inorderSuccessor(struct Node *ptr)
+{
+    if (ptr -> rthread == true)
+        return ptr->right;
+ 
+    ptr = ptr -> right;
+    return ptr;
+}
+ 
+void inorder(struct Node *root)
+{
+    if (root == NULL)
+        printf("Tree is empty");
+ 
+    struct Node *ptr = root;
+
+ 
+    while (ptr != NULL)
+    {
+        printf("%d, ",ptr -> info);
+        ptr = inorderSuccessor(ptr);
+    }
+}
+ 
+int main()
+{
+    struct Node *root = NULL;
+    printf("\nSelect the option below:"); 
+    while(1){char a;
+        printf("\n1. To insert\n2.To go for inorder traversal\n3.Exit\nEnter option: ");
+        scanf(" %c", &a);
+    switch(a){
+        case '1':   printf("\nEnter node info: ");
+                    int x;
+                    scanf("%d", &x);
+                    root=insert(root,x);
+                    break;
+        case '2':   printf("\nThe inorder traversal would result in: ");
+                    inorder(root);
+                    break;
+        case '3':   exit(0);
+    }
+    }
+    return 0;
+}

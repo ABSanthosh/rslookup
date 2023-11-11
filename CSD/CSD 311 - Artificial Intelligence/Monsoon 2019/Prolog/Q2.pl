@@ -1,0 +1,5 @@
+/* Find the maximum element in the list */
+list_max([H|T],R):- findmax(T,H,R).
+findmax([],R,R).
+findmax([H|T],X,R):- X>H, findmax(T,X,R).
+findmax([H|T],X,R):- X=<H, findmax(T,H,R).

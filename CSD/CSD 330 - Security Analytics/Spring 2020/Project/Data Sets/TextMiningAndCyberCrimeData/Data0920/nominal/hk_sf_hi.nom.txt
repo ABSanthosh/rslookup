@@ -1,0 +1,237 @@
+hk_sf_hi  : "age, sex, location" please	6
+hk_sf_hi  : "age, sex, location" please	2
+hk_sf_hi  : myspace "your, you are" say 86[very happy face]	2
+hk_sf_hi  : what are you up to	1
+hk_sf_hi  : you do not have boyfriendquestion 	4
+hk_sf_hi  : you want to meetquestion 	8
+hk_sf_hi  : my picture	2
+hk_sf_hi  : just click it	6
+hk_sf_hi  : click on it	6
+hk_sf_hi  : just like sharing pictures	2
+hk_sf_hi  : just like sharing pictures	2
+hk_sf_hi  : which one you want me to call you	8
+hk_sf_hi  : which one you want me to call you	8
+hk_sf_hi  : okay sweetie	3
+hk_sf_hi  : nice to meet you	8
+hk_sf_hi  : you want to meetquestion	8
+hk_sf_hi  : you got more picturesquestion	2
+hk_sf_hi  : you got more picturesquestion	2
+hk_sf_hi  : [kiss face]	6
+hk_sf_hi  : are you a good kisser	6
+hk_sf_hi  : how many boyfriend you had before	4
+hk_sf_hi  : sex	6
+hk_sf_hi  : when is school start	2
+hk_sf_hi  : what are you doing everyday	1
+hk_sf_hi  : no school	2
+hk_sf_hi  : you got cellphonequestion	8
+hk_sf_hi  : you got cellphonequestion	8
+hk_sf_hi  : you can call me whenever you like	8
+hk_sf_hi  : why you cannot call now	8
+hk_sf_hi  : you can call me if you can okay	8
+hk_sf_hi  : hello can you go out at night timequestion	7
+hk_sf_hi  : call me tmr:-c	8
+hk_sf_hi  : [kiss face]	6
+hk_sf_hi  : sweet dream will	3
+hk_sf_hi  : can you call mequestion	8
+hk_sf_hi  : so you dad will be home if "your, you are" mom gone	7
+hk_sf_hi  : so you dad will be home if "your, you are" mom gone	7
+hk_sf_hi  : sweetie	3
+hk_sf_hi  : what do you like to do if we go out this fridayquestion	1
+hk_sf_hi  : what do you like to do if we go out this fridayquestion	1
+hk_sf_hi  : so what do you like to do for fun	1
+hk_sf_hi  : so what do you like to do for fun	1
+hk_sf_hi  : you have more pictures for me	2
+hk_sf_hi  : you have more pictures for me	2
+hk_sf_hi  : [kiss face]	6
+hk_sf_hi  : can you call mequestion	8
+hk_sf_hi  : how old is "your, you are" mom nowquestion	7
+hk_sf_hi  : how old is "your, you are" mom nowquestion	2
+hk_sf_hi  : you have their picturesquestion	2
+hk_sf_hi  : you have their picturesquestion	2
+hk_sf_hi  : yahoo picturequestion	2
+hk_sf_hi  : their pictures in yahoo photosquestion	2
+hk_sf_hi  : their pictures in yahoo photosquestion	3
+hk_sf_hi  : their pictures in yahoo photosquestion	2
+hk_sf_hi  : i want to see their pictures 	2
+hk_sf_hi  : i want to see their pictures 	2
+hk_sf_hi  : call me tonight okay	8
+hk_sf_hi  : [kiss face]	6
+hk_sf_hi  : can you call me again	8
+hk_sf_hi  : you cannot use "your, you are" house phonequestion	8
+hk_sf_hi  : so soft so sweet	3
+hk_sf_hi  : what are you doing	1
+hk_sf_hi  : have not be a hot tub for long time	3
+hk_sf_hi  : ask "your, you are" mom bring you there	7
+hk_sf_hi  : or have a boyfriendquestion	4
+hk_sf_hi  : i mean "your, you are" mom:	7
+hk_sf_hi  : she do not care you "got to, got a" boyfriendquestion	4
+hk_sf_hi  : ue dad isquestion	7
+hk_sf_hi  : you have their picturesquestion 	2
+hk_sf_hi  : you have their picturesquestion 	2
+hk_sf_hi  : what do you like to talk about	1
+hk_sf_hi  : suck	6
+hk_sf_hi  : schoolmatequestion	2
+hk_sf_hi  : "your, you are" in high schoolquestion	2
+hk_sf_hi  : number[gross face]............still young 13 	8
+hk_sf_hi  : he still call you question	8
+hk_sf_hi  : he still call you question	8
+hk_sf_hi  : uses condom[goofy face]	6
+hk_sf_hi  : you like bluc color condomquestion 	6
+hk_sf_hi  : i thought "your, you are" said you like blue condom	6
+hk_sf_hi  : tell me more about urself	2
+hk_sf_hi  : what do you like to eatquestion	1
+hk_sf_hi  : bring "your, you are" mom too 	7
+hk_sf_hi  : you so won't tell "your, you are" mom i ask you out	7
+hk_sf_hi  : you won't even let her know you hve a boyfriend	4
+hk_sf_hi  : how many days "your, you are" mom "got to, got a" leave the house	7
+hk_sf_hi  : can you go out when "your, you are" mom is home	7
+hk_sf_hi  : can you go out when "your, you are" mom is home	7
+hk_sf_hi  : but my mom do not let me 	7
+hk_sf_hi  : [kiss face]	6
+hk_sf_hi  : what are you doing	1
+hk_sf_hi  : teach me how to play	5
+hk_sf_hi  : will you kiss on first datequestion	6
+hk_sf_hi  : [kiss face]	6
+hk_sf_hi  : [kiss face][kiss face][kiss face][kiss face][kiss face]	6
+hk_sf_hi  : [kiss face]	6
+hk_sf_hi  : kiss	6
+hk_sf_hi  : i mean how long can you kiss	6
+hk_sf_hi  : if we can kiss longer than 30mins	6
+hk_sf_hi  : what do you want from me if i lose	6
+hk_sf_hi  : you do not let me kiss you that long	6
+hk_sf_hi  : [kiss face]	6
+hk_sf_hi  : you do not have any new pictures	2
+hk_sf_hi  : you do not have any new pictures	2
+hk_sf_hi  : sucks	6
+hk_sf_hi  : sucks	6
+hk_sf_hi  : can we talk on the phone	8
+hk_sf_hi  : can we talk on the phone	8
+hk_sf_hi  : still playing dsquestion	6
+hk_sf_hi  : hello sweetie	3
+hk_sf_hi  : [kiss face]	6
+hk_sf_hi  : hello hello[kiss face]	6
+hk_sf_hi  : what are you doing	1
+hk_sf_hi  : can you call me	8
+hk_sf_hi  : i understand it	7
+hk_sf_hi  : [kiss face]	6
+hk_sf_hi  : [kiss face][kiss face][kiss face]	6
+hk_sf_hi  : you want to topless or all naked	6
+hk_sf_hi  : all naked or topless	6
+hk_sf_hi  : all naked 	6
+hk_sf_hi  : what do you want from me	6
+hk_sf_hi  : kiss my body	6
+hk_sf_hi  : kiss my body	6
+hk_sf_hi  : kiss my buttocks too	6
+hk_sf_hi  : kiss my buttocks too	6
+hk_sf_hi  : what do you want me to say	6
+hk_sf_hi  : what are you doing 	1
+hk_sf_hi  : with "your, you are" mom	7
+hk_sf_hi  : call me when you get back okay	8
+hk_sf_hi  : just message me	2
+hk_sf_hi  : [kiss face]	6
+hk_sf_hi  : i understand it[wink face]	7
+hk_sf_hi  : do not worry be happy sweetie;[wink face]	3
+hk_sf_hi  : cool[kiss face]	6
+hk_sf_hi  : playing ds again:p	6
+hk_sf_hi  : [kiss face]	6
+hk_sf_hi  : im back honey[sad face][kiss face]	6
+hk_sf_hi  : [kiss face]	6
+hk_sf_hi  : you like itquestion	5
+hk_sf_hi  : you like the kissyface or a real kiss from mequestion	6
+hk_sf_hi  : actually where "your, you are" mom go on friday	7
+hk_sf_hi  : what about if "your, you are" mom come suddenly	7
+hk_sf_hi  : number[gross face] okay	8
+hk_sf_hi  : because my mom she is cookin now	7
+hk_sf_hi  : of course i want to be "your, you are" boyfriend	4
+hk_sf_hi  : im not playing	6
+hk_sf_hi  : so am i "your, you are" real boyfriend nowquestion	4
+hk_sf_hi  : "your, you are" my lovely , sweetie , cute girlfriend	3
+hk_sf_hi  : i swear , im not playing around	6
+hk_sf_hi  : [kiss face]:">:x[sad face]@];- "for, four" you	6
+hk_sf_hi  : i mean boyfriend	4
+hk_sf_hi  : sorry baby	3
+hk_sf_hi  : im looking at "your, you are" pictures now	2
+hk_sf_hi  : im looking at "your, you are" pictures now	2
+hk_sf_hi  : from yahoo photo	3
+hk_sf_hi  : [kiss face]	6
+hk_sf_hi  : hello baby	3
+hk_sf_hi  : hello baby what are you doing	1
+hk_sf_hi  : hello baby what are you doing	3
+hk_sf_hi  : you going to teach me	5
+hk_sf_hi  : [kiss face]	6
+hk_sf_hi  : [kiss face]	6
+hk_sf_hi  : sweet dream	3
+hk_sf_hi  : [kiss face]:x	6
+hk_sf_hi  : hello baby	3
+hk_sf_hi  : okay [kiss face]	6
+hk_sf_hi  : sweetheart	3
+hk_sf_hi  : sweetheart	3
+hk_sf_hi  : what are you doing 	1
+hk_sf_hi  : number[gross face] i thought you log off	8
+hk_sf_hi  : yahoo suck	6
+hk_sf_hi  : [kiss face]	6
+hk_sf_hi  : what do you want	6
+hk_sf_hi  : because i do not think i could beat you	6
+hk_sf_hi  : if you win what do you want	6
+hk_sf_hi  : go ahead	6
+hk_sf_hi  : what do you want from me	6
+hk_sf_hi  : com on baby	3
+hk_sf_hi  : i will let you know when we meet this friday okayquestion	8
+hk_sf_hi  : can you call mequestion	8
+hk_sf_hi  : hello you said you do not have a phone linequestion	8
+hk_sf_hi  : if you do not have a phone line , how can you go online 	8
+hk_sf_hi  : please call me i want to hear "your, you are" voice	8
+hk_sf_hi  : say hello then hung up	3
+hk_sf_hi  : will "your, you are" mom give the phone to you when she leave	7
+hk_sf_hi  : will "your, you are" mom give the phone to you when she leave	8
+hk_sf_hi  : she not going to call you	8
+hk_sf_hi  : she not going to call you	8
+hk_sf_hi  : but "your, you are" my baby[kiss face]	6
+hk_sf_hi  : but "your, you are" my baby[kiss face]	3
+hk_sf_hi  : you sure you want to be my girlfriendquestion	3
+hk_sf_hi  : when was "your, you are" mom married "your, you are" dad	7
+hk_sf_hi  : when was "your, you are" mom married "your, you are" dad	7
+hk_sf_hi  : will you let "your, you are" mom	7
+hk_sf_hi  : so you won't introdue me to you mom later on	7
+hk_sf_hi  : so i can go to "your, you are" house any time after "your, you are" mom know me	7
+hk_sf_hi  : what are you doing	1
+hk_sf_hi  : what do you want	6
+hk_sf_hi  : what do you want from me	6
+hk_sf_hi  : i want "your, you are" number okay	8
+hk_sf_hi  : i want you to call me	5
+hk_sf_hi  : i want you to call me	8
+hk_sf_hi  : ask her for the phone	8
+hk_sf_hi  : i want you kiss me all night okay	6
+hk_sf_hi  : i want you kiss me all night okay	5
+hk_sf_hi  : "your, you are" buttocksquestion	6
+hk_sf_hi  : dragon on "your, you are" buttocks	6
+hk_sf_hi  : but not on the buttocks	6
+hk_sf_hi  : i saw a picture	2
+hk_sf_hi  : i mean the picture	2
+hk_sf_hi  : com on baby	3
+hk_sf_hi  : im hungry	3
+hk_sf_hi  : [kiss face]:x	6
+hk_sf_hi  : bisexual bye	6
+hk_sf_hi  : [kiss face]	6
+hk_sf_hi  : [kiss face][kiss face]	6
+hk_sf_hi  : [kiss face]	6
+hk_sf_hi  : wht time "your, you are" mom go	7
+hk_sf_hi  : [kiss face]	6
+hk_sf_hi  : i cannot park my car in "your, you are" garagequestion	2
+hk_sf_hi  : "your, you are" mom drop off the phone "for, four" you question	7
+hk_sf_hi  : "your, you are" mom drop off the phone "for, four" you question	8
+hk_sf_hi  : what are you doing	1
+hk_sf_hi  : [kiss face][kiss face][kiss face]	6
+hk_sf_hi  : [kiss face]	6
+hk_sf_hi  : you mom leave yet	7
+hk_sf_hi  : cannot wait to see you [kiss face]	6
+hk_sf_hi  : she drop off the phone for you question	8
+hk_sf_hi  : call me when she leave	8
+hk_sf_hi  : i mean if she drop off the phone for you , give me a car okay	8
+hk_sf_hi  : "your, you are" mom gonequestion	7
+hk_sf_hi  : [kiss face]	6
+hk_sf_hi  : she leave you the phonequestion	8
+hk_sf_hi  : call me	8
+hk_sf_hi  : still have the phone with you	8
+hk_sf_hi  : call me at 4pm	8
+hk_sf_hi  : seeya in 1 hour [kiss face]	6

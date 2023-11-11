@@ -1,0 +1,512 @@
+stoned_party  : "age, sex, location"question	6
+stoned_party  : "age, sex, location"question	2
+stoned_party  : no of course chat... but do you meet guys in personquestion	8
+stoned_party  : meaning if i ask you to hang out, with you meet mequestion	8
+stoned_party  : meaning if i ask you to hang out, with you meet mequestion	8
+stoned_party  : how you going to find out if im nice if you do not meet mequestion	8
+stoned_party  : oh its only "your, you are" grandmother	7
+stoned_party  : oh you mean "your, you are" moving to riverside "your, you are" grandmothers housequestion	7
+stoned_party  : and so she just kind of tell you to stay at grandmothersquestion	7
+stoned_party  : so did "your, you are" grandmother went to help "your, you are" mom pack tooquestion	7
+stoned_party  : so did "your, you are" grandmother went to help "your, you are" mom pack tooquestion	7
+stoned_party  : i thought you grandmother would go and help	7
+stoned_party  : so do you hv a boyfriend ashquestion	4
+stoned_party  : did you hv sex with himquestion	6
+stoned_party  : so you are still a virgin then rightquestion	6
+stoned_party  : girl.... you forgot about my age alreadyquestion	2
+stoned_party  : so are you curious about sexquestion	6
+stoned_party  : so are you waiting for "your, you are" next boyfriend to try or you just want someone that is good to teach you howquestion	4
+stoned_party  : so are you waiting for "your, you are" next boyfriend to try or you just want someone that is good to teach you howquestion	5
+stoned_party  : what if i offer to teach youquestion will you let me be "your, you are" teacherquestion	5
+stoned_party  : she said that i had the patience to teach her	5
+stoned_party  : if you want to i can teach you... i like teaching ppl makes me feel good	6
+stoned_party  : if you want to i can teach you... i like teaching ppl makes me feel good	5
+stoned_party  : no... me teaching you	5
+stoned_party  : i thought it was locally	8
+stoned_party  : oh so you going to hv to start school over here then huh after the holidays	2
+stoned_party  : that sucks	6
+stoned_party  : that sucks	6
+stoned_party  : you hv to leave all "your, you are" friends back there	7
+stoned_party  : well hello do you want to have my cell phone number so you can call me whenever you hv timequestion	8
+stoned_party  : well hello do you want to have my cell phone number so you can call me whenever you hv timequestion	8
+stoned_party  : well hello do you want to have my cell phone number so you can call me whenever you hv timequestion	8
+stoned_party  : well hello do you want to have my cell phone number so you can call me whenever you hv timequestion	8
+stoned_party  : well hello do you want to have my cell phone number so you can call me whenever you hv timequestion	8
+stoned_party  : no phonequestion	8
+stoned_party  : you do hv a cell..	8
+stoned_party  : well all you hv to do is buy a prepaid phone card rightquestion	8
+stoned_party  : so do you hv any pictures or cameraquestion	2
+stoned_party  : so do you hv any pictures or cameraquestion	2
+stoned_party  : so do you hv any pictures or cameraquestion	2
+stoned_party  : i hv a camera too	2
+stoned_party  : hold on the camera is weird	2
+stoned_party  : if so... then im going to add you on myspace	2
+stoned_party  : you just started "your, you are" pagequestion	2
+stoned_party  : so what grade you going right nowquestion	2
+stoned_party  : because 8th grade i was taking algebra already	6
+stoned_party  : i like the song you hv on "your, you are" page	2
+stoned_party  : hello do you think if you might be curious about how big my penis isquestion	6
+stoned_party  : do you want to see it on cameraquestion	2
+stoned_party  : well i guess not... but i really want to meet you though	8
+stoned_party  : well you hv my number rightquestion	8
+stoned_party  : i can let you kiss him if you want toquestion	6
+stoned_party  : well just suck it and lick it like a lollipop	6
+stoned_party  : well just suck it and lick it like a lollipop	6
+stoned_party  : well... you want to suck my lollipop tonight sweetiequestion	6
+stoned_party  : well... you want to suck my lollipop tonight sweetiequestion	3
+stoned_party  : i just can't wait to meet you	8
+stoned_party  : does "your, you are" grandmother leave the house at all during the dayquestion	7
+stoned_party  : so just leave me message whatever you figure out	2
+stoned_party  : but i seriously don't want to wait that long to meet you	8
+stoned_party  : i hv to go hun sowwie	3
+stoned_party  : call me around 1 a if "your, you are" not sleeping yet	8
+stoned_party  : okay and i won't get all wet myself	6
+stoned_party  : well i understand this is only "your, you are" 2nd day	7
+stoned_party  : do you know if "your, you are" grandmother is a deep sleeperquestion	7
+stoned_party  : that sucks	6
+stoned_party  : that sucks	6
+stoned_party  : so did "your, you are" mom came out to california yesterday tooquestion	7
+stoned_party  : so you camera to california by urselfquestion	2
+stoned_party  : sucks	6
+stoned_party  : sucks	6
+stoned_party  : i hv friends from kentucky	7
+stoned_party  : do you keep in touch with themquestion	6
+stoned_party  : i think she lived in a place called nashville or something likke that	8
+stoned_party  : well you hv to because i like girls that knows how to be a good housewife 	6
+stoned_party  : im sorry my mom was talking to me	7
+stoned_party  : im 28 and i still live with parents	7
+stoned_party  : what happened to "your, you are" dadquestion	7
+stoned_party  : awww that sucks	6
+stoned_party  : awww that sucks	6
+stoned_party  : then why didn't you live with "your, you are" dadquestion	7
+stoned_party  : me too... i think i will like "your, you are" mom tooo.... if she doesn't know how old i am	7
+stoned_party  : me too... i think i will like "your, you are" mom tooo.... if she doesn't know how old i am	2
+stoned_party  : hello i m going to go work on something in the garage	2
+stoned_party  : muah!!!xoxoxoxo[kiss face]	6
+stoned_party  : hello hun..	3
+stoned_party  : a lot of friends told me that	7
+stoned_party  : because most guys are looking for sex on here	6
+stoned_party  : and "your, you are" super underage for that	2
+stoned_party  : i am here for real friends	7
+stoned_party  : i mean i don't hv to have sex with the ppl that i meat	6
+stoned_party  : meet	8
+stoned_party  : hun...	3
+stoned_party  : so what the fuck you going to doquestion	6
+stoned_party  : you such a brat	6
+stoned_party  : two freaking days before christmas	6
+stoned_party  : <<<< ash_luvs_math : no im not bored i just do not want you 2 leave	5
+stoned_party  : yes hun... i hv to talk to my friends and see if they can help me out	7
+stoned_party  : yes hun... i hv to talk to my friends and see if they can help me out	3
+stoned_party  : just try to meet me before friday	8
+stoned_party  : because that would've suck if i hv to leave	6
+stoned_party  : you hv a good night sweetie	3
+stoned_party  : and i hate those that try to show you their camera	2
+stoned_party  : and they're buttocks fuck ugly	6
+stoned_party  : and they're buttocks fuck ugly	6
+stoned_party  : but do you want to see my cameraquestion	2
+stoned_party  : and i was arguing with my mom yesterday morning before i go to court	7
+stoned_party  : but she does not go out with her own friends or whatquestion	7
+stoned_party  : shes "your, you are" grandmother	7
+stoned_party  : yes, so not a good idea to call the cops on me	8
+stoned_party  : library	6
+stoned_party  : and i will like meet you there	8
+stoned_party  : and we'll just meet at one spot	8
+stoned_party  : so i can feel you and touch you	6
+stoned_party  : so i can feel you and touch you	6
+stoned_party  : im sure if you at the library	6
+stoned_party  : do you hv my number stillquestion	8
+stoned_party  : any ways i am going to go to the garage and work on something	2
+stoned_party  : just hit me up here or call me	8
+stoned_party  : i know hun...	3
+stoned_party  : hello hun	3
+stoned_party  : hello hun.... try to sneak out tonight okayquestion	3
+stoned_party  : just tell her to call my cell phone and so she don't hv to worry	8
+stoned_party  : just tell her to call my cell phone and so she don't hv to worry	8
+stoned_party  : just tell her to call my cell phone and so she don't hv to worry	8
+stoned_party  : just tell her to call my cell phone and so she don't hv to worry	8
+stoned_party  : well i know but then like i was thinking its too long to wait until "your, you are" mom gets here	7
+stoned_party  : that is why you are my girlfriend	3
+stoned_party  : "yes, you"questionquestion okay... we'll officially get together when we meet	8
+stoned_party  : so you are my engaged girlfriend...	2
+stoned_party  : not exactly my girlfriend but engaged girlfriend	3
+stoned_party  : not exactly my girlfriend but engaged girlfriend	2
+stoned_party  : ppl are engaged in a marriage	2
+stoned_party  : we're engaged in a relationship	2
+stoned_party  : well i will hit you up later on okay hunquestion	3
+stoned_party  : call me anytime if you want to talk	8
+stoned_party  : but try not to block "your, you are" number	8
+stoned_party  : just so i knwo you are calling	8
+stoned_party  : well just dial *82	8
+stoned_party  : and then my number	8
+stoned_party  : all right.... c "yes, you" later hun	3
+stoned_party  : [kiss face]	6
+stoned_party  : hun...	3
+stoned_party  : hello hun	3
+stoned_party  : i need a massage	2
+stoned_party  : hun...	3
+stoned_party  : hello i am hungry	3
+stoned_party  : okay hun... im going to go and make the food...	3
+stoned_party  : [kiss face]	6
+stoned_party  : txt message	2
+stoned_party  : prepaid comes with txt message	2
+stoned_party  : hello hun... im sorry i can only chat here with you for like maybe anotehr 10 minutes or so	3
+stoned_party  : because i hv to finish up what i was doing in the garage	2
+stoned_party  : its for my baby plants	3
+stoned_party  : don't try to buttocks in my story	6
+stoned_party  : see the cameraquestionquestion	2
+stoned_party  : because you are my girlfriend	3
+stoned_party  : you like being my girlfriendquestion	3
+stoned_party  : so i can actually claim you as my girl	3
+stoned_party  : then we can be as loud as we can wen we hv sex	6
+stoned_party  : hello hun... i'll be right back okayquestion	3
+stoned_party  : love "yes, you" hun	3
+stoned_party  : so if you don't see me just call me	8
+stoned_party  : hello baby...	3
+stoned_party  : and i need to go to the location to like take some pictures	2
+stoned_party  : and i need to go to the location to like take some pictures	2
+stoned_party  : because i am going to go out to eat with some friends	7
+stoned_party  : do you want to call me on my cellquestion	8
+stoned_party  : do you want to call me on my cellquestion	8
+stoned_party  : just call me when ever you hv time	8
+stoned_party  : i don't usually do that to my girlfriend	3
+stoned_party  : if shes going to pick up the phone to call	8
+stoned_party  : if shes going to pick up the phone to call	8
+stoned_party  : you go and grab the phone	8
+stoned_party  : and say you will call	8
+stoned_party  : but actually you don't hv to call	8
+stoned_party  : i can outrun "your, you are" grandmother	7
+stoned_party  : its not like everytime you call the cops they come over	8
+stoned_party  : then i think she'll not let you call the cops then in that case	8
+stoned_party  : well i am not "your, you are" boyfriend im "your, you are" hubby	4
+stoned_party  : come out and meet me	8
+stoned_party  : okay okay that is too silly	3
+stoned_party  : so you call me later or i will be online later on again okayquestion	8
+stoned_party  : [kiss face]	6
+stoned_party  : because i was smoking out at my friends and i didn't sleep much	7
+stoned_party  : call up the bail bond places and see what what is up	8
+stoned_party  : my mom is home today	7
+stoned_party  : yes sorry hun	3
+stoned_party  : so when is "your, you are" grandmother going to go there question	7
+stoned_party  : but still you hv to respect your grandmother okayquestion	7
+stoned_party  : don't call her a bitch	8
+stoned_party  : so what are you doing nowquestion	1
+stoned_party  : so let us meet up and do that together	8
+stoned_party  : that is why i am "your, you are" boyfriend rightquestion	4
+stoned_party  : so i guess im not going to see you anytime soon then huh since "your, you are" grandmother is not going to go there	7
+stoned_party  : trust me, i don't want to neither	5
+stoned_party  : that sucks	6
+stoned_party  : that sucks	6
+stoned_party  : you are my baby only	3
+stoned_party  : hello hun	3
+stoned_party  : i've been trying to call london	8
+stoned_party  : well are you going to tell "your, you are" mom about mequestion	7
+stoned_party  : if you planning to, don't tell her about my age	2
+stoned_party  : but you don't hv to until the day we meet	8
+stoned_party  : well depends what you planning to do with me when we meet	8
+stoned_party  : finallly you get to see "your, you are" mom	7
+stoned_party  : how about i take you to cold stone when we meet	8
+stoned_party  : do you know baby	3
+stoned_party  : but since i am "your, you are" boyfriend	4
+stoned_party  : only thing that you might think it hurts is when i first put my dick in "your, you are" vagina	6
+stoned_party  : only thing that you might think it hurts is when i first put my dick in "your, you are" vagina	6
+stoned_party  : okay hun	3
+stoned_party  : [kiss face]	6
+stoned_party  : sorry baby but its dinner time	3
+stoned_party  : c'mon i want to spend the first christmas with you sweetie	3
+stoned_party  : no i can't wait i mean i want to have our first christmas together sweetie	3
+stoned_party  : that really sucks	6
+stoned_party  : that really sucks	6
+stoned_party  : and that really sucks... because then we'll hv to wait until next year	6
+stoned_party  : and that really sucks... because then we'll hv to wait until next year	6
+stoned_party  : well unwrap "your, you are" present when we meet okayquestionquestionquestion	8
+stoned_party  : but i thought you busy with "your, you are" mom	7
+stoned_party  : but do you think you will be starting school by thenquestion	2
+stoned_party  : some friends and also meet new friends	8
+stoned_party  : some friends and also meet new friends	7
+stoned_party  : well i mean like to me right now, you are still a internet chat buddy because i do not know when we'll meet or will we ever meet or what not... hope you understand	8
+stoned_party  : but once we have met and when we decide if we're going to be serious or not, i will totally respect you and stop meeting ppl on here	8
+stoned_party  : to me, "your, you are" my sweet little angel you know	3
+stoned_party  : will you want to play with my penisquestionquestionquestion	6
+stoned_party  : well i think me and him both want you to	5
+stoned_party  : have you ever had a guy lick you beforequestion	6
+stoned_party  : now i really can't wait hun	3
+stoned_party  : sneak out tonight baby	3
+stoned_party  : i know but still i am just dying to meet you	8
+stoned_party  : well i guess i will explain to you when we meet okayquestion	8
+stoned_party  : hello hun i guess i hv to leet you go for now because i am kind of in the middle of something	3
+stoned_party  : good night sweetie	3
+stoned_party  : i can actually help but only if you going to have to tell "your, you are" mom about me	7
+stoned_party  : well i guess we'll decide after we meet for the first time	8
+stoned_party  : i wanted to meet you but i was thinking sooner	8
+stoned_party  : i just want to meet you as soon as possible	8
+stoned_party  : i will meet you soon i guess	8
+stoned_party  : and i will treat you with special attention rightquestionquestion[wink face]	6
+stoned_party  : but maybe after i meet you i might start	8
+stoned_party  : of course you can sweetie	3
+stoned_party  : don't say i want to get in "your, you are" panties north all that	6
+stoned_party  : i will go on myspace in a minute	2
+stoned_party  : you will get one on "your, you are" main page	2
+stoned_party  : you deserve the best baby	3
+stoned_party  : did you like my pagequestion	2
+stoned_party  : hello girl you should go check "your, you are" myspace now	2
+stoned_party  : what is wrong babyquestion	3
+stoned_party  : i can hang out with you	8
+stoned_party  : well my old manager from my previous previous job	2
+stoned_party  : called me because he needed help	8
+stoned_party  : its called okay cafe in alhambra	6
+stoned_party  : its called okay cafe in alhambra	8
+stoned_party  : because i think my old manager he took over this restaurant	2
+stoned_party  : you know like new management	2
+stoned_party  : so if you mom actually finds out about me	7
+stoned_party  : i will automatically go to jail	8
+stoned_party  : i am not suppose to be friends with you	7
+stoned_party  : i am just telling you before we meet	8
+stoned_party  : and possibly a real boyfriend	4
+stoned_party  : i want you to be able to tell me everythng	5
+stoned_party  : not even "your, you are" friends in ohio or nothing	7
+stoned_party  : this is why when i want you and you can't see me	5
+stoned_party  : because i don't want you to risk getting in trouble	5
+stoned_party  : "your, you are" mom is leaving this thursdayquestion	7
+stoned_party  : because you mom is going to notice	7
+stoned_party  : you must be really hungry	3
+stoned_party  : because "your, you are" mom might ask around you know	7
+stoned_party  : then how am i going to go to you hunquestion	3
+stoned_party  : but i just like to plan ahead	6
+stoned_party  : what else do you like to doquestion	5
+stoned_party  : are they naughty onesquestion	6
+stoned_party  : like strip pokerquestion	6
+stoned_party  : put it in "your, you are" panties and put it on	6
+stoned_party  : well do you want me to bring some porno movies so you can learn what its likequestion	6
+stoned_party  : and i will teach you	5
+stoned_party  : do you really want me to be "your, you are" teacherquestion	5
+stoned_party  : especially this sex thingy	6
+stoned_party  : even criminals don't like ppl that have sex with minors	6
+stoned_party  : i mean i don't like the law about having restrictions with ppl being friends with younger kids	7
+stoned_party  : hello baby im going to have to go now	3
+stoned_party  : because my mom and my aunts family are over	7
+stoned_party  : because my mom and my aunts family are over	7
+stoned_party  : i do not know, because i might have to see my manager tonight	2
+stoned_party  : because if "your, you are" mom finds out from here	7
+stoned_party  : i mean i remmeber everything that we say in my head	6
+stoned_party  : you hv to have "your, you are" own friends too	7
+stoned_party  : but once you start school you will be okay	2
+stoned_party  : are you going to start school soonquestion	2
+stoned_party  : no you should go because if "your, you are" mom finds out why you stay home then she will find out	7
+stoned_party  : i can even take you to school	2
+stoned_party  : can you walk to "your, you are" schoolquestion	2
+stoned_party  : oh so you haven't even register with "your, you are" new school or nothingquestion	2
+stoned_party  : and "your, you are" mom is leaving on thursdayquestion	7
+stoned_party  : that is kind of suck	6
+stoned_party  : well once you find out where you live i can find out where "your, you are" school is at	2
+stoned_party  : what is the name of "your, you are" new school do you knowquestion	2
+stoned_party  : icic... but that is a good place to meet ppl "your, you are" age	8
+stoned_party  : icic... but that is a good place to meet ppl "your, you are" age	2
+stoned_party  : so you can hang out with them when i am working and all	8
+stoned_party  : not "your, you are" boyfriend	4
+stoned_party  : bye now sweetie	3
+stoned_party  : [kiss face]	6
+stoned_party  : hv you been telling ppl that i am meeting youquestion	8
+stoned_party  : because i been receiving message on myspace saying i am nasty and everything	2
+stoned_party  : because i been receiving message on myspace saying i am nasty and everything	2
+stoned_party  : with a picture of urself	2
+stoned_party  : as long as we take off the message	2
+stoned_party  : you hv to change "your, you are" age in the about me part	2
+stoned_party  : its like a myspace but for teens	2
+stoned_party  : myspace is all for ppl over 18	2
+stoned_party  : sorry baby i mean i can trust you but just all these freaks are calling me names	6
+stoned_party  : sorry baby i mean i can trust you but just all these freaks are calling me names	3
+stoned_party  : sorry baby i mean i can trust you but just all these freaks are calling me names	8
+stoned_party  : well baby, like i said it is a serious crime if i get caught	3
+stoned_party  : and we didn't even meet yet	8
+stoned_party  : no actually i am being bomb by couple of ppl on myspace about my post	2
+stoned_party  : on "your, you are" page	2
+stoned_party  : its called www.tagged.com	8
+stoned_party  : hello i hv to go now sweetie	3
+stoned_party  : hello hold on kind of busy at the moment	7
+stoned_party  : well hun... listen	3
+stoned_party  : i am going to be working for my old old manager that i used to work under when i was a waiter	2
+stoned_party  : and like maybe we can hang out	8
+stoned_party  : but baby, you know those myspace ppl are really hating me right now, sending me messages that saying i am nasty and weird	2
+stoned_party  : but baby, you know those myspace ppl are really hating me right now, sending me messages that saying i am nasty and weird	2
+stoned_party  : but baby, you know those myspace ppl are really hating me right now, sending me messages that saying i am nasty and weird	3
+stoned_party  : they can take me to jail once they find out about me secretly meeting you in person	8
+stoned_party  : but see we didn't tell anyone but they know about it on myspace	2
+stoned_party  : okay but i don't want you to be mad though	5
+stoned_party  : you are so nice hun	3
+stoned_party  : "your, you are" babysitterquestion no ones going to believe it because of what they see on myspace	2
+stoned_party  : "your, you are" babysitterquestion no ones going to believe it because of what they see on myspace	3
+stoned_party  : how about we meet right now	8
+stoned_party  : are you going to have internet or phone line ready therequestion	8
+stoned_party  : don't be mad hun	3
+stoned_party  : and if i have sex with you, what if you hate me one day and just want to tell your momquestion	6
+stoned_party  : and if i have sex with you, what if you hate me one day and just want to tell your momquestion	7
+stoned_party  : boyfriend and girlfriend argue all the time	4
+stoned_party  : okay hun, i will go to meet you still	8
+stoned_party  : okay hun, i will go to meet you still	3
+stoned_party  : just make sure when "your, you are" mom is leaving on thursday	7
+stoned_party  : once you know "your, you are" phone number then just give me a call okayquestion	8
+stoned_party  : once you know "your, you are" phone number then just give me a call okayquestion	8
+stoned_party  : once you know "your, you are" phone number then just give me a call okayquestion	8
+stoned_party  : just so i know your phone number and call you thursday night when i get out of work	8
+stoned_party  : just so i know your phone number and call you thursday night when i get out of work	8
+stoned_party  : just so i know your phone number and call you thursday night when i get out of work	8
+stoned_party  : just so i know your phone number and call you thursday night when i get out of work	8
+stoned_party  : i still love you as much hun	3
+stoned_party  : no i mean i will talk to you later like when i get "your, you are" phone number	8
+stoned_party  : no i mean i will talk to you later like when i get "your, you are" phone number	8
+stoned_party  : you started school today	2
+stoned_party  : did you already meet any new friendsquestion	8
+stoned_party  : did you already meet any new friendsquestion	7
+stoned_party  : do you like the school herequestion	2
+stoned_party  : and "your, you are" mom is not here	7
+stoned_party  : and you hv no friends and stuff you know	7
+stoned_party  : so what do you want to getquestion	6
+stoned_party  : okay hello hun be right back	3
+stoned_party  : no schoolquestion	2
+stoned_party  : hello baby i am so hungry	3
+stoned_party  : hello baby i am so hungry	3
+stoned_party  : so is "your, you are" mom gonequestion	7
+stoned_party  : and so you want me to cumquestion	6
+stoned_party  : well call me after jessie leaves and we'll see okayquestion	8
+stoned_party  : what are you doingquestion	1
+stoned_party  : well "yes, you" but if i cum too late then i can't go to work at 8 am tomorrow	6
+stoned_party  : well can i call "your, you are" house laterquestion	8
+stoned_party  : well you hv my phone number rightquestion	8
+stoned_party  : well you hv my phone number rightquestion	8
+stoned_party  : just call me at 10pm and tell me what is upquestion	8
+stoned_party  : just call me like around 10 and see what i will be doing okayquestion	8
+stoned_party  : and i'll hv you call me wen i'm close by	8
+stoned_party  : well i will tell you wen i'm on the phone with you	8
+stoned_party  : when is "your, you are" mom suppose to come backquestion	7
+stoned_party  : hello ash can i hv "your, you are" phone numberquestion	8
+stoned_party  : hello ash can i hv "your, you are" phone numberquestion	8
+stoned_party  : call me right now then	8
+stoned_party  : did you know that even if you call	8
+stoned_party  : how old are youquestion	2
+stoned_party  : how old are youquestion	2
+stoned_party  : so what do you like to do for funquestion	1
+stoned_party  : so what do you like to do for funquestion	1
+stoned_party  : maybe we can go and catch a flick	6
+stoned_party  : but if "your, you are" parents finds out about me or "your, you are" dating older guys	7
+stoned_party  : so how old is "your, you are" oldest friendquestion	2
+stoned_party  : are you sure you would want to hang out with and old fart like mequestion	8
+stoned_party  : well do you want to hang out thenquestion	8
+stoned_party  : with "your, you are" parents	7
+stoned_party  : yes www.myspace.com/edd247	2
+stoned_party  : i know you hv a page too	2
+stoned_party  : add me if you want	4
+stoned_party  : just my page nowquestion	2
+stoned_party  : my own picturequestion	2
+stoned_party  : or even meet me	8
+stoned_party  : i promise if we be straight to each other we'll be good friends	7
+stoned_party  : i added you on myspace too	2
+stoned_party  : so when do you think we'll meetquestion	8
+stoned_party  : heres my camera	2
+stoned_party  : no you look hott to me	3
+stoned_party  : like you can't move "your, you are" whole body	6
+stoned_party  : for stoned moments like right now	7
+stoned_party  : "your, you are" mom don't workquestion	7
+stoned_party  : so only saturday that is when we can hang outquestion	8
+stoned_party  : you can't even hang out during the day tomorrowquestion	8
+stoned_party  : "your, you are" coming closer to me and we can hang outquestion	8
+stoned_party  : what if you say you hv to visit a friend from school before who moved to la nowquestion	2
+stoned_party  : do you hv any friends like thatquestion	7
+stoned_party  : one hot girl	3
+stoned_party  : not hot girlz	3
+stoned_party  : majority friends of mine on there are from the internet	7
+stoned_party  : and then the two girls that is flipping me off as i took the picture	2
+stoned_party  : or i didn't hv the camera with me	2
+stoned_party  : and sum are afraid of me taking picture of them	2
+stoned_party  : the first time i meet them	8
+stoned_party  : then i can have you on myspace	2
+stoned_party  : and i added you on my page too	2
+stoned_party  : hello baby i hv to get eat dinner now	3
+stoned_party  : sowwie i hv to cut this short	6
+stoned_party  : or else how do we find time to meetquestion	8
+stoned_party  : its just that i been thinking about meeting you or not lately	8
+stoned_party  : i do want to meet you	8
+stoned_party  : and be friends with you and all	7
+stoned_party  : but i just heard from my friends that i shouldn't be doing that	7
+stoned_party  : well i see no reason for me not to be sweet to you	3
+stoned_party  : the law doesn't see us as just friends	7
+stoned_party  : unless "your, you are" parents are okay with it	7
+stoned_party  : and i really don't care about ages myself	2
+stoned_party  : for meeting one	8
+stoned_party  : this is why i am trying to meet the most ppl as i can	8
+stoned_party  : river listen... the problem is i don't know how to meet you that is safe without a chance of ppl knowing	8
+stoned_party  : that is what happened... i went over to her house thinking her mom wasn't home	7
+stoned_party  : it doesn't say we can't hang out	8
+stoned_party  : well either way we can't meet until the wkends anyways	8
+stoned_party  : you should find someone "your, you are" own age	2
+stoned_party  : maybe i am a little childish for my age	2
+stoned_party  : and i can turn on my camera for you too	2
+stoned_party  : baby	3
+stoned_party  : how about more pictures of yoursquestion	2
+stoned_party  : how about more pictures of yoursquestion	2
+stoned_party  : i wish we can go take pictures too	2
+stoned_party  : i wish we can go take pictures too	2
+stoned_party  : but how we going to meet upquestion	8
+stoned_party  : ppl will look and call the cops even	8
+stoned_party  : oh so when you don't hv to go what do you doquestion	1
+stoned_party  : so what do you guys do when you hang outquestion	8
+stoned_party  : that is because they are "your, you are" age	2
+stoned_party  : do you hv any asian friendsquestion	7
+stoned_party  : so you really want to meet me riverquestion	8
+stoned_party  : i hv to go to my friends house really quick	7
+stoned_party  : because you hv school tm	2
+stoned_party  : and have fun in school too tomorrow	2
+stoned_party  : remember don't say anything about me to "your, you are" friends	7
+stoned_party  : don't you hv friends therequestion	7
+stoned_party  : hello baby i hv to go out and meet a friend really quick	8
+stoned_party  : hello baby i hv to go out and meet a friend really quick	3
+stoned_party  : i mean its not that i am ashame of my body	6
+stoned_party  : >>> heres a picture though...	2
+stoned_party  : to do it on camera	2
+stoned_party  : see unless you hv a camera too	2
+stoned_party  : you should get a camera girl	2
+stoned_party  : but what if you mom do "your, you are" laundryquestion	7
+stoned_party  : how old are theyquestion	2
+stoned_party  : do you hv a family portraitquestion	7
+stoned_party  : how come you hv picture of urself but not the familyquestion	7
+stoned_party  : how come you hv picture of urself but not the familyquestion	2
+stoned_party  : oh so you never took any picture with them and save them on "your, you are" own puterquestion	2
+stoned_party  : just want to get to know the family first....	7
+stoned_party  : so we can only be friends huhquestion	7
+stoned_party  : that was my mom	7
+stoned_party  : because if i am "your, you are" boyfriend	4
+stoned_party  : then i will hv to meet "your, you are" parents	7
+stoned_party  : then i will hv to meet "your, you are" parents	8
+stoned_party  : well that is not how i want my girlfriend though... because i like to get close with my girlfriends family too	3
+stoned_party  : well that is not how i want my girlfriend though... because i like to get close with my girlfriends family too	7
+stoned_party  : well that is not how i want my girlfriend though... because i like to get close with my girlfriends family too	7
+stoned_party  : unless you planning to just be with me for a short while and dump me	6
+stoned_party  : so do you hv picture of "your, you are" friendsquestion	7
+stoned_party  : so do you hv picture of "your, you are" friendsquestion	2
+stoned_party  : well how come you didn't take a picture with themquestion	2
+stoned_party  : you don't hv any picture with "your, you are" friends togetherquestion	7
+stoned_party  : you don't hv any picture with "your, you are" friends togetherquestion	2
+stoned_party  : i want to see how you hv fun with "your, you are" friends	7
+stoned_party  : oh that sucks	6
+stoned_party  : oh that sucks	6
+stoned_party  : no i m not baby and i'm sorry last night knocking out on you...	3
+stoned_party  : no you didn't do anything wrong baby and i am totally sorry for doing that	3
+stoned_party  : does "your, you are" parents let you go out tonightquestion	7
+stoned_party  : so do you think if we can start talking on the phonequestion	8
+stoned_party  : but i want to hear "your, you are" sweet voice	3
+stoned_party  : but my number is 626 area code	8
+stoned_party  : are you sure you can call thatquestion	8
+stoned_party  : i mean its going to show on the phone bill	8
+stoned_party  : i mean if you call every night	8
+stoned_party  : oh i hv a phone call baby... sorry just wait a minute	3
+stoned_party  : oh i hv a phone call baby... sorry just wait a minute	8
+stoned_party  : oh i hv a phone call baby... sorry just wait a minute	8
+stoned_party  : call me	8
+stoned_party  : but baby i can only talk for like a minute or two	3
+stoned_party  : you can call now	8
+stoned_party  : i will wait until you call before i go out then	8
+stoned_party  : hows "your, you are" day babyquestion	3
+stoned_party  : i mean you hv friends	7
+stoned_party  : see ppl "your, you are" age	2
+stoned_party  : "your, you are" one of those rebel in school huhquestion	2
+stoned_party  : i hate teacher's pet	5
+stoned_party  : i want to beat their asses back when i was in school	2

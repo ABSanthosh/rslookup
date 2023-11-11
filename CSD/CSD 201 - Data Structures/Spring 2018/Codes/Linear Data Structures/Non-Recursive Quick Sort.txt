@@ -1,0 +1,71 @@
+//Iterative Quick Sort
+#include <stdio.h>
+void main()
+{
+    int n,i;
+    printf("Enter size of array\n");
+    scanf("%d",&n);
+    int arr[n];
+    printf("Enter array elements\n");
+    for(i=0;i<n;i++)
+    scanf("%d",&arr[i]);
+    quickSortIterative( arr, 0, n - 1 );
+     printf("Sorted Array is\n");
+    for ( i = 0; i < n; ++i )
+    printf( "%d\n", arr[i] );
+}
+
+void quickSortIterative (int arr[], int l, int h)
+{
+    int stack[ h - l + 1 ];
+    int top = -1;
+    stack[ ++top ] = l;
+    stack[ ++top ] = h;
+    while ( top >= 0 )
+    {
+        h = stack[ top-- ];
+        l = stack[ top-- ];
+        int p = partition( arr, l, h );
+        if ( p-1 > l )
+        {
+            stack[ ++top ] = l;
+            stack[ ++top ] = p - 1;
+        }
+        if ( p+1 < h )
+        {
+            stack[ ++top ] = p + 1;
+            stack[ ++top ] = h;
+        }
+    }
+}
+
+ int partition (int arr[], int l, int h)
+{
+    int loc, temp, left, right;
+    loc = l;
+    left = l;
+    right = h;
+    while(left < right)
+    {
+    	while(arr[loc] <= arr[right] && loc < right)
+            		right--;
+            	while(arr[loc]>arr[left])
+            		left++;
+            	if(arr[loc]>arr[right])
+            	{
+                   	temp = arr[loc];
+                		arr[loc] = arr[right];
+                		arr[right] = temp;
+		loc = right;
+            	}
+            	if(arr[loc]<arr[left])
+            	{
+                   	temp = arr[loc];
+                		arr[loc] = arr[left];
+                		arr[left] = temp;
+		loc = left;
+            	}
+        }
+return loc;
+}
+

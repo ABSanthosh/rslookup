@@ -1,0 +1,221 @@
+chicago_naperville  : how old are youquestion	2
+chicago_naperville  : how old are youquestion	2
+chicago_naperville  : do you have cameraquestion	2
+chicago_naperville  : when will you back to schoolquestion	2
+chicago_naperville  : do you like your schoolquestion	2
+chicago_naperville  : do you have boyfriendquestion	4
+chicago_naperville  : how many boyfriend have you had so farquestion	4
+chicago_naperville  : english is not my first language	2
+chicago_naperville  : do you have picturesquestion	2
+chicago_naperville  : do you have picturesquestion	2
+chicago_naperville  : i have camera	2
+chicago_naperville  : do you have cameraquestion	2
+chicago_naperville  : your boyfriend	4
+chicago_naperville  : do you have sex experiencequestion	6
+chicago_naperville  : so you didn't have sex with your boyfriendquestion	6
+chicago_naperville  : so you didn't have sex with your boyfriendquestion	4
+chicago_naperville  : i heard a lot of girl like you are not virgin in us	6
+chicago_naperville  : to me, you are a baby	3
+chicago_naperville  : where is your mom	7
+chicago_naperville  : may i hang out with you sometime	8
+chicago_naperville  : kliang98@hotmail.com is my email	3
+chicago_naperville  : go ahead	6
+chicago_naperville  : you live with mom	7
+chicago_naperville  : dadquestion	7
+chicago_naperville  : may i have your phone noquestion	8
+chicago_naperville  : bcz you don't trust me	5
+chicago_naperville  : did you find your phone cardquestion	8
+chicago_naperville  : ok, call me now	8
+chicago_naperville  : is it ok to meet together next weekendquestion	8
+chicago_naperville  : garbage	2
+chicago_naperville  : can i meet you online next weekquestion	8
+chicago_naperville  : may i buy a camera for youquestion	2
+chicago_naperville  : camera and mic	2
+chicago_naperville  : but you need teach my english	5
+chicago_naperville  : so you can understand me by the phone	8
+chicago_naperville  : may i have "your, you are" phone no.	8
+chicago_naperville  : she doesn't like you have friends	7
+chicago_naperville  : did you talk with your boyfriend before	4
+chicago_naperville  : even i had your no, i will not call you a lot.	8
+chicago_naperville  : even i had your no, i will not call you a lot.	8
+chicago_naperville  : i like you too.	3
+chicago_naperville  : what do you likequestion	1
+chicago_naperville  : anything just other than sex	6
+chicago_naperville  : hang out with your friend	8
+chicago_naperville  : how old is ok to bar	2
+chicago_naperville  : what time will your mom back todayquestion	7
+chicago_naperville  : what time is good i can meet you online next weekquestion	8
+chicago_naperville  : i like you, carly	3
+chicago_naperville  : sorry, study in school is hard to youquestion	2
+chicago_naperville  : a lot of friendsquestion	7
+chicago_naperville  : in your age, shy	2
+chicago_naperville  : i mean, do you girls play with boys at school	2
+chicago_naperville  : are there boys in your schoolquestion	2
+chicago_naperville  : do you have best girl friend at schoolquestion	2
+chicago_naperville  : what time will your mom leave next saturdayquestion	7
+chicago_naperville  : take care, baby	3
+chicago_naperville  : your mom is backquestion	7
+chicago_naperville  : what are you doingquestion	1
+chicago_naperville  : if not, you can go ahead	6
+chicago_naperville  : do you have a good time with momquestion	7
+chicago_naperville  : i like you to do some house work.	3
+chicago_naperville  : make your mom happy	7
+chicago_naperville  : do you love your momquestion	7
+chicago_naperville  : may i know how old she isquestion	2
+chicago_naperville  : your friends	7
+chicago_naperville  : so you are my girlfriend now	3
+chicago_naperville  : can you tell me more about youquestion	2
+chicago_naperville  : such as your family, friends...	7
+chicago_naperville  : such as your family, friends...	7
+chicago_naperville  : only you and your mom live therequestion	7
+chicago_naperville  : i love you, baby	3
+chicago_naperville  : your mom no work todayquestion	7
+chicago_naperville  : i like you	3
+chicago_naperville  : if your mom back, just off line, it's okay	7
+chicago_naperville  : do you have more picturesquestion	2
+chicago_naperville  : do you have more picturesquestion	2
+chicago_naperville  : and sexy lip	6
+chicago_naperville  : wonderful pictures	2
+chicago_naperville  : wonderful pictures	2
+chicago_naperville  : i like your hair	3
+chicago_naperville  : may i touch itquestion	6
+chicago_naperville  : do you like take pictures this weekendquestion	2
+chicago_naperville  : do you like take pictures this weekendquestion	2
+chicago_naperville  : i have good camera camera and email back the pictures to you	2
+chicago_naperville  : i have good camera camera and email back the pictures to you	2
+chicago_naperville  : i have good camera camera and email back the pictures to you	2
+chicago_naperville  : i like your lip	3
+chicago_naperville  : can you mom see what we are talking	7
+chicago_naperville  : what did you do just momentquestion	7
+chicago_naperville  : send me pictures	2
+chicago_naperville  : send me pictures	2
+chicago_naperville  : which is "your, you are" momquestion	7
+chicago_naperville  : do you have mom's picturesquestion	2
+chicago_naperville  : do you have mom's picturesquestion	7
+chicago_naperville  : do you have mom's picturesquestion	2
+chicago_naperville  : familyquestion	7
+chicago_naperville  : how long did you take the picturequestion which one is recent	2
+chicago_naperville  : looks you are not baby	3
+chicago_naperville  : r you babyquestion	3
+chicago_naperville  : but you are my baby	3
+chicago_naperville  : i like you, baby	3
+chicago_naperville  : i like you, baby	3
+chicago_naperville  : no more picture	2
+chicago_naperville  : do you have a lot of online friends to talkquestion	7
+chicago_naperville  : i am looking at pictures	2
+chicago_naperville  : i am looking at pictures	2
+chicago_naperville  : do you like itquestion	5
+chicago_naperville  : i like your lip	3
+chicago_naperville  : i can't help myself to kiss it	6
+chicago_naperville  : i can meet you on fridayquestion	8
+chicago_naperville  : please make sure nobody will knock the door on fri nitquestion	6
+chicago_naperville  : have sexquestion	6
+chicago_naperville  : baby, it depends on you	3
+chicago_naperville  : i don't want hurt you, you are my baby	3
+chicago_naperville  : pretty baby	3
+chicago_naperville  : but at lease boyfriend/girlfriend kiss.	6
+chicago_naperville  : but at lease boyfriend/girlfriend kiss.	4
+chicago_naperville  : may i touch youquestion	6
+chicago_naperville  : you are so sexy	6
+chicago_naperville  : thank you, baby	3
+chicago_naperville  : mom at home	7
+chicago_naperville  : i love you, baby	3
+chicago_naperville  : will you at school whole dayquestion	2
+chicago_naperville  : do you still keep my phone noquestion	8
+chicago_naperville  : don't show somebody else	6
+chicago_naperville  : don't talk with anybody about me, ok	6
+chicago_naperville  : baby	3
+chicago_naperville  : to have sex with you	6
+chicago_naperville  : yes, i really really want to see you, my girlfriend	3
+chicago_naperville  : at whole nit with you, i can't help myself to have sex with you	6
+chicago_naperville  : i am "your, you are" boyfriend, i love you	4
+chicago_naperville  : so plz don't tell anybody about us	6
+chicago_naperville  : i want kiss you now	6
+chicago_naperville  : do you like have sex with mequestion	6
+chicago_naperville  : hurt not on body, on others	6
+chicago_naperville  : do you know her boyfriend	4
+chicago_naperville  : how old are theyquestion	2
+chicago_naperville  : don't tell anybody else	6
+chicago_naperville  : r you virginquestion	6
+chicago_naperville  : what did you do with "your, you are" previous relationship boyfriendquestion	4
+chicago_naperville  : i love you, baby	3
+chicago_naperville  : i am wondering why you didn't have sex with previous relationship boyfriend	6
+chicago_naperville  : i am wondering why you didn't have sex with previous relationship boyfriend	4
+chicago_naperville  : after touching	6
+chicago_naperville  : i mean when you're touching	6
+chicago_naperville  : yes, what it call in english for "stuff"	8
+chicago_naperville  : i will kiss you long long	6
+chicago_naperville  : where is "your, you are" mom	7
+chicago_naperville  : do not' tell anybody about us, it's just between us	6
+chicago_naperville  : from your momquestion	7
+chicago_naperville  : from schoolquestion	2
+chicago_naperville  : do you have sex education on schoolquestion	6
+chicago_naperville  : do you have sex education on schoolquestion	2
+chicago_naperville  : about sex	6
+chicago_naperville  : i dn't know us school	2
+chicago_naperville  : no, i mean question like sex experience	6
+chicago_naperville  : or some body did on you 	6
+chicago_naperville  : you know, i watch "your, you are" pictures a thousand times today	2
+chicago_naperville  : you know, i watch "your, you are" pictures a thousand times today	2
+chicago_naperville  : i can have sex with you	6
+chicago_naperville  : u will be english teacher then	5
+chicago_naperville  : "your, you are" mom	7
+chicago_naperville  : kiss you	6
+chicago_naperville  : touching	6
+chicago_naperville  : will you touch mequestion	6
+chicago_naperville  : kiss you...	6
+chicago_naperville  : kiss me	6
+chicago_naperville  : i kiss you now	6
+chicago_naperville  : where will "your, you are" momquestion	7
+chicago_naperville  : do you like her boyfriendquestion	4
+chicago_naperville  : how old is hequestion	2
+chicago_naperville  : do you think she already have sex with himquestion	6
+chicago_naperville  : baby	3
+chicago_naperville  : what are you doingquestion	1
+chicago_naperville  : cameraquestion	2
+chicago_naperville  : i like touch you now	6
+chicago_naperville  : i said i want touch you now	6
+chicago_naperville  : where can i touchquestion	6
+chicago_naperville  : vagina	6
+chicago_naperville  : may i use my finger	6
+chicago_naperville  : may i touch "your, you are" breastquestion	6
+chicago_naperville  : can i touch those for me nowquestion	6
+chicago_naperville  : i love you, baby	3
+chicago_naperville  : in case we have sex,,,,	6
+chicago_naperville  : you like it	5
+chicago_naperville  : boyfriend	4
+chicago_naperville  : i love you, baby	3
+chicago_naperville  : i have a plan to open a english school.	2
+chicago_naperville  : at school	2
+chicago_naperville  : do you have a lot of friendsquestion	7
+chicago_naperville  : call me then	8
+chicago_naperville  : what time your mom back homequestion	7
+chicago_naperville  : maybe she send somebody to acompy wiht you	6
+chicago_naperville  : do you have carage for parking my carquestion	2
+chicago_naperville  : garage	2
+chicago_naperville  : i love you, baby	3
+chicago_naperville  : naked	6
+chicago_naperville  : what do you likequestion	1
+chicago_naperville  : if you like, yahoo message to me	2
+chicago_naperville  : no trouble in schoolquestion	2
+chicago_naperville  : nobody here	6
+chicago_naperville  : my cell no work	8
+chicago_naperville  : you worry about i use it to call a lot	8
+chicago_naperville  : use pay phone	8
+chicago_naperville  : in case, in case, in case "your, you are" mom answer the phone, i will say " oh , wrong no"	7
+chicago_naperville  : in case, in case, in case "your, you are" mom answer the phone, i will say " oh , wrong no"	8
+chicago_naperville  : i love you,baby	3
+chicago_naperville  : come on, go ahead	6
+chicago_naperville  : what do you want learnquestion	6
+chicago_naperville  : i am good teacher	5
+chicago_naperville  : teach me english	5
+chicago_naperville  : u are the teacher	5
+chicago_naperville  : baby	3
+chicago_naperville  : teach me	5
+chicago_naperville  : sweety, how are youquestion	3
+chicago_naperville  : if, in case... something like your mom did not leave and stay at home, you should be outside of your house and let me know i can't get in	7
+chicago_naperville  : and if , in case... i meet some person in your house by accident, you should tell her/him that i am your friend and i come here is for helping you to build your personl web page, sending camera and fixing your internet problem. got it	8
+chicago_naperville  : and if , in case... i meet some person in your house by accident, you should tell her/him that i am your friend and i come here is for helping you to build your personl web page, sending camera and fixing your internet problem. got it	2
+chicago_naperville  : and if , in case... i meet some person in your house by accident, you should tell her/him that i am your friend and i come here is for helping you to build your personl web page, sending camera and fixing your internet problem. got it	2
+chicago_naperville  : ok, i think that's it. i will go to china town to get food for you, baby	3
+chicago_naperville  : i love you and kiss you.	6

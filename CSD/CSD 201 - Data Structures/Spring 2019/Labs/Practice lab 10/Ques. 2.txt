@@ -1,0 +1,73 @@
+#include<stdio.h>
+#define MAX 100
+
+int n;
+int G[MAX][MAX];
+int visited[MAX];
+void create_graph();
+void BFS(int v);
+
+int queue[MAX], front = -1,rear = -1;
+void main()
+{
+	int v;
+	printf("Enter number of vertices:");
+	scanf("%d", &n);
+	create_graph();
+	BFS(0);
+}
+
+void create_graph()
+{
+	int i, j;
+	printf("\nEnter adjecency matrix of the graph:");
+   	for(i=0; i<n; i++)
+       		for(j=0; j<n; j++)
+			scanf("%d", &G[i][j]);
+}
+
+void BFS(int v)
+{
+	int i;
+	printf("%d ", v);
+	for(i=0; i<n; i++)
+		if(G[v][i] == 1 && visited[i] == 0)
+            		{
+                			enqueue(i);
+                			visited[i] = 1;
+            		}
+    	if(!is_empty_queue())
+    		BFS(dequeue());
+}
+
+int is_empty_queue()
+{
+	if(front==-1)
+        		return 1;
+    	else 
+		return 0;
+}
+
+void enqueue(int v)
+{
+	if(front==-1)
+        		front=0;
+    	if(front==0 && rear==n-1)
+    	{
+        		printf("Queue is Full, can not take more elements\n");
+        		exit(0);
+    	}
+    	queue[++rear]=v;
+}
+
+int dequeue()
+{
+	if((!is_empty_queue()) && front!=rear)
+        		return queue[front++];
+        	else
+           	{
+                		int i = queue[front];
+        		front = rear = -1;
+        		return i;
+           	}
+}

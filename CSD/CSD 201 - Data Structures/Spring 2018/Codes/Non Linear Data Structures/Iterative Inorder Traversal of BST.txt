@@ -1,0 +1,167 @@
+//Implementation of BST
+
+#include<stdio.h>
+typedef struct tree{
+int data;
+struct tree *left;
+struct tree *right;
+}tree;
+tree *root=NULL;
+tree *p=NULL;
+tree *insert(tree *,int);
+
+void main()
+{
+int ch, n;
+while(1)
+{
+printf("1. Insert\n ");
+printf("2. Delete\n");
+printf("3. Display Inorder\n");
+printf("4. Exit\n");
+printf("Enter your choice\n");
+scanf("%d",&ch);
+switch(ch)
+{
+	case 1: 	printf("Enter element to be inserted\n");
+		scanf("%d",&n);
+		root=insert(root,n);
+			break;
+	case 2: 	delete();
+			break;
+	case 3: 	display(root);
+			break;
+	case 4: 	exit(0);
+}
+}
+}
+
+tree *insert(tree *temp,int n)
+{
+if(temp==NULL)
+{
+	tree *new=(tree *)malloc(sizeof(tree));
+	new->data=n;
+	new->left=NULL;
+	new->right=NULL;
+	return new;
+}
+else if(n<temp->data)
+	temp->left=insert(temp->left,n);
+else
+	temp->right=insert(temp->right,n);
+return temp;
+}
+
+void delete()
+{
+int data;
+if(root==NULL)
+{
+	printf("Empty Tree\n");
+	return;
+}
+printf("Enter element to be deleted\n");
+scanf("%d",&data);
+p=root;
+search(root,data);
+}
+
+void search(tree *x,int data)
+{
+if(x==NULL)
+{
+	printf("Data not present in tree\n");
+	return;
+}
+else if(data<x->data)
+{
+	p=x;
+	search(x->left,data);
+}
+else if(data>x->data)
+{
+	p=x;
+	search(x->right,data);
+}
+else if(data==x->data)
+	deletenode(x);
+}
+
+void deletenode(tree *x)
+{
+int successor;
+// to delete leafnode
+if((x->left == NULL)&&(x->right == NULL))
+{
+	if(p==x)
+		root=NULL;
+  	else if(x==p->left)
+    		p->left =NULL;
+   	else
+    		p->right= NULL;
+     	free(x);
+}
+
+//to delete node which has one left child
+else if (x->right == NULL)
+{
+       	if(p == x)
+		root = x->left;
+               	else if(x==p->left)
+        		p->left = x->left;
+	else
+       		p->right = x->left;
+	free(x);
+}
+//to delete node which has one right child
+else if(x->left == NULL)
+{
+	if (p == x)
+		root = x->right;
+	else if(x==p->right)
+  		p->right = x->right;
+	else
+		p->left = x->right;
+	free(x);
+}
+//to delete node which has both children
+else if((x->left != NULL)&&(x->right!= NULL))
+{
+	successor = smallest(x->right);
+	search(root, successor);
+	x->data = successor;
+}
+}
+
+int smallest(tree *x)
+{
+	if(x->left != NULL)
+   		smallest(x->left);
+	else
+    		return(x->data);
+}
+
+
+void display(tree *root)
+{
+
+   tree *stack[100];
+   int top=-1;
+   tree *ptr = root;
+  if (ptr == NULL)
+    return;
+ do
+ {
+   while (ptr != NULL)
+   {
+      stack[++top] = ptr;
+      ptr = ptr->left;
+   }
+     if (top == -1)
+     break;
+   ptr = stack[top--];
+   printf("%d\n", ptr->data); 
+   ptr = ptr->right;
+ } while((ptr != NULL) || (top>-1));
+}

@@ -1,0 +1,7 @@
+CHANGE PLAYBACK SPEED
+
+var btn=document.createElement("button");btn.innerText="Set playback rate",btn.style.backgroundColor="#fff",btn.style.color="#000",btn.style.padding="10px 10px",btn.style.margin="10px 10px",btn.onclick=(()=>{let e=window.prompt("Please enter the playback speed:\nExamples: 0.5, 1.25, 1.5, 2.0","1.0");if(null==e)return;let t=Number.parseFloat(e);isNaN(t)?alert("Invalid playback speed"):t<=.25||t>=5?alert("Outside valid range"):document.querySelector("video").playbackRate=t}),$("body").prepend(btn);
+
+DARK THEME
+
+$('#appshare-video,#whiteboard_container,.side-panels').each((_,v)=>$(v).css('filter','invert(1)'));document.styleSheets[0].insertRule('.bb-emoji,.notifications{filter:invert(1)}');$('body').css('background-color','#101010');

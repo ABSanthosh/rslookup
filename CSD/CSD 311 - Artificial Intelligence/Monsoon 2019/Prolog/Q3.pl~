@@ -1,0 +1,5 @@
+/* Last element of a list */
+
+last_elem([X|T],X):- findlast(T,H,R).
+findlast([],R,R).
+findlast([H|T],X,R) :- findlast(T,H,R).

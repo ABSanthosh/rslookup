@@ -1,0 +1,150 @@
+#include<stdio.h>
+typedef struct node{
+int data;
+struct node *next;
+}node1;
+node1 *head1=NULL;
+node1 *head2=NULL;
+void main()
+{
+int ch;
+while(1)
+{
+printf("\n1. Insert in First list\n");
+printf("2. Insert in Second list\n");
+printf("3. Merge\n");
+printf("4. Display\n");
+printf("5. Exit\n");
+printf("Enter your choice\n");
+scanf("%d",&ch);
+switch(ch)
+{
+case 1: create1();
+	break;
+case 2: create2();
+	break;
+case 3: merge();
+	break;
+case 4: display();
+	break;
+case 5: exit(0);
+}
+}
+}
+
+void create1()
+{
+int n;
+printf("Enter the element\n");
+scanf("%d",&n);
+if(head1==NULL)
+{
+	head1=(node1 *)malloc(sizeof(node1));
+	if(head1==NULL)
+	{
+		printf("memory not allocated\n");
+		exit(0);
+	}
+	head1->data=n;
+	head1->next=NULL;
+}
+else
+{
+	node1 *ptr=(node1 *)malloc(sizeof(node1));
+	if(ptr==NULL)
+	{
+		printf("memory not allocated\n");
+		exit(0);
+	}
+	ptr->data=n;
+	ptr->next=NULL;
+	node1 *temp=head1;
+	while(temp->next!=NULL)
+		temp=temp->next;
+	temp->next=ptr;
+}
+}
+
+void create2()
+{
+int n;
+printf("Enter the element\n");
+scanf("%d",&n);
+if(head2==NULL)
+{
+	head2=(node1 *)malloc(sizeof(node1));
+	if(head2==NULL)
+	{
+		printf("memory not allocated\n");
+		exit(0);
+	}
+	head2->data=n;
+	head2->next=NULL;
+}
+else
+{
+	node1 *ptr=(node1 *)malloc(sizeof(node1));
+	if(ptr==NULL)
+	{
+		printf("memory not allocated\n");
+		exit(0);
+	}
+	ptr->data=n;
+	ptr->next=NULL;
+	node1 *temp=head2;
+	while(temp->next!=NULL)
+		temp=temp->next;
+	temp->next=ptr;
+}
+}
+
+void merge()
+{
+if(head1==NULL && head2==NULL)
+{
+printf("Both lists are empty\n");
+exit(0);
+}
+node1 *t=head1,*t2=head2,*z;
+   while(t->next!=NULL)
+   {
+	if(head2!=NULL)
+   	{
+		z = t->next;
+   		t->next=t2;
+   		head2 = t2->next;
+   		t2->next = z;
+   		t = z;
+   		t2 = head2;
+   	}
+   	else
+   	{
+   		break;
+   	}
+   }
+}
+void display()
+{
+if(head1==NULL)
+printf("\nList1 is empty\n");
+node1 *temp1,*temp2;
+temp1=head1;
+printf("\nList  1 is\n");
+while(temp1!=NULL)
+{
+	printf("%d->",temp1->data);
+	temp1=temp1->next;
+}
+if(head2==NULL)
+{
+printf("\nList2 is empty\n");
+exit(0);
+}
+temp2=head2;
+printf("\nList  2 is\n");
+while(temp2!=NULL)
+{
+	printf("%d->",temp2->data);
+	temp2=temp2->next;
+}
+}

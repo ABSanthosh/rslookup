@@ -1,0 +1,67 @@
+//Complete Binary Tree
+
+#include<stdio.h>
+
+typedef struct tree{
+        int id, data;
+        struct tree *left, *right;
+}tree;
+tree *root=NULL;
+void main(){
+        tree *curr;
+        int idcount=1,n,ch;
+        while(1)
+        {
+            printf("1. Insert\n");
+            printf("2. Display\n");
+            printf("3. Exit\n");
+            printf("Enter your choice\n");
+            scanf("%d",&ch);
+            switch(ch)
+            {
+                case 1:printf("Enter element to be inserted");
+                scanf("%d",&n);
+                curr=(tree *)malloc(sizeof(tree));
+                curr->data=n;
+                curr->id=idcount++;
+                curr->left = curr->right = NULL;
+                insert(curr);
+                break;
+                case 2: display(root);
+                break;
+                case 3: exit(0);
+
+            }
+        }
+
+        }
+
+void myparent(tree *temp, int myid, tree **parent){
+        if(temp->id==(myid/2))
+                *parent = temp;
+        if(temp->left)
+                myparent(temp->left, myid, parent);
+        if(temp->right)
+                myparent(temp->right, myid, parent);
+}
+void insert(tree *new)
+{
+        tree *parent;
+        if(new->id==1)
+                root=new;
+        else{
+                myparent(root, new->id,&parent);
+                if((new->id)%2)
+                        parent->right=new;
+                else
+                        parent->left=new;
+        }
+}
+void display(tree *root)
+{
+        if(root==NULL)
+            return;
+        display(root->left);
+        printf("%d\n",root->data);
+        display(root->right);
+}

@@ -1,0 +1,20 @@
+Course Project Ideas
+
+All projects to have only text based interfaces.
+
+1. An advanced scientific calculator with a purely text based interface.
+
+2. A program that allows a student to take a quiz and automatically grades it. It should support multiple-choice questions (with only 1 answer correct), more than one answer correct and fill in the blank questions with intelligent answer matching.
+
+3. A word game like hangman with a reasonably large vocabulary using some internet dictionary.
+
+4. A variant of the standard minesweeper game that allows simple questions like how many mines in the row/column and right/left or above/below the current position to make the game more strategic. It can also have user chosen grid size and mine density to make the game harder/simpler.
+
+5. A simulation of Conway's game of Life. See the Wikipedia entry for a description of the game. 
+
+6. A computer Tic-tac-toe player.
+
+7. A program to solve Sudoku puzzles.
+
+8. A program to create an authentication system which authenticates a person  based on the response to some random-challenge (from a given set of puzzles,
+e.g. image-based, sequence-related, word finding etc.)

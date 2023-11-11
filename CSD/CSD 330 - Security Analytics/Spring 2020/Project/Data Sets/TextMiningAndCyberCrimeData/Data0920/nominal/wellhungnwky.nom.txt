@@ -1,0 +1,400 @@
+wellhungnwky  : hello	3
+wellhungnwky  : 33/m/wky and you	3
+wellhungnwky  : cool	3
+wellhungnwky  : did you have fun today	3
+wellhungnwky  : you need to have fun	3
+wellhungnwky  : what makes you feel good	3
+wellhungnwky  : what makes you feel good	6
+wellhungnwky  : yes i bet	3
+wellhungnwky  : laugh	3
+wellhungnwky  : what sport	3
+wellhungnwky  : you can bend a lot i bet	3
+wellhungnwky  : yes i bet	3
+wellhungnwky  : i lift weights and stuff	3
+wellhungnwky  : yes i could pick you up i bet	3
+wellhungnwky  : that can be good	3
+wellhungnwky  : you can sit on my lap	3
+wellhungnwky  : if you feel like it	3
+wellhungnwky  : sure	3
+wellhungnwky  : do you	3
+wellhungnwky  : do you have a picture	3
+wellhungnwky  : do you have a picture	2
+wellhungnwky  : good	3
+wellhungnwky  : 1 more	3
+wellhungnwky  : you look good	3
+wellhungnwky  : you look good	3
+wellhungnwky  : you're welcome	3
+wellhungnwky  : i have the goatee now	3
+wellhungnwky  : good	3
+wellhungnwky  : do you like to kiss	6
+wellhungnwky  : do you like to kiss	3
+wellhungnwky  : nice and slow	3
+wellhungnwky  : do you get wet down therequestion	6
+wellhungnwky  : do you get wet down therequestion	3
+wellhungnwky  : no	3
+wellhungnwky  : good	3
+wellhungnwky  : do you get wet down therequestion	6
+wellhungnwky  : do you get wet down therequestion	3
+wellhungnwky  : yes i will	3
+wellhungnwky  : yes we are	3
+wellhungnwky  : me too	3
+wellhungnwky  : i mean do you get wet in your pantiesquestion	6
+wellhungnwky  : i mean do you get wet in your pantiesquestion	6
+wellhungnwky  : i mean do you get wet in your pantiesquestion	3
+wellhungnwky  : are you okay friend	3
+wellhungnwky  : joe	3
+wellhungnwky  : nice to meet you jonalyn	8
+wellhungnwky  : nice to meet you jonalyn	3
+wellhungnwky  : oh no	3
+wellhungnwky  : are you home alonequestion	7
+wellhungnwky  : are you home alonequestion	3
+wellhungnwky  : yes you can do anything	3
+wellhungnwky  : what town are you in	3
+wellhungnwky  : neat	3
+wellhungnwky  : i mean really good	3
+wellhungnwky  : [happy face]	3
+wellhungnwky  : a little town about a hour or 2 from louisville	3
+wellhungnwky  : i can visit jonalyn	3
+wellhungnwky  : we are friends now	7
+wellhungnwky  : we are friends now	3
+wellhungnwky  : no i do not	3
+wellhungnwky  : do you wear a brassierequestion	6
+wellhungnwky  : do you wear a brassierequestion	6
+wellhungnwky  : do you wear a brassierequestion	3
+wellhungnwky  : good	3
+wellhungnwky  : well you can put it in your closet with me	3
+wellhungnwky  : laugh	3
+wellhungnwky  : you do not have to wear a brassiere around me	6
+wellhungnwky  : you do not have to wear a brassiere around me	6
+wellhungnwky  : you do not have to wear a brassiere around me	3
+wellhungnwky  : you're welcome	3
+wellhungnwky  : yes i do	3
+wellhungnwky  : do you wear a thongquestion	6
+wellhungnwky  : do you wear a thongquestion	3
+wellhungnwky  : any good colors	3
+wellhungnwky  : what kind of boy shorts do you meanquestion	6
+wellhungnwky  : what kind of boy shorts do you meanquestion	3
+wellhungnwky  : tight onesquestion	3
+wellhungnwky  : good i have some black boy shorts	6
+wellhungnwky  : good i have some black boy shorts	3
+wellhungnwky  : i know old people	3
+wellhungnwky  : laugh	3
+wellhungnwky  : i know	3
+wellhungnwky  : we can watch television or find something else to do	3
+wellhungnwky  : forget that then	3
+wellhungnwky  : laugh	3
+wellhungnwky  : what do you want to doquestion	5
+wellhungnwky  : what do you want to doquestion	6
+wellhungnwky  : what do you want to doquestion	3
+wellhungnwky  : good we will find something	3
+wellhungnwky  : i lift weights most of the time is all	3
+wellhungnwky  : that is okay	3
+wellhungnwky  : what do you like to doquestion	1
+wellhungnwky  : what do you like to doquestion	1
+wellhungnwky  : what do you like to doquestion	3
+wellhungnwky  : good	3
+wellhungnwky  : i need to get ready and eat so it will be a little bit	3
+wellhungnwky  : what is your address	3
+wellhungnwky  : yes i will	3
+wellhungnwky  : yes	3
+wellhungnwky  : yes i will	3
+wellhungnwky  : is anybody going to bother us tonightquestion	6
+wellhungnwky  : is anybody going to bother us tonightquestion	3
+wellhungnwky  : okay	3
+wellhungnwky  : yes i know....laugh	3
+wellhungnwky  : do you have any family that comes overquestion	7
+wellhungnwky  : do you have any family that comes overquestion	3
+wellhungnwky  : okay i understand	7
+wellhungnwky  : okay i understand	3
+wellhungnwky  : what is it jonalyn	3
+wellhungnwky  : okay i won't	3
+wellhungnwky  : i will get that	3
+wellhungnwky  : anything elsequestion	3
+wellhungnwky  : we can do anything	3
+wellhungnwky  : do you drink manlibu rum out of the bottle or with anythingquestion	3
+wellhungnwky  : do you have any juice	3
+wellhungnwky  : okay i will be here	3
+wellhungnwky  : yes red and tastes like puke	3
+wellhungnwky  : laugh	3
+wellhungnwky  : tell me a good juice and i will get it	3
+wellhungnwky  : pineapple then	3
+wellhungnwky  : i will get it for us	3
+wellhungnwky  : what is your addressquestion	3
+wellhungnwky  : i will think about it on the way	3
+wellhungnwky  : what is your address jonalynquestion	3
+wellhungnwky  : i promise you won't get grounded	3
+wellhungnwky  : what is it	3
+wellhungnwky  : i do not know we can play horsee	3
+wellhungnwky  : laugh	3
+wellhungnwky  : i was kidding	3
+wellhungnwky  : we can make out when you sit on my lap if you want	3
+wellhungnwky  : is that badquestion	5
+wellhungnwky  : is that badquestion	3
+wellhungnwky  : i really do	3
+wellhungnwky  : yes it does	3
+wellhungnwky  : what is your address jonalynquestion	3
+wellhungnwky  : i won't do that	3
+wellhungnwky  : you are a young woman i think	3
+wellhungnwky  : yes i promise you	3
+wellhungnwky  : we will find something else	3
+wellhungnwky  : we will play with my boy shorts or something	6
+wellhungnwky  : we will play with my boy shorts or something	3
+wellhungnwky  : laugh	3
+wellhungnwky  : i do not know what you have to play with	3
+wellhungnwky  : i like your pretty smile	3
+wellhungnwky  : i like your pretty smile	3
+wellhungnwky  : you're welcome	3
+wellhungnwky  : what can we play withquestion	3
+wellhungnwky  : good i will tell you when i see it there	3
+wellhungnwky  : does your mom have a house or and apartmentquestion	7
+wellhungnwky  : does your mom have a house or and apartmentquestion	3
+wellhungnwky  : yes you can move	3
+wellhungnwky  : good	3
+wellhungnwky  : what is your addressquestion	3
+wellhungnwky  : no i want to be nice and have fun with jonalyn	3
+wellhungnwky  : do you have any board gamesquestion	3
+wellhungnwky  : that is right no games	3
+wellhungnwky  : we can drink malibu run and listen to music	3
+wellhungnwky  : rum	3
+wellhungnwky  : no i won't	3
+wellhungnwky  : good you will feel good tonight	3
+wellhungnwky  : good you will feel good tonight	6
+wellhungnwky  : jonalyn you can feel my boy shorts for a gun or knife if you want	6
+wellhungnwky  : jonalyn you can feel my boy shorts for a gun or knife if you want	3
+wellhungnwky  : i promise i won't hurt you	3
+wellhungnwky  : drink malibu rum and i will bring some orange stuff too	3
+wellhungnwky  : if that makes you feel better	3
+wellhungnwky  : do not be scared and if jonalyn is scared i won't come	3
+wellhungnwky  : we can turn off the lights and make off after we drink	3
+wellhungnwky  : we can make out some when we drink and listen to music	3
+wellhungnwky  : you won't get bored when i tickle you	3
+wellhungnwky  : laugh	3
+wellhungnwky  : i will have to find those spots on jonalyn	3
+wellhungnwky  : all over	3
+wellhungnwky  : i really need to go	3
+wellhungnwky  : my little town is a hour behind louisville	3
+wellhungnwky  : i do not know	3
+wellhungnwky  : until you go to sleep i guess	3
+wellhungnwky  : in the morning then okay	3
+wellhungnwky  : does jonalyn have a big bedquestion	3
+wellhungnwky  : good i am tall]	3
+wellhungnwky  : yes i do	3
+wellhungnwky  : you are too scared	3
+wellhungnwky  : well you never gave me your address	3
+wellhungnwky  : i thought you were a woman and not a girl	3
+wellhungnwky  : what is your address jonalynquestion	3
+wellhungnwky  : hello	3
+wellhungnwky  : i will bring malibu rum and pineapple juice so that is a start	3
+wellhungnwky  : i know it does	3
+wellhungnwky  : lay out all of your thongs and you can try them on for me	6
+wellhungnwky  : lay out all of your thongs and you can try them on for me	3
+wellhungnwky  : i will tell you which 1 i like best	3
+wellhungnwky  : i do not know what we can do there that is fun	3
+wellhungnwky  : i will when i get there and i see your stuff	3
+wellhungnwky  : i will bring the drinks	3
+wellhungnwky  : what we can do	3
+wellhungnwky  : when was the last time you had malibu rumquestion	3
+wellhungnwky  : that was a long time ago	3
+wellhungnwky  : you need to feel good tonight	3
+wellhungnwky  : you need to feel good tonight	6
+wellhungnwky  : do you like to play dress up	3
+wellhungnwky  : no like your clothes	3
+wellhungnwky  : i will tell you what outfit makes you look hot	3
+wellhungnwky  : i will tell you what outfit makes you look hot	3
+wellhungnwky  : your gym outfit and a smile	3
+wellhungnwky  : yes	3
+wellhungnwky  : well just wear sweats then	3
+wellhungnwky  : pajamas	3
+wellhungnwky  : do you have a long shirt	3
+wellhungnwky  : good sleep in that	3
+wellhungnwky  : yes it is	3
+wellhungnwky  : you are a woman rightquestion	3
+wellhungnwky  : you can sleep in your bed with me	6
+wellhungnwky  : you can sleep in your bed with me	3
+wellhungnwky  : you might be scared	3
+wellhungnwky  : good	3
+wellhungnwky  : what is your address jonalynquestion	3
+wellhungnwky  : friend what is wrong nowquestion	3
+wellhungnwky  : good	3
+wellhungnwky  : what is your address jonalynquestion	3
+wellhungnwky  : okay i will	3
+wellhungnwky  : jonalyn forgot about me	3
+wellhungnwky  : good	3
+wellhungnwky  : who was it	3
+wellhungnwky  : you like her	3
+wellhungnwky  : i bet you do	3
+wellhungnwky  : what is your address jonalynquestion	3
+wellhungnwky  : yes good riddens to him	3
+wellhungnwky  : i won't get there until late now	3
+wellhungnwky  : you will never tell me where you live at	3
+wellhungnwky  : i want to be there before midnight	3
+wellhungnwky  : i have to get ready go shopping and find your house	3
+wellhungnwky  : malibu rum pineapple juice orange stuff	3
+wellhungnwky  : does your driveway go around your housequestion	3
+wellhungnwky  : good you can show it to me if i do not see it	3
+wellhungnwky  : what is your address jonalynquestion	3
+wellhungnwky  : you must not even know your address	3
+wellhungnwky  : hello....	3
+wellhungnwky  : okay	3
+wellhungnwky  : i just do not know how to get there	3
+wellhungnwky  : we can drink malibu rum	3
+wellhungnwky  : listen to music	3
+wellhungnwky  : make out some	3
+wellhungnwky  : you can show me how you look in all of your thongs	6
+wellhungnwky  : you can show me how you look in all of your thongs	3
+wellhungnwky  : i do not know	3
+wellhungnwky  : i want to tell you which look make you look hot	3
+wellhungnwky  : i want to tell you which look make you look hot	3
+wellhungnwky  : 5 of them best	3
+wellhungnwky  : laugh	3
+wellhungnwky  : what do you do when you get tipsyquestion	1
+wellhungnwky  : what do you do when you get tipsyquestion	3
+wellhungnwky  : well you can find out in louisville then	3
+wellhungnwky  : remember how good it feels	3
+wellhungnwky  : im me next year when you are not a girl	3
+wellhungnwky  : no i want to go get the drinks	3
+wellhungnwky  : we can do all kinds of stuff but i do not know what is there we can do	3
+wellhungnwky  : well sounds good	3
+wellhungnwky  : well just the 1 in my pants	3
+wellhungnwky  : laugh	3
+wellhungnwky  : the stores close early here	3
+wellhungnwky  : behave or i will spank you good	6
+wellhungnwky  : behave or i will spank you good	3
+wellhungnwky  : laugh	3
+wellhungnwky  : bad woman i mean bad girl	3
+wellhungnwky  : laugh	3
+wellhungnwky  : [wink face]	3
+wellhungnwky  : you must not even know your address	3
+wellhungnwky  : good	3
+wellhungnwky  : girls just want to have fun.....laugh	3
+wellhungnwky  : :x well it is all good	3
+wellhungnwky  : laugh	3
+wellhungnwky  : what is your address jonalynquestion i want to go soon	3
+wellhungnwky  : do you have cups	3
+wellhungnwky  : so we can drink	3
+wellhungnwky  : did you take a bath today	3
+wellhungnwky  : i know you are too scared anyway to have fun	3
+wellhungnwky  : you have time so you could when i drive	3
+wellhungnwky  : good	3
+wellhungnwky  : i do not know where you live	3
+wellhungnwky  : good prove that to me	3
+wellhungnwky  : you should good but i do not know	3
+wellhungnwky  : hello we could even wrestle	3
+wellhungnwky  : yes body slam and pin you good.....laugh	6
+wellhungnwky  : yes body slam and pin you good.....laugh	3
+wellhungnwky  : you must not even know your address	3
+wellhungnwky  : i better go	3
+wellhungnwky  : bye	3
+wellhungnwky  : you are too scared	3
+wellhungnwky  : im not a mean person but you are playing games	6
+wellhungnwky  : im not a mean person but you are playing games	3
+wellhungnwky  : just how we wrestle	3
+wellhungnwky  : well the bell goes ding ding	3
+wellhungnwky  : laugh	3
+wellhungnwky  : i really know know where to find malibu rum	3
+wellhungnwky  : i can shop more if i have time	3
+wellhungnwky  : just before they wrestle on television	3
+wellhungnwky  : i mean when i watch wresting on wwe they ring a bell before it starts	3
+wellhungnwky  : me too	3
+wellhungnwky  : i know what you mean	3
+wellhungnwky  : no games allowed	3
+wellhungnwky  : tell me what you want to do for fun and i might like it	3
+wellhungnwky  : have not no whip	3
+wellhungnwky  : i lift weights everyday and i do not like to play games with my head	3
+wellhungnwky  : i lift weights everyday and i do not like to play games with my head	6
+wellhungnwky  : open the door when i get there and i will take control	3
+wellhungnwky  : i have not there now	3
+wellhungnwky  : listen	3
+wellhungnwky  : i will pick you up and take and you will tell me what i want	3
+wellhungnwky  : i will go get cups for us and we will get drinks made	3
+wellhungnwky  : i will take your hand and kiss you	6
+wellhungnwky  : i will take your hand and kiss you	3
+wellhungnwky  : you have not no woman	3
+wellhungnwky  : i will grab your hand and kiss you	6
+wellhungnwky  : i will grab your hand and kiss you	3
+wellhungnwky  : you will get your own bottle of malibu rum	3
+wellhungnwky  : when i tell you to drink it you will	3
+wellhungnwky  : no when i want more than a kiss i will tell you	6
+wellhungnwky  : no when i want more than a kiss i will tell you	3
+wellhungnwky  : i will kiss on your neck and relax you all over	6
+wellhungnwky  : i will kiss on your neck and relax you all over	3
+wellhungnwky  : are you listening to me!!!!!!!	3
+wellhungnwky  : good	3
+wellhungnwky  : yes it will be the best	3
+wellhungnwky  : now tell me your address jonalyn and no exuses!!!	3
+wellhungnwky  : hell no	3
+wellhungnwky  : i will play with your chest and you better not make any noise	3
+wellhungnwky  : then i will grab your hair and kiss you again	6
+wellhungnwky  : then i will grab your hair and kiss you again	3
+wellhungnwky  : no	3
+wellhungnwky  : you will find out the rest when i get there if you are not some girl!!!	3
+wellhungnwky  : i said no!!	3
+wellhungnwky  : you will find out the rest when i get there if you are not some girl	3
+wellhungnwky  : after i kiss on your chest and make you feel good i will kiss your tummy	6
+wellhungnwky  : after i kiss on your chest and make you feel good i will kiss your tummy	3
+wellhungnwky  : after i kiss on your chest and make you feel good i will kiss your tummy	6
+wellhungnwky  : spank you if you move	6
+wellhungnwky  : spank you if you move	3
+wellhungnwky  : kiss down more to your panties	6
+wellhungnwky  : kiss down more to your panties	6
+wellhungnwky  : kiss down more to your panties	3
+wellhungnwky  : lights on or off i don't care	3
+wellhungnwky  : will you like that	3
+wellhungnwky  : okay you will feel good with my tongue in your panties	6
+wellhungnwky  : okay you will feel good with my tongue in your panties	3
+wellhungnwky  : okay you will feel good with my tongue in your panties	6
+wellhungnwky  : okay you will feel good with my tongue in your panties	6
+wellhungnwky  : i will let you touch my boy shorts and i will put your hand down them	6
+wellhungnwky  : i will let you touch my boy shorts and i will put your hand down them	6
+wellhungnwky  : i will let you touch my boy shorts and i will put your hand down them	3
+wellhungnwky  : do you want more!!!!	3
+wellhungnwky  : good i have anything and everything	3
+wellhungnwky  : i grab your head and you kiss down my boy shorts	6
+wellhungnwky  : i grab your head and you kiss down my boy shorts	6
+wellhungnwky  : i grab your head and you kiss down my boy shorts	3
+wellhungnwky  : i grab your head and you kiss down my boy shorts	6
+wellhungnwky  : you will not touch anything then only with your mouth!!!	6
+wellhungnwky  : you will not touch anything then only with your mouth!!!	3
+wellhungnwky  : you have not ready for me anyway	3
+wellhungnwky  : where are you at!!!!!!!!!!	3
+wellhungnwky  : tell me your address if you are ready!!!!!!!!!!!!	3
+wellhungnwky  : okay	3
+wellhungnwky  : tell me your address if you are ready!!!!!!!!!!!! no excuses	3
+wellhungnwky  : did you hear me!	3
+wellhungnwky  : wellhungnwky: tell me your address if you are ready!!!!!!!!!!!! no excuses	3
+wellhungnwky : did you hear me!	3
+wellhungnwky  : i am done playing	6
+wellhungnwky  : i am done playing	3
+wellhungnwky  : okay	3
+wellhungnwky  : will you do what i say now!!	3
+wellhungnwky  : i am not yelling i am just telling the woman what i what	3
+wellhungnwky  : all caps i am yelling a lot	3
+wellhungnwky  : yes	3
+wellhungnwky  : it will be around midnight now	3
+wellhungnwky  : you will get me a cup and i will kiss you	6
+wellhungnwky  : you will get me a cup and i will kiss you	3
+wellhungnwky  : you will drink malibu rum	3
+wellhungnwky  : i will pick you up and kiss you deeper	6
+wellhungnwky  : i will pick you up and kiss you deeper	3
+wellhungnwky  : you will find out	3
+wellhungnwky  : i want all of jonalyn so take a bath	3
+wellhungnwky  : your mouth your panties your bottom	6
+wellhungnwky  : your mouth your panties your bottom	6
+wellhungnwky  : your mouth your panties your bottom	3
+wellhungnwky  : i need to go get ready now	3
+wellhungnwky  : you will take them off for me	3
+wellhungnwky  : okay i do not care	3
+wellhungnwky  : you want you to make me feel good	5
+wellhungnwky  : you want you to make me feel good	3
+wellhungnwky  : you want you to make me feel good	6
+wellhungnwky  : yes you will when i get there	3
+wellhungnwky  : i need to go to the store	3
+wellhungnwky  : later jonalyn	3
+wellhungnwky  : what	3
+wellhungnwky  : i need to go	3
+wellhungnwky  : i will show up at your house around midnight	3
+wellhungnwky  : later	3
+wellhungnwky  : say later back	3
+wellhungnwky  : hello friend...i went to your house and i knocked on the door 3 times and you never opened the door	3
+wellhungnwky  : did you get scared or tiredquestionquestion	3
+wellhungnwky  : are you okayquestion	3

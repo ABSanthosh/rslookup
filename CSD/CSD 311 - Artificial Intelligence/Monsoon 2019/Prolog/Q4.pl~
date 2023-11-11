@@ -1,0 +1,8 @@
+/*Find the sum of the elements of a list.*/
+
+/*sum([],0).*/
+/*sum([H|T],R):- sum(T,R1),R is R1+H.*/
+
+list_sum([],0).
+list_sum([H|T],S):-list_sum(T,S1),S is S1+H.
+

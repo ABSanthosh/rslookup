@@ -1,0 +1,47 @@
+#include<stdio.h>
+typedef struct node{
+int item;
+int priority;
+struct node *next;
+}node1;
+node1 *front=NULL;
+
+void insert()
+{int x;
+ scanf("%d",&x);
+ int p;
+ scanf("%d",&p);
+ if(front==NULL)
+{front=(node1*)malloc(sizeof(node1));
+ if(front==NULL)
+{printf("Memory not allocated");
+ exit(0);
+}
+front->item=x;
+front->next=NULL;
+front->priority=p;
+}
+else
+{node1*ptr=(node1*)malloc(sizeof(node1));
+ ptr->item=x;
+ ptr->prority=p;
+ node1*temp=front;
+ while(temp->next!=NULL)
+   temp=temp->next;
+ temp->next=ptr;
+ ptr->next=NULL;
+}
+}
+
+void delete(){
+int low=head->priority;
+Node *temp=head, *temp1;
+while(!temp->next){
+if(low>temp->priority){
+low=temp->priority;
+temp1=temp;}
+else 
+temp=temp->next;
+}
+printf("%d", temp->data);
+}

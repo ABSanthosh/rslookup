@@ -1,0 +1,55 @@
+#include <stdio.h>
+#define N 100
+
+void printArray(int a[], int n) {
+  printf("[ ");
+  for (int i=0; i<n; i++)
+    printf("%d ", a[i]);
+  printf("]\n");
+  return;
+}
+int findMax(int a[], int n, int lt, int rt) {
+  //finds index of max value from 0 to lt and rt to n-1
+  int mx=a[0], ind=0;
+  for (int i=0; i<=lt; i++)
+    if (a[i]>mx) {mx=a[i]; ind=i;}
+  for (int i=rt; i<n; i++)
+    if (a[i]>mx) {mx=a[i]; ind=i;}
+  return ind;
+}
+void swap(int a[], int i, int j) {
+  int tmp=a[i];
+  a[i]=a[j];
+  a[j]=tmp;
+  return;
+}
+
+int main(void) {
+  int n, arr[N];
+  int lt, rt, putLeft=1, mind;
+  printf("Give n = ");
+  scanf("%d", &n);
+  //First check special case
+  if (n==0) {printf("Empty array\n"); return 0;}
+  for (int i=0; i<n; i++) scanf("%d", &arr[i]);
+  printArray(arr, n);//print input array
+  //This is the general case
+  lt=rt=n/2;
+  mind=findMax(arr, n, lt, rt);
+  if (mind!=lt) swap(arr, mind, lt);//swap mid element and largest element
+  lt--; rt++;
+  while (lt>-1 && rt<n) {
+    mind=findMax(arr, n, lt, rt);
+    if (putLeft) {
+      swap(arr, mind, lt);
+      lt--; //shift lt index
+      putLeft=0;//switch flag
+    }
+    else {
+      swap(arr, mind, rt);
+      rt++;//shift rt index
+      putLeft=1;//switch flag
+    }
+  }
+  printArray(arr, n);
+}
