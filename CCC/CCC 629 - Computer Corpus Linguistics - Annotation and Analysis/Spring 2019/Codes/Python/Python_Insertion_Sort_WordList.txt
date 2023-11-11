@@ -1,0 +1,14 @@
+arr
+j
+i
+key
+for
+in
+insertionsort
+len
+range
+and
+d
+def
+print
+while

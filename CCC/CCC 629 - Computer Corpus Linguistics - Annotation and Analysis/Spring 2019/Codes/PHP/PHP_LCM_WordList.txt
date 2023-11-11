@@ -1,0 +1,16 @@
+arr
+ans
+i
+b
+n
+a
+gcd
+return
+findlcm
+function
+array
+echo
+for
+if
+php
+sizeof

@@ -1,0 +1,34 @@
+<?php 
+
+function binarySearch($arr, $l,  
+                      $r, $x) 
+{ 
+    while ($l <= $r) 
+    { 
+        $m = $l + ($r - $l) / 2; 
+
+        if ($arr[$m] == $x) 
+            return floor($m); 
+
+        if ($arr[$m] < $x) 
+            $l = $m + 1; 
+
+        else
+            $r = $m - 1; 
+    } 
+
+    return -1; 
+} 
+ 
+$arr = array(2, 3, 4, 10, 40); 
+$n = count($arr); 
+$x = 10; 
+$result = binarySearch($arr, 0,  
+                       $n - 1, $x); 
+if(($result == -1)) 
+echo "Element is not present in array"; 
+else
+echo "Element is present at index ",  
+                            $result; 
+
+?> 

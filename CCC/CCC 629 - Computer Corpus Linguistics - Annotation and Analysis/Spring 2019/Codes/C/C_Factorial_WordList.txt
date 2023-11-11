@@ -1,0 +1,15 @@
+factorial
+int
+n
+num
+return
+d
+unsigned
+h
+if
+include
+is
+main
+of
+printf
+stdio

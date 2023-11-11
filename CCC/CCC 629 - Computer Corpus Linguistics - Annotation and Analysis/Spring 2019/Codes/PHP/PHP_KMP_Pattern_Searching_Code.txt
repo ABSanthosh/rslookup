@@ -1,0 +1,44 @@
+<?php
+    class KMP{
+      function KMPSearch($p,$t){
+        $result = array();
+        $pattern = str_split($p); 
+        $text    = str_split($t);
+        $prefix = $this->preKMP($pattern);
+
+     $i = $j = 0;
+        $num=0;
+        while($j<count($text)){
+          while($i>-1 && $pattern[$i]!=$text[$j]){
+            $i = $prefix[$i];
+          }
+          $i++;
+          $j++;
+      if($i>=count($pattern)){
+
+            $result[$num++]=$j-count($pattern);
+            $i = $prefix[$i];
+          }
+        }
+     return $result;
+      }
+
+      function preKMP($pattern){
+        $i = 0;
+        $j = $prefix[0] = -1;
+        while($i<count($pattern)){
+          while($j>-1 && $pattern[$i]!=$pattern[$j]){
+            $j = $prefix[$j];
+          }
+          $i++;
+          $j++;
+          if(isset($pattern[$i])==isset($pattern[$j])){
+            $prefix[$i]=$prefix[$j];
+          }else{
+            $prefix[$i]=$j;
+          }
+        }
+        return $prefix;
+      }
+    }
+    ?>

@@ -1,0 +1,11 @@
+n
+factorial
+num
+def
+else
+if
+is
+of
+or
+print
+return

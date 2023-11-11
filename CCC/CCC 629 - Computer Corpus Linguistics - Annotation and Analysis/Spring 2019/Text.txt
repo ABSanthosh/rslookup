@@ -1,0 +1,6 @@
+﻿<Heading>
+SNU Annual Convocation
+</Heading>
+<P>
+The annual convocation of SNU is scheduled to take place on May 18, 2019.
+</P>

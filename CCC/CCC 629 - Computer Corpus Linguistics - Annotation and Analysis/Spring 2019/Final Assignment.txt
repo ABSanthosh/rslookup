@@ -1,0 +1,18 @@
+Choose a text of your choice.
+Should have atleast 25 sentences.
+- Grammatical Tagging - 25%
+- Syntactic Tagging - 25% (Word order or phrases/clauses-preferred)
+- Research Question - 25%
+- Analysis - 25%
+(Talk about any one observation/problem that you observe)
+Deadline: 5th May
+
+EVALUATION SCHEME
+-----------------
+86-100 	A
+81-85 	A-
+76-80 	B
+71-75	B-
+66-70	C
+61-65	C-
+50-60	D

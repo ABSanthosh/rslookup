@@ -1,0 +1,10 @@
+factorial
+n
+num
+return
+echo
+function
+if
+is
+of
+php
