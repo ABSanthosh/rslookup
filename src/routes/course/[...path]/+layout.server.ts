@@ -26,8 +26,11 @@ export async function load({ url }: { url: URL }): Promise<{
   }
 
   let folderStructure: IResItem = (await resources.json())[0];
+  const excludeFiles = ["resources.json", "contributors.json"];
   folderStructure.name = "course";
-  folderStructure.contents = folderStructure.contents.filter((item) => item.name !== "resources.json")
+  folderStructure.contents = folderStructure.contents.filter(
+    (item) => excludeFiles.indexOf(item.name) === -1
+  );
 
   let keys = decodeURIComponent(url.pathname)
     .split("/")
@@ -54,7 +57,7 @@ export async function load({ url }: { url: URL }): Promise<{
       (item) => item.name === level
     )!;
   });
-  keys.shift()
+  keys.shift();
 
   return {
     status: 200,

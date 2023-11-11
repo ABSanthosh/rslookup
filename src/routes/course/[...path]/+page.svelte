@@ -62,6 +62,7 @@
                   class="FancyButton"
                   target="_blank"
                   rel="noopener noreferrer"
+                  title="You'll have to wait for the file to load."
                   href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/ABSanthosh/rslookup/rs-data{data.basePath}/{item.name}"
                 >
                   Preview (β)
