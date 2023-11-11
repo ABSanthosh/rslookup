@@ -1,0 +1,27 @@
+BINOMIAL DISTRIBUTION
+
+P(x=k) = (n choose k) p^k (1-p)^(n-k)
+
+di -> Display
+di binomialp(n,k,p) -> P(x=k)
+di binomial(n,k,p) -> P(x<=k)
+di binomialtail(n,k,p) -> P(x>k)
+
+POISSON DISTRIBUTION
+
+Y ~ Poisson(Lambda)
+n is very large, say 10000
+p is very small, say 0.00024
+Mean = np
+(Here, =2.4)
+Variance = np(1-p)
+	~= Mean (Since 1-p -> 1)
+So, Lambda = Mean = Variance
+Lambda is the only parameter.
+Unlike Binomial, where we had n and p.
+
+P(k) = (e^-lambda.lambda^k)/k!
+
+di poissonp(lambda,k)
+di poisson(lambda,k)
+di poissontail(lambda,k)
