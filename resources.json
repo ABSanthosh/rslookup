@@ -1,0 +1,8 @@
+[
+  {"type":"directory","name":".","contents":[
+    {"type":"file","name":"contributors.json"},
+    {"type":"file","name":"resources.json"}
+  ]}
+,
+  {"type":"report","directories":0,"files":2}
+]
