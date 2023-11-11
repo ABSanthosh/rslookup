@@ -44,10 +44,7 @@
     </p>
   </div>
   <div class="Hero__right">
-    <img
-      src="https://media.giphy.com/media/I3rbjijgss7D2Oab2A/giphy.gif"
-      alt="hero neko gif"
-    />
+    <img src="/assets/images/neko.gif" alt="hero neko gif" />
   </div>
 </section>
 <section class="Category">
