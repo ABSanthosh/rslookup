@@ -1,8 +1,1042 @@
 [
   {"type":"directory","name":".","contents":[
+    {"type":"directory","name":"Additional Resources","contents":[
+      {"type":"directory","name":"Machine Learning","contents":[
+        {"type":"file","name":"An_Introduction_to_Statistical_Learning.pdf"},
+        {"type":"file","name":"Fundamentals-of-Database-Systems-Navathe_.pdf"},
+        {"type":"file","name":"maths for ml.pdf"},
+        {"type":"file","name":"springer text in statistics.pdf"}
+    ]}
+  ]},
+    {"type":"directory","name":"CCC","contents":[
+      {"type":"directory","name":"CCC 230 - Graphic Novels and World Politics","contents":[
+        {"type":"directory","name":"Monsoon 2018","contents":[
+          {"type":"file","name":"Course Description.pdf"},
+          {"type":"file","name":"Reading 1 - 01 Oct - Understanding Comics - Scott McCloud.pdf"},
+          {"type":"file","name":"Reading 10 - 31 Oct - Neil Gaiman and Chris Riddell on why we need libraries.url"},
+          {"type":"file","name":"Reading 11 - 02 Nov - James Baldwin and the Struggle to Bear Witness.url"},
+          {"type":"file","name":"Reading 11 - 02 Nov - Looking at War - Susan Santag.url"},
+          {"type":"file","name":"Reading 11 - 02 Nov - Touching Photographs.url"},
+          {"type":"file","name":"Reading 12 - 09 Nov - India's Immortal Comics.pdf"},
+          {"type":"file","name":"Reading 12 - 09 Nov - The Classic Popular.pdf"},
+          {"type":"file","name":"Reading 13 - 12 Nov - Comics and Storytelling - A Conversation with Mat Johnson.url"},
+          {"type":"file","name":"Reading 13 - 12 Nov - Watch Me Go Invisible - Making sense of Incognegro.pdf"},
+          {"type":"file","name":"Reading 14 - 14 Nov - Beyond the Biopic - Review of Red Rosa.url"},
+          {"type":"file","name":"Reading 14 - 14 Nov - On Rosa Luxemburg.pdf"},
+          {"type":"file","name":"Reading 15 - 16 Nov - Mixed Emotions - Rutu Modan.url"},
+          {"type":"file","name":"Reading 16 - 16 Nov - An Interview with Rutu Modan.url"},
+          {"type":"file","name":"Reading 16 - 19 Nov - Acts of Recovery - Mining Our Comic Subconscious.url"},
+          {"type":"file","name":"Reading 16 - 19 Nov - An Interview with R. Sikoryak.url"},
+          {"type":"file","name":"Reading 16 - 19 Nov - Comics Conceptualism.url"},
+          {"type":"file","name":"Reading 17 - 21 Nov - Guy Delisle.url"},
+          {"type":"file","name":"Reading 17 - 21 Nov - Hugo Pratt.url"},
+          {"type":"file","name":"Reading 17 - 21 Nov - Legendary Mexican Photographer Gets Her Own Graphic Novel.url"},
+          {"type":"file","name":"Reading 17 - 21 Nov - Nick Drnaso.url"},
+          {"type":"file","name":"Reading 2 - 03 Oct - Taking Comic Books Seriously - Ada Goknur.url"},
+          {"type":"file","name":"Reading 2 - 03 Oct - Taking Comics Seriously - Arthur Asa Berger.pdf"},
+          {"type":"file","name":"Reading 3 - 05 Oct - A Graphic Novelist Captures the Paradoxes of Living in the “New India”.url"},
+          {"type":"file","name":"Reading 3 - 05 Oct - Enchanted Geographies.pdf"},
+          {"type":"file","name":"Reading 4 - 08 Oct - History and Journalism in the Graphic Novels of Joe Sacco.pdf"},
+          {"type":"file","name":"Reading 4 - 08 Oct - Joe Sacco on the Palestinian Territories.pdf"},
+          {"type":"file","name":"Reading 5 - 10 Oct - Graphic Geopolitics An Interview with Comics Artist Joe Sacco.pdf"},
+          {"type":"file","name":"Reading 5 - 10 Oct - Joe Sacco - A Manifesto, Anyone.pdf"},
+          {"type":"file","name":"Reading 5 - 10 Oct - Joe Sacco on the Chechen War.pdf"},
+          {"type":"file","name":"Reading 6 - 22 Oct - Drawing is Always a Struggle - Art Spiegelman.url"},
+          {"type":"file","name":"Reading 6 - 22 Oct - It's Only One Book - Art Spiegelman.url"},
+          {"type":"file","name":"Reading 7 - 24 Oct - I will always be Iranian - Marjane Satrapi.url"},
+          {"type":"file","name":"Reading 8 - 26 Oct - The Texture of Retracing Persepolis.pdf"},
+          {"type":"file","name":"Reading 9 - 29 Oct - A Digna for Bhim.pdf"},
+          {"type":"file","name":"Reading 9 - 29 Oct - Sampling Indian Graphic Novel Writing.pdf"}
+      ]}
+    ]},
+      {"type":"directory","name":"CCC 335 - Knowing Contemporary China","contents":[
+        {"type":"file","name":"CHINA STRUCTURE.pptx"},
+        {"type":"file","name":"CHINESE ART.pptx"},
+        {"type":"file","name":"China Assignment.docx"},
+        {"type":"file","name":"Chinese Economy.pptx"},
+        {"type":"file","name":"Cultural tips.pptx"},
+        {"type":"file","name":"FOUR ARTS.pptx"},
+        {"type":"file","name":"SOCIAL ISSUES.pptx"}
+    ]},
+      {"type":"directory","name":"CCC 402 - Genetic Engineering","contents":[
+        {"type":"directory","name":"Spring 2019","contents":[
+          {"type":"file","name":"1 - DNA Structure.pdf"},
+          {"type":"file","name":"2 - DNA Replication and Mutation.pdf"},
+          {"type":"file","name":"3,4 - Translation and Transcription.pdf"},
+          {"type":"file","name":"5 - Polymerase Chain Reaction.pdf"},
+          {"type":"file","name":"6 - Gene Cloning and Vectors.pdf"},
+          {"type":"file","name":"7 - Protein Structure.pdf"},
+          {"type":"file","name":"8 - Protein Purification and Expression Systems.pdf"}
+      ]}
+    ]},
+      {"type":"directory","name":"CCC 506 - Scientific Reasoning and Awareness","contents":[
+        {"type":"directory","name":"Monsoon 2018","contents":[
+          {"type":"file","name":"Report.docx"},
+          {"type":"file","name":"Report.pdf"},
+          {"type":"file","name":"TheDopePresentation.pdf"}
+      ]}
+    ]},
+      {"type":"directory","name":"CCC 510 - Creativity and Concept in Design","contents":[
+        {"type":"directory","name":"Monsoon 2018","contents":[
+          {"type":"file","name":"Assignment 1.pdf"},
+          {"type":"file","name":"Assignment 2.png"},
+          {"type":"file","name":"Final Product.jpeg"},
+          {"type":"file","name":"Final Report.docx"},
+          {"type":"file","name":"Final Report.pdf"},
+          {"type":"file","name":"Lecture Notes #01.pdf"},
+          {"type":"file","name":"Lecture Notes #02.pdf"},
+          {"type":"file","name":"Lecture Notes #03.pdf"},
+          {"type":"file","name":"Lecture Notes #04.pdf"},
+          {"type":"file","name":"Lecture Notes #05.pdf"},
+          {"type":"file","name":"Midsem Presentation.pptx"}
+      ]}
+    ]},
+      {"type":"directory","name":"CCC 608 Technology and Society","contents":[
+        {"type":"file","name":"Basalla 1988.pdf"},
+        {"type":"file","name":"Kingery 2001.pdf"},
+        {"type":"file","name":"Lemonnier 1993.pdf"},
+        {"type":"file","name":"Quilici-Pacaud.pdf"},
+        {"type":"file","name":"Sennett 2009.pdf"},
+        {"type":"file","name":"Skibo, Schiffer 2001.pdf"}
+    ]},
+      {"type":"directory","name":"CCC 624 - Uses of Energy","contents":[
+        {"type":"directory","name":"Monsoon 2017","contents":[
+          {"type":"file","name":"Chapter 1 - What is Energy.pdf"},
+          {"type":"file","name":"Chapter 2 - Mechanical Energy.pdf"},
+          {"type":"file","name":"Chapter 3 - Thermal Energy.pdf"},
+          {"type":"file","name":"Chapter 4 - Chemical Energy.pdf"},
+          {"type":"file","name":"Chapter 5 - Electrical Energy.pdf"},
+          {"type":"file","name":"Chapter 6 - Radiant Energy.pdf"},
+          {"type":"file","name":"Chapter 7 - Nuclear Energy.pdf"},
+          {"type":"file","name":"Chemical Energy.pdf"},
+          {"type":"directory","name":"Solved Problems","contents":[
+            {"type":"file","name":"Chemical Energy.docx"},
+            {"type":"file","name":"Energy.docx"},
+            {"type":"file","name":"Power.docx"}
+        ]},
+          {"type":"file","name":"Thermal Energy.pdf"},
+          {"type":"file","name":"Wind Energy Part 1.pptx"},
+          {"type":"file","name":"Wind Energy Part 2.pptx"}
+      ]}
+    ]},
+      {"type":"directory","name":"CCC 628 - A Hitchhiker's Guide to Futuristic Technology","contents":[
+        {"type":"directory","name":"Spring 2018","contents":[
+          {"type":"file","name":"Assignment 1 -  Submission.docx"},
+          {"type":"file","name":"Assignment 1.pdf"},
+          {"type":"file","name":"Assignment 2 - Submission.docx"},
+          {"type":"file","name":"Assignment 2.docx"},
+          {"type":"file","name":"Course Handout.docx"},
+          {"type":"file","name":"Course Outline.pdf"},
+          {"type":"directory","name":"Lecture Slides","contents":[
+            {"type":"file","name":"A Gentle Introduction To Blockchain Technology.pdf"},
+            {"type":"file","name":"Autonomous Vehicles and Smart Cities.pptx"},
+            {"type":"file","name":"Blockchain Paper.pdf"},
+            {"type":"file","name":"Blockchain in 5 minutes.pdf"},
+            {"type":"file","name":"Blockchain.pptx"},
+            {"type":"file","name":"Emerging Wireless Technologies.pptx"},
+            {"type":"file","name":"Google Maps and its Implementation.pptx"},
+            {"type":"file","name":"Location Tracking.pptx"},
+            {"type":"file","name":"Personal Digital Assistants.pptx"},
+            {"type":"file","name":"Smart Contracts - 12 Use Cases for Business and Beyond.pdf"},
+            {"type":"file","name":"Wearable technology.pptx"}
+        ]},
+          {"type":"file","name":"Topics for Presentation.docx"}
+      ]}
+    ]},
+      {"type":"directory","name":"CCC 629 - Computer Corpus Linguistics - Annotation and Analysis","contents":[
+        {"type":"directory","name":"Spring 2019","contents":[
+          {"type":"file","name":"AntConc_64bit.exe"},
+          {"type":"file","name":"Assignment 1.pdf"},
+          {"type":"file","name":"C5 Tagset.docx"},
+          {"type":"file","name":"CCC629_Tagging-Assignment_Kabir-Kanha-Arora.docx"},
+          {"type":"file","name":"CCC629_Tagging-Assignment_Kabir-Kanha-Arora.pdf"},
+          {"type":"directory","name":"Codes","contents":[
+            {"type":"directory","name":"C","contents":[
+              {"type":"file","name":"C_Binary_Search_Code.txt"},
+              {"type":"file","name":"C_Binary_Search_WordList.txt"},
+              {"type":"file","name":"C_Factorial_Code.txt"},
+              {"type":"file","name":"C_Factorial_WordList.txt"},
+              {"type":"file","name":"C_Insertion_Sort_Code.txt"},
+              {"type":"file","name":"C_Insertion_Sort_WordList.txt"},
+              {"type":"file","name":"C_KMP_Pattern_Searching_Code.txt"},
+              {"type":"file","name":"C_KMP_Pattern_Searching_WordList.txt"},
+              {"type":"file","name":"C_LCM_Code.txt"},
+              {"type":"file","name":"C_LCM_WordList.txt"}
+          ]},
+            {"type":"directory","name":"C#","contents":[
+              {"type":"file","name":"C#_Binary_Search_Code.txt"},
+              {"type":"file","name":"C#_Binary_Search_WordList.txt"},
+              {"type":"file","name":"C#_Factorial_Code.txt"},
+              {"type":"file","name":"C#_Factorial_WordList.txt"},
+              {"type":"file","name":"C#_Insertion_Sort_Code.txt"},
+              {"type":"file","name":"C#_Insertion_Sort_WordList.txt"},
+              {"type":"file","name":"C#_KMP_Pattern_Searching_Code.txt"},
+              {"type":"file","name":"C#_KMP_Pattern_Searching_WordList.txt"},
+              {"type":"file","name":"C#_LCM_Code.txt"},
+              {"type":"file","name":"C#_LCM_WordList.txt"}
+          ]},
+            {"type":"directory","name":"Java","contents":[
+              {"type":"file","name":"Java_Binary_Search_Code.txt"},
+              {"type":"file","name":"Java_Binary_Search_WordList.txt"},
+              {"type":"file","name":"Java_Factorial_Code.txt"},
+              {"type":"file","name":"Java_Factorial_WordList.txt"},
+              {"type":"file","name":"Java_Insertion_Sort_Code.txt"},
+              {"type":"file","name":"Java_Insertion_Sort_WordList.txt"},
+              {"type":"file","name":"Java_KMP_Pattern_Searching_Code.txt"},
+              {"type":"file","name":"Java_KMP_Pattern_Searching_WordList.txt"},
+              {"type":"file","name":"Java_LCM_Code.txt"},
+              {"type":"file","name":"Java_LCM_WordList.txt"}
+          ]},
+            {"type":"directory","name":"PHP","contents":[
+              {"type":"file","name":"PHP_Binary_Search_Code.txt"},
+              {"type":"file","name":"PHP_Binary_Search_WordList.txt"},
+              {"type":"file","name":"PHP_Factorial_Code.txt"},
+              {"type":"file","name":"PHP_Factorial_WordList.txt"},
+              {"type":"file","name":"PHP_Insertion_Sort_Code.txt"},
+              {"type":"file","name":"PHP_Insertion_Sort_WordList.txt"},
+              {"type":"file","name":"PHP_KMP_Pattern_Searching_Code.txt"},
+              {"type":"file","name":"PHP_KMP_Pattern_Searching_WordList.txt"},
+              {"type":"file","name":"PHP_LCM_Code.txt"},
+              {"type":"file","name":"PHP_LCM_WordList.txt"}
+          ]},
+            {"type":"directory","name":"Python","contents":[
+              {"type":"file","name":"Python_Binary_Search_Code.txt"},
+              {"type":"file","name":"Python_Binary_Search_WordList.txt"},
+              {"type":"file","name":"Python_Factorial_Code.txt"},
+              {"type":"file","name":"Python_Factorial_WordList.txt"},
+              {"type":"file","name":"Python_Insertion_Sort_Code.txt"},
+              {"type":"file","name":"Python_Insertion_Sort_WordList.txt"},
+              {"type":"file","name":"Python_KMP_Pattern_Searching_Code.txt"},
+              {"type":"file","name":"Python_KMP_Pattern_Searching_WordList.txt"},
+              {"type":"file","name":"Python_LCM_Code.txt"},
+              {"type":"file","name":"Python_LCM_WordList.txt"}
+          ]},
+            {"type":"file","name":"Word Comparison.xlsx"}
+        ]},
+          {"type":"file","name":"Corpus Annotation.pdf"},
+          {"type":"file","name":"Course Information.docx"},
+          {"type":"file","name":"English words.txt"},
+          {"type":"file","name":"Final Assignment.txt"},
+          {"type":"file","name":"Tagging Text.txt"},
+          {"type":"file","name":"Text.txt"}
+      ]}
+    ]},
+      {"type":"directory","name":"CCC 642 - Urban Transportation","contents":[
+        {"type":"file","name":"Accessibility(1).pdf"},
+        {"type":"file","name":"COURSE CONTENT_CCC.docx.pdf"},
+        {"type":"file","name":"Lecture 11.pdf"},
+        {"type":"file","name":"Lecture 12(2).pdf"},
+        {"type":"file","name":"Lecture 2.pdf"},
+        {"type":"file","name":"Lecture 3.pdf"},
+        {"type":"file","name":"Lecture 4_5.pdf"},
+        {"type":"file","name":"Lecture 6_1.pdf"},
+        {"type":"file","name":"Lecture 7.pdf"},
+        {"type":"file","name":"Lecture 9_CCC.pdf"},
+        {"type":"file","name":"Sustainability.pdf"},
+        {"type":"file","name":"Transit Speed.pdf"},
+        {"type":"file","name":"URBAN GOODS MOVEMENT.pdf"},
+        {"type":"file","name":"_  Urban Passenger Transport.pdf"}
+    ]},
+      {"type":"directory","name":"CCC 645 - Mobile Systems in 21st century","contents":[
+        {"type":"directory","name":"Class Questions","contents":[
+          {"type":"file","name":"Class questions.docx"},
+          {"type":"file","name":"Mobile Systems.docx"}
+      ]},
+        {"type":"file","name":"Final Report.docx"},
+        {"type":"directory","name":"Lectures","contents":[
+          {"type":"file","name":"3.ppt"},
+          {"type":"file","name":"5.ppt"},
+          {"type":"file","name":"Chapter 3.pdf"},
+          {"type":"file","name":"Chapter 5.pdf"},
+          {"type":"file","name":"Introduction.pdf"},
+          {"type":"file","name":"Sensors.pdf"},
+          {"type":"file","name":"The Evolution Of Mobile Phones_ 1973 To 2019 - Flaunt Digital.pdf"},
+          {"type":"file","name":"Week 4.pdf"},
+          {"type":"file","name":"Week 5.pdf"},
+          {"type":"file","name":"Week 6.pdf"}
+      ]},
+        {"type":"file","name":"SNU Course Description - CCC645.pdf"}
+    ]},
+      {"type":"directory","name":"CCC 651 - Global Economy","contents":[
+        {"type":"directory","name":"Spring 2020","contents":[
+          {"type":"file","name":"Activity 4 Additional Rules.pdf"},
+          {"type":"file","name":"Activity 4.pdf"},
+          {"type":"file","name":"Course Syllabus.pdf"},
+          {"type":"directory","name":"Lectures","contents":[
+            {"type":"file","name":"Unit 1.pdf"},
+            {"type":"file","name":"Unit 18.pdf"},
+            {"type":"file","name":"Unit 2.pdf"},
+            {"type":"file","name":"Unit 3.pdf"},
+            {"type":"file","name":"Units 11-12.pdf"},
+            {"type":"file","name":"Units 4-7.pdf"},
+            {"type":"file","name":"Units 9-10.pdf"}
+        ]}
+      ]}
+    ]},
+      {"type":"directory","name":"CCC 704 - Environmental Studies","contents":[
+        {"type":"directory","name":"Monsoon 2017","contents":[
+          {"type":"file","name":"Course Details.docx"},
+          {"type":"file","name":"EVS Notes.pdf"},
+          {"type":"directory","name":"Evaluations","contents":[
+            {"type":"file","name":"EVS Important Topics Endsem.mp3"},
+            {"type":"file","name":"EVS Sample Questions.pdf"},
+            {"type":"file","name":"ImpTopicsEndSem.docx"},
+            {"type":"file","name":"Important Questions.docx"}
+        ]},
+          {"type":"directory","name":"Presentations","contents":[
+            {"type":"file","name":"PPT 1 - Introduction to EVS.pptx"},
+            {"type":"file","name":"PPT 10 - Environmental Ethics.pptx"},
+            {"type":"file","name":"PPT 11 -  Environmental Education & Awareness.pptx"},
+            {"type":"file","name":"PPT 12 - Environmental Legislations in India.pptx"},
+            {"type":"file","name":"PPT 13 - Sustainable Development.pptx"},
+            {"type":"file","name":"PPT 2 - Biodiversity Assessment and Conservation.pptx"},
+            {"type":"file","name":"PPT 3 - Ecosystem.pptx"},
+            {"type":"file","name":"PPT 4 - Natural Resources.pptx"},
+            {"type":"file","name":"PPT 5 - Environmental Pollution.pptx"},
+            {"type":"file","name":"PPT 6 - Plastic Pollution & Environment.pptx"},
+            {"type":"file","name":"PPT 7 - Global Environmental Issues.pptx"},
+            {"type":"file","name":"PPT 8 - HIV AIDS Diseases.pptx"},
+            {"type":"file","name":"PPT 9 - Natural Hazards and Disasters.pptx"}
+        ]},
+          {"type":"directory","name":"Report","contents":[
+            {"type":"file","name":"EVS Report.pdf"},
+            {"type":"file","name":"Guidelines for  Report Preparation.docx"}
+        ]}
+      ]},
+        {"type":"directory","name":"Monsoon 2018","contents":[
+          {"type":"file","name":"CCC704_EVS Course details_2018 .docx"},
+          {"type":"directory","name":"Exams","contents":[
+            {"type":"file","name":"EVS IMP TOPICS ENDSEM.docx"},
+            {"type":"file","name":"EVS Mid Term Syllabus.docx"},
+            {"type":"file","name":"EVS Notes (Midsem portion).pdf"},
+            {"type":"file","name":"EVS sample-1.pdf"},
+            {"type":"file","name":"NTPC Dadri Sai Pravallika Dhaksharaju.docx"},
+            {"type":"file","name":"evs.docx-1.pdf"}
+        ]},
+          {"type":"file","name":"Narora Atomic Power Station.docx"},
+          {"type":"file","name":"Population Growth and Environment.pdf"},
+          {"type":"directory","name":"Report","contents":[
+            {"type":"file","name":"EVS Field Trip Report.docx"}
+        ]}
+      ]}
+    ]},
+      {"type":"directory","name":"CCC 704 - Genetic Engineering","contents":[
+        {"type":"file","name":"CCC Class PRotein str and purification.pptx"},
+        {"type":"directory","name":"Sample Papers","contents":[
+          {"type":"file","name":"FINAL KEY-1.xlsx"},
+          {"type":"file","name":"FINAL PAPER CCC 2014 1st half-Sep-1.docx"},
+          {"type":"file","name":"Quiz 1 key.docx"},
+          {"type":"file","name":"Quiz 2 Key.docx"},
+          {"type":"file","name":"Quiz 2 paper.docx"},
+          {"type":"file","name":"quiz 1 paper.docx"}
+      ]},
+        {"type":"file","name":"_1_.ppt"},
+        {"type":"file","name":"tmp113022778236.ppt"},
+        {"type":"file","name":"tmp120488210724.ppt"},
+        {"type":"file","name":"tmp213816770210.ppt"},
+        {"type":"file","name":"tmp379939037848.ppt"},
+        {"type":"file","name":"tmp578023886459.ppt"},
+        {"type":"file","name":"tmp681483293185-1.ppt"}
+    ]},
+      {"type":"directory","name":"CCC 805 - Introduction to MS Excel","contents":[
+        {"type":"directory","name":"Spring 2018","contents":[
+          {"type":"file","name":"Exam 1 - Workbook.xlsx"},
+          {"type":"file","name":"Exam 2 - Workbook.xlsx"},
+          {"type":"file","name":"Exam 3 - Workbook.xlsx"},
+          {"type":"directory","name":"Excel Files","contents":[
+            {"type":"file","name":"Lesson 1.xlsx"},
+            {"type":"file","name":"Lesson 2.xlsx"},
+            {"type":"file","name":"Lesson 3.xls"},
+            {"type":"file","name":"Lesson 4.xlsx"},
+            {"type":"file","name":"Lesson 5.xlsx"},
+            {"type":"file","name":"Lesson 6.xls"},
+            {"type":"file","name":"Lesson 7.xls"},
+            {"type":"file","name":"Lesson 8.xlsx"}
+        ]},
+          {"type":"directory","name":"Presentations","contents":[
+            {"type":"file","name":"Lesson 1.pdf"},
+            {"type":"file","name":"Lesson 2.pdf"},
+            {"type":"file","name":"Lesson 3.pdf"},
+            {"type":"file","name":"Lesson 4.pdf"},
+            {"type":"file","name":"Lesson 5.pdf"},
+            {"type":"file","name":"Lesson 6.pdf"},
+            {"type":"file","name":"Lesson 7.pdf"},
+            {"type":"file","name":"Lesson 8.pdf"}
+        ]},
+          {"type":"directory","name":"Solutions","contents":[
+            {"type":"file","name":"Lesson 1.xls"},
+            {"type":"file","name":"Lesson 2.xlsx"},
+            {"type":"file","name":"Lesson 3.xls"},
+            {"type":"file","name":"Lesson 4.xlsx"},
+            {"type":"file","name":"Lesson 5.xlsx"},
+            {"type":"file","name":"Lesson 6.xls"},
+            {"type":"file","name":"Lesson 7.xls"},
+            {"type":"file","name":"Lesson 8.xlsx"}
+        ]}
+      ]}
+    ]},
+      {"type":"directory","name":"CCC 806 - Data Analysis using Spreadsheets","contents":[
+        {"type":"directory","name":"Spring 2019","contents":[
+          {"type":"file","name":"Course Handout.docx"},
+          {"type":"file","name":"Quiz 1.xlsx"},
+          {"type":"directory","name":"Quizzes","contents":[
+            {"type":"file","name":"End Term.xlsx"},
+            {"type":"file","name":"Kabir_A.xlsx"},
+            {"type":"file","name":"Quiz 1.xlsx"},
+            {"type":"file","name":"Quiz 2.xlsx"},
+            {"type":"file","name":"Quiz 3.xlsx"}
+        ]},
+          {"type":"file","name":"The Risk of Spreadsheet Errors.pdf"},
+          {"type":"directory","name":"Workbooks","contents":[
+            {"type":"file","name":"Charts and Graphs.xlsx"},
+            {"type":"file","name":"ConFormatting.xlsx"},
+            {"type":"file","name":"Database Functions_2019(1).xlsx"},
+            {"type":"file","name":"Database Functions_2019.xlsx"},
+            {"type":"file","name":"Errors.xlsx"},
+            {"type":"file","name":"Financial Functions (Solved).xlsx"},
+            {"type":"file","name":"Functions_2019.xlsx"},
+            {"type":"file","name":"If Function_2019.xlsx"},
+            {"type":"file","name":"Index and match.xlsx"},
+            {"type":"file","name":"Number Fomatting.xlsx"},
+            {"type":"file","name":"Pivot_Table.xlsx"},
+            {"type":"file","name":"Session2.xlsx"},
+            {"type":"file","name":"Session3_2019(1).xlsx"},
+            {"type":"file","name":"Session3_2019.xlsx"},
+            {"type":"file","name":"Sort.xlsx"},
+            {"type":"file","name":"Table and Filter.xlsx"},
+            {"type":"file","name":"VLOOKUP and HLOOKUP.xlsx"},
+            {"type":"file","name":"What if.xlsx"},
+            {"type":"file","name":"financial functions.xlsx"}
+        ]}
+      ]}
+    ]},
+      {"type":"directory","name":"CCC 821 - Algorithmic Thinking","contents":[
+        {"type":"directory","name":"Spring 2018","contents":[
+          {"type":"file","name":"Assignment.docx"},
+          {"type":"file","name":"Endterm Exam.pdf"},
+          {"type":"file","name":"Kabir Kanha Arora - Assignment.docx"},
+          {"type":"file","name":"Kabir Kanha Arora - Assignment.pdf"}
+      ]}
+    ]},
+      {"type":"directory","name":"CCC 830 - Optimisation using Linear and Non-Linear Programming","contents":[
+        {"type":"file","name":"CCC 831 final.xlsx"},
+        {"type":"file","name":"CCC831 2019 Marks.xlsx"},
+        {"type":"file","name":"CCC831 2019 Practice Session 1-5 solved.docx"},
+        {"type":"file","name":"CCC831 2019 Practice Session 1-5 solved.xlsx"},
+        {"type":"file","name":"CCC831 2019 Practice Session 1-5.docx"},
+        {"type":"file","name":"CCC831 2019 Practice Session 6-11 (PARTIAL )solved.xlsx"},
+        {"type":"file","name":"CCC831 2019 Practice Session 6-11 solved ans.xlsx"},
+        {"type":"file","name":"CCC831 2019 Practice Session 6-11 solved.xlsx"},
+        {"type":"file","name":"CCC831 2019 Practice Session 6-11.docx"},
+        {"type":"file","name":"CCC831 2019 Session 1-3(1).pptx"},
+        {"type":"file","name":"CCC831 2019 Session 1.xlsx"},
+        {"type":"file","name":"CCC831 2019 Session 10.pptx"},
+        {"type":"file","name":"CCC831 2019 Session 10.xlsx"},
+        {"type":"file","name":"CCC831 2019 Session 12 solved.xlsx"},
+        {"type":"file","name":"CCC831 2019 Session 13.xlsx"},
+        {"type":"file","name":"CCC831 2019 Session 2.xlsx"},
+        {"type":"file","name":"CCC831 2019 Session 3.xlsx"},
+        {"type":"file","name":"CCC831 2019 Session 5.xlsx"},
+        {"type":"file","name":"CCC831 2019 Session 6 Problem.xlsx"},
+        {"type":"file","name":"CCC831 2019 Session 6 Solution.xlsx"},
+        {"type":"file","name":"CCC831 2019 Session 8.xlsx"},
+        {"type":"file","name":"CCC831 2019 Session 9.pptx"},
+        {"type":"file","name":"CCC831 2019 Session 9.xlsx"},
+        {"type":"file","name":"CCC831 Session 4-5.pptx"},
+        {"type":"file","name":"CCC831 Session 4.xlsx"},
+        {"type":"file","name":"Solving A transportation problem.xlsx"},
+        {"type":"file","name":"Solving an assignment problem.xlsx"},
+        {"type":"file","name":"~$CCC831 2019 Session 13.xlsx"}
+    ]},
+      {"type":"directory","name":"CCC 832 Venture Capital Contracts- a workshop course","contents":[
+        {"type":"directory","name":"Assignments","contents":[
+          {"type":"file","name":"Apex Investment partners-Structuring-HBS.xlsx"},
+          {"type":"file","name":"Clas ex.xlsx"},
+          {"type":"file","name":"Class excel.xlsx"},
+          {"type":"file","name":"Evaluating VC term sheet-Stanford.xlsx"},
+          {"type":"file","name":"PPT contents.docx"},
+          {"type":"file","name":"Structuring.xlsx"},
+          {"type":"file","name":"Valuation-CCC(1).pptx"}
+      ]},
+        {"type":"directory","name":"Case Studies","contents":[
+          {"type":"file","name":"Apex Investment Partners (A)_ April 1995.pdf"},
+          {"type":"file","name":"Apex Investment Partners (B)_.pdf"},
+          {"type":"file","name":"E VALUATING V ENTURE C APITAL T ERM S HEETS.pdf"},
+          {"type":"file","name":"The Basic Venture Capital Formula.pdf"},
+          {"type":"file","name":"WORKBRAIN CORP. — A CASE IN EXIT STRATEGY.pdf"}
+      ]},
+        {"type":"directory","name":"Study Materials","contents":[
+          {"type":"file","name":"1994-rise and fall of vc-Gompers.pdf"},
+          {"type":"file","name":"7-VCPE contracts-CCC.pptx"}
+      ]}
+    ]}
+  ]},
+    {"type":"directory","name":"DES","contents":[
+      {"type":"directory","name":"DES 211 - Creativity and Concept in Design","contents":[
+        {"type":"directory","name":"Monsoon 2018","contents":[
+          {"type":"file","name":"Assignment 1.pdf"},
+          {"type":"file","name":"Assignment 2.png"},
+          {"type":"file","name":"Final Product.jpeg"},
+          {"type":"file","name":"Final Report.docx"},
+          {"type":"file","name":"Final Report.pdf"},
+          {"type":"file","name":"Lecture Notes #01.pdf"},
+          {"type":"file","name":"Lecture Notes #02.pdf"},
+          {"type":"file","name":"Lecture Notes #03.pdf"},
+          {"type":"file","name":"Lecture Notes #04.pdf"},
+          {"type":"file","name":"Lecture Notes #05.pdf"},
+          {"type":"file","name":"Midsem Presentation.pptx"}
+      ]},
+        {"type":"directory","name":"Monsoon 2019","contents":[
+          {"type":"file","name":"Assignment 1.pdf"},
+          {"type":"file","name":"Final Report DES211.pdf"}
+      ]}
+    ]}
+  ]},
+    {"type":"directory","name":"DOM","contents":[
+      {"type":"directory","name":"DOM 105 - Quantitative Techniques for Business","contents":[
+        {"type":"file","name":"DOM105 2019 Endterm FINAL FINAL.xlsx"},
+        {"type":"file","name":"DOM105 2019 Quiz 2.xlsx"},
+        {"type":"file","name":"Excel commands for Z and t tables.docx"},
+        {"type":"directory","name":"Lectures","contents":[
+          {"type":"file","name":"1. Central Tendencies and Graphs.pptx"},
+          {"type":"file","name":"11. Comparing means, variances and proportions.pptx"},
+          {"type":"file","name":"13. Kruskal Wallis and McNemmar Test .pptx"},
+          {"type":"file","name":"16. Analysis of Variance ( ANOVA and Levigne Test ).pptx"},
+          {"type":"file","name":"18. Regression Ananlysis.pptx"},
+          {"type":"file","name":"20. Multiple Regression.pptx"},
+          {"type":"file","name":"24. Linear Programming.pptx"},
+          {"type":"file","name":"3. Probability Distribution ( Poisson, Binomial and Hyper).pptx"},
+          {"type":"file","name":"5. Conditional Probability.pptx"},
+          {"type":"file","name":"6. Sampling Theory.pptx"},
+          {"type":"file","name":"7. Confidence Interval and t tables.pptx"},
+          {"type":"file","name":"8. Hypothesis Testing.pptx"}
+      ]},
+        {"type":"file","name":"Practice Endterm solved.docx"},
+        {"type":"file","name":"Quiz 1 on Feb 5.docx"},
+        {"type":"directory","name":"Solutions","contents":[
+          {"type":"file","name":"Practice Session 1-4 solved.docx"},
+          {"type":"file","name":"Practice Session 1-4 solved.xlsx"},
+          {"type":"file","name":"Practice Session 1-4.docx"},
+          {"type":"file","name":"Practice Session 1-4.xlsx"},
+          {"type":"file","name":"Practice Session 16-17 solved.docx"},
+          {"type":"file","name":"Practice Session 16-17 solved.xlsx"},
+          {"type":"file","name":"Practice Session 18-19 solved.xlsx"},
+          {"type":"file","name":"Practice Session 20-21 solved.xlsx"},
+          {"type":"file","name":"Practice Session 5-7 Solved.docx"},
+          {"type":"file","name":"Practice Session 5-7 solved.xlsx"},
+          {"type":"file","name":"Practice Session 5-7.docx"},
+          {"type":"file","name":"Practice Session 8-14 solved.docx"},
+          {"type":"file","name":"Practice Session 8-14 solved.xlsx"},
+          {"type":"file","name":"Practice Session 8-14.docx"}
+      ]}
+    ]},
+      {"type":"directory","name":"DOM 403 - Sustainable Operations Management","contents":[
+        {"type":"file","name":"060-0269.pdf"},
+        {"type":"file","name":"Assignment.docx"},
+        {"type":"file","name":"ICPR22Leandro-OSPF10115.pdf"}
+    ]}
+  ]},
+    {"type":"directory","name":"ECO","contents":[
+      {"type":"directory","name":"ECO 101 - Principles of Microeconomics","contents":[
+        {"type":"directory","name":"Monsoon 2019","contents":[
+          {"type":"directory","name":"Books","contents":[
+            {"type":"file","name":"microeco-_varian_0.pdf"},
+            {"type":"file","name":"varian-workbook-solution-manual-intermediate-microeconomics.pdf"}
+        ]},
+          {"type":"directory","name":"Notes","contents":[
+            {"type":"file","name":"PREFERENCES.pdf"}
+        ]},
+          {"type":"directory","name":"Past Year Papers","contents":[
+            {"type":"file","name":"ECO-101 MIDSEM.pdf"},
+            {"type":"file","name":"ECO101 Endsem.pdf"},
+            {"type":"file","name":"ENDSEM-2017.pdf"},
+            {"type":"file","name":"Endsem Paper 1.jpeg"},
+            {"type":"file","name":"MIDSEM-2017.pdf"},
+            {"type":"file","name":"Make up Midterm.JPG"},
+            {"type":"file","name":"Midterm 2016.pdf"},
+            {"type":"file","name":"Q Papers 2017.pdf"}
+        ]}
+      ]},
+        {"type":"directory","name":"Spring 2018","contents":[
+          {"type":"directory","name":"Assignments","contents":[
+            {"type":"file","name":"Assignment 1.pdf"},
+            {"type":"file","name":"Assignment 2.pdf"},
+            {"type":"file","name":"Assignment 3.pdf"},
+            {"type":"file","name":"Assignment 4.pdf"}
+        ]},
+          {"type":"directory","name":"EBooks","contents":[
+            {"type":"file","name":"EBook - Hal. Varian - Microeconomics (2010, 8th ed.).pdf"},
+            {"type":"file","name":"EBook - Mankiw N.G. - Principles of Microeconomics (2001, 2nd ed.).pdf"}
+        ]},
+          {"type":"file","name":"History of Economic Thought.jpg"},
+          {"type":"file","name":"Note.txt"},
+          {"type":"file","name":"Pyndck and Rubinfield Practice Questions 1.jpg"},
+          {"type":"file","name":"Pyndck and Rubinfield Practice Questions 2.jpg"},
+          {"type":"file","name":"Syllabus.pdf"}
+      ]}
+    ]},
+      {"type":"directory","name":"ECO 102 - Principles of Macroeconomics","contents":[
+        {"type":"directory","name":"Monsoon 2018 and Spring 2020","contents":[
+          {"type":"file","name":"2008 Financial Crisis.pdf"},
+          {"type":"directory","name":"Assignments","contents":[
+            {"type":"file","name":"Assignment 1.pdf"},
+            {"type":"file","name":"Assignment 2.pdf"},
+            {"type":"file","name":"Assignment 3.pdf"},
+            {"type":"file","name":"Assignment 4.pdf"},
+            {"type":"file","name":"Assignment 5.pdf"}
+        ]},
+          {"type":"file","name":"Course Syllabus.docx"},
+          {"type":"file","name":"Midsem Exam.pdf"},
+          {"type":"file","name":"N. Gregory Mankiw Macroeconomics, 7th Edition 2009.pdf"},
+          {"type":"directory","name":"Presentations","contents":[
+            {"type":"file","name":"Chapter 1.pdf"},
+            {"type":"file","name":"Chapter 10.pdf"},
+            {"type":"file","name":"Chapter 11.pdf"},
+            {"type":"file","name":"Chapter 12.pdf"},
+            {"type":"file","name":"Chapter 13.pdf"},
+            {"type":"file","name":"Chapter 15.pdf"},
+            {"type":"file","name":"Chapter 16.pdf"},
+            {"type":"file","name":"Chapter 17.pdf"},
+            {"type":"file","name":"Chapter 18.pdf"},
+            {"type":"file","name":"Chapter 19.pdf"},
+            {"type":"file","name":"Chapter 2.pdf"},
+            {"type":"file","name":"Chapter 20.pdf"},
+            {"type":"file","name":"Chapter 21.pdf"},
+            {"type":"file","name":"Chapter 22.pdf"},
+            {"type":"file","name":"Chapter 3.pdf"},
+            {"type":"file","name":"Chapter 4.pdf"}
+        ]},
+          {"type":"file","name":"Principles_of_macro-economics_6th_edition_mankiw.pdf"},
+          {"type":"directory","name":"Quizzes","contents":[
+            {"type":"file","name":"Quiz 1.pdf"},
+            {"type":"file","name":"Surprise Quizzes.pdf"}
+        ]},
+          {"type":"file","name":"instructors-manual-macro.pdf"},
+          {"type":"file","name":"syllabusEco102-2020.doc"}
+      ]}
+    ]},
+      {"type":"directory","name":"ECO 213 - Basic Data Analysis and Econometrics","contents":[
+        {"type":"directory","name":"Monsoon 2020","contents":[
+          {"type":"file","name":"Dougherty C. Introduction to econometrics.pdf"},
+          {"type":"file","name":"Dougherty C. Introduction to econometrics_3rd_edition.pdf"},
+          {"type":"file","name":"Eco 213_Monsoon 2020_Brochure_GS.pdf"},
+          {"type":"file","name":"Jeffrey_M._Wooldridge_Introductory_Econometrics_A_Modern_Approach__2012.pdf"},
+          {"type":"file","name":"Quiz1_Answer.docx"},
+          {"type":"file","name":"Quiz1_Practice_questions_dougherty.jpg"},
+          {"type":"file","name":"Term end Assignment.pdf"}
+      ]},
+        {"type":"directory","name":"Spring 2019","contents":[
+          {"type":"directory","name":"Assignments","contents":[
+            {"type":"file","name":"Assignment 1 Solution.pdf"},
+            {"type":"file","name":"Assignment 1.pdf"},
+            {"type":"file","name":"Assignment 2 Solution.pdf"},
+            {"type":"file","name":"Assignment 2.docx"},
+            {"type":"file","name":"Assignment 3 Solution.pdf"},
+            {"type":"file","name":"Assignment 3.docx"},
+            {"type":"file","name":"Assignment 4 Solution.pdf"},
+            {"type":"file","name":"Assignment 4.docx"}
+        ]},
+          {"type":"directory","name":"E-Books","contents":[
+            {"type":"file","name":"Basic Econometrics - Gujarati.pdf"},
+            {"type":"file","name":"Gujarati - Student Solutions Manual.pdf"},
+            {"type":"file","name":"Jeffrey M Wooldridge - Introductory Econometrics. A Modern Approach (2012).pdf"},
+            {"type":"file","name":"John E. Freund's Mathematical Statistics with Applications.pdf"},
+            {"type":"file","name":"Wooldridge - Econometrics Teachers' Book.pdf"}
+        ]},
+          {"type":"file","name":"Econometrics Questions.pdf"},
+          {"type":"directory","name":"Empirical Project","contents":[
+            {"type":"file","name":"1st Draft Example 1.docx"},
+            {"type":"file","name":"1st Draft Example 2.pdf"},
+            {"type":"file","name":"2nd Draft Example 1.pdf"},
+            {"type":"file","name":"2nd Draft Example 2.pdf"},
+            {"type":"file","name":"First Draft.docx"},
+            {"type":"file","name":"First Draft.pdf"},
+            {"type":"file","name":"Sample research paper in Econometrics.docx"},
+            {"type":"file","name":"The Empirical Project.pdf"},
+            {"type":"file","name":"Topics of Empirical Project.docx"}
+        ]},
+          {"type":"file","name":"Endsem QP.pdf"},
+          {"type":"directory","name":"Lectures","contents":[
+            {"type":"file","name":"Lecture 1.pdf"},
+            {"type":"file","name":"Lecture 2.pdf"},
+            {"type":"file","name":"Lecture 3.pdf"},
+            {"type":"file","name":"Lecture 4.pdf"},
+            {"type":"file","name":"Lecture 5.pdf"},
+            {"type":"file","name":"Lecture 6.pdf"},
+            {"type":"file","name":"Lecture 7.pdf"},
+            {"type":"file","name":"Lecture 8.pdf"},
+            {"type":"file","name":"Lecture 9.pdf"}
+        ]},
+          {"type":"file","name":"Stata.txt"},
+          {"type":"file","name":"Syllabus and Course Outline.pdf"},
+          {"type":"file","name":"Syllabus for Endsem.docx"},
+          {"type":"file","name":"Syllabus for MIdsem.docx"},
+          {"type":"file","name":"final data.xlsx"}
+      ]}
+    ]},
+      {"type":"directory","name":"ECO 221 - Game Theory","contents":[
+        {"type":"directory","name":"Spring 2019","contents":[
+          {"type":"directory","name":"Assignments","contents":[
+            {"type":"file","name":"Assignment 1.pdf"},
+            {"type":"file","name":"Assignment 2.pdf"}
+        ]},
+          {"type":"file","name":"Course Details.pdf"},
+          {"type":"directory","name":"EBooks","contents":[
+            {"type":"file","name":"Games of Strategy (4e).pdf"},
+            {"type":"file","name":"Gibbons.pdf"}
+        ]},
+          {"type":"file","name":"Notes till Midsem.pdf"},
+          {"type":"file","name":"Practice Problems.pdf"},
+          {"type":"file","name":"Set 1 Questions.pdf"},
+          {"type":"file","name":"Set 1 Solutions.pdf"}
+      ]}
+    ]},
+      {"type":"directory","name":"ECO 301 - Intermediate Microeconomics","contents":[
+        {"type":"directory","name":"Monsoon 2018","contents":[
+          {"type":"file","name":"Endsem 2018.pdf"}
+      ]},
+        {"type":"directory","name":"Monsoon 2019","contents":[
+          {"type":"directory","name":"Assignments","contents":[
+            {"type":"file","name":"Assignment 1.pdf"},
+            {"type":"file","name":"Assignment 2.pdf"},
+            {"type":"file","name":"Assignment 3.pdf"}
+        ]},
+          {"type":"file","name":"Endsem 2019.pdf"},
+          {"type":"file","name":"Hal Varian - Intermediate Microeconomics.pdf"},
+          {"type":"file","name":"Midsem Exam.pdf"},
+          {"type":"directory","name":"Notes","contents":[
+            {"type":"file","name":"Notes (First Half).pdf"},
+            {"type":"file","name":"Notes (Second Half).pdf"}
+        ]},
+          {"type":"directory","name":"Tutorials","contents":[
+            {"type":"file","name":"Tutorial - Labour Leisure Choice.pdf"},
+            {"type":"file","name":"Tutorial - Production Function.pdf"},
+            {"type":"file","name":"Tutorial - Technology.pdf"}
+        ]}
+      ]},
+        {"type":"directory","name":"Monsoon 2020","contents":[
+          {"type":"directory","name":"Assignments","contents":[
+            {"type":"directory","name":"Assignment 1","contents":[
+              {"type":"file","name":"Eco301_Assignment1.pdf"},
+              {"type":"file","name":"Hmk_assignment.docx"}
+          ]},
+            {"type":"directory","name":"Assignment 2","contents":[
+              {"type":"file","name":"ECO301_Assignment 2.pdf"},
+              {"type":"file","name":"ECO301_Final.pdf"}
+          ]}
+        ]},
+          {"type":"file","name":"Chap11_exchange.pdf"},
+          {"type":"file","name":"Chap14_surplus.ppt"},
+          {"type":"file","name":"Chap18_Technology.pdf"},
+          {"type":"file","name":"Chap19_Profit_Maximization.ppt"},
+          {"type":"file","name":"Chap2_Budget_Constraint.ppt"},
+          {"type":"file","name":"Chap3_Preferences.ppt"},
+          {"type":"file","name":"Chap4_Utility_course.pdf"},
+          {"type":"file","name":"Chap5_Choice.pdf"},
+          {"type":"file","name":"Chap6_Demand.pdf"},
+          {"type":"file","name":"Lecture_MarketD.pdf"},
+          {"type":"file","name":"Lecture_Slutsky.pdf"},
+          {"type":"file","name":"Oligopoly.pdf"},
+          {"type":"file","name":"Optimization.pdf"},
+          {"type":"directory","name":"Papers","contents":[
+            {"type":"file","name":"Eco301ÿHW1_20200217114202.pdf.pdf.pdf"},
+            {"type":"file","name":"Endterm_Nov20.pdf"},
+            {"type":"file","name":"Khush Paliwal-end term-eco301-1910110202(1).pdf"},
+            {"type":"file","name":"Midterm_Monsoon2020.pdf"},
+            {"type":"file","name":"Tutorial(1).pdf"},
+            {"type":"file","name":"end term 2019.pdf"},
+            {"type":"file","name":"endterm_spring2020.pdf"},
+            {"type":"file","name":"tutorial.pdf"}
+        ]},
+          {"type":"file","name":"Roberto Serrano, Allan M. Feldman - A Short Course in Intermediate Microeconomics with Calculus-Cambridge University Press (2012).pdf"},
+          {"type":"file","name":"microeco-_varian_0.pdf"},
+          {"type":"file","name":"~$k_assignment.docx"}
+      ]}
+    ]},
+      {"type":"directory","name":"ECO 354 - Public Economics","contents":[
+        {"type":"directory","name":"Monsoon 2016","contents":[
+          {"type":"file","name":"PS I_F16.pdf"},
+          {"type":"file","name":"public eco - 2016.pdf"}
+      ]},
+        {"type":"directory","name":"Monsoon 2017","contents":[
+          {"type":"file","name":"Assignment 2 key.pdf"}
+      ]},
+        {"type":"directory","name":"Spring 2015","contents":[
+          {"type":"file","name":"ps2sol.pdf"},
+          {"type":"file","name":"ps4sol.pdf"},
+          {"type":"file","name":"public eco endsem 2015.pdf"}
+      ]},
+        {"type":"directory","name":"Spring 2017","contents":[
+          {"type":"file","name":"PSIII_Solution.pdf"}
+      ]},
+        {"type":"directory","name":"Spring 2019","contents":[
+          {"type":"file","name":"Assignment 1 - Solution.pdf"},
+          {"type":"file","name":"Assignment 1.pdf"},
+          {"type":"file","name":"Assignment 2 - Solution.pdf"},
+          {"type":"file","name":"Assignment 2.pdf"},
+          {"type":"file","name":"Endsem (With Solutions).pdf"},
+          {"type":"file","name":"Practice Problems 2.pdf"},
+          {"type":"file","name":"Practice Problems.pdf"},
+          {"type":"file","name":"Warr (1982).pdf"}
+      ]},
+        {"type":"directory","name":"Spring 2020","contents":[
+          {"type":"directory","name":"Assessments","contents":[
+            {"type":"file","name":"1710110165_Endsem.pdf"},
+            {"type":"file","name":"1710110165_ProblemSet2.pdf"},
+            {"type":"file","name":"1710110165_ProblemSet3.pdf"},
+            {"type":"file","name":"1710110165_ProblemSet4.pdf"},
+            {"type":"file","name":"Assignment 1 - Solutions.pdf"},
+            {"type":"file","name":"Assignment 1.pdf"},
+            {"type":"file","name":"Assignment 2 - Solutions.pdf"},
+            {"type":"file","name":"Assignment 2.pdf"},
+            {"type":"file","name":"Assignment 3 - Solutions.pdf"},
+            {"type":"file","name":"Assignment 3.pdf"},
+            {"type":"file","name":"Assignment 4 - Solutions.pdf"},
+            {"type":"file","name":"Assignment 4.pdf"},
+            {"type":"file","name":"Endsem Answer Sheet.pdf"},
+            {"type":"file","name":"Endsem.pdf"},
+            {"type":"file","name":"Midsem (Solution).pdf"},
+            {"type":"file","name":"Midsem Answer Sheet.pdf"}
+        ]},
+          {"type":"file","name":"Gruber - Ch1.pdf"},
+          {"type":"file","name":"Jonathan Gruber - Public Finance and Public Policy - (2012).pdf"},
+          {"type":"directory","name":"Lectures","contents":[
+            {"type":"file","name":"Labor Income Taxation.pdf"},
+            {"type":"file","name":"Online Lectures (Graphs).pdf"},
+            {"type":"file","name":"Online Lectures 1-2.pdf"},
+            {"type":"file","name":"Optimal Indirect Taxation (Ramsey).pdf"},
+            {"type":"file","name":"Private Provision of Public Goods.pdf"},
+            {"type":"file","name":"Taxation on Savings and Capital Income.pdf"}
+        ]},
+          {"type":"directory","name":"Papers","contents":[
+            {"type":"file","name":"A Tax-Free Year in Iceland.pdf"},
+            {"type":"file","name":"Andreoni - Limits to Altruism (JPubE88).pdf"},
+            {"type":"file","name":"Bergstrom, Blume, Varian - On the Private Provision of Public Goods.pdf"},
+            {"type":"file","name":"Falk - Gift Exchange in the Field, ECTA (2007).pdf"},
+            {"type":"file","name":"Salience and Taxation - Theory and Evidence, Chetty et al (2009).pdf"}
+        ]},
+          {"type":"file","name":"Ram Smaran Suresh Initial Notes.pdf"},
+          {"type":"file","name":"Syllabus.pdf"}
+      ]}
+    ]}
+  ]},
+    {"type":"directory","name":"MAT","contents":[
+      {"type":"directory","name":"MAT 103 - Mathematical Methods I","contents":[
+        {"type":"directory","name":"Monsoon 2017","contents":[
+          {"type":"file","name":"Course structure.pdf"},
+          {"type":"file","name":"Introductory Lecture.pdf"}
+      ]}
+    ]},
+      {"type":"directory","name":"MAT 104 - Mathematical Methods II","contents":[
+        {"type":"directory","name":"Spring 2018","contents":[
+          {"type":"file","name":"Course Introduction.pdf"},
+          {"type":"directory","name":"Lecture Notes","contents":[
+            {"type":"file","name":"Eigen Values 1.pdf"},
+            {"type":"file","name":"Eigen Values 2.pdf"},
+            {"type":"file","name":"Eigen Values Questions.pdf"},
+            {"type":"file","name":"Linear System Of Equations.pdf"},
+            {"type":"file","name":"Matrix Review and Introduction to Matlab.pdf"},
+            {"type":"file","name":"Ordinary Differential Equations 1.pdf"},
+            {"type":"file","name":"Ordinary Differential Equations 2 (Update later).pdf"},
+            {"type":"file","name":"Power Series.pdf"},
+            {"type":"file","name":"Ranks Dependence and Independence.pdf"}
+        ]},
+          {"type":"directory","name":"Matlab Files","contents":[
+            {"type":"file","name":"eigen_demo1.m"},
+            {"type":"file","name":"equation.m"},
+            {"type":"file","name":"euler01.m"},
+            {"type":"file","name":"example3.m"},
+            {"type":"file","name":"rotation1.m"}
+        ]}
+      ]}
+    ]}
+  ]},
+    {"type":"directory","name":"MED","contents":[
+      {"type":"directory","name":"MED 201 - Material Science and Engineering","contents":[
+        {"type":"directory","name":"Monsoon 2020","contents":[
+          {"type":"directory","name":"Experiments","contents":[
+            {"type":"file","name":"Exp 2_MED201.pdf"},
+            {"type":"file","name":"Exp 3_MED201.pdf"},
+            {"type":"file","name":"Exp 6.xlsx"},
+            {"type":"file","name":"Exp No. 5.xlsx"},
+            {"type":"file","name":"Exp. 7.xlsx"},
+            {"type":"file","name":"Exp.6_PPT.pdf"},
+            {"type":"file","name":"Exp.7_MED201.pdf"},
+            {"type":"file","name":"Exp1_MED201.pdf"},
+            {"type":"file","name":"Exp5_PPT.pdf"},
+            {"type":"file","name":"MED201_Exp 4 (1).pdf"}
+        ]},
+          {"type":"directory","name":"Other Useful Material","contents":[
+            {"type":"file","name":"Chapter-6 MED201.pdf"},
+            {"type":"file","name":"LASC Class 1&2.pdf"},
+            {"type":"file","name":"LASC MED201-Chap4.pdf"},
+            {"type":"file","name":"LASC MED201-Chap5.pdf"}
+        ]}
+      ]}
+    ]}
+  ]},
+    {"type":"directory","name":"PHY","contents":[
+      {"type":"directory","name":"PHY 101 - Introduction to Physics I","contents":[
+        {"type":"directory","name":"Monsoon 2015","contents":[
+          {"type":"file","name":"Midsem Paper 2015.pdf"},
+          {"type":"file","name":"Quiz 1 2015.jpeg"}
+      ]},
+        {"type":"directory","name":"Monsoon 2016","contents":[
+          {"type":"file","name":"Quiz 1 2016.jpeg"}
+      ]},
+        {"type":"directory","name":"Monsoon 2017","contents":[
+          {"type":"file","name":"Midsem Paper + Solutions.pdf"},
+          {"type":"file","name":"Sample Quiz 1.pdf"},
+          {"type":"directory","name":"Tutorials","contents":[
+            {"type":"file","name":"Tutorial 1.pdf"},
+            {"type":"file","name":"Tutorial 10.pdf"},
+            {"type":"file","name":"Tutorial 11.pdf"},
+            {"type":"file","name":"Tutorial 12.pdf"},
+            {"type":"file","name":"Tutorial 13.pdf"},
+            {"type":"file","name":"Tutorial 14.pdf"},
+            {"type":"file","name":"Tutorial 15.pdf"},
+            {"type":"file","name":"Tutorial 2.pdf"},
+            {"type":"file","name":"Tutorial 3.pdf"},
+            {"type":"file","name":"Tutorial 4.pdf"},
+            {"type":"file","name":"Tutorial 5.pdf"},
+            {"type":"file","name":"Tutorial 6.pdf"},
+            {"type":"file","name":"Tutorial 7.pdf"},
+            {"type":"file","name":"Tutorial 8.pdf"},
+            {"type":"file","name":"Tutorial 9.pdf"},
+            {"type":"file","name":"Tutorials 1-9 Solutions.pdf"}
+        ]}
+      ]},
+        {"type":"directory","name":"Monsoon 2018","contents":[
+          {"type":"directory","name":"Tutorials","contents":[
+            {"type":"file","name":"tutorial_PHY101_2018_1.pdf"},
+            {"type":"file","name":"tutorial_PHY101_2018_10.pdf"},
+            {"type":"file","name":"tutorial_PHY101_2018_11.pdf"},
+            {"type":"file","name":"tutorial_PHY101_2018_12.pdf"},
+            {"type":"file","name":"tutorial_PHY101_2018_13.pdf"},
+            {"type":"file","name":"tutorial_PHY101_2018_14.pdf"},
+            {"type":"file","name":"tutorial_PHY101_2018_15.pdf"},
+            {"type":"file","name":"tutorial_PHY101_2018_16.pdf"},
+            {"type":"file","name":"tutorial_PHY101_2018_2.pdf"},
+            {"type":"file","name":"tutorial_PHY101_2018_3.pdf"},
+            {"type":"file","name":"tutorial_PHY101_2018_4.pdf"},
+            {"type":"file","name":"tutorial_PHY101_2018_5.pdf"},
+            {"type":"file","name":"tutorial_PHY101_2018_6.pdf"},
+            {"type":"file","name":"tutorial_PHY101_2018_7.pdf"},
+            {"type":"file","name":"tutorial_PHY101_2018_8.pdf"}
+        ]},
+          {"type":"file","name":"impquestion.pdf"}
+      ]},
+        {"type":"directory","name":"Monsoon 2020","contents":[
+          {"type":"directory","name":"exams","contents":[
+            {"type":"file","name":"2015 MidSem.pdf"},
+            {"type":"file","name":"2016 MidSem.pdf"},
+            {"type":"file","name":"2017 MidSem.pdf"},
+            {"type":"file","name":"Midterm_paper_2020_phy101_final.pdf"},
+            {"type":"file","name":"Phy 101 Mid term_1.pdf"}
+        ]},
+          {"type":"directory","name":"tutorials","contents":[
+            {"type":"file","name":"PHY 101 1.pdf"},
+            {"type":"file","name":"PHY 101 12.pdf"},
+            {"type":"file","name":"PHY 101 2.pdf"},
+            {"type":"file","name":"PHY 101 4.pdf"},
+            {"type":"file","name":"PHY 101 8.pdf"},
+            {"type":"file","name":"PHY101  MIDSEM.pdf"},
+            {"type":"file","name":"PHY101 3.pdf"},
+            {"type":"file","name":"PHY101 5.pdf"},
+            {"type":"file","name":"PHY101 7.pdf"},
+            {"type":"file","name":"TUT 6.pdf"},
+            {"type":"file","name":"Tutorial_10_With_Solutions.docx"},
+            {"type":"file","name":"Tutorial_11_With_Solutions.docx"},
+            {"type":"file","name":"Tutorial_9_With_Solutions (2).docx"}
+        ]}
+      ]}
+    ]},
+      {"type":"directory","name":"PHY 102 - Introduction to Physics II","contents":[
+        {"type":"directory","name":"Spring 2017","contents":[
+          {"type":"file","name":"Endsem Exam 2017.pdf"}
+      ]},
+        {"type":"directory","name":"Spring 2018","contents":[
+          {"type":"file","name":"Course Info.pptx"},
+          {"type":"directory","name":"Lab","contents":[
+            {"type":"file","name":"Exp 1 - Error Analysis and Graphing.pptx"},
+            {"type":"file","name":"Experiment Allotment List.docx"},
+            {"type":"file","name":"I P Exp 2.pdf"},
+            {"type":"file","name":"I P Exp 2.xlsx - Sheet2.pdf"},
+            {"type":"file","name":"Lab Manual.pdf"},
+            {"type":"file","name":"Lab Schedule.docx"},
+            {"type":"file","name":"Task Error Analysis.docx"}
+        ]},
+          {"type":"directory","name":"Tutorials","contents":[
+            {"type":"file","name":"Tutorial 1 - Solution.pdf"},
+            {"type":"file","name":"Tutorial 1.pdf"},
+            {"type":"file","name":"Tutorial 10 - Solution.pdf"},
+            {"type":"file","name":"Tutorial 10.pdf"},
+            {"type":"file","name":"Tutorial 11 - Solution.pdf"},
+            {"type":"file","name":"Tutorial 11.pdf"},
+            {"type":"file","name":"Tutorial 12 - Solution.pdf"},
+            {"type":"file","name":"Tutorial 12.pdf"},
+            {"type":"file","name":"Tutorial 13 - Solution.pdf"},
+            {"type":"file","name":"Tutorial 13.pdf"},
+            {"type":"file","name":"Tutorial 14 - Solution.pdf"},
+            {"type":"file","name":"Tutorial 14.pdf"},
+            {"type":"file","name":"Tutorial 15 - Solution.pdf"},
+            {"type":"file","name":"Tutorial 15.pdf"},
+            {"type":"file","name":"Tutorial 2 - Solution.pdf"},
+            {"type":"file","name":"Tutorial 2.pdf"},
+            {"type":"file","name":"Tutorial 3 - Solution.pdf"},
+            {"type":"file","name":"Tutorial 3.pdf"},
+            {"type":"file","name":"Tutorial 4 - Solution.pdf"},
+            {"type":"file","name":"Tutorial 4.pdf"},
+            {"type":"file","name":"Tutorial 5 - Solution.pdf"},
+            {"type":"file","name":"Tutorial 5.pdf"},
+            {"type":"file","name":"Tutorial 6 - Solution.pdf"},
+            {"type":"file","name":"Tutorial 6.pdf"},
+            {"type":"file","name":"Tutorial 7 - Solution.pdf"},
+            {"type":"file","name":"Tutorial 7.pdf"},
+            {"type":"file","name":"Tutorial 8 - Solution.pdf"},
+            {"type":"file","name":"Tutorial 8.pdf"},
+            {"type":"file","name":"Tutorial 9 - Solution.pdf"},
+            {"type":"file","name":"Tutorial 9.pdf"}
+        ]}
+      ]},
+        {"type":"directory","name":"Spring 2019","contents":[
+          {"type":"file","name":"Course_info_SP19.pptx"},
+          {"type":"file","name":"Instructors_Solution_Manual_Introduction.pdf"},
+          {"type":"file","name":"Physics Lab_ PHY102 manual_Spring 2019 ( with correction).pdf"},
+          {"type":"directory","name":"Tutorials","contents":[
+            {"type":"file","name":"PHY102_Tut 01.docx"},
+            {"type":"file","name":"PHY102_Tut 02.docx"},
+            {"type":"file","name":"PHY102_Tut 03.docx"},
+            {"type":"file","name":"PHY102_Tut 04.docx"},
+            {"type":"file","name":"PHY102_Tut 05(1).docx"},
+            {"type":"file","name":"PHY102_Tut 06.docx"},
+            {"type":"file","name":"PHY102_Tut 07.docx"},
+            {"type":"file","name":"PHY102_Tut 08.docx"},
+            {"type":"file","name":"PHY102_Tut 09.docx"},
+            {"type":"file","name":"PHY102_Tut 10.pdf"},
+            {"type":"file","name":"PHY102_Tut 11.docx"},
+            {"type":"file","name":"PHY102_Tut 12.docx"},
+            {"type":"file","name":"PHY102_Tut 13.docx"},
+            {"type":"file","name":"PHY102_Tut 14.docx"},
+            {"type":"file","name":"PHY102_Tut 15_Students.docx"},
+            {"type":"file","name":"Solutions_PHY102_Tut05.pdf"},
+            {"type":"file","name":"Solutions_PHY102_Tut08.pdf"},
+            {"type":"file","name":"Solutions_PHY102_Tut09.pdf"},
+            {"type":"file","name":"Solutions_PHY102_Tut10.pdf"},
+            {"type":"file","name":"Solutions_PHY102_Tut11.pdf"},
+            {"type":"file","name":"Solutions_PHY102_Tut12.pdf"},
+            {"type":"file","name":"Solutions_PHY102_Tut13.pdf"},
+            {"type":"file","name":"Solutions_PHY102_Tut14.pdf"},
+            {"type":"file","name":"Solutions_PHY102_Tut15_Students.pdf"},
+            {"type":"file","name":"Solutions_Tut2.pdf"},
+            {"type":"file","name":"TUT 11.pdf"}
+        ]}
+      ]}
+    ]}
+  ]},
     {"type":"file","name":"contributors.json"},
     {"type":"file","name":"resources.json"}
   ]}
 ,
-  {"type":"report","directories":0,"files":2}
+  {"type":"report","directories":145,"files":746}
 ]
