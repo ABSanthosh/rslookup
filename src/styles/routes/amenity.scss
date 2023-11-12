@@ -40,14 +40,7 @@
         @include box($height: auto);
         @include make-flex($dir: row, $just: flex-start);
         gap: 10px;
-
-        // background-color: var(--background);
-        // top: 108px;
-        // top: 64px;
-        // padding-top: 44px;
-        // height: unset;
-        // position: sticky;
-
+        
         & > hr {
           background: var(--LabSeparator);
           @include box(100%, 1px);

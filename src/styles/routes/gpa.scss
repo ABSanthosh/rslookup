@@ -1,0 +1,66 @@
+.GPA {
+  &__header {
+    @include make-flex($align: flex-start);
+    margin: 40px 0 30px 0;
+    gap: 10px;
+
+    & > h2 {
+      font-size: 40px;
+      font-weight: 900;
+      color: var(--foreground);
+    }
+
+    & > p {
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--subText);
+    }
+  }
+
+  &__bottom {
+    gap: 24px;
+    min-height: 100vh; // This is temporary
+    @include make-flex($dir: row, $align: flex-start, $just: flex-start);
+
+    @include respondAt(630px) {
+      flex-direction: column;
+    }
+  }
+
+  &__result {
+    top: 108px;
+    width: 230px;
+    height: unset;
+    flex-shrink: 0;
+    overflow: auto;
+    position: sticky;
+    max-height: calc(100vh - 124px);
+
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--popoverBG);
+    border: 1px solid var(--LabSeparator);
+    @include make-flex($dir: column, $align: flex-start);
+
+    @include respondAt(630px) {
+      width: 100%;
+    }
+
+    & > hr {
+      background: var(--LabSeparator);
+      @include box(100%, 1px);
+      border: none;
+    }
+
+    &--item {
+      @include make-flex($dir: row, $just: space-between);
+      @include box($height: 30px);
+
+      & > input {
+        @include box(50px);
+        text-align: end;
+      }
+    }
+  }
+}
