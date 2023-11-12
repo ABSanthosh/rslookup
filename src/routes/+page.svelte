@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Features from "$data/Features.json";
+  import ROUTES from "$data/ROUTES.json";
 </script>
 
 <section class="Section Hero">
@@ -21,7 +21,7 @@
     <hr />
   </div>
   <div class="Category__content">
-    {#each Features as item}
+    {#each ROUTES as item}
       {#if item.disabled}
         <div
           data-active={item.disabled}

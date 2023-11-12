@@ -5,12 +5,12 @@
   import { afterNavigate } from "$app/navigation";
   import { clickOutside } from "$lib/ClickOutside";
   import { fade } from "svelte/transition";
-  import Features from "$data/Features.json";
+  import ROUTES from "$data/ROUTES.json";
 
   // currentPage use the root of the url to determine the current page
   // this is because the url can be /course/... or /course
   // so we need to remove the trailing slash
-  $: currentPage = Features.find(
+  $: currentPage = ROUTES.find(
     (route) => route.route === $page.url.pathname.slice(1).split("/")[0]
   );
 
@@ -92,18 +92,18 @@
         <span data-icon={String.fromCharCode(currentPage?.icon || 0)} />
       </summary>
       <ul class="FancyMenu__content" data-align="right">
-        {#each Features as { name, route, disabled }, i}
+        {#each ROUTES as { name, route, disabled }, i}
           {#if !disabled}
             <a
               href="/{route}"
-              on:click={() => (currentPage = Features[i])}
-              data-icon={String.fromCharCode(Features[i].icon)}
+              on:click={() => (currentPage = ROUTES[i])}
+              data-icon={String.fromCharCode(ROUTES[i].icon)}
               class:active={$page.url.pathname === `/${route}`}
             >
               {name}
             </a>
           {:else}
-            <div data-icon={String.fromCharCode(Features[i].icon)}>
+            <div data-icon={String.fromCharCode(ROUTES[i].icon)}>
               <p>
                 {name}
               </p>
