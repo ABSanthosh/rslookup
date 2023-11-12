@@ -1,38 +1,5 @@
 <script lang="ts">
-  const CategoryItems = [
-    {
-      name: "Where's My Prof?",
-      description:
-        "Locate your professors on campus hassle-free. Say goodbye to wandering through hallways or frantically searching for room numbers.",
-      href: "/prof",
-      disabled: false,
-      background: "linear-gradient(-45deg, #89f7fe 0%, #66a6ff 100%)",
-    },
-    {
-      name: "Where's My Lab?",
-      description:
-        "Finding your designated lab spaces with ease. No more wandering around campus, feeling lost and bewildered.",
-      href: "/lab",
-      disabled: false,
-      background: "linear-gradient(-45deg, #FFC796 0%, #FF6B95 100%)",
-    },
-    {
-      name: "Where's My Amenity?",
-      description:
-        "Find every amenity on campus, from Academic Blocks to Cafeterias, all in one place.",
-      href: "/amenity",
-      disabled: false,
-      background: "linear-gradient(-45deg, #2575fc 0%, #6a11cb 100%)",
-    },
-    {
-      name: "Where's My Course?",
-      description:
-        "Its exam season and you are back to messaging your seniors for past papers? Not anymore.",
-      href: "/course",
-      disabled: false,
-      background: "linear-gradient(-45deg, #e5b2ca 0%, #7028e4 100%)",
-    },
-  ];
+  import Features from "$data/Features.json";
 </script>
 
 <section class="Section Hero">
@@ -54,7 +21,7 @@
     <hr />
   </div>
   <div class="Category__content">
-    {#each CategoryItems as item}
+    {#each Features as item}
       {#if item.disabled}
         <div
           data-active={item.disabled}
@@ -69,7 +36,7 @@
       {:else}
         <a
           class="Category__content--item"
-          href={item.href}
+          href="/{item.route}"
           data-active={item.disabled}
           style="--background-image: {item.background};"
         >

@@ -5,47 +5,13 @@
   import { afterNavigate } from "$app/navigation";
   import { clickOutside } from "$lib/ClickOutside";
   import { fade } from "svelte/transition";
-
-  const ROUTES = [
-    {
-      name: "Professors",
-      path: "prof",
-      icon: 59389,
-      title: "Where's My Prof?",
-      showSearch: true,
-      isAvailable: true,
-    },
-    {
-      name: "Labs",
-      path: "lab",
-      icon: 59962,
-      title: "Where's My Lab?",
-      showSearch: true,
-      isAvailable: true,
-    },
-    {
-      name: "Amenities",
-      path: "amenity",
-      icon: 59601,
-      title: "Where's My Amenity?",
-      showSearch: false,
-      isAvailable: true,
-    },
-    {
-      name: "Courses",
-      path: "course",
-      icon: 62779,
-      title: "Where's My Course?",
-      showSearch: false,
-      isAvailable: true,
-    },
-  ] as const;
+  import Features from "$data/Features.json";
 
   // currentPage use the root of the url to determine the current page
   // this is because the url can be /course/... or /course
   // so we need to remove the trailing slash
-  $: currentPage = ROUTES.find(
-    (route) => route.path === $page.url.pathname.slice(1).split("/")[0]
+  $: currentPage = Features.find(
+    (route) => route.route === $page.url.pathname.slice(1).split("/")[0]
   );
 
   $: isHome = $page.url.pathname === "/";
@@ -126,18 +92,18 @@
         <span data-icon={String.fromCharCode(currentPage?.icon || 0)} />
       </summary>
       <ul class="FancyMenu__content" data-align="right">
-        {#each ROUTES as { name, path, isAvailable }, i}
-          {#if isAvailable}
+        {#each Features as { name, route, disabled }, i}
+          {#if !disabled}
             <a
-              href="/{path}"
-              on:click={() => (currentPage = ROUTES[i])}
-              data-icon={String.fromCharCode(ROUTES[i].icon)}
-              class:active={$page.url.pathname === `/${path}`}
+              href="/{route}"
+              on:click={() => (currentPage = Features[i])}
+              data-icon={String.fromCharCode(Features[i].icon)}
+              class:active={$page.url.pathname === `/${route}`}
             >
               {name}
             </a>
           {:else}
-            <div data-icon={String.fromCharCode(ROUTES[i].icon)}>
+            <div data-icon={String.fromCharCode(Features[i].icon)}>
               <p>
                 {name}
               </p>
