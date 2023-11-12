@@ -8,6 +8,7 @@
 
   --scroll: #d0d0d0;
   --lightViolet: #d087dc;
+  --lightRed: #ff605c;
 
   --border: #d0d7de;
   --activeNav: #f1f2f4;
@@ -39,6 +40,7 @@
   --tableHeaderBG: #f6f8fa;
 
   --folderIconColor: #54aeff;
+  --SectionShadow: #0000001a 0px 0px 9px 0.3px;
 
   /* Chip Colors */
   --bluePrimary: #6b91fb;

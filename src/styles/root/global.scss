@@ -9,6 +9,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: var(--foreground);
 }
 
 ::-webkit-scrollbar {
@@ -24,9 +25,6 @@
 ::-webkit-scrollbar-track {
   background: transparent;
 }
-// ::selection {
-//   background: var(--textSelectionColor);
-// }
 
 html {
   overflow-y: auto;

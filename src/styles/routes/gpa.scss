@@ -19,7 +19,6 @@
 
   &__bottom {
     gap: 24px;
-    min-height: 100vh; // This is temporary
     @include make-flex($dir: row, $align: flex-start, $just: flex-start);
 
     @include respondAt(630px) {
@@ -39,12 +38,14 @@
     gap: 10px;
     padding: 10px;
     border-radius: 10px;
-    background-color: var(--popoverBG);
+    background-color: var(--elevatedBG);
     border: 1px solid var(--LabSeparator);
     @include make-flex($dir: column, $align: flex-start);
 
     @include respondAt(630px) {
       width: 100%;
+      position: relative;
+      top: 0;
     }
 
     & > hr {
@@ -53,6 +54,12 @@
       border: none;
     }
 
+    &:first-child {
+      h4 {
+        color: var(--bluePrimary);
+        font-weight: 500;
+      }
+    }
     &--item {
       @include make-flex($dir: row, $just: space-between);
       @include box($height: 30px);
@@ -60,6 +67,60 @@
       & > input {
         @include box(50px);
         text-align: end;
+      }
+    }
+  }
+
+  &__content {
+    @include box();
+    @include make-flex($dir: column, $align: flex-start);
+    gap: 20px;
+  }
+
+  &__semester {
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    @include make-flex($align: flex-start);
+    border: 1px solid var(--border);
+    box-shadow: var(--SectionShadow);
+    &--top {
+      @include box($height: 35px);
+
+      & > input {
+        @include box(auto);
+        border-radius: 4px;
+        background-color: var(--elevatedBG);
+      }
+    }
+
+    & > table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 10px;
+
+      & > thead {
+        & > tr {
+          & > th {
+            @include box($height: 30px);
+            text-align: start;
+          }
+        }
+      }
+
+      & > tbody {
+        & > tr {
+          & > td {
+            @include box($height: 30px);
+            text-align: center;
+
+            & > input {
+              @include box(100%, 35px);
+              border-radius: 5px;
+              border: 1px solid var(--border);
+            }
+          }
+        }
       }
     }
   }

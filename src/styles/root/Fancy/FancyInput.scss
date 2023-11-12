@@ -7,7 +7,9 @@
     font-size: 15.5px;
     border-radius: 7px;
     @include box($height: 38px);
+    box-shadow: var(--buttonShadow);
     border: 1.5px solid var(--border);
+    background-color: var(--elevatedBG);
   }
 
   &[type="number"] {

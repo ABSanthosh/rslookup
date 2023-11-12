@@ -17,7 +17,7 @@
   // transition: all 0.1s ease-in-out;
 
   &:hover:not(:disabled) {
-    color: var(--subElevatedBG);
+    // color: var(--subElevatedBG);
     border: 1px solid var(--buttonHoverBorder);
     background-color: var(--buttonHoverBG) !important;
   }
@@ -26,5 +26,24 @@
     color: var(--disabledLink);
     border: 1px solid (--border);
     background-color: var(--buttonHover);
+  }
+
+  &[data-close] {
+    @include box(25px, 25px);
+    color: var(--foreground);
+    border-radius: 50%;
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    transition: all 0.1s ease-in-out;
+    &::before {
+      font-size: 15px;
+    }
+    &:hover {
+      background-color: var(--lightRed) !important;
+
+      &::before {
+        color: white !important;
+      }
+    }
   }
 }
