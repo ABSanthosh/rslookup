@@ -19,6 +19,7 @@
 
   &__bottom {
     gap: 24px;
+    min-height: 50vh;
     @include make-flex($dir: row, $align: flex-start, $just: flex-start);
 
     @include respondAt(630px) {
@@ -120,6 +121,89 @@
               border: 1px solid var(--border);
             }
           }
+        }
+      }
+    }
+  }
+
+  &__info {
+    gap: 14px;
+    margin-top: 45px;
+    @include make-flex($align: flex-start);
+
+    & > p {
+      font-size: 18px;
+      text-align: justify;
+      line-height: 1.6;
+    }
+
+    &--table {
+      --__borderRadius: 6px;
+      --__headerBorderRadius: var(--__borderRadius) var(--__borderRadius) 0 0;
+
+      border-collapse: collapse;
+      border-radius: var(--__headerBorderRadius);
+
+      overflow: unset;
+      list-style: none;
+      @include box($height: auto);
+      border: 1px solid var(--border);
+      border-radius: var(--__borderRadius);
+
+      th,
+      td {
+        padding: 0 15px;
+        font-size: 14px;
+        font-weight: 400;
+        text-align: left;
+        @include box(auto, $height: 40px);
+        border-top: 1px solid var(--border);
+      }
+
+      thead {
+        background-color: var(--tableHeaderBG);
+        color: var(--tableHeaderBG);
+        text-align: left;
+        & > tr th {
+          font-weight: bold;
+        }
+      }
+
+      tbody tr:nth-of-type(even) {
+        background-color: var(--LabHover);
+      }
+
+      tbody tr:last-of-type {
+        border-bottom: 1px solid var(--border);
+      }
+    }
+
+    &--wrapper {
+      gap: 10px;
+      display: grid;
+      @include box();
+
+      // grid-template-columns: 1fr 1fr;
+
+      grid-template-columns: 1fr;
+      @include respondAt(666px) {
+      }
+
+      & > details {
+        @include box();
+        padding: 10px;
+        border-radius: 10px;
+        @include make-flex();
+        border: 1px solid var(--border);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+
+        & > summary {
+          cursor: pointer;
+          @include box($height: auto);
+        }
+
+        & > table {
+          margin-top: 15px;
         }
       }
     }

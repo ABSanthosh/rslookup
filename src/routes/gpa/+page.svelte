@@ -1,4 +1,24 @@
 <script lang="ts">
+  const SYMBOLS: {
+    [key: string]: string;
+  } = {
+    I: "Incomplete",
+    R: "Result Withheld",
+    W: "Withdraw from Course",
+    Z: "Course continuation",
+    AP: "Audit Pass",
+    AF: "Audit Fail",
+    P: "Pass",
+    NP: "Not Pass",
+    AU: "Audit Successfully Completed",
+    S: "Satisfactory Completion",
+    U: "Unsatisfactory",
+    TR: "Transfer Credit",
+    RE: "Replacing/Substituting this course with a new course.",
+    CL: "Clearing a previously failed course.",
+    IM: "Improving a previously done course.",
+  } as const;
+
   const GRADES: {
     [key: string]: number;
   } = {
@@ -250,6 +270,81 @@
       Add Semester
     </button>
   </div>
+</main>
+
+<main class="GPA__info w-100">
+  <h2>Credit System</h2>
+  <p>
+    Each Course offered will carry credits which are calculated on the basis of
+    the number of contact hours per week for a course that runs the whole
+    semester. The listing of the credits will be given as L:T:P, where L is the
+    number of Lecture Classes, T is the number of Tutorial Classes; and P is the
+    number of Lab Sessions. A typical Lab Session is usually between 2 and 3
+    hours' duration.
+    <br />
+    <br />
+    For example, a course with 3:1:1 credits is a 5 credit course where the student
+    shall attend 3 lectures, 1 tutorial and 1 lab session every week for the whole
+    semester.
+    <br />
+    <br />
+
+    <a
+      class="FancyLink"
+      data-type="Bracket"
+      href="https://snulinks.snu.edu.in/snuPolicies/students/UNDERGRADUATE_HANDBOOK_2023-2024.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Ref: UG Handbook - pg. 4
+    </a>
+  </p>
+
+  <div class="GPA__info--wrapper">
+    <details open>
+      <summary>Credits that contribute to CGPA</summary>
+      <table class="GPA__info--table">
+        <thead>
+          <tr>
+            <th>Grade</th>
+            <th>Credit Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          {#each Object.keys(GRADES) as grade}
+            <tr>
+              <td>{grade}</td>
+              <td>{GRADES[grade]}</td>
+            </tr>
+          {/each}
+        </tbody>
+      </table>
+    </details>
+
+    <details>
+      <summary>Credits that do not contribute to CGPA</summary>
+      <table class="GPA__info--table">
+        <thead>
+          <tr>
+            <th>Grade</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {#each Object.keys(SYMBOLS) as grade}
+            <tr>
+              <td>{grade}</td>
+              <td>{SYMBOLS[grade]}</td>
+            </tr>
+          {/each}
+        </tbody>
+      </table>
+    </details>
+  </div>
+  <p>
+    * Indicates that the student was short in attendance in the course resulting
+    in 0.5 grade point deduction from the actual grade point.
+  </p>
 </main>
 
 <style lang="scss" src="../../styles/routes/gpa.scss"></style>
