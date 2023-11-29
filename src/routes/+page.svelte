@@ -1,5 +1,8 @@
 <script lang="ts">
   import ROUTES from "$data/ROUTES.json";
+  // https://uigradients.com/
+  // https://www.css-gradient.com/
+  // git config core.fileMode false
 </script>
 
 <section class="Section Hero">
@@ -106,6 +109,7 @@
       & > img {
         margin-top: 100px;
         @include box(auto, 55%);
+        filter: drop-shadow(0px 0px 25px #ffffff33);
 
         @include respondAt(905px) {
           height: 50%;

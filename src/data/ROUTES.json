@@ -47,7 +47,7 @@
     "showSearch": false,
     "name": "GPA Calculator",
     "title": "What's My GPA?",
-    "background": "linear-gradient(-45deg, #e5b2ca 0%, #7028e4 100%)",
+    "background": "linear-gradient(90deg, #F24790, #984950)",
     "description": "Estimate your academic growth with ease. No more manual calculations."
   }
 ]
