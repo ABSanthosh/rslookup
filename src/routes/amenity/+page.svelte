@@ -66,7 +66,10 @@
 
 <div class="Amenity__header w-100">
   <h2>Amenities</h2>
-  <p>Find all the amenities SNU has to offer</p>
+  <p>
+    Find all the amenities SNU has to offer
+    <em>(Stale data—needs update)</em>
+  </p>
 </div>
 
 <main class="Amenity__bottom w-100">
@@ -91,4 +94,73 @@
   </div>
 </main>
 
-<style lang="scss" src="../../styles/routes/amenity.scss"></style>
+<style lang="scss">
+  .Amenity {
+    &__header {
+      @include make-flex($align: flex-start);
+      margin: 40px 0 30px 0;
+      gap: 10px;
+
+      & > h2 {
+        font-size: 40px;
+        font-weight: 900;
+        color: var(--foreground);
+      }
+
+      & > p {
+        font-size: 20px;
+        font-weight: 400;
+        color: var(--subText);
+        & > em {
+          font-size: 16px;
+          font-weight: 400;
+          color: var(--subText);
+        }
+      }
+    }
+
+    &__bottom {
+      @include make-flex($dir: row, $align: flex-start);
+      gap: 24px;
+
+      @include respondAt(630px) {
+        flex-direction: column;
+      }
+    }
+
+    &__content {
+      @include make-flex($just: flex-start);
+
+      & > section {
+        margin-bottom: 30px;
+        @include make-flex($just: flex-start, $align: flex-start);
+        color: var(--foreground);
+        @include box($height: auto);
+        gap: 15px;
+
+        & > h2 {
+          @include box($height: auto);
+          @include make-flex($dir: row, $just: flex-start);
+          gap: 10px;
+
+          & > hr {
+            background: var(--LabSeparator);
+            @include box(100%, 1px);
+            border: none;
+          }
+        }
+      }
+    }
+
+    &__cards {
+      gap: 15px;
+      display: grid;
+      @include box();
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+
+      @include respondAt(390px) {
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      }
+    }
+  }
+</style>
