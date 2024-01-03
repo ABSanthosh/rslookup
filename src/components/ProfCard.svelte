@@ -92,15 +92,26 @@
     font-family: "Inter", sans-serif;
 
     &__top {
+      max-width: 100%;
       img {
         @include box(55px, 55px);
         max-width: 55px;
         object-fit: cover;
         border-radius: 50%;
+        object-position: top;
+      }
+
+      & > div {
+        max-width: 100%;
+        overflow: hidden;
       }
 
       h3 {
         font-size: 20px;
+        overflow: hidden;
+        text-wrap: nowrap;
+        max-width: 100%;
+        text-overflow: ellipsis;
       }
 
       &--profile {

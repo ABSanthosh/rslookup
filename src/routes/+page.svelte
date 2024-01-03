@@ -167,9 +167,10 @@
         position: relative;
         border-radius: 10px;
         text-decoration: none;
+        transition: all 0.3s ease;
         // transition: all 0.3s ease;
-        background-color: var(--background);
         border: 1px solid var(--border);
+        background-color: var(--background);
         @include make-flex($just: flex-start, $align: flex-start);
 
         h2 {

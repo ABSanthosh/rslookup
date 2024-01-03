@@ -1,11 +1,11 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { fly } from "svelte/transition";
+  import { cubicIn, cubicOut } from "svelte/easing";
   import { theme } from "$lib/ThemeStore";
   import GoTop from "$components/GoTop.svelte";
   import Header from "$components/Header.svelte";
   import Footer from "$components/Footer.svelte";
-  import { cubicIn, cubicOut } from "svelte/easing";
   import Toast from "$components/Toast.svelte";
   import { ToastStore } from "$lib/ToastStore";
 
