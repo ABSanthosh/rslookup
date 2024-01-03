@@ -347,4 +347,216 @@
   </p>
 </main>
 
-<style lang="scss" src="../../styles/routes/gpa.scss"></style>
+<style lang="scss">
+  .GPA {
+    &__header {
+      @include make-flex($align: flex-start);
+      margin: 40px 0 30px 0;
+      gap: 10px;
+
+      & > h2 {
+        font-size: 40px;
+        font-weight: 900;
+        color: var(--foreground);
+      }
+
+      & > p {
+        font-size: 20px;
+        font-weight: 400;
+        color: var(--subText);
+      }
+    }
+
+    &__bottom {
+      gap: 24px;
+      min-height: 50vh;
+      @include make-flex($dir: row, $align: flex-start, $just: flex-start);
+
+      @include respondAt(630px) {
+        flex-direction: column;
+      }
+    }
+
+    &__result {
+      top: 108px;
+      width: 230px;
+      height: unset;
+      flex-shrink: 0;
+      overflow: auto;
+      position: sticky;
+      max-height: calc(100vh - 124px);
+
+      gap: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: var(--elevatedBG);
+      border: 1px solid var(--LabSeparator);
+      @include make-flex($dir: column, $align: flex-start);
+
+      @include respondAt(630px) {
+        width: 100%;
+        position: relative;
+        top: 0;
+      }
+
+      & > hr {
+        background: var(--LabSeparator);
+        @include box(100%, 1px);
+        border: none;
+      }
+
+      &:first-child {
+        h4 {
+          color: var(--bluePrimary);
+          font-weight: 500;
+        }
+      }
+      &--item {
+        @include make-flex($dir: row, $just: space-between);
+        @include box($height: 30px);
+
+        & > input {
+          @include box(50px);
+          text-align: end;
+        }
+      }
+    }
+
+    &__content {
+      @include box();
+      @include make-flex($dir: column, $align: flex-start);
+      gap: 20px;
+    }
+
+    &__semester {
+      gap: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      @include make-flex($align: flex-start);
+      border: 1px solid var(--border);
+      box-shadow: var(--SectionShadow);
+      &--top {
+        @include box($height: 35px);
+
+        & > input {
+          @include box(auto);
+          border-radius: 4px;
+          background-color: var(--elevatedBG);
+        }
+      }
+
+      & > table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 10px;
+
+        & > thead {
+          & > tr {
+            & > th {
+              @include box($height: 30px);
+              text-align: start;
+            }
+          }
+        }
+
+        & > tbody {
+          & > tr {
+            & > td {
+              @include box($height: 30px);
+              text-align: center;
+
+              & > input {
+                @include box(100%, 35px);
+                border-radius: 5px;
+                border: 1px solid var(--border);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &__info {
+      gap: 14px;
+      margin-top: 45px;
+      @include make-flex($align: flex-start);
+
+      & > p {
+        font-size: 18px;
+        text-align: justify;
+        line-height: 1.6;
+      }
+
+      &--table {
+        --__borderRadius: 6px;
+        --__headerBorderRadius: var(--__borderRadius) var(--__borderRadius) 0 0;
+
+        border-collapse: collapse;
+        border-radius: var(--__headerBorderRadius);
+
+        overflow: unset;
+        list-style: none;
+        @include box($height: auto);
+        border: 1px solid var(--border);
+        border-radius: var(--__borderRadius);
+
+        th,
+        td {
+          padding: 0 15px;
+          font-size: 14px;
+          font-weight: 400;
+          text-align: left;
+          @include box(auto, $height: 40px);
+          border-top: 1px solid var(--border);
+        }
+
+        thead {
+          background-color: var(--tableHeaderBG);
+          color: var(--tableHeaderBG);
+          text-align: left;
+          & > tr th {
+            font-weight: bold;
+          }
+        }
+
+        tbody tr:nth-of-type(even) {
+          background-color: var(--LabHover);
+        }
+
+        tbody tr:last-of-type {
+          border-bottom: 1px solid var(--border);
+        }
+      }
+
+      &--wrapper {
+        gap: 10px;
+        display: grid;
+        @include box();
+
+        // grid-template-columns: 1fr 1fr;
+
+        grid-template-columns: 1fr;
+        @include respondAt(666px) {
+        }
+
+        & > details {
+          @include box();
+          padding: 10px;
+          border-radius: 10px;
+          @include make-flex();
+          border: 1px solid var(--border);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+
+          & > summary {
+            cursor: pointer;
+            @include box($height: auto);
+          }
+
+          & > table {
+            margin-top: 15px;
+          }
+        }
+      }
+    }
+  }
+</style>

@@ -131,4 +131,36 @@
   </select>
 </div>
 
-<style lang="scss" src="../../styles/routes/prof.scss"></style>
+<style lang="scss">
+  .Prof {
+    &__filter {
+      &--item {
+        user-select: none;
+        &.active {
+          color: var(--type-primary);
+          background: var(--type-secondary);
+          border: 1px solid var(--type-primary);
+        }
+      }
+    }
+    &__content {
+      gap: 18px;
+      min-width: 0;
+      display: grid;
+      @include box();
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: minmax(50px, auto) 1fr;
+
+      & > span {
+        max-width: 100%;
+        overflow-x: hidden;
+        @include make-flex();
+        @include box($height: max(100%, fit-content));
+      }
+
+      @include respondAt(800px) {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+</style>
