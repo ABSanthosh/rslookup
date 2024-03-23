@@ -8,6 +8,8 @@
   import Footer from "$components/Footer.svelte";
   import Toast from "$components/Toast.svelte";
   import { ToastStore } from "$lib/ToastStore";
+  import { navigating } from "$app/stores";
+  import BlurredSpinner from "$components/BlurredSpinner.svelte";
 
   export let data;
 
@@ -46,6 +48,9 @@
 </svelte:head>
 
 <Header />
+{#if $navigating}
+  <BlurredSpinner style="position: fixed;" />
+{/if}
 {#key data.pathname}
   <main
     class={contentLayout[data.pathname] ?? "Content--maxWidth"}
