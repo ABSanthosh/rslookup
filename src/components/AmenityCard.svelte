@@ -1,42 +1,15 @@
 <script lang="ts">
   import copyToClipboard from "$utils/CopyToClipboard";
   import MapsSelector from "$utils/MapsSelector";
+  import type {
+    IAcademics,
+    IAdmin,
+    IEssentials,
+    IHostel,
+    ISport,
+  } from "$types/Amenity.types";
 
-  type Admin = {
-    name: string;
-    func: string;
-    room: string;
-    mail: string;
-    phone: string;
-  };
-
-  type Simple = {
-    name: string;
-    lat: string;
-    lng: string;
-  };
-
-  type Essentials = {
-    name: string;
-    lat: string;
-    lng: string;
-    time: {
-      from: string;
-      to: string;
-    };
-    mail: string;
-    phone: string;
-  };
-
-  type Hostel = {
-    name: string;
-    lat: string;
-    lng: string;
-    mail: string;
-    phone: string;
-  };
-
-  type DataType = Admin | Simple | Essentials | Hostel;
+  type DataType = IAdmin | IAcademics | ISport | IEssentials | IHostel;
 
   export let { data, type } = $$props as {
     data: DataType;
@@ -44,45 +17,45 @@
   };
 
   // admin helpers
-  function isAdmin(data: any): data is Admin {
+  function isAdmin(data: any): data is IAdmin {
     if (type === "Admin") {
-      return (data as Admin).func !== undefined;
+      return (data as IAdmin).func !== undefined;
     }
     return false;
   }
 
   // Essentials helpers
-  function isEssentials(data: any): data is Essentials {
+  function isEssentials(data: any): data is IEssentials {
     if (type === "Essentials" || type === "Food") {
-      return (data as Essentials).time !== undefined;
+      return (data as IEssentials) !== undefined;
     }
     return false;
   }
 
   // Academics helpers
-  function isAcademics(data: any): data is Simple {
+  function isAcademics(data: any): data is IAcademics | ISport {
     if (type === "Academics" || type === "Sports") {
-      return (data as Simple).lat !== undefined;
+      return (data as IAcademics | ISport).lat !== undefined;
     }
     return false;
   }
 
   // Hostel helpers
-  function isHostel(data: any): data is Hostel {
+  function isHostel(data: any): data is IHostel {
     if (type === "Hostel") {
-      return (data as Hostel).lat !== undefined;
+      return (data as IHostel).lat !== undefined;
     }
     return false;
   }
 
   async function copy(dataType: string, type: "phone" | "mail") {
     if (dataType === "Admin") {
-      if (type === "phone") await copyToClipboard((data as Admin).phone);
-      if (type === "mail") await copyToClipboard((data as Admin).mail);
+      if (type === "phone") await copyToClipboard((data as IAdmin).phone);
+      if (type === "mail") await copyToClipboard((data as IAdmin).mail);
     }
     if (dataType === "Essentials") {
-      if (type === "phone") await copyToClipboard((data as Essentials).phone);
-      if (type === "mail") await copyToClipboard((data as Essentials).mail);
+      if (type === "phone") await copyToClipboard((data as IEssentials).phone);
+      if (type === "mail") await copyToClipboard((data as IEssentials).mail);
     }
   }
 </script>
@@ -121,7 +94,7 @@
     <div class="Row--between gap-10 w-100">
       <h3>{data.name}</h3>
       <span data-icon={String.fromCharCode(59573)}>
-        {data.time.from} - {data.time.to}
+        {data["time.from"]} - {data["time.to"]}
       </span>
     </div>
     <div class="Row--between gap-10 w-100 AmenityCard__bottom">
