@@ -54,8 +54,6 @@
         behavior: "smooth",
       });
 
-  $: console.log(filters);
-
   afterNavigate(() => {
     isFilterOpen = false;
   });

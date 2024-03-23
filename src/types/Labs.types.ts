@@ -1,5 +1,5 @@
 export interface Lab {
-  name: string
-  room: string
-  block: string
+  name: string;
+  room: string;
+  block: string;
 }

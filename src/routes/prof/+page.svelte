@@ -10,7 +10,7 @@
   import ProfCard from "$components/ProfCard.svelte";
   import type { PageData } from "./$types";
 
-  export let data: PageData
+  export let data: PageData;
   $: prof = data.prof;
 
   $: pageSize = 10;
