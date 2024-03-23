@@ -58,7 +58,7 @@
 <GoTop />
 {#if $ToastStore}
   {#each $ToastStore as toast (toast.id)}
-    <Toast message={toast.message} />
+    <Toast {...toast} />
   {/each}
 {/if}
 <Footer />

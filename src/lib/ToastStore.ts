@@ -1,15 +1,16 @@
-import { writable } from "svelte/store";
+import { writable } from 'svelte/store';
 
-interface IToast {
-  id?: number;
+export interface IToast {
+  id?: string;
   message: string;
   timeout?: number;
+  type?: 'info' | 'success' | 'warning' | 'danger' | 'default';
 }
 
 export const ToastStore = writable<IToast[]>([]);
 
 export const addToast = (toast: IToast) => {
-  const id = Math.floor(Math.random() * 10000);
+  const id = `${Math.floor(Math.random() * 10000)}`;
 
   ToastStore.update((all) => {
     if (all.length > 0) {
@@ -19,8 +20,9 @@ export const addToast = (toast: IToast) => {
     return [{ ...toast, id: id }, ...all];
   });
   if (toast.timeout) setTimeout(() => dismissToast(id), toast.timeout);
+  else setTimeout(() => dismissToast(id), 5000);
 };
 
-export const dismissToast = (id: number) => {
+export const dismissToast = (id: string) => {
   ToastStore.update((all) => all.filter((t) => t.id !== id));
 };
