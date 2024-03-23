@@ -1,7 +1,6 @@
 <script lang="ts">
   import Fuse from "fuse.js";
   import { onMount } from "svelte";
-  import prof from "$data/prof.json";
   import { flip } from "svelte/animate";
   import { query } from "$lib/ParamStore";
   import { flipAnimate } from "$lib/FlipAnimate";
@@ -9,6 +8,10 @@
   import { clickOutside } from "$lib/ClickOutside";
   import { profColors, schools } from "$utils/prof";
   import ProfCard from "$components/ProfCard.svelte";
+  import type { PageData } from "./$types";
+
+  export let data: PageData
+  $: prof = data.prof;
 
   $: pageSize = 10;
   let isFilterOpen = false;

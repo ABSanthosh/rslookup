@@ -1,14 +1,17 @@
 <script lang="ts">
   import Fuse from "fuse.js";
   import { onMount } from "svelte";
-  import labs from "$data/labs.json";
   import { flip } from "svelte/animate";
   import { query } from "$lib/ParamStore";
   import { AcademicBlocks } from "$utils/labs";
   import { flipAnimate } from "$lib/FlipAnimate";
   import { afterNavigate } from "$app/navigation";
   import { clickOutside } from "$lib/ClickOutside";
+  import type { PageData } from "./$types";
 
+  export let data: PageData;
+
+  $: labs = data.labs;
   $: pageSize = 10;
   let isFilterOpen = false;
 

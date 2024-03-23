@@ -1,54 +1,49 @@
 <script lang="ts">
-  import Food from "$data/amenities/Food.json";
-  import Admin from "$data/amenities/Admin.json";
-  import Sports from "$data/amenities/Sports.json";
-  import Hostel from "$data/amenities/Hostel.json";
-  import Academics from "$data/amenities/Academics.json";
-  import Essentials from "$data/amenities/Essentials.json";
-
   import { slide } from "svelte/transition";
   import { browser } from "$app/environment";
   import { afterNavigate } from "$app/navigation";
   import AmenityFilter from "./AmenityFilter.svelte";
   import AmenityCard from "$components/AmenityCard.svelte";
+  import type { PageData } from "./$types";
 
+  export let data: PageData;
   let isFilterOpen = false;
   let filters = [
     {
       name: "Academics",
       checked: true,
       icon: 59404,
-      data: Academics,
+      data: data.Academics,
     },
     {
       name: "Admin",
       checked: true,
       icon: 63056,
-      data: Admin,
+      data: data.Admin,
     },
     {
       name: "Essentials",
       checked: true,
       icon: 61900,
-      data: Essentials,
+      data: data.Essentials,
     },
     {
       name: "Food",
       checked: true,
       icon: 58732,
-      data: Food,
+      data: data.Food,
     },
     {
       name: "Hostel",
       checked: true,
       icon: 58682,
-      data: Hostel,
+      data: data.Hostel,
     },
     {
       name: "Sports",
       checked: true,
       icon: 60356,
-      data: Sports,
+      data: data.Sports,
     },
   ];
 
@@ -58,6 +53,8 @@
         top: 0,
         behavior: "smooth",
       });
+
+  $: console.log(filters);
 
   afterNavigate(() => {
     isFilterOpen = false;
