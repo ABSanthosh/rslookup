@@ -55,17 +55,20 @@
       />
     {/if}
   </div>
-  <div class="ProfCard__bottom Row--between w-100 gap-10">
-    <div data-icon={String.fromCharCode(57688)}>
+  <div class="ProfCard__bottom w-100 gap-10">
+    <div>
       <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
       <p
+        data-icon={String.fromCharCode(57688)}
         on:keydown={async () => await copyToClipboard(mail)}
         on:keyup={async () => await copyToClipboard(mail)}
         on:keypress={async () => await copyToClipboard(mail)}
         on:click={async () => await copyToClipboard(mail)}
+        title="Click to copy email"
       >
         {mail}
       </p>
+      <!-- Phone number goes here -->
     </div>
     {#if website === "" || website === "-"}
       <span class="disabled Row--between gap-10">website</span>
@@ -131,24 +134,31 @@
     }
 
     &__bottom {
+      @include make-flex($dir: row, $just: space-between, $align: flex-end);
       margin-top: auto;
       & > div {
         p {
+          gap: 6px;
           cursor: pointer;
           overflow: hidden;
           white-space: nowrap;
           display: inline-block;
           text-overflow: ellipsis;
+          @include make-flex($dir: row, $just: flex-start, $align: flex-end);
           &:hover {
             text-decoration: underline;
           }
+
+          &::before {
+            height: 18px;
+          }
         }
 
-        gap: 6px;
+        gap: 2px;
         font-size: 14px;
         color: var(--subText);
-        @include box(calc(55%));
-        @include make-flex($dir: row, $just: flex-start);
+        @include box(calc(55%), auto);
+        @include make-flex($dir: column, $just: flex-start, $align: flex-start);
         &::before {
           font-size: 18px;
         }

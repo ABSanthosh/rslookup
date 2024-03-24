@@ -1,4 +1,7 @@
 [data-theme="dark"] {
+  /* 1a1a1b 202222*/
+  --__gray-1: #1a1a1b;
+
   --inactiveLink: var(--gray-8);
   --activeLink: white;
   --disabledLink: var(--gray-10);
@@ -12,7 +15,7 @@
 
   --border: #343536;
   --activeNav: rgba(177, 186, 196, 0.12);
-  --background: #010409;
+  --background: #191a1a;
   --foreground: #e6edf3;
   --invertedForeground: #e6edf3;
 
@@ -22,19 +25,19 @@
   --buttonShadow: #00000000 0px 0px 0px 0px, #00000000 0px 0px 0px 0px;
 
   --popoverBG: #141618;
-  --elevatedBG: #1a1a1b;
+  --elevatedBG: var(--__gray-1);
   --subElevatedBG: rgb(48, 54, 61);
   --subText: #91999e;
-  --elevatedShadow: #010409 0px 8px 24px 0px;
+  --elevatedShadow: #191a1a 0px 8px 24px 0px;
   --toastShadow: 0px 3px 35px 4px rgba(129, 129, 129, 0.25);
-  --ProfCardBG: #1a1a1b;
+  --ProfCardBG: var(--__gray-1);
 
   --iconColor: #7d8590;
   --headerBorder: rgb(48, 54, 61) 0px -1px 0px 0px inset;
 
   --LabHover: #292929;
   --LabSeparator: #3e3e3e;
-  --footerBG: #1a1a1b;
+  --footerBG: var(--__gray-1);
 
   --tableHeaderFG: #7d8590;
   --tableHeaderBG: #161b22;
