@@ -108,7 +108,7 @@
 
 <div class="Row--end w-100">
   <select
-    class="FancySelect"
+    class="CrispSelect"
     value={`${pageSize}`}
     on:change={(e) => {
       // @ts-ignore

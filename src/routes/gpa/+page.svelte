@@ -200,7 +200,7 @@
                 </td>
                 <td>
                   <select
-                    class="FancySelect"
+                    class="CrispSelect"
                     bind:value={course.grade}
                     on:change={() => calcSGPA(index)}
                   >
