@@ -1,14 +1,14 @@
 <script lang="ts">
-  import Fuse from "fuse.js";
   import { onMount } from "svelte";
+  import { search } from "fast-fuzzy";
   import { flip } from "svelte/animate";
   import { query } from "$lib/ParamStore";
+  import type { PageData } from "./$types";
   import { flipAnimate } from "$lib/FlipAnimate";
   import { afterNavigate } from "$app/navigation";
   import { clickOutside } from "$lib/ClickOutside";
   import { profColors, schools } from "$utils/prof";
   import ProfCard from "$components/ProfCard.svelte";
-  import type { PageData } from "./$types";
 
   export let data: PageData;
   $: prof = data.prof;
@@ -36,10 +36,6 @@
     return filteredSchools.includes(item.school);
   });
 
-  $: profSearch = new Fuse(filteredProf, {
-    keys: ["name"],
-  });
-
   $: searchResult = filteredProf.slice(0, pageSize);
 
   onMount(() => {
@@ -48,10 +44,11 @@
         searchResult = filteredProf.slice(0, pageSize);
         return;
       }
-      searchResult = profSearch
-        .search(q)
-        .map((item) => item.item)
-        .slice(0, 10);
+
+      searchResult = search(q, filteredProf, {
+        keySelector: (obj) => obj.name,
+      }).slice(0, pageSize);
+
       window.scrollTo({
         top: 0,
         behavior: "smooth",
