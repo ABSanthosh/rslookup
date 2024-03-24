@@ -65,7 +65,7 @@
   <details
     use:clickOutside
     bind:open={isFilterOpen}
-    class="FancyMenu Prof__filter"
+    class="CrispMenu Prof__filter"
     on:outclick={() => (isFilterOpen = false)}
   >
     <summary data-no-marker data-icon={String.fromCharCode(57682)}>
@@ -74,7 +74,7 @@
         {filters.filter((item) => item.checked).length}
       </span>
     </summary>
-    <div class="FancyMenu__content Prof__filter--content" data-align="right">
+    <div class="CrispMenu__content Prof__filter--content">
       {#each filters as filterItem}
         <label
           for={filterItem.slug}

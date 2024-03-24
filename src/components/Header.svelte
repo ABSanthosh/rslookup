@@ -82,7 +82,7 @@
     <details
       use:clickOutside
       bind:open={isDetailsOpen}
-      class="FancyMenu Header__tabs"
+      class="CrispMenu Header__tabs"
       on:outclick={() => (isDetailsOpen = false)}
     >
       <summary>
@@ -91,7 +91,7 @@
         </p>
         <span data-icon={String.fromCharCode(currentPage?.icon || 0)} />
       </summary>
-      <ul class="FancyMenu__content" data-align="right">
+      <ul class="CrispMenu__content">
         {#each ROUTES as { name, route, disabled }, i}
           {#if !disabled}
             <a
@@ -276,8 +276,25 @@
 
     &__tabs {
       $responsiveWidth: 600px;
+
+      // summary
+      --crp-menu-color: var(--foreground);
+      --crp-menu-border: 1px solid var(--border);
+      --crp-menu-box-shadow: var(--buttonShadow);
+      --crp-menu-background-color: var(--__BG);
+      --crp-menu-summary-icon-color: var(--iconColor);
+
+      // hover
+      --crp-menu-border-hover: 1px solid var(--buttonHoverBorder);
+      --crp-menu-background-color-hover: var(--buttonHoverBG);
+
+      // content
+      --crp-menu-content-border: 1px solid var(--border);
+      --crp-menu-background-color: var(--popoverBG);
+      --crp-menu-content-box-shadow: var(--elevatedShadow);
+
       summary {
-        background-color: var(--__BG);
+        // background-color: var(--__BG);
         & > span {
           display: none;
           @include respondAt($responsiveWidth) {

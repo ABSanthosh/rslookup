@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Fuse from "fuse.js";
   import { onMount } from "svelte";
   import { flip } from "svelte/animate";
   import { query } from "$lib/ParamStore";
@@ -8,6 +7,7 @@
   import { afterNavigate } from "$app/navigation";
   import { clickOutside } from "$lib/ClickOutside";
   import type { PageData } from "./$types";
+  import { search } from "fast-fuzzy";
 
   export let data: PageData;
 
@@ -29,10 +29,6 @@
       .includes(`${lab.block} Block`)
   );
 
-  $: labSearch = new Fuse(filteredLabs, {
-    keys: ["name"],
-  });
-
   $: searchResult = filteredLabs.slice(0, pageSize);
 
   onMount(() => {
@@ -41,7 +37,10 @@
         searchResult = filteredLabs.slice(0, pageSize);
         return;
       }
-      searchResult = labSearch.search(q).map((item) => item.item);
+      // searchResult = labSearch.search(q).map((item) => item.item);
+      searchResult = search(q, filteredLabs, {
+        keySelector: (obj) => obj.name,
+      }).slice(0, pageSize);
       window.scrollTo({
         top: 0,
         behavior: "smooth",
@@ -58,7 +57,7 @@
   <details
     use:clickOutside
     bind:open={isFilterOpen}
-    class="FancyMenu Lab__filter"
+    class="CrispMenu Lab__filter"
     on:outclick={() => (isFilterOpen = false)}
   >
     <summary data-no-marker data-icon={String.fromCharCode(57682)}>
@@ -67,7 +66,7 @@
         {filters.filter((item) => item.checked).length}
       </span>
     </summary>
-    <div class="FancyMenu__content Lab__filter--content" data-align="right">
+    <div class="CrispMenu__content Lab__filter--content">
       {#each filters as filterItem}
         <label
           for={filterItem.name}

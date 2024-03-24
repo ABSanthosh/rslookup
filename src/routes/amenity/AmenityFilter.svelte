@@ -39,7 +39,7 @@
 <details
   use:clickOutside
   bind:open={isFilterOpen}
-  class="FancyMenu Amenity__filter Amenity__filter--mobile"
+  class="CrispMenu Amenity__filter Amenity__filter--mobile"
   on:outclick={() => (isFilterOpen = false)}
 >
   <summary data-no-marker data-icon={String.fromCharCode(57682)}>
@@ -49,7 +49,7 @@
     </span>
   </summary>
   <ul
-    class="Amenity__filterBox FancyMenu__content Amenity__filter--content"
+    class="Amenity__filterBox CrispMenu__content Amenity__filter--content"
     data-align="left"
   >
     {#each filters as filterItem}
