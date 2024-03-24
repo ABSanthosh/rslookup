@@ -118,6 +118,7 @@
     <button
       class="CrispButton"
       data-icon={String.fromCharCode($theme === "dark" ? 58416 : 58652)}
+      aria-label="Toggle theme"
       on:click={() => {
         theme.set($theme === "dark" ? "light" : "dark");
       }}

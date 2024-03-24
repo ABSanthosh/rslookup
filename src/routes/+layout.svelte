@@ -35,7 +35,7 @@
 </script>
 
 <svelte:head>
-  <title>rslookup</title>
+  <title>rslookup | SNU</title>
   <meta charset="utf-8" />
   <meta name="color-scheme" content={$theme} />
   <meta
