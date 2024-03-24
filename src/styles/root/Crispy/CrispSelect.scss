@@ -9,6 +9,9 @@
   --crp-select-content-item-border-radius: 7px;
   --crp-select-content-border: 0.2px solid #c9c9c966;
   --crp-select-icon: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>');
+  --crp-select-background-size: 24px 14px;
+  --crp-select-background-position: calc(100% - var(--crp-select-icon-offset)) 50%
+  --crp-select-padding: 0 20px 0 10px;
 
   min-width: var(--crp-select-min-width);
   @include box(var(--crp-select-width), var(--crp-select-height));
@@ -33,7 +36,7 @@
   user-select: none;
   position: relative;
   border-radius: 6px;
-  padding: 0 20px 0 10px;
+  padding: var(--crp-select-padding);
   @include make-flex($dir: row, $just: flex-start);
 
   // Colors
@@ -43,13 +46,13 @@
   background-color: var(--crp-select-background-color);
 
   appearance: none;
-  background-size: 24px 14px;
+  background-size: var(--crp-select-background-size);
   background-repeat: no-repeat;
   font-size: var(--crp-select-font-size);
   background-image: var(--crp-select-icon);
-  background-position: calc(100% - var(--crp-select-icon-offset)) 50%;
+  background-position: var(--crp-select-background-position);
 
-  &:hover {
+  &:hover, &:focus {
     color: var(--crp-select-color-hover);
     border: var(--crp-select-border-hover);
   }
