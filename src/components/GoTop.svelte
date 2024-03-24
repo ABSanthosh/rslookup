@@ -21,7 +21,7 @@
   }}
 />
 <button
-  class="FancyButton GoTop"
+  class="CrispButton GoTop"
   class:hidden={isHidden}
   data-icon={String.fromCharCode(58840)}
   on:click={() => {

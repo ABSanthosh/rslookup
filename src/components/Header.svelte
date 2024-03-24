@@ -116,7 +116,7 @@
   {/if}
   <div class="Header__right">
     <button
-      class="FancyButton"
+      class="CrispButton"
       data-icon={String.fromCharCode($theme === "dark" ? 58416 : 58652)}
       on:click={() => {
         theme.set($theme === "dark" ? "light" : "dark");

@@ -119,7 +119,7 @@
         </span>
       </div>
       <a
-        class="FancyButton"
+        class="CrispButton"
         data-icon={String.fromCharCode(58715)}
         href={MapsSelector(data.lat, data.lng)}
         target="_blank"
@@ -137,7 +137,7 @@
       <h3>{data.name}</h3>
 
       <a
-        class="FancyButton"
+        class="CrispButton"
         data-icon={String.fromCharCode(58715)}
         href={MapsSelector(data.lat, data.lng)}
         target="_blank"
@@ -176,7 +176,7 @@
         </span>
       </div>
       <a
-        class="FancyButton"
+        class="CrispButton"
         data-icon={String.fromCharCode(58715)}
         href={MapsSelector(data.lat, data.lng)}
         target="_blank"

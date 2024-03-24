@@ -156,7 +156,7 @@
           />
           {#if semesters.length > 1}
             <button
-              class="FancyButton"
+              class="CrispButton"
               data-icon={String.fromCharCode(58829)}
               data-close
               on:click={() => {
@@ -211,7 +211,7 @@
                 </td>
                 <td>
                   <button
-                    class="FancyButton"
+                    class="CrispButton"
                     disabled={semesters[index].courses.length === 1}
                     data-icon={String.fromCharCode(58829)}
                     data-close
@@ -228,7 +228,7 @@
           </tbody>
         </table>
         <button
-          class="FancyButton"
+          class="CrispButton"
           on:click={() => {
             semesters[index].courses = [
               ...semesters[index].courses,
@@ -245,7 +245,7 @@
       </section>
     {/each}
     <button
-      class="FancyButton"
+      class="CrispButton"
       disabled={semesters.length >= 10}
       on:click={() => {
         if (semesters.length >= 10) return;
