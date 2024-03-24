@@ -31,16 +31,6 @@
     "description": "Find every amenity on campus, from Academic Blocks to Cafeterias, all in one place."
   },
   {
-    "icon": 62779,
-    "route": "course",
-    "name": "Courses",
-    "disabled": false,
-    "showSearch": false,
-    "title": "Where's My Course?",
-    "background": "linear-gradient(-45deg, #e5b2ca 0%, #7028e4 100%)",
-    "description": "Its exam season and you are back to messaging your seniors for past papers? Not anymore."
-  },
-  {
     "icon": 59999,
     "route": "gpa",
     "disabled": false,
