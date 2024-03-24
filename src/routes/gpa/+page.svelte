@@ -121,7 +121,7 @@
     <div class="GPA__result--item">
       <p>Current CGPA</p>
       <input
-        class="FancyInput"
+        class="CrispInput"
         type="number"
         step="0.01"
         on:focus={({ target }) => {
@@ -134,7 +134,7 @@
     <div class="GPA__result--item">
       <p>Credits done</p>
       <input
-        class="FancyInput"
+        class="CrispInput"
         type="number"
         on:focus={({ target }) => {
           // @ts-ignore
@@ -149,7 +149,7 @@
       <section class="GPA__semester">
         <div class="GPA__semester--top Row--between">
           <input
-            class="FancyInput"
+            class="CrispInput"
             type="text"
             placeholder="Semester Name"
             bind:value={semesters[index].title}
@@ -179,7 +179,7 @@
               <tr>
                 <td>
                   <input
-                    class="FancyInput"
+                    class="CrispInput"
                     type="text"
                     placeholder={`Course ${i + 1}`}
                     bind:value={course.name}
@@ -187,7 +187,7 @@
                 </td>
                 <td>
                   <input
-                    class="FancyInput"
+                    class="CrispInput"
                     type="number"
                     placeholder="Credits"
                     on:focus={({ target }) => {

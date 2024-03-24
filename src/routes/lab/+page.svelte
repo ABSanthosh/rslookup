@@ -75,6 +75,7 @@
         >
           <input
             type="checkbox"
+            class="CrispInput"
             id={filterItem.name}
             checked={filterItem.checked}
             disabled={filterItem.checked &&

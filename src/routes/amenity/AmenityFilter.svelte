@@ -23,6 +23,7 @@
         {filterItem.name}
         <input
           type="checkbox"
+          class="CrispInput"
           id={filterItem.name}
           checked={filterItem.checked}
           disabled={filterItem.checked &&
@@ -62,6 +63,7 @@
         {filterItem.name}
         <input
           type="checkbox"
+          class="CrispInput"
           checked={filterItem.checked}
           id={`${filterItem.name}-${filterItem.icon}`}
           disabled={filterItem.checked &&
@@ -82,8 +84,9 @@
         gap: 8px;
         padding: 8px;
         display: grid;
-        align-items: center;
+        user-select: none;
         border-radius: 4px;
+        align-items: center;
         text-decoration: none;
         color: var(--foreground);
         @include box($height: 36px);

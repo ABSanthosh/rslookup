@@ -87,7 +87,9 @@
         >
           <input
             type="checkbox"
+            class="CrispInput"
             id={filterItem.slug}
+            style={`--crp-checkbox-background-color: #4598ff;`}
             checked={filterItem.checked}
             disabled={filterItem.checked &&
               filters.filter((item) => item.checked).length === 1}
