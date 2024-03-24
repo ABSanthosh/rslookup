@@ -23,11 +23,11 @@
     --crp-button-border: 1px solid #dfe3e6;
     --crp-button-border-hover: 1px solid #d7dbdf;
 
-    --crp-button-box-shadow: #00000000 0px 0px 0px 0px, #00000000 0px 0px 0px 0px,
-      #0000000d 0px 1px 2px 0px;
+    --crp-button-box-shadow: #00000000 0px 0px 0px 0px,
+      #00000000 0px 0px 0px 0px, #0000000d 0px 1px 2px 0px;
   }
 
-  &[data-type='ghost'] {
+  &[data-type="ghost"] {
     --crp-button-color: #11181c;
     --crp-button-color-hover: #11181c;
 
@@ -40,7 +40,7 @@
     --crp-button-box-shadow: transparent;
   }
 
-  &[data-type='dark'] {
+  &[data-type="dark"] {
     --crp-button-color: #ededed;
     --crp-button-color-hover: #ededed;
 
@@ -52,11 +52,11 @@
 
     --crp-button-disabled-background-color: #757575;
 
-    --crp-button-box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-      rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+    --crp-button-box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+      rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
   }
 
-  &[data-type='black-outline'] {
+  &[data-type="black-outline"] {
     --crp-button-color: #ffffff;
     --crp-button-color-hover: #000000;
 
@@ -73,7 +73,7 @@
     --crp-button-disabled-color: #b8b8b8;
   }
 
-  &[data-type='danger'] {
+  &[data-type="danger"] {
     --crp-button-color: #11181c;
     --crp-button-color-hover: #ffffff;
 
@@ -86,7 +86,7 @@
     --crp-button-box-shadow: transparent;
   }
 
-  &[data-type='success'] {
+  &[data-type="success"] {
     --crp-button-color: #11181c;
     --crp-button-color-hover: #ffffff;
 
@@ -99,7 +99,7 @@
     --crp-button-box-shadow: transparent;
   }
 
-  &[data-type='dark-blue'] {
+  &[data-type="dark-blue"] {
     --crp-button-color: #e3f0ff;
     --crp-button-color-hover: #e3f0ff;
 
@@ -112,7 +112,7 @@
     --crp-button-box-shadow: transparent;
   }
 
-  &[data-border='false'] {
+  &[data-border="false"] {
     --crp-button-border: none !important;
     --crp-button-border-hover: none !important;
     --crp-button-box-shadow: none !important;
