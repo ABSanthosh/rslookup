@@ -16,19 +16,22 @@ A simple tool to lookup resources related to Shiv Nadar University.
 - [ ] GPA calculator and Attendance calculator
 
 - [ ] Prof
+
   - [ ] Prof page pagination [Ref](https://svelte.dev/repl/84a8d64a6f1e49feba8f6a491ecc55f5?version=3.35.0)
   - [ ] Data: Office hours
 
 - [ ] Section in homepage for resources
+
   - [ ] UG handbook
   - [ ] FAQ documents
   - [ ] Minor documents
   - [ ] Mins of the meeting (Townhall and etc)
-  - [ ] Swyam course list 
+  - [ ] Swyam course list
   - [ ] Acad calendar
 
 - [ ] Club and society page
-  - [ ] Data: pictures, name, email, 
+
+  - [ ] Data: pictures, name, email,
         core members: Name, position, email
 
 - [ ] Admin pager

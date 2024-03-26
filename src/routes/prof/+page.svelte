@@ -111,7 +111,7 @@
       animate:flip={{ duration: 250 }}
       use:flipAnimate={{ key: `${result.name}-${result.role}` }}
     > -->
-      <ProfCard profResult={result} />
+    <ProfCard profResult={result} />
     <!-- </span> -->
   {/each}
 </div>
