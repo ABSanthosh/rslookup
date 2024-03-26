@@ -11,7 +11,6 @@
   --crp-menu-background-color-hover: var(--buttonHoverBG) !important;
 
   --crp-menu-content-border: 1px solid var(--border) !important;
-  --crp-menu-background-color: var(--popoverBG) !important;
   --crp-menu-content-box-shadow: var(--elevatedShadow) !important;
 }
 

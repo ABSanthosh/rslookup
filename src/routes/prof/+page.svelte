@@ -107,12 +107,12 @@
 
 <div class="Prof__content">
   {#each searchResult as result (`${result.name}-${result.role}`)}
-    <span
+    <!-- <span
       animate:flip={{ duration: 250 }}
       use:flipAnimate={{ key: `${result.name}-${result.role}` }}
-    >
+    > -->
       <ProfCard profResult={result} />
-    </span>
+    <!-- </span> -->
   {/each}
 </div>
 
@@ -148,20 +148,20 @@
     &__content {
       gap: 18px;
       min-width: 0;
-      display: grid;
       @include box();
+
+      display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: minmax(50px, auto) 1fr;
+      @include respondAt(800px) {
+        grid-template-columns: 1fr;
+      }
 
       & > span {
         max-width: 100%;
         overflow-x: hidden;
         @include make-flex();
         @include box($height: max(100%, fit-content));
-      }
-
-      @include respondAt(800px) {
-        grid-template-columns: 1fr;
       }
     }
   }

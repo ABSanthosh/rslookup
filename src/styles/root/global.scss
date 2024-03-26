@@ -1,7 +1,5 @@
-@import "../root/Fancy/FancySelect.scss";
 @import "../root/Fancy/FancyLink.scss";
 @import "../root/fonts.scss";
-
 @import "../root/Crispy/index.scss";
 
 * {
@@ -27,7 +25,7 @@
 
 html {
   overflow-y: auto;
-  overflow-x: hidden;
+  // overflow-x: hidden;
   font-family: "Satoshi", "Helvetica Neue", "Helvetica", Arial, sans-serif;
   @include make-flex($just: flex-start);
   @include box(100vw, auto);

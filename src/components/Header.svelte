@@ -65,15 +65,6 @@
           query.set(e.target.value);
         }}
       />
-      {#if $query !== ""}
-        <button
-          data-icon={String.fromCharCode(58829)}
-          on:click={() => {
-            query.set("");
-            searchInput.focus();
-          }}
-        />
-      {/if}
     </div>
     <hr />
   {/if}
@@ -206,34 +197,17 @@
         transform: translateY(-50%);
       }
 
-      @include respondAt(700px) {
-        @include box(auto);
+      &:has(input:focus) {
+        position: fixed;
+        @include box(calc(100vw - 40px), 32px);
+        max-width: none;
+        left: 50%;
+        z-index: 2;
+        transform: translateX(-50%);
       }
 
-      & > button {
-        top: 50%;
-        right: 1px;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        position: absolute;
-        @include make-flex();
-        border-radius: 0 6px 6px 0;
-        transform: translateY(-50%);
-        background-color: transparent;
-        @include box(26px, calc(100% - 2px));
-        border-left: 1px solid var(--border);
-
-        &::before {
-          font-size: 16px;
-        }
-        &:hover {
-          background-color: var(--buttonHoverBG);
-        }
-
-        @include respondAt(700px) {
-          display: none;
-        }
+      @include respondAt(700px) {
+        @include box(auto);
       }
 
       & > input {
@@ -278,6 +252,9 @@
     &__tabs {
       $responsiveWidth: 600px;
 
+      @include respondAt($responsiveWidth) {
+        --crp-menu-min-width: unset;
+      }
       summary {
         & > span {
           display: none;

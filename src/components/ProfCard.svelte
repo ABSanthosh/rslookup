@@ -18,7 +18,7 @@
     .toUpperCase();
 </script>
 
-<div class="ProfCard Col--a-start gap-20">
+<div class="ProfCard gap-20">
   <div class="ProfCard__top Row--start gap-15">
     {#if img === "-"}
       <h2
@@ -43,7 +43,7 @@
       <span>{role} - {room}</span>
     </div>
   </div>
-  <div class="ProfCard__middle Col--a-start gap-10">
+  <div class="ProfCard__middle">
     <SchoolChip
       label={school}
       color={profColors[schools[school]?.color] || profColors.gray}
@@ -55,7 +55,7 @@
       />
     {/if}
   </div>
-  <div class="ProfCard__bottom w-100 gap-10">
+  <div class="ProfCard__bottom">
     <div>
       <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
       <p
@@ -87,15 +87,20 @@
 
 <style lang="scss">
   .ProfCard {
-    @include box();
+    // @include box();
     padding: 15px;
     border-radius: 20px;
     background: var(--ProfCardBG);
     border: 1px solid var(--border);
     font-family: "Inter", sans-serif;
 
+    @include make-flex();
+    align-items: stretch;
+
     &__top {
       max-width: 100%;
+      @include box(100%, auto);
+
       img {
         @include box(55px, 55px);
         max-width: 55px;
@@ -133,16 +138,27 @@
       }
     }
 
+    &__middle {
+      gap: 10px;
+      @include box(100%, auto);
+      @include make-flex($align: flex-start);
+    }
+
     &__bottom {
-      @include make-flex($dir: row, $just: space-between, $align: flex-end);
+      gap: 10px;
       margin-top: auto;
+      @include box(100%, auto);
+      @include make-flex($dir: row, $just: space-between, $align: flex-end);
+
+      // display: grid;
+      // grid-template-columns: 1fr 103px;
+
       & > div {
         p {
           gap: 6px;
           cursor: pointer;
           overflow: hidden;
           white-space: nowrap;
-          display: inline-block;
           text-overflow: ellipsis;
           @include make-flex($dir: row, $just: flex-start, $align: flex-end);
           &:hover {
@@ -157,15 +173,12 @@
         gap: 2px;
         font-size: 14px;
         color: var(--subText);
-        @include box(calc(55%), auto);
+        // @include box(calc(55%), auto);
         @include make-flex($dir: column, $just: flex-start, $align: flex-start);
         &::before {
           font-size: 18px;
         }
       }
-    }
-
-    &__bottom {
       a,
       span {
         font-size: 16px;
@@ -192,6 +205,7 @@
           background-position: center;
         }
       }
+
       span {
         &.disabled {
           cursor: not-allowed;
