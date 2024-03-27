@@ -10,7 +10,7 @@
     <h1>rslookup</h1>
     <p>
       Simplify your college experience by effortlessly accessing professor info,
-      lab locations, campus amenities, and past course materials.
+      lab locations, campus amenities, and much more!
     </p>
   </div>
   <div class="Hero__right">
