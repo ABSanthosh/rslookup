@@ -5,9 +5,7 @@
 <div
   class="SubChip"
   data-color={color.primary}
-  style={`
-        --type-color: ${color.primary};
-    `}
+  style="--type-color: {color.primary};"
 >
   {label}
 </div>

@@ -5,9 +5,6 @@
 </script>
 
 <footer class="FooterWrapper {isHome ? 'FooterWrapper--home' : ''}">
-  <!-- {#if isHome}
-    <h1>rslookup</h1>
-  {/if} -->
   <div class="FooterWrapper__container">
     <div class="FooterWrapper__left">
       <span>
@@ -54,48 +51,6 @@
     @include respondAt(650px) {
       height: auto;
     }
-
-    &--home {
-      @include box(100%, 60px);
-      // @include box(100%, 430px);
-      // background-color: var(--footerBG);
-
-      // @include respondAt(900px) {
-      //   height: 300px;
-      // }
-      // @include respondAt(700px) {
-      //   height: 250px;
-      // }
-      @include respondAt(650px) {
-        height: auto;
-      }
-    }
-
-    // & > h1 {
-    //   font-weight: 500;
-    //   user-select: none;
-    //   line-height: 100%;
-    //   position: relative;
-    //   margin: auto;
-
-    //   text-decoration: none;
-    //   color: var(--foreground);
-    //   font-family: "Fraunces", serif;
-    //   max-width: $maxWidth;
-    //   padding: $extraPadding;
-
-    //   font-size: 10em;
-    //   transition: font-size 0.3s ease;
-    //   @include respondAt(900px) {
-    //     font-size: 8em;
-    //   }
-    //   @include respondAt(700px) {
-    //     font-size: 6em;
-    //   }
-    //   @include respondAt(510px) {
-    //     font-size: 4em;
-    //   }
-    // }
 
     &__left {
       & > span {

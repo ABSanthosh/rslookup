@@ -56,9 +56,9 @@
     {/if}
   </div>
   <div class="ProfCard__bottom">
-    <div>
-      <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-      <p
+    <div class="ProfCard__contact">
+      <a
+        href={`#`}
         data-icon={String.fromCharCode(57688)}
         on:keydown={async () => await copyToClipboard(mail)}
         on:keyup={async () => await copyToClipboard(mail)}
@@ -66,18 +66,21 @@
         on:click={async () => await copyToClipboard(mail)}
         title="Click to copy email"
       >
-        {mail}
-      </p>
-      <!-- Phone number goes here -->
+        <span>
+          {mail}
+        </span>
+      </a>
     </div>
     {#if website === "" || website === "-"}
-      <span class="disabled Row--between gap-10">website</span>
+      <span class="ProfCard__bottom--website disabled Row--between gap-10"
+        >website</span
+      >
     {:else}
       <a
         href={website}
         target="_blank"
         rel="noopener noreferrer"
-        class="Row--between gap-10"
+        class="ProfCard__bottom--website Row--between gap-10"
       >
         website
       </a>
@@ -87,7 +90,7 @@
 
 <style lang="scss">
   .ProfCard {
-    // @include box();
+    @include box();
     padding: 15px;
     border-radius: 20px;
     background: var(--ProfCardBG);
@@ -144,43 +147,53 @@
       @include make-flex($align: flex-start);
     }
 
+    &__contact {
+      min-width: 0;
+      gap: 2px;
+      font-size: 14px;
+      color: var(--subText);
+      @include box(100%, auto);
+      @include make-flex($dir: column, $just: flex-start, $align: flex-start);
+
+      a {
+        gap: 6px;
+        width: 100%;
+        cursor: pointer;
+        @include make-flex($dir: row, $just: flex-start, $align: flex-end);
+        overflow: hidden;
+
+        span {
+          max-width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &::before {
+          height: 18px;
+        }
+      }
+
+      &::before {
+        font-size: 18px;
+      }
+    }
+
     &__bottom {
       gap: 10px;
       margin-top: auto;
+      max-width: 100%;
       @include box(100%, auto);
       @include make-flex($dir: row, $just: space-between, $align: flex-end);
 
       // display: grid;
       // grid-template-columns: 1fr 103px;
 
-      & > div {
-        p {
-          gap: 6px;
-          cursor: pointer;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-          @include make-flex($dir: row, $just: flex-start, $align: flex-end);
-          &:hover {
-            text-decoration: underline;
-          }
-
-          &::before {
-            height: 18px;
-          }
-        }
-
-        gap: 2px;
-        font-size: 14px;
-        color: var(--subText);
-        // @include box(calc(55%), auto);
-        @include make-flex($dir: column, $just: flex-start, $align: flex-start);
-        &::before {
-          font-size: 18px;
-        }
-      }
-      a,
-      span {
+      &--website,
+      &--website &.disabled {
         font-size: 16px;
         font-weight: 400;
         padding: 5px 10px;

@@ -107,12 +107,12 @@
 
 <div class="Prof__content">
   {#each searchResult as result (`${result.name}-${result.role}`)}
-    <!-- <span
+    <span
       animate:flip={{ duration: 250 }}
       use:flipAnimate={{ key: `${result.name}-${result.role}` }}
-    > -->
-    <ProfCard profResult={result} />
-    <!-- </span> -->
+    >
+      <ProfCard profResult={result} />
+    </span>
   {/each}
 </div>
 
@@ -161,7 +161,6 @@
         max-width: 100%;
         overflow-x: hidden;
         @include make-flex();
-        @include box($height: max(100%, fit-content));
       }
     }
   }
