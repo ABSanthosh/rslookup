@@ -31,6 +31,16 @@
     "description": "Find every amenity on campus, from Academic Blocks to Cafeterias, all in one place."
   },
   {
+    "icon": 59526,
+    "route": "clubs",
+    "disabled": false,
+    "showSearch": false,
+    "name": "Clubs",
+    "title": "What are the clubs?",
+    "background": "linear-gradient(225deg, #5AA63C, #ADD354)",
+    "description": "Discover the Heartbeat of Campus Life: Explore All University Clubs and Their Core Members at a Glance!"
+  },
+  {
     "icon": 59999,
     "route": "gpa",
     "disabled": false,
@@ -48,6 +58,6 @@
     "name": "Student Council",
     "title": "Who's in Student Council?",
     "background": "linear-gradient(225deg, #8D5CC8, #2D2856)",
-    "description": "Know your student council members and their roles."
+    "description": "Meet the Faces Behind Your Voice: Get to Know the Members of the Student Council!"
   }
 ]

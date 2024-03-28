@@ -8,7 +8,7 @@
 <section class="SC__hero">
   <h2>Who's in Student Council?</h2>
   <p>
-    People who looks after all the issues concerning the students of SN IoE.
+    Your Advocates, Your Voice: Meet the Team Addressing Student Concerns at SN IoE.
   </p>
 </section>
 
