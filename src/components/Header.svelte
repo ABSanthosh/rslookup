@@ -49,6 +49,7 @@
     >
       <input
         type="text"
+        class="CrispInput"
         bind:this={searchInput}
         placeholder={`Search for a ${currentPage?.name.toLowerCase()}`}
         bind:value={$query}
@@ -189,7 +190,7 @@
       position: relative;
       max-width: 260px;
       &::before {
-        top: 50%;
+        top: 52%;
         left: 7px;
         font-size: 18px;
         position: absolute;
@@ -197,51 +198,41 @@
         transform: translateY(-50%);
       }
 
-      &:has(input:focus) {
-        position: fixed;
-        @include box(calc(100vw - 40px), 32px);
-        max-width: none;
-        left: 50%;
-        z-index: 2;
-        transform: translateX(-50%);
-      }
-
       @include respondAt(700px) {
         @include box(auto);
+        &:has(input:focus) {
+          position: fixed;
+          @include box(calc(100vw - 40px), 32px);
+          max-width: none;
+          left: 50%;
+          z-index: 2;
+          transform: translateX(-50%);
+        }
       }
 
       & > input {
-        outline: none;
         @include box();
         font-size: 14px;
         border-radius: 6px;
         padding: 0 24px 0 30px;
-        color: var(--foreground);
-        background-color: var(--__BG);
-        border: 1px solid var(--border);
-        box-shadow: var(--buttonShadow);
 
         @include respondAt(700px) {
           padding: 0;
-          @include box(32px, 32px);
-
           color: transparent;
-          &::placeholder {
+          @include box(32px, 32px);
+          &:not(:focus)::placeholder {
             color: transparent;
           }
         }
 
         &:active,
         &:focus {
-          background-color: var(--buttonHoverBG);
-          border: 1px solid var(--buttonHoverBorder);
-
           @include respondAt(700px) {
             @include box();
             padding: 0 24px 0 30px;
             color: var(--foreground);
 
-            &::placeholder {
+            &:not(:focus)::placeholder {
               color: unset;
             }
           }
