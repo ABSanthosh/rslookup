@@ -72,9 +72,9 @@
       </a>
     </div>
     {#if website === "" || website === "-"}
-      <span class="ProfCard__bottom--website disabled Row--between gap-10"
-        >website</span
-      >
+      <span class="ProfCard__bottom--website disabled Row--between gap-10">
+        website
+      </span>
     {:else}
       <a
         href={website}

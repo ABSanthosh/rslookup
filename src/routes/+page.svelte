@@ -1,6 +1,5 @@
 <script lang="ts">
   import ROUTES from "$data/ROUTES.json";
-  // https://uigradients.com/
   // https://www.css-gradient.com/
   // git config core.fileMode false
 </script>
