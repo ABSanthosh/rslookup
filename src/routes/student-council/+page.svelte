@@ -8,7 +8,8 @@
 <section class="SC__hero">
   <h2>Who's in Student Council?</h2>
   <p>
-    Your Advocates, Your Voice: Meet the Team Addressing Student Concerns at SN IoE.
+    Your Advocates, Your Voice: Meet the Team Addressing Student Concerns at SN
+    IoE.
   </p>
 </section>
 

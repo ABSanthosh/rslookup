@@ -29,12 +29,12 @@ A simple tool to lookup resources related to Shiv Nadar University.
   - [ ] Swyam course list
   - [ ] Acad calendar
 
-- [ ] Club and society page
+- [x] Club and society page
 
-  - [ ] Data: pictures, name, email,
+  - [x] Data: pictures, name, email,
         core members: Name, position, email
 
-- [ ] Admin pager
+- [ ] Admin page
 
   - [ ] have all admins like dean, registrar, etc
   - [ ] Data: pictures, name, position, email, phone

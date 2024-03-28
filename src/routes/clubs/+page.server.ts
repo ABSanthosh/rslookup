@@ -51,6 +51,6 @@ export const load: PageServerLoad = async ({ fetch }) => {
           position: core.position,
           name: core.name,
         })),
-    }))
+    })),
   };
 };
