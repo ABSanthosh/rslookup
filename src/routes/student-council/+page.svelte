@@ -15,7 +15,7 @@
 <ul class="SC__members">
   {#each data.studentCouncil as member}
     <li class="SC__members--item">
-      <img src={member.img} alt={member.name} />
+      <img src={member.img} alt={member.name} loading="lazy" />
       <h3>
         {member.name}
       </h3>
@@ -50,14 +50,22 @@
       }
 
       & > h2 {
-        font-size: 40px;
+        font-size: 45px;
         font-weight: 900;
+
+        @include respondAt(500px) {
+          font-size: 32px;
+        }
       }
 
       & > p {
         font-size: 20px;
         font-weight: 400;
         color: var(--subText);
+
+        @include respondAt(500px) {
+          font-size: 18px;
+        }
       }
     }
 
