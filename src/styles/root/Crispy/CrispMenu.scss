@@ -56,19 +56,19 @@
   }
 
   &:not(&[data-type]) {
-    --crp-menu-color: #11181c;
-    --crp-menu-color-hover: #11181c;
+    --crp-menu-color: var(--foreground);
+    --crp-menu-color-hover: var(--foreground);
 
-    --crp-menu-background-color: #fbfcfd;
-    --crp-menu-background-color-hover: #f4f6f8;
+    --crp-menu-background-color: var(--elevatedBG);
+    --crp-menu-background-color-hover: var(--buttonHoverBG);
 
-    --crp-menu-border: 1px solid #dfe3e6;
-    --crp-menu-border-hover: 1px solid #d7dbdf;
+    --crp-menu-border: 1px solid var(--border);
+    --crp-menu-border-hover: 1px solid var(--buttonHoverBorder);
 
-    --crp-menu-box-shadow: #00000000 0px 0px 0px 0px, #00000000 0px 0px 0px 0px,
-      #0000000d 0px 1px 2px 0px;
-
-    --crp-menu-content-box-shadow: 0 0px 15px rgba(0, 0, 0, 0.1);
+    --crp-menu-box-shadow: var(--buttonShadow);
+    --crp-menu-summary-icon-color: var(--iconColor)
+    --crp-menu-content-box-shadow: var(--elevatedShadow);
+    --crp-menu-content-border: 1px solid var(--border);
   }
 
   summary {

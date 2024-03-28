@@ -1,23 +1,20 @@
 .CrispInput {
-  --crp-input-border: 1px solid #dfe3e6;
-  --crp-input-border-hover: 1px solid #d7dbdf;
-  --crp-input-border-color-error: #ff4d4f;
+  --crp-input-border: 1px solid var(--border);
+  --crp-input-border-hover: 1px solid var(--buttonHoverBorder);
+  --crp-input-background-hover: var(--buttonHoverBG);
   --crp-input-box-shadow-focus: #00000000 0px 0px 0px 0px,
     #eceef0 0px 0px 0px 1px, #0000001a 0px 2px 2px -1px,
     #0000001a 0px 2px 4px -2px;
   --crp-input-border-color-disabled: #d9d9d9;
   --crp-input-border-radius: 8px;
-  --crp-input-color: #000000;
+  --crp-input-color: var(--foreground);
   --crp-input-color-disabled: #929292;
   --crp-input-color-placeholder: #bfbfbf;
   --crp-input-color-placeholder-disabled: #d9d9d9;
   --crp-input-font-size: 14px;
-  --crp-input-box-shadow: #ffffff09 0px 0px 0px 0px,
-    #eceef009 0px 0px 0px 0.075px,
-    #0000000d 0px 1.11119px 2.14825px -0.0370623px,
-    #00000001 0px 0.075px 0.148249px -0.075px;
+  --crp-input-box-shadow: var(--buttonShadow);
   --crp-input-width: 100%;
-  --crp-input-background-color: #f4f6f8;
+  --crp-input-background-color: var(--elevatedBG);
 
   --crp-text-area-max-height: 230px;
   --crp-text-area-min-height: 34px;
@@ -26,7 +23,7 @@
 
   &:not([data-type="text-area"]) {
     --crp-input-padding: 8px 12px;
-    --crp-input-height: 34px;
+    --crp-input-height: 32px;
   }
 
   &[data-type="text-area"] {
@@ -81,6 +78,7 @@
 
   &:hover {
     border: var(--crp-input-border-hover);
+    background-color: var(--crp-input-background-hover);
   }
 
   &[type="date"],

@@ -45,7 +45,6 @@
 
   <link rel="stylesheet" href="/theme/light.css" />
   <link rel="stylesheet" href="/theme/dark.css" />
-  <link rel="stylesheet" href="/theme/CrispTheme.css" />
 </svelte:head>
 
 <Header />

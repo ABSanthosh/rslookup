@@ -9,22 +9,19 @@
   --crp-button-padding-right: 10px;
   --crp-button-padding-bottom: 8px;
 
-  --crp-button-disabled-color: #b8b8b8;
-  --crp-button-disabled-background-color: #e8e8e8;
-  --crp-button-disabled-border: 1px solid #e8e8e8;
+  --crp-button-disabled-color: var(--disabledColor);
+  --crp-button-disabled-background-color: var(--buttonHoverBG);
+  --crp-button-disabled-border: 1px solid var(--buttonHoverBG);
+
+  --crp-button-color: var(--foreground);
+  --crp-button-background-color: var(--background);
+  --crp-button-border: 1.2px solid var(--border);
+  --crp-button-box-shadow: var(--buttonShadow);
 
   &:not(&[data-type]) {
-    --crp-button-color: #11181c;
-    --crp-button-color-hover: #11181c;
-
-    --crp-button-background-color: #fbfcfd;
-    --crp-button-background-color-hover: #ecedf1;
-
-    --crp-button-border: 1px solid #dfe3e6;
-    --crp-button-border-hover: 1px solid #d7dbdf;
-
-    --crp-button-box-shadow: #00000000 0px 0px 0px 0px,
-      #00000000 0px 0px 0px 0px, #0000000d 0px 1px 2px 0px;
+    --crp-button-color-hover: var(--foreground);
+    --crp-button-background-color-hover: var(--buttonHoverBG);
+    --crp-button-border-hover: 1.2px solid var(--buttonHoverBorder);
   }
 
   &[data-type="ghost"] {
@@ -74,15 +71,9 @@
   }
 
   &[data-type="danger"] {
-    --crp-button-color: #11181c;
     --crp-button-color-hover: #ffffff;
-
-    --crp-button-background-color: #fbfcfd;
     --crp-button-background-color-hover: #ff605c;
-
-    --crp-button-border: 1px solid #dfe3e6;
-    --crp-button-border-hover: 1px solid #ff605c;
-
+    --crp-button-border-hover: 1.2px solid #ff605c;
     --crp-button-box-shadow: transparent;
   }
 

@@ -18,18 +18,17 @@
   @include box(var(--crp-select-width), var(--crp-select-height));
 
   &:not(&[data-type]) {
-    --crp-select-color: #11181c;
-    --crp-select-color-hover: #11181c;
-
-    --crp-select-background-color: #f4f6f8;
-
-    --crp-select-border: 1px solid #dfe3e6;
-    --crp-select-border-hover: 1px solid #d7dbdf;
-
-    --crp-select-box-shadow: #00000000 0px 0px 0px 0px,
-      #00000000 0px 0px 0px 0px, #0000000d 0px 1px 2px 0px;
-
-    --crp-select-content-box-shadow: 0 0px 15px rgba(0, 0, 0, 0.1);
+    --crp-select-color: var(--foreground);
+    --crp-select-color-hover: var(--foreground);
+    --crp-select-background-color: var(--background);
+    --crp-select-border: 1px solid var(--border);
+    --crp-select-border-hover: 1px solid var(--buttonHoverBorder);
+    --crp-select-box-shadow: var(--buttonShadow);
+    --crp-select-content-box-shadow: var(--buttonShadow);
+    --crp-select-padding: 0 35px 0 10px;
+    --crp-select-icon: var(--downArrow);
+    --crp-select-background-position: right 5px top 50%;
+    --crp-select-background-size: right 5px top 50%;
   }
 
   outline: none;
