@@ -30,7 +30,6 @@ A simple tool to lookup resources related to Shiv Nadar University.
   - [ ] Acad calendar
 
 - [ ] Club and society page
-
   - [ ] Data: pictures, name, email,
         core members: Name, position, email
 
@@ -41,21 +40,3 @@ A simple tool to lookup resources related to Shiv Nadar University.
   - [ ] Data: pictures, name, position, email, phone
 
 https://drive.google.com/drive/u/1/folders/1whhniqC93pz9X_Jxq8Is4BF--5iGx3bC
-https://drive.google.com/file/d/1Hy4ie_1HsY2R8tAkHFIbYpV71Fet32IH/view?usp=sharing
-
-https://drive.google.com/thumbnail?id=1Hy4ie_1HsY2R8tAkHFIbYpV71Fet32IH&sz=w3840-h1998
-https://drive.google.com/thumbnail?id=1_SOeLfcJcSwsB3vTXLsDPRsuoiM1KU2b&sz=w3840-h1998
-https://drive.google.com/thumbnail?id=1WP9J6bWU78h8Gype1f9TJ8qlsC3kBZEt&sz=w3840-h1998
-https://drive.google.com/thumbnail?id=121M3u9cCO2TBU05_RazQLqSqyT0OhJpL&sz=w3840-h1999
-https://drive.google.com/thumbnail?id=1JkKKalohWBBErAb5fSSFCQ-JflSoF9nt&sz=w3840-h2000
-https://drive.google.com/thumbnail?id=18u6s44vnwc4X8ZcJUEOMfIPIkg00N3fj&sz=w3840-h2001
-https://drive.google.com/thumbnail?id=1d3VOjzbndVxmWUVEb01Z9Ad-wnysOuMF&sz=w3840-h2002
-https://drive.google.com/thumbnail?id=1h5fR0OzykboUAmvluLSxsRQX62oz5r88&sz=w3840-h2003
-https://drive.google.com/thumbnail?id=1qS5b4oGTjK77TfH5JC8ggOgzCUdhzuEU&sz=w3840-h2004
-https://drive.google.com/thumbnail?id=1iXW9i8TlHPFt1_TNZwBcAh5z7661Hrv7&sz=w3840-h2005
-https://drive.google.com/thumbnail?id=1dUlD_jOSdJv2Rq7w1u3-J6y9QCOwfVln&sz=w3840-h2006
-https://drive.google.com/thumbnail?id=19e9Wz35EZFdc5pH29wMwifP0Pb2grwVN&sz=w3840-h2007
-https://drive.google.com/thumbnail?id=18cGEaAkKzthmiR0GnWRoLE45irX-PrMM&sz=w3840-h2008
-https://drive.google.com/thumbnail?id=1Cf_SiAVmpFEIefoMfadcR-pnJ_8YZQd4&sz=w3840-h2009
-https://drive.google.com/thumbnail?id=1KDiHZji9hL8S2_ZwO3te3wuOMsOkLShY&sz=w3840-h2010
-https://drive.google.com/thumbnail?id=11J6ie29CwCZiPgy5SvPzAjsMlbcCKozn&sz=w3840-h2011
