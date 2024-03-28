@@ -23,7 +23,9 @@ export const load: PageServerLoad = async ({ fetch }) => {
       },
     }
   );
-  const csv = convertTSVtoJSON(await data.text()) as unknown as StudentCouncil[];
+  const csv = convertTSVtoJSON(
+    await data.text()
+  ) as unknown as StudentCouncil[];
   const imageBase = "https://drive.google.com/thumbnail?id={ID}&sz=w3840-h1998";
 
   return {

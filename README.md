@@ -35,6 +35,7 @@ A simple tool to lookup resources related to Shiv Nadar University.
         core members: Name, position, email
 
 - [ ] Admin pager
+
   - [ ] have all admins like dean, registrar, etc
   - [ ] Data: pictures, name, position, email, phone
 
