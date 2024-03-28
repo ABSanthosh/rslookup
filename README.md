@@ -4,9 +4,9 @@ A simple tool to lookup resources related to Shiv Nadar University.
 
 ### TODO
 
-- [ ] Test better fuzzy search [Ref](https://github.com/bevacqua/fuzzysearch)
-- [ ] Better mobile experience
-  - [ ] Header search search bar in mobile
+- [x] Test better fuzzy search [Ref](https://github.com/bevacqua/fuzzysearch)
+- [x] Better mobile experience
+  - [x] Header search search bar in mobile
 - [ ] Loading animation not working in between pages
 - [ ] AI chat with cloudflare workers [Ref](https://ai.cloudflare.com/)
 - [ ] Add Shuttle feature using custom google form [Ref](https://en.letswrite.tw/custom-google-form/)
@@ -30,13 +30,15 @@ A simple tool to lookup resources related to Shiv Nadar University.
   - [ ] Acad calendar
 
 - [ ] Club and society page
+
   - [ ] Data: pictures, name, email,
         core members: Name, position, email
 
 - [ ] Admin pager
   - [ ] have all admins like dean, registrar, etc
   - [ ] Data: pictures, name, position, email, phone
-- [ ] Student council page
-  - [ ] Data: pictures, name, position, email, phone
 
-https://drive.google.com/drive/u/1/folders/1whhniqC93pz9X_Jxq8Is4BF--5iGx3bC
+- [x] Student council page
+  - [x] Data: pictures, name, position, email, phone
+
+Data: https://drive.google.com/drive/u/1/folders/1whhniqC93pz9X_Jxq8Is4BF--5iGx3bC
