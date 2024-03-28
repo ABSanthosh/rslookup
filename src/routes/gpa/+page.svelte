@@ -168,16 +168,16 @@
         <table>
           <thead>
             <tr>
-              <th>Course</th>
-              <th>Credits</th>
-              <th>Grade</th>
+              <th scope="col">Course</th>
+              <th scope="col">Credits</th>
+              <th scope="col">Grade</th>
               <th />
             </tr>
           </thead>
           <tbody>
             {#each sem.courses as course, i}
               <tr>
-                <td>
+                <td data-label="Course">
                   <input
                     class="CrispInput"
                     type="text"
@@ -185,7 +185,7 @@
                     bind:value={course.name}
                   />
                 </td>
-                <td>
+                <td data-label="Credits">
                   <input
                     class="CrispInput"
                     type="number"
@@ -198,7 +198,7 @@
                     bind:value={course.credits}
                   />
                 </td>
-                <td>
+                <td data-label="Grade">
                   <select
                     class="CrispSelect"
                     bind:value={course.grade}
@@ -214,9 +214,8 @@
                     class="CrispButton"
                     disabled={semesters[index].courses.length === 1}
                     data-icon={String.fromCharCode(58829)}
-                    data-close
+                    data-type="danger"
                     on:click={() => {
-                      console.log(i);
                       semesters[index].courses = semesters[
                         index
                       ].courses.filter((_, j) => j !== i);
@@ -372,7 +371,7 @@
       min-height: 50vh;
       @include make-flex($dir: row, $align: flex-start, $just: flex-start);
 
-      @include respondAt(630px) {
+      @include respondAt(700px) {
         flex-direction: column;
       }
     }
@@ -393,7 +392,7 @@
       border: 1px solid var(--LabSeparator);
       @include make-flex($dir: column, $align: flex-start);
 
-      @include respondAt(630px) {
+      @include respondAt(700px) {
         width: 100%;
         position: relative;
         top: 0;
@@ -434,7 +433,6 @@
       border-radius: 10px;
       @include make-flex($align: flex-start);
       border: 1px solid var(--border);
-      box-shadow: var(--SectionShadow);
       &--top {
         @include box($height: 35px);
 
@@ -465,11 +463,83 @@
               @include box($height: 30px);
               text-align: center;
 
+              & > input,
+              & > button,
+              & > select {
+                height: 30px;
+              }
+
               & > input {
-                @include box(100%, 35px);
                 border-radius: 5px;
                 border: 1px solid var(--border);
               }
+            }
+          }
+        }
+      }
+
+      @include respondAt(350px) {
+        & > table {
+          & > tbody {
+            & > tr {
+              & > td {
+                height: auto;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto 1fr;
+
+                &::before {
+                  height: 20px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @include respondAt(700px) {
+        width: 100%;
+        & > table {
+          width: 100%;
+
+          & > tbody {
+            gap: 10px;
+            @include make-flex();
+          }
+          & > thead {
+            width: 1px;
+            padding: 0;
+            height: 1px;
+            border: none;
+            margin: -1px;
+            overflow: hidden;
+            position: absolute;
+            clip: rect(0 0 0 0);
+          }
+
+          & tr {
+            gap: 10px;
+            width: 100%;
+            @include make-flex();
+          }
+
+          & td {
+            gap: 10px;
+            display: grid;
+            grid-template-columns: 100px 1fr;
+
+            & > button {
+              width: 50px;
+            }
+
+            &::before {
+              width: 100%;
+              text-align: left;
+              font-weight: bold;
+              content: attr(data-label);
+            }
+
+            &:last-child {
+              border-bottom: 0;
             }
           }
         }
@@ -540,7 +610,7 @@
         }
 
         & > details {
-          @include box();
+          @include box($height: auto);
           padding: 10px;
           border-radius: 10px;
           @include make-flex();
