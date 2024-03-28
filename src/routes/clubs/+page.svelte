@@ -2,7 +2,6 @@
   import type { PageData } from "./$types";
   import copyToClipboard from "$utils/CopyToClipboard";
   export let data: PageData;
-  console.log(data.clubs);
 </script>
 
 <section class="Clubs__hero">
@@ -113,16 +112,9 @@
 
           & > a {
             gap: 6px;
-            width: 100%;
             cursor: pointer;
             @include make-flex($dir: row, $just: flex-start, $align: flex-end);
             overflow: hidden;
-
-            span {
-              max-width: 100%;
-              overflow: hidden;
-              text-overflow: ellipsis;
-            }
 
             &:hover {
               text-decoration: underline;

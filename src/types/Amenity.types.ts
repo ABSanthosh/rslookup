@@ -38,6 +38,7 @@ export interface IHostel {
   lng: string;
   mail: string;
   phone: string;
+  warden: string;
 }
 
 export interface ISport {
