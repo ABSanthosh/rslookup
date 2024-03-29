@@ -256,7 +256,7 @@
           }
           &::after {
             @include box(13px, 13px);
-            border: 1px solid white;
+            border: 1px solid transparent;
           }
         }
       }

@@ -41,6 +41,16 @@
     "description": "Discover the Heartbeat of Campus Life: Explore All University Clubs and Their Core Members at a Glance!"
   },
   {
+    "icon": 59507,
+    "route": "documents",
+    "disabled": false,
+    "showSearch": false,
+    "name": "Documents",
+    "title": "Where's My Document?",
+    "background": "linear-gradient(225deg, #3ABA33, #4CDFA5)",
+    "description": "Essential Resources at Your Fingertips: Access Crucial Documents "
+  },
+  {
     "icon": 59999,
     "route": "gpa",
     "disabled": false,
