@@ -31,6 +31,34 @@
   {/each}
 </ul>
 
+<section class="Document__mom">
+  <h2>
+    Minutes of Meeting
+    <hr />
+  </h2>
+  <ul class="Document__content">
+    {#each data.mom as document}
+      <li class="Document__content--item">
+        <a href={document.link} target="_blank" rel="noopener noreferrer">
+          {#if document.type === "pdf"}
+            <img src="image/icon_pdf.png" alt={document.type} />
+          {:else if document.type === "sheet"}
+            <img src="image/icon_sheet.png" alt={document.type} />
+          {:else if document.type === "doc"}
+            <img src="image/icon_doc.png" alt={document.type} />
+          {:else}
+            <img src="image/icon_default.png" alt={document.type} />
+          {/if}
+          <div class="gap-5 w-100">
+            <h3 class="title">{document.name}</h3>
+            <p class="subText">{document.category}</p>
+          </div>
+        </a>
+      </li>
+    {/each}
+  </ul>
+</section>
+
 <style lang="scss">
   .Document {
     &__hero {
@@ -69,7 +97,7 @@
       width: 100%;
       display: grid;
       list-style: none;
-      margin-top: 30px;
+      margin-top: 25px;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 
       &--item {
@@ -123,6 +151,31 @@
             font-weight: 400;
             color: var(--subText);
           }
+        }
+      }
+    }
+
+    &__mom {
+      @include box();
+      padding-top: 80px;
+      @include make-flex($just: flex-start);
+
+      @include respondAt(680px) {
+        padding: 0;
+        margin: 40px 0 30px 0;
+        @include make-flex($just: flex-start, $align: flex-start);
+      }
+
+      & > h2 {
+        gap: 10px;
+        white-space: nowrap;
+        @include box($height: auto);
+        @include make-flex($dir: row, $just: flex-start);
+
+        & > hr {
+          background: var(--LabSeparator);
+          @include box(100%, 1px);
+          border: none;
         }
       }
     }

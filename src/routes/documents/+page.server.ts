@@ -16,8 +16,16 @@ export const load: PageServerLoad = async ({ fetch }) => {
       },
     }
   );
-  const csv = await data.text();
+  const csv = convertTSVtoJSON(await data.text()) as unknown as IDocuments[];
+  // return a json of type 
+  /**
+   * {
+   *  documents: IDocuments[] where item.category !== 'Minutes of the Meeting'
+   *  mom: IDocuments // where item.category === 'Minutes of the Meeting'
+   * }
+   */
   return {
-    documents: convertTSVtoJSON(csv) as unknown as IDocuments[],
-  };
+    documents: csv.filter((item) => item.category !== "Minutes of the Meeting") as IDocuments[],
+    mom: csv.filter((item) => item.category === "Minutes of the Meeting")  as unknown as IDocuments[],
+  }
 };
