@@ -4,6 +4,7 @@
   import type { ProfItem } from "$types/Prof.types";
   import copyToClipboard from "$utils/CopyToClipboard";
   import SchoolChip from "$components/SchoolChip.svelte";
+  import { handleImageError } from "$utils/ImageOnError";
 
   export let profResult = $$props as ProfItem;
 
@@ -20,24 +21,20 @@
 
 <div class="ProfCard gap-20">
   <div class="ProfCard__top Row--start gap-15">
-    {#if img === "-"}
+    <span class="ProfCard__top--profileBox">
       <h2
         class="ProfCard__top--profile"
-        style="background-color: {profColors[schools[school]?.color]
-          ?.secondary || profColors.gray.secondary};
+        style="
+        background-color: {profColors[schools[school]?.color]?.secondary ||
+          profColors.gray.secondary};
         color: {profColors[schools[school]?.color]?.primary ||
           profColors.gray.primary}
         "
       >
         {profile}
       </h2>
-    {:else}
-      <picture>
-        <source srcset={img} type="image/jpeg" />
-        <source srcset={gImage} type="image/webp" />
-        <img src={img} alt={name} loading="lazy" />
-      </picture>
-    {/if}
+      <img src={img} alt={name} use:handleImageError loading="lazy" />
+    </span>
     <div class="Col--a-start gap-5">
       <h3>{name}</h3>
       <span>{role} - {room}</span>
@@ -126,12 +123,26 @@
       }
 
       &--profile {
-        @include box(55px, 55px);
         border-radius: 50%;
         text-align: center;
         line-height: 55px;
+        @include box();
         @include make-flex();
         flex-shrink: 0;
+      }
+
+      &--profileBox {
+        gap: 10px;
+        position: relative;
+        @include box(55px, 55px);
+        @include make-flex($dir: column, $just: flex-start, $align: flex-start);
+
+        img {
+          top: 0;
+          right: 0;
+          position: absolute;
+          background-color: white;
+        }
       }
 
       span {
@@ -193,7 +204,7 @@
       // grid-template-columns: 1fr 103px;
 
       &--website,
-      &--website &.disabled {
+      &--website.disabled {
         font-size: 16px;
         font-weight: 400;
         padding: 5px 10px;
