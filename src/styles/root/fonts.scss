@@ -1,21 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@1,600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-// font-family: 'Inter', sans-serif;
-// font-family: 'Montserrat', sans-serif;
 
 @font-face {
   font-family: "Icons";
+  font-display: swap;
   src: url("/assets/fonts/Icons.woff2") format("woff2");
-}
-
-// Nohemi-SemiBold.ttf
-@font-face {
-  font-family: "Nohemi";
-  font-style: normal;
-  font-weight: 600;
-  src: url("/assets/fonts/Nohemi-SemiBold.ttf") format("truetype");
 }
 
 // Satoshi.ttf

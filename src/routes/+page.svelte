@@ -108,6 +108,7 @@
       & > img {
         margin-top: 100px;
         @include box(auto, 55%);
+        aspect-ratio: 1/1.1;
         filter: drop-shadow(0px 0px 25px #ffffff33);
 
         @include respondAt(905px) {

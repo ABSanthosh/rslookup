@@ -31,6 +31,16 @@
     "description": "Find every amenity on campus, from Academic Blocks to Cafeterias, all in one place."
   },
   {
+    "icon": 62003,
+    "route": "student-council",
+    "disabled": false,
+    "showSearch": false,
+    "name": "Student Council",
+    "title": "Who's in Student Council?",
+    "background": "linear-gradient(225deg, #8D5CC8, #2D2856)",
+    "description": "Meet the Faces Behind Your Voice: Get to Know the Members of the Student Council!"
+  },
+  {
     "icon": 59526,
     "route": "clubs",
     "disabled": false,
@@ -59,15 +69,5 @@
     "title": "What's My GPA?",
     "background": "linear-gradient(90deg, #F24790, #984950)",
     "description": "Estimate your academic growth with ease. No more manual calculations. (Not tested yet. Might not work as expected)"
-  },
-  {
-    "icon": 62003,
-    "route": "student-council",
-    "disabled": false,
-    "showSearch": false,
-    "name": "Student Council",
-    "title": "Who's in Student Council?",
-    "background": "linear-gradient(225deg, #8D5CC8, #2D2856)",
-    "description": "Meet the Faces Behind Your Voice: Get to Know the Members of the Student Council!"
   }
 ]
