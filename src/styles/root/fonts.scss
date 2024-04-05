@@ -8,15 +8,6 @@
     format("woff2");
 }
 
-// Satoshi.ttf
-@font-face {
-  font-family: "Satoshi";
-  src: url("/assets/fonts/Satoshi.ttf") format("truetype");
-  font-weight: 300 900;
-  font-display: swap;
-  font-style: normal;
-}
-
 [data-icon],
 [data-icon-after] {
   &::after,
