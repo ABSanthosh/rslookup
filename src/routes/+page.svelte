@@ -1,5 +1,6 @@
 <script lang="ts">
-  import ROUTES from "$data/ROUTES.json";
+  import { ROUTES } from "$data/routes";
+
   // https://www.css-gradient.com/
   // git config core.fileMode false
 </script>
@@ -74,6 +75,8 @@
         font-style: italic;
         color: var(--foreground);
         font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-variation-settings: "SOFT" 20, "WONK" 0;
         transition: font-size 0.3s ease;
         @include respondAt(900px) {
           font-size: 8em;
@@ -90,7 +93,7 @@
         font-size: 20px;
         text-align: justify;
         color: var(--subText);
-        font-family: "Montserrat", sans-serif;
+        // font-family: "Montserrat", sans-serif;
         @include respondAt(580px) {
           text-align: unset;
         }
@@ -192,7 +195,7 @@
         p {
           color: var(--foreground);
           font-weight: 500;
-          font-size: 20px;
+          font-size: 18px;
           line-height: 28px;
           @include respondAt(450px) {
             font-size: 18px;

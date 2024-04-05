@@ -2,10 +2,10 @@
   import { page } from "$app/stores";
   import { theme } from "$lib/ThemeStore";
   import { query } from "$lib/ParamStore";
+  import { fade } from "svelte/transition";
   import { afterNavigate } from "$app/navigation";
   import { clickOutside } from "$lib/ClickOutside";
-  import { fade } from "svelte/transition";
-  import ROUTES from "$data/ROUTES.json";
+  import { HOME_ROUTES, ROUTES } from "$data/routes";
 
   // currentPage use the root of the url to determine the current page
   // this is because the url can be /course/... or /course
@@ -15,6 +15,9 @@
   );
 
   $: isHome = $page.url.pathname === "/";
+  $: isFeaturePage = HOME_ROUTES.map((route) => `/${route.route}`).includes(
+    $page.url.pathname
+  );
 
   let isDetailsOpen = false;
   let searchInput: HTMLInputElement;
@@ -70,7 +73,7 @@
     <hr />
   {/if}
 
-  {#if !isHome}
+  {#if !isHome && !isFeaturePage}
     <details
       use:clickOutside
       bind:open={isDetailsOpen}
@@ -105,6 +108,19 @@
         {/each}
       </ul>
     </details>
+  {:else}
+    <ul class="Header__navList">
+      {#each HOME_ROUTES as item}
+        <li>
+          <a
+            href={item.route}
+            class:active={$page.url.pathname === `/${item.route}`}
+          >
+            {item.name}
+          </a>
+        </li>
+      {/each}
+    </ul>
   {/if}
   <div class="Header__right">
     <button
@@ -167,6 +183,9 @@
         text-decoration: none;
         color: var(--foreground);
         font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-variation-settings: "SOFT" 100, "WONK" 0;
+
         &::before {
           left: 0;
           opacity: 0;
@@ -317,6 +336,31 @@
 
         &:hover {
           &::before {
+            color: var(--foreground);
+          }
+        }
+      }
+    }
+
+    &__navList {
+      @include make-flex($dir: row, $just: flex-start);
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      & > li {
+        @include make-flex($dir: row, $just: flex-start);
+        & > a {
+          text-decoration: none;
+          color: var(--subText);
+          padding: 5px 10px;
+          @include box(auto);
+          transition: all 0.1s ease-in-out;
+
+          &:hover {
+            color: var(--foreground);
+          }
+          &.active {
             color: var(--foreground);
           }
         }
