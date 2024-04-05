@@ -10,6 +10,7 @@
   import { ToastStore } from "$lib/ToastStore";
   import { navigating } from "$app/stores";
   import BlurredSpinner from "$components/BlurredSpinner.svelte";
+  import { EasterEgg } from "$utils/EasterEgg.js";
 
   export let data;
 
@@ -26,12 +27,8 @@
         document.documentElement.setAttribute("data-theme", value);
       }
     });
+    EasterEgg();
   });
-
-  const contentLayout: {
-    [key: string]: string;
-  } = {};
-  // https://rslookup.abs.moe
 </script>
 
 <svelte:head>
@@ -52,11 +49,7 @@
   <BlurredSpinner style="position: fixed;" />
 {/if}
 {#key data.pathname}
-  <main
-    class={contentLayout[data.pathname] ?? "Content--maxWidth"}
-    in:fly={transitionIn}
-    out:fly={transitionOut}
-  >
+  <main class="Content--maxWidth" in:fly={transitionIn} out:fly={transitionOut}>
     <slot />
   </main>
 {/key}
