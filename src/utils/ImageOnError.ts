@@ -14,7 +14,7 @@ export const handleImageError = (node: HTMLImageElement) => {
       if (
         (entry.target as HTMLImageElement).naturalHeight === 0 &&
         (entry.target as HTMLImageElement).naturalWidth === 0
-        ) {
+      ) {
         (entry.target as HTMLImageElement).style.display = "none";
         (entry.target as HTMLImageElement).style.visibility = "hidden";
         // observer.disconnect();
