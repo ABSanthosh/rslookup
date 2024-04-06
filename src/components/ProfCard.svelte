@@ -4,11 +4,12 @@
   import type { ProfItem } from "$types/Prof.types";
   import copyToClipboard from "$utils/CopyToClipboard";
   import SchoolChip from "$components/SchoolChip.svelte";
-  import { handleImageError } from "$utils/ImageOnError";
+  import Pane from "./Pane.svelte";
+  import { browser } from "$app/environment";
 
   export let profResult = $$props as ProfItem;
 
-  let { name, role, room, website, school, department, img, mail, gImage } =
+  let { name, role, room, website, school, department, img, mail, timesheet } =
     profResult;
 
   let profile = name
@@ -17,7 +18,104 @@
     .match(/(^\S|\S$)?/g)!
     .join("")
     .toUpperCase();
+
+  $: isProfPaneOpen = false;
+  $: if (browser) {
+    if (isProfPaneOpen) {
+      document.documentElement.style.scrollbarGutter = "unset";
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.documentElement.style.scrollbarGutter = "";
+      document.documentElement.style.overflow = "";
+    }
+  }
 </script>
+
+{#if isProfPaneOpen}
+  <Pane
+    bind:open={isProfPaneOpen}
+    style="--paneWidth: 380px;"
+    on:close={() => (isProfPaneOpen = false)}
+  >
+    <p slot="header">Prof: {name}</p>
+    <svelte:fragment slot="main">
+      <div class="ProfCardPane">
+        <span class="ProfCardPane__top--profileBox">
+          <h2
+            class="ProfCardPane__top--profile"
+            style="
+            background-color: {profColors[schools[school]?.color]?.secondary ||
+              profColors.gray.secondary};
+            color: {profColors[schools[school]?.color]?.primary ||
+              profColors.gray.primary};
+            "
+          >
+            {profile}
+          </h2>
+          {@html `
+            <img 
+              src="${img}" 
+              alt="${name}" 
+              onerror="this.style.visibility = 'hidden'" 
+              loading="lazy" 
+              style = "
+                background-color: ${
+                  profColors[schools[school]?.color]?.secondary ||
+                  profColors.gray.secondary
+                };
+                border: 1px solid ${
+                  profColors[schools[school]?.color]?.primary ||
+                  profColors.gray.primary
+                }
+              "/>
+            `}
+        </span>
+        <div class="Col--center w-100 gap-5">
+          <h3 class="ProfCardPane__title">
+            {name}
+          </h3>
+          <p class="ProfCardPane__sub">
+            {role} - {room}
+          </p>
+        </div>
+        <div class="Col--center w-100 gap-15">
+          <SchoolChip
+            label={school}
+            color={profColors[schools[school]?.color] || profColors.gray}
+          />
+          {#if department !== "" && department !== "-"}
+            <SubChip
+              label={department}
+              color={profColors[schools[school]?.color] || profColors.gray}
+            />
+          {/if}
+        </div>
+        <div class="Col--a-start w-100 gap-5">
+          <h3>Office Hours</h3>
+          <p>{timesheet}</p>
+        </div>
+      </div>
+    </svelte:fragment>
+    <svelte:fragment slot="footer">
+      {#if website === "" || website === "-"}
+        <span
+          class="ProfCard__bottom--website disabled Row--between gap-10 w-100"
+        >
+          website
+        </span>
+      {:else}
+        <a
+          href={website}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="ProfCard__bottom--website Row--between gap-10 w-100"
+        >
+          website
+        </a>
+      {/if}
+    </svelte:fragment>
+  </Pane>
+{/if}
 
 <div class="ProfCard gap-20">
   <div class="ProfCard__top Row--start gap-15">
@@ -33,19 +131,47 @@
       >
         {profile}
       </h2>
-      <img src={img} alt={name} use:handleImageError loading="lazy" />
+      {@html `
+        <img 
+          src="${img}" 
+          alt="${name}" 
+          onerror="this.style.visibility = 'hidden'" 
+          loading="lazy" 
+          style = "
+            background-color: ${
+              profColors[schools[school]?.color]?.secondary ||
+              profColors.gray.secondary
+            };
+          "/>
+        `}
     </span>
     <div class="Col--a-start gap-5">
       <h3>{name}</h3>
       <span>{role} - {room}</span>
     </div>
+    {#if timesheet !== ""}
+      <button
+        class="CrispButton"
+        style="
+        margin-left: auto; 
+        margin-bottom: auto;
+        --crp-button-padding-left: 5px;
+        --crp-button-padding-right: 5px;
+        --crp-button-padding-top: 5px;
+        --crp-button-padding-bottom: 5px;
+      "
+        title="Click to view timesheet"
+        on:click={() => (isProfPaneOpen = true)}
+        data-icon={String.fromCharCode(59573)}
+      />
+    {/if}
   </div>
   <div class="ProfCard__middle">
     <SchoolChip
       label={school}
       color={profColors[schools[school]?.color] || profColors.gray}
     />
-    {#if department !== ""}
+    {#if department !== "" && department !== "-"}
       <SubChip
         label={department}
         color={profColors[schools[school]?.color] || profColors.gray}
@@ -101,7 +227,7 @@
       max-width: 100%;
       @include box(100%, auto);
 
-      img {
+      :global(img) {
         @include box(55px, 55px);
         max-width: 55px;
         object-fit: cover;
@@ -137,11 +263,11 @@
         @include box(55px, 55px);
         @include make-flex($dir: column, $just: flex-start, $align: flex-start);
 
-        img {
+        :global(img) {
           top: 0;
           right: 0;
           position: absolute;
-          background-color: white;
+          // background-color: white;
         }
       }
 
@@ -238,6 +364,59 @@
           background: var(--bottomADisable);
         }
       }
+    }
+  }
+
+  .ProfCardPane {
+    gap: 15px;
+    @include box();
+    @include make-flex($dir: column, $just: flex-start);
+
+    &__top--profileBox {
+      gap: 10px;
+      position: relative;
+      @include box(100%, auto);
+      @include make-flex($dir: column, $just: flex-start, $align: flex-start);
+
+      @include respondAt(600px) {
+        @include box(55%, auto);
+      }
+
+      :global(img) {
+        @include box();
+        object-fit: cover;
+        border-radius: 50%;
+        aspect-ratio: 1/1;
+        object-position: top;
+        z-index: 1;
+        // background-color: var(--body);
+      }
+
+      h2 {
+        top: 0;
+        right: 0;
+        position: absolute;
+        border-radius: 50%;
+        text-align: center;
+        @include box($height: 100%);
+        @include make-flex();
+        flex-shrink: 0;
+      }
+    }
+
+    &__title {
+      font-size: 25px;
+      font-weight: 500;
+      width: 100%;
+      text-align: center;
+    }
+
+    &__sub {
+      font-size: 18px;
+      font-weight: 400;
+      width: 100%;
+      text-align: center;
+      color: var(--subText);
     }
   }
 </style>
