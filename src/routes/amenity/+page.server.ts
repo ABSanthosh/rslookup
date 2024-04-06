@@ -18,7 +18,12 @@ import type {
 import { convertTSVtoJSON } from "$utils/ToJson";
 import type { PageServerLoad } from "./$types";
 
-export const load: PageServerLoad = async ({ fetch }) => {
+export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
+  setHeaders({
+    "cache-control":
+      "public, must-revalidate, max-age=86400, stale-while-revalidate=86400",
+  });
+
   const options = {
     method: "GET",
     headers: {

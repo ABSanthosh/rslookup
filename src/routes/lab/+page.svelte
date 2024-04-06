@@ -12,7 +12,7 @@
   export let data: PageData;
 
   $: labs = data.labs;
-  $: pageSize = 10;
+  $: pageSize = 20;
   let isFilterOpen = false;
 
   let filters = Object.keys(AcademicBlocks).map((item) => {
