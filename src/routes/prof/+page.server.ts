@@ -4,19 +4,7 @@ import {
   PUBLIC_DATA_SOURCE_PROF,
 } from "$env/static/public";
 import { convertTSVtoJSON } from "$utils/ToJson";
-
-interface Prof {
-  name: string;
-  role: string;
-  room: string;
-  block: string;
-  website: string;
-  school: string;
-  department: string;
-  img: string;
-  mail: string;
-  gImage: string;
-}
+import type { ProfItem } from "$types/Prof.types";
 
 export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
   setHeaders({
@@ -35,6 +23,6 @@ export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
   );
   const csv = await data.text();
   return {
-    prof: convertTSVtoJSON(csv) as unknown as Prof[],
+    prof: convertTSVtoJSON(csv) as unknown as ProfItem[],
   };
 };

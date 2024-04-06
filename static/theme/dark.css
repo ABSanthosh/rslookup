@@ -46,6 +46,9 @@
   --folderIconColor: #7d8590;
   --SectionShadow: #ffffff24 0px 0px 25px 1px;
 
+  --pane-bg: #1f2328;
+  --pane-backdrop-background: rgba(0, 0, 0, 0.5);
+
   /* Chip Colors */
   --bluePrimary: #6b91fb;
   --blueSecondary: #303849;
