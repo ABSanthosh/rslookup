@@ -13,7 +13,7 @@
   export let data: PageData;
   $: prof = data.prof;
 
-  $: pageSize = 10;
+  $: pageSize = 20;
   let isFilterOpen = false;
 
   let filters = Object.keys(schools).map((item) => {
