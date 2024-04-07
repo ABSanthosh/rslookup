@@ -106,14 +106,25 @@
 </div>
 
 <div class="Prof__content">
-  {#each searchResult as result (`${result.name}-${result.role}`)}
-    <span
-      animate:flip={{ duration: 250 }}
-      use:flipAnimate={{ key: `${result.name}-${result.role}` }}
+  {#if searchResult.length === 0}
+    <i
+      class="CrispMessage"
+      data-type="info"
+      data-format="box"
+      style="grid-column: 1 / 3 ;"
     >
-      <ProfCard profResult={result} />
-    </span>
-  {/each}
+      No results found.
+    </i>
+  {:else}
+    {#each searchResult as result (`${result.name}-${result.role}`)}
+      <span
+        animate:flip={{ duration: 250 }}
+        use:flipAnimate={{ key: `${result.name}-${result.role}` }}
+      >
+        <ProfCard profResult={result} />
+      </span>
+    {/each}
+  {/if}
 </div>
 
 <div class="Row--end w-100">
@@ -152,7 +163,7 @@
 
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: minmax(50px, auto) 1fr;
+      // grid-template-rows: minmax(50px, auto) 1fr;
       @include respondAt(800px) {
         grid-template-columns: 1fr;
       }

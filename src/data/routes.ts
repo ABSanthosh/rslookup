@@ -84,8 +84,8 @@ export const HOME_ROUTES = [
     name: "About",
     route: "about",
   },
-  {
-    name: "Team",
-    route: "team",
-  },
+  // {
+  //   name: "Team",
+  //   route: "team",
+  // },
 ] as const;

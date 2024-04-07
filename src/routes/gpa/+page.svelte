@@ -1,3 +1,4 @@
+<!-- TODO: add S/ U grade and change calculations for that -->
 <script lang="ts">
   const SYMBOLS: {
     [key: string]: string;
