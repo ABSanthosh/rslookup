@@ -5,17 +5,19 @@
     padding: 0px 3px 1px 3px;
     border-radius: 3px;
     text-decoration: none;
-    @include make-flex($dir: row);
-    gap: 3px;
+    // @include make-flex($dir: row);
+    // gap: 3px;
     width: fit-content;
 
     color: var(--lightViolet);
     &::after {
       content: "]";
+      margin-left: 2px;
       color: var(--lightViolet);
     }
     &::before {
       content: "[";
+      margin-right: 2px;
       color: var(--lightViolet);
     }
 
