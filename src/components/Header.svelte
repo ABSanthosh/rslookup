@@ -231,7 +231,7 @@
 
       & > input {
         @include box();
-        font-size: 14px;
+        font-size: 16px;
         border-radius: 6px;
         padding: 0 24px 0 30px;
 
