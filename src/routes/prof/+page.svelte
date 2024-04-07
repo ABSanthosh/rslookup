@@ -111,7 +111,7 @@
       class="CrispMessage"
       data-type="info"
       data-format="box"
-      style="grid-column: 1 / 3 ;"
+      style="height: 40px; grid-column: 1 / 3 ;"
     >
       No results found.
     </i>
@@ -163,7 +163,7 @@
 
       display: grid;
       grid-template-columns: 1fr 1fr;
-      // grid-template-rows: minmax(50px, auto) 1fr;
+      grid-template-rows: minmax(50px, auto) 1fr;
       @include respondAt(800px) {
         grid-template-columns: 1fr;
       }
