@@ -59,6 +59,11 @@
   });
 </script>
 
+<svelte:head>
+  <title>Amenities</title>
+  <meta name="description" content="Find all the amenities SNU has to offer" />
+</svelte:head>
+
 <div class="Amenity__header w-100">
   <h2>Amenities</h2>
   <p>

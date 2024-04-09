@@ -5,6 +5,11 @@
   export let data: PageData;
 </script>
 
+<svelte:head>
+  <title>Student</title>
+  <meta name="description" content="Meet the Faces Behind Your Voice: Get to Know the Members of the Student Council!" />
+</svelte:head>
+
 <section class="SC__hero">
   <h2>Who's in Student Council?</h2>
   <p>

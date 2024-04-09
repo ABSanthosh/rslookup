@@ -1,3 +1,9 @@
+
+<svelte:head>
+  <title>About rslookup</title>
+  <meta name="description" content="What is rslookup?" />
+</svelte:head>
+
 <main class="About">
   <div class="About__title">
     <h1>

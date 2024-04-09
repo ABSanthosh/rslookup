@@ -4,6 +4,11 @@
   export let data: PageData;
 </script>
 
+<svelte:head>
+  <title>Documents</title>
+  <meta name="description" content="Essential Resources at Your Fingertips: Access Crucial Documents" />
+</svelte:head>
+
 <section class="Document__hero">
   <h2>Where's My Document?</h2>
   <p>Find all the documents that you need to get through your time at SNU</p>

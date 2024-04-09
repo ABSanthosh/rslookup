@@ -103,6 +103,11 @@
   };
 </script>
 
+<svelte:head>
+  <title>GPA Calculator</title>
+  <meta name="description" content="Estimate your academic growth with ease." />
+</svelte:head>
+
 <div class="GPA__header w-100">
   <h2>GPA Calculator</h2>
   <p>Estimate your academic growth with ease.</p>

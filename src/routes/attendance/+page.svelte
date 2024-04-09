@@ -65,6 +65,11 @@
   };
 </script>
 
+<svelte:head>
+  <title>Attendance Calculator</title>
+  <meta name="description" content="Calculates minimum number of hours required to be attended to reach 75%" />
+</svelte:head>
+
 <div class="Attendance__header w-100">
   <h2>Attendance Calculator</h2>
   <p>Calculates minimum number of hours required to be attended to reach 75%</p>

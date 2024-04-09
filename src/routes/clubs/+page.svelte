@@ -4,6 +4,11 @@
   export let data: PageData;
 </script>
 
+<svelte:head>
+  <title>Clubs</title>
+  <meta name="description" content="Discover Your Campus Crew: Get Acquainted with SN IoE's Club Leaders and Members!" />
+</svelte:head>
+
 <section class="Clubs__hero">
   <h2>What are the clubs?</h2>
   <p>
