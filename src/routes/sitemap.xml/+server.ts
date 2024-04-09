@@ -18,24 +18,59 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
 >
   <url>
-      <loc>${base}/</loc>
-      <lastmod>${lastMod}</lastmod>
-      <priority>1.00</priority>
+    <loc>${base}/</loc>
+    <lastmod>${lastMod}</lastmod>
+    <priority>1.00</priority>
   </url>
   <url>
-      <loc>${base}/prof</loc>
-      <lastmod>${lastMod}</lastmod>
-      <priority>0.80</priority>
+    <loc>${base}/prof</loc>
+    <lastmod>${lastMod}</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
-      <loc>${base}/lab</loc>
-      <lastmod>${lastMod}</lastmod>
-      <priority>0.80</priority>
+    <loc>${base}/lab</loc>
+    <lastmod>${lastMod}</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
-      <loc>${base}/amenity</loc>
-      <lastmod>${lastMod}</lastmod>
-      <priority>0.80</priority>
+    <loc>${base}/amenity</loc>
+    <lastmod>${lastMod}</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>${base}/404</loc>
+    <lastmod>${lastMod}</lastmod>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>${base}/about</loc>
+    <lastmod>${lastMod}</lastmod>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>${base}/acad-helpdesk</loc>
+    <lastmod>${lastMod}</lastmod>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>${base}/attendance</loc>
+    <lastmod>${lastMod}</lastmod>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>${base}/club</loc>
+    <lastmod>${lastMod}</lastmod>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>${base}/documents</loc>
+    <lastmod>${lastMod}</lastmod>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>${base}/student-council</loc>
+    <lastmod>${lastMod}</lastmod>
+    <priority>0.50</priority>
   </url>
 </urlset>`.trim(),
     {
