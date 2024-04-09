@@ -1,20 +1,6 @@
 import { writable } from "svelte/store";
 import { browser } from "$app/environment";
 
-// [
-//   {
-//     title: "Semester 1",
-//     SGPA: 0,
-//     courses: [
-//       {
-//         name: "Course 1",
-//         credits: 1,
-//         grade: "A",
-//       },
-//     ],
-//   },
-// ];
-
 interface IGPA {
   title: string;
   SGPA: number;

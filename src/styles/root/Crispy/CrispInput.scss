@@ -16,6 +16,7 @@
   --crp-input-width: 100%;
   --crp-input-background-color: var(--elevatedBG);
 
+  --crp-input-min-width: 30px;
   --crp-text-area-max-height: 230px;
   --crp-text-area-min-height: 30px;
 
@@ -38,6 +39,7 @@
   border: var(--crp-input-border);
   padding: var(--crp-input-padding);
   transition: border-color 0.3s ease;
+  min-width: var(--crp-input-min-width);
   font-size: var(--crp-input-font-size);
   box-shadow: var(--crp-input-box-shadow);
   border-radius: var(--crp-input-border-radius);

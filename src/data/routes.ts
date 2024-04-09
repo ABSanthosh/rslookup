@@ -77,6 +77,17 @@ export const ROUTES = [
     description:
       "Estimate your academic growth with ease. No more manual calculations.",
   },
+  {
+    icon: 60144,
+    route: "attendance",
+    disabled: false,
+    showSearch: false,
+    name: "Attendance Calculator",
+    title: "What's My Attendance?",
+    background: "linear-gradient(225deg, #CC8820, #B629E1)",
+    description:
+      "Missed a few classes? Calculate your attendance to know where you stand.",
+  },
 ] as const;
 
 export const HOME_ROUTES = [

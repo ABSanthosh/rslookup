@@ -128,7 +128,7 @@
     <a
       class="FancyLink"
       data-type="Bracket"
-      href="https://snulinks.snu.edu.in/snuPolicies/students/UNDERGRADUATE_HANDBOOK_2023-2024.pdf"
+      href="https://snulinks.snu.edu.in/snuPolicies/students/UNDERGRADUATE_HANDBOOK_2023-2024.pdf#page=4"
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -191,7 +191,7 @@
             <button
               class="CrispButton"
               data-icon={String.fromCharCode(58829)}
-              data-close
+              data-type="danger"
               on:click={() => {
                 $GPAStore = $GPAStore.filter((_, i) => i !== index);
               }}
@@ -263,6 +263,7 @@
         </table>
         <button
           class="CrispButton"
+          data-type="danger"
           on:click={() => {
             $GPAStore[index].courses = [
               ...$GPAStore[index].courses,
