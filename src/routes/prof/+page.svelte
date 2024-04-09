@@ -62,7 +62,10 @@
 
 <svelte:head>
   <title>Professors</title>
-  <meta name="description" content="Find essential details about your professors here." />
+  <meta
+    name="description"
+    content="Find essential details about your professors here."
+  />
   <meta
     name="keywords"
     content={`
