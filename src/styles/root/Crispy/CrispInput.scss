@@ -17,13 +17,13 @@
   --crp-input-background-color: var(--elevatedBG);
 
   --crp-text-area-max-height: 230px;
-  --crp-text-area-min-height: 34px;
+  --crp-text-area-min-height: 30px;
 
   --crp-checkbox-background-color: #25cf7a;
 
   &:not([data-type="text-area"]) {
     --crp-input-padding: 8px 12px;
-    --crp-input-height: 32px;
+    --crp-input-height: 30px;
   }
 
   &[data-type="text-area"] {

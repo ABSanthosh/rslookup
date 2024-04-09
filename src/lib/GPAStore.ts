@@ -41,10 +41,6 @@ const defaultValue = [
   },
 ];
 
-// const initialValue = browser
-//   ? window.localStorage.getItem("GPA") ? JSON.parse(window.localStorage.getItem("GPA"))
-//   : defaultValue;
-
 let initialValue = defaultValue;
 
 if (browser && window.localStorage.getItem("GPA")) {
