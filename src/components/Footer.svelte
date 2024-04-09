@@ -8,14 +8,14 @@
   <div class="FooterWrapper__container">
     <div class="FooterWrapper__left">
       <span>
-        Want to contribute? Check out the <a
-          href="https://github.com/ABSanthosh/rslookup"
+        Have any feedback? File it <a
+          href="https://forms.gle/ELq8hJq6m8ZcTrLA8"
           target="_blank"
           rel="noopener noreferrer"
           class="FancyLink"
           data-type="Bracket"
         >
-          Github repo
+          here
         </a>
       </span>
     </div>
@@ -25,7 +25,7 @@
         <a
           class="FancyLink"
           data-type="Bracket"
-          href="https://santhosh.is-a.dev"
+          href="https://abs.moe"
           target="_blank"
           rel="noopener noreferrer"
         >
