@@ -60,6 +60,30 @@
   });
 </script>
 
+<svelte:head>
+  <title>Professors</title>
+  <meta name="description" content="Find essential details about your professors here." />
+  <meta
+    name="keywords"
+    content={`
+    professors, 
+    teachers, 
+    educators, 
+    snu, 
+    snioe, 
+    Shiv Nadar University, 
+    room number,
+    room no.,
+    snu.edu.in,
+    ${prof.map((item) => item.name).join(", ")},
+    ${prof.map((item) => item.school).join(", ")},
+    ${prof.map((item) => item.mail).join(", ")}
+    `}
+  />
+  <meta name="author" content="Santhosh" />
+  <meta name="robots" content="index, follow" />
+</svelte:head>
+
 <div class="Prof__header Row--between w-100">
   <h2>Where's My Prof?</h2>
   <details

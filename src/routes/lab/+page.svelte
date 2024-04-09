@@ -52,6 +52,26 @@
   });
 </script>
 
+<svelte:head>
+  <title>SNU Labs</title>
+  <meta name="description" content="Find your lab in SNU" />
+  <meta
+    name="keywords"
+    content={`
+    professors, 
+    teachers, 
+    educators, 
+    snu, 
+    snioe, 
+    Shiv Nadar University, 
+    room number,
+    room no.,
+    snu.edu.in,
+    ${labs.map((lab) => lab.name).join(", ")}
+    `}
+  />
+</svelte:head>
+
 <div class="Lab__header Row--between w-100">
   <h2>Where's My Lab?</h2>
   <details

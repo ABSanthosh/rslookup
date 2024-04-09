@@ -28,12 +28,6 @@
   });
 </script>
 
-<svelte:head>
-  <title>
-    rslookup {currentPage !== undefined ? `| ${currentPage?.name}` : ""}
-  </title>
-</svelte:head>
-
 <header class="Header">
   <div class="Header__left">
     <a
