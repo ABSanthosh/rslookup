@@ -71,11 +71,11 @@ export const ROUTES = [
     route: "gpa",
     disabled: false,
     showSearch: false,
-    name: "GPA Calculator (Beta)",
+    name: "GPA Calculator",
     title: "What's My GPA?",
     background: "linear-gradient(90deg, #F24790, #984950)",
     description:
-      "Estimate your academic growth with ease. No more manual calculations. (Not tested yet. Might not work as expected)",
+      "Estimate your academic growth with ease. No more manual calculations.",
   },
 ] as const;
 

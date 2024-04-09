@@ -1,5 +1,6 @@
-<!-- TODO: add S/ U grade and change calculations for that -->
 <script lang="ts">
+  import { GPAStore } from "$lib/GPAStore";
+
   const SYMBOLS: {
     [key: string]: string;
   } = {
@@ -23,6 +24,8 @@
   const GRADES: {
     [key: string]: number;
   } = {
+    S: 0,
+    U: 0,
     A: 10,
     "A*": 9.5,
     "A-": 9,
@@ -45,54 +48,54 @@
   $: currentCGPA = 0;
   $: creditsDone = 0;
   $: cumulative = 0.0;
-  $: semesters = [
-    {
-      title: "Semester 1",
-      SGPA: 0,
-      courses: [
-        {
-          name: "Course 1",
-          credits: 0,
-          grade: "A",
-        },
-      ],
-    },
-  ];
+  // $: semesters = $GPAStore;
 
-  $: semesters.map((item) => item.courses),
-    semesters.forEach((_, i) => calcSGPA(i));
+  $: $GPAStore.map((item) => item.courses),
+    $GPAStore.forEach((_, i) => calcSGPA(i));
 
   const calcSGPA = (index: number) => {
     // if any course has no credits, set SGPA to 0
-    if (semesters[index].courses.some((course) => !course.credits)) {
-      semesters[index].SGPA = 0;
+    if ($GPAStore[index].courses.some((course) => !course.credits)) {
+      $GPAStore[index].SGPA = 0;
       return;
     }
 
     // sgpa = sum(credits * grade) / sum(credits)
-    const semester = semesters[index];
+    const semester = $GPAStore[index];
     const { courses } = semester;
-    const totalCredits = courses.reduce((acc, curr) => acc + curr.credits, 0);
-    const totalGrade = courses.reduce(
-      (acc, curr) => acc + curr.credits * GRADES[curr.grade],
-      0
-    );
-    semesters[index].SGPA = Math.round((totalGrade / totalCredits) * 100) / 100;
+    const totalCredits = courses.reduce((acc, curr) => {
+      if (curr.grade === "S" || curr.grade === "U") return 0;
+      return acc + curr.credits;
+    }, 0);
+    const totalGrade = courses.reduce((acc, curr) => {
+      if (curr.grade === "S" || curr.grade === "U") return 0;
+      return acc + curr.credits * GRADES[curr.grade];
+    }, 0);
+    $GPAStore[index].SGPA = Math.round((totalGrade / totalCredits) * 100) / 100;
 
     // calculate CGPA
     // cgpa = (currentCGPA * creditsDone) + sum((sgpa * semester credits)) / sum(semester credits) + creditsDone
     cumulative = parseFloat(
       (
         (currentCGPA * creditsDone +
-          semesters.reduce(
+          $GPAStore.reduce(
             (acc, curr) =>
-              acc + curr.SGPA * curr.courses.reduce((a, c) => a + c.credits, 0),
+              acc +
+              curr.SGPA *
+                curr.courses.reduce((a, c) => {
+                  if (c.grade === "S" || c.grade === "U") return 0;
+                  return a + c.credits;
+                }, 0),
             0
           )) /
         (creditsDone +
-          semesters.reduce(
+          $GPAStore.reduce(
             (acc, curr) =>
-              acc + curr.courses.reduce((a, c) => a + c.credits, 0),
+              acc +
+              curr.courses.reduce((a, c) => {
+                if (c.grade === "S" || c.grade === "U") return 0;
+                return a + c.credits;
+              }, 0),
             0
           ))
       ).toFixed(2)
@@ -105,6 +108,35 @@
   <p>Estimate your academic growth with ease.</p>
 </div>
 
+<main class="GPA__info w-100">
+  <h2>Credit System</h2>
+  <p>
+    Each Course offered will carry credits which are calculated on the basis of
+    the number of contact hours per week for a course that runs the whole
+    semester. The listing of the credits will be given as L:T:P, where L is the
+    number of Lecture Classes, T is the number of Tutorial Classes; and P is the
+    number of Lab Sessions. A typical Lab Session is usually between 2 and 3
+    hours' duration.
+    <br />
+    <br />
+    For example, a course with 3:1:1 credits is a 5 credit course where the student
+    shall attend 3 lectures, 1 tutorial and 1 lab session every week for the whole
+    semester.
+    <br />
+    <br />
+
+    <a
+      class="FancyLink"
+      data-type="Bracket"
+      href="https://snulinks.snu.edu.in/snuPolicies/students/UNDERGRADUATE_HANDBOOK_2023-2024.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Ref: UG Handbook - pg. 4
+    </a>
+  </p>
+</main>
+
 <main class="GPA__bottom w-100">
   <aside class="GPA__result w-100">
     <h3>Your GPA</h3>
@@ -112,7 +144,7 @@
       <h4>Cumulative</h4>
       <h4>{cumulative}</h4>
     </div>
-    {#each semesters as item, i}
+    {#each $GPAStore as item, i}
       <div class="GPA__result--item">
         <p>{item.title || `Semester ${i + 1}`}</p>
         <p>{item.SGPA}</p>
@@ -146,22 +178,22 @@
     </div>
   </aside>
   <div class="GPA__content w-100">
-    {#each semesters as sem, index}
+    {#each $GPAStore as sem, index}
       <section class="GPA__semester">
         <div class="GPA__semester--top Row--between">
           <input
             class="CrispInput"
             type="text"
             placeholder="Semester Name"
-            bind:value={semesters[index].title}
+            bind:value={$GPAStore[index].title}
           />
-          {#if semesters.length > 1}
+          {#if $GPAStore.length > 1}
             <button
               class="CrispButton"
               data-icon={String.fromCharCode(58829)}
               data-close
               on:click={() => {
-                semesters = semesters.filter((_, i) => i !== index);
+                $GPAStore = $GPAStore.filter((_, i) => i !== index);
               }}
             />
           {/if}
@@ -177,7 +209,9 @@
           </thead>
           <tbody>
             {#each sem.courses as course, i}
-              <tr>
+              <tr
+                style="border-bottom: 1px solid var(--border); padding-bottom: 10px"
+              >
                 <td data-label="Course">
                   <input
                     class="CrispInput"
@@ -213,11 +247,11 @@
                 <td>
                   <button
                     class="CrispButton"
-                    disabled={semesters[index].courses.length === 1}
+                    disabled={$GPAStore[index].courses.length === 1}
                     data-icon={String.fromCharCode(58829)}
                     data-type="danger"
                     on:click={() => {
-                      semesters[index].courses = semesters[
+                      $GPAStore[index].courses = $GPAStore[
                         index
                       ].courses.filter((_, j) => j !== i);
                     }}
@@ -230,11 +264,11 @@
         <button
           class="CrispButton"
           on:click={() => {
-            semesters[index].courses = [
-              ...semesters[index].courses,
+            $GPAStore[index].courses = [
+              ...$GPAStore[index].courses,
               {
                 name: "",
-                credits: 0,
+                credits: 1,
                 grade: "A",
               },
             ];
@@ -246,14 +280,14 @@
     {/each}
     <button
       class="CrispButton"
-      disabled={semesters.length >= 10}
+      disabled={$GPAStore.length >= 10}
       on:click={() => {
-        if (semesters.length >= 10) return;
-        semesters = [
-          ...semesters,
+        if ($GPAStore.length >= 10) return;
+        $GPAStore = [
+          ...$GPAStore,
           {
-            title: semesters.length
-              ? `Semester ${semesters.length + 1}`
+            title: $GPAStore.length
+              ? `Semester ${$GPAStore.length + 1}`
               : "Semester 1",
             SGPA: 0,
             courses: [
@@ -273,33 +307,6 @@
 </main>
 
 <main class="GPA__info w-100">
-  <h2>Credit System</h2>
-  <p>
-    Each Course offered will carry credits which are calculated on the basis of
-    the number of contact hours per week for a course that runs the whole
-    semester. The listing of the credits will be given as L:T:P, where L is the
-    number of Lecture Classes, T is the number of Tutorial Classes; and P is the
-    number of Lab Sessions. A typical Lab Session is usually between 2 and 3
-    hours' duration.
-    <br />
-    <br />
-    For example, a course with 3:1:1 credits is a 5 credit course where the student
-    shall attend 3 lectures, 1 tutorial and 1 lab session every week for the whole
-    semester.
-    <br />
-    <br />
-
-    <a
-      class="FancyLink"
-      data-type="Bracket"
-      href="https://snulinks.snu.edu.in/snuPolicies/students/UNDERGRADUATE_HANDBOOK_2023-2024.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Ref: UG Handbook - pg. 4
-    </a>
-  </p>
-
   <div class="GPA__info--wrapper">
     <details open>
       <summary>Credits that contribute to CGPA</summary>
@@ -435,10 +442,10 @@
       @include make-flex($align: flex-start);
       border: 1px solid var(--border);
       &--top {
-        @include box($height: 35px);
+        @include box($height: auto);
 
         & > input {
-          @include box(auto);
+          width: auto;
           border-radius: 4px;
           background-color: var(--elevatedBG);
         }
@@ -549,7 +556,7 @@
 
     &__info {
       gap: 14px;
-      margin-top: 45px;
+      // margin-top: 45px;
       @include make-flex($align: flex-start);
 
       & > p {
@@ -602,7 +609,8 @@
       &--wrapper {
         gap: 10px;
         display: grid;
-        @include box();
+        // @include box();
+        width: 100%;
 
         // grid-template-columns: 1fr 1fr;
 
