@@ -258,7 +258,7 @@
 
       max-width: 100%;
       overflow-x: hidden;
-      
+
       @include respondAt(800px) {
         grid-template-columns: 1fr;
         @include make-flex();

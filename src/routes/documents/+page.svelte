@@ -6,7 +6,10 @@
 
 <svelte:head>
   <title>Documents</title>
-  <meta name="description" content="Essential Resources at Your Fingertips: Access Crucial Documents" />
+  <meta
+    name="description"
+    content="Essential Resources at Your Fingertips: Access Crucial Documents"
+  />
 </svelte:head>
 
 <section class="Document__hero">

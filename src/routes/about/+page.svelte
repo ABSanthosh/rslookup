@@ -1,4 +1,3 @@
-
 <svelte:head>
   <title>About rslookup</title>
   <meta name="description" content="What is rslookup?" />
