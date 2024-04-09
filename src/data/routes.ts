@@ -45,15 +45,15 @@ export const ROUTES = [
       "Meet the Faces Behind Your Voice: Get to Know the Members of the Student Council!",
   },
   {
-    icon: 59526,
-    route: "clubs",
+    icon: 62874,
+    route: "acad-helpdesk",
     disabled: false,
     showSearch: false,
-    name: "Clubs",
-    title: "What are the clubs?",
-    background: "linear-gradient(225deg, #5AA63C, #ADD354)",
+    name: "Academic Helpdesk",
+    title: "Who's in Academic POCs?",
+    background: "linear-gradient(45deg, #E78888, #1C3AE2)",
     description:
-      "Discover the Heartbeat of Campus Life: Explore All University Clubs and Their Core Members at a Glance!",
+      "Find all the Academic POCs in one place. Get your academic queries resolved in no time.",
   },
   {
     icon: 59507,
@@ -64,7 +64,18 @@ export const ROUTES = [
     title: "Where's My Document?",
     background: "linear-gradient(225deg, #3ABA33, #4CDFA5)",
     description:
-      "Essential Resources at Your Fingertips: Access Crucial Documents ",
+      "Essential Resources at Your Fingertips: Access Crucial Documents",
+  },
+  {
+    icon: 59526,
+    route: "clubs",
+    disabled: false,
+    showSearch: false,
+    name: "Clubs",
+    title: "What are the clubs?",
+    background: "linear-gradient(225deg, #5AA63C, #ADD354)",
+    description:
+      "Discover the Heartbeat of Campus Life: Explore All University Clubs and Their Core Members at a Glance!",
   },
   {
     icon: 59999,

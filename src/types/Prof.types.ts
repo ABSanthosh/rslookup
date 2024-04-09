@@ -8,6 +8,7 @@ export interface ProfItem {
   department: string;
   img: string;
   mail: string;
+  phone?: string;
   timesheet: string;
   gImage: string;
 }

@@ -9,8 +9,18 @@
 
   export let profResult = $$props as ProfItem;
 
-  let { name, role, room, website, school, department, img, mail, timesheet } =
-    profResult;
+  let {
+    name,
+    role,
+    room,
+    website,
+    school,
+    phone,
+    department,
+    img,
+    mail,
+    timesheet,
+  } = profResult;
 
   let profile = name
     .match(/(\b\S)?/g)!
@@ -79,10 +89,12 @@
           </p>
         </div>
         <div class="Col--center w-100 gap-15">
-          <SchoolChip
-            label={school}
-            color={profColors[schools[school]?.color] || profColors.gray}
-          />
+          {#if school !== "" && school !== "-"}
+            <SchoolChip
+              label={school}
+              color={profColors[schools[school]?.color] || profColors.gray}
+            />
+          {/if}
           {#if department !== "" && department !== "-"}
             <SubChip
               label={department}
@@ -166,20 +178,40 @@
       />
     {/if}
   </div>
-  <div class="ProfCard__middle">
-    <SchoolChip
-      label={school}
-      color={profColors[schools[school]?.color] || profColors.gray}
-    />
-    {#if department !== "" && department !== "-"}
-      <SubChip
-        label={department}
-        color={profColors[schools[school]?.color] || profColors.gray}
-      />
-    {/if}
-  </div>
+  {#if school !== "" && school !== "-" && department !== "" && department !== "-"}
+    <div class="ProfCard__middle">
+      {#if school !== "" && school !== "-"}
+        <SchoolChip
+          label={school}
+          color={profColors[schools[school]?.color] || profColors.gray}
+        />
+      {/if}
+      {#if department !== "" && department !== "-"}
+        <SubChip
+          label={department}
+          color={profColors[schools[school]?.color] || profColors.gray}
+        />
+      {/if}
+    </div>
+  {/if}
+
   <div class="ProfCard__bottom">
     <div class="ProfCard__contact">
+      {#if phone !== undefined && phone !== ""}
+        <a
+          href={`#`}
+          data-icon={String.fromCharCode(57520)}
+          on:keydown={async () => await copyToClipboard(phone)}
+          on:keyup={async () => await copyToClipboard(phone)}
+          on:keypress={async () => await copyToClipboard(phone)}
+          on:click={async () => await copyToClipboard(phone)}
+          title="Click to copy extension"
+        >
+          <span>
+            Extension: {phone}
+          </span>
+        </a>
+      {/if}
       <a
         href={`#`}
         data-icon={String.fromCharCode(57688)}
@@ -286,7 +318,7 @@
 
     &__contact {
       min-width: 0;
-      gap: 2px;
+      gap: 5px;
       font-size: 14px;
       color: var(--subText);
       @include box(100%, auto);
