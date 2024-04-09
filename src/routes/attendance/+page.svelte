@@ -369,7 +369,6 @@
 
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      grid-auto-rows: auto;
 
       @include respondAt(370px) {
         grid-template-columns: 1fr;
