@@ -31,12 +31,24 @@
         <p>{club.description}</p>
       </div>
       <div class="Club__members">
-        <img
+        {@html `
+          <img
+            src=${
+              club.image === ""
+                ? "https://generated.vusercontent.net/placeholder.svg"
+                : club.image
+            }
+            alt=${club.name}
+            onerror="this.src='https://generated.vusercontent.net/placeholder.svg'" 
+            // loading="lazy" 
+          />
+        `}
+        <!-- <img
           src={club.image === ""
             ? "https://generated.vusercontent.net/placeholder.svg"
             : club.image}
           alt={club.name}
-        />
+        /> -->
         <ul>
           {#each club.roles as member}
             <li>
@@ -139,12 +151,12 @@
             flex-direction: column;
           }
 
-          & > img {
+          :global(img) {
             @include box(50%, 50%);
             max-width: 305px;
             border-radius: 10px;
             aspect-ratio: 1/1;
-            object-fit: cover;
+            object-fit: contain; // TODO: change to cover after making proper images
             object-position: center;
             border: 2px solid var(--border);
           }

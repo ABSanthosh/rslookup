@@ -86,11 +86,11 @@ export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
   ]);
 
   return {
+    Hostel: HostelData,
     Academics: AcademicsData,
     Admin: AdminData,
     Essentials: EssentialsData,
     Food: FoodData,
-    Hostel: HostelData,
     Sports: SportsData,
   };
 };

@@ -301,7 +301,6 @@
 
 <style lang="scss">
   .AttendanceCard {
-    // @include box();
     padding: 15px 15px 20px 15px;
     border-radius: 15px;
     background: var(--ProfCardBG);
@@ -318,8 +317,6 @@
       th,
       td {
         padding: 5px;
-        // border-bottom: 1px solid var(--border);
-        // text-align: center;
       }
 
       th {

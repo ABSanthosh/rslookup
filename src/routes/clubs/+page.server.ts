@@ -5,6 +5,7 @@ import {
 } from "$env/static/public";
 import type { IClub, IClubCore } from "$types/Club.types";
 import { convertTSVtoJSON } from "$utils/ToJson";
+import getImageSrc from "$utils/getImageSrc";
 import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
@@ -47,7 +48,7 @@ export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
   return {
     clubs: clubsData.map((club) => ({
       name: club.club,
-      image: club.image,
+      image: getImageSrc(club.image),
       description: club.description,
       email: club.email,
       roles: clubCoreData

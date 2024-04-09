@@ -57,6 +57,10 @@
       if (type === "phone") await copyToClipboard((data as IEssentials).phone);
       if (type === "mail") await copyToClipboard((data as IEssentials).mail);
     }
+    if (dataType === "Hostel") {
+      if (type === "phone") await copyToClipboard((data as IHostel).phone);
+      if (type === "mail") await copyToClipboard((data as IHostel).mail);
+    }
   }
 </script>
 
@@ -68,22 +72,22 @@
     </div>
     <div class="AmenityCard__contact">
       <span data-icon={String.fromCharCode(57688)}>
-        <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-        <p
+        <a
+          href={"#"}
           on:keypress={async () => await copy(type, "mail")}
           on:click={async () => await copy(type, "mail")}
         >
           {data.mail === "" ? "N/A" : data.mail}
-        </p>
+        </a>
       </span>
       <span data-icon={String.fromCharCode(57520)}>
-        <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-        <p
+        <a
+          href={"#"}
           on:click={async () => await copy(type, "phone")}
           on:keypress={async () => await copy(type, "phone")}
         >
           {data.phone === "" ? "N/A" : data.phone}
-        </p>
+        </a>
       </span>
     </div>
   </div>

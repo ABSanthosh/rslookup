@@ -10,6 +10,12 @@
   let isFilterOpen = false;
   let filters = [
     {
+      name: "Hostel",
+      checked: true,
+      icon: 58682,
+      data: data.Hostel,
+    },
+    {
       name: "Academics",
       checked: true,
       icon: 59404,
@@ -32,12 +38,6 @@
       checked: true,
       icon: 58732,
       data: data.Food,
-    },
-    {
-      name: "Hostel",
-      checked: true,
-      icon: 58682,
-      data: data.Hostel,
     },
     {
       name: "Sports",
