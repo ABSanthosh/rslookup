@@ -5,6 +5,15 @@
   // git config core.fileMode false
 </script>
 
+<svelte:head>
+  <title>rslookup | SNU</title>
+  <meta
+    name="description"
+    content="Simplify your college experience by effortlessly accessing professor info,
+  lab locations, campus amenities, and much more!"
+  />
+</svelte:head>
+
 <section class="Section Hero">
   <div class="Hero__left">
     <h1>rslookup</h1>
