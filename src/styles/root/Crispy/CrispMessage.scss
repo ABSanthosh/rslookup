@@ -1,9 +1,9 @@
 .CrispMessage {
   &[data-type="error"] {
-    --crp-message-list-color: #ff605c;
-    --crp-message-list-icon: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZjYwNWMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS10cmlhbmdsZS1hbGVydCI+PHBhdGggZD0ibTIxLjczIDE4LTgtMTRhMiAyIDAgMCAwLTMuNDggMGwtOCAxNEEyIDIgMCAwIDAgNCAyMWgxNmEyIDIgMCAwIDAgMS43My0zIi8+PHBhdGggZD0iTTEyIDl2NCIvPjxwYXRoIGQ9Ik0xMiAxN2guMDEiLz48L3N2Zz4=");
-    --crp-message-border-color: #ff605c;
-    --crp-message-background-color: #ffe6e6;
+    --crp-message-icon: "\e002";
+    --crp-message-color: var(--crp-message-color-error);
+    --crp-message-border-color: var(--crp-message-border-color-error);
+    --crp-message-background-color: var(--crp-message-background-color-error);
   }
 
   &[data-no-icon] {
@@ -13,10 +13,10 @@
   }
 
   &[data-type="info"] {
-    --crp-message-list-color: #005197;
-    --crp-message-list-icon: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDUxOTciIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jaXJjbGUtYWxlcnQiPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjEwIi8+PGxpbmUgeDE9IjEyIiB4Mj0iMTIiIHkxPSI4IiB5Mj0iMTIiLz48bGluZSB4MT0iMTIiIHgyPSIxMi4wMSIgeTE9IjE2IiB5Mj0iMTYiLz48L3N2Zz4=");
-    --crp-message-border-color: #005197;
-    --crp-message-background-color: #e3f0ff;
+    --crp-message-icon: "\e88e";
+    --crp-message-color: var(--crp-message-color-info);
+    --crp-message-border-color: var(--crp-message-border-color-info);
+    --crp-message-background-color: var(--crp-message-background-color-info);
   }
 
   &[data-format="box"] {
@@ -31,19 +31,14 @@
 
   gap: 8px;
   @include box($height: auto);
-  color: var(--crp-message-list-color);
+  color: var(--crp-message-color);
   @include make-flex($dir: row, $just: flex-start, $align: flex-start);
   line-height: 20px;
 
   &::before {
-    content: "";
-    width: 16px;
-    height: 20px;
-    flex-shrink: 0;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: var(--crp-message-list-icon);
+    content: var(--crp-message-icon);
+    color: var(--crp-message-color);
+    font: normal normal normal 20px/1 "Icons";
   }
 }
 

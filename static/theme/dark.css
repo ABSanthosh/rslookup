@@ -49,6 +49,14 @@
   --pane-bg: #1f2328;
   --pane-backdrop-background: rgba(0, 0, 0, 0.5);
 
+  --crp-message-color-error: #ff605c;
+  --crp-message-border-color-error: #ff605c;
+  --crp-message-background-color-error: #ffe6e6;
+
+  --crp-message-color-info: var(--foreground);
+  --crp-message-border-color-info: var(--bluePrimary);
+  --crp-message-background-color-info: #303849;
+
   /* Chip Colors */
   --bluePrimary: #6b91fb;
   --blueSecondary: #303849;
