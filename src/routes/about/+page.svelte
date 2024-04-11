@@ -89,6 +89,7 @@
           text-decoration: none;
           color: var(--foreground);
           font-family: "Fraunces", serif;
+          font-variation-settings: "SOFT" 80, "WONK" 0;
         }
       }
 

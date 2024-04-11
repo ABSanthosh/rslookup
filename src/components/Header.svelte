@@ -178,7 +178,7 @@
         color: var(--foreground);
         font-family: "Fraunces", serif;
         font-optical-sizing: auto;
-        font-variation-settings: "SOFT" 100, "WONK" 0;
+        font-variation-settings: "SOFT" 80, "WONK" 0;
 
         &::before {
           left: 0;

@@ -132,11 +132,16 @@
   </details>
 </div>
 
+<i class="CrispMessage" data-type="info" data-format="box">
+  Data is not updated in realtime. If you find any discrepancies, please fill
+  the form in the footer.
+</i>
+
 <div class="Prof__content">
   {#if searchResult.length === 0}
     <i
       class="CrispMessage"
-      data-type="info"
+      data-type="error"
       data-format="box"
       style="height: 40px; grid-column: 1 / 3 ;"
     >
