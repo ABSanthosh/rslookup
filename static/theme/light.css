@@ -54,6 +54,9 @@
   --crp-message-border-color-info: #005197;
   --crp-message-background-color-info: #e3f0ff;
 
+  --crp-tab-background-color: #f4f4f5;
+  --crp-tab-item-background-color: #ffffff;
+
   /* Chip Colors */
   --bluePrimary: #6b91fb;
   --blueSecondary: #edf2fe;

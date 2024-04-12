@@ -1,7 +1,7 @@
 import {
   PUBLIC_DATA_SOURCE_BASE,
-  PUBLIC_DATA_SOURCE_CLUBS,
-  PUBLIC_DATA_SOURCE_CLUB_CORE,
+  PUBLIC_DATA_SOURCE_CLUB_TECHNICAL,
+  PUBLIC_DATA_SOURCE_CLUB_TECHNICAL_CORE,
 } from "$env/static/public";
 import type { IClub, IClubCore } from "$types/Club.types";
 import { convertTSVtoJSON } from "$utils/ToJson";
@@ -15,8 +15,10 @@ export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
   });
 
   const [clubs, clubCore] = await Promise.all([
-    fetch(`${PUBLIC_DATA_SOURCE_BASE}${PUBLIC_DATA_SOURCE_CLUBS}`),
-    fetch(`${PUBLIC_DATA_SOURCE_BASE}${PUBLIC_DATA_SOURCE_CLUB_CORE}`),
+    fetch(`${PUBLIC_DATA_SOURCE_BASE}${PUBLIC_DATA_SOURCE_CLUB_TECHNICAL}`),
+    fetch(
+      `${PUBLIC_DATA_SOURCE_BASE}${PUBLIC_DATA_SOURCE_CLUB_TECHNICAL_CORE}`
+    ),
   ]);
 
   const [clubsData, clubCoreData] = await Promise.all([
@@ -28,22 +30,7 @@ export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
       : [],
   ]);
 
-  /**
-   * make the data to this format
-   * {
-   *  [
-   *     name: club name,
-   *     image: club image,
-   *     description: club description,
-   *     roles: [
-   *      {
-   *        position: role position,
-   *        name: role name
-   *      }
-   *     ]
-   *  ]
-   * }
-   */
+  console.log(clubsData)
 
   return {
     clubs: clubsData.map((club) => ({

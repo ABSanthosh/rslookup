@@ -12,14 +12,6 @@
   />
 </svelte:head>
 
-<section class="Clubs__hero">
-  <h2>What are the clubs?</h2>
-  <p>
-    Discover Your Campus Crew: Get Acquainted with SNIoE's Club Leaders and
-    Members!
-  </p>
-</section>
-
 <ul class="Clubs__content">
   {#each data.clubs as club, index}
     <li class="Club">
@@ -77,25 +69,6 @@
 
 <style lang="scss">
   .Clubs {
-    &__hero {
-      @include make-flex($just: flex-start, $align: flex-start);
-      margin: 40px 0 30px 0;
-      gap: 10px;
-      width: 100%;
-
-      & > h2 {
-        font-size: 40px;
-        font-weight: 900;
-        color: var(--foreground);
-      }
-
-      & > p {
-        font-size: 20px;
-        font-weight: 400;
-        color: var(--subText);
-      }
-    }
-
     &__content {
       gap: 30px;
       @include make-flex();
@@ -149,7 +122,11 @@
         &__members {
           gap: 100px;
           width: 100%;
-          @include make-flex($dir: row, $just: space-between);
+          @include make-flex(
+            $dir: row,
+            $just: space-between,
+            $align: flex-start
+          );
 
           @include respondAt(830px) {
             gap: 30px;

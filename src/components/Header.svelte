@@ -19,7 +19,7 @@
     $page.url.pathname
   );
 
-  let isDetailsOpen = true;
+  let isDetailsOpen = false;
   let searchInput: HTMLInputElement;
 
   afterNavigate(() => {
