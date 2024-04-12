@@ -1,4 +1,4 @@
-export interface IDocuments {
+export interface IDocument {
   ID: string;
   category: string;
   name: string;

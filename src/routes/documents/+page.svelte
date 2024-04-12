@@ -17,85 +17,40 @@
   <p>Find all the documents that you need to get through your time at SNU</p>
 </section>
 
-<ul class="Document__content">
-  {#each data.documents as document}
-    <li class="Document__content--item">
-      <a href={document.link} target="_blank" rel="noopener noreferrer">
-        {#if document.type === "pdf"}
-          <img src="assets/images/icon_pdf.png" alt={document.type} />
-        {:else if document.type === "sheet"}
-          <img src="assets/images/icon_sheet.png" alt={document.type} />
-        {:else if document.type === "doc"}
-          <img src="assets/images/icon_doc.png" alt={document.type} />
-        {:else}
-          <img src="assets/images/icon_default.png" alt={document.type} />
-        {/if}
-        <div class="gap-5 w-100">
-          <h3 class="title">{document.name}</h3>
-          <p class="subText">{document.category}</p>
-        </div>
-      </a>
-    </li>
-  {/each}
-</ul>
-
-<section class="Document__section">
-  <h2>
-    Minutes of Meeting
-    <hr />
-  </h2>
-  <ul class="Document__content">
-    {#each data.mom as document}
-      <li class="Document__content--item">
-        <a href={document.link} target="_blank" rel="noopener noreferrer">
-          {#if document.type === "pdf"}
-            <img src="assets/images/icon_pdf.png" alt={document.type} />
-          {:else if document.type === "sheet"}
-            <img src="assets/images/icon_sheet.png" alt={document.type} />
-          {:else if document.type === "doc"}
-            <img src="assets/images/icon_doc.png" alt={document.type} />
-          {:else}
-            <img src="assets/images/icon_default.png" alt={document.type} />
-          {/if}
-          <div class="gap-5 w-100">
-            <h3 class="title">{document.name}</h3>
-            <p class="subText">{document.category}</p>
-          </div>
-        </a>
-      </li>
-    {/each}
-  </ul>
-</section>
-
-<section class="Document__section">
-  <h2>
-    Newsletter
-    <hr />
-  </h2>
-  <ul class="Document__content">
-    {#each data.newsletter as document}
-      <li class="Document__content--item">
-        <a href={document.link} target="_blank" rel="noopener noreferrer">
-          {#if document.type === "pdf"}
-            <img src="assets/images/icon_pdf.png" alt={document.type} />
-          {:else if document.type === "sheet"}
-            <img src="assets/images/icon_sheet.png" alt={document.type} />
-          {:else if document.type === "doc"}
-            <img src="assets/images/icon_doc.png" alt={document.type} />
-          {:else if document.type === "newsletter"}
-            <img src="assets/images/icon_newsletter.png" alt={document.type} />
-          {:else}
-            <img src="assets/images/icon_default.png" alt={document.type} />
-          {/if}
-          <div class="gap-5 w-100">
-            <h3 class="title">{document.name}</h3>
-            <p class="subText">{document.category}</p>
-          </div>
-        </a>
-      </li>
-    {/each}
-  </ul>
-</section>
+{#each Object.keys(data.documents) as item}
+  <section class="Document__section">
+    <h2>
+      {item}
+      <hr />
+    </h2>
+    <ul class="Document__content">
+      {#each data.documents[item] as document}
+        <li class="Document__content--item">
+          <a href={document.link} target="_blank" rel="noopener noreferrer">
+            {#if document.type === "pdf"}
+              <img src="assets/images/icon_pdf.png" alt={document.type} />
+            {:else if document.type === "sheet"}
+              <img src="assets/images/icon_sheet.png" alt={document.type} />
+            {:else if document.type === "doc"}
+              <img src="assets/images/icon_doc.png" alt={document.type} />
+            {:else if document.type === "newsletter"}
+              <img
+                src="assets/images/icon_newsletter.png"
+                alt={document.type}
+              />
+            {:else}
+              <img src="assets/images/icon_default.png" alt={document.type} />
+            {/if}
+            <div class="gap-5 w-100">
+              <h3 class="title">{document.name}</h3>
+              <p class="subText">{document.category}</p>
+            </div>
+          </a>
+        </li>
+      {/each}
+    </ul>
+  </section>
+{/each}
 
 <style lang="scss">
   .Document {
@@ -195,7 +150,7 @@
 
     &__section {
       @include box();
-      padding-top: 80px;
+      padding-top: 40px;
       @include make-flex($just: flex-start);
 
       @include respondAt(680px) {
