@@ -21,32 +21,55 @@
       </a>
     </span>
   </div>
-  <div class="Row--center">
-    <figure class="CrispFigure">
-      <img src="image/about_meme.png" alt="Silly meme" />
-      <figcaption>Silly meme</figcaption>
-    </figure>
+  <div class="About__LogoBox">
+    <img
+      alt="hero neko gif"
+      class="About__LogoBox--neko"
+      src="/assets/images/neko.gif"
+    />
+    <span data-icon={String.fromCharCode(58829)} />
+    <img
+      alt="Student Council"
+      class="About__LogoBox--sc"
+      src="assets/images/student_council.jpg"
+    />
   </div>
+
   <div class="About__desc">
+    <h3>
+      <hr />
+      rslookup
+      <hr />
+    </h3>
     <p>
-      This meme pretty much sums up the project. I had a problem, I solved it,
-      and I want to share it with everyone else.
+      I've been in SNU campus for 2 years now and I've always had to ask around
+      for many things that should've been easily accessible. For example, I had
+      to run rush through all floors of all 4 academic buildings to find a
+      professor's room before his office hours ended(I did not find it in time).
+      Sometimes professors add their room number in the course handout, but not
+      always.
     </p>
+    <p>
+      Similarly, I had to ask around for Mahesh's phone number or till when they
+      deliver food. Although its not a big deal, it would've been nice to have
+      everything in one place. So I decided to make this website to solve these
+      problems for me and for others.
+    </p>
+
+    <div class="Row--center">
+      <figure class="CrispFigure">
+        <img src="assets/images/about_meme.png" alt="Silly meme" />
+        <figcaption>Silly meme</figcaption>
+      </figure>
+    </div>
 
     <p>
       Now for the validity of the data in the website is accurate to some
       extent. Initially, I, along with 2 of my friends, went to each and every
       room in each academic building and noted down the professor's name and
-      room number. Later, I wrote some quick scripts to scrape snu website to
-      get all the professor photos. If you noted, on the SNU website,
+      room number. Later, I wrote some quick scripts to scrape SNU website to
+      get all the professor photos.
     </p>
-    <ul>
-      <li>
-        Search feature is very bad: We have fast and fuzzy search so you don't
-        even have to know the proper name of the professor.
-      </li>
-      <li>Almost half of the professors don't have their room number.</li>
-    </ul>
 
     <p>
       Another thing I had to ask around was the details of amenities in the
@@ -55,13 +78,19 @@
       till when they deliver food. So I had to ask around for these details.
       These are the problems I hope to solve.
     </p>
+  </div>
 
+  <div class="About__desc">
+    <h3>
+      <hr />
+      Student Council
+      <hr />
+    </h3>
     <p>
-      To keep the data professor updated, I'm working with Student council,
-      especially Acad Affairs Secretary. But this isn't sustainable enough in
-      the long run. So my goal is to make this a community-driven data hub. In
-      the future, I'll be adding a feature where you can suggest edits to the
-      data, so that the data is always up-to-date.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, ratione
+      sunt excepturi veritatis porro hic itaque asperiores laborum cupiditate
+      ipsum adipisci aut laboriosam at! Minima unde maiores perferendis aut!
+      Eius!
     </p>
   </div>
 </main>
@@ -73,6 +102,30 @@
     padding-top: 80px;
     @include make-flex($just: flex-start);
 
+    &__LogoBox {
+      gap: 20px;
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 20px 1fr;
+
+      & > span {
+        @include box(20px, 20px);
+      }
+
+      &--neko {
+        width: 100%;
+        max-height: 250px;
+        filter: drop-shadow(0px 0px 25px #ffffff33);
+      }
+
+      &--sc {
+        width: 100%;
+        max-height: 220px;
+        max-width: 220px;
+        border-radius: 50%;
+        aspect-ratio: 1 / 1;
+      }
+    }
     &__title {
       width: 100%;
 
@@ -112,13 +165,27 @@
       gap: 20px;
       font-size: 22px;
       font-weight: 400;
+      width: 100%;
       @include make-flex();
 
-      ul {
-        list-style-type: disc;
-        padding-left: 20px;
-        margin-top: 10px;
+      & > h3 {
+        gap: 15px;
+        white-space: nowrap;
+        @include box($height: auto);
+        @include make-flex($dir: row, $just: flex-start);
+
+        & > hr {
+          background: var(--LabSeparator);
+          @include box(100%, 1px);
+          border: none;
+        }
       }
+
+      // ul {
+      //   list-style-type: disc;
+      //   padding-left: 20px;
+      //   margin-top: 10px;
+      // }
     }
   }
 </style>

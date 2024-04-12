@@ -102,7 +102,7 @@
         font-size: 20px;
         text-align: justify;
         color: var(--subText);
-        // font-family: "Montserrat", sans-serif;
+        
         @include respondAt(580px) {
           text-align: unset;
         }
