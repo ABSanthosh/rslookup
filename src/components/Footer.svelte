@@ -8,7 +8,8 @@
   <div class="FooterWrapper__container">
     <div class="FooterWrapper__left">
       <span>
-        Have any feedback? File it <a
+        Have any feedback? File it
+        <a
           href="https://forms.gle/ELq8hJq6m8ZcTrLA8"
           target="_blank"
           rel="noopener noreferrer"
@@ -21,16 +22,30 @@
     </div>
     <div class="FooterWrapper__right">
       <p class="FooterWrapper__right--title">
-        Made with ❤️ by
-        <a
-          class="FancyLink"
-          data-type="Bracket"
-          href="https://abs.moe"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Santhosh
-        </a>
+        <span class="w-100">
+          Made with ❤️ by
+          <a
+            class="FancyLink"
+            data-type="Bracket"
+            href="https://abs.moe"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Santhosh
+          </a>
+        </span>
+        <span class="w-100">
+          Managed by
+          <a
+            class="FancyLink"
+            data-type="Bracket"
+            href="https://www.instagram.com/snioe.sc"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Student Council
+          </a>
+        </span>
       </p>
     </div>
   </div>
@@ -44,7 +59,7 @@
     font-weight: 500;
     @include make-flex();
     color: var(--foreground);
-    @include box(100vw, 60px);
+    @include box(100vw, auto);
     border-top: 0.5px solid var(--border);
     background-color: var(--elevatedBG);
 
@@ -68,7 +83,7 @@
     &__right {
       color: var(--foreground);
       &--title {
-        @include make-flex($dir: row);
+        @include make-flex($just: flex-start);
         gap: 3px;
       }
     }
