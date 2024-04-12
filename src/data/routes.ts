@@ -98,7 +98,7 @@ export const ROUTES = [
   },
   {
     icon: 59526,
-    route: "clubs",
+    route: "clubs/cultural",
     disabled: false,
     showSearch: false,
     name: "Clubs",
