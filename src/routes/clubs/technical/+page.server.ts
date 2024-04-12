@@ -30,7 +30,7 @@ export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
       : [],
   ]);
 
-  console.log(clubsData)
+  console.log(clubsData);
 
   return {
     clubs: clubsData.map((club) => ({

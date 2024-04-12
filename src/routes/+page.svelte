@@ -102,7 +102,7 @@
         font-size: 20px;
         text-align: justify;
         color: var(--subText);
-        
+
         @include respondAt(580px) {
           text-align: unset;
         }

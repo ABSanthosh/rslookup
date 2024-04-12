@@ -2,7 +2,6 @@
   import { page } from "$app/stores";
 </script>
 
-
 <main class="ClubLayout">
   <section class="ClubLayout__hero">
     <h2>What are the clubs?</h2>
