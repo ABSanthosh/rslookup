@@ -19,7 +19,7 @@
     $page.url.pathname
   );
 
-  let isDetailsOpen = false;
+  let isDetailsOpen = true;
   let searchInput: HTMLInputElement;
 
   afterNavigate(() => {
@@ -81,8 +81,12 @@
         <span data-icon={String.fromCharCode(currentPage?.icon || 0)} />
       </summary>
       <ul class="CrispMenu__content">
-        {#each ROUTES as { name, route, disabled }, i}
+        {#each ROUTES as { name, route, disabled, separator }, i}
           {#if !disabled}
+            {#if separator}
+              <hr class="CrispMenu__separator" />
+            {/if}
+
             <a
               href="/{route}"
               on:click={() => (currentPage = ROUTES[i])}
@@ -345,10 +349,11 @@
       & > li {
         @include make-flex($dir: row, $just: flex-start);
         & > a {
-          text-decoration: none;
-          color: var(--subText);
+          font-weight: 500;
           padding: 5px 10px;
           @include box(auto);
+          text-decoration: none;
+          color: var(--subText);
           transition: all 0.1s ease-in-out;
 
           &:hover {

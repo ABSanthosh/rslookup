@@ -188,6 +188,13 @@
         background-color: var(--background);
         @include make-flex($just: flex-start, $align: flex-start);
 
+        &:last-child {
+          grid-column-end: span 2;
+          @include respondAt(660px) {
+            grid-column-end: span 1;
+          }
+        }
+
         h2 {
           gap: 10px;
           display: grid;

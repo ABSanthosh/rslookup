@@ -216,6 +216,13 @@
     }
   }
 
+  &__separator {
+    border: none;
+    @include make-flex();
+    @include box(90%, 1.8px);
+    background-color: var(--lightBorder);
+  }
+
   &__item {
     @include box($height: 30px);
     cursor: pointer;
