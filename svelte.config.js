@@ -22,8 +22,9 @@ const config = {
 			$components: "src/components",
 			$styles: "src/styles/routes",
 			$data: "src/data",
-			$utils: "src/utils",
+			$utils: "src/lib/utils",
 			$types: "src/types",
+			$stores: "src/lib/stores/*",
 		},
 	}
 };
