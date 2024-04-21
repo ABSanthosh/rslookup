@@ -3,15 +3,16 @@
   --foreground: var(--gray-03);
   --background: var(--white);
 
+  --elevation-1: var(--gray-14);
 
   /* Crisp theme */
-  --t-crp-button-disabled-color: var(--gray-05);
-  --t-crp-button-disabled-background-color: var(--gray-07);
-  --t-crp-button-disabled-border: var(--gray-07);
-  --t-crp-button-background-hover: var(--gray-07);
-  --t-crp-button-border: var(--gray-09);
-  --t-crp-button-border-hover: var(--gray-12);
+  --t-crp-disabled-color: var(--gray-05);
+  --t-crp-disabled-background-color: var(--gray-07);
+  --t-crp-disabled-border: var(--gray-07);
+  --t-crp-background-hover: var(--gray-07);
+  --t-crp-border: var(--gray-09);
+  --t-crp-border-hover: var(--gray-12);
 
   /* presets */
-  --t-crp-button-box-shadow: #1f23280a 0px 1px 0px 0px, #ffffff40 0px 1px 0px 0px inset;
+  --t-crp-box-shadow: #1f23280a 0px 1px 0px 0px, #ffffff40 0px 1px 0px 0px inset;
 }

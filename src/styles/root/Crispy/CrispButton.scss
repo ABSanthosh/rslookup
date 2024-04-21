@@ -9,19 +9,19 @@
 	--crp-button-padding-right: 10px;
 	--crp-button-padding-bottom: 8px;
 
-	--crp-button-disabled-color: var(--t-crp-button-disabled-color);
-	--crp-button-disabled-background-color: var(--t-crp-button-disabled-background-color);
-	--crp-button-disabled-border: 1px solid var(--t-crp-button-disabled-border);
+	--crp-button-disabled-color: var(--t-crp-disabled-color);
+	--crp-button-disabled-background-color: var(--t-crp-disabled-background-color);
+	--crp-button-disabled-border: 1.2px solid var(--t-crp-disabled-border);
 
 	--crp-button-color: var(--foreground);
 	--crp-button-background-color: var(--background);
-	--crp-button-border: 1.2px solid var(--t-crp-button-border);
-	--crp-button-box-shadow: var(--t-crp-button-box-shadow);
+	--crp-button-border: 1.2px solid var(--t-crp-border);
+	--crp-button-box-shadow: var(--t-crp-box-shadow);
 
 	&:not(&[data-type]) {
 		--crp-button-color-hover: var(--foreground);
-		--crp-button-background-color-hover: var(--t-crp-button-background-hover);
-		--crp-button-border-hover: 1.2px solid var(--t-crp-button-border-hover);
+		--crp-button-background-color-hover: var(--t-crp-background-hover);
+		--crp-button-border-hover: 1.2px solid var(--t-crp-border-hover);
 	}
 
 	&[data-type='danger'] {

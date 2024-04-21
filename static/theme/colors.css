@@ -2,6 +2,7 @@
 :root {
   --white: #ffffff;
 
+  --gray-14: #f6f8fa;
   --gray-06: #eaeaea;
   --gray-07: #eaecee; /* l-buttonHoverBG */
   --gray-00: #e6e6e6;
@@ -14,6 +15,7 @@
   --gray-10: #343536; /* d-border */
   --gray-08: #2f3337; /* d-buttonHoverBG */
   --gray-03: #262626;
+  --gray-13: #1a1a1b;
   --gray-04: #171717;
 
 }
