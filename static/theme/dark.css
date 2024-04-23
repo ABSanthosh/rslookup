@@ -1,0 +1,5 @@
+[data-theme="dark"] {
+  --scroll: gray;
+  --foreground: #e6edf3;
+  --background: #030303;
+}

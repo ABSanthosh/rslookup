@@ -41,7 +41,7 @@ html {
 body,
 #app {
   @include box(100vw, auto);
-  background-color: var(--body);
+  background-color: var(--background);
   min-height: 100vh;
   @include make-flex($just: flex-start);
 }
