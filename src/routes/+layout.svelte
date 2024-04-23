@@ -1,8 +1,21 @@
 <script lang="ts">
-	import GoTop from '$lib/components/GoTop.svelte';
+	import GoTop from '$components/GoTop.svelte';
+	import Header from '$components/Header.svelte';
 	import { theme, setTheme } from '$stores/ThemeStore';
 	import { getCookie } from '$utils/cookie';
 	import { onMount } from 'svelte';
+
+	import { fly } from 'svelte/transition';
+	import { cubicIn, cubicOut } from 'svelte/easing';
+
+	export let data;
+
+	const duration = 200;
+	const delay = duration + 50;
+	const x = 10;
+
+	const transitionIn = { easing: cubicOut, x: x, duration, delay };
+	const transitionOut = { easing: cubicIn, x: -x, duration };
 
 	onMount(() => {
 		const cookieTheme = getCookie(document.cookie, 'theme') as Theme | null | '';
@@ -21,16 +34,12 @@
 	<link rel="stylesheet" href="/theme/dark.css" />
 </svelte:head>
 
-<button
-	class="CrispButton"
-	on:click={() => {
-		setTheme($theme === 'light' ? 'dark' : 'light');
-	}}
->
-	{$theme === 'light' ? '🌙' : '☀️'}
-</button>
-
-<slot />
+<Header />
+{#key data.url}
+	<main class="MainContainer" in:fly={transitionIn} out:fly={transitionOut}>
+		<slot />
+	</main>
+{/key}
 
 <GoTop />
 
