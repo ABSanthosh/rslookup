@@ -1,18 +1,20 @@
 [data-theme="dark"] {
-  --scroll: var(--gray-02);
-  --foreground: var(--gray-00);
-  --background: var(--gray-04);
-  --iconColor: var(--gray-16);
-  --elevation-1: var(--gray-13);
+  --scroll: var(--gray-10);
+  --foreground: var(--gray-03);
+  --subForeground: var(--gray-09);
+  --background: var(--gray-17);
+  --iconColor: var(--gray-11);
+  --elevation-1: var(--gray-16);
 
   /* Crisp theme */
-  --t-crp-disabled-color: var(--gray-06);
-  --t-crp-background-hover: var(--gray-08);
-  --t-crp-disabled-background-color: var(--gray-08);
+  --t-crp-disabled-color: var(--gray-01);
+  --t-crp-background-hover: var(--gray-14);
+  --t-crp-disabled-background-color: var(--gray-14);
 
-  --t-crp-border: var(--gray-10);
-  --t-crp-border-hover: var(--gray-11);
-  --t-crp-disabled-border: var(--gray-08);
+  --t-crp-border: var(--gray-13);
+  --t-crp-light-border: var(--gray-19);
+  --t-crp-border-hover: var(--gray-08);
+  --t-crp-disabled-border: var(--gray-14);
 
   /* presets */
   --t-crp-box-shadow: #00000000 0px 0px 0px 0px, #00000000 0px 0px 0px 0px;

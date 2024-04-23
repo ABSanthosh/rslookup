@@ -2,23 +2,26 @@
 :root {
   --white: #ffffff;
 
-  --gray-14: #f6f8fa;
-  --gray-06: #eaeaea;
-  --gray-07: #eaecee; /* l-buttonHoverBG */
-  --gray-00: #e6e6e6;
-  --gray-09: #d0d7de; /* l-border */
-  --gray-12: #ccced1; /* l-buttonBorderHover */
-  --gray-01: #d0d0d0;
-  --gray-11: #8b949e; /* d-buttonBorderHover */
-  --gray-05: #a3a3a3;
-  --gray-02: gray;
-  --gray-16: #7d8590; /* d-iconColor */
-  --gray-15: #656d76; /* l-iconColor*/
-  --gray-10: #343536; /* d-border */
-  --gray-08: #2f3337; /* d-buttonHoverBG */
-  --gray-03: #262626;
-  --gray-13: #1a1a1b;
-  --gray-04: #171717;
+  --gray-00: #f6f8fa;
+  --gray-18: #e8edf1;
+  --gray-02: #eaecee; /* l-buttonHoverBG */
+  --gray-01: #eaeaea;
+  --gray-03: #e6e6e6;
+  --gray-04: #d0d7de; /* l-border */
+  --gray-05: #ccced1; /* l-buttonBorderHover */
+  --gray-06: #d0d0d0;
+  --gray-07: #a3a3a3;
+  --gray-08: #8b949e; /* d-buttonBorderHover */
+  --gray-09: #91999e;
+  --gray-10: gray;
+  --gray-11: #7d8590; /* d-iconColor */
+  --gray-12: #656d76; /* l-iconColor*/
+  --gray-13: #343536; /* d-border */
+  --gray-14: #2f3337; /* d-buttonHoverBG */
+  --gray-19: #2f2e2e;
+  --gray-15: #262626;
+  --gray-16: #1a1a1b;
+  --gray-17: #030303;
 
   --blue-00: #edf2fe; /* l-blueSecondary */
   --blue-01: #6b91fb; /* l-bluePrimary, d-bluePrimary */

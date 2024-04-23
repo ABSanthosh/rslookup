@@ -229,7 +229,7 @@
 		border: none;
 		@include make-flex();
 		@include box(90%, 1.8px);
-		background-color: var(--lightBorder);
+		background-color: var(--t-crp-light-border);
 	}
 
 	&__item {
