@@ -1,0 +1,19 @@
+/* colors.css */
+:root {
+  --white: #ffffff;
+
+  --gray-06: #eaeaea;
+  --gray-07: #eaecee; /* l-buttonHoverBG */
+  --gray-00: #e6e6e6;
+  --gray-09: #d0d7de; /* l-border */
+  --gray-12: #ccced1; /* l-buttonBorderHover */
+  --gray-01: #d0d0d0;
+  --gray-11: #8b949e; /* d-buttonBorderHover */
+  --gray-05: #a3a3a3;
+  --gray-02: gray;
+  --gray-10: #343536; /* d-border */
+  --gray-08: #2f3337; /* d-buttonHoverBG */
+  --gray-03: #262626;
+  --gray-04: #171717;
+
+}

@@ -1,5 +1,18 @@
 [data-theme="dark"] {
-  --scroll: gray;
-  --foreground: #e6edf3;
-  --background: #030303;
+  --scroll: var(--gray-02);
+  --foreground: var(--gray-00);
+  --background: var(--gray-04);
+
+  /* Crisp theme */
+  --t-crp-button-disabled-color: var(--gray-06);
+  --t-crp-button-disabled-background-color: var(--gray-08);
+  --t-crp-button-disabled-border: var(--gray-08);
+  --t-crp-button-background-hover: var(--gray-08);
+  --t-crp-button-border: var(--gray-10);
+  --t-crp-button-border-hover: var(--gray-11);
+
+
+
+  /* presets */
+  --t-crp-button-box-shadow: #00000000 0px 0px 0px 0px, #00000000 0px 0px 0px 0px;
 }

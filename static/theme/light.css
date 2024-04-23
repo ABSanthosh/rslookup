@@ -1,5 +1,17 @@
 [data-theme="light"] {
-  --scroll: #d0d0d0;
-  --foreground: #1f2328;
-  --background: white;
+  --scroll: var(--gray-01);
+  --foreground: var(--gray-03);
+  --background: var(--white);
+
+
+  /* Crisp theme */
+  --t-crp-button-disabled-color: var(--gray-05);
+  --t-crp-button-disabled-background-color: var(--gray-07);
+  --t-crp-button-disabled-border: var(--gray-07);
+  --t-crp-button-background-hover: var(--gray-07);
+  --t-crp-button-border: var(--gray-09);
+  --t-crp-button-border-hover: var(--gray-12);
+
+  /* presets */
+  --t-crp-button-box-shadow: #1f23280a 0px 1px 0px 0px, #ffffff40 0px 1px 0px 0px inset;
 }
