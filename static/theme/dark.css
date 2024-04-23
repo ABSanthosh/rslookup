@@ -2,17 +2,31 @@
   --scroll: var(--gray-02);
   --foreground: var(--gray-00);
   --background: var(--gray-04);
-
+  --iconColor: var(--gray-16);
   --elevation-1: var(--gray-13);
 
   /* Crisp theme */
-  --t-crp-disabled-border: var(--gray-08);
+  --t-crp-disabled-color: var(--gray-06);
   --t-crp-background-hover: var(--gray-08);
   --t-crp-disabled-background-color: var(--gray-08);
+
   --t-crp-border: var(--gray-10);
-  --t-crp-disabled-color: var(--gray-06);
   --t-crp-border-hover: var(--gray-11);
+  --t-crp-disabled-border: var(--gray-08);
 
   /* presets */
   --t-crp-box-shadow: #00000000 0px 0px 0px 0px, #00000000 0px 0px 0px 0px;
+  --t-crp-elevation-shadow: #191a1a 0px 8px 24px 0px;
+
+  /* Chip Colors */
+  --bluePrimary: var(--blue-01);
+  --blueSecondary: var(--blue-02);
+  --greenPrimary: var(--green-01);
+  --greenSecondary: var(--green-02);
+  --yellowPrimary: var(--yellow-01);
+  --yellowSecondary: var(--yellow-02);
+  --redPrimary: var(--red-01);
+  --redSecondary: var(--red-02);
+  --grayPrimary: var(--grayish-00);
+  --graySecondary: var(--grayish-01);
 }
