@@ -1,4 +1,5 @@
 <script lang="ts">
+	import GoTop from '$lib/components/GoTop.svelte';
 	import { theme, setTheme } from '$stores/ThemeStore';
 	import { getCookie } from '$utils/cookie';
 	import { onMount } from 'svelte';
@@ -15,6 +16,7 @@
 <svelte:head>
 	<title>rslookup | SNU</title>
 	<meta name="color-scheme" content={$theme} />
+	<link rel="stylesheet" href="/theme/colors.css" />
 	<link rel="stylesheet" href="/theme/light.css" />
 	<link rel="stylesheet" href="/theme/dark.css" />
 </svelte:head>
@@ -29,6 +31,8 @@
 </button>
 
 <slot />
+
+<GoTop />
 
 <style lang="scss" global>
 	@import '../styles/root/global.scss';
