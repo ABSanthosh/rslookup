@@ -95,6 +95,14 @@
 						query.set(e.target.value);
 					}}
 				/>
+				{#if $query !== ''}
+					<button
+						class="CrispButton"
+						data-type="danger"
+						on:click={() => query.set('')}
+						data-icon={String.fromCharCode(58829)}
+					/>
+				{/if}
 			</div>
 			<hr />
 		{/if}
@@ -237,6 +245,24 @@
 			@include box(100%, 32px);
 			max-width: 260px;
 			position: relative;
+
+			& > button {
+				top: 50%;
+				padding: 0;
+				right: 0px;
+				position: absolute;
+				transform: translateY(-50%);
+
+				--crp-button-width: 30px;
+				--crp-button-height: 100%;
+				border-radius: 0 6px 6px 0;
+				--crp-button-background-color: var(--elevation-2);
+
+				&::before {
+					font-size: 15px;
+				}
+			}
+
 			&::before {
 				top: 52%;
 				left: 7px;
