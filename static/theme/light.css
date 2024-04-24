@@ -6,7 +6,7 @@
   --background: var(--white);
   --iconColor: var(--gray-12);
   --elevation-1: var(--gray-00);
-  --elevation-2: var(--gray-24);
+  --elevation-2: #1f232814;
 
   --home-card-background-color: var(--gray-23);
   --prof-card-background-color: var(--white);
@@ -43,4 +43,16 @@
   --redSecondary: var(--red-00);
   --grayPrimary: var(--grayish-02);
   --graySecondary: var(--gray-00);
+
+  --crp-message-color-error: #ff605c;
+  --crp-message-border-color-error: #ff605c;
+  --crp-message-background-color-error: #ffe6e6;
+
+  --crp-message-color-info: #005197;
+  --crp-message-border-color-info: #005197;
+  --crp-message-background-color-info: #e3f0ff;
+
+  --crp-tab-background-color: #f4f4f5;
+  --crp-tab-item-background-color: #ffffff;
+
 }

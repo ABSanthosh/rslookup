@@ -173,8 +173,7 @@
 	<div class="ProfCard__bottom">
 		<div class="ProfCard__contact">
 			{#if phone !== undefined && phone !== ''}
-				<a
-					href={`#`}
+				<button
 					data-icon={String.fromCharCode(57520)}
 					on:keydown={async () => await copyToClipboard(phone)}
 					on:keyup={async () => await copyToClipboard(phone)}
@@ -185,21 +184,22 @@
 					<span>
 						Extension: {phone}
 					</span>
-				</a>
+				</button>
 			{/if}
-			<a
-				href={`#`}
-				data-icon={String.fromCharCode(57688)}
-				on:keydown={async () => await copyToClipboard(mail)}
-				on:keyup={async () => await copyToClipboard(mail)}
-				on:keypress={async () => await copyToClipboard(mail)}
-				on:click={async () => await copyToClipboard(mail)}
-				title="Click to copy email"
-			>
-				<span>
-					{mail}
-				</span>
-			</a>
+			{#if mail !== undefined && mail !== ''}
+				<button
+					data-icon={String.fromCharCode(57688)}
+					on:keydown={async () => await copyToClipboard(mail)}
+					on:keyup={async () => await copyToClipboard(mail)}
+					on:keypress={async () => await copyToClipboard(mail)}
+					on:click={async () => await copyToClipboard(mail)}
+					title="Click to copy email"
+				>
+					<span>
+						{mail}
+					</span>
+				</button>
+			{/if}
 		</div>
 
 		<a
@@ -300,12 +300,14 @@
 			@include box(100%, auto);
 			@include make-flex($dir: column, $just: flex-start, $align: flex-start);
 
-			a {
+			button {
 				gap: 6px;
 				width: 100%;
+				border: none;
 				cursor: pointer;
-				@include make-flex($dir: row, $just: flex-start, $align: flex-end);
 				overflow: hidden;
+				background-color: transparent;
+				@include make-flex($dir: row, $just: flex-start, $align: flex-end);
 
 				span {
 					max-width: 100%;

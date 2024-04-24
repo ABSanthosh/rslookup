@@ -1,15 +1,16 @@
 <script lang="ts">
-	import { profColors, schools } from '$data/prof';
-	import { clickOutside } from '$utils/onClickOutside';
+	import { search } from 'fast-fuzzy';
+	import { flip } from 'svelte/animate';
 	import type { PageData } from './$types';
 	import { beforeNavigate } from '$app/navigation';
-	import { flip } from 'svelte/animate';
+	import { profColors, schools } from '$data/prof';
 	import { flipAnimate } from '$utils/FlipAnimate';
+	import { clickOutside } from '$utils/onClickOutside';
 	import ProfCard from '$components/ProfCard/ProfCard.svelte';
+	import { query } from '$stores/QueryStore';
+	import { onMount } from 'svelte';
 
 	export let data: PageData;
-	$: prof = data.prof;
-
 	$: isFilterOpen = false;
 	let filters = Object.keys(schools).map((item) => {
 		return {
@@ -20,8 +21,37 @@
 		};
 	});
 
+	let pageSize = 20;
+	$: prof = data.prof;
+	$: filteredSchools = filters.filter((item) => item.checked).map((item) => item.name);
+	$: filteredProf = data.prof.filter((item) => {
+		if (!Object.keys(schools).includes(item.school)) {
+			return filteredSchools.includes('Miscellaneous');
+		}
+		return filteredSchools.includes(item.school);
+	});
+	$: searchResult = filteredProf.slice(0, pageSize);
+
 	beforeNavigate(() => {
 		isFilterOpen = false;
+	});
+
+	onMount(() => {
+		query.subscribe((q) => {
+			if (q === '') {
+				searchResult = data.prof.slice(0, pageSize);
+				return;
+			}
+
+			searchResult = search(q, filteredProf, {
+				keySelector: (obj) => obj.name
+			}).slice(0, pageSize);
+
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			});
+		});
 	});
 </script>
 
@@ -93,14 +123,41 @@
 </div>
 
 <div class="Prof__content">
-	{#each prof.slice(0, 10) as result (`${result.name}-${result.role}`)}
-		<span
-			animate:flip={{ duration: 250 }}
-			use:flipAnimate={{ key: `${result.name}-${result.role}` }}
+	{#if prof.length === 0}
+		<i
+			class="CrispMessage"
+			data-type="error"
+			data-format="box"
+			style="height: 40px; grid-column: 1 / 3 ;"
 		>
-			<ProfCard {...result} />
-		</span>
-	{/each}
+			No results found.
+		</i>
+	{:else}
+		{#each searchResult as result (`${result.name}-${result.role}`)}
+			<span
+				animate:flip={{ duration: 250 }}
+				use:flipAnimate={{ key: `${result.name}-${result.role}` }}
+			>
+				<ProfCard {...result} />
+			</span>
+		{/each}
+	{/if}
+</div>
+
+<div class="Prof__bottom w-100">
+	<select
+		class="CrispSelect"
+		value={`${pageSize}`}
+		on:change={(e) => {
+			// @ts-ignore
+			pageSize = Number(e.target.value);
+		}}
+	>
+		<option value="20">20</option>
+		<option value="40">40</option>
+		<option value="80">80</option>
+		<option value={`${filteredProf.length}`}>All ({filteredProf.length})</option>
+	</select>
 </div>
 
 <style lang="scss">
@@ -122,7 +179,7 @@
 			gap: 18px;
 			min-width: 0;
 			@include box();
-      margin-top: 20px;
+			margin-top: 20px;
 
 			display: grid;
 			grid-template-columns: 1fr 1fr;
@@ -135,7 +192,33 @@
 				max-width: 100%;
 				overflow-x: hidden;
 				@include make-flex();
+
+				animation: fade-in linear forwards;
+				animation-timeline: view();
+				animation-range-start: 0;
+				animation-range-end: 17%;
+				animation-duration: 4s;
+				transform-style: preserve-3d;
 			}
+		}
+
+		&__bottom {
+			margin-top: 20px;
+			@include make-flex($align: flex-end);
+		}
+	}
+
+	@keyframes fade-in {
+		0% {
+			scale: 0.9;
+			opacity: 0;
+			transform: translateY(20px) rotateX(-30deg);
+		}
+
+		to {
+			scale: 1;
+			opacity: 1;
+			transform: translateY(0) rotateX(0);
 		}
 	}
 </style>
