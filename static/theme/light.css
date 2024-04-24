@@ -13,6 +13,8 @@
   --prof-card-website-bg: var(--gray-27);
   --prof-card-website-bg-disabled: var(--gray-07);
   --prof-card-website-fg-disabled: var(--gray-01);
+  --lab-item-bg: var(--gray-32);
+  --lab-item-separator: var(--gray-33);
 
   /* Crisp theme */
   --t-crp-disabled-color: var(--gray-07);

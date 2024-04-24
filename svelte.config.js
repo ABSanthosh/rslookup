@@ -23,7 +23,7 @@ const config = {
 			$styles: "src/styles/routes",
 			$data: "src/lib/data",
 			$utils: "src/lib/utils",
-			$types: "src/types",
+			$types: "src/lib/types",
 			$stores: "src/lib/stores/*",
 		},
 	}

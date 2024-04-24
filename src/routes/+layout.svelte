@@ -8,6 +8,8 @@
 	import { cubicIn, cubicOut } from 'svelte/easing';
 	import { ToastStore } from '$stores/ToastStore.js';
 	import { theme, setTheme } from '$stores/ThemeStore';
+	import { navigating } from '$app/stores';
+	import BlurredSpinner from '$components/Spinner/BlurredSpinner.svelte';
 
 	export let data;
 
@@ -36,6 +38,11 @@
 </svelte:head>
 
 <Header />
+
+{#if $navigating}
+	<BlurredSpinner />
+{/if}
+
 {#key data.url}
 	<main class="MainContainer" in:fly={transitionIn} out:fly={transitionOut}>
 		<slot />
