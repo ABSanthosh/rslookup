@@ -40,7 +40,7 @@
 <Header />
 
 {#if $navigating}
-	<BlurredSpinner />
+	<BlurredSpinner style="position: fixed;" />
 {/if}
 
 {#key data.url}
