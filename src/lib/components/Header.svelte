@@ -56,7 +56,7 @@
 	};
 
 	$: isHomeRoute = ['/', ...HOME_ROUTES.map((r) => `/${r.route}`)].includes($page.url.pathname);
-	$: currentRoute = ROUTES.find((r) => r.route === $page.url.pathname.slice(1).split('/')[0]);
+	$: currentRoute = ROUTES.find((r) => r.route.includes($page.url.pathname.slice(1).split('/')[0]));
 	$: isNavOpen = false;
 </script>
 
