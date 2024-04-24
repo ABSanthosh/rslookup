@@ -122,6 +122,11 @@
 	</details>
 </div>
 
+<i class="CrispMessage" data-type="info" data-format="box">
+	Data is not updated in realtime. If you find any discrepancies, please fill the form in the
+	footer.
+</i>
+
 <div class="Prof__content">
 	{#if prof.length === 0}
 		<i
@@ -179,7 +184,6 @@
 			gap: 18px;
 			min-width: 0;
 			@include box();
-			margin-top: 20px;
 
 			display: grid;
 			grid-template-columns: 1fr 1fr;
@@ -203,7 +207,6 @@
 		}
 
 		&__bottom {
-			margin-top: 20px;
 			@include make-flex($align: flex-end);
 		}
 	}
