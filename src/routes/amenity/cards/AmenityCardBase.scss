@@ -1,0 +1,65 @@
+.AmenityCard {
+	gap: 45px;
+	padding: 10px;
+	border-radius: 10px;
+	@include box(auto, auto);
+	border: 1px solid var(--t-crp-border);
+	background: var(--prof-card-background-color);
+	@include make-flex($just: space-between, $align: flex-start);
+
+	& > div {
+		h3 {
+			font-size: 20px;
+			color: var(--foreground);
+		}
+
+		& > span {
+			color: var(--subFg-1);
+			font-size: 16px;
+			font-weight: 400;
+		}
+	}
+	&__contact {
+		gap: 10px;
+		min-width: 0;
+		@include box();
+		@include make-flex($align: flex-start);
+		& > span {
+			gap: 6px;
+			font-size: 14px;
+			color: var(--subFg-1);
+			@include make-flex($dir: row, $just: flex-start);
+			&::before {
+				font-size: 18px;
+			}
+			p {
+				cursor: pointer;
+				overflow: hidden;
+				white-space: nowrap;
+				display: inline-block;
+				text-overflow: ellipsis;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		& > button {
+			max-width: 100%;
+			@include make-flex($dir: row, $just: flex-start);
+			span {
+				overflow: hidden;
+				white-space: nowrap;
+				display: inline-block;
+				text-overflow: ellipsis;
+			}
+		}
+	}
+
+	&__bottom {
+		align-items: flex-end;
+		&--map {
+			text-decoration: none;
+		}
+	}
+}
