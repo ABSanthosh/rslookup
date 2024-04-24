@@ -220,7 +220,7 @@
 					padding: 5px 10px;
 					@include box(auto);
 					text-decoration: none;
-					color: var(--subForeground);
+					color: var(--subFg-1);
 					transition: all 0.1s ease-in-out;
 
 					&:hover {

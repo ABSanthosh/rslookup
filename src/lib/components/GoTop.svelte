@@ -34,18 +34,17 @@
 
 <style lang="scss">
 	.GoTop {
-		border-radius: 50%;
-		padding: 20px;
-
 		opacity: 1;
 		z-index: 99;
 		right: 20px;
 		bottom: 20px;
+		padding: 20px;
 		position: fixed;
 		user-select: none;
+		border-radius: 50%;
 		@include make-flex();
 		@include box(20px, 20px);
-		box-shadow: var(--elevatedShadow);
+		box-shadow: var(--t-crp-elevation-shadow);
 		transition:
 			opacity 0.3s,
 			visibility 0.3s;
