@@ -24,6 +24,23 @@
 		--crp-button-border-hover: 1.2px solid var(--t-crp-border-hover);
 	}
 
+	&[data-type='black-outline'] {
+		--crp-button-color: #ffffff;
+		--crp-button-color-hover: #000000;
+
+		--crp-button-background-color: #000000;
+		--crp-button-background-color-hover: #ffffff;
+
+		--crp-button-border: 1px solid #ffffff;
+		--crp-button-border-hover: 1px solid #000000;
+
+		--crp-button-box-shadow: transparent;
+
+		--crp-button-disabled-background-color: #757575;
+		--crp-button-disabled-border: 1px solid #757575;
+		--crp-button-disabled-color: #b8b8b8;
+	}
+
 	&[data-type='danger'] {
 		--crp-button-color-hover: #ffffff;
 		--crp-button-background-color-hover: #ff605c;

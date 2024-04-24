@@ -20,7 +20,7 @@
 		</p>
 	</div>
 	<div class="Hero__right">
-		<img src="/images/neko.gif" alt="hero neko gif" />
+		<img loading="eager" fetchpriority="high" src="/images/neko.gif" alt="hero neko gif" />
 	</div>
 </section>
 
@@ -202,7 +202,7 @@
 				}
 				p {
 					font-size: 18px;
-          font-weight: 500;
+					font-weight: 500;
 					line-height: 28px;
 					color: var(--subFg-1);
 					@include respondAt(450px) {
