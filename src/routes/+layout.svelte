@@ -43,11 +43,17 @@
 	<BlurredSpinner style="position: fixed;" />
 {/if}
 
-{#key data.url}
-	<main class="MainContainer" in:fly={transitionIn} out:fly={transitionOut}>
+{#if !data.url.includes('clubs')}
+	{#key data.url}
+		<main class="MainContainer" in:fly={transitionIn} out:fly={transitionOut}>
+			<slot />
+		</main>
+	{/key}
+{:else}
+	<main class="MainContainer">
 		<slot />
 	</main>
-{/key}
+{/if}
 
 <GoTop />
 
