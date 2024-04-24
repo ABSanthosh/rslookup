@@ -6,8 +6,13 @@
   --background: var(--gray-17);
   --iconColor: var(--gray-11);
   --elevation-1: var(--gray-16);
+  --elevation-2: var(--gray-25);
 
   --home-card-background-color: var(--gray-16);
+  --prof-card-background-color: var(--gray-26);
+  --prof-card-website-bg: var(--gray-29);
+  --prof-card-website-bg-disabled: var(--gray-28);
+  --prof-card-website-fg-disabled: var(--gray-07);
 
   /* Crisp theme */
   --t-crp-disabled-color: var(--gray-01);
@@ -24,6 +29,8 @@
   --t-crp-elevation-shadow: #191a1a 0px 8px 24px 0px;
   --t-crp-select-downArrow: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
   --home-card-box-shadow: "";
+  --pane-backdrop-background: rgba(0, 0, 0, 0.5);
+  --pane-background: var(--gray-30);
 
   /* Chip Colors */
   --bluePrimary: var(--blue-01);
