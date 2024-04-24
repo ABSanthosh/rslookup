@@ -5,7 +5,7 @@
   --subFg-2: var(--gray-21);
   --background: var(--gray-17);
   --iconColor: var(--gray-11);
-  --elevation-1: var(--gray-16);  
+  --elevation-1: var(--gray-16);
   --elevation-2: #1f2328a1;
 
   --home-card-background-color: var(--gray-16);
@@ -15,6 +15,8 @@
   --prof-card-website-fg-disabled: var(--gray-07);
   --lab-item-bg: var(--gray-35);
   --lab-item-separator: var(--gray-34);
+  --amenity-filter-active-bg: #b1bac41f;
+  --amenity-filter-bg: var(--gray-16);
 
   /* Crisp theme */
   --t-crp-disabled-color: var(--gray-01);
