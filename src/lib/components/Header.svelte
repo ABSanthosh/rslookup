@@ -12,11 +12,44 @@
 		query.set('');
 	});
 
+	let themeToggle: HTMLButtonElement;
+
+	const themeToggleTransition = async () => {
+		if (
+			!themeToggle ||
+			!document.startViewTransition ||
+			window.matchMedia('(prefers-reduced-motion: reduce)').matches
+		) {
+			setTheme($theme === 'dark' ? 'light' : 'dark');
+			return;
+		}
+
+		await document.startViewTransition(async () => {
+			setTheme($theme === 'dark' ? 'light' : 'dark');
+		}).ready;
+
+		// https://akashhamirwasia.com/blog/full-page-theme-toggle-animation-with-view-transitions-api/#what-is-the-grow-animation
+		const { top, left, width, height } = themeToggle.getBoundingClientRect();
+		const x = left + width / 2;
+		const y = top + height / 2;
+		const right = window.innerWidth - left;
+		const bottom = window.innerHeight - top;
+		const maxRadius = Math.hypot(Math.max(left, right), Math.max(top, bottom));
+
+		document.documentElement.animate(
+			{
+				clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${maxRadius}px at ${x}px ${y}px)`]
+			},
+			{
+				duration: 500,
+				easing: 'ease-in-out',
+				pseudoElement: '::view-transition-new(root)'
+			}
+		);
+	};
+
 	$: isHomeRoute = ['/', ...HOME_ROUTES.map((r) => `/${r.route}`)].includes($page.url.pathname);
 	$: currentRoute = ROUTES.find((r) => r.route === $page.url.pathname.slice(1).split('/')[0]);
-
-	console.log(currentRoute, isHomeRoute);
-
 	$: isNavOpen = false;
 </script>
 
@@ -90,15 +123,29 @@
 			</details>
 		{/if}
 		<button
-			class="CrispButton Header__theme-toggle"
+			bind:this={themeToggle}
 			aria-label="Toggle theme"
+			class="CrispButton Header__theme-toggle"
+			on:click={async () => await themeToggleTransition()}
 			data-icon={String.fromCharCode($theme === 'dark' ? 58416 : 58652)}
-			on:click={() => setTheme($theme === 'dark' ? 'light' : 'dark')}
 		/>
 	</div>
 </header>
 
 <style lang="scss">
+	:root {
+		&::view-transition-old(root) {
+			animation:
+				90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+				300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+		}
+
+		&::view-transition-new(root) {
+			animation:
+				210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+				300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+		}
+	}
 	.Header {
 		top: 0;
 		left: 0;
