@@ -174,6 +174,7 @@
 		<div class="ProfCard__contact">
 			{#if phone !== undefined && phone !== ''}
 				<button
+					class="CopyButton w-100"
 					data-icon={String.fromCharCode(57520)}
 					on:keydown={async () => await copyToClipboard(phone)}
 					on:keyup={async () => await copyToClipboard(phone)}
@@ -188,6 +189,7 @@
 			{/if}
 			{#if mail !== undefined && mail !== ''}
 				<button
+					class="CopyButton w-100"
 					data-icon={String.fromCharCode(57688)}
 					on:keydown={async () => await copyToClipboard(mail)}
 					on:keyup={async () => await copyToClipboard(mail)}
@@ -299,30 +301,6 @@
 			color: var(--subFg-1);
 			@include box(100%, auto);
 			@include make-flex($dir: column, $just: flex-start, $align: flex-start);
-
-			button {
-				gap: 6px;
-				width: 100%;
-				border: none;
-				cursor: pointer;
-				overflow: hidden;
-				background-color: transparent;
-				@include make-flex($dir: row, $just: flex-start, $align: flex-end);
-
-				span {
-					max-width: 100%;
-					overflow: hidden;
-					text-overflow: ellipsis;
-				}
-
-				&:hover {
-					text-decoration: underline;
-				}
-
-				&::before {
-					height: 18px;
-				}
-			}
 
 			&::before {
 				font-size: 18px;

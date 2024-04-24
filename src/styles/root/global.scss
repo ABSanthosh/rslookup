@@ -82,6 +82,28 @@ body,
 	@include make-flex($just: flex-start);
 }
 
+.CopyButton {
+	gap: 6px;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+	background-color: transparent;
+	@include make-flex($dir: row, $just: flex-start, $align: flex-end);
+
+	span {
+		max-width: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	&:hover {
+		text-decoration: underline;
+	}
+
+	&::before {
+		height: 16px;
+	}
+}
+
 .Row {
 	&--center {
 		@include make-flex($dir: row, $just: center);
