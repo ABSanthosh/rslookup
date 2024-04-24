@@ -2,6 +2,7 @@
 :root {
   --white: #ffffff;
 
+  --gray-23: #fafafa;
   --gray-00: #f6f8fa;
   --gray-18: #e8edf1;
   --gray-02: #eaecee; /* l-buttonHoverBG */
@@ -10,16 +11,19 @@
   --gray-04: #d0d7de; /* l-border */
   --gray-05: #ccced1; /* l-buttonBorderHover */
   --gray-06: #d0d0d0;
+  --gray-21: #aaaaaa;
   --gray-07: #a3a3a3;
   --gray-08: #8b949e; /* d-buttonBorderHover */
   --gray-09: #91999e;
   --gray-10: gray;
   --gray-11: #7d8590; /* d-iconColor */
   --gray-12: #656d76; /* l-iconColor*/
+  --gray-20: #555555;
   --gray-13: #343536; /* d-border */
   --gray-14: #2f3337; /* d-buttonHoverBG */
   --gray-19: #2f2e2e;
   --gray-15: #262626;
+  --gray-22: #191a1a;
   --gray-16: #1a1a1b;
   --gray-17: #030303;
 

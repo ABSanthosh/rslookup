@@ -1,10 +1,13 @@
 [data-theme="light"] {
   --scroll: var(--gray-06);
   --foreground: var(--gray-15);
-  --subForeground: var(--gray-09);
+  --subFg-1: var(--gray-09);
+  --subFg-2: var(--gray-20);
   --background: var(--white);
   --iconColor: var(--gray-12);
   --elevation-1: var(--gray-00);
+
+  --home-card-background-color: var(--gray-23);
 
   /* Crisp theme */
   --t-crp-disabled-color: var(--gray-07);
@@ -20,6 +23,7 @@
   --t-crp-box-shadow: #1f23280a 0px 1px 0px 0px, #ffffff40 0px 1px 0px 0px inset;
   --t-crp-elevation-shadow: #8c959f33 0px 8px 24px 0px;
   --t-crp-select-downArrow: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  --home-card-box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.12);
 
   /* Chip Colors */
   --bluePrimary: var(--blue-01);
