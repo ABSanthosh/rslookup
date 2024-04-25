@@ -12,6 +12,7 @@
 
 	export let data: PageData;
 	$: isFilterOpen = false;
+	$: isDisclaimerOpen = false;
 	let filters = Object.keys(schools).map((item) => {
 		return {
 			name: item,
@@ -34,6 +35,7 @@
 
 	beforeNavigate(() => {
 		isFilterOpen = false;
+		isDisclaimerOpen = false;
 	});
 
 	onMount(() => {
@@ -122,10 +124,25 @@
 	</details>
 </div>
 
-<i class="CrispMessage" data-type="info" data-format="box">
-	Data is not updated in realtime. If you find any discrepancies, please fill the form in the
-	footer.
-</i>
+<details
+	data-no-icon
+	data-type="info"
+	data-format="box"
+	use:clickOutside
+	bind:open={isDisclaimerOpen}
+	class="Prof__disclaimer CrispMessage"
+	on:outclick={() => (isDisclaimerOpen = false)}
+>
+	<summary class="CrispMessage" data-type="info">
+		Disclosure -
+		<i style="color: inherit;"> Click to expand </i>
+	</summary>
+	<div class="Prof__disclaimer--content">
+		This information may not always be accurate as cabin numbers are subject to change. Incase of
+		any discrepancies, please verify with D block security and notify us so we can make the
+		necessary updates.
+	</div>
+</details>
 
 <div class="Prof__content">
 	{#if prof.length === 0}
@@ -208,6 +225,23 @@
 
 		&__bottom {
 			@include make-flex($align: flex-end);
+		}
+
+		&__disclaimer {
+			--crp-message-padding: 8px;
+			background-repeat: no-repeat;
+			background-size: right 5px top 50%;
+			background-position: right 5px top 7px;
+			background-image: var(--t-crp-select-downArrow);
+
+			& > summary {
+				cursor: pointer;
+			}
+
+			&--content {
+				@include box();
+				padding: 10px 6px 4px 6px;
+			}
 		}
 	}
 

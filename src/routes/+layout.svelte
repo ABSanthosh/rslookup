@@ -72,7 +72,7 @@
 		}
 		&__filter {
 			min-width: unset;
-			@include box(auto, 32px);
+			@include box(auto, 30px);
 			& > summary {
 				gap: 8px;
 				padding: 5px 12px;

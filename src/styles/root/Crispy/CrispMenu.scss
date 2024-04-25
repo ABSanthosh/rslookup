@@ -12,7 +12,7 @@
 
 .CrispMenu {
 	--crp-menu-width: auto;
-	--crp-menu-height: 32px;
+	--crp-menu-height: 30px;
 	--crp-menu-min-width: 150px;
 	--crp-menu-offset: 8px;
 
@@ -80,7 +80,7 @@
 
 	summary {
 		// Basic
-		outline: none;
+		// outline: none;
 		@include box();
 		cursor: pointer;
 		user-select: none;

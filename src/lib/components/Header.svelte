@@ -56,7 +56,8 @@
 	};
 
 	$: isHomeRoute = ['/', ...HOME_ROUTES.map((r) => `/${r.route}`)].includes($page.url.pathname);
-	$: currentRoute = ROUTES.find((r) => r.route.includes($page.url.pathname.slice(1).split('/')[0]));
+	$: path = $page.url.pathname.slice(1).split('/')[0];
+	$: currentRoute = ROUTES.find((r) => r.route.includes(path === '' ? 'home' : path));
 	$: isNavOpen = false;
 </script>
 
@@ -211,7 +212,7 @@
 		&__theme-toggle {
 			padding: 7px;
 			@include make-flex();
-			@include box(32px, 32px);
+			@include box(30px, 30px);
 			--crp-button-background-color: var(--elevation-1);
 		}
 
@@ -242,7 +243,7 @@
 		}
 
 		&__search {
-			@include box(100%, 32px);
+			@include box(100%, 30px);
 			max-width: 260px;
 			position: relative;
 
@@ -282,7 +283,7 @@
 					position: fixed;
 					max-width: none;
 					transform: translateX(-50%);
-					@include box(calc(100vw - 30px), 32px);
+					@include box(calc(100vw - 30px), 30px);
 				}
 			}
 
@@ -295,7 +296,7 @@
 				@include respondAt(700px) {
 					padding: 0;
 					color: transparent;
-					@include box(32px, 32px);
+					@include box(30px, 30px);
 					&:not(:focus)::placeholder {
 						color: transparent;
 					}
@@ -350,11 +351,9 @@
 					@include make-flex($dir: row, $just: flex-start);
 				}
 				a {
+					&.active,
 					&:hover {
 						background-color: var(--t-crp-background-hover);
-					}
-					&.active {
-						background-color: var(--activeNav);
 					}
 				}
 			}
