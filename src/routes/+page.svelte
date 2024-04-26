@@ -222,12 +222,12 @@
 					transition: opacity 0.3s ease-out;
 				}
 
-				&:last-child {
-					grid-column-end: span 2;
-					@include respondAt(660px) {
-						grid-column-end: span 1;
-					}
-				}
+				// &:last-child {
+				// 	grid-column-end: span 2;
+				// 	@include respondAt(660px) {
+				// 		grid-column-end: span 1;
+				// 	}
+				// }
 
 				&:hover {
 					box-shadow: var(--home-card-box-shadow);

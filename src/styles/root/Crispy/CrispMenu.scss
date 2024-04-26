@@ -229,7 +229,7 @@
 	&__separator {
 		border: none;
 		@include make-flex();
-		@include box(90%, 1.8px);
+		@include box(90%, 1.4px);
 		background-color: var(--t-crp-light-border);
 	}
 
