@@ -29,10 +29,10 @@
 
 		&__bottom {
 			@include box($height: auto);
-			background: var(--prof-card-background-color);
 			@include make-flex($just: flex-end, $align: flex-end);
 			&--map {
 				text-decoration: none;
+				background: var(--prof-card-background-color);
 			}
 		}
 	}

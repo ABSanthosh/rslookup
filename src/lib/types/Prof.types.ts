@@ -10,5 +10,4 @@ export interface ProfItem {
   mail: string;
   phone?: string;
   timesheet: string;
-  gImage: string;
 }

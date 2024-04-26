@@ -3,7 +3,6 @@
 	import { browser } from '$app/environment';
 	import { afterNavigate } from '$app/navigation';
 	import AmenityFilter from './AmenityFilter.svelte';
-	// import AmenityCard from '$components/AmenityCard.svelte';
 	import type { PageData } from './$types';
 	import type {
 		IAcademics,
@@ -28,25 +27,25 @@
 	}[] = [
 		{
 			name: 'Hostel',
-			checked: true,
+			checked: false,
 			icon: 58682,
 			data: data.Hostel
 		},
 		{
 			name: 'Academics',
-			checked: true,
+			checked: false,
 			icon: 59404,
 			data: data.Academics
 		},
 		{
 			name: 'Admin',
-			checked: true,
+			checked: false,
 			icon: 63056,
 			data: data.Admin
 		},
 		{
 			name: 'Essentials',
-			checked: true,
+			checked: false,
 			icon: 61900,
 			data: data.Essentials
 		},
@@ -110,8 +109,11 @@
 								<AdminCard {...cardData} />
 							{:else if item.name === 'Essentials'}
 								<EssentialsCard {...cardData} />
+							{:else if item.name === 'Food'}
+								<EssentialsCard {...cardData} />
+							{:else if item.name === 'Sports'}
+								<AcadCard {...cardData} />
 							{/if}
-							<!-- <AmenityCard data={cardData} type={item.name} /> -->
 						{/each}
 					</div>
 				</section>

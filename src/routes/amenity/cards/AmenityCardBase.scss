@@ -10,6 +10,7 @@
 	&--title {
 		width: 100%;
 		font-size: 20px;
+		text-align: left;
 		overflow: hidden;
 		white-space: nowrap;
 		display: inline-block;
@@ -19,13 +20,14 @@
 
 	&--subTitle {
 		gap: 5px;
+		width: 100%;
 		font-size: 16px;
+		text-align: left;
 		font-weight: 400;
 		white-space: nowrap;
+		color: var(--subFg-1);
 		display: inline-block;
 		text-overflow: ellipsis;
-		color: var(--subFg-1);
-		@include make-flex($dir: row);
 	}
 
 	&__separator {
@@ -69,10 +71,10 @@
 
 	&__bottom {
 		@include box($height: auto);
-		background: var(--prof-card-background-color);
 		@include make-flex($just: flex-end, $align: flex-end);
 		&--map {
 			text-decoration: none;
+			background: var(--prof-card-background-color);
 		}
 	}
 }
