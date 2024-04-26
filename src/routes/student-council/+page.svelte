@@ -3,6 +3,14 @@
 	import type { PageData } from './$types';
 
 	export let data: PageData;
+
+	let profile = (name: string) =>
+		name
+			.match(/(\b\S)?/g)!
+			.join('')
+			.match(/(^\S|\S$)?/g)!
+			.join('')
+			.toUpperCase();
 </script>
 
 <svelte:head>
@@ -21,7 +29,19 @@
 <ul class="SC__members">
 	{#each data.studentCouncil as member}
 		<li class="SC__members--item">
-			<img src={member.img} alt={member.name} loading="lazy" />
+			<span class="SC__members--profileBox">
+				<h2>
+					{profile(member.name)}
+				</h2>
+				{@html `
+					<img 
+						src="${member.img}" 
+						alt="${member.name}" 
+						onerror="this.style.visibility = 'hidden'" 
+						loading="lazy" 
+						"/>
+					`}
+			</span>
 			<h3>
 				{member.name}
 			</h3>
@@ -30,7 +50,7 @@
 			</p>
 			<button
 				class="CopyButton"
-        data-icon={String.fromCharCode(57688)}
+				data-icon={String.fromCharCode(57688)}
 				on:keydown={async () => await copyToClipboard(member.email)}
 				on:keyup={async () => await copyToClipboard(member.email)}
 				on:keypress={async () => await copyToClipboard(member.email)}
@@ -78,6 +98,7 @@
 
 		&__members {
 			gap: 20px;
+			width: 100%;
 			display: grid;
 			margin-top: 60px;
 			grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
@@ -90,18 +111,44 @@
 				grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
 			}
 
+			&--profileBox {
+				gap: 10px;
+				position: relative;
+				aspect-ratio: 1 / 1;
+				@include box(100%, auto);
+				@include make-flex($dir: column, $just: flex-start, $align: flex-start);
+
+				& > h2 {
+					object-fit: cover;
+					border-radius: 50%;
+					aspect-ratio: 1 / 1;
+					@include box(100%, auto);
+					@include make-flex();
+					font-size: 40px;
+					color: var(--grayPrimary);
+					border: 1px solid var(--grayPrimary);
+					background-color: var(--graySecondary);
+				}
+
+				:global(img) {
+					top: 0;
+					right: 0;
+					object-fit: cover;
+					border-radius: 50%;
+					position: absolute;
+					aspect-ratio: 1 / 1;
+					@include box(100%, auto);
+				}
+			}
+
 			&--item {
 				gap: 12px;
 				@include box();
 				padding: 25px;
 				@include make-flex($just: space-between);
 
-				& > img {
-					@include box(100%, auto);
-					aspect-ratio: 1 / 1;
-					border-radius: 50%;
-					object-fit: cover;
-				}
+				// & > img {
+				// }
 
 				& > h3 {
 					font-size: 24px;

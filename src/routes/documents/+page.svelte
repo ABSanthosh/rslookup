@@ -176,7 +176,7 @@
 				& > hr {
 					border: none;
 					@include box(100%, 1px);
-					background: var(--lab-item-separator);
+					background: var(--t-crp-light-border);
 				}
 			}
 		}
