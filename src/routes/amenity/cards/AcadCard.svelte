@@ -5,20 +5,35 @@
 </script>
 
 <div class="AmenityCard">
-	<div class="Row--between AmenityCard__bottom gap-10 w-100">
-		<h3>{data.name}</h3>
-		<a
-			class="CrispButton AmenityCard__bottom--map"
-			data-icon={String.fromCharCode(58715)}
-			href={MapsSelector(data.lat, data.lng)}
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			Map
-		</a>
-	</div>
+	<h3>{data.name}</h3>
+	<a
+		class="CrispButton AmenityCard__bottom--map"
+		data-icon={String.fromCharCode(58715)}
+		href={MapsSelector(data.lat, data.lng)}
+		target="_blank"
+		rel="noopener noreferrer"
+	>
+		Map
+	</a>
 </div>
 
 <style lang="scss">
-	@import './AmenityCardBase.scss';
+	.AmenityCard {
+		gap: 20px;
+		padding: 10px;
+		border-radius: 10px;
+		@include box(auto, auto);
+		border: 1px solid var(--t-crp-border);
+		background: var(--prof-card-background-color);
+		@include make-flex($dir: row, $just: space-between);
+
+		&__bottom {
+			@include box($height: auto);
+			background: var(--prof-card-background-color);
+			@include make-flex($just: flex-end, $align: flex-end);
+			&--map {
+				text-decoration: none;
+			}
+		}
+	}
 </style>

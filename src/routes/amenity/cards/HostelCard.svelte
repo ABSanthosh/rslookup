@@ -7,43 +7,51 @@
 </script>
 
 <div class="AmenityCard">
-	<div class="Col--a-start gap-10 w-100">
-		<h3>{data.name}</h3>
-		<span>{data.warden}</span>
-	</div>
-	<div class="Row--between gap-10 w-100 AmenityCard__bottom">
-		<div class="AmenityCard__contact">
-			{#if data.phone !== ''}
-				<button
-					class="CopyButton"
+	<div class="Col--a-start gap-15 w-100">
+		<h3 class="AmenityCard--title">{data.name}</h3>
+		<span class="AmenityCard--subTitle">{data.warden}</span>
+		{#if data.phone !== ''}
+			<div class="AmenityCard__separator">
+				<span class="AmenityCard__separator--icon" data-icon={String.fromCharCode(57520)}>
+					Phone
+				</span>
+				<hr />
+				<a
+					role="button"
+					href={'tel:' + data.phone}
 					title="Copy phone number"
-					data-icon={String.fromCharCode(57520)}
+					class="CopyButton AmenityCard__separator--content"
 					on:keydown={async () => await copyToClipboard(data.phone)}
 					on:keyup={async () => await copyToClipboard(data.phone)}
 					on:keypress={async () => await copyToClipboard(data.phone)}
 					on:click={async () => await copyToClipboard(data.phone)}
 				>
-					<span>
-						{data.phone}
-					</span>
-				</button>
-			{/if}
-			{#if data.mail !== ''}
-				<button
-					class="CopyButton"
-					title="Copy email"
-					data-icon={String.fromCharCode(57688)}
+					{data.phone}
+				</a>
+			</div>
+		{/if}
+		{#if data.mail}
+			<div class="AmenityCard__separator">
+				<span class="AmenityCard__separator--icon" data-icon={String.fromCharCode(57688)}>
+					Mail
+				</span>
+				<hr />
+				<a
+					role="button"
+					href={'mail:' + data.mail}
+					title="Copy phone number"
+					class="CopyButton AmenityCard__separator--content"
 					on:keydown={async () => await copyToClipboard(data.mail)}
 					on:keyup={async () => await copyToClipboard(data.mail)}
 					on:keypress={async () => await copyToClipboard(data.mail)}
 					on:click={async () => await copyToClipboard(data.mail)}
 				>
-					<span>
-						{data.mail}
-					</span>
-				</button>
-			{/if}
-		</div>
+					{data.mail}
+				</a>
+			</div>
+		{/if}
+	</div>
+	<div class="Row--between gap-10 w-100 AmenityCard__bottom">
 		<a
 			class="CrispButton AmenityCard__bottom--map"
 			data-icon={String.fromCharCode(58715)}

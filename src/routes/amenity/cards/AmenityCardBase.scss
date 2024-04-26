@@ -1,5 +1,5 @@
 .AmenityCard {
-	gap: 45px;
+	gap: 20px;
 	padding: 10px;
 	border-radius: 10px;
 	@include box(auto, auto);
@@ -7,57 +7,70 @@
 	background: var(--prof-card-background-color);
 	@include make-flex($just: space-between, $align: flex-start);
 
-	& > div {
-		h3 {
-			font-size: 20px;
-			color: var(--foreground);
-		}
-
-		& > span {
-			color: var(--subFg-1);
-			font-size: 16px;
-			font-weight: 400;
-		}
+	&--title {
+		width: 100%;
+		font-size: 20px;
+		overflow: hidden;
+		white-space: nowrap;
+		display: inline-block;
+		text-overflow: ellipsis;
+		color: var(--foreground);
 	}
-	&__contact {
-		gap: 10px;
-		min-width: 0;
-		@include box();
-		@include make-flex($align: flex-start);
-		& > span {
-			gap: 6px;
+
+	&--subTitle {
+		gap: 5px;
+		font-size: 16px;
+		font-weight: 400;
+		white-space: nowrap;
+		display: inline-block;
+		text-overflow: ellipsis;
+		color: var(--subFg-1);
+		@include make-flex($dir: row);
+	}
+
+	&__separator {
+		gap: 12px;
+		@include box($height: auto);
+		@include make-flex($dir: row);
+
+		&--icon {
+			gap: 5px;
 			font-size: 14px;
+			@include box(auto);
 			color: var(--subFg-1);
-			@include make-flex($dir: row, $just: flex-start);
+			@include make-flex($dir: row);
+
 			&::before {
-				font-size: 18px;
-			}
-			p {
-				cursor: pointer;
-				overflow: hidden;
-				white-space: nowrap;
-				display: inline-block;
-				text-overflow: ellipsis;
-				&:hover {
-					text-decoration: underline;
-				}
+				margin-top: 2px;
+				font-size: 16px;
+				color: var(--subFg-1);
 			}
 		}
 
-		& > button {
-			max-width: 100%;
-			@include make-flex($dir: row, $just: flex-start);
-			span {
-				overflow: hidden;
-				white-space: nowrap;
-				display: inline-block;
-				text-overflow: ellipsis;
-			}
+		& > hr {
+			border-bottom: 1px solid var(--lab-item-separator);
+			border-top: none;
+			border-left: none;
+			border-right: none;
+			flex-grow: 1;
+			user-select: none;
+		}
+
+		&--content {
+			font-size: 14px;
+			font-weight: 600;
+
+			overflow: hidden;
+			white-space: nowrap;
+			display: inline-block;
+			text-overflow: ellipsis;
 		}
 	}
 
 	&__bottom {
-		align-items: flex-end;
+		@include box($height: auto);
+		background: var(--prof-card-background-color);
+		@include make-flex($just: flex-end, $align: flex-end);
 		&--map {
 			text-decoration: none;
 		}

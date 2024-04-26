@@ -9,8 +9,7 @@
 
 <div class="AmenityCard">
 	<div class="Col--a-start gap-15 w-100">
-		<h3>{data.name}</h3>
-
+		<h3 class="AmenityCard--title">{data.name}</h3>
 		{#if data['time.from'] !== '' && data['time.to'] !== ''}
 			<div class="AmenityCard__separator">
 				<span class="AmenityCard__separator--icon" data-icon={String.fromCharCode(59573)}>
@@ -97,7 +96,4 @@
 
 <style lang="scss">
 	@import './AmenityCardBase.scss';
-
-	.AmenityCard {
-	}
 </style>
