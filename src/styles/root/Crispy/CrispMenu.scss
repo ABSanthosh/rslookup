@@ -23,6 +23,7 @@
 	--crp-menu-content-height: auto;
 
 	--crp-menu-summary-padding: 0 24px 0 10px;
+	--crp-menu-summary-border-radius: 8px;
 
 	position: relative;
 	transition: all 0.15s ease-in-out;
@@ -85,9 +86,9 @@
 		cursor: pointer;
 		user-select: none;
 		position: relative;
-		border-radius: 6px;
 		padding: var(--crp-menu-summary-padding);
 		@include make-flex($dir: row, $just: flex-start);
+		border-radius: var(--crp-menu-summary-border-radius);
 
 		// Colors
 		color: var(--crp-menu-color);

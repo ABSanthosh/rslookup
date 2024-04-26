@@ -11,6 +11,7 @@
 	--crp-select-background-size: 24px 14px;
 	--crp-select-background-position: calc(100% - var(--crp-select-icon-offset)) 50%;
 	--crp-select-padding: 0 20px 0 10px;
+	--crp-select-border-radius: 8px;
 
 	min-width: var(--crp-select-min-width);
 	@include box(var(--crp-select-width), var(--crp-select-height));
@@ -34,7 +35,7 @@
 	cursor: pointer;
 	user-select: none;
 	position: relative;
-	border-radius: 6px;
+	border-radius: var(--crp-select-border-radius);
 	padding: var(--crp-select-padding);
 	@include make-flex($dir: row, $just: flex-start);
 

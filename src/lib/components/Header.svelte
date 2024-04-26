@@ -290,7 +290,7 @@
 			& > input {
 				@include box();
 				font-size: 16px;
-				border-radius: 6px;
+				// border-radius: 6px;
 				padding: 0 24px 0 30px;
 
 				@include respondAt(700px) {

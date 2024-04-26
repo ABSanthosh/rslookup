@@ -213,13 +213,6 @@
 				max-width: 100%;
 				overflow-x: hidden;
 				@include make-flex();
-
-				animation: fade-in linear forwards;
-				animation-timeline: view();
-				animation-range-start: 0;
-				animation-range-end: 17%;
-				animation-duration: 4s;
-				transform-style: preserve-3d;
 			}
 		}
 
@@ -242,20 +235,6 @@
 				@include box();
 				padding: 10px 6px 4px 6px;
 			}
-		}
-	}
-
-	@keyframes fade-in {
-		0% {
-			scale: 0.9;
-			opacity: 0;
-			transform: translateY(20px) rotateX(-30deg);
-		}
-
-		to {
-			scale: 1;
-			opacity: 1;
-			transform: translateY(0) rotateX(0);
 		}
 	}
 </style>

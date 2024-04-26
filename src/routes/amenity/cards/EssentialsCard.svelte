@@ -21,7 +21,7 @@
 				</span>
 			</div>
 		{/if}
-		{#if data.MO !== 'FALSE' && data.TU !== 'FALSE' && data.WE !== 'FALSE' && data.TH !== 'FALSE' && data.FR !== 'FALSE' && data.SA !== 'FALSE' && data.SU !== 'FALSE'}
+		{#if data.MO && data.TU && data.WE && data.TH && data.FR && data.SA && data.SU && data.MO !== 'FALSE' && data.TU !== 'FALSE' && data.WE !== 'FALSE' && data.TH !== 'FALSE' && data.FR !== 'FALSE' && data.SA !== 'FALSE' && data.SU !== 'FALSE'}
 			<div class="AmenityCard__separator">
 				<span class="AmenityCard__separator--icon" data-icon={String.fromCharCode(59670)}>
 					Days
@@ -41,29 +41,31 @@
 			</div>
 		{/if}
 		{#if data.phone !== ''}
-			<div class="AmenityCard__separator">
-				<span class="AmenityCard__separator--icon" data-icon={String.fromCharCode(57520)}>
-					Phone
-				</span>
-				<hr />
-				<a
-					role="button"
-					href={'tel:' + data.phone}
-					title="Copy phone number"
-					class="CopyButton AmenityCard__separator--content"
-					on:keydown={async () => await copyToClipboard(data.phone)}
-					on:keyup={async () => await copyToClipboard(data.phone)}
-					on:keypress={async () => await copyToClipboard(data.phone)}
-					on:click={async () => await copyToClipboard(data.phone)}
-				>
-					{data.phone}
-				</a>
-			</div>
+			{#each data.phone.split(',') as item}
+				<div class="AmenityCard__separator">
+					<span class="AmenityCard__separator--icon" data-icon={String.fromCharCode(57520)}>
+						Phone
+					</span>
+					<hr />
+					<a
+						role="button"
+						href={'tel:' + data.phone}
+						title="Copy phone number"
+						class="CopyButton AmenityCard__separator--content"
+						on:keydown={async () => await copyToClipboard(data.phone)}
+						on:keyup={async () => await copyToClipboard(data.phone)}
+						on:keypress={async () => await copyToClipboard(data.phone)}
+						on:click={async () => await copyToClipboard(data.phone)}
+					>
+						{item.trim()}
+					</a>
+				</div>
+			{/each}
 		{/if}
 		{#if data.mail !== ''}
 			<div class="AmenityCard__separator">
-				<span class="AmenityCard__separator--icon" data-icon={String.fromCharCode(57520)}>
-					Phone
+				<span class="AmenityCard__separator--icon" data-icon={String.fromCharCode(57688)}>
+					Mail
 				</span>
 				<hr />
 				<a
