@@ -22,6 +22,7 @@
   --t-crp-disabled-color: var(--gray-01);
   --t-crp-background-hover: var(--gray-14);
   --t-crp-disabled-background-color: var(--gray-14);
+  --t-crp-link-primary: var(--violet-00);
 
   --t-crp-border: var(--gray-13);
   --t-crp-light-border: var(--gray-19);
