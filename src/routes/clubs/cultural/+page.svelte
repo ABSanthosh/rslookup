@@ -13,7 +13,7 @@
 </svelte:head>
 
 <ul class="Clubs__content">
-	{#each data.cultural as club, index}
+	{#each data.cultural as club, index (club.name)}
 		<li class="Club">
 			<div class="Club__header">
 				<h2>{club.name}</h2>

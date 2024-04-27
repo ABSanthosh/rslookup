@@ -82,17 +82,14 @@
 
 <div class="Amenity__header w-100">
 	<h2>Amenities</h2>
-	<p>
-		Find all the amenities SNU has to offer
-		<em>(Stale data—needs update)</em>
-	</p>
+	<p>Find all the amenities SNU has to offer</p>
 </div>
 
 <main class="Amenity__bottom w-100">
 	<AmenityFilter bind:filters bind:isFilterOpen />
 
 	<div class="Amenity__content w-100">
-		{#each filters as item}
+		{#each filters as item (item.name)}
 			{#if item.checked}
 				<section transition:slide>
 					<h2>
@@ -139,11 +136,6 @@
 				font-size: 20px;
 				font-weight: 400;
 				color: var(--subFg-1);
-				& > em {
-					font-size: 16px;
-					font-weight: 400;
-					color: var(--subFg-1);
-				}
 			}
 		}
 
@@ -157,11 +149,12 @@
 		}
 
 		&__content {
+			gap: 30px;
 			@include make-flex($just: flex-start);
 
 			& > section {
 				gap: 15px;
-				margin-bottom: 30px;
+				// margin-bottom: 30px;
 				color: var(--foreground);
 				@include box($height: auto);
 				@include make-flex($just: flex-start, $align: flex-start);

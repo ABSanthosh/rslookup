@@ -20,7 +20,7 @@
   }
 
   &[data-format="box"] {
-    --crp-message-border-radius: 4px;
+    --crp-message-border-radius: 8px;
     --crp-message-padding: 8px 16px;
 
     border-radius: var(--crp-message-border-radius);

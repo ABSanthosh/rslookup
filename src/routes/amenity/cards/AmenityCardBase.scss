@@ -30,6 +30,14 @@
 		text-overflow: ellipsis;
 	}
 
+	&--desc {
+		width: 100%;
+		font-size: 14px;
+		text-align: left;
+		font-weight: 500;
+		color: var(--subFg-2);
+	}
+
 	&__separator {
 		gap: 12px;
 		@include box($height: auto);

@@ -145,7 +145,7 @@
 </details>
 
 <div class="Prof__content">
-	{#if prof.length === 0}
+	{#if searchResult.length === 0}
 		<i
 			class="CrispMessage"
 			data-type="error"
@@ -229,6 +229,16 @@
 
 			& > summary {
 				cursor: pointer;
+				list-style: none;
+
+				&::marker,
+				&::-webkit-details-marker {
+					display: none;
+				}
+
+				&:first-of-type {
+					list-style-type: none;
+				}
 			}
 
 			&--content {

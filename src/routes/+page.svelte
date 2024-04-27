@@ -101,6 +101,8 @@
 
 			& > img {
 				margin-top: 100px;
+				max-width: 410px;
+				max-height: 440px;
 				aspect-ratio: 0.93;
 				@include box(auto, 55%);
 				filter: drop-shadow(0px 0px 25px #ffffff33);

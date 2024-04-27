@@ -32,21 +32,6 @@
 					font-weight: 400;
 					color: var(--subFg-1);
 				}
-
-				& > a {
-					gap: 6px;
-					cursor: pointer;
-					@include make-flex($dir: row, $just: flex-start, $align: flex-end);
-					overflow: hidden;
-
-					&:hover {
-						text-decoration: underline;
-					}
-
-					&::before {
-						height: 18px;
-					}
-				}
 			}
 
 			&__members {

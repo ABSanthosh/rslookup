@@ -5,6 +5,8 @@
 	import WeekDays from '$components/WeekDays.svelte';
 
 	export const data = $$props as IEssentials;
+
+	console.log(data);
 </script>
 
 <div class="AmenityCard">
@@ -82,7 +84,13 @@
 				</a>
 			</div>
 		{/if}
+
 	</div>
+	{#if data.description && data.description !== ''}
+		<p class="AmenityCard--desc">
+			{data.description}
+		</p>
+	{/if}
 	<div class="AmenityCard__bottom">
 		<a
 			class="CrispButton AmenityCard__bottom--map"

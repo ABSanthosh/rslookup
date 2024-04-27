@@ -84,6 +84,7 @@
 		// outline: none;
 		@include box();
 		cursor: pointer;
+		list-style: none;
 		user-select: none;
 		position: relative;
 		padding: var(--crp-menu-summary-padding);
@@ -96,8 +97,13 @@
 		box-shadow: var(--crp-menu-box-shadow);
 		background-color: var(--crp-menu-background-color);
 
+		&::marker,
 		&::-webkit-details-marker {
 			display: none;
+		}
+
+		&:first-of-type {
+			list-style-type: none;
 		}
 
 		&:hover:not(:disabled),

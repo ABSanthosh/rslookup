@@ -72,7 +72,7 @@
 			left: 0;
 			z-index: -1;
 			position: fixed;
-			@include box(100vw, 100vh);
+			@include box(100vw, 100dvh);
 		}
 
 		border: none;

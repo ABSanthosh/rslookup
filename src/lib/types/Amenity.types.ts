@@ -20,6 +20,7 @@ export interface IEssentials {
 	'time.to': string;
 	mail: string;
 	phone: string;
+	description: string;
 	MO: 'FALSE' | 'TRUE';
 	TU: 'FALSE' | 'TRUE';
 	WE: 'FALSE' | 'TRUE';
@@ -37,6 +38,7 @@ export interface IFood {
 	'time.to': string;
 	mail: string;
 	phone: string;
+	description: string;
 }
 
 export interface IHostel {
