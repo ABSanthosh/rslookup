@@ -28,7 +28,7 @@
 		@include make-flex($dir: row, $just: space-between);
 
 		&__bottom {
-			@include box($height: auto);
+			@include box($height: fit-content);
 			@include make-flex($just: flex-end, $align: flex-end);
 			&--map {
 				text-decoration: none;

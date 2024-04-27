@@ -2,7 +2,7 @@
 	gap: 20px;
 	padding: 10px;
 	border-radius: 10px;
-	@include box(auto, auto);
+	@include box(auto, fit-content);
 	border: 1px solid var(--t-crp-border);
 	background: var(--prof-card-background-color);
 	@include make-flex($just: space-between, $align: flex-start);

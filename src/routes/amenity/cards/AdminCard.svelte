@@ -43,7 +43,7 @@
 					on:keydown={async () => await copyToClipboard(data.mail)}
 					on:keyup={async () => await copyToClipboard(data.mail)}
 					on:keypress={async () => await copyToClipboard(data.mail)}
-					on:click={async () => await copyToClipboard(data.mail)}
+					on:click={async () => await copyToClipboard(data.mail)}	
 				>
 					{data.mail}
 				</a>

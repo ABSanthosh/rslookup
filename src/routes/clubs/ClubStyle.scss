@@ -3,7 +3,7 @@
 		gap: 30px;
 		@include make-flex();
 		margin-bottom: 150px;
-		@include box(100%, auto);
+		@include box(100%, fit-content);
 
 		hr {
 			width: 90%;
@@ -11,14 +11,14 @@
 		}
 
 		.Club {
-			@include box(100%, auto);
+			@include box(100%, fit-content);
 			@include make-flex($just: flex-start);
 			gap: 30px;
 			@include make-flex($dir: column, $just: flex-start);
 
 			&__header {
 				gap: 10px;
-				@include box(100%, auto);
+				@include box(100%, fit-content);
 				@include make-flex($dir: column, $align: flex-start);
 
 				& > h2 {
