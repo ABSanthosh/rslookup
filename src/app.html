@@ -38,6 +38,22 @@
 			rel="stylesheet"
 		/>
 
+		<script>
+			if (
+				!('theme' in localStorage) &&
+				window.matchMedia('(prefers-color-scheme: dark)').matches &&
+				(document.documentElement.getAttribute('data-theme') !== '' ||
+					!document.cookie.includes('theme=dark'))
+			) {
+				document.documentElement.setAttribute('data-theme', 'dark');
+				localStorage.theme = 'dark';
+			} else if (localStorage.theme) {
+				document.documentElement.setAttribute('data-theme', localStorage.theme);
+			} else {
+				document.documentElement.setAttribute('data-theme', 'light');
+				localStorage.theme = 'light';
+			}
+		</script>
 		%sveltekit.head%
 	</head>
 
