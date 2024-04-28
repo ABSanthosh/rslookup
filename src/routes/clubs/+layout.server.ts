@@ -11,15 +11,13 @@ import {
 import type { IClub, IClubCore } from '$types/Club.types';
 import { convertTSVtoJSON } from '$utils/toJson';
 import getImageSrc from '$utils/getImageSrc';
+import { cacheConfig } from '$utils/CacheControl';
 
 export const load: LayoutServerLoad = async ({ url, setHeaders }) => {
 	if (url.pathname === '/clubs') {
 		throw redirect(308, '/clubs/cultural');
 	}
-
-	// setHeaders({
-	// 	'cache-control': 'public, must-revalidate, max-age=86400, stale-while-revalidate=86400'
-	// });
+	setHeaders(cacheConfig);
 
 	const [culturalClubs, culturalClubCore, technicalClubs, technicalClubCore] = await Promise.all([
 		fetch(`${DATA_SOURCE_BASE}${DATA_SOURCE_CLUB_CULTURAL}`),

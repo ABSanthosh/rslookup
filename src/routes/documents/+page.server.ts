@@ -2,15 +2,13 @@ import {
   DATA_SOURCE_BASE,
   DATA_SOURCE_DOCUMENTS,
 } from "$env/static/private";
-import type { IDocument } from "$types/Documents.types";
-import { convertTSVtoJSON } from "$utils/toJson";
 import type { PageServerLoad } from "./$types";
+import { convertTSVtoJSON } from "$utils/toJson";
+import { cacheConfig } from "$utils/CacheControl";
+import type { IDocument } from "$types/Documents.types";
 
 export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
-  // setHeaders({
-  //   "cache-control":
-  //     "public, must-revalidate, max-age=86400, stale-while-revalidate=86400",
-  // });
+  setHeaders(cacheConfig);
 
   const data = await fetch(
     `${DATA_SOURCE_BASE}${DATA_SOURCE_DOCUMENTS}`,

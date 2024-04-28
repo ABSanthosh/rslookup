@@ -8,13 +8,12 @@ import {
 	DATA_SOURCE_AMENITY_SPORT
 } from '$env/static/private';
 import type { IAcademics, IAdmin, IEssentials, IFood, IHostel, ISport } from '$types/Amenity.types';
+import { cacheConfig } from '$utils/CacheControl';
 import { convertTSVtoJSON } from '$utils/toJson';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
-	// setHeaders({
-	// 	'cache-control': 'public, must-revalidate, max-age=86400, stale-while-revalidate=86400'
-	// });
+	setHeaders(cacheConfig);
 
 	const options = {
 		method: 'GET',
