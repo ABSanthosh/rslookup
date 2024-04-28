@@ -1,8 +1,8 @@
 .AmenityCard {
 	gap: 20px;
+	width: 100%;
 	padding: 10px;
 	border-radius: 10px;
-	@include box(auto, fit-content);
 	border: 1px solid var(--t-crp-border);
 	background: var(--prof-card-background-color);
 	@include make-flex($just: space-between, $align: flex-start);
@@ -79,6 +79,7 @@
 
 	&__bottom {
 		@include box($height: auto);
+		margin-top: auto;
 		@include make-flex($just: flex-end, $align: flex-end);
 		&--map {
 			text-decoration: none;

@@ -29,7 +29,7 @@
 		else if (window.matchMedia('(prefers-color-scheme: light)').matches) setTheme('light');
 		else setTheme('dark');
 
-		EasterEgg();
+		if (process.env.NODE_ENV === 'production') EasterEgg();
 	});
 </script>
 

@@ -5,8 +5,6 @@
 	import WeekDays from '$components/WeekDays.svelte';
 
 	export const data = $$props as IEssentials;
-
-	console.log(data);
 </script>
 
 <div class="AmenityCard">

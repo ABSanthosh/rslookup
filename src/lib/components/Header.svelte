@@ -84,7 +84,7 @@
 				<input
 					type="text"
 					class="CrispInput"
-					placeholder={`Search for a ${currentRoute?.name.toLowerCase()}`}
+					placeholder={`Search for ${currentRoute?.name.toLowerCase()}`}
 					bind:value={$query}
 					on:input={(e) => {
 						if (!(e.target instanceof HTMLInputElement)) return;
@@ -189,6 +189,13 @@
 					font-weight: 500;
 					margin-bottom: 5px;
 				}
+
+				@include respondAt(700px) {
+					font-size: 18px;
+					h2 {
+						margin-bottom: 0px;
+					}
+				}
 			}
 		}
 
@@ -271,10 +278,16 @@
 				position: absolute;
 				pointer-events: none;
 				transform: translateY(-50%);
+
+				@include respondAt(700px) {
+					left: 6px;
+				}
 			}
 
 			@include respondAt(700px) {
-				@include box(auto);
+				// @include box(auto);
+				width: auto;
+				top: 18px;
 
 				&:has(input:focus),
 				&:has(input:active) {

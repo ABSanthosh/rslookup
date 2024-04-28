@@ -11,7 +11,9 @@ export const handle = async ({ event, resolve }) => {
 					path: '/',
 					expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 365),
 					maxAge: 1000 * 60 * 60 * 24 * 365,
-					httpOnly: false
+					httpOnly: false,
+					domain: new URL(event.request.url).hostname,
+					sameSite: 'strict',
 				});
 			}
 

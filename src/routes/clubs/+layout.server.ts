@@ -17,9 +17,9 @@ export const load: LayoutServerLoad = async ({ url, setHeaders }) => {
 		throw redirect(308, '/clubs/cultural');
 	}
 
-	setHeaders({
-		'cache-control': 'public, must-revalidate, max-age=86400, stale-while-revalidate=86400'
-	});
+	// setHeaders({
+	// 	'cache-control': 'public, must-revalidate, max-age=86400, stale-while-revalidate=86400'
+	// });
 
 	const [culturalClubs, culturalClubCore, technicalClubs, technicalClubCore] = await Promise.all([
 		fetch(`${DATA_SOURCE_BASE}${DATA_SOURCE_CLUB_CULTURAL}`),

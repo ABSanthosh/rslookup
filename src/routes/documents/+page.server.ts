@@ -7,10 +7,10 @@ import { convertTSVtoJSON } from "$utils/toJson";
 import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
-  setHeaders({
-    "cache-control":
-      "public, must-revalidate, max-age=86400, stale-while-revalidate=86400",
-  });
+  // setHeaders({
+  //   "cache-control":
+  //     "public, must-revalidate, max-age=86400, stale-while-revalidate=86400",
+  // });
 
   const data = await fetch(
     `${DATA_SOURCE_BASE}${DATA_SOURCE_DOCUMENTS}`,
