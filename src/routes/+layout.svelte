@@ -10,6 +10,8 @@
 	import { theme, setTheme } from '$stores/ThemeStore';
 	import { navigating } from '$app/stores';
 	import BlurredSpinner from '$components/Spinner/BlurredSpinner.svelte';
+	import Footer from '$components/Footer.svelte';
+	import { EasterEgg } from '$utils/EasterEgg.js';
 
 	export let data;
 
@@ -26,6 +28,8 @@
 		if (cookieTheme) theme.set(cookieTheme);
 		else if (window.matchMedia('(prefers-color-scheme: light)').matches) setTheme('light');
 		else setTheme('dark');
+
+		EasterEgg();
 	});
 </script>
 
@@ -62,6 +66,8 @@
 		<Toast {...toast} />
 	{/each}
 {/if}
+
+<Footer />
 
 <style lang="scss" global>
 	@import '../styles/root/global.scss';
