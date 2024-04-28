@@ -75,12 +75,15 @@
 			@include box(100vw, 100dvh);
 		}
 
+		// top: 0;
+		// right: 0;
 		border: none;
 		margin-top: 0;
 		margin-right: 0;
 		margin-bottom: 0;
+		// position: fixed;
 		margin-left: auto;
-		@include box(var(--paneWidth, 600px), 100vh);
+		@include box(var(--paneWidth, 600px), 100dvh);
 
 		max-width: none;
 		max-height: none;

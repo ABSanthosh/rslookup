@@ -6,6 +6,8 @@
 	import { HOME_ROUTES, ROUTES } from '$data/routes';
 	import { clickOutside } from '$utils/onClickOutside';
 	import { fade } from 'svelte/transition';
+	import debounce from '$utils/debounce';
+	import Spinner from './Spinner/Spinner.svelte';
 
 	afterNavigate(() => {
 		isNavOpen = false;
@@ -55,10 +57,12 @@
 			});
 	};
 
+	let localQueryValue: string;
 	$: isHomeRoute = ['/', ...HOME_ROUTES.map((r) => `/${r.route}`)].includes($page.url.pathname);
 	$: path = $page.url.pathname.slice(1).split('/')[0];
 	$: currentRoute = ROUTES.find((r) => r.route.includes(path === '' ? 'home' : path));
 	$: isNavOpen = false;
+	$: isSearching = false;
 </script>
 
 <header class="Header">
@@ -81,26 +85,38 @@
 		{/if}
 		{#if currentRoute?.showSearch}
 			<div transition:fade class="Header__search" data-icon={String.fromCharCode(59574)}>
+				<Spinner height={20} width={20} style="display: {isSearching ? 'block' : 'none'};" />
 				<input
 					type="text"
 					class="CrispInput"
 					placeholder={`Search for ${currentRoute?.name.toLowerCase()}`}
-					bind:value={$query}
+					bind:value={localQueryValue}
+					use:debounce={{
+						value: localQueryValue,
+						func: () => {
+							query.set(localQueryValue);
+							isSearching = false;
+						},
+						duration: 500
+					}}
 					on:input={(e) => {
 						if (!(e.target instanceof HTMLInputElement)) return;
 						if (e.target.value === '') {
 							query.set('');
 							return;
+						} else {
+							isSearching = true;
 						}
-
-						query.set(e.target.value);
 					}}
 				/>
 				{#if $query !== ''}
 					<button
 						class="CrispButton"
 						data-type="danger"
-						on:click={() => query.set('')}
+						on:click={() => {
+							query.set('');
+							localQueryValue = '';
+						}}
 						data-icon={String.fromCharCode(58829)}
 					/>
 				{/if}
@@ -250,9 +266,9 @@
 		}
 
 		&__search {
-			@include box(100%, 30px);
 			max-width: 260px;
 			position: relative;
+			@include box(100%, 30px);
 
 			& > button {
 				top: 50%;
@@ -266,11 +282,21 @@
 				border-radius: 0 6px 6px 0;
 				--crp-button-background-color: var(--elevation-2);
 
+				@include respondAt(700px) {
+					display: none;
+				}
 				&::before {
 					font-size: 15px;
 				}
 			}
 
+			:global(.Spinner) {
+				left: 5px;
+				margin-top: 5px;
+				position: absolute;
+				pointer-events: none;
+				background-color: var(--elevation-1);
+			}
 			&::before {
 				top: 52%;
 				left: 7px;
@@ -284,19 +310,42 @@
 				}
 			}
 
+			&:has(input:focus),
+			&:has(input:active),
+			&:has(input:hover) {
+				:global(.Spinner) {
+					background-color: var(--t-crp-background-hover);
+				}
+
+				& > button {
+					border-top: 1px solid var(--t-crp-border-hover);
+					border-right: 1px solid var(--t-crp-border-hover);
+					border-bottom: 1px solid var(--t-crp-border-hover);
+
+					&:hover {
+						border: var(--crp-button-border-hover);
+						background-color: var(--crp-button-background-color-hover);
+					}
+				}
+			}
+
 			@include respondAt(700px) {
 				// @include box(auto);
 				width: auto;
-				top: 18px;
 
 				&:has(input:focus),
 				&:has(input:active) {
+					top: 18px;
 					left: 50%;
 					z-index: 2;
 					position: fixed;
 					max-width: none;
 					transform: translateX(-50%);
 					@include box(calc(100vw - 30px), 30px);
+
+					& > button {
+						display: flex;
+					}
 				}
 			}
 

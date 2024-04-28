@@ -91,7 +91,7 @@
 	<div class="Amenity__content w-100">
 		{#each filters as item (item.name)}
 			{#if item.checked}
-				<section transition:slide>
+				<section >
 					<h2>
 						{item.name}
 						<hr />

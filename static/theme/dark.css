@@ -49,8 +49,8 @@
   --grayPrimary: var(--grayish-00);
   --graySecondary: var(--grayish-01);
 
-  --crp-message-color-error: #ff605c;
-  --crp-message-border-color-error: #ff605c;
+  --crp-message-color-error: #942926;
+  --crp-message-border-color-error: #942926;
   --crp-message-background-color-error: #ffe6e6;
 
   --crp-message-color-info: var(--foreground);

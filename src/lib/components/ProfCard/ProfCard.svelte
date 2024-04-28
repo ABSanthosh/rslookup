@@ -99,6 +99,7 @@
 		<svelte:fragment slot="footer">
 			<a
 				target="_blank"
+				style="height: 35px;"
 				rel="noopener noreferrer"
 				data-icon-after={String.fromCharCode(58840)}
 				class:disabled={website === '' || website === '-'}
