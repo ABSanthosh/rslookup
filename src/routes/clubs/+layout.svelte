@@ -56,10 +56,12 @@
 			@include make-flex($dir: row, $just: space-between);
 
 			li {
-				width: 100%;
+				@include box();
 
 				a {
-					width: 100%;
+					@include box();
+
+					line-height: 1.2;
 					padding: 6px 12px;
 					border-radius: 4px;
 					@include make-flex();
