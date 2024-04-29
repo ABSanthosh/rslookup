@@ -1,3 +1,4 @@
+// https://mtm.dev/react-vs-svelte
 export default function debounce(
 	node: HTMLElement,
 	params: { value: any; func: () => void; duration: number }
