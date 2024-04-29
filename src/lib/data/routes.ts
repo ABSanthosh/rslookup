@@ -21,16 +21,16 @@ export const ROUTES = [
 		description:
 			'Finding your designated lab spaces with ease. No more wandering around campus, feeling lost and bewildered.'
 	},
-	// {
-	// 	icon: 59999,
-	// 	route: 'gpa',
-	// 	separator: false,
-	// 	showSearch: false,
-	// 	name: 'GPA Calculator',
-	// 	title: "What's My GPA?",
-	// 	background: 'linear-gradient(90deg, #F24790, #984950)',
-	// 	description: 'Estimate your academic growth with ease. No more manual calculations.'
-	// },
+	{
+		icon: 59999,
+		route: 'gpa',
+		separator: false,
+		showSearch: false,
+		name: 'GPA Calculator',
+		title: "What's My GPA?",
+		background: 'linear-gradient(90deg, #F24790, #984950)',
+		description: 'Estimate your academic growth with ease. No more manual calculations.'
+	},
 	// {
 	// 	icon: 60144,
 	// 	route: 'attendance',
