@@ -401,7 +401,7 @@
 			}
 
 			& > ul {
-				width: 175px;
+				width: 205px;
 				& > a {
 					gap: 7px;
 					padding: 6px 8px;

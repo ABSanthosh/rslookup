@@ -51,17 +51,17 @@ export const ROUTES = [
 		background: 'linear-gradient(225deg, #8D5CC8, #2D2856)',
 		description: 'Meet the Faces Behind Your Voice: Get to Know the Members of the Student Council!'
 	},
-	// {
-	// 	icon: 62874,
-	// 	route: 'acad-helpdesk',
-	// 	showSearch: false,
-	// 	separator: false,
-	// 	name: 'Academic Helpdesk',
-	// 	title: "Who's in Academic POCs?",
-	// 	background: 'linear-gradient(45deg, #E78888, #1C3AE2)',
-	// 	description:
-	// 		'Find all the Academic POCs in one place. Get your academic queries resolved in no time.'
-	// },
+	{
+		icon: 62874,
+		route: 'acad-helpdesk',
+		showSearch: false,
+		separator: false,
+		name: 'Academic Helpdesk',
+		title: "Who's in Academic POCs?",
+		background: 'linear-gradient(45deg, #E78888, #1C3AE2)',
+		description:
+			'Find all the Academic POCs in one place. Get your academic queries resolved in no time.'
+	},
 	{
 		icon: 59507,
 		route: 'documents',

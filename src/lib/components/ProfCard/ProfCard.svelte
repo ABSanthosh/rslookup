@@ -10,12 +10,13 @@
 	let { name, role, room, website, school, phone, department, img, mail, timesheet } =
 		$$props as ProfItem;
 
-	let profile = name
-		.match(/(\b\S)?/g)!
-		.join('')
-		.match(/(^\S|\S$)?/g)!
-		.join('')
-		.toUpperCase();
+	let profile = () =>
+		(name ? name : '')
+			.match(/(\b\S)?/g)!
+			.join('')
+			.match(/(^\S|\S$)?/g)!
+			.join('')
+			.toUpperCase();
 
 	$: isProfPaneOpen = false;
 	$: if (browser) {
@@ -47,7 +48,7 @@
             color: {profColors[schools[school]?.color]?.primary || profColors.gray.primary};
             "
 					>
-						{profile}
+						{profile()}
 					</h2>
 					{@html `
             <img 
@@ -123,7 +124,7 @@
         color: {profColors[schools[school]?.color]?.primary || profColors.gray.primary}
         "
 			>
-				{profile}
+				{profile()}
 			</h2>
 			{@html `
         <img 
@@ -160,7 +161,7 @@
 			/>
 		{/if}
 	</div>
-	{#if school !== '' && school !== '-' && department !== '' && department !== '-'}
+	{#if school && department && school !== '' && school !== '-' && department !== '' && department !== '-'}
 		<div class="ProfCard__middle">
 			{#if school !== '' && school !== '-'}
 				<SchoolChip label={school} color={profColors[schools[school]?.color] || profColors.gray} />

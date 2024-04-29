@@ -29,6 +29,9 @@
   --t-crp-border-hover: var(--gray-08);
   --t-crp-disabled-border: var(--gray-14);
 
+  --tableHeaderFG: #7d8590;
+  --tableHeaderBG: #161b22;
+
   /* presets */
   --t-crp-box-shadow: #00000000 0px 0px 0px 0px, #00000000 0px 0px 0px 0px;
   --t-crp-elevation-shadow: #191a1a 0px 8px 24px 0px;

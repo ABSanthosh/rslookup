@@ -146,7 +146,6 @@
 		@include make-flex($just: flex-start);
 
 		& > * {
-			line-height: 1.75;
 			font-family: 'Inter', sans-serif;
 		}
 
