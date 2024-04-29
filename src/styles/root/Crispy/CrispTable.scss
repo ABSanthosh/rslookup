@@ -8,6 +8,21 @@
 		top: 0;
 	}
 
+	&[data-no-footer] {
+		tr {
+			&:last-child > td {
+				border-bottom: 1px solid var(--t-crp-border);
+				&:first-child {
+					border-bottom-left-radius: 6px;
+				}
+	
+				&:last-child {
+					border-bottom-right-radius: 6px;
+				}
+			}
+		}
+	}
+
 	tr {
 		background-color: var(--tableHeaderBG);
 		// background-color: #fbfcfd;
