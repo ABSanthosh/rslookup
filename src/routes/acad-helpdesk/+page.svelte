@@ -8,6 +8,33 @@
 	export let data: PageData;
 </script>
 
+<svelte:head>
+	<title>Academic Helpdesk</title>
+	<meta
+		name="description"
+		content="Everyone you need to know to get your academic queries solved!"
+	/>
+	<meta
+		name="keywords"
+		content={`
+    professors, 
+    teachers, 
+    educators, 
+    snu, 
+    snioe, 
+    Shiv Nadar University, 
+    room number,
+    room no.,
+    snu.edu.in,
+    ${data.office.map((item) => item.name).join(', ')},
+		${data.advisors.map((item) => item.name).join(', ')},
+		${data.committee.map((item) => item.name).join(', ')},
+    `}
+	/>
+	<meta name="author" content="Santhosh" />
+	<meta name="robots" content="index, follow" />
+</svelte:head>
+
 <div class="Acad__header w-100">
 	<h2>Academic Helpdesk</h2>
 	<p>
