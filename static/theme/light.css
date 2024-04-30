@@ -18,6 +18,8 @@
   --amenity-filter-active-bg: #f1f2f4;
   --amenity-filter-bg: var(--white);
 
+  --events-accent: var(--red-03);
+
   /* Crisp theme */
   --t-crp-disabled-color: var(--gray-07);
   --t-crp-background-hover: var(--gray-02);

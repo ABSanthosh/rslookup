@@ -1,4 +1,7 @@
 <script lang="ts">
+	// https://www.css-gradient.com/
+	// https://coolors.co/gradient-maker
+	
 	import { ROUTES } from '$data/routes';
 </script>
 

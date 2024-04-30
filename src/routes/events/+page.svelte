@@ -1,10 +1,29 @@
 <script lang="ts">
-	import { googleCalendar } from '$utils/calendarEvent';
+	import { generateDate, googleCalendar, outlookCalendar, parseDate } from '$utils/calendarEvent';
+	import { clickOutside } from '$utils/onClickOutside';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 
-	console.log(data.events[0]);
+	console.log(
+		googleCalendar({
+			title: 'Test',
+			description: 'Test',
+			start: generateDate(data.events[0].date, data.events[0]['time.from']),
+			end: generateDate(data.events[0].date, data.events[0]['time.to']),
+			location: data.events[0].venueName
+		})
+	);
+
+	$: isCalendarOpen = {} as Record<string, boolean>;
+
+	function downloadICS() {
+		const cal = "data:text/calendar;charset=utf-8,BEGIN%3AVCALENDAR%0D%0AVERSION%3A2.0%0D%0APRODID%3A-%2F%2F%20github.com%2Fadd2cal%2Fadd-to-calendar-button%20%2F%2F%20atcb%20v1.15.5%20%2F%2FEN%0D%0ACALSCALE%3AGREGORIAN%0D%0ABEGIN%3AVEVENT%0D%0AUID%3A2024-04-30T22%3A23%3A01.852Z%40add-to-calendar-button%0D%0ADTSTAMP%3A20240430T222301Z%0D%0ADTSTART%3BVALUE%3DDATE%3A20240509%0D%0ADTEND%3BVALUE%3DDATE%3A20240510%0D%0ASUMMARY%3ACHS%20Webinar%20%7C%20Amdo%20Lullaby%3A%20An%20Ethnography%20of%20Childhood%20and%20Langu%0D%0A%20age%20Shift%20on%20the%20Tibetan%20Plateau%20%7C%209%20May%202024%7C%20MS%20Teams%0D%0ADESCRIPTION%3AThe%20Centre%20of%20Excellence%20for%20Himalayan%20Studies%20is%20organising%0D%0A%20%20an%20online%26nbsp%3B%20talk%20by%20Dr%20Shannon%20Ward%2C%20on%20the%20topic%26nbsp%3B%0D%0A%20Amdo%20Lullaby%3A%20An%20Ethnography%20of%20Childhood%20and%20Language%20Shift%0D%0A%20%20on%20the%20Tibetan...%0D%0AX-ALT-DESC%3BFMTTYPE%3Dtext%2Fhtml%3A%0D%0A%20%3C!DOCTYPE%20HTML%20PUBLIC%20%22%22-%2F%2FW3C%2F%2FDTD%20HTML%203.2%2F%2FEN%22%22%3E%0D%0A%20%3CHTML%3E%3CBODY%3E%0D%0A%20The%20Centre%20of%20Excellence%20for%20Himalayan%20Studies%20is%20organising%0D%0A%20%20an%20online%26nbsp%3B%20talk%20by%20Dr%20Shannon%20Ward%2C%20on%20the%20topic%26nbsp%3B%0D%0A%20Amdo%20Lullaby%3A%20An%20Ethnography%20of%20Childhood%20and%20Language%20Shift%0D%0A%20%20on%20the%20Tibetan...%0D%0A%20%3C%2FBODY%3E%3C%2FHTML%3E%0D%0ALOCATION%3AMS%20Teams%0D%0ASTATUS%3ACONFIRMED%0D%0ALAST-MODIFIED%3A20240430T222301Z%0D%0ASEQUENCE%3A0%0D%0AEND%3AVEVENT%0D%0AEND%3AVCALENDAR";
+		const link = document.createElement('a');
+		link.href = `webcal://${encodeURIComponent(cal)}`;
+		link.download = 'event.ics';
+		link.click();
+	}
 </script>
 
 <svelte:head>
@@ -26,27 +45,20 @@
 	<p>Find all the events happening at SNU here.</p>
 </div>
 
+<button
+	on:click={downloadICS}
+>
+	Download Event
+</button>
+
 <ul class="Events__content">
 	{#each data.events as item, index}
-		{@const [day, month, year] = item.date.split('/')}
-		{@const date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day))}
-		{@const startTime = new Date(date)}
-		<!-- <a
-			href={googleCalendar({
-				title: item.name,
-				description: item.description,
-				startTime: date.toISOString(),
-				endTime: date.toISOString(),
-				location: item.venueLink,
-				date: date.toISOString()
-			})}
-		>
-			google cal
-		</a> -->
+		{@const parsedDate = parseDate(item.date)}
+		{@const date = new Date(parsedDate.year, parsedDate.month, parsedDate.date)}
 		<li class="Event">
 			<div class="Event__left">
 				<span>{item.category}</span>
-				<h2>{date.getDate()}</h2>
+				<h2>{parseDate(item.date).date}</h2>
 				<span>
 					{date.toLocaleString('default', { month: 'short' })}
 					{"'"}
@@ -69,14 +81,18 @@
 							Time
 						</span>
 						<hr />
-						<span class="Event__separator--content"> 10:00 AM - 12:00 PM </span>
+						<span class="Event__separator--content">
+							{item['time.from']} - {item['time.to']}
+						</span>
 					</div>
 					<div class="Event__separator">
 						<span class="Event__separator--icon" data-icon={String.fromCharCode(57544)}>
 							Venue
 						</span>
 						<hr />
-						<span class="Event__separator--content"> Online </span>
+						<span class="Event__separator--content">
+							{item.venueName}
+						</span>
 					</div>
 					<div class="Event__right--actions Row--j-end w-100 gap-10">
 						<a
@@ -85,19 +101,56 @@
 							data-type="black-outline"
 							rel="noopener noreferrer"
 							data-icon={String.fromCharCode(58715)}
-							href="https://www.google.com/maps/search/?api=1&query=34.052235, -118.243683"
+							href={item.venueLink}
 						>
 							Map
 						</a>
-						<button class="CrispButton" data-icon={String.fromCharCode(61317)}>
-							Add to calender
-						</button>
+
+						<details
+							data-no-marker
+							use:clickOutside
+							bind:open={isCalendarOpen[index]}
+							class="CrispMenu Event__calendarTab"
+							on:outclick={() => (isCalendarOpen[index] = false)}
+						>
+							<summary>
+								<span data-icon={String.fromCharCode(61317)}> Add to calender </span>
+							</summary>
+							<ul class="CrispMenu__content">
+								<a
+									href={googleCalendar({
+										title: item.name,
+										description: item.description,
+										start: generateDate(item.date, item['time.from']),
+										end: generateDate(item.date, item['time.to']),
+										location: item.venueName
+									})}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<img src="/images/google-calendar.png" alt="Google Calendar" />
+									Google Calendar
+								</a>
+								<a
+									href={outlookCalendar({
+										title: item.name,
+										description: item.description,
+										start: generateDate(item.date, item['time.from']),
+										end: generateDate(item.date, item['time.to']),
+										location: item.venueName
+									})}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<img src="/images/outlook-calendar.png" alt="Outlook Calendar" />
+									Outlook Calendar
+								</a>
+							</ul>
+						</details>
 					</div>
 				</div>
 			</div>
 		</li>
-
-		<!-- <hr class="Events__content--separator" /> -->
 	{/each}
 </ul>
 
@@ -309,6 +362,43 @@
 					border: 1px solid var(--lab-item-separator);
 					@include respondAt(500px) {
 						margin-left: auto;
+					}
+				}
+			}
+		}
+
+		&__calendarTab {
+			& > summary {
+				--crp-menu-summary-padding: 0 14px 0 14px;
+				& > span {
+					gap: 5px;
+					@include box();
+					white-space: nowrap;
+					@include make-flex($dir: row);
+				}
+			}
+
+			& > ul {
+				width: 205px;
+				& > a {
+					gap: 7px;
+					padding: 6px 8px;
+					user-select: none;
+					border-radius: 6px;
+					white-space: nowrap;
+					text-decoration: none;
+					color: var(--foreground);
+					@include box(100%, 30px);
+					@include make-flex($dir: row, $just: flex-start);
+
+					& > img {
+						@include box(auto);
+					}
+				}
+				a {
+					&.active,
+					&:hover {
+						background-color: var(--t-crp-background-hover);
 					}
 				}
 			}

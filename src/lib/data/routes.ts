@@ -85,13 +85,23 @@ export const ROUTES = [
 			'Find every amenity on campus, from Academic Blocks to Cafeterias, all in one place.'
 	},
 	{
+		icon: 59939,
+		route: 'events',
+		showSearch: false,
+		separator: false,
+		name: 'Events',
+		title: "What're the Events?",
+		background: 'linear-gradient(225deg, #fcf003 0%, #dc419c 100%)',
+		description: 'Stay Updated with the Latest Campus Events: Never Miss Out on the Fun!'
+	},
+	{
 		icon: 59526,
 		route: 'clubs/cultural',
 		showSearch: false,
 		separator: false,
 		name: 'Clubs',
 		title: 'What are the clubs?',
-		background: 'linear-gradient(225deg, #5AA63C, #ADD354)',
+		background: 'linear-gradient(45deg, #ffd68a 0%, #f4772f 100%)',
 		description:
 			'Discover the Heartbeat of Campus Life: Explore All University Clubs and Their Core Members at a Glance!'
 	}

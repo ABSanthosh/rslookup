@@ -36,6 +36,7 @@
 <svelte:head>
 	<title>rslookup | SNU</title>
 	<meta name="color-scheme" content={$theme} />
+	<meta name="theme-color" content={$theme === 'light' ? '#f6f8fa' : '#1a1a1b'} />
 	<link rel="stylesheet" href="/theme/colors.css" />
 	<link rel="stylesheet" href="/theme/light.css" />
 	<link rel="stylesheet" href="/theme/dark.css" />
