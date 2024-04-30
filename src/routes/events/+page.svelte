@@ -93,10 +93,9 @@
 						<span class="Event__separator--content">
 							{item.venueName}
 						</span>
+						<span class="Event__separator--content"> Online </span>
 					</div>
-					<div class="Event__right--actions Row--j-end w-100 gap-10">
-						<a
-							target="_blank"
+					<a
 							class="CrispButton"
 							data-type="black-outline"
 							rel="noopener noreferrer"
@@ -149,7 +148,6 @@
 						</details>
 					</div>
 				</div>
-			</div>
 		</li>
 	{/each}
 </ul>
