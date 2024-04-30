@@ -93,7 +93,6 @@
 						<span class="Event__separator--content">
 							{item.venueName}
 						</span>
-						<span class="Event__separator--content"> Online </span>
 					</div>
 					<a
 							class="CrispButton"
