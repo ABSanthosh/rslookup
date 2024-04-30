@@ -111,9 +111,9 @@ export const HOME_ROUTES = [
   {
     name: 'About',
     route: 'about'
+  },
+  {
+    name: 'Credits',
+    route: 'credits'
   }
-  // {
-  //   name: "Team",
-  //   route: "team",
-  // },
 ] as const;
