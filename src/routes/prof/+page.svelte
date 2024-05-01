@@ -186,7 +186,12 @@
     <option value="80">80</option>
     <option value={`${filteredProf.length}`}>All ({filteredProf.length})</option>
   </select>
-  <Pagination disabled={$query !== ''} rows={filteredProf} {pageSize} bind:trimmedRows={paginatedValues} />
+  <Pagination
+    disabled={$query !== ''}
+    rows={filteredProf}
+    {pageSize}
+    bind:trimmedRows={paginatedValues}
+  />
 </div>
 
 <style lang="scss">

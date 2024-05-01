@@ -214,8 +214,6 @@
     }
 
     &.expired {
-      // opacity: 0.5;
-
       &::before {
         content: 'Expired';
         top: 50%;
@@ -232,18 +230,15 @@
       }
 
       &::after {
-        content: '';
-        position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        opacity: 0.3;
-        // blur 5px;
-        // backdrop-filter: blur(5px);
-        border-radius: 15px;
         z-index: 1;
-        // background: var(--events-accent);
+        content: '';
+        opacity: 0.3;
+        position: absolute;
+        border-radius: 15px;
         background: rgba(235, 109, 109, 0.41);
       }
     }

@@ -22,7 +22,7 @@
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://github.com/ABSanthosh/rslookup/blob/rewrite/LICENSE"
+          href="https://github.com/ABSanthosh/rslookup/blob/master/LICENSE"
         >
           Licensed under GNU GPLv3
         </a>

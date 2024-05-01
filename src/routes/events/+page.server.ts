@@ -5,7 +5,6 @@ import type { IEvents } from '$types/Events.types';
 import { parseDate } from '$utils/calendarEvent';
 
 export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
-
   const data = await fetch(`${DATA_SOURCE_BASE}${DATA_SOURCE_CLUB_EVENTS}`, {
     method: 'GET',
     headers: {
