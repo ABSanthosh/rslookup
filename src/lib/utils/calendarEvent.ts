@@ -32,7 +32,7 @@ export function parseTime(time: string) {
  */
 export function parseDate(dateString: string) {
   const [date, month, year] = dateString.split('/').map((d) => parseInt(d, 10));
-  return { year, month, date };
+  return { year, month: month - 1, date };
 }
 
 /**
@@ -46,7 +46,7 @@ export function parseDate(dateString: string) {
 export function generateDate(dateString: string, time: string) {
   const { year, month, date } = parseDate(dateString);
   const { hours, minutes } = parseTime(time);
-  return new Date(year, month - 1, date, hours, minutes);
+  return new Date(year, month, date, hours, minutes);
 }
 
 /**

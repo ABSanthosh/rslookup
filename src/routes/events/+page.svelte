@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { enhance } from '$app/forms';
   import { generateDate, googleCalendar, outlookCalendar, parseDate } from '$utils/calendarEvent';
   import { clickOutside } from '$utils/onClickOutside';
   import type { PageData } from './$types';
@@ -29,117 +28,128 @@
 </div>
 
 <ul class="Events__content">
-  {#each data.events as item, index}
-    {@const parsedDate = parseDate(item.date)}
-    {@const date = new Date(parsedDate.year, parsedDate.month, parsedDate.date)}
-    <li class="Event">
-      <div class="Event__left">
-        <span>{item.category}</span>
-        <h2>{parseDate(item.date).date}</h2>
-        <span>
-          {date.toLocaleString('default', { month: 'short' })}
-          {"'"}
-          {date.toLocaleString('default', { year: '2-digit' })}
-        </span>
-      </div>
-      <div class="Event__middle">
-        <div class="Event__header">
-          <h3>{item.name}</h3>
-          {#if item.club}
-            <p class="Event__header--club">{item.club}</p>
-          {/if}
-          {#if item.description}
-            <p class="Event__header--desc">{item.description}</p>
-          {/if}
+  {#if data.events.length !== 0}
+    {#each data.events as item, index}
+      {@const parsedDate = parseDate(item.date)}
+      {@const date = new Date(parsedDate.year, parsedDate.month, parsedDate.date)}
+      {@const isExpired = date.getTime() < new Date().getTime()}
+      <li class="Event" class:expired={isExpired}>
+        <div class="Event__left">
+          <span>{item.category}</span>
+          <h2>{parseDate(item.date).date}</h2>
+          <span>
+            {date.toLocaleString('default', { month: 'short' })}
+            {"'"}
+            {date.toLocaleString('default', { year: '2-digit' })}
+          </span>
         </div>
-        <div class="Event__right">
-          <div class="Event__separator">
-            <span class="Event__separator--icon" data-icon={String.fromCharCode(59573)}>
-              Time
-            </span>
-            <hr />
-            <span class="Event__separator--content">
-              {item['time.from']} - {item['time.to']}
-            </span>
+        <div class="Event__middle">
+          <div class="Event__header">
+            <h3>{item.name}</h3>
+            {#if item.club}
+              <p class="Event__header--club">{item.club}</p>
+            {/if}
+            {#if item.description}
+              <p class="Event__header--desc">{item.description}</p>
+            {/if}
           </div>
-          <div class="Event__separator">
-            <span class="Event__separator--icon" data-icon={String.fromCharCode(57544)}>
-              Venue
-            </span>
-            <hr />
-            <span class="Event__separator--content">
-              {item.venueName}
-            </span>
-          </div>
-          <div class="Event__right--actions Row--between w-100 gap-10">
-            <a
-              class="CrispButton"
-              data-type="black-outline"
-              rel="noopener noreferrer"
-              data-icon={String.fromCharCode(58715)}
-              href={item.venueLink}
-              target="_blank"
-            >
-              Map
-            </a>
+          <div class="Event__right">
+            <div class="Event__separator">
+              <span class="Event__separator--icon" data-icon={String.fromCharCode(59573)}>
+                Time
+              </span>
+              <hr />
+              <span class="Event__separator--content">
+                {item['time.from']} - {item['time.to']}
+              </span>
+            </div>
+            <div class="Event__separator">
+              <span class="Event__separator--icon" data-icon={String.fromCharCode(57544)}>
+                Venue
+              </span>
+              <hr />
+              <span class="Event__separator--content">
+                {item.venueName}
+              </span>
+            </div>
+            <div class="Event__right--actions w-100 h-100 gap-10">
+              <a
+                class="CrispButton"
+                data-type="black-outline"
+                rel="noopener noreferrer"
+                data-icon={String.fromCharCode(58715)}
+                href={item.venueLink}
+                target="_blank"
+              >
+                Map
+              </a>
 
-            <details
-              data-no-marker
-              use:clickOutside
-              bind:open={isCalendarOpen[index]}
-              class="CrispMenu Event__calendarTab"
-              on:outclick={() => (isCalendarOpen[index] = false)}
-            >
-              <summary>
-                <span data-icon={String.fromCharCode(61317)}> Add to calender </span>
-              </summary>
-              <ul class="CrispMenu__content" data-direction='top' data-align='right'>
-                <a
-                  class="Event__calendarTab--item"
-                  href={googleCalendar({
-                    title: item.name,
-                    description: item.description,
-                    start: generateDate(item.date, item['time.from']),
-                    end: generateDate(item.date, item['time.to']),
-                    location: item.venueName
-                  })}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src="/images/google-calendar.png" alt="Google Calendar" />
-                  Google Calendar
-                </a>
-                <a
-                  class="Event__calendarTab--item"
-                  href={outlookCalendar({
-                    title: item.name,
-                    description: item.description,
-                    start: generateDate(item.date, item['time.from']),
-                    end: generateDate(item.date, item['time.to']),
-                    location: item.venueName
-                  })}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src="/images/outlook-calendar.png" alt="Outlook Calendar" />
-                  Outlook Calendar
-                </a>
-								<a
-									class="Event__calendarTab--item"
-									href={`/events/api?&title=${item.name}&description=${item.description}&start=${generateDate(item.date, item['time.from'])}&end=${generateDate(item.date, item['time.to'])}&location=${item.venueName}`}
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<img src="/images/apple-calendar.svg" alt="Apple Calendar" />
-									Apple Calendar
-								</a>
-              </ul>
-            </details>
+              <details
+                data-no-marker
+                use:clickOutside
+                bind:open={isCalendarOpen[index]}
+                class="CrispMenu Event__calendarTab"
+                on:outclick={() => (isCalendarOpen[index] = false)}
+              >
+                <summary>
+                  <span data-icon={String.fromCharCode(61317)}> Add to calender </span>
+                </summary>
+                <ul class="CrispMenu__content" data-direction="top" data-align="right">
+                  <a
+                    class="Event__calendarTab--item"
+                    href={googleCalendar({
+                      title: item.name,
+                      description: item.description,
+                      start: generateDate(item.date, item['time.from']),
+                      end: generateDate(item.date, item['time.to']),
+                      location: item.venueName
+                    })}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src="/images/google-calendar.png" alt="Google Calendar" />
+                    Google Calendar
+                  </a>
+                  <a
+                    class="Event__calendarTab--item"
+                    href={outlookCalendar({
+                      title: item.name,
+                      description: item.description,
+                      start: generateDate(item.date, item['time.from']),
+                      end: generateDate(item.date, item['time.to']),
+                      location: item.venueName
+                    })}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src="/images/outlook-calendar.png" alt="Outlook Calendar" />
+                    Outlook Calendar
+                  </a>
+                  <a
+                    class="Event__calendarTab--item"
+                    href={`/events/api?&title=${item.name}&description=${item.description}&start=${generateDate(item.date, item['time.from'])}&end=${generateDate(item.date, item['time.to'])}&location=${item.venueName}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src="/images/apple-calendar.svg" alt="Apple Calendar" />
+                    Apple Calendar
+                  </a>
+                </ul>
+              </details>
+            </div>
           </div>
         </div>
-      </div>
-    </li>
-  {/each}
+      </li>
+    {/each}
+  {:else}
+    <i class="CrispMessage" data-type="info" data-format="box">
+      No events found at the moment. Check the official
+      <a href="https://snu.edu.in/events/" target="_blank" rel="noopener noreferrer">
+        SNU website
+      </a>
+      for departmental events.
+    </i>
+  {/if}
 </ul>
 
 <style lang="scss">
@@ -188,6 +198,7 @@
     gap: 25px;
     width: 100%;
     display: grid;
+    position: relative;
     grid-template-columns: 70px 1fr;
     box-shadow: var(--t-crp-box-shadow);
 
@@ -200,6 +211,41 @@
       gap: 10px;
       grid-template-rows: 40px 1fr;
       grid-template-columns: 1fr;
+    }
+
+    &.expired {
+      // opacity: 0.5;
+
+      &::before {
+        content: 'Expired';
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+        font-size: 60px;
+        font-weight: 900;
+        font-weight: 600;
+        padding: 5px 10px;
+        position: absolute;
+        border-radius: 15px 15px;
+        color: var(--foreground);
+        transform: translate(-50%, -50%) rotate(-7deg);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.3;
+        // blur 5px;
+        // backdrop-filter: blur(5px);
+        border-radius: 15px;
+        z-index: 1;
+        // background: var(--events-accent);
+        background: rgba(235, 109, 109, 0.41);
+      }
     }
 
     &__left {
@@ -239,7 +285,7 @@
         font-weight: 600;
         @include respondAt(500px) {
           font-size: 24px;
-          margin-bottom: 2px;
+          margin-bottom: -2px;
         }
       }
     }
@@ -285,7 +331,7 @@
       }
 
       &--desc {
-        font-size: 18px;
+        font-size: 16px;
       }
     }
 
@@ -330,10 +376,12 @@
 
     &__right {
       @include box();
+      min-width: 0;
       @include make-flex($just: flex-start);
 
       &--actions {
         margin-top: 40px;
+        @include make-flex($dir: row, $just: space-between, $align: flex-end);
         & > a {
           width: 100%;
           border: 1px solid var(--lab-item-separator);
