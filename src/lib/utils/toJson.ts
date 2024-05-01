@@ -1,6 +1,20 @@
+import Papa from 'papaparse';
+
+/**
+ * Converts CSV (Comma-Separated Values) data to JSON format.
+ * @param csvData - The CSV data to be converted.
+ * @returns An array of JSON objects representing the converted data.
+ */
+export function convertCSVtoJSON(csvData: string) {
+  return Papa.parse(csvData, {
+    header: true,
+    // newline: '\n'
+  }).data;
+}
+
 /**
  * Converts TSV (Tab-Separated Values) data to JSON format.
- * @param tsvData - The TSV data to be converted.
+ * @param csvData - The TSV data to be converted.
  * @returns An array of JSON objects representing the converted data.
  */
 export function convertTSVtoJSON(tsvData: string) {

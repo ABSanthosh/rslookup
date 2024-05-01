@@ -9,7 +9,7 @@ import {
   DATA_SOURCE_CLUB_TECHNICAL_CORE
 } from '$env/static/private';
 import type { IClub, IClubCore } from '$types/Club.types';
-import { convertTSVtoJSON } from '$utils/toJson';
+import { convertCSVtoJSON } from '$utils/toJson';
 import getImageSrc from '$utils/getImageSrc';
 import { cacheConfig } from '$utils/CacheControl';
 
@@ -28,15 +28,15 @@ export const load: LayoutServerLoad = async ({ url, setHeaders }) => {
 
   const [culturalClubsData, culturalClubCoreData, technicalClubsData, technicalClubCoreData] =
     await Promise.all([
-      culturalClubs.ok ? (convertTSVtoJSON(await culturalClubs.text()) as unknown as IClub[]) : [],
+      culturalClubs.ok ? (convertCSVtoJSON(await culturalClubs.text()) as unknown as IClub[]) : [],
       culturalClubCore.ok
-        ? (convertTSVtoJSON(await culturalClubCore.text()) as unknown as IClubCore[])
+        ? (convertCSVtoJSON(await culturalClubCore.text()) as unknown as IClubCore[])
         : [],
       technicalClubs.ok
-        ? (convertTSVtoJSON(await technicalClubs.text()) as unknown as IClub[])
+        ? (convertCSVtoJSON(await technicalClubs.text()) as unknown as IClub[])
         : [],
       technicalClubCore.ok
-        ? (convertTSVtoJSON(await technicalClubCore.text()) as unknown as IClubCore[])
+        ? (convertCSVtoJSON(await technicalClubCore.text()) as unknown as IClubCore[])
         : []
     ]);
 

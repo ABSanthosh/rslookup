@@ -6,7 +6,7 @@ import {
 } from '$env/static/private';
 import type { IAcadAdvisors, IAcadCommittee, IAcadOffice } from '$types/Acad.types';
 import { cacheConfig } from '$utils/CacheControl';
-import { convertTSVtoJSON } from '$utils/toJson';
+import { convertCSVtoJSON } from '$utils/toJson';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
@@ -19,12 +19,10 @@ export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
   ]);
 
   const [officeData, advisorsData, committeeData] = await Promise.all([
-    office.ok ? (convertTSVtoJSON(await office.text()) as unknown as IAcadOffice[]) : [],
-    advisors.ok ? (convertTSVtoJSON(await advisors.text()) as unknown as IAcadAdvisors[]) : [],
-    committee.ok ? (convertTSVtoJSON(await committee.text()) as unknown as IAcadCommittee[]) : []
+    office.ok ? (convertCSVtoJSON(await office.text()) as unknown as IAcadOffice[]) : [],
+    advisors.ok ? (convertCSVtoJSON(await advisors.text()) as unknown as IAcadAdvisors[]) : [],
+    committee.ok ? (convertCSVtoJSON(await committee.text()) as unknown as IAcadCommittee[]) : []
   ]);
-
-  console.log(officeData);
 
   return {
     office: officeData,

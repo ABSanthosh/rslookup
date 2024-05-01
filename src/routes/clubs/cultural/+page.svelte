@@ -1,7 +1,8 @@
 <script lang="ts">
-  import type { PageData } from './$types';
   import copyToClipboard from '$utils/CopyToClipboard';
-  export let data: PageData;
+  import type { LayoutServerData } from '../$types';
+
+  export let data: LayoutServerData;
 </script>
 
 <svelte:head>

@@ -9,7 +9,7 @@ import {
 } from '$env/static/private';
 import type { IAcademics, IAdmin, IEssentials, IFood, IHostel, ISport } from '$types/Amenity.types';
 import { cacheConfig } from '$utils/CacheControl';
-import { convertTSVtoJSON } from '$utils/toJson';
+import { convertCSVtoJSON } from '$utils/toJson';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
@@ -18,7 +18,7 @@ export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
   const options = {
     method: 'GET',
     headers: {
-      'Content-Type': 'text/tab-separated-values'
+      'Content-Type': 'text/csv'
     }
   };
 
@@ -31,15 +31,19 @@ export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
     fetch(`${DATA_SOURCE_BASE}${DATA_SOURCE_AMENITY_SPORT}`, options)
   ]);
 
+  // console.log(await Food.text())
+
   const [AcademicsData, AdminData, EssentialsData, FoodData, HostelData, SportsData] =
     await Promise.all([
-      Academics.ok ? (convertTSVtoJSON(await Academics.text()) as unknown as IAcademics[]) : [],
-      Admin.ok ? (convertTSVtoJSON(await Admin.text()) as unknown as IAdmin[]) : [],
-      Essentials.ok ? (convertTSVtoJSON(await Essentials.text()) as unknown as IEssentials[]) : [],
-      Food.ok ? (convertTSVtoJSON(await Food.text()) as unknown as IFood[]) : [],
-      Hostel.ok ? (convertTSVtoJSON(await Hostel.text()) as unknown as IHostel[]) : [],
-      Sports.ok ? (convertTSVtoJSON(await Sports.text()) as unknown as ISport[]) : []
+      Academics.ok ? (convertCSVtoJSON(await Academics.text()) as unknown as IAcademics[]) : [],
+      Admin.ok ? (convertCSVtoJSON(await Admin.text()) as unknown as IAdmin[]) : [],
+      Essentials.ok ? (convertCSVtoJSON(await Essentials.text()) as unknown as IEssentials[]) : [],
+      Food.ok ? (convertCSVtoJSON(await Food.text()) as unknown as IFood[]) : [],
+      Hostel.ok ? (convertCSVtoJSON(await Hostel.text()) as unknown as IHostel[]) : [],
+      Sports.ok ? (convertCSVtoJSON(await Sports.text()) as unknown as ISport[]) : []
     ]);
+
+  console.log(FoodData);
 
   return {
     Hostel: HostelData,
