@@ -27,25 +27,25 @@
   }[] = [
     {
       name: 'Hostel',
-      checked: false,
+      checked: true,
       icon: 58682,
       data: data.Hostel
     },
     {
       name: 'Academics',
-      checked: false,
+      checked: true,
       icon: 59404,
       data: data.Academics
     },
     {
       name: 'Admin',
-      checked: false,
+      checked: true,
       icon: 63056,
       data: data.Admin
     },
     {
       name: 'Essentials',
-      checked: false,
+      checked: true,
       icon: 61900,
       data: data.Essentials
     },
