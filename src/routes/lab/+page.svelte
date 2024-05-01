@@ -3,8 +3,7 @@
   import { clickOutside } from '$utils/onClickOutside';
   import { flip } from 'svelte/animate';
   import type { PageData } from './$types';
-  import { search } from 'fast-fuzzy';
-  import { flipAnimate } from '$utils/FlipAnimate';
+  import { flipAnimate } from '$utils/animation';
 
   export let data: PageData;
 
