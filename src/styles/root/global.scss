@@ -3,41 +3,41 @@
 @import './Crispy/index.scss';
 
 * {
-	margin: 0;
-	padding: 0;
-	font-display: swap;
-	box-sizing: border-box;
-	color: var(--foreground);
+  margin: 0;
+  padding: 0;
+  font-display: swap;
+  box-sizing: border-box;
+  color: var(--foreground);
 }
 
 ::-webkit-scrollbar {
-	background: transparent;
+  background: transparent;
 }
 ::-webkit-scrollbar {
-	@include box($scrollbarWidth, $scrollbarWidth);
+  @include box($scrollbarWidth, $scrollbarWidth);
 }
 ::-webkit-scrollbar-thumb {
-	background: var(--scroll);
-	border-radius: 10px;
-	@include box($scrollbarWidth, $scrollbarWidth);
+  background: var(--scroll);
+  border-radius: 10px;
+  @include box($scrollbarWidth, $scrollbarWidth);
 }
 ::-webkit-scrollbar-track {
-	@include box($scrollbarWidth, $scrollbarWidth);
-	background: transparent;
+  @include box($scrollbarWidth, $scrollbarWidth);
+  background: transparent;
 }
 
 html {
-	overflow-y: auto;
-	overflow-x: hidden;
-	line-height: 1.75;
-	font-optical-sizing: auto;
-	font-family: 'Assistant', sans-serif;
+  overflow-y: auto;
+  overflow-x: hidden;
+  line-height: 1.75;
+  font-optical-sizing: auto;
+  font-family: 'Assistant', sans-serif;
 
-	@include make-flex($just: flex-start);
-	@include box(100vw, auto);
-	min-height: 100vh;
-	scrollbar-gutter: stable;
-	scroll-behavior: smooth;
+  @include make-flex($just: flex-start);
+  @include box(100vw, auto);
+  min-height: 100vh;
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
 }
 
 // We need to change z index of the old and new frames based on the current theme
@@ -45,122 +45,122 @@ html {
 // https://daydreamer-riri.me/posts/toggle-theme-with-view-transition/
 // https://antfu.me/
 [data-theme='light'] {
-	&::view-transition-old(root) {
-		z-index: 101;
-	}
+  &::view-transition-old(root) {
+    z-index: 101;
+  }
 
-	&::view-transition-new(root) {
-		z-index: 100;
-	}
+  &::view-transition-new(root) {
+    z-index: 100;
+  }
 }
 [data-theme='dark'] {
-	&::view-transition-new(root) {
-		z-index: 101;
-	}
+  &::view-transition-new(root) {
+    z-index: 101;
+  }
 
-	&::view-transition-old(root) {
-		z-index: 100;
-	}
+  &::view-transition-old(root) {
+    z-index: 100;
+  }
 }
 
 body,
 #app {
-	@include box(100vw, auto);
-	background-color: var(--background);
-	@include make-flex($just: flex-start);
+  @include box(100vw, auto);
+  background-color: var(--background);
+  @include make-flex($just: flex-start);
 }
 
 #app {
-	min-height: 100vh;
+  min-height: 100vh;
 }
 
 .MainContainer {
-	gap: 25px;
-	@include box();
-	max-width: $maxWidth;
-	padding: 64px 20px 20px 20px;
-	@include make-flex($just: flex-start);
+  gap: 25px;
+  @include box();
+  max-width: $maxWidth;
+  padding: 64px 20px 20px 20px;
+  @include make-flex($just: flex-start);
 }
 
 .CopyButton {
-	gap: 6px;
-	border: none;
-	cursor: pointer;
-	overflow: hidden;
-	background-color: transparent;
-	@include make-flex($dir: row, $just: flex-start, $align: flex-end);
+  gap: 6px;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: transparent;
+  @include make-flex($dir: row, $just: flex-start, $align: flex-end);
 
-	span {
-		max-width: 100%;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
-	&:hover {
-		text-decoration: underline;
-	}
+  span {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
 
-	&::before {
-		height: 16px;
-	}
+  &::before {
+    height: 16px;
+  }
 }
 
 .Row {
-	&--center {
-		@include make-flex($dir: row, $just: center);
-	}
-	&--start {
-		@include make-flex($dir: row, $just: flex-start);
-	}
-	&--end {
-		@include make-flex($dir: row, $just: flex-end);
-	}
-	&--between {
-		@include make-flex($dir: row, $just: space-between);
-	}
-	&--around {
-		@include make-flex($dir: row, $just: space-around);
-	}
+  &--center {
+    @include make-flex($dir: row, $just: center);
+  }
+  &--start {
+    @include make-flex($dir: row, $just: flex-start);
+  }
+  &--end {
+    @include make-flex($dir: row, $just: flex-end);
+  }
+  &--between {
+    @include make-flex($dir: row, $just: space-between);
+  }
+  &--around {
+    @include make-flex($dir: row, $just: space-around);
+  }
 
-	&--a-start {
-		@include make-flex($dir: row, $align: flex-start);
-	}
+  &--a-start {
+    @include make-flex($dir: row, $align: flex-start);
+  }
 
-	&--a-end {
-		@include make-flex($dir: row, $align: flex-end);
-	}
-	&--j-start {
-		@include make-flex($dir: row, $just: flex-start);
-	}
-	&--j-end {
-		@include make-flex($dir: row, $just: flex-end);
-	}
+  &--a-end {
+    @include make-flex($dir: row, $align: flex-end);
+  }
+  &--j-start {
+    @include make-flex($dir: row, $just: flex-start);
+  }
+  &--j-end {
+    @include make-flex($dir: row, $just: flex-end);
+  }
 }
 
 .Col {
-	&--center {
-		@include make-flex($dir: column, $just: center);
-	}
-	&--j-start {
-		@include make-flex($dir: column, $just: flex-start);
-	}
-	&--j-end {
-		@include make-flex($dir: column, $just: flex-end);
-	}
+  &--center {
+    @include make-flex($dir: column, $just: center);
+  }
+  &--j-start {
+    @include make-flex($dir: column, $just: flex-start);
+  }
+  &--j-end {
+    @include make-flex($dir: column, $just: flex-end);
+  }
 
-	&--a-start {
-		@include make-flex($dir: column, $align: flex-start);
-	}
+  &--a-start {
+    @include make-flex($dir: column, $align: flex-start);
+  }
 
-	&--a-end {
-		@include make-flex($dir: column, $align: flex-end);
-	}
+  &--a-end {
+    @include make-flex($dir: column, $align: flex-end);
+  }
 
-	&--between {
-		@include make-flex($dir: column, $just: space-between);
-	}
-	&--around {
-		@include make-flex($dir: column, $just: space-around);
-	}
+  &--between {
+    @include make-flex($dir: column, $just: space-between);
+  }
+  &--around {
+    @include make-flex($dir: column, $just: space-around);
+  }
 }
 
 // Padding Classes
@@ -168,58 +168,58 @@ $paddingSizes: (5, 10, 15, 20);
 $paddingDirections: (l, r, t, b, x, y);
 
 @each $size in $paddingSizes {
-	@each $dir in $paddingDirections {
-		.pad-#{$size}#{$dir} {
-			@if $dir == l {
-				padding-left: #{$size}px;
-			} @else if $dir == r {
-				padding-right: #{$size}px;
-			} @else if $dir == t {
-				padding-top: #{$size}px;
-			} @else if $dir == b {
-				padding-bottom: #{$size}px;
-			} @else if $dir == x {
-				padding-left: #{$size}px;
-				padding-right: #{$size}px;
-			} @else if $dir == y {
-				padding-top: #{$size}px;
-				padding-bottom: #{$size}px;
-			}
-		}
-	}
+  @each $dir in $paddingDirections {
+    .pad-#{$size}#{$dir} {
+      @if $dir == l {
+        padding-left: #{$size}px;
+      } @else if $dir == r {
+        padding-right: #{$size}px;
+      } @else if $dir == t {
+        padding-top: #{$size}px;
+      } @else if $dir == b {
+        padding-bottom: #{$size}px;
+      } @else if $dir == x {
+        padding-left: #{$size}px;
+        padding-right: #{$size}px;
+      } @else if $dir == y {
+        padding-top: #{$size}px;
+        padding-bottom: #{$size}px;
+      }
+    }
+  }
 }
 
 .w {
-	&-auto {
-		width: auto;
-	}
-	&-100 {
-		width: 100%;
-	}
-	&-90 {
-		width: 90%;
-	}
-	&-80 {
-		width: 80%;
-	}
+  &-auto {
+    width: auto;
+  }
+  &-100 {
+    width: 100%;
+  }
+  &-90 {
+    width: 90%;
+  }
+  &-80 {
+    width: 80%;
+  }
 }
 
 .h {
-	&-100 {
-		height: 100%;
-	}
-	&-90 {
-		height: 90%;
-	}
-	&-80 {
-		height: 80%;
-	}
+  &-100 {
+    height: 100%;
+  }
+  &-90 {
+    height: 90%;
+  }
+  &-80 {
+    height: 80%;
+  }
 }
 // Gap Classes
 $gapSizes: (5, 10, 15, 20);
 
 @each $gap in $gapSizes {
-	.gap-#{$gap} {
-		gap: #{$gap}px;
-	}
+  .gap-#{$gap} {
+    gap: #{$gap}px;
+  }
 }

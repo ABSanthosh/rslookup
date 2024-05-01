@@ -1,6 +1,6 @@
 .CrispMessage {
-  &[data-type="error"] {
-    --crp-message-icon: "\e002";
+  &[data-type='error'] {
+    --crp-message-icon: '\e002';
     --crp-message-color: var(--crp-message-color-error);
     --crp-message-border-color: var(--crp-message-border-color-error);
     --crp-message-background-color: var(--crp-message-background-color-error);
@@ -12,14 +12,14 @@
     }
   }
 
-  &[data-type="info"] {
-    --crp-message-icon: "\e88e";
+  &[data-type='info'] {
+    --crp-message-icon: '\e88e';
     --crp-message-color: var(--crp-message-color-info);
     --crp-message-border-color: var(--crp-message-border-color-info);
     --crp-message-background-color: var(--crp-message-background-color-info);
   }
 
-  &[data-format="box"] {
+  &[data-format='box'] {
     --crp-message-border-radius: 8px;
     --crp-message-padding: 8px 16px;
 
@@ -38,7 +38,7 @@
   &::before {
     content: var(--crp-message-icon);
     color: var(--crp-message-color);
-    font: normal normal normal 20px/1 "Icons";
+    font: normal normal normal 20px/1 'Icons';
   }
 }
 

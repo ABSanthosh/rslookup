@@ -16,7 +16,7 @@
   --gray-05: #ccced1; /* l-buttonBorderHover */
   --gray-06: #d0d0d0;
   --gray-21: #aaaaaa;
-  --gray-07: #a3a3a3;/* l-profcard_website_bg_disabled*/
+  --gray-07: #a3a3a3; /* l-profcard_website_bg_disabled*/
   --gray-08: #8b949e; /* d-buttonBorderHover */
   --gray-09: #91999e;
   --gray-10: gray;
@@ -24,7 +24,7 @@
   --gray-12: #656d76; /* l-iconColor*/
   --gray-20: #555555;
   --gray-29: #4f4f4f;
-  --gray-25: #30363D;
+  --gray-25: #30363d;
   --gray-13: #343536; /* d-border */
   --gray-14: #2f3337; /* d-buttonHoverBG */
   --gray-19: #2f2e2e;
@@ -55,11 +55,11 @@
   --red-03: #cd1739;
   --red-01: #af3f36; /* l-redPrimary, d-redPrimary */
   --red-02: #2f1f1e; /* d-redSecondary */
-  
+
   --grayish-00: #a1a1a3; /* d-grayPrimary */
   --grayish-01: #2e2e2e; /* d-graySecondary */
   --grayish-02: #4a4b56; /* l-grayPrimary */
 
-  --violet-00: #b49bff; 
+  --violet-00: #b49bff;
   --violet-01: #7547ff;
 }

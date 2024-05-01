@@ -1,177 +1,177 @@
 <script lang="ts">
-	import type { HTMLDialogAttributes } from 'svelte/elements';
-	interface $$restProps extends HTMLDialogAttributes {}
+  import type { HTMLDialogAttributes } from 'svelte/elements';
+  interface $$restProps extends HTMLDialogAttributes {}
 
-	export let { open = false, className } = $$props as {
-		open: boolean;
-		className?: string;
-	};
+  export let { open = false, className } = $$props as {
+    open: boolean;
+    className?: string;
+  };
 
-	let pane: HTMLDialogElement;
+  let pane: HTMLDialogElement;
 
-	$: if (pane) {
-		if (open) pane.showModal();
-		else pane.close();
-	}
+  $: if (pane) {
+    if (open) pane.showModal();
+    else pane.close();
+  }
 </script>
 
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 <dialog
-	class="Pane"
-	{...$$restProps}
-	bind:this={pane}
-	on:close
-	on:keydown={(e) => {
-		if (e.key === 'Escape') {
-			pane.close();
-			open = false;
-		}
-	}}
-	on:click|self={() => {
-		pane.close();
-		open = false;
-	}}
+  class="Pane"
+  {...$$restProps}
+  bind:this={pane}
+  on:close
+  on:keydown={(e) => {
+    if (e.key === 'Escape') {
+      pane.close();
+      open = false;
+    }
+  }}
+  on:click|self={() => {
+    pane.close();
+    open = false;
+  }}
 >
-	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<!-- svelte-ignore a11y-no-static-element-interactions -->
-	<div on:click|stopPropagation>
-		<header>
-			<slot name="header" />
-			<button
-				class="CrispButton Pane--close"
-				data-type="danger"
-				on:click={() => {
-					pane.close();
-					open = false;
-				}}
-				data-icon={String.fromCharCode(58829)}
-			/>
-		</header>
-		{#if $$slots.main}
-			<main>
-				<slot name="main" />
-			</main>
-		{:else}
-			<slot name="free" />
-		{/if}
-		{#if $$slots.footer}
-			<footer>
-				<slot name="footer" />
-			</footer>
-		{/if}
-	</div>
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
+  <!-- svelte-ignore a11y-no-static-element-interactions -->
+  <div on:click|stopPropagation>
+    <header>
+      <slot name="header" />
+      <button
+        class="CrispButton Pane--close"
+        data-type="danger"
+        on:click={() => {
+          pane.close();
+          open = false;
+        }}
+        data-icon={String.fromCharCode(58829)}
+      />
+    </header>
+    {#if $$slots.main}
+      <main>
+        <slot name="main" />
+      </main>
+    {:else}
+      <slot name="free" />
+    {/if}
+    {#if $$slots.footer}
+      <footer>
+        <slot name="footer" />
+      </footer>
+    {/if}
+  </div>
 </dialog>
 
 <style lang="scss">
-	.Pane {
+  .Pane {
     --pane-border: 1px solid var(--t-crp-border);
     --pane-box-shadow: var(--t-crp-elevation-shadow);
 
-		&__backdrop {
-			top: 0;
-			left: 0;
-			z-index: -1;
-			position: fixed;
-			@include box(100vw, 100dvh);
-		}
+    &__backdrop {
+      top: 0;
+      left: 0;
+      z-index: -1;
+      position: fixed;
+      @include box(100vw, 100dvh);
+    }
 
-		// top: 0;
-		// right: 0;
-		border: none;
-		margin-top: 0;
-		margin-right: 0;
-		margin-bottom: 0;
-		// position: fixed;
-		margin-left: auto;
-		@include box(var(--paneWidth, 600px), 100dvh);
+    // top: 0;
+    // right: 0;
+    border: none;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    // position: fixed;
+    margin-left: auto;
+    @include box(var(--paneWidth, 600px), 100dvh);
 
-		max-width: none;
-		max-height: none;
-		overflow: hidden;
+    max-width: none;
+    max-height: none;
+    overflow: hidden;
 
-		@include respondAt(600px) {
-			--paneWidth: auto !important;
-		}
+    @include respondAt(600px) {
+      --paneWidth: auto !important;
+    }
 
-		& > div {
-			z-index: 1;
-			background-color: var(--prof-card-background-color);
-			border-left: var(--pane-border);
-			box-shadow: var(--pane-box-shadow);
-			@include box(auto, 100vh);
-			@include make-flex();
-			outline: none;
+    & > div {
+      z-index: 1;
+      background-color: var(--prof-card-background-color);
+      border-left: var(--pane-border);
+      box-shadow: var(--pane-box-shadow);
+      @include box(auto, 100vh);
+      @include make-flex();
+      outline: none;
 
-			@include respondAt(600px) {
-				@include box(100vw);
-			}
-			// @include box();
-			& > header {
-				@include box(100%, auto);
-				padding: 16px 24px;
-				@include make-flex($align: flex-start);
-				border-bottom: 1px solid var(--t-crp-border);
-				position: relative;
-			}
+      @include respondAt(600px) {
+        @include box(100vw);
+      }
+      // @include box();
+      & > header {
+        @include box(100%, auto);
+        padding: 16px 24px;
+        @include make-flex($align: flex-start);
+        border-bottom: 1px solid var(--t-crp-border);
+        position: relative;
+      }
 
-			& > main {
-				@include box(100%, auto);
-				padding: 24px;
-				flex: 1 1 0%;
-				overflow-y: auto;
-			}
+      & > main {
+        @include box(100%, auto);
+        padding: 24px;
+        flex: 1 1 0%;
+        overflow-y: auto;
+      }
 
-			& > footer {
-				@include box(100%, auto);
-				padding: 12px 16px;
-				@include make-flex($align: flex-end);
-				border-top: 1px solid var(--t-crp-border);
-			}
-		}
+      & > footer {
+        @include box(100%, auto);
+        padding: 12px 16px;
+        @include make-flex($align: flex-end);
+        border-top: 1px solid var(--t-crp-border);
+      }
+    }
 
-		&::backdrop {
-			@include box(100vw, 100vh);
-			backdrop-filter: blur(1px);
-			background: var(--pane-backdrop-background);
-		}
+    &::backdrop {
+      @include box(100vw, 100vh);
+      backdrop-filter: blur(1px);
+      background: var(--pane-backdrop-background);
+    }
 
-		&[open] {
-			animation: slideIn 0.2s cubic-bezier(0.87, 0, 0.13, 1);
+    &[open] {
+      animation: slideIn 0.2s cubic-bezier(0.87, 0, 0.13, 1);
 
-			&::backdrop {
-				animation: fadeIn 0.2s ease-out;
-			}
-		}
+      &::backdrop {
+        animation: fadeIn 0.2s ease-out;
+      }
+    }
 
-		&--close {
-			top: 50%;
-			transform: translateY(-50%);
-			right: 15px;
-			padding: 6px;
-			outline: none;
-			cursor: pointer;
-			border-radius: 5px;
-			position: absolute;
-			@include make-flex();
-			@include box(25px, 25px);
-		}
+    &--close {
+      top: 50%;
+      transform: translateY(-50%);
+      right: 15px;
+      padding: 6px;
+      outline: none;
+      cursor: pointer;
+      border-radius: 5px;
+      position: absolute;
+      @include make-flex();
+      @include box(25px, 25px);
+    }
 
-		@keyframes slideIn {
-			from {
-				transform: translateX(100%);
-			}
-			to {
-				transform: translateX(0);
-			}
-		}
+    @keyframes slideIn {
+      from {
+        transform: translateX(100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
 
-		@keyframes fadeIn {
-			from {
-				opacity: 0;
-			}
-			to {
-				opacity: 1;
-			}
-		}
-	}
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
 </style>

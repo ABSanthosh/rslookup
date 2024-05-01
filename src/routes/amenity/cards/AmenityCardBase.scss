@@ -1,89 +1,89 @@
 .AmenityCard {
-	gap: 20px;
-	width: 100%;
-	padding: 10px;
-	border-radius: 10px;
-	border: 1px solid var(--t-crp-border);
-	background: var(--prof-card-background-color);
-	@include make-flex($just: space-between, $align: flex-start);
+  gap: 20px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--t-crp-border);
+  background: var(--prof-card-background-color);
+  @include make-flex($just: space-between, $align: flex-start);
 
-	&--title {
-		width: 100%;
-		font-size: 20px;
-		text-align: left;
-		overflow: hidden;
-		white-space: nowrap;
-		display: inline-block;
-		text-overflow: ellipsis;
-		color: var(--foreground);
-	}
+  &--title {
+    width: 100%;
+    font-size: 20px;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    text-overflow: ellipsis;
+    color: var(--foreground);
+  }
 
-	&--subTitle {
-		gap: 5px;
-		width: 100%;
-		font-size: 16px;
-		text-align: left;
-		font-weight: 400;
-		white-space: nowrap;
-		color: var(--subFg-1);
-		display: inline-block;
-		text-overflow: ellipsis;
-	}
+  &--subTitle {
+    gap: 5px;
+    width: 100%;
+    font-size: 16px;
+    text-align: left;
+    font-weight: 400;
+    white-space: nowrap;
+    color: var(--subFg-1);
+    display: inline-block;
+    text-overflow: ellipsis;
+  }
 
-	&--desc {
-		width: 100%;
-		font-size: 14px;
-		text-align: left;
-		font-weight: 500;
-		color: var(--subFg-2);
-	}
+  &--desc {
+    width: 100%;
+    font-size: 14px;
+    text-align: left;
+    font-weight: 500;
+    color: var(--subFg-2);
+  }
 
-	&__separator {
-		gap: 12px;
-		@include box($height: auto);
-		@include make-flex($dir: row);
+  &__separator {
+    gap: 12px;
+    @include box($height: auto);
+    @include make-flex($dir: row);
 
-		&--icon {
-			gap: 5px;
-			font-size: 14px;
-			@include box(auto);
-			color: var(--subFg-1);
-			@include make-flex($dir: row);
+    &--icon {
+      gap: 5px;
+      font-size: 14px;
+      @include box(auto);
+      color: var(--subFg-1);
+      @include make-flex($dir: row);
 
-			&::before {
-				margin-top: 2px;
-				font-size: 16px;
-				color: var(--subFg-1);
-			}
-		}
+      &::before {
+        margin-top: 2px;
+        font-size: 16px;
+        color: var(--subFg-1);
+      }
+    }
 
-		& > hr {
-			border-bottom: 1px solid var(--lab-item-separator);
-			border-top: none;
-			border-left: none;
-			border-right: none;
-			flex-grow: 1;
-			user-select: none;
-		}
+    & > hr {
+      border-bottom: 1px solid var(--lab-item-separator);
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      flex-grow: 1;
+      user-select: none;
+    }
 
-		&--content {
-			font-size: 14px;
-			font-weight: 600;
+    &--content {
+      font-size: 14px;
+      font-weight: 600;
 
-			overflow: hidden;
-			white-space: nowrap;
-			display: inline-block;
-			text-overflow: ellipsis;
-		}
-	}
+      overflow: hidden;
+      white-space: nowrap;
+      display: inline-block;
+      text-overflow: ellipsis;
+    }
+  }
 
-	&__bottom {
-		@include box($height: auto);
-		margin-top: auto;
-		@include make-flex($just: flex-end, $align: flex-end);
-		&--map {
-			text-decoration: none;
-			background: var(--prof-card-background-color);
-		}
-	}
+  &__bottom {
+    @include box($height: auto);
+    margin-top: auto;
+    @include make-flex($just: flex-end, $align: flex-end);
+    &--map {
+      text-decoration: none;
+      background: var(--prof-card-background-color);
+    }
+  }
 }

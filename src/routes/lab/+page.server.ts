@@ -5,15 +5,15 @@ import { convertTSVtoJSON } from '$utils/toJson';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
-	setHeaders(cacheConfig);
+  setHeaders(cacheConfig);
 
-	const data = await fetch(`${DATA_SOURCE_BASE}${DATA_SOURCE_LAB}`, {
-		method: 'GET',
-		headers: {
-			'Content-Type': 'text/tab-separated-values'
-		}
-	});
-	return {
-		labs: convertTSVtoJSON(await data.text()) as unknown as Lab[]
-	};
+  const data = await fetch(`${DATA_SOURCE_BASE}${DATA_SOURCE_LAB}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'text/tab-separated-values'
+    }
+  });
+  return {
+    labs: convertTSVtoJSON(await data.text()) as unknown as Lab[]
+  };
 };

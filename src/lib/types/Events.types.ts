@@ -4,8 +4,8 @@ export interface IEvents {
   club: string;
   category: string;
   date: string;
-  "time.from": string;
-  "time.to": string;
+  'time.from': string;
+  'time.to': string;
   venueName: string;
   venueLink: string;
   description: string;

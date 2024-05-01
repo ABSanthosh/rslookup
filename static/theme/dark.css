@@ -1,4 +1,4 @@
-[data-theme="dark"] {
+[data-theme='dark'] {
   --scroll: var(--gray-10);
   --foreground: var(--gray-03);
   --subFg-1: var(--gray-09);
@@ -38,7 +38,7 @@
   --t-crp-box-shadow: #00000000 0px 0px 0px 0px, #00000000 0px 0px 0px 0px;
   --t-crp-elevation-shadow: #191a1a 0px 8px 24px 0px;
   --t-crp-select-downArrow: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-  --home-card-box-shadow: "";
+  --home-card-box-shadow: '';
   --pane-backdrop-background: rgba(0, 0, 0, 0.5);
   --pane-background: var(--gray-30);
 

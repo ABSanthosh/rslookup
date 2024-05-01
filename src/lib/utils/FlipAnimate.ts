@@ -1,5 +1,5 @@
-import { quintOut } from "svelte/easing";
-import { crossfade } from "svelte/transition";
+import { quintOut } from 'svelte/easing';
+import { crossfade } from 'svelte/transition';
 
 export function flipAnimate(node: HTMLElement, { key }: { key: string }) {
   const [send, receive] = crossfade({
@@ -7,7 +7,7 @@ export function flipAnimate(node: HTMLElement, { key }: { key: string }) {
 
     fallback(node, _) {
       const style = getComputedStyle(node);
-      const transform = style.transform === "none" ? "" : style.transform;
+      const transform = style.transform === 'none' ? '' : style.transform;
 
       return {
         duration: 600,
@@ -15,9 +15,9 @@ export function flipAnimate(node: HTMLElement, { key }: { key: string }) {
         css: (t) => `
             transform: ${transform} scale(${t});
             opacity: ${t}
-        `,
+        `
       };
-    },
+    }
   });
 
   send(node, { key });

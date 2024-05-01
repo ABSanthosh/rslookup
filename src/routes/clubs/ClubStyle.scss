@@ -1,90 +1,90 @@
 .Clubs {
-	&__content {
-		gap: 30px;
-		@include make-flex();
-		margin-bottom: 150px;
-		@include box(100%, fit-content);
+  &__content {
+    gap: 30px;
+    @include make-flex();
+    margin-bottom: 150px;
+    @include box(100%, fit-content);
 
-		hr {
-			width: 90%;
-			border: 1px solid var(--t-crp-light-border);
-		}
+    hr {
+      width: 90%;
+      border: 1px solid var(--t-crp-light-border);
+    }
 
-		.Club {
-			@include box(100%, fit-content);
-			@include make-flex($just: flex-start);
-			gap: 30px;
-			@include make-flex($dir: column, $just: flex-start);
+    .Club {
+      @include box(100%, fit-content);
+      @include make-flex($just: flex-start);
+      gap: 30px;
+      @include make-flex($dir: column, $just: flex-start);
 
-			&__header {
-				gap: 10px;
-				@include box(100%, fit-content);
-				@include make-flex($dir: column, $align: flex-start);
+      &__header {
+        gap: 10px;
+        @include box(100%, fit-content);
+        @include make-flex($dir: column, $align: flex-start);
 
-				& > h2 {
-					font-size: 30px;
-					font-weight: 900;
-					color: var(--foreground);
-				}
+        & > h2 {
+          font-size: 30px;
+          font-weight: 900;
+          color: var(--foreground);
+        }
 
-				& > p {
-					font-size: 20px;
-					font-weight: 400;
-					color: var(--subFg-1);
-				}
-			}
+        & > p {
+          font-size: 20px;
+          font-weight: 400;
+          color: var(--subFg-1);
+        }
+      }
 
-			&__members {
-				gap: 100px;
-				width: 100%;
-				@include make-flex($dir: row, $just: space-between, $align: flex-start);
+      &__members {
+        gap: 100px;
+        width: 100%;
+        @include make-flex($dir: row, $just: space-between, $align: flex-start);
 
-				@include respondAt(830px) {
-					gap: 30px;
-				}
+        @include respondAt(830px) {
+          gap: 30px;
+        }
 
-				@include respondAt(770px) {
-					flex-direction: column;
-				}
+        @include respondAt(770px) {
+          flex-direction: column;
+        }
 
-				:global(img) {
-					@include box(50%, 50%);
-					max-width: 305px;
-					border-radius: 10px;
-					aspect-ratio: 1/1;
-					object-fit: contain; // TODO: change to cover after making proper images
-					object-position: center;
-					border: 2px solid var(--t-crp-border);
-				}
+        :global(img) {
+          @include box(50%, 50%);
+          max-width: 305px;
+          border-radius: 10px;
+          aspect-ratio: 1/1;
+          object-fit: contain; // TODO: change to cover after making proper images
+          object-position: center;
+          border: 2px solid var(--t-crp-border);
+        }
 
-				& > ul {
-					gap: 20px;
-					display: grid;
-					@include box();
-					grid-template-columns: repeat(2, 1fr);
+        & > ul {
+          gap: 20px;
+          display: grid;
+          @include box();
+          grid-template-columns: repeat(2, 1fr);
 
-					@include respondAt(430px) {
-						grid-template-columns: 1fr;
-					}
+          @include respondAt(430px) {
+            grid-template-columns: 1fr;
+          }
 
-					li {
-						gap: 8px;
-						@include make-flex($dir: column, $align: flex-start, $just: space-between);
+          li {
+            gap: 8px;
+            @include make-flex($dir: column, $align: flex-start, $just: space-between);
 
-						h3 {
-							font-size: 24px;
-							font-weight: 800;
-							color: var(--foreground);
-						}
+            h3 {
+              font-size: 24px;
+              font-weight: 800;
+              color: var(--foreground);
+            }
 
-						p {
-							font-size: 18px;
-							font-weight: 400;
-							color: var(--subFg-1);
-						}
-					}
-				}
-			}
-		}
-	}
+            p {
+              font-size: 18px;
+              font-weight: 400;
+              color: var(--subFg-1);
+            }
+          }
+        }
+      }
+    }
+  }
 }

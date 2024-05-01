@@ -1,4 +1,4 @@
-[data-theme="light"] {
+[data-theme='light'] {
   --scroll: var(--gray-06);
   --foreground: var(--gray-15);
   --subFg-1: var(--gray-09);
@@ -64,5 +64,4 @@
 
   --crp-tab-background-color: #f4f4f5;
   --crp-tab-item-background-color: #ffffff;
-
 }

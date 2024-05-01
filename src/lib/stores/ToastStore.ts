@@ -1,10 +1,10 @@
-import { writable } from "svelte/store";
+import { writable } from 'svelte/store';
 
 export interface IToast {
   id?: string;
   message: string;
   timeout?: number;
-  type?: "info" | "success" | "warning" | "danger" | "default";
+  type?: 'info' | 'success' | 'warning' | 'danger' | 'default';
 }
 
 export const ToastStore = writable<IToast[]>([]);

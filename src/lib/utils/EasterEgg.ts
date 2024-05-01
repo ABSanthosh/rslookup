@@ -10,7 +10,7 @@ export function EasterEgg() {
   \/_/  \/___/   \/____/ \/___/  \/___/    \/_/\/_/  \/___/   \ \ \/
                                                                \ \_\
                                                                 \/_/`,
-    "font-family:monospace; color: #ff0000; font-weight: bold; text-shadow: 2px 2px 0 #000;"
+    'font-family:monospace; color: #ff0000; font-weight: bold; text-shadow: 2px 2px 0 #000;'
   );
   console.log(
     `%c
@@ -19,6 +19,6 @@ If you are reading this, you might be interested in the code behind this website
 Check it out at: https://github.com/ABSanthosh/rslookup.
 
 You are more than welcome to contribute to the project! 🚀`,
-    "font-size: 16px;"
+    'font-size: 16px;'
   );
 }
