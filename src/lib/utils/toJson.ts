@@ -7,8 +7,7 @@ import Papa from 'papaparse';
  */
 export function convertCSVtoJSON(csvData: string) {
   return Papa.parse(csvData, {
-    header: true,
-    // newline: '\n'
+    header: true
   }).data;
 }
 
