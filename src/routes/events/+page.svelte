@@ -5,26 +5,7 @@
 
 	export let data: PageData;
 
-	console.log(
-		googleCalendar({
-			title: 'Test',
-			description: 'Test',
-			start: generateDate(data.events[0].date, data.events[0]['time.from']),
-			end: generateDate(data.events[0].date, data.events[0]['time.to']),
-			location: data.events[0].venueName
-		})
-	);
-
 	$: isCalendarOpen = {} as Record<string, boolean>;
-
-	function downloadICS() {
-		const cal = "data:text/calendar;charset=utf-8,BEGIN%3AVCALENDAR%0D%0AVERSION%3A2.0%0D%0APRODID%3A-%2F%2F%20github.com%2Fadd2cal%2Fadd-to-calendar-button%20%2F%2F%20atcb%20v1.15.5%20%2F%2FEN%0D%0ACALSCALE%3AGREGORIAN%0D%0ABEGIN%3AVEVENT%0D%0AUID%3A2024-04-30T22%3A23%3A01.852Z%40add-to-calendar-button%0D%0ADTSTAMP%3A20240430T222301Z%0D%0ADTSTART%3BVALUE%3DDATE%3A20240509%0D%0ADTEND%3BVALUE%3DDATE%3A20240510%0D%0ASUMMARY%3ACHS%20Webinar%20%7C%20Amdo%20Lullaby%3A%20An%20Ethnography%20of%20Childhood%20and%20Langu%0D%0A%20age%20Shift%20on%20the%20Tibetan%20Plateau%20%7C%209%20May%202024%7C%20MS%20Teams%0D%0ADESCRIPTION%3AThe%20Centre%20of%20Excellence%20for%20Himalayan%20Studies%20is%20organising%0D%0A%20%20an%20online%26nbsp%3B%20talk%20by%20Dr%20Shannon%20Ward%2C%20on%20the%20topic%26nbsp%3B%0D%0A%20Amdo%20Lullaby%3A%20An%20Ethnography%20of%20Childhood%20and%20Language%20Shift%0D%0A%20%20on%20the%20Tibetan...%0D%0AX-ALT-DESC%3BFMTTYPE%3Dtext%2Fhtml%3A%0D%0A%20%3C!DOCTYPE%20HTML%20PUBLIC%20%22%22-%2F%2FW3C%2F%2FDTD%20HTML%203.2%2F%2FEN%22%22%3E%0D%0A%20%3CHTML%3E%3CBODY%3E%0D%0A%20The%20Centre%20of%20Excellence%20for%20Himalayan%20Studies%20is%20organising%0D%0A%20%20an%20online%26nbsp%3B%20talk%20by%20Dr%20Shannon%20Ward%2C%20on%20the%20topic%26nbsp%3B%0D%0A%20Amdo%20Lullaby%3A%20An%20Ethnography%20of%20Childhood%20and%20Language%20Shift%0D%0A%20%20on%20the%20Tibetan...%0D%0A%20%3C%2FBODY%3E%3C%2FHTML%3E%0D%0ALOCATION%3AMS%20Teams%0D%0ASTATUS%3ACONFIRMED%0D%0ALAST-MODIFIED%3A20240430T222301Z%0D%0ASEQUENCE%3A0%0D%0AEND%3AVEVENT%0D%0AEND%3AVCALENDAR";
-		const blob = new Blob([cal], { type: 'text/calendar;charset=utf-8' });
-		const a = document.createElement('a');
-		a.href = window.URL.createObjectURL(blob);
-		a.download = 'event.ics';
-		a.click();
-	}
 </script>
 
 <svelte:head>
@@ -45,12 +26,6 @@
 	<h2>What're the Events?</h2>
 	<p>Find all the events happening at SNU here.</p>
 </div>
-
-<button
-	on:click={downloadICS}
->
-	Download Event
-</button>
 
 <ul class="Events__content">
 	{#each data.events as item, index}
@@ -95,7 +70,8 @@
 							{item.venueName}
 						</span>
 					</div>
-					<a
+					<div class="Event__right--actions Row--between w-100 gap-10">
+						<a
 							class="CrispButton"
 							data-type="black-outline"
 							rel="noopener noreferrer"
@@ -117,6 +93,7 @@
 							</summary>
 							<ul class="CrispMenu__content">
 								<a
+									class="Event__calendarTab--item"
 									href={googleCalendar({
 										title: item.name,
 										description: item.description,
@@ -131,6 +108,7 @@
 									Google Calendar
 								</a>
 								<a
+									class="Event__calendarTab--item"
 									href={outlookCalendar({
 										title: item.name,
 										description: item.description,
@@ -144,10 +122,43 @@
 									<img src="/images/outlook-calendar.png" alt="Outlook Calendar" />
 									Outlook Calendar
 								</a>
+								<button
+									type="submit"
+									data-border="false"
+									class="CrispButton Event__calendarTab--item w-100"
+									on:click={async () => {
+										const eventData = {
+											title: item.name,
+											description: item.description,
+											start: generateDate(item.date, item['time.from']),
+											end: generateDate(item.date, item['time.to']),
+											location: item.venueName
+										};
+
+										const response = await fetch('/events/api', {
+											method: 'POST',
+											body: JSON.stringify(eventData),
+											headers: {
+												'content-type': 'text/calendar'
+											}
+										});
+
+										const blob = await response.blob();
+										const url = window.URL.createObjectURL(blob);
+										const a = document.createElement('a');
+										a.href = url;
+										a.download = 'event.ics';
+										a.click();
+									}}
+								>
+									<img src="/images/apple-calendar.svg" alt="Apple Calendar" />
+									Apple Calendar
+								</button>
 							</ul>
 						</details>
 					</div>
 				</div>
+			</div>
 		</li>
 	{/each}
 </ul>
@@ -191,16 +202,6 @@
 			margin-top: 30px;
 			list-style: none;
 			@include make-flex($just: flex-start);
-
-			&--separator {
-				border: 1px solid var(--lab-item-separator);
-				border-top: none;
-				border-left: none;
-				border-right: none;
-				width: 80%;
-				flex-grow: 1;
-				user-select: none;
-			}
 		}
 	}
 
@@ -354,8 +355,7 @@
 
 			&--actions {
 				margin-top: 40px;
-				& > a,
-				& > button {
+				& > a {
 					width: 100%;
 					border: 1px solid var(--lab-item-separator);
 					@include respondAt(500px) {
@@ -376,29 +376,27 @@
 				}
 			}
 
+			&--item {
+				gap: 7px;
+				padding: 6px 8px;
+				user-select: none;
+				border-radius: 6px;
+				white-space: nowrap;
+				text-decoration: none;
+				color: var(--foreground);
+				@include box(100%, 30px);
+				background-color: var(--elevation-1);
+				@include make-flex($dir: row, $just: flex-start);
+
+				& > img {
+					@include box(auto);
+				}
+				&:hover {
+					background-color: var(--t-crp-background-hover);
+				}
+			}
 			& > ul {
 				width: 205px;
-				& > a {
-					gap: 7px;
-					padding: 6px 8px;
-					user-select: none;
-					border-radius: 6px;
-					white-space: nowrap;
-					text-decoration: none;
-					color: var(--foreground);
-					@include box(100%, 30px);
-					@include make-flex($dir: row, $just: flex-start);
-
-					& > img {
-						@include box(auto);
-					}
-				}
-				a {
-					&.active,
-					&:hover {
-						background-color: var(--t-crp-background-hover);
-					}
-				}
 			}
 		}
 	}

@@ -1,3 +1,11 @@
+export interface IEvent {
+	title: string;
+	description: string;
+	location: string;
+	start: Date;
+	end: Date;
+}
+
 /**
  * Parse time string
  * @param time - Time string in format 'Hh:mm AM/PM'
@@ -44,19 +52,7 @@ export function generateDate(dateString: string, time: string) {
 /**
  * Generate google calendar event link
  */
-export function googleCalendar({
-	title,
-	description,
-	location,
-	start,
-	end
-}: {
-	title: string;
-	description: string;
-	location: string;
-	start: Date;
-	end: Date;
-}) {
+export function googleCalendar({ title, description, location, start, end }: IEvent) {
 	// convert Date to this format YYYYMMDDTHHmmSSZ
 	const dates = {
 		start: start.toISOString().replace(/-|:|\.\d+/g, ''),
@@ -82,19 +78,7 @@ export function googleCalendar({
  * @param start - Event start date
  * @param end - Event end date
  */
-export function outlookCalendar({
-	title,
-	description,
-	location,
-	start,
-	end
-}: {
-	title: string;
-	description: string;
-	location: string;
-	start: Date;
-	end: Date;
-}) {
+export function outlookCalendar({ title, description, location, start, end }: IEvent) {
 	const details = [
 		`path=/calendar/action/compose`,
 		`rru=addevent`,
@@ -105,6 +89,46 @@ export function outlookCalendar({
 		`location=${encodeURIComponent(location)}`
 	];
 	return `https://outlook.live.com/calendar/deeplink/compose?${details.join('&')}`;
+}
+
+function generateUniqSerial(): string {
+	return 'xxxx-xxxx-xxx-xxxx'.replace(/[x]/g, (c) => {
+		const r = Math.floor(Math.random() * 16);
+		return r.toString(16);
+	});
+}
+
+/**
+ * Generate .ics file
+ * @param title - Event title
+ * @param description - Event description
+ * @param location - Event location
+ * @param start - Event start date
+ * @param end - Event end date
+ * @returns .ics file : Blob
+ * @example
+ * generateIcs('Event', 'Description', 'Location', new Date(), new Date())
+ */
+export function generateIcs({ title, description, location, start, end }: IEvent) {
+	const data = [
+		'BEGIN:VCALENDAR',
+		'VERSION:2.0',
+		'CALSCALE:GREGORIAN',
+		'PRODID:-//ZContent.net//Zap Calendar 1.0//EN',
+		'BEGIN:VEVENT',
+		'METHOD:PUBLISH',
+		`UID:${generateUniqSerial()}`,
+		`DTSTAMP:${new Date().toISOString().replace(/-|:|\.\d+/g, '')}`,
+		`SUMMARY:${title}`,
+		`DESCRIPTION:${description}`,
+		`LOCATION:${location}`,
+		`DTSTART:${start.toISOString().replace(/-|:|\.\d+/g, '')}`,
+		`DTEND:${end.toISOString().replace(/-|:|\.\d+/g, '')}`,
+		'END:VEVENT',
+		'END:VCALENDAR'
+	];
+
+	return new Blob([data.join('\r\n')], { type: 'text/calendar' });
 }
 
 // 01:00 AM,

@@ -1,8 +1,9 @@
 import { DATA_SOURCE_BASE, DATA_SOURCE_CLUB_EVENTS } from '$env/static/private';
-import type { PageServerLoad } from './$types';
+import type { Actions, PageServerLoad } from './$types';
 import { convertTSVtoJSON } from '$utils/toJson';
 import { cacheConfig } from '$utils/CacheControl';
 import type { IEvents } from '$types/Events.types';
+import { generateIcs, type IEvent } from '$utils/calendarEvent';
 
 export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
 	setHeaders(cacheConfig);
