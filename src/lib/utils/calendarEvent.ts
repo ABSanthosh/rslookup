@@ -110,11 +110,38 @@ function generateUniqSerial(): string {
  * generateIcs('Event', 'Description', 'Location', new Date(), new Date())
  */
 export function generateIcs({ title, description, location, start, end }: IEvent) {
+
+	// BEGIN:VCALENDAR
+	// VERSION:2.0
+	// PRODID:-//ical.marudot.com//iCal Event Maker
+	// CALSCALE:GREGORIAN
+	// BEGIN:VTIMEZONE
+	// TZID:Asia/Kolkata
+	// LAST-MODIFIED:20231222T233358Z
+	// TZURL:https://www.tzurl.org/zoneinfo-outlook/Asia/Kolkata
+	// X-LIC-LOCATION:Asia/Kolkata
+	// BEGIN:STANDARD
+	// TZNAME:IST
+	// TZOFFSETFROM:+0530
+	// TZOFFSETTO:+0530
+	// DTSTART:19700101T000000
+	// END:STANDARD
+	// END:VTIMEZONE
+	// BEGIN:VEVENT
+	// DTSTAMP:20240501T084036Z
+	// UID:1714551512433-2407845@ical.marudot.com
+	// DTSTART;TZID=Asia/Kolkata:20240417T010000
+	// DTEND;TZID=Asia/Kolkata:20240417T220000
+	// SUMMARY:Breeze
+	// LOCATION:Breeze Arena\, SNU
+	// END:VEVENT
+	// END:VCALENDAR
+
 	const data = [
 		'BEGIN:VCALENDAR',
 		'VERSION:2.0',
 		'CALSCALE:GREGORIAN',
-		'PRODID:-//ZContent.net//Zap Calendar 1.0//EN',
+		'PRODID:-// rslookup.abs.moe // Event Calendar // EN',
 		'BEGIN:VEVENT',
 		'METHOD:PUBLISH',
 		`UID:${generateUniqSerial()}`,
@@ -128,7 +155,8 @@ export function generateIcs({ title, description, location, start, end }: IEvent
 		'END:VCALENDAR'
 	];
 
-	return new Blob([data.join('\r\n')], { type: 'text/calendar' });
+	// return new Blob([data.join('\r\n')], { type: 'text/calendar' });
+	return data.join('\r\n')
 }
 
 // 01:00 AM,

@@ -122,7 +122,7 @@
 									<img src="/images/outlook-calendar.png" alt="Outlook Calendar" />
 									Outlook Calendar
 								</a>
-								<button
+								<!-- <button
 									type="submit"
 									data-border="false"
 									class="CrispButton Event__calendarTab--item w-100"
@@ -153,7 +153,18 @@
 								>
 									<img src="/images/apple-calendar.svg" alt="Apple Calendar" />
 									Apple Calendar
-								</button>
+								</button> -->
+								<a
+									class="Event__calendarTab--item"
+									href="/events/api?&title={item.name}&description={item.description}&start={generateDate(
+										item.date,
+										item['time.from']
+									)}&end={generateDate(item.date, item['time.to'])}&location={item.venueName}"
+									target="_blank"
+								>
+									<img src="/images/apple-calendar.svg" alt="Apple Calendar" />
+									Apple Calendar
+								</a>
 							</ul>
 						</details>
 					</div>
