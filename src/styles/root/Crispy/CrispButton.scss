@@ -67,6 +67,17 @@
     --crp-button-box-shadow: none !important;
   }
 
+  &[data-type='ghost'] {
+    --crp-button-color: #11181c;
+    --crp-button-background-color: transparent;
+    --crp-button-border: 1px solid transparent;
+
+    --crp-button-color-hover: var(--foreground);
+    --crp-button-background-color-hover: var(--t-crp-background-hover);
+    --crp-button-border-hover: 1.2px solid var(--t-crp-border-hover);
+    --crp-button-box-shadow: transparent;
+  }
+
   // Basic
   outline: none;
   cursor: pointer;

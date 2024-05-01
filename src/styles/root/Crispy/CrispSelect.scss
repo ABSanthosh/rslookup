@@ -13,6 +13,10 @@
   --crp-select-padding: 0 20px 0 10px;
   --crp-select-border-radius: 8px;
 
+  --crp-select-disabled-color: var(--t-crp-disabled-color);
+  --crp-select-disabled-background-color: var(--t-crp-disabled-background-color);
+  --crp-select-disabled-border: 1.2px solid var(--t-crp-disabled-border);
+
   min-width: var(--crp-select-min-width);
   @include box(var(--crp-select-width), var(--crp-select-height));
 
@@ -57,5 +61,12 @@
     color: var(--crp-select-color-hover);
     border: var(--crp-select-border-hover);
     background-color: var(--crp-select-background-hover);
+  }
+
+  &:disabled {
+    color: var(--crp-select-disabled-color);
+    background-color: var(--crp-select-disabled-background-color);
+    border: var(--crp-select-disabled-border);
+    cursor: not-allowed;
   }
 }

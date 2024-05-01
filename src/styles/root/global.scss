@@ -12,8 +12,6 @@
 
 ::-webkit-scrollbar {
   background: transparent;
-}
-::-webkit-scrollbar {
   @include box($scrollbarWidth, $scrollbarWidth);
 }
 ::-webkit-scrollbar-thumb {
@@ -77,6 +75,7 @@ body,
 .MainContainer {
   gap: 25px;
   @include box();
+  min-height: calc(100dvh - 70px);
   max-width: $maxWidth;
   padding: 64px 20px 20px 20px;
   @include make-flex($just: flex-start);

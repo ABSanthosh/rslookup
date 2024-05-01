@@ -4,11 +4,13 @@
   import type { PageData } from './$types';
   import { beforeNavigate } from '$app/navigation';
   import { profColors, schools } from '$data/prof';
-  import { flipAnimate } from '$utils/FlipAnimate';
+  import { flipAnimate } from '$utils/animation';
   import { clickOutside } from '$utils/onClickOutside';
   import ProfCard from '$components/ProfCard/ProfCard.svelte';
   import { query } from '$stores/QueryStore';
   import { onMount } from 'svelte';
+  import Pagination from '$components/Pagination.svelte';
+  import { blur } from 'svelte/transition';
 
   export let data: PageData;
   $: isFilterOpen = false;
@@ -32,6 +34,7 @@
     return filteredSchools.includes(item.school);
   });
   $: searchResult = filteredProf.slice(0, pageSize);
+  let paginatedValues = searchResult;
 
   beforeNavigate(() => {
     isFilterOpen = false;
@@ -144,27 +147,29 @@
   </div>
 </details>
 
-<div class="Prof__content">
-  {#if searchResult.length === 0}
-    <i
-      class="CrispMessage"
-      data-type="error"
-      data-format="box"
-      style="height: 40px; grid-column: 1 / 3 ;"
-    >
-      No results found.
-    </i>
-  {:else}
-    {#each searchResult as result (`${result.name}-${result.role}`)}
-      <span
-        animate:flip={{ duration: 250 }}
-        use:flipAnimate={{ key: `${result.name}-${result.role}` }}
+{#key paginatedValues}
+  <div class="Prof__content" in:blur={{ amount: 3 }}>
+    {#if searchResult.length === 0}
+      <i
+        class="CrispMessage"
+        data-type="error"
+        data-format="box"
+        style="height: 40px; grid-column: 1 / 3 ;"
       >
-        <ProfCard {...result} />
-      </span>
-    {/each}
-  {/if}
-</div>
+        No results found.
+      </i>
+    {:else if paginatedValues}
+      {#each $query === '' ? paginatedValues : searchResult as result (`${result.name}-${result.role}`)}
+        <span
+          animate:flip={{ duration: 250 }}
+          use:flipAnimate={{ key: `${result.name}-${result.role}` }}
+        >
+          <ProfCard {...result} />
+        </span>
+      {/each}
+    {/if}
+  </div>
+{/key}
 
 <div class="Prof__bottom w-100">
   <select
@@ -174,12 +179,14 @@
       // @ts-ignore
       pageSize = Number(e.target.value);
     }}
+    disabled={$query !== ''}
   >
     <option value="20">20</option>
     <option value="40">40</option>
     <option value="80">80</option>
     <option value={`${filteredProf.length}`}>All ({filteredProf.length})</option>
   </select>
+  <Pagination disabled={$query !== ''} rows={filteredProf} {pageSize} bind:trimmedRows={paginatedValues} />
 </div>
 
 <style lang="scss">
@@ -217,7 +224,25 @@
     }
 
     &__bottom {
-      @include make-flex($align: flex-end);
+      gap: 20px;
+      margin-top: auto;
+      @include make-flex($dir: row, $just: space-between);
+
+      @include respondAt(345px) {
+        flex-direction: column;
+      }
+
+      @include respondAt(440px) {
+        & > select {
+          margin-right: auto;
+          --crp-select-width: 70px;
+          --crp-select-min-width: 70px;
+        }
+
+        :global(.Pagination) {
+          margin-left: auto;
+        }
+      }
     }
 
     &__disclaimer {
