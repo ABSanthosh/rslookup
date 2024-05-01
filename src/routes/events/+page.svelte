@@ -92,7 +92,7 @@
                 on:outclick={() => (isCalendarOpen[index] = false)}
               >
                 <summary>
-                  <span data-icon={String.fromCharCode(61317)}> Add to calender </span>
+                  <span data-icon={String.fromCharCode(61317)}> Add to calendar </span>
                 </summary>
                 <ul class="CrispMenu__content" data-direction="top" data-align="right">
                   <a
