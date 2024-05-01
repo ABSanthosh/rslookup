@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { enhance } from '$app/forms';
 	import { generateDate, googleCalendar, outlookCalendar, parseDate } from '$utils/calendarEvent';
 	import { clickOutside } from '$utils/onClickOutside';
 	import type { PageData } from './$types';
@@ -77,6 +78,7 @@
 							rel="noopener noreferrer"
 							data-icon={String.fromCharCode(58715)}
 							href={item.venueLink}
+							target="_blank"
 						>
 							Map
 						</a>
@@ -122,7 +124,7 @@
 									<img src="/images/outlook-calendar.png" alt="Outlook Calendar" />
 									Outlook Calendar
 								</a>
-								<!-- <button
+								<button
 									type="submit"
 									data-border="false"
 									class="CrispButton Event__calendarTab--item w-100"
@@ -143,24 +145,43 @@
 											}
 										});
 
-										const blob = await response.blob();
-										const url = window.URL.createObjectURL(blob);
-										const a = document.createElement('a');
-										a.href = url;
-										a.download = 'event.ics';
-										a.click();
+										// const blob = await response.blob();
+										// const url = window.URL.createObjectURL(blob);
+										// const a = document.createElement('a');
+										// a.href = url;
+										// a.download = 'event.ics';
+										// a.click();
 									}}
 								>
 									<img src="/images/apple-calendar.svg" alt="Apple Calendar" />
 									Apple Calendar
-								</button> -->
+								</button>
+								<!-- <form class="w-100" method="POST" action="/events?/ics" use:enhance>
+									<input
+										type="hidden"
+										name="event"
+										value={JSON.stringify({
+											title: item.name,
+											description: item.description,
+											start: generateDate(item.date, item['time.from']),
+											end: generateDate(item.date, item['time.to']),
+											location: item.venueName
+										})}
+									/>
+									<button
+										type="submit"
+										class="CrispButton Event__calendarTab--item w-100"
+										data-border="false"
+									>
+										<img src="/images/apple-calendar.svg" alt="Apple Calendar" />
+										Apple Calendar
+									</button>
+								</form> -->
 								<a
 									class="Event__calendarTab--item"
-									href="/events/api?&title={item.name}&description={item.description}&start={generateDate(
-										item.date,
-										item['time.from']
-									)}&end={generateDate(item.date, item['time.to'])}&location={item.venueName}"
+									href={`/events/api?&title=${item.name}&description=${item.description}&start=${generateDate(item.date, item['time.from'])}&end=${generateDate(item.date, item['time.to'])}&location=${item.venueName}`}
 									target="_blank"
+									rel="noopener noreferrer"
 								>
 									<img src="/images/apple-calendar.svg" alt="Apple Calendar" />
 									Apple Calendar

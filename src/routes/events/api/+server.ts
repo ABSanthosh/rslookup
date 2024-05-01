@@ -17,7 +17,7 @@ export const POST: RequestHandler = async ({ request }) => {
 };
 
 // @ts-ignore
-export const GET: RequestHandler = async ({ url }) => {
+export const GET: RequestHandler = async ({ url, request }) => {
 	const eventData = {
 		title: url.searchParams.get('title') ?? 'Event',
 		description: url.searchParams.get('description') ?? '',

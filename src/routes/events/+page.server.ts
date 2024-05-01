@@ -20,3 +20,16 @@ export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
 		events: csv
 	};
 };
+
+export const actions: Actions = {
+	ics: async ({ request }) => {
+		const data = JSON.parse((await request.formData()).get('event') as string) as IEvent;
+		const ics = generateIcs({ ...data, start: new Date(data.start), end: new Date(data.end) });
+
+		return new Response(ics, {
+			headers: {
+				'Content-Type': 'text/calendar; charset=utf-8',
+			}
+		});
+	}
+};
