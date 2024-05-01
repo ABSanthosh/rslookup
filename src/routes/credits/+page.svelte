@@ -182,6 +182,7 @@
 
         & > span {
           font-size: 16px;
+          white-space: pre-line;
           @include make-flex($align: flex-start, $just: flex-start);
 
           &:first-child {
