@@ -51,7 +51,18 @@
       </div>
     {/if}
   </div>
-  <div class="Row--between gap-10 w-100 AmenityCard__bottom">
+  <div class="Row--j-end gap-10 w-100">
+    {#if data.whatsapp !== ''}
+      <a
+        class="CrispButton AmenityCard__bottom--whatsapp"
+        href={data.whatsapp}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="/images/logo-whatsapp.png" alt="WhatsApp" />
+        WhatsApp
+      </a>
+    {/if}
     <a
       class="CrispButton AmenityCard__bottom--map"
       data-icon={String.fromCharCode(58715)}

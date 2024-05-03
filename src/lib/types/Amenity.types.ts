@@ -48,6 +48,7 @@ export interface IHostel {
   mail: string;
   phone: string;
   warden: string;
+  whatsapp: string;
 }
 
 export interface ISport {

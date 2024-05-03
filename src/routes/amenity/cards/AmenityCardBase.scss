@@ -79,9 +79,18 @@
   }
 
   &__bottom {
-    @include box($height: auto);
     margin-top: auto;
+    @include box($height: auto);
     @include make-flex($just: flex-end, $align: flex-end);
+
+    &--whatsapp {
+      gap: 6px;
+      background: var(--prof-card-background-color);
+
+      & > img {
+        @include box(20px, 20px);
+      }
+    }
     &--map {
       text-decoration: none;
       background: var(--prof-card-background-color);
