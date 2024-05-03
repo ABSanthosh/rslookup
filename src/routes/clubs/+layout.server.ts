@@ -17,7 +17,7 @@ export const load: LayoutServerLoad = async ({ url, setHeaders }) => {
   if (url.pathname === '/clubs') {
     throw redirect(308, '/clubs/cultural');
   }
-  setHeaders(cacheConfig);
+  setHeaders(cacheConfig());
 
   const [culturalClubs, culturalClubCore, technicalClubs, technicalClubCore] = await Promise.all([
     fetch(`${DATA_SOURCE_BASE}${DATA_SOURCE_CLUB_CULTURAL}`),

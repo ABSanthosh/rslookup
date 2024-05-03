@@ -5,7 +5,7 @@ import type { ProfItem } from '$lib/types/Prof.types';
 import { DATA_SOURCE_BASE, DATA_SOURCE_PROF } from '$env/static/private';
 
 export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
-  setHeaders(cacheConfig);
+  setHeaders(cacheConfig());
 
   const data = await fetch(`${DATA_SOURCE_BASE}${DATA_SOURCE_PROF}`, {
     method: 'GET',

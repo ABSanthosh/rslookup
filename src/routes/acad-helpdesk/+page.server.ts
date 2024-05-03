@@ -10,7 +10,7 @@ import { convertCSVtoJSON } from '$utils/toJson';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
-  setHeaders(cacheConfig);
+  setHeaders(cacheConfig());
 
   const [office, advisors, committee] = await Promise.all([
     fetch(`${DATA_SOURCE_BASE}${DATA_SOURCE_ACAD_OFFICE}`),

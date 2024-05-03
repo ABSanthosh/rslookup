@@ -6,7 +6,7 @@ import type { StudentCouncil } from '$types/SC.types';
 import { DATA_SOURCE_BASE, DATA_SOURCE_STUDENT_COUNCIL } from '$env/static/private';
 
 export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
-  setHeaders(cacheConfig);
+  setHeaders(cacheConfig());
 
   const data = await fetch(`${DATA_SOURCE_BASE}${DATA_SOURCE_STUDENT_COUNCIL}`, {
     method: 'GET',
