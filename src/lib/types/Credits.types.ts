@@ -12,5 +12,5 @@ export interface IConsolidatedCredit {
   email: string;
   role: string;
   image: string;
-  changes: { email: string, date: string; description?: string }[];
+  changes: { email: string; date: string; description?: string }[];
 }

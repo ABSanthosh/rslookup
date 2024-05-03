@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { fancyDate } from '$utils/calendarEvent';
+  import { fancyDate } from '$utils/calendarEvent';
   import type { PageData } from './$types';
 
   export let data: PageData;

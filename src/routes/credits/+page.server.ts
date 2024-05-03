@@ -33,7 +33,7 @@ const consolidator = (data: ICredit[]) => {
     const dateA = generateDate(a.date, '11.59 PM');
     const dateB = generateDate(b.date, '11.59 PM');
     return dateB.getTime() - dateA.getTime();
-  })
+  });
 
   return holderList;
 };
