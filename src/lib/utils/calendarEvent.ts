@@ -50,6 +50,17 @@ export function generateDate(dateString: string, time: string) {
 }
 
 /**
+ * Generate fancy date string
+ * @param date - Date string in format '17/04/2024'
+ * @returns Fancy date string
+ */
+export function fancyDate(date: string) {
+  const { year, month, date: day } = parseDate(date);
+  const monthName = new Date(year, month, day).toLocaleString('default', { month: 'short' });
+  return `${day} ${monthName} ${year}`;
+}
+
+/**
  * Generate google calendar event link
  */
 export function googleCalendar({ title, description, location, start, end }: IEvent) {

@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { fancyDate } from '$utils/calendarEvent';
   import type { PageData } from './$types';
 
   export let data: PageData;
@@ -39,7 +40,7 @@
       <ul class="Credit__changes">
         {#each item.changes as change}
           <li class="Credit__col">
-            <span>{change.date}</span>
+            <span>{fancyDate(change.date)}</span>
             <span>{change.description}</span>
           </li>
         {/each}

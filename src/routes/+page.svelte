@@ -227,12 +227,14 @@
           transition: opacity 0.3s ease-out;
         }
 
-        // &:last-child {
-        // 	grid-column-end: span 2;
-        // 	@include respondAt(660px) {
-        // 		grid-column-end: span 1;
-        // 	}
-        // }
+        // if the last item is an odd number, then grid-column: 1 / 3; else grid-column: 1 / 2;
+        &:nth-last-child(1):nth-child(odd) {
+          grid-column: 1 / 3;
+
+          @include respondAt(660px) {
+            grid-column: 1 / 2;
+          }
+        }
 
         &:hover {
           box-shadow: var(--home-card-box-shadow);
