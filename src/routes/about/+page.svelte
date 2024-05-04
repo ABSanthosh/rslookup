@@ -88,7 +88,7 @@
           rel="noopener"
           target="_blank"
           class="About--link"
-          href="https://docs.google.com/spreadsheets/d/1_RszGZ2MOV_lbdBJM3NyG3V2_u7TK2GbUfCbi-gANcI/pub"
+          href="https://docs.google.com/spreadsheets/d/1_RszGZ2MOV_lbdBJM3NyG3V2_u7TK2GbUfCbi-gANcI/edit"
         >
           Google Sheets
         </a> - "Database"
