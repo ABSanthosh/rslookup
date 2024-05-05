@@ -18,15 +18,17 @@
       </span>
     </div>
     <div class="FooterWrapper__right">
-      <p class="FooterWrapper__right--title">
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/ABSanthosh/rslookup/blob/master/LICENSE"
-        >
-          Licensed under GNU GPLv3
-        </a>
-      </p>
+      <a href="/about"> About </a>
+      •
+      <a href="/credits"> Credits </a>
+      •
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://github.com/ABSanthosh/rslookup/blob/master/LICENSE"
+      >
+        Licensed under GNU GPLv3
+      </a>
     </div>
   </div>
 </footer>
@@ -61,10 +63,17 @@
     }
 
     &__right {
-      color: var(--foreground);
-      &--title {
-        @include make-flex($just: flex-start);
-        gap: 3px;
+      flex-wrap: wrap;
+      column-gap: 10px;
+      color: var(--subFg-1);
+      transition: color 0.3s;
+      @include make-flex($dir: row);
+      & > a {
+        color: var(--subFg-1);
+
+        &:hover {
+          color: var(--foreground);
+        }
       }
     }
 
