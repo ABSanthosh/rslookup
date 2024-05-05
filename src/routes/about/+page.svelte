@@ -1,3 +1,33 @@
+<script lang="ts">
+  const resources = [
+    {
+      name: 'SvelteKit',
+      link: 'https://kit.svelte.dev/',
+      description: 'Web framework'
+    },
+    {
+      name: 'Google Sheets',
+      link: 'https://docs.google.com/spreadsheets/d/1_RszGZ2MOV_lbdBJM3NyG3V2_u7TK2GbUfCbi-gANcI/edit',
+      description: '"Database"'
+    },
+    {
+      name: 'GitHub',
+      link: 'https://github.com/ABSanthosh/rslookup',
+      description: 'Source code'
+    },
+    {
+      name: 'Cloudflare',
+      link: 'https://www.cloudflare.com/',
+      description: 'Web hosting'
+    },
+    {
+      name: 'Figma',
+      link: 'https://www.figma.com/file/y8tgFPWUy9p8ZVuT1eR5JN/rslookup?type=design&node-id=278%3A120&mode=design&t=ElCuS1IFfRk5SYYK-1',
+      description: 'Design'
+    }
+  ] as const
+</script>
+
 <svelte:head>
   <title>About rslookup</title>
   <meta name="description" content="What is rslookup?" />
@@ -78,36 +108,14 @@
   <section class="About__prose">
     <h2>Tools used</h2>
     <ul>
-      <li>
-        <a rel="noopener" target="_blank" class="About--link" href="https://kit.svelte.dev/">
-          SvelteKit
-        </a> - Web framework
-      </li>
-      <li>
-        <a
-          rel="noopener"
-          target="_blank"
-          class="About--link"
-          href="https://docs.google.com/spreadsheets/d/1_RszGZ2MOV_lbdBJM3NyG3V2_u7TK2GbUfCbi-gANcI/edit"
-        >
-          Google Sheets
-        </a> - "Database"
-      </li>
-      <li>
-        <a
-          rel="noopener"
-          target="_blank"
-          class="About--link"
-          href="https://github.com/ABSanthosh/rslookup"
-        >
-          GitHub
-        </a> - Source code
-      </li>
-      <li>
-        <a rel="noopener" target="_blank" class="About--link" href="https://www.cloudflare.com/">
-          Cloudflare
-        </a> - Web hosting
-      </li>
+      {#each resources as resource}
+        <li>
+          <a rel="noopener" target="_blank" class="About--link" href={resource.link}>
+            {resource.name}
+          </a>
+          - {resource.description}
+        </li>
+      {/each}
     </ul>
   </section>
 

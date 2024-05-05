@@ -133,8 +133,8 @@
 
       h2 {
         margin: 0;
+        font-size: 16px;
         font-weight: 700;
-        font-size: 1.5rem;
         border-radius: 50%;
         @include make-flex();
         @include box(35px, 35px);
