@@ -114,7 +114,7 @@
 {/if}
 
 <div class="ProfCard gap-20">
-  <div class="ProfCard__top Row--start gap-15">
+  <div class="ProfCard__top gap-15">
     <span class="ProfCard__top--profileBox">
       <h2
         class="ProfCard__top--profile"
@@ -139,7 +139,7 @@
           "/>
         `}
     </span>
-    <div class="ProfCard__header Col--a-start gap-5">
+    <div class="ProfCard__header Col--a-start gap-10">
       <h3>{name}</h3>
       <span>{role} - {room}</span>
     </div>
@@ -230,20 +230,22 @@
 
     &__header {
       h3 {
+        line-height: 1;
         font-size: 20px;
+        max-width: 100%;
         overflow: hidden;
         text-wrap: nowrap;
-        max-width: 100%;
         text-overflow: ellipsis;
       }
 
       span {
+        line-height: 1;
         font-size: 16px;
         font-weight: 400;
-        overflow: hidden;
-        text-wrap: nowrap;
-        max-width: 100%;
-        text-overflow: ellipsis;
+        // overflow: hidden;
+        // text-wrap: nowrap;
+        // max-width: 100%;
+        // text-overflow: ellipsis;
         color: var(--subFg-1);
       }
     }
@@ -251,6 +253,7 @@
     &__top {
       max-width: 100%;
       @include box(100%, auto);
+      @include make-flex($dir: row, $just: flex-start, $align: flex-start);
 
       :global(img) {
         @include box(100%, auto);
