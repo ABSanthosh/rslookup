@@ -68,6 +68,10 @@
         @include make-flex($just: flex-start, $align: flex-start);
       }
 
+      @include respondAt(430px) {
+        margin: 40px 0 0px 0;
+      }
+
       & > h2 {
         font-size: 45px;
         font-weight: 900;
@@ -133,14 +137,14 @@
 
       h2 {
         margin: 0;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 700;
         border-radius: 50%;
         @include make-flex();
         @include box(35px, 35px);
         text-transform: uppercase;
         color: var(--grayPrimary);
-        border: 1px solid var(--grayPrimary);
+        border: 1px solid var(--t-crp-border);
         background-color: var(--graySecondary);
       }
     }
@@ -176,6 +180,11 @@
         display: grid;
         padding: 10px 0 10px 0;
         grid-template-columns: 100px 1fr;
+
+        @include respondAt(430px) {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto 1fr;
+        }
 
         &:not(:last-child) {
           border-bottom: 1px solid var(--credits-border);
