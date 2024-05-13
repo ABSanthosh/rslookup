@@ -1,5 +1,6 @@
 <script lang="ts">
   import { GPAStore } from '$stores/GPAStore';
+  import { selectOnFocus } from '$utils/selectOnFocus';
 
   const SYMBOLS: {
     [key: string]: string;
@@ -162,24 +163,13 @@
         class="CrispInput"
         type="number"
         step="0.01"
-        on:focus={({ target }) => {
-          // @ts-ignore
-          target.select();
-        }}
+        use:selectOnFocus
         bind:value={currentCGPA}
       />
     </div>
     <div class="GPA__result--item">
       <p>Credits done</p>
-      <input
-        class="CrispInput"
-        type="number"
-        on:focus={({ target }) => {
-          // @ts-ignore
-          target.select();
-        }}
-        bind:value={creditsDone}
-      />
+      <input class="CrispInput" type="number" use:selectOnFocus bind:value={creditsDone} />
     </div>
   </aside>
   <div class="GPA__content w-100">
@@ -228,10 +218,7 @@
                     class="CrispInput"
                     type="number"
                     placeholder="Credits"
-                    on:focus={({ target }) => {
-                      // @ts-ignore
-                      target.select();
-                    }}
+                    use:selectOnFocus
                     on:change={() => calcSGPA(index)}
                     bind:value={course.credits}
                   />
