@@ -1,6 +1,6 @@
 <!-- https://www.magnt.com/404/ -->
 <main class="Error">
-  <img src="/images/404.svg" alt="404" />
+  <img src="/src/lib/images/404.svg" alt="404" />
   <h2>404</h2>
   <p>Oops… seems like you got lost in space</p>
   <a class="CrispButton" data-type="black-outline" href="/"> Go back home </a>

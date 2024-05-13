@@ -79,9 +79,9 @@
     </p>
     <div class="Row--center w-100">
       <div class="About__LogoBox">
-        <img alt="hero neko gif" class="About__LogoBox--neko" src="images/neko.gif" />
+        <img alt="hero neko gif" class="About__LogoBox--neko" src="/src/lib/images/neko.webp" />
         <span data-icon={String.fromCharCode(58829)} />
-        <img alt="Student Council" class="About__LogoBox--sc" src="images/student_council.jpg" />
+        <img alt="Student Council" class="About__LogoBox--sc" src="/src/lib/images/student_council.jpg" />
       </div>
     </div>
     <p>

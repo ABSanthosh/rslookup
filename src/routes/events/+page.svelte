@@ -107,7 +107,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src="/images/google-calendar.png" alt="Google Calendar" />
+                    <img src="/src/lib/images/google-calendar.png" alt="Google Calendar" />
                     Google Calendar
                   </a>
                   <a
@@ -122,7 +122,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src="/images/outlook-calendar.png" alt="Outlook Calendar" />
+                    <img src="/src/lib/images/outlook-calendar.png" alt="Outlook Calendar" />
                     Outlook Calendar
                   </a>
                   <a
@@ -131,7 +131,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src="/images/apple-calendar.svg" alt="Apple Calendar" />
+                    <img src="/src/lib/images/apple-calendar.svg" alt="Apple Calendar" />
                     Apple Calendar
                   </a>
                 </ul>

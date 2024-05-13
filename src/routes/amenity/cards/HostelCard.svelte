@@ -59,7 +59,7 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src="/images/logo-whatsapp.png" alt="WhatsApp" />
+        <img src="/src/lib/images/logo-whatsapp.png" alt="WhatsApp" />
         WhatsApp
       </a>
     {/if}

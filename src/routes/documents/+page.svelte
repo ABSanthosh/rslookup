@@ -39,15 +39,15 @@
         <li class="Document__content--item">
           <a href={document.link} target="_blank" rel="noopener noreferrer">
             {#if document.type === 'pdf'}
-              <img src="/images/icon_pdf.png" alt={document.type} />
+              <img src="/src/lib/images/icon_pdf.png" alt={document.type} />
             {:else if document.type === 'sheet'}
-              <img src="/images/icon_sheet.png" alt={document.type} />
+              <img src="/src/lib/images/icon_sheet.png" alt={document.type} />
             {:else if document.type === 'doc'}
-              <img src="/images/icon_doc.png" alt={document.type} />
+              <img src="/src/lib/images/icon_doc.png" alt={document.type} />
             {:else if document.type === 'newsletter'}
-              <img src="/images/icon_newsletter.png" alt={document.type} />
+              <img src="/src/lib/images/icon_newsletter.png" alt={document.type} />
             {:else}
-              <img src="/images/icon_default.png" alt={document.type} />
+              <img src="/src/lib/images/icon_default.png" alt={document.type} />
             {/if}
             <div class="gap-5 w-100">
               <h3 class="title">{document.name}</h3>

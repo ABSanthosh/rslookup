@@ -23,7 +23,7 @@
     </p>
   </div>
   <div class="Hero__right">
-    <img loading="eager" fetchpriority="high" src="/images/neko.gif" alt="hero neko gif" />
+    <img loading="eager" fetchpriority="high" src="/src/lib/images/neko.webp" alt="hero neko gif" />
   </div>
 </section>
 
