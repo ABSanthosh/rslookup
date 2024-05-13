@@ -9,7 +9,9 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --check . && eslint . --fix",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "deploy": "git checkout prod && git merge master && git push && git checkout master",
+    "stage": "git checkout stage && git merge master && git push && git checkout master"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^3.0.0",
