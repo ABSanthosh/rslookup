@@ -108,7 +108,7 @@
         max-height: 440px;
         aspect-ratio: 0.93;
         @include box(auto, 55%);
-        filter: drop-shadow(0px 0px 25px #ffffff33);
+        filter: drop-shadow(0px 0px 55px rgba(255, 255, 255, 0.25));
 
         @include respondAt(905px) {
           height: 50%;
@@ -173,6 +173,7 @@
         h2 {
           gap: 10px;
           display: grid;
+          line-height: 1;
           font-size: 28px;
           font-weight: 900;
           color: var(--foreground);
@@ -245,9 +246,11 @@
           }
           p {
             color: white;
+            text-shadow: 0px 0px 5px #00000033;
           }
           h2 {
             color: white;
+            text-shadow: 0px 0px 5px #00000033;
             &::after {
               background-color: aliceblue;
               transform: rotate(45deg) scale(1.3);
