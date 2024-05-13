@@ -20,14 +20,11 @@
 
   &--subTitle {
     gap: 5px;
-    width: 100%;
     font-size: 16px;
     text-align: left;
     font-weight: 400;
-    white-space: nowrap;
     color: var(--subFg-1);
     display: inline-block;
-    text-overflow: ellipsis;
   }
 
   &--desc {
@@ -43,6 +40,10 @@
     gap: 12px;
     @include box($height: auto);
     @include make-flex($dir: row);
+
+    &:nth-of-type(1) {
+      margin-top: auto;
+    }
 
     &--icon {
       gap: 5px;
@@ -88,7 +89,7 @@
       background: var(--prof-card-background-color);
 
       & > img {
-        @include box(20px, 20px);
+        @include box(15px, 15px);
       }
     }
     &--map {

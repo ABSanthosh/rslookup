@@ -7,7 +7,7 @@
 </script>
 
 <div class="AmenityCard">
-  <div class="Col--a-start gap-15 w-100">
+  <div class="Col--a-start gap-10 w-100">
     <h3 class="AmenityCard--title">{data.name}</h3>
     <span class="AmenityCard--subTitle">{data.warden}</span>
     {#if data.phone !== ''}
