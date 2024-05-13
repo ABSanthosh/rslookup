@@ -2,6 +2,9 @@
   import { generateDate, googleCalendar, outlookCalendar, parseDate } from '$utils/calendarEvent';
   import { clickOutside } from '$utils/onClickOutside';
   import type { PageData } from './$types';
+  import google_calendar from '$images/google-calendar.png';
+  import outlook_calendar from '$images/outlook-calendar.png';
+  import apple_calendar from '$images/apple-calendar.svg';
 
   export let data: PageData;
 
@@ -107,7 +110,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src="/src/lib/images/google-calendar.png" alt="Google Calendar" />
+                    <img src={google_calendar} alt="Google Calendar" />
                     Google Calendar
                   </a>
                   <a
@@ -122,7 +125,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src="/src/lib/images/outlook-calendar.png" alt="Outlook Calendar" />
+                    <img src={outlook_calendar} alt="Outlook Calendar" />
                     Outlook Calendar
                   </a>
                   <a
@@ -131,7 +134,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src="/src/lib/images/apple-calendar.svg" alt="Apple Calendar" />
+                    <img src={apple_calendar} alt="Apple Calendar" />
                     Apple Calendar
                   </a>
                 </ul>
@@ -378,7 +381,6 @@
         margin-top: 40px;
         @include make-flex($dir: row, $just: space-between, $align: flex-end);
         & > a {
-          width: 100%;
           border: 1px solid var(--lab-item-separator);
           @include respondAt(500px) {
             margin-left: auto;

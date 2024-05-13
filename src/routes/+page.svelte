@@ -3,6 +3,7 @@
   // https://coolors.co/gradient-maker
 
   import { ROUTES } from '$data/routes';
+  import NEKO from '$images/neko.webp';
 </script>
 
 <svelte:head>
@@ -23,7 +24,7 @@
     </p>
   </div>
   <div class="Hero__right">
-    <img loading="eager" fetchpriority="high" src="/src/lib/images/neko.webp" alt="hero neko gif" />
+    <img loading="eager" fetchpriority="high" src={NEKO} alt="hero neko gif" />
   </div>
 </section>
 

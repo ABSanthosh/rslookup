@@ -2,6 +2,7 @@
   import type { IHostel } from '$types/Amenity.types';
   import MapsSelector from '$utils/MapsSelector';
   import copyToClipboard from '$utils/CopyToClipboard';
+  import WHATSAPP from '$images/logo-whatsapp.png';
 
   export const data = $$props as IHostel;
 </script>
@@ -59,7 +60,7 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src="/src/lib/images/logo-whatsapp.png" alt="WhatsApp" />
+        <img src={WHATSAPP} alt="WhatsApp" />
         WhatsApp
       </a>
     {/if}

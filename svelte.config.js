@@ -24,7 +24,8 @@ const config = {
       $data: 'src/lib/data',
       $utils: 'src/lib/utils',
       $types: 'src/lib/types',
-      $stores: 'src/lib/stores/*'
+      $stores: 'src/lib/stores/*',
+      $images: 'src/lib/images/*'
     }
   }
 };

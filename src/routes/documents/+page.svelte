@@ -1,5 +1,11 @@
 <script lang="ts">
   import type { PageData } from './$types';
+  import NEKO from '$images/neko.webp';
+  import icon_pdf from '$images/icon_pdf.png';
+  import icon_sheet from '$images/icon_sheet.png';
+  import icon_doc from '$images/icon_doc.png';
+  import icon_newsletter from '$images/icon_newsletter.png';
+  import icon_default from '$images/icon_default.png';
 
   export let data: PageData;
 </script>
@@ -39,15 +45,15 @@
         <li class="Document__content--item">
           <a href={document.link} target="_blank" rel="noopener noreferrer">
             {#if document.type === 'pdf'}
-              <img src="/src/lib/images/icon_pdf.png" alt={document.type} />
+              <img src={icon_pdf} alt={document.type} />
             {:else if document.type === 'sheet'}
-              <img src="/src/lib/images/icon_sheet.png" alt={document.type} />
+              <img src={icon_sheet} alt={document.type} />
             {:else if document.type === 'doc'}
-              <img src="/src/lib/images/icon_doc.png" alt={document.type} />
+              <img src={icon_doc} alt={document.type} />
             {:else if document.type === 'newsletter'}
-              <img src="/src/lib/images/icon_newsletter.png" alt={document.type} />
+              <img src={icon_newsletter} alt={document.type} />
             {:else}
-              <img src="/src/lib/images/icon_default.png" alt={document.type} />
+              <img src={icon_default} alt={document.type} />
             {/if}
             <div class="gap-5 w-100">
               <h3 class="title">{document.name}</h3>
@@ -129,8 +135,10 @@
           }
 
           & > div {
+            gap: 10px;
             min-width: 0;
-            @include make-flex($align: flex-start, $just: space-between);
+            line-height: 1;
+            @include make-flex($align: flex-start, $just: flex-start);
           }
 
           .title {
