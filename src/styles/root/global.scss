@@ -29,7 +29,7 @@ html {
   overflow-x: hidden;
   line-height: 1.75;
   font-optical-sizing: auto;
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Inter', sans-serif;
 
   @include make-flex($just: flex-start);
   @include box(100vw, auto);

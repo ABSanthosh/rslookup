@@ -88,8 +88,7 @@
       }
 
       & > p {
-        font-size: 18px;
-        text-align: justify;
+        font-size: 19px;
         color: var(--subFg-1);
 
         @include respondAt(580px) {
