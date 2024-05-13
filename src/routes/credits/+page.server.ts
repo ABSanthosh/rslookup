@@ -12,7 +12,7 @@ const consolidator = (data: ICredit[]) => {
     return dateB.getTime() - dateA.getTime();
   });
 
-  let holderList: IConsolidatedCredit = {
+  const holderList: IConsolidatedCredit = {
     name: data[0].name,
     email: data[0].email,
     role: data[0].role,

@@ -1,8 +1,7 @@
 import { generateIcs, type IEvent } from '$utils/calendarEvent';
 import type { RequestHandler } from './$types';
 
-// @ts-ignore
-export const GET: RequestHandler = async ({ url, request }) => {
+export const GET: RequestHandler = async ({ url }) => {
   const eventData = {
     title: url.searchParams.get('title') ?? 'Event',
     description: url.searchParams.get('description') ?? '',

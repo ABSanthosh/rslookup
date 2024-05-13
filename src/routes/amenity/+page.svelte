@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { slide } from 'svelte/transition';
   import { browser } from '$app/environment';
   import { afterNavigate } from '$app/navigation';
   import AmenityFilter from './AmenityFilter.svelte';

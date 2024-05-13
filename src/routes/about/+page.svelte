@@ -25,7 +25,7 @@
       link: 'https://www.figma.com/file/y8tgFPWUy9p8ZVuT1eR5JN/rslookup?type=design&node-id=278%3A120&mode=design&t=ElCuS1IFfRk5SYYK-1',
       description: 'Design'
     }
-  ] as const
+  ] as const;
 </script>
 
 <svelte:head>

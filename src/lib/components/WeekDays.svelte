@@ -13,7 +13,7 @@
   };
 
   const valueOf = (day: string) => {
-    // @ts-ignore
+    // @ts-expect-error
     return days[day];
   };
 </script>

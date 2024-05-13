@@ -103,7 +103,7 @@ export function outlookCalendar({ title, description, location, start, end }: IE
 }
 
 function generateUniqSerial(): string {
-  return 'xxxx-xxxx-xxx-xxxx'.replace(/[x]/g, (c) => {
+  return 'xxxx-xxxx-xxx-xxxx'.replace(/[x]/g, () => {
     const r = Math.floor(Math.random() * 16);
     return r.toString(16);
   });
