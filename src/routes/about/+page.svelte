@@ -10,8 +10,8 @@
     },
     {
       name: 'Google Sheets',
-      link: 'https://docs.google.com/spreadsheets/d/1_RszGZ2MOV_lbdBJM3NyG3V2_u7TK2GbUfCbi-gANcI/edit',
-      description: '"Database"'
+      link: '-',
+      description: '"Database" (Closed source)'
     },
     {
       name: 'GitHub',
