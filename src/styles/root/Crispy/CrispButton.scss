@@ -78,6 +78,17 @@
     --crp-button-box-shadow: transparent;
   }
 
+  &[data-type='golden'] {
+    --crp-button-width: auto;
+    --crp-button-height: 35px;
+    --crp-button-font-size: 18px;
+    --crp-button-border-radius: 6px;
+    --crp-button-border: 1.2px solid #9d7b7b;
+
+    --crp-button-background-color-hover: #fbf3e7;
+    --crp-button-border-hover: 1.2px solid #9d7b7b;
+  }
+
   // Basic
   outline: none;
   cursor: pointer;
