@@ -134,7 +134,6 @@
       @include make-flex($dir: row);
       font-family: 'Eczar', serif;
       text-decoration: none;
-      font-size: 20px;
       width: 100%;
       line-height: 1;
       height: 100%;
@@ -147,6 +146,7 @@
       }
       & > p {
         z-index: 1;
+        font-size: 25px;
         color: inherit;
         padding: 12px 8px 8px 8px;
         border-radius: 10px;
@@ -163,7 +163,7 @@
         }
 
         & > span {
-          font-size: 14px;
+          font-size: 16px;
           margin-left: 5px;
           font-weight: 500;
           color: var(--crp-message-color-convo2024);
