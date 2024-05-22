@@ -627,6 +627,7 @@
     }
 
     &__box {
+      gap: 30px;
       width: 100%;
       display: grid;
       list-style: none;
