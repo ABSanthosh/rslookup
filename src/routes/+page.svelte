@@ -3,7 +3,7 @@
   // https://coolors.co/gradient-maker
 
   import { ROUTES } from '$data/routes';
-  import NEKO from '$images/neko.webp';
+  import NEKO from '$images/neko.gif';
 </script>
 
 <svelte:head>
