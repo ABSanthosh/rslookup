@@ -285,6 +285,20 @@
   });
 </script>
 
+<svelte:head>
+  <title>Convocation 2024</title>
+  <meta
+    name="description"
+    content="Convocation 2024 is a grand event where students are awarded their degrees and the university celebrates their achievements. Find all the details about the event here."
+  />
+  <meta
+    name="keywords"
+    content={`convocation, 2024, snu, snioe, graduation, ceremony, event, speakers, itinerary, schedule, guests`}
+  />
+  <meta name="author" content="Santhosh" />
+  <meta name="robots" content="index, follow" />
+</svelte:head>
+
 <span id="convocation-2024" style="display: none; visibility: hidden;" />
 
 <main class="ConvoHome">
@@ -514,9 +528,8 @@
 
   .Itinerary {
     gap: 20px;
-    list-style: none;
-    // @include make-flex($dir: column, $just: flex-start);
     display: grid;
+    list-style: none;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 
     @include respondAt(415px) {
@@ -532,7 +545,6 @@
       border-radius: 6px;
       @include box(100%, 40px);
       background-color: #ece0e0;
-      // margin-bottom: 30px;
       @include make-flex($dir: row, $just: space-between);
 
       li {
