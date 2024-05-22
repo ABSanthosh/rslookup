@@ -2,6 +2,7 @@
   import AddToCalender from '$components/AddToCalender.svelte';
   import ConvoHeroBottom from '$images/ConvoHeroBottom.jpg';
   import ConvoHeroTop from '$images/ConvoHeroTop.jpg';
+  import poster from '$images/poster.jpeg';
   import { onMount } from 'svelte';
 
   const quickLinks = [
@@ -302,11 +303,12 @@
 <span id="convocation-2024" style="display: none; visibility: hidden;" />
 
 <main class="ConvoHome">
-  <h1 class="ConvoHome__hero">
+  <img src={poster} alt="" style="width: 100%; height: auto; margin-top: 20px; border-radius: 10px" />
+  <!-- <h1 class="ConvoHome__hero">
     <img src={ConvoHeroTop} alt="Convocation 2024" />
     CONVOCATION 2024
     <img src={ConvoHeroBottom} alt="Convocation 2024" />
-  </h1>
+  </h1> -->
 
   <section class="ConvoHome__section">
     <h2>Quick Links</h2>
