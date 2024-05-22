@@ -224,7 +224,7 @@
       description:
         "Abhinav Bindra is an Indian businessman and retired professional shooter who is a former World and Olympic champion in the 10 metre Air Rifle event. By winning the gold in the 10 m Air Rifle event at the 2008 Beijing Olympic Games, he became the first Indian to win an individual gold medal at the Olympic Games and India's first gold medal since 1980.",
       image:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4BDiavwJ6_qTxO6h33NKJbBqVgLqWmNeRpkmcVjDk2w&s'
+        'https://scontent-del2-2.xx.fbcdn.net/v/t1.6435-9/165280290_296900228497510_5247725121276862244_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=0dL5uM9llFkQ7kNvgHxV5ns&_nc_ht=scontent-del2-2.xx&oh=00_AYDZyRKrjeSCxI3GSE5DaAtAkQtpY6pAuoO2QZqQttHbCQ&oe=667511A5'
     },
     {
       name: 'Ustad Amjad Ali Khan',
