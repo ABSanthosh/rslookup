@@ -2,6 +2,7 @@
   import AddToCalender from '$components/AddToCalender.svelte';
   import ConvoHeroBottom from '$images/ConvoHeroBottom.jpg';
   import ConvoHeroTop from '$images/ConvoHeroTop.jpg';
+  import { onMount } from 'svelte';
 
   const quickLinks = [
     {
@@ -186,8 +187,17 @@
         title: 'Convocation Ceremony',
         startTime: new Date(2024, 4, 26, 14, 30),
         endTime: new Date(2024, 4, 26, 17, 30),
-        description:
-          'The most coveted ceremony begins at 3:00 PM. Parents and family members to be seated by 2:30 PM. The ceremony includes commencement address by chief guests and conferring of degrees to students. The ceremony spans for 3 hours, guests to arrive for the convocation ceremony from 3:30 - 4:00PM',
+        description: `The most coveted ceremony begins at 3:00 PM.
+        <ul>
+          <li style="margin-left: 20px;">Entry of students, faculty and Chancellor's processions</li>
+          <li style="margin-left: 20px;">Address by the Chancellor</li>
+          <li style="margin-left: 20px;">Address by the Vice-Chancellor</li>
+          <li style="margin-left: 20px;">Convocation speaker Address</li>
+          <li style="margin-left: 20px;">Conferring of Honorary Doctorate Degrees</li>
+          <li style="margin-left: 20px;">Conferring of Graduation Degrees</li>
+          <li style="margin-left: 20px;">Departure of Chancellor's procession</li>
+        </ul>
+        `,
         maps: [
           {
             title: 'Convocation Arena',
@@ -256,7 +266,23 @@
     }
   ];
 
+  const setStateToURL = (state: string) => {
+    // set 'tab' query in url query params and set it to state
+    const url = new URL(window.location.href);
+    url.searchParams.set('tab', state);
+    window.history.pushState({ path: url.href }, '', url.href);
+  };
+
   $: activeItinerary = Object.keys(itinerary)[0];
+
+  onMount(() => {
+    // detect if tab is present in url query params
+    const url = new URL(window.location.href);
+    const tab = url.searchParams.get('tab');
+    if (tab) {
+      activeItinerary = tab;
+    }
+  });
 </script>
 
 <span id="convocation-2024" style="display: none; visibility: hidden;" />
@@ -292,32 +318,39 @@
     <ul class="Itinerary__tabs">
       {#each Object.keys(itinerary) as date}
         <li>
-          <button
+          <a
+            href={`?tab=${date.replaceAll(' ', '+')}`}
             class="CrispButton"
-            on:click={() => (activeItinerary = date)}
+            on:click={(e) => {
+              e.preventDefault();
+              activeItinerary = date;
+              setStateToURL(date);
+            }}
             class:active={activeItinerary === date}
           >
             {date}
-          </button>
+          </a>
         </li>
       {/each}
     </ul>
     <ul class="Itinerary">
       {#each itinerary[activeItinerary] as event}
-        <div class="Itinerary__event">
+        <div class="Itinerary__event" id={event.title}>
           <span>
             <h4>
               {event.title}
             </h4>
-            <AddToCalender
-              name={event.title}
-              description={event.description}
-              startTime={event.startTime}
-              isText={false}
-              endTime={event.endTime}
-              venueName={event.maps[0]?.icsLocation}
-              calenders={['google', 'outlook', 'apple']}
-            />
+            <div style="display: flex; gap: 10px;">
+              <AddToCalender
+                name={event.title}
+                description={event.description}
+                startTime={event.startTime}
+                isText={false}
+                endTime={event.endTime}
+                venueName={event.maps[0]?.icsLocation}
+                calenders={['google', 'outlook', 'apple']}
+              />
+            </div>
           </span>
           <p class="Itinerary__event-time">
             {event.startTime.toLocaleString('en-US', {
@@ -331,7 +364,7 @@
               minute: '2-digit'
             })}
           </p>
-          <p class="Itinerary__event-description">{event.description}</p>
+          <p class="Itinerary__event-description">{@html event.description}</p>
           <ul>
             {#each event.maps as map}
               <li>
@@ -505,7 +538,7 @@
       li {
         @include box();
 
-        button {
+        a {
           @include box();
           border: none;
           line-height: 1.2;
