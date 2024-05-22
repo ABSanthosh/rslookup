@@ -215,6 +215,47 @@
     ]
   };
 
+  const guestSpeakers = [
+    {
+      name: 'Mr. Abhinav Bindra',
+      awards: ['Padma Bhushan', 'Olympic Gold Medalist'],
+      role: 'Convocation Speaker',
+      about: 'https://en.wikipedia.org/wiki/Abhinav_Bindra',
+      description:
+        "Abhinav Bindra is an Indian businessman and retired professional shooter who is a former World and Olympic champion in the 10 metre Air Rifle event. By winning the gold in the 10 m Air Rifle event at the 2008 Beijing Olympic Games, he became the first Indian to win an individual gold medal at the Olympic Games and India's first gold medal since 1980.",
+      image:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4BDiavwJ6_qTxO6h33NKJbBqVgLqWmNeRpkmcVjDk2w&s'
+    },
+    {
+      name: 'Ustad Amjad Ali Khan',
+      awards: ['Padma Vibhushan', 'Legendary Sarod Maestro'],
+      role: 'Honorary Doctorate Recipient',
+      about: 'https://en.wikipedia.org/wiki/Amjad_Ali_Khan',
+      description:
+        "Amjad Ali Khan is an Indian classical musician who plays the sarod. Khan was born into a classical musical family and has performed internationally since the 1960s. He was awarded India's second highest civilian honor, the Padma Vibhushan, in 2001.",
+      image: 'https://assets.mysticamusic.com/images/artist-photos/ustad-amjad-ali-khan.jpg'
+    },
+    {
+      name: 'Ms. Sukla Mistry',
+      awards: ['Director (Refineries), IndianOil', 'Outstanding Business Leader'],
+      role: 'Honorary Doctorate Recipient',
+      about: 'https://www.linkedin.com/in/sukla-mistry-33458149',
+      description:
+        "Sukla Mistry is the Director (Refineries) of Indian Oil Corporation Limited (IndianOil), India's largest commercial enterprise. First woman Functional Director on the IndianOil Board and spearheading the business & operations of Nine refineries & mega petrochemical plants of IndianOil. ",
+      image:
+        'https://akm-img-a-in.tosshub.com/businesstoday/images/story/202202/sukla-mistry_1200-sixteen_nine.jpg'
+    },
+    {
+      name: 'Mr. Krishen Khanna',
+      awards: ['Padma Bhushan', 'Distinguished Artist'],
+      role: 'Honorary Doctorate Recipient',
+      about: 'https://en.wikipedia.org/wiki/Krishen_Khanna',
+      description:
+        "Krishen Khanna is an Indian artist born in Lyallpur, Punjab, British India, now Faisalabad, Pakistan. He is a founding member of the Progressive Artists' Group of Bombay, and was awarded the Padma Shri in 1990 and the Padma Bhushan in 2011.",
+      image: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/Krishen_Khanna.jpg'
+    }
+  ];
+
   $: activeItinerary = Object.keys(itinerary)[0];
 </script>
 
@@ -307,6 +348,42 @@
             {/each}
           </ul>
         </div>
+      {/each}
+    </ul>
+  </section>
+
+  <section class="ConvoHome__section">
+    <h2>Guest Speakers</h2>
+    <ul class="Guest__box">
+      {#each guestSpeakers as speaker}
+        <li class="Guest">
+          <div class="Guest__left">
+            <span class="Guest-role">
+              {speaker.role}
+            </span>
+            <h2>
+              {speaker.name}
+            </h2>
+            <p class="Guest-awards">
+              {speaker.awards.join(' • ')}
+            </p>
+            <p class="Guest-description">
+              {speaker.description}
+            </p>
+            <a
+              href={speaker.about}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="CrispButton"
+              data-type="golden"
+            >
+              Know More
+            </a>
+          </div>
+          <div class="Guest__right">
+            <img src={speaker.image} alt={speaker.name} />
+          </div>
+        </li>
       {/each}
     </ul>
   </section>
@@ -502,6 +579,84 @@
             @include box();
           }
         }
+      }
+    }
+  }
+
+  .Guest {
+    gap: 3rem;
+    @include box();
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: 1fr 350px;
+
+    @include respondAt(830px) {
+      gap: 20px;
+      @include make-flex();
+    }
+
+    &__right {
+      @include box();
+      @include make-flex($just: flex-start, $align: flex-end);
+      @include respondAt(830px) {
+        order: -1;
+        align-items: center;
+      }
+    }
+    &__left {
+      gap: 20px;
+      @include make-flex($align: flex-start);
+      @include respondAt(830px) {
+        order: 1;
+      }
+      & > a {
+        margin-top: auto;
+      }
+    }
+
+    &-role {
+      padding: 8px 10px 5px 10px;
+      border-radius: 5px;
+      background-color: #ece0e0;
+    }
+
+    &-awards {
+      font-size: 20px;
+      line-height: 25px;
+      color: var(--subFg-1);
+    }
+
+    &__box {
+      width: 100%;
+      display: grid;
+      list-style: none;
+      grid-template-rows: repeat(auto-fill, auto);
+    }
+    img {
+      border-radius: 30px;
+      aspect-ratio: 1 / 1;
+      max-width: 100%;
+      @include box(100%, auto);
+      object-fit: cover;
+      object-position: top;
+
+      @include respondAt(830px) {
+        max-width: 300px;
+      }
+    }
+
+    h2 {
+      font-size: 30px;
+      font-weight: 500;
+    }
+
+    &-description {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 28px;
+
+      @include respondAt(420px) {
+        text-align: justify;
       }
     }
   }
