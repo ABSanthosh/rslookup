@@ -64,6 +64,10 @@
   --crp-message-border-color-info: #005197;
   --crp-message-background-color-info: #e3f0ff;
 
+  --crp-message-color-convo2024: #c3b197;
+  --crp-message-border-color-convo2024: #9d7b7b;
+  --crp-message-background-color-convo2024: #f9efde;
+
   --crp-tab-background-color: #f4f4f5;
   --crp-tab-item-background-color: #ffffff;
 }

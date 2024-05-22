@@ -57,6 +57,8 @@
       });
   };
 
+  const noThemeRoutes = ['/convocation-2024'];
+
   let localQueryValue: string;
   $: isHomeRoute = ['/', ...HOME_ROUTES.map((r) => `/${r.route}`)].includes($page.url.pathname);
   $: path = $page.url.pathname.slice(1).split('/')[0];
@@ -154,13 +156,15 @@
         </ul>
       </details>
     {/if}
-    <button
-      bind:this={themeToggle}
-      aria-label="Toggle theme"
-      class="CrispButton Header__theme-toggle"
-      on:click={async () => await themeToggleTransition()}
-      data-icon={String.fromCharCode($theme === 'dark' ? 58416 : 58652)}
-    />
+    {#if !noThemeRoutes.includes($page.url.pathname)}
+      <button
+        bind:this={themeToggle}
+        aria-label="Toggle theme"
+        class="CrispButton Header__theme-toggle"
+        on:click={async () => await themeToggleTransition()}
+        data-icon={String.fromCharCode($theme === 'dark' ? 58416 : 58652)}
+      />
+    {/if}
   </div>
 </header>
 
