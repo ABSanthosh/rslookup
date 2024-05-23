@@ -230,40 +230,50 @@
     {
       name: 'Mr. Abhinav Bindra',
       awards: ['Padma Bhushan', 'Olympic Gold Medalist'],
-      role: 'Convocation Speaker',
+      role: ['Chief Guest', 'Convocation Speaker'],
       about: 'https://en.wikipedia.org/wiki/Abhinav_Bindra',
       description:
-        "Abhinav Bindra is an Indian businessman and retired professional shooter who is a former World and Olympic champion in the 10 metre Air Rifle event. By winning the gold in the 10 m Air Rifle event at the 2008 Beijing Olympic Games, he became the first Indian to win an individual gold medal at the Olympic Games and India's first gold medal since 1980.",
+        "India's First Olympic Gold Medallist, Padma Bhushan awardee for excellence in sports. National hero, an inspiration for aspiring athletes.",
       image:
         'https://scontent-del2-2.xx.fbcdn.net/v/t1.6435-9/165280290_296900228497510_5247725121276862244_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=0dL5uM9llFkQ7kNvgHxV5ns&_nc_ht=scontent-del2-2.xx&oh=00_AYDZyRKrjeSCxI3GSE5DaAtAkQtpY6pAuoO2QZqQttHbCQ&oe=667511A5'
     },
     {
+      name: 'Wing Commander Rakesh Sharma (Retd.)',
+      awards: ['Ashoka Chakra', 'First Indian In Space'],
+      role: ['Guest Of Honour', 'Honorary Doctorate Recipient'],
+      about: 'https://en.wikipedia.org/wiki/Rakesh_Sharma',
+      description:
+        "Ashoka Chakra awardee, the first and only Indian to venture into space. His historic journey paved the way for India's space exploration.",
+      image: 'https://www.apnapatiala.com/wp-content/uploads/2013/03/AVN-RAKESH-Ji.jpg'
+    },
+    {
       name: 'Ustad Amjad Ali Khan',
       awards: ['Padma Vibhushan', 'Legendary Sarod Maestro'],
-      role: 'Honorary Doctorate Recipient',
+      role: ['Guest Of Honour', 'Honorary Doctorate Recipient'],
       about: 'https://en.wikipedia.org/wiki/Amjad_Ali_Khan',
       description:
-        "Amjad Ali Khan is an Indian classical musician who plays the sarod. Khan was born into a classical musical family and has performed internationally since the 1960s. He was awarded India's second highest civilian honor, the Padma Vibhushan, in 2001.",
+        'Legendary Sarod Maestro, Padma Vibhushan awardee, has made profound contributions to Indian classical music, enriched our cultural heritage, and resonates with millions worldwide.',
       image: 'https://assets.mysticamusic.com/images/artist-photos/ustad-amjad-ali-khan.jpg'
     },
     {
       name: 'Ms. Sukla Mistry',
       awards: ['Director (Refineries), IndianOil', 'Outstanding Business Leader'],
-      role: 'Honorary Doctorate Recipient',
+      role: ['Guest Of Honour', 'Honorary Doctorate Recipient'],
       about: 'https://www.linkedin.com/in/sukla-mistry-33458149',
       description:
-        "Sukla Mistry is the Director (Refineries) of Indian Oil Corporation Limited (IndianOil), India's largest commercial enterprise. First woman Functional Director on the IndianOil Board and spearheading the business & operations of Nine refineries & mega petrochemical plants of IndianOil. ",
+        'Former Director (Refineries) at IndianOil, an exceptional business leader whose visionary leadership in the corporate world has set a high benchmark for excellence and innovation.',
       image:
         'https://akm-img-a-in.tosshub.com/businesstoday/images/story/202202/sukla-mistry_1200-sixteen_nine.jpg'
     },
     {
       name: 'Mr. Krishen Khanna',
       awards: ['Padma Bhushan', 'Distinguished Artist'],
-      role: 'Honorary Doctorate Recipient',
+      role: ['Guest Of Honour', 'Honorary Doctorate Recipient'],
       about: 'https://en.wikipedia.org/wiki/Krishen_Khanna',
       description:
-        "Krishen Khanna is an Indian artist born in Lyallpur, Punjab, British India, now Faisalabad, Pakistan. He is a founding member of the Progressive Artists' Group of Bombay, and was awarded the Padma Shri in 1990 and the Padma Bhushan in 2011.",
-      image: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/Krishen_Khanna.jpg'
+        'Padma Bhushan awardee and Distinguished artist, has significantly contributed to the enrichment of Indian art and culture.',
+      image:
+        'https://static.toiimg.com/imagenext/toiblogs/photo/blogs/wp-content/uploads/2021/07/2016-dsc_0005-resize2048-680x1024.jpg'
     }
   ];
 
@@ -303,12 +313,16 @@
 <span id="convocation-2024" style="display: none; visibility: hidden;" />
 
 <main class="ConvoHome">
-  <img src={poster} alt="" style="width: 100%; height: auto; margin-top: 20px; border-radius: 10px" />
-  <!-- <h1 class="ConvoHome__hero">
+  <!-- <img
+    src={poster}
+    alt=""
+    style="width: 100%; height: auto; margin-top: 20px; border-radius: 10px"
+  /> -->
+  <h1 class="ConvoHome__hero">
     <img src={ConvoHeroTop} alt="Convocation 2024" />
     CONVOCATION 2024
     <img src={ConvoHeroBottom} alt="Convocation 2024" />
-  </h1> -->
+  </h1>
 
   <section class="ConvoHome__section">
     <h2>Quick Links</h2>
@@ -407,9 +421,13 @@
       {#each guestSpeakers as speaker}
         <li class="Guest">
           <div class="Guest__left">
-            <span class="Guest-role">
-              {speaker.role}
-            </span>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; ">
+              {#each speaker.role as role}
+                <span class="Guest-role">
+                  {role}
+                </span>
+              {/each}
+            </div>
             <h2>
               {speaker.name}
             </h2>
@@ -686,7 +704,7 @@
       max-width: 100%;
       @include box(100%, auto);
       object-fit: cover;
-      object-position: top;
+      // object-position: top;
 
       @include respondAt(830px) {
         max-width: 300px;
