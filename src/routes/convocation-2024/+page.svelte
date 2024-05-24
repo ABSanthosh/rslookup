@@ -416,6 +416,21 @@
   </section>
 
   <section class="ConvoHome__section">
+    <h2>Live Stream</h2>
+    <iframe
+      width="100%"
+      style="aspect-ratio: 16/9;"
+      src="https://www.youtube.com/embed/6y9WSP8cFMU?si=X_FxWB-D5We3gdkR"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    >
+    </iframe>
+  </section>
+
+  <section class="ConvoHome__section">
     <h2>Guest Speakers</h2>
     <ul class="Guest__box">
       {#each guestSpeakers as speaker}
