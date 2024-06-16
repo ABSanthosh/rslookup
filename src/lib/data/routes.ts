@@ -1,3 +1,5 @@
+import Convocation2024 from '$images/Archive/Convocation-2024.png';
+
 export const ROUTES = [
   {
     icon: 59389,
@@ -115,5 +117,18 @@ export const HOME_ROUTES = [
   {
     name: 'Credits',
     route: 'credits'
+  },
+  {
+    name: 'Archive',
+    route: 'archive'
   }
 ] as const;
+
+export const ARCHIVE_ROUTES = [
+  {
+    name: 'Convocation 2024',
+    desc: 'A page made for Convocation 2024 with all the itineraries that parents need to know.',
+    image: Convocation2024,
+    route: 'convocation-2024'
+  }
+];
