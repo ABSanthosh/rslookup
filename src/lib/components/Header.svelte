@@ -64,6 +64,7 @@
   $: path = $page.url.pathname.slice(1).split('/')[0];
   $: currentRoute = ROUTES.find((r) => r.route.includes(path === '' ? 'home' : path));
   $: isNavOpen = false;
+  $: isHomeNavOpen = false;
   $: isSearching = false;
 </script>
 
@@ -75,7 +76,7 @@
   </div>
   <div class="Header__right">
     {#if isHomeRoute}
-      <ul class="Header__navList">
+      <ul class="Header__navList Header__navList--desktop">
         {#each HOME_ROUTES as item}
           <li>
             <a href={item.route} class:active={$page.url.pathname === `/${item.route}`}>
@@ -84,6 +85,25 @@
           </li>
         {/each}
       </ul>
+      <details
+        use:clickOutside
+        bind:open={isNavOpen}
+        data-no-marker
+        class="CrispMenu Header__tabs Header__navList--mobile"
+        on:outclick={() => (isNavOpen = false)}
+      >
+        <summary>
+          <p></p>
+          <span data-icon={String.fromCharCode(58834)} />
+        </summary>
+        <ul class="CrispMenu__content">
+          {#each HOME_ROUTES as item}
+            <a href={item.route} class:active={$page.url.pathname === `/${item.route}`}>
+              {item.name}
+            </a>
+          {/each}
+        </ul>
+      </details>
     {/if}
     {#if currentRoute?.showSearch}
       <div transition:fade class="Header__search" data-icon={String.fromCharCode(59574)}>
@@ -248,6 +268,19 @@
       padding: 0;
       list-style: none;
       @include make-flex($dir: row, $just: flex-start);
+
+      &--desktop {
+        @include respondAt(450px) {
+          display: none;
+        }
+      }
+
+      &--mobile {
+        display: none;
+        @include respondAt(450px) {
+          display: block;
+        }
+      }
 
       & > li {
         @include make-flex($dir: row, $just: flex-start);

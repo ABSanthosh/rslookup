@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { HOME_ROUTES } from '$data/routes';
 </script>
 
 <footer class="FooterWrapper">
@@ -18,10 +19,12 @@
       </span>
     </div>
     <div class="FooterWrapper__right">
-      <a href="/about"> About </a>
-      •
-      <a href="/credits"> Credits </a>
-      •
+      {#each HOME_ROUTES as { name, route }}
+        <a href={route}>
+          {name}
+        </a>
+        •
+      {/each}
       <a
         target="_blank"
         rel="noopener noreferrer"

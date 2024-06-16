@@ -1,6 +1,5 @@
 <script lang="ts">
   import type { PageData } from './$types';
-  import NEKO from '$images/neko.webp';
   import icon_pdf from '$images/icon_pdf.png';
   import icon_sheet from '$images/icon_sheet.png';
   import icon_doc from '$images/icon_doc.png';
