@@ -5,6 +5,13 @@ import { generateDate } from '$utils/calendarEvent';
 import { convertCSVtoJSON } from '$utils/toJson';
 import type { PageServerLoad } from './$types';
 
+/**
+ * Consolidates the given array of credit data into a single object.
+ * The credit data is sorted by date in descending order.
+ *
+ * @param data - The array of credit data to be consolidated.
+ * @returns The consolidated credit object.
+ */
 const consolidator = (data: ICredit[]) => {
   data.sort((a, b) => {
     const dateA = generateDate(a.date, '11.59 PM');
@@ -38,6 +45,12 @@ const consolidator = (data: ICredit[]) => {
   return holderList;
 };
 
+/**
+ * Loads the credits data from a remote source and processes it.
+ * @param fetch - The function used to make the HTTP request.
+ * @param setHeaders - The function used to set the response headers.
+ * @returns An object containing the processed credits data and batches.
+ */
 export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
   setHeaders(cacheConfig());
 
@@ -59,18 +72,26 @@ export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
 
   let temp = [];
 
+  // 1) All data are sorted by date in descending order
+  // 2) Batch the data by email and consolidate the data
+
   for (let i = 0; i < csv.length; i++) {
+    // If the current email is the same as the next email, push the data to the temp array
     if (i < csv.length - 1 && i + 1 <= csv.length - 1 && csv[i].email === csv[i + 1].email) {
       temp.push(csv[i]);
     } else {
+      // If the current email is different from the next email, push the data to the temp array
+      // and push the temp array to the batches array
       temp.push(csv[i]);
       batches.push(temp);
       temp = [];
     }
   }
 
+  const batchedData = batches.map(consolidator);
+
   return {
-    credits: batches.map(consolidator),
-    batches
+    maintainers: batchedData.filter((item) => item.role !== 'Contributor'),
+    contributors: batchedData.filter((item) => item.role === 'Contributor')
   };
 };

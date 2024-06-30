@@ -15,11 +15,11 @@
 
 <section class="Credits__hero">
   <h2>Credits</h2>
-  <p>Know all the people who has contributed to the website in some way</p>
+  <p>Know all the people who helps to make this website run smoothly.</p>
 </section>
 
 <ul class="Credits__content">
-  {#each data.credits as item}
+  {#each data.maintainers as item}
     <li class="Credit">
       <span class="Credit__col Credit__profile">
         <h2>
@@ -49,6 +49,34 @@
   {/each}
 </ul>
 
+<section class="Credits__subHero">
+  <h3>Contributors</h3>
+  <p>All the people who has contributed to the website in some way</p>
+</section>
+
+<ul class="Credits__contributors">
+  {#each data.contributors as item}
+    <div class="Contributor" title={item.changes.map((change) => change.description).join('\n')}>
+      <span class="Credit__col Credit__profile">
+        <h2>
+          {profile(item.name)}
+        </h2>
+        {@html `
+          <img 
+            src="${item.image}" 
+            alt="${item.name}" 
+            onerror="this.style.visibility = 'hidden'" 
+            loading="lazy" />
+          `}
+      </span>
+      <span class="Credit__col Credit__header">
+        <h3>{item.name}</h3>
+        <p>{item.role}</p>
+      </span>
+    </div>
+  {/each}
+</ul>
+
 <style lang="scss">
   .Credits {
     &__content {
@@ -57,20 +85,7 @@
     }
 
     &__hero {
-      @include box();
-      padding-top: 80px;
-      @include make-flex($just: flex-start);
       margin: 0px 0 50px 0;
-
-      @include respondAt(680px) {
-        padding: 0;
-        margin: 40px 0 30px 0;
-        @include make-flex($just: flex-start, $align: flex-start);
-      }
-
-      @include respondAt(430px) {
-        margin: 40px 0 0px 0;
-      }
 
       & > h2 {
         font-size: 45px;
@@ -81,6 +96,32 @@
         }
       }
 
+      @include respondAt(680px) {
+        padding: 0;
+        margin: 40px 0 30px 0;
+        @include make-flex($just: flex-start, $align: flex-start);
+      }
+
+      @include respondAt(430px) {
+        margin: 40px 0 0px 0;
+      }
+    }
+
+    &__subHero {
+      margin: 0px 0 20px 0;
+      & > h3 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 700;
+      }
+    }
+
+    &__subHero,
+    &__hero {
+      @include box();
+      padding-top: 80px;
+      @include make-flex($just: flex-start);
+
       & > p {
         font-size: 20px;
         font-weight: 400;
@@ -88,10 +129,18 @@
         color: var(--subFg-1);
 
         @include respondAt(500px) {
-          text-align: left;
           font-size: 18px;
         }
       }
+    }
+
+    &__contributors {
+      @include box();
+      @include make-flex($dir: row);
+
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
     }
   }
 
@@ -158,7 +207,7 @@
       @include make-flex($align: flex-start, $just: flex-start);
 
       & > h3 {
-        line-height: 1;
+        line-height: 1.4;
         font-size: 16px;
         font-weight: 400;
       }
@@ -179,7 +228,7 @@
         gap: 10px;
         display: grid;
         padding: 10px 0 10px 0;
-        grid-template-columns: 100px 1fr;
+        grid-template-columns: 110px 1fr;
 
         @include respondAt(430px) {
           grid-template-columns: 1fr;
@@ -200,6 +249,20 @@
           }
         }
       }
+    }
+  }
+
+  .Contributor {
+    @include box(auto);
+    gap: 15px;
+    @include make-flex($dir: row);
+    border-radius: 50px;
+    padding: 0px 20px 0 10px;
+    border: 1px solid var(--credits-border);
+
+    @include respondAt(450px) {
+      flex-grow: 1;
+      justify-content: flex-start;
     }
   }
 </style>
