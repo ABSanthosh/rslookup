@@ -64,11 +64,11 @@
     const semester = $GPAStore[index];
     const { courses } = semester;
     const totalCredits = courses.reduce((acc, curr) => {
-      if (curr.grade === 'S' || curr.grade === 'U') return 0;
+      if (curr.grade === 'S' || curr.grade === 'U') return acc;
       return acc + curr.credits;
     }, 0);
     const totalGrade = courses.reduce((acc, curr) => {
-      if (curr.grade === 'S' || curr.grade === 'U') return 0;
+      if (curr.grade === 'S' || curr.grade === 'U') return acc;
       return acc + curr.credits * GRADES[curr.grade];
     }, 0);
     $GPAStore[index].SGPA = Math.round((totalGrade / totalCredits) * 100) / 100;
@@ -82,9 +82,9 @@
             (acc, curr) =>
               acc +
               curr.SGPA *
-                curr.courses.reduce((a, c) => {
-                  if (c.grade === 'S' || c.grade === 'U') return 0;
-                  return a + c.credits;
+                curr.courses.reduce((acc, curr) => {
+                  if (curr.grade === 'S' || curr.grade === 'U') return acc;
+                  return acc + curr.credits;
                 }, 0),
             0
           )) /
@@ -92,9 +92,9 @@
           $GPAStore.reduce(
             (acc, curr) =>
               acc +
-              curr.courses.reduce((a, c) => {
-                if (c.grade === 'S' || c.grade === 'U') return 0;
-                return a + c.credits;
+              curr.courses.reduce((acc, curr) => {
+                if (curr.grade === 'S' || curr.grade === 'U') return acc;
+                return acc + curr.credits;
               }, 0),
             0
           ))
@@ -523,6 +523,7 @@
 
             & > button {
               width: 50px;
+              margin-left: auto;
             }
 
             &::before {
