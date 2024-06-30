@@ -56,14 +56,14 @@ export const ROUTES = [
       'Find all the Academic POCs in one place. Get your academic queries resolved in no time.'
   },
   // {
-  // 	icon: 60144,
-  // 	route: 'attendance',
-  // 	separator: false,
-  // 	showSearch: false,
-  // 	name: 'Attendance Calculator',
-  // 	title: "What's My Attendance?",
-  // 	background: 'linear-gradient(225deg, #CC8820, #B629E1)',
-  // 	description: 'Missed a few classes? Calculate your attendance to know where you stand.'
+  //   icon: 60144,
+  //   route: 'attendance',
+  //   separator: false,
+  //   showSearch: false,
+  //   name: 'Attendance Calculator',
+  //   title: "What's My Attendance?",
+  //   background: 'linear-gradient(225deg, #CC8820, #B629E1)',
+  //   description: 'Missed a few classes? Calculate your attendance to know where you stand.'
   // },
   {
     icon: 62003,
