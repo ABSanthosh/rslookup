@@ -2,6 +2,7 @@ import { DATA_SOURCE_BASE, DATA_SOURCE_META_CREDITS } from '$env/static/private'
 import type { IConsolidatedCredit, ICredit } from '$types/Credits.types';
 import { cacheConfig } from '$utils/CacheControl';
 import { generateDate } from '$utils/calendarEvent';
+import getImageSrc from '$utils/getImageSrc';
 import { convertCSVtoJSON } from '$utils/toJson';
 import type { PageServerLoad } from './$types';
 
@@ -23,7 +24,7 @@ const consolidator = (data: ICredit[]) => {
     name: data[0].name,
     email: data[0].email,
     role: data[0].role,
-    image: data[0].image,
+    image: getImageSrc(data[0].image),
     changes: []
   };
 

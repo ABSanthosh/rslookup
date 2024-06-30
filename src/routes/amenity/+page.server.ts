@@ -31,8 +31,6 @@ export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
     fetch(`${DATA_SOURCE_BASE}${DATA_SOURCE_AMENITY_SPORT}`, options)
   ]);
 
-  // console.log(await Food.text())
-
   const [AcademicsData, AdminData, EssentialsData, FoodData, HostelData, SportsData] =
     await Promise.all([
       Academics.ok ? (convertCSVtoJSON(await Academics.text()) as unknown as IAcademics[]) : [],
@@ -42,8 +40,6 @@ export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
       Hostel.ok ? (convertCSVtoJSON(await Hostel.text()) as unknown as IHostel[]) : [],
       Sports.ok ? (convertCSVtoJSON(await Sports.text()) as unknown as ISport[]) : []
     ]);
-
-  console.log(FoodData);
 
   return {
     Hostel: HostelData,
