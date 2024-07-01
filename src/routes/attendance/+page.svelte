@@ -1,79 +1,77 @@
 <script lang="ts">
   import { AttendanceStore } from '$stores/AttendanceStore';
+  import AttendanceCreditHours from '$images/AttendanceCreditHours.png';
 
   $: calcPercentage = (index: number) => {
-    const percentage = parseFloat(
-      `${
-        (($AttendanceStore[index].lec.attended +
-          $AttendanceStore[index].tut.attended +
-          $AttendanceStore[index].pra.attended) /
-          ($AttendanceStore[index].lec.total +
-            $AttendanceStore[index].tut.total +
-            $AttendanceStore[index].pra.total)) *
-        100
-      }`
+    const { lec, tut, pra } = $AttendanceStore[index];
+    // sum(lec.attended, tut.attended, pra.attended) / sum(lec.total, tut.total, pra.total)
+    const percentage = (
+      ((lec.attended + tut.attended + pra.attended) / (lec.total + tut.total + pra.total)) *
+      100
     ).toFixed(2);
 
-    if (isNaN(parseFloat(percentage))) return '0.00';
+    if (isNaN(parseFloat(percentage)) || !isFinite(parseFloat(percentage))) return '0.00';
     return percentage;
   };
 
   $: attendAll = (index: number) => {
-    // add all attended hours and pending hours / add all total hours and pending hours
-    const attended =
-      $AttendanceStore[index].lec.attended +
-      $AttendanceStore[index].tut.attended +
-      $AttendanceStore[index].pra.attended;
-    const total =
-      $AttendanceStore[index].lec.total +
-      $AttendanceStore[index].tut.total +
-      $AttendanceStore[index].pra.total;
-    const pending =
-      $AttendanceStore[index].lec.pending +
-      $AttendanceStore[index].tut.pending +
-      $AttendanceStore[index].pra.pending;
+    // sum(lec.attended, tut.attended, pra.attended, lec.pending, tut.pending, pra.pending) /
+    // sum(lec.total, tut.total, pra.total, lec.pending, tut.pending, pra.pending)
+    const { lec, tut, pra } = $AttendanceStore[index];
+    const percentage = (
+      ((lec.attended + tut.attended + pra.attended + lec.pending + tut.pending + pra.pending) /
+        (lec.total + tut.total + pra.total + lec.pending + tut.pending + pra.pending)) *
+      100
+    ).toFixed(2);
 
-    const percentage = parseFloat(`${((attended + pending) / (total + pending)) * 100} `).toFixed(
-      2
-    );
-
-    if (isNaN(parseFloat(percentage))) return '0.00';
+    if (isNaN(parseFloat(percentage)) || !isFinite(parseFloat(percentage))) return '0.00';
     return percentage;
   };
 
   $: skipAll = (index: number) => {
-    // sum of all attended hours / sum of all total hours + pending hours
-    const attended =
-      $AttendanceStore[index].lec.attended +
-      $AttendanceStore[index].tut.attended +
-      $AttendanceStore[index].pra.attended;
-    const total =
-      $AttendanceStore[index].lec.total +
-      $AttendanceStore[index].tut.total +
-      $AttendanceStore[index].pra.total;
-    const pending =
-      $AttendanceStore[index].lec.pending +
-      $AttendanceStore[index].tut.pending +
-      $AttendanceStore[index].pra.pending;
+    // sum(lec.attended, tut.attended, pra.attended) /
+    // sum(lec.total, tut.total, pra.total, lec.pending, tut.pending, pra.pending)
+    const { lec, tut, pra } = $AttendanceStore[index];
+    const percentage = (
+      ((lec.attended + tut.attended + pra.attended) /
+        (lec.total + tut.total + pra.total + lec.pending + tut.pending + pra.pending)) *
+      100
+    ).toFixed(2);
 
-    const percentage = parseFloat(`${(attended / (total + pending)) * 100}`).toFixed(2);
-
-    if (isNaN(parseFloat(percentage))) return '0.00';
+    if (isNaN(parseFloat(percentage)) || !isFinite(parseFloat(percentage))) return '0.00';
     return percentage;
   };
 
   $: attendMin = (index: number) => {
-    // 75% of total hours - attended hours
-    return Math.ceil(
-      (0.75 *
-        ($AttendanceStore[index].lec.total +
-          $AttendanceStore[index].tut.total +
-          $AttendanceStore[index].pra.total) -
-        ($AttendanceStore[index].lec.attended +
-          $AttendanceStore[index].tut.attended +
-          $AttendanceStore[index].pra.attended)) /
-        (1 - 0.75)
-    );
+    const { lec, tut, pra } = $AttendanceStore[index];
+    // =IF((0.75*SUM(C6:E6,C7:E7)-SUM(C5:E5))<0,0, 0.75*SUM(C6:E6,C7:E7)-SUM(C5:E5))
+    // SUM(C6:E6,C7:E7) = sum(lec.total, tut.total, pra.total, lec.pending, tut.pending, pra.pending)
+    // SUM(C5:E5) = sum(lec.attended, tut.attended, pra.attended)
+    const percentage = Math.max(
+      0,
+      0.75 * (lec.total + tut.total + pra.total + lec.pending + tut.pending + pra.pending) -
+        (lec.attended + tut.attended + pra.attended)
+    ).toFixed(2);
+
+    if (isNaN(parseFloat(percentage)) || !isFinite(parseFloat(percentage))) return '0.00';
+    return percentage;
+  };
+
+  $: canOrCannotMakeIt = (index: number) => {
+    const { lec, tut, pra } = $AttendanceStore[index];
+    // if sum(lec.pending, tut.pending, pra.pending) > attendMin(index) then "You can make it to 75%"
+    // else "You cannot make it to 75%"
+    return lec.pending + tut.pending + pra.pending >
+      0.75 * (lec.total + tut.total + pra.total + lec.pending + tut.pending + pra.pending) -
+        (lec.attended + tut.attended + pra.attended)
+      ? {
+          msg: 'You can make it to 75%!',
+          style: `color: #2ecc71; text-align: center; font-weight: 600;`
+        }
+      : {
+          msg: 'You cannot make it to 75%!',
+          style: `color: #e74c3c; text-align: center; font-weight: 600;`
+        };
   };
 </script>
 
@@ -107,6 +105,23 @@
       Ref: UG Handbook - pg. 14
     </a>
   </p>
+  <em>
+    Note: <br />
+    - Calculate the tentative number of remaining hours based on the last teaching day and input in the
+    pending column. <br />
+    - Get the total number of hours for each course from SNU links &gt; Student Attendance Recording
+    &gt; Reports &gt; Summary and enter the hours from
+    <strong>Attendance with Credit Hours</strong>.
+  </em>
+  <figure class="CrispFigure" style="margin: 0 auto;">
+    <img
+      src={AttendanceCreditHours}
+      style=" height: 150px; width: auto;"
+      alt="Attendance Calculator"
+      loading="lazy"
+    />
+    <figcaption>Attendance Credit Hours</figcaption>
+  </figure>
 </div>
 
 <div class="w-100 Row--j-end">
@@ -171,7 +186,6 @@
             <th />
             <th>Total</th>
             <th>Pending</th>
-            <th>Hours</th>
           </tr>
         </thead>
         <tbody>
@@ -206,18 +220,6 @@
                 class="CrispInput"
                 style="--crp-input-min-width: 68px;"
                 bind:value={$AttendanceStore[index].lec.pending}
-                on:focus={({ target }) => {
-                  // @ts-ignore
-                  target.select();
-                }}
-              />
-            </td>
-            <td>
-              <input
-                type="number"
-                class="CrispInput"
-                style="--crp-input-min-width: 68px;"
-                bind:value={$AttendanceStore[index].lec.hours}
                 on:focus={({ target }) => {
                   // @ts-ignore
                   target.select();
@@ -262,15 +264,6 @@
                 }}
               />
             </td>
-            <td>
-              <input
-                disabled
-                type="number"
-                class="CrispInput"
-                style="--crp-input-min-width: 68px;"
-                value={$AttendanceStore[index].tut.hours}
-              />
-            </td>
           </tr>
           <tr>
             <td>PRA</td>
@@ -309,18 +302,9 @@
                 }}
               />
             </td>
-            <td>
-              <input
-                disabled
-                type="number"
-                class="CrispInput"
-                style="--crp-input-min-width: 68px;"
-                value={$AttendanceStore[index].pra.hours}
-              />
-            </td>
           </tr>
           <tr>
-            <td colspan="5"> Current Percentage </td>
+            <td colspan="4"> Current Percentage </td>
             <td>
               :
               <strong>
@@ -329,7 +313,7 @@
             </td>
           </tr>
           <tr>
-            <td colspan="5"> If you attend all remaining classes </td>
+            <td colspan="4"> Attend all classes </td>
             <td>
               :
               <strong>
@@ -339,7 +323,7 @@
           </tr>
           <!-- If you skip all remaining classes -->
           <tr>
-            <td colspan="5"> If you skip all remaining classes </td>
+            <td colspan="4"> Skip all classes </td>
             <td>
               :
               <strong>
@@ -349,12 +333,17 @@
           </tr>
           <!-- No. of classes you need to attend for 75% -->
           <tr>
-            <td colspan="5"> Min. no. of classes for 75% </td>
+            <td colspan="4"> No. of <strong>Hours</strong> for 75% </td>
             <td>
               :
               <strong>
                 {attendMin(index)}
               </strong>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="5" style={canOrCannotMakeIt(index).style}>
+              {canOrCannotMakeIt(index).msg}
             </td>
           </tr>
         </tbody>
@@ -429,6 +418,7 @@
       gap: 20px;
       max-width: 100%;
       min-width: 0;
+      width: 100%;
 
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
