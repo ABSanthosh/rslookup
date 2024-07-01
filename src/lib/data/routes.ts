@@ -64,16 +64,16 @@ export const ROUTES = [
     background: 'linear-gradient(90deg, #F24790, #984950)',
     description: 'Estimate your academic growth with ease. No more manual calculations.'
   },
-  // {
-  //   icon: 60144,
-  //   route: 'attendance',
-  //   separator: false,
-  //   showSearch: false,
-  //   name: 'Attendance Calculator',
-  //   title: "What's My Attendance?",
-  //   background: 'linear-gradient(225deg, #CC8820, #B629E1)',
-  //   description: 'Missed a few classes? Calculate your attendance to know where you stand.'
-  // },
+  {
+    icon: 60144,
+    route: 'attendance',
+    separator: false,
+    showSearch: false,
+    name: 'Attendance Calculator',
+    title: "What's My Attendance?",
+    background: 'linear-gradient(225deg, #CC8820, #B629E1)',
+    description: 'Missed a few classes? Calculate your attendance to know where you stand.'
+  },
   {
     icon: 59601,
     route: 'amenity',
