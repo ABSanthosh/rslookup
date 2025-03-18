@@ -2,8 +2,14 @@ export interface IEvent {
   title: string;
   description: string;
   location: string;
-  start: Date;
-  end: Date;
+  start: Date | 'TBA';
+  end: Date | 'TBA';
+}
+
+export function isValidDate(date: Date | 'TBA') {
+  if (date === 'TBA') return false;
+
+  return !isNaN(Date.parse(date.toString()));
 }
 
 /**
@@ -32,6 +38,7 @@ export function parseTime(time: string) {
  */
 export function parseDate(dateString: string) {
   const [date, month, year] = dateString.split('/').map((d) => parseInt(d, 10));
+  // month is 0-indexed
   return { year, month: month - 1, date };
 }
 
@@ -46,6 +53,18 @@ export function parseDate(dateString: string) {
 export function generateDate(dateString: string, time: string) {
   const { year, month, date } = parseDate(dateString);
   const { hours, minutes } = parseTime(time);
+
+  console.log(
+    year,
+    month,
+    date,
+    hours,
+    minutes,
+    dateString,
+    time,
+    new Date(year, month, date, hours, minutes)
+  );
+  // return new Date(year, month, date, hours, minutes);
   return new Date(year, month, date, hours, minutes);
 }
 
@@ -66,8 +85,12 @@ export function fancyDate(date: string) {
 export function googleCalendar({ title, description, location, start, end }: IEvent) {
   // convert Date to this format YYYYMMDDTHHmmSSZ
   const dates = {
-    start: start.toISOString().replace(/-|:|\.\d+/g, ''),
-    end: end.toISOString().replace(/-|:|\.\d+/g, '')
+    start:
+      start instanceof Date && isValidDate(start)
+        ? start.toISOString().replace(/-|:|\.\d+/g, '')
+        : 'TBA',
+    end:
+      end instanceof Date && isValidDate(end) ? end.toISOString().replace(/-|:|\.\d+/g, '') : 'TBA'
   };
 
   const details = [
@@ -91,14 +114,17 @@ export function googleCalendar({ title, description, location, start, end }: IEv
  */
 export function outlookCalendar({ title, description, location, start, end }: IEvent) {
   const details = [
+    `allday=false`,
+    `body=${encodeURIComponent(description)}`,
+    `startdt=${start instanceof Date && isValidDate(start) ? start.toISOString().replace('.000Z', '') : 'TBA'}`,
+    `enddt=${end instanceof Date && isValidDate(end) ? end.toISOString().replace('.000Z', '') : 'TBA'}`,
+    `location=${encodeURIComponent(location)}`,
     `path=/calendar/action/compose`,
     `rru=addevent`,
-    `startdt=${start.toISOString()}`,
-    `enddt=${end.toISOString()}`,
-    `subject=${encodeURIComponent(title)}`,
-    `body=${encodeURIComponent(description)}`,
-    `location=${encodeURIComponent(location)}`
+    `subject=${encodeURIComponent(title)}`
   ];
+  // console.log(`https://outlook.live.com/calendar/deeplink/compose?${details.join('&')}`);
+
   return `https://outlook.live.com/calendar/deeplink/compose?${details.join('&')}`;
 }
 
@@ -133,8 +159,8 @@ export function generateIcs({ title, description, location, start, end }: IEvent
     `SUMMARY:${title}`,
     `DESCRIPTION:${description}`,
     `LOCATION:${location}`,
-    `DTSTART:${start.toISOString().replace(/-|:|\.\d+/g, '')}`,
-    `DTEND:${end.toISOString().replace(/-|:|\.\d+/g, '')}`,
+    `DTSTART:${start instanceof Date ? start.toISOString().replace(/-|:|\.\d+/g, '') : 'TBA'}`,
+    `DTEND:${end instanceof Date ? end.toISOString().replace(/-|:|\.\d+/g, '') : 'TBA'}`,
     'END:VEVENT',
     'END:VCALENDAR'
   ];

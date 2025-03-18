@@ -15,9 +15,23 @@ export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
     }
   });
   const csv = convertCSVtoJSON(await data.text()) as unknown as IEvents[];
+  const validatedEvents = csv
+    .map((event) => {
+      const formatLine = (line: string) => line.replaceAll(/[\r\n]+/g, ' ').trim();
+      return {
+        ...event,
+        name: formatLine(event.name),
+        club: formatLine(event.club),
+        category: formatLine(event.category),
+        venueName: formatLine(event.venueName),
+        description: event.description.trim(),
+        date: new Date(event.date) ? event.date : 'TBA'
+      };
+    })
+    .sort((a, b) => {
+      if (a.date === 'TBA') return -1;
+      if (b.date === 'TBA') return 1;
 
-  return {
-    events: csv.sort((a, b) => {
       const dateA = parseDate(a.date);
       const dateB = parseDate(b.date);
 
@@ -25,6 +39,11 @@ export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
         new Date(dateB.year, dateB.month, dateB.date).getTime() -
         new Date(dateA.year, dateA.month, dateA.date).getTime()
       );
-    })
+    });
+
+  // console.log(validatedEvents);
+
+  return {
+    events: validatedEvents
   };
 };

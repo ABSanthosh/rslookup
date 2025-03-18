@@ -1,5 +1,12 @@
 ## ToDo
 
+- [ ] Migrate to sveltekit 2
+- [ ] Change how theme colors are handled
+- [ ] Theme switcher works in dev but not in prod. It returns to the default theme after a reload
+- [ ] Fetch only the first n items from google sheets 
+- [ ] update toast store
+- [ ] Error handling for all fetch requests to handle empty fields
+
 - [x] General
   - [x] prevent zoom on double tap
 - [x] Prof

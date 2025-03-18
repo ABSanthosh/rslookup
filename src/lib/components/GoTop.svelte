@@ -12,7 +12,6 @@
     if (!scrollContainer()) {
       return;
     }
-
     if (scrollContainer().scrollTop > showOnPx) {
       isHidden = false;
     } else {

@@ -1,5 +1,11 @@
 <script lang="ts">
-  import { generateDate, googleCalendar, outlookCalendar, parseDate } from '$utils/calendarEvent';
+  import {
+    generateDate,
+    googleCalendar,
+    isValidDate,
+    outlookCalendar,
+    parseDate
+  } from '$utils/calendarEvent';
   import { clickOutside } from '$utils/onClickOutside';
   import type { PageData } from './$types';
   import google_calendar from '$images/google-calendar.png';
@@ -36,14 +42,19 @@
       {@const parsedDate = parseDate(item.date)}
       {@const date = new Date(parsedDate.year, parsedDate.month, parsedDate.date)}
       {@const isExpired = date.getTime() < new Date().getTime()}
+      {@debug parsedDate, date, item}
       <li class="Event" class:expired={isExpired}>
         <div class="Event__left">
           <span>{item.category}</span>
-          <h2>{parseDate(item.date).date}</h2>
+          <h2>{isValidDate(date) ? parseDate(item.date).date : 'TBA'}</h2>
           <span>
-            {date.toLocaleString('default', { month: 'short' })}
-            {"'"}
-            {date.toLocaleString('default', { year: '2-digit' })}
+            {#if isValidDate(date)}
+              {date.toLocaleString('default', { month: 'short' })}
+              {"'"}
+              {date.toLocaleString('default', { year: '2-digit' })}
+            {:else}
+              TBA
+            {/if}
           </span>
         </div>
         <div class="Event__middle">
