@@ -15,7 +15,7 @@ import { cacheConfig } from '$utils/CacheControl';
 
 export const load: LayoutServerLoad = async ({ url, setHeaders }) => {
   if (url.pathname === '/clubs') {
-    throw redirect(308, '/clubs/cultural');
+    redirect(308, '/clubs/cultural');
   }
   setHeaders(cacheConfig());
 
