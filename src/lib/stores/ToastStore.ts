@@ -15,7 +15,7 @@ export const addToast = (toast: IToast) => {
   ToastStore.update((all) => {
     if (all.length > 0) {
       dismissToast(all[0].id!);
-      return [...all];
+      return [{ ...toast, id: id }];
     }
     return [{ ...toast, id: id }, ...all];
   });

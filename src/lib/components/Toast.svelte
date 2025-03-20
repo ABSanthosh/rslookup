@@ -2,15 +2,16 @@
   import type { IToast } from '$stores/ToastStore';
   import { backInOut } from 'svelte/easing';
   import { fly } from 'svelte/transition';
-  export let { message, timeout, type = 'default', id } = $$props as IToast;
+
+  let { message, timeout, type = 'default', id }: IToast = $props();
 </script>
 
 <span
   {id}
-  on:outroend
   class="Toast"
-  on:introstart
   data-type={type}
+  onoutroend={() => {}}
+  onintrostart={() => {}}
   transition:fly={{ y: 50, duration: 500, easing: backInOut }}
 >
   {message}
