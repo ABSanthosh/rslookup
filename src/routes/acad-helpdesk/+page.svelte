@@ -60,10 +60,12 @@
   </p>
   <div class="Acad__content">
     {#each data.office as item}
+      <!-- We are using same ProfCard for acad so we're using some extra things  -->
       <ProfCard
         name={item.name}
         img={item.image}
         mail={item.email}
+        block={""}
         role={item.position}
         website={item.website}
         room={item.room}

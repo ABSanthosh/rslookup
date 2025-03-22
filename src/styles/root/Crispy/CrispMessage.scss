@@ -19,6 +19,7 @@
     --crp-message-color: var(--crp-message-color-info);
     --crp-message-border-color: var(--crp-message-border-color-info);
     --crp-message-background-color: var(--crp-message-background-color-info);
+    @include make-flex($dir: row, $just: flex-start, $align: flex-start);
   }
 
   &[data-format='box'] {
@@ -29,13 +30,13 @@
     border: 1px solid var(--crp-message-border-color);
     background-color: var(--crp-message-background-color);
     padding: var(--crp-message-padding);
+    @include make-flex($just: flex-start, $align: flex-start);
   }
 
   gap: 8px;
+  line-height: 20px;
   @include box($height: auto);
   color: var(--crp-message-color);
-  @include make-flex($dir: row, $just: flex-start, $align: flex-start);
-  line-height: 20px;
 
   &::before {
     content: var(--crp-message-icon);

@@ -16,14 +16,15 @@
   import AdminCard from './cards/AdminCard.svelte';
   import EssentialsCard from './cards/EssentialsCard.svelte';
 
-  export let data: PageData;
-  let isFilterOpen = false;
+  let { data }: { data: PageData } = $props();
+
+  let isFilterOpen = $state(false);
   let filters: {
     name: string;
     checked: boolean;
     icon: number;
     data: IHostel[] | IAcademics[] | IAdmin[] | IEssentials[] | IFood[] | ISport[];
-  }[] = [
+  }[] = $state([
     {
       name: 'Hostel',
       checked: true,
@@ -60,15 +61,16 @@
       icon: 60356,
       data: data.Sports
     }
-  ];
+  ]);
 
-  $: filters.map((item) => item.checked),
-    browser &&
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-
+  $effect(() => {
+    filters.map((item) => item.checked),
+      browser &&
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+  });
   afterNavigate(() => {
     isFilterOpen = false;
   });
@@ -98,17 +100,17 @@
           <div class="Amenity__cards">
             {#each item.data as cardData}
               {#if item.name === 'Hostel'}
-                <HostelCard {...cardData} />
+                <HostelCard {...cardData as IHostel} />
               {:else if item.name === 'Academics'}
-                <AcadCard {...cardData} />
+                <AcadCard {...cardData as IAcademics} />
               {:else if item.name === 'Admin'}
-                <AdminCard {...cardData} />
+                <AdminCard {...cardData as IAdmin} />
               {:else if item.name === 'Essentials'}
-                <EssentialsCard {...cardData} />
+                <EssentialsCard {...cardData as IEssentials} />
               {:else if item.name === 'Food'}
-                <EssentialsCard {...cardData} />
+                <EssentialsCard {...cardData as IEssentials} />
               {:else if item.name === 'Sports'}
-                <AcadCard {...cardData} />
+                <AcadCard {...cardData as ISport} />
               {/if}
             {/each}
           </div>

@@ -53,5 +53,5 @@
 </div>
 
 <style lang="scss">
-  @import './AmenityCardBase.scss';
+  @forward './AmenityCardBase.scss';
 </style>

@@ -28,14 +28,9 @@
     background: var(--prof-card-background-color);
     @include make-flex($dir: row, $just: space-between);
 
-    &__bottom {
-      margin-top: auto;
-      @include box($height: fit-content);
-      @include make-flex($just: flex-end, $align: flex-end);
-      &--map {
-        text-decoration: none;
-        background: var(--prof-card-background-color);
-      }
+    &__bottom--map {
+      text-decoration: none;
+      background: var(--prof-card-background-color);
     }
   }
 </style>

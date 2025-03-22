@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { theme, setTheme } from '$stores/ThemeStore';
   import { query } from '$stores/QueryStore';
   import { afterNavigate } from '$app/navigation';
   import { HOME_ROUTES, ROUTES } from '$data/routes';
-  import { clickOutside } from '$utils/onClickOutside';
+  import clickOutside from '$utils/onClickOutside';
   import { fade } from 'svelte/transition';
   import debounce from '$utils/debounce';
   import Spinner from './Spinner/Spinner.svelte';
@@ -14,7 +14,7 @@
     query.set('');
   });
 
-  let themeToggle: HTMLButtonElement;
+  let themeToggle: HTMLButtonElement | null = $state(null);
 
   const themeToggleTransition = async () => {
     if (
@@ -32,7 +32,7 @@
       })
       .ready.then(() => {
         // https://akashhamirwasia.com/blog/full-page-theme-toggle-animation-with-view-transitions-api/#what-is-the-grow-animation
-        const { top, left, width, height } = themeToggle.getBoundingClientRect();
+        const { top, left, width, height } = themeToggle!.getBoundingClientRect();
         const x = left + width / 2;
         const y = top + height / 2;
         const right = window.innerWidth - left;
@@ -59,13 +59,14 @@
 
   const noThemeRoutes = ['/convocation-2024'];
 
-  let localQueryValue: string;
-  $: isHomeRoute = ['/', ...HOME_ROUTES.map((r) => `/${r.route}`)].includes($page.url.pathname);
-  $: path = $page.url.pathname.slice(1).split('/')[0];
-  $: currentRoute = ROUTES.find((r) => r.route.includes(path === '' ? 'home' : path));
-  $: isNavOpen = false;
-  $: isHomeNavOpen = false;
-  $: isSearching = false;
+  let localQueryValue = $state('');
+  let isHomeRoute = $state(
+    ['/', ...HOME_ROUTES.map((r) => `/${r.route}`)].includes(page.url.pathname)
+  );
+  let path = $state(page.url.pathname.slice(1).split('/')[0]);
+  let currentRoute = $state(ROUTES.find((r) => r.route.includes(path === '' ? 'home' : path)));
+  let isNavOpen = $state(false);
+  let isSearching = $state(false);
 </script>
 
 <header class="Header">
@@ -79,7 +80,7 @@
       <ul class="Header__navList Header__navList--desktop">
         {#each HOME_ROUTES as item}
           <li>
-            <a href={item.route} class:active={$page.url.pathname === `/${item.route}`}>
+            <a href={item.route} class:active={page.url.pathname === `/${item.route}`}>
               {item.name}
             </a>
           </li>
@@ -90,15 +91,15 @@
         bind:open={isNavOpen}
         data-no-marker
         class="CrispMenu Header__tabs Header__navList--mobile"
-        on:outclick={() => (isNavOpen = false)}
+        onOutClick={() => (isNavOpen = false)}
       >
         <summary>
           <p></p>
-          <span data-icon={String.fromCharCode(58834)} />
+          <span data-icon={String.fromCharCode(58834)} aria-label="Menu"></span>
         </summary>
         <ul class="CrispMenu__content">
           {#each HOME_ROUTES as item}
-            <a href={item.route} class:active={$page.url.pathname === `/${item.route}`}>
+            <a href={item.route} class:active={page.url.pathname === `/${item.route}`}>
               {item.name}
             </a>
           {/each}
@@ -121,7 +122,7 @@
             },
             duration: 500
           }}
-          on:input={(e) => {
+          oninput={(e) => {
             if (!(e.target instanceof HTMLInputElement)) return;
             if (e.target.value === '') {
               query.set('');
@@ -135,12 +136,13 @@
           <button
             class="CrispButton"
             data-type="danger"
-            on:click={() => {
+            onclick={() => {
               query.set('');
               localQueryValue = '';
             }}
             data-icon={String.fromCharCode(58829)}
-          />
+            aria-label="Clear search"
+          ></button>
         {/if}
       </div>
       <hr />
@@ -150,13 +152,13 @@
         use:clickOutside
         bind:open={isNavOpen}
         class="CrispMenu Header__tabs"
-        on:outclick={() => (isNavOpen = false)}
+        onOutClick={() => (isNavOpen = false)}
       >
         <summary>
           <p>
             {currentRoute?.name}
           </p>
-          <span data-icon={String.fromCharCode(currentRoute?.icon || 0)} />
+          <span data-icon={String.fromCharCode(currentRoute?.icon || 0)}></span>
         </summary>
         <ul class="CrispMenu__content">
           {#each ROUTES as { name, route, separator }, i}
@@ -166,9 +168,9 @@
 
             <a
               href="/{route}"
-              on:click={() => (currentRoute = ROUTES[i])}
+              onclick={() => (currentRoute = ROUTES[i])}
               data-icon={String.fromCharCode(ROUTES[i].icon)}
-              class:active={$page.url.pathname === `/${route}`}
+              class:active={page.url.pathname === `/${route}`}
             >
               {name}
             </a>
@@ -176,14 +178,14 @@
         </ul>
       </details>
     {/if}
-    {#if !noThemeRoutes.includes($page.url.pathname)}
+    {#if !noThemeRoutes.includes(page.url.pathname)}
       <button
         bind:this={themeToggle}
         aria-label="Toggle theme"
         class="CrispButton Header__theme-toggle"
-        on:click={async () => await themeToggleTransition()}
+        onclick={async () => await themeToggleTransition()}
         data-icon={String.fromCharCode($theme === 'dark' ? 58416 : 58652)}
-      />
+      ></button>
     {/if}
   </div>
 </header>

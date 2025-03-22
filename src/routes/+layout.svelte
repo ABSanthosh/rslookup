@@ -1,22 +1,21 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { fly } from 'svelte/transition';
-  import { getCookie } from '$utils/cookie';
   import Toast from '$components/Toast.svelte';
   import GoTop from '$components/GoTop.svelte';
   import Header from '$components/Header.svelte';
   import { cubicIn, cubicOut } from 'svelte/easing';
   import { ToastStore } from '$stores/ToastStore.js';
   import { theme, setTheme } from '$stores/ThemeStore';
-  import { navigating } from '$app/stores';
+  import { navigating } from '$app/state';
   import BlurredSpinner from '$components/Spinner/BlurredSpinner.svelte';
   import Footer from '$components/Footer.svelte';
   import { EasterEgg } from '$utils/EasterEgg.js';
 
   import '../styles/root/global.scss';
-  import "../styles/theme/colors.css";
-  import "../styles/theme/light.css";
-  import "../styles/theme/dark.css";
+  import '../styles/theme/colors.css';
+  import '../styles/theme/light.css';
+  import '../styles/theme/dark.css';
 
   let { data, children } = $props();
 
@@ -28,11 +27,15 @@
   const transitionOut = { easing: cubicIn, x: -x, duration };
 
   onMount(() => {
-    const cookieTheme = getCookie(document.cookie, 'theme') as Theme | null | '';
-
-    if (cookieTheme) theme.set(cookieTheme);
-    else if (window.matchMedia('(prefers-color-scheme: light)').matches) setTheme('light');
-    else setTheme('dark');
+    if (localStorage.getItem('theme')) {
+      setTheme(localStorage.getItem('theme') as 'light' | 'dark');
+    } else {
+      if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+        setTheme('light');
+      } else {
+        setTheme('dark');
+      }
+    }
 
     if (process.env.NODE_ENV === 'production') EasterEgg();
   });
@@ -46,7 +49,7 @@
 
 <Header />
 
-{#if $navigating}
+{#if navigating.type}
   <BlurredSpinner style="position: fixed;" />
 {/if}
 
@@ -73,7 +76,6 @@
 <Footer />
 
 <style lang="scss" global>
-
   .Layout {
     &__header {
       margin-top: 20px;

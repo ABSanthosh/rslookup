@@ -46,12 +46,14 @@
     'F*': 0
   } as const;
 
-  $: currentCGPA = 0;
-  $: creditsDone = 0;
-  $: cumulative = 0.0;
+  let currentCGPA = $state(0);
+  let creditsDone = $state(0);
+  let cumulative = $state(0.0);
   // $: semesters = $GPAStore;
 
-  $: $GPAStore.map((item) => item.courses), $GPAStore.forEach((_, i) => calcSGPA(i));
+  $effect(() => {
+    $GPAStore.map((item) => item.courses), $GPAStore.forEach((_, i) => calcSGPA(i));
+  });
 
   const calcSGPA = (index: number) => {
     // if any course has no credits, set SGPA to 0
@@ -187,10 +189,11 @@
               class="CrispButton"
               data-icon={String.fromCharCode(58829)}
               data-type="danger"
-              on:click={() => {
+              aria-label="Delete Semester"
+              onclick={() => {
                 $GPAStore = $GPAStore.filter((_, i) => i !== index);
               }}
-            />
+            ></button>
           {/if}
         </div>
         <table>
@@ -199,7 +202,7 @@
               <th scope="col">Course</th>
               <th scope="col">Credits</th>
               <th scope="col">Grade</th>
-              <th />
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -219,7 +222,7 @@
                     type="number"
                     placeholder="Credits"
                     use:selectOnFocus
-                    on:change={() => calcSGPA(index)}
+                    onchange={() => calcSGPA(index)}
                     bind:value={course.credits}
                   />
                 </td>
@@ -227,7 +230,7 @@
                   <select
                     class="CrispSelect"
                     bind:value={course.grade}
-                    on:change={() => calcSGPA(index)}
+                    onchange={() => calcSGPA(index)}
                   >
                     {#each Object.keys(GRADES) as grade}
                       <option value={grade}>{grade}</option>
@@ -236,14 +239,15 @@
                 </td>
                 <td>
                   <button
-                    class="CrispButton"
-                    disabled={$GPAStore[index].courses.length === 1}
-                    data-icon={String.fromCharCode(58829)}
                     data-type="danger"
-                    on:click={() => {
+                    class="CrispButton"
+                    aria-label="Delete Course"
+                    data-icon={String.fromCharCode(58829)}
+                    disabled={$GPAStore[index].courses.length === 1}
+                    onclick={() => {
                       $GPAStore[index].courses = $GPAStore[index].courses.filter((_, j) => j !== i);
                     }}
-                  />
+                  ></button>
                 </td>
               </tr>
             {/each}
@@ -252,7 +256,7 @@
         <button
           class="CrispButton"
           data-type="success"
-          on:click={() => {
+          onclick={() => {
             $GPAStore[index].courses = [
               ...$GPAStore[index].courses,
               {
@@ -270,7 +274,7 @@
     <button
       class="CrispButton"
       disabled={$GPAStore.length >= 10}
-      on:click={() => {
+      onclick={() => {
         if ($GPAStore.length >= 10) return;
         $GPAStore = [
           ...$GPAStore,

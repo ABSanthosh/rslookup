@@ -1,10 +1,10 @@
 ## ToDo
 
-- [ ] Migrate to sveltekit 2
+- [x] Migrate to sveltekit 2
 - [ ] Change how theme colors are handled
-- [ ] Theme switcher works in dev but not in prod. It returns to the default theme after a reload
+- [x] Theme switcher works in dev but not in prod. It returns to the default theme after a reload
 - [ ] Fetch only the first n items from google sheets
-- [ ] update toast store
+- [x] update toast store
 - [ ] Error handling for all fetch requests to handle empty fields
 - [ ] Try to use route grouping to make home header and directory header separate
 

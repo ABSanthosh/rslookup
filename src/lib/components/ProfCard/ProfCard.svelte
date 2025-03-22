@@ -1,14 +1,24 @@
 <script lang="ts">
   import SubChip from './SubChip.svelte';
-  import copyToClipboard from '$utils/CopyToClipboard';
-  import SchoolChip from './SchoolChip.svelte';
   import Pane from '$components/Pane.svelte';
-  import { browser } from '$app/environment';
-  import type { ProfItem } from '$lib/types/Prof.types';
+  import SchoolChip from './SchoolChip.svelte';
   import { profColors, schools } from '$data/prof';
+  import copyToClipboard from '$utils/CopyToClipboard';
+  import type { ProfItem } from '$lib/types/Prof.types';
 
-  let { name, role, room, website, school, phone, department, img, mail, timesheet } =
-    $$props as ProfItem;
+  let {
+    img,
+    name,
+    mail,
+    role,
+    room,
+    phone,
+    block,
+    school,
+    website,
+    timesheet,
+    department
+  }: ProfItem = $props();
 
   let profile = () =>
     (name ? name : '')
@@ -18,8 +28,8 @@
       .join('')
       .toUpperCase();
 
-  $: isProfPaneOpen = false;
-  $: if (browser) {
+  let isProfPaneOpen = $state(false);
+  $effect(() => {
     if (isProfPaneOpen) {
       document.documentElement.style.scrollbarGutter = 'unset';
       document.documentElement.style.overflow = 'hidden';
@@ -27,44 +37,46 @@
       document.documentElement.style.scrollbarGutter = '';
       document.documentElement.style.overflow = '';
     }
-  }
+  });
 </script>
 
 {#if isProfPaneOpen}
   <Pane
     bind:open={isProfPaneOpen}
     style="--paneWidth: 380px;"
-    on:close={() => (isProfPaneOpen = false)}
+    onclose={() => (isProfPaneOpen = false)}
   >
-    <p slot="header">Prof: {name}</p>
-    <svelte:fragment slot="main">
+    {#snippet header()}
+      <p>Prof: {name}</p>
+    {/snippet}
+    {#snippet main()}
       <div class="ProfCardPane">
         <span class="ProfCardPane__top--profileBox">
           <h2
             class="ProfCardPane__top--profile"
             style="
-            background-color: {profColors[schools[school]?.color]?.secondary ||
+          background-color: {profColors[schools[school]?.color]?.secondary ||
               profColors.gray.secondary};
-            color: {profColors[schools[school]?.color]?.primary || profColors.gray.primary};
-            "
+          color: {profColors[schools[school]?.color]?.primary || profColors.gray.primary};
+          "
           >
             {profile()}
           </h2>
           {@html `
-            <img 
-              src="${img}" 
-              alt="${name}" 
-              onerror="this.style.visibility = 'hidden'" 
-              loading="lazy" 
-              style = "
-                background-color: ${
-                  profColors[schools[school]?.color]?.secondary || profColors.gray.secondary
-                };
-                border: 1px solid ${
-                  profColors[schools[school]?.color]?.primary || profColors.gray.primary
-                }
-              "/>
-            `}
+          <img 
+            src="${img}" 
+            alt="${name}" 
+            onerror="this.style.visibility = 'hidden'" 
+            loading="lazy" 
+            style = "
+              background-color: ${
+                profColors[schools[school]?.color]?.secondary || profColors.gray.secondary
+              };
+              border: 1px solid ${
+                profColors[schools[school]?.color]?.primary || profColors.gray.primary
+              }
+            "/>
+          `}
         </span>
         <div class="Col--center w-100 gap-5">
           <h3 class="ProfCardPane__title">
@@ -96,8 +108,8 @@
           <p>{timesheet}</p>
         </div>
       </div>
-    </svelte:fragment>
-    <svelte:fragment slot="footer">
+    {/snippet}
+    {#snippet footer()}
       <a
         target="_blank"
         style="height: 35px;"
@@ -109,7 +121,7 @@
       >
         <span> website </span>
       </a>
-    </svelte:fragment>
+    {/snippet}
   </Pane>
 {/if}
 
@@ -156,9 +168,10 @@
         --crp-button-background-color: var(--prof-card-background-color);
       "
         title="Click to view timesheet"
-        on:click={() => (isProfPaneOpen = true)}
+        aria-label="View timesheet"
+        onclick={() => (isProfPaneOpen = true)}
         data-icon={String.fromCharCode(59573)}
-      />
+      ></button>
     {/if}
   </div>
   {#if school && department && school !== '' && school !== '-' && department !== '' && department !== '-'}
@@ -178,10 +191,10 @@
         <button
           class="CopyButton w-100"
           data-icon={String.fromCharCode(57520)}
-          on:keydown={async () => await copyToClipboard(phone)}
-          on:keyup={async () => await copyToClipboard(phone)}
-          on:keypress={async () => await copyToClipboard(phone)}
-          on:click={async () => await copyToClipboard(phone)}
+          onkeydown={async () => await copyToClipboard(phone)}
+          onkeyup={async () => await copyToClipboard(phone)}
+          onkeypress={async () => await copyToClipboard(phone)}
+          onclick={async () => await copyToClipboard(phone)}
           title="Click to copy extension"
         >
           <span>
@@ -193,10 +206,10 @@
         <button
           class="CopyButton w-100"
           data-icon={String.fromCharCode(57688)}
-          on:keydown={async () => await copyToClipboard(mail)}
-          on:keyup={async () => await copyToClipboard(mail)}
-          on:keypress={async () => await copyToClipboard(mail)}
-          on:click={async () => await copyToClipboard(mail)}
+          onkeydown={async () => await copyToClipboard(mail)}
+          onkeyup={async () => await copyToClipboard(mail)}
+          onkeypress={async () => await copyToClipboard(mail)}
+          onclick={async () => await copyToClipboard(mail)}
           title="Click to copy email"
         >
           <span>

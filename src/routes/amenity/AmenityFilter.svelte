@@ -2,8 +2,8 @@
   import clickOutside from '$utils/onClickOutside';
 
   let {
-    filters,
-    isFilterOpen
+    filters = $bindable(),
+    isFilterOpen = $bindable()
   }: {
     filters: {
       name: string;

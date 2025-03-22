@@ -1,20 +1,24 @@
 <script lang="ts">
   import { search } from 'fast-fuzzy';
-  import { flip } from 'svelte/animate';
-  import type { PageData } from './$types';
-  import { beforeNavigate } from '$app/navigation';
-  import { profColors, schools } from '$data/prof';
-  import { flipAnimate } from '$utils/animation';
-  import { clickOutside } from '$utils/onClickOutside';
-  import ProfCard from '$components/ProfCard/ProfCard.svelte';
-  import { query } from '$stores/QueryStore';
+
   import { onMount } from 'svelte';
-  import Pagination from '$components/Pagination.svelte';
+  import { flip } from 'svelte/animate';
   import { blur } from 'svelte/transition';
 
-  export let data: PageData;
-  $: isFilterOpen = false;
-  $: isDisclaimerOpen = false;
+  import type { PageData } from './$types';
+  import { query } from '$stores/QueryStore';
+  import { flipAnimate } from '$utils/animation';
+  import { beforeNavigate } from '$app/navigation';
+  import { profColors, schools } from '$data/prof';
+  import clickOutside from '$utils/onClickOutside';
+
+  import Pagination from '$components/Pagination.svelte';
+  import ProfCard from '$components/ProfCard/ProfCard.svelte';
+
+  let { data }: { data: PageData } = $props();
+
+  let isFilterOpen = $state(false);
+  let isDisclaimerOpen = $state(false);
   let filters = Object.keys(schools).map((item) => {
     return {
       name: item,
@@ -24,17 +28,23 @@
     };
   });
 
-  let pageSize = 20;
-  $: prof = data.prof;
-  $: filteredSchools = filters.filter((item) => item.checked).map((item) => item.name);
-  $: filteredProf = data.prof.filter((item) => {
-    if (!Object.keys(schools).includes(item.school)) {
-      return filteredSchools.includes('Miscellaneous');
-    }
-    return filteredSchools.includes(item.school);
-  });
-  $: searchResult = filteredProf.slice(0, pageSize);
-  let paginatedValues = searchResult;
+  let pageSize = $state(20);
+  let prof = $state(data.prof);
+  let filteredSchools = $derived(filters.filter((item) => item.checked).map((item) => item.name));
+
+  let filteredProf = $state(
+    data.prof.filter((item) => {
+      if (!Object.keys(schools).includes(item.school)) {
+        return filteredSchools.includes('Miscellaneous');
+      }
+      return filteredSchools.includes(item.school);
+    })
+  );
+
+  // svelte-ignore state_referenced_locally
+  let searchResult = $state(filteredProf.slice(0, pageSize));
+  // svelte-ignore state_referenced_locally
+  let paginatedValues = $state(searchResult);
 
   beforeNavigate(() => {
     isFilterOpen = false;
@@ -90,7 +100,7 @@
     use:clickOutside
     bind:open={isFilterOpen}
     class="CrispMenu Layout__filter"
-    on:outclick={() => (isFilterOpen = false)}
+    onOutClick={() => (isFilterOpen = false)}
   >
     <summary data-no-marker data-icon={String.fromCharCode(57682)}>
       Filters
@@ -115,7 +125,7 @@
             id={filterItem.slug}
             checked={filterItem.checked}
             disabled={filterItem.checked && filters.filter((item) => item.checked).length === 1}
-            on:change={() => {
+            onchange={() => {
               filterItem.checked = !filterItem.checked;
             }}
           />
@@ -134,9 +144,9 @@
   use:clickOutside
   bind:open={isDisclaimerOpen}
   class="Prof__disclaimer CrispMessage"
-  on:outclick={() => (isDisclaimerOpen = false)}
+  onOutClick={() => (isDisclaimerOpen = false)}
 >
-  <summary class="CrispMessage" data-type="info">
+  <summary class="CrispMessage" data-type="info" style="margin-bottom: -8px;">
     Disclosure -
     <i style="color: inherit;"> Click to expand </i>
   </summary>
@@ -175,9 +185,11 @@
   <select
     class="CrispSelect"
     value={`${pageSize}`}
-    on:change={(e) => {
-      // @ts-ignore
-      pageSize = Number(e.target.value);
+    onchange={(e: Event) => {
+      const target = e.target as HTMLSelectElement;
+      if (target) {
+        pageSize = Number(target.value);
+      }
     }}
     disabled={$query !== ''}
   >
@@ -252,6 +264,7 @@
 
     &__disclaimer {
       --crp-message-padding: 8px;
+      margin-bottom: -8px;
       background-repeat: no-repeat;
       background-size: right 5px top 50%;
       background-position: right 5px top 7px;

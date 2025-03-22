@@ -1,21 +1,26 @@
 <script lang="ts">
-  export let { rows, pageSize, trimmedRows, disabled } = $$props as {
+  let {
+    rows,
+    pageSize,
+    disabled,
+    trimmedRows = $bindable()
+  }: {
     rows: any[];
     pageSize: number;
-    trimmedRows: any[];
     disabled: boolean;
-  };
+    trimmedRows: any[];
+  } = $props();
 
-  $: totalRows = rows.length;
-  $: currentPage = 0;
-  $: totalPages = Math.ceil(totalRows / pageSize);
-  $: start = currentPage * pageSize;
-  $: end = currentPage === totalPages - 1 ? totalRows - 1 : start + pageSize - 1;
+  let currentPage = $state(1); // The current page number, initialized to 1.
+  let totalRows = $state(rows.length); // The total number of rows/items, derived from the length of the rows array.
+  let totalPages = Math.ceil(totalRows / pageSize); // The total number of pages, calculated based on totalRows and pageSize.
+  let start = $derived((currentPage - 1) * pageSize); // The starting index of the items for the current page, derived from currentPage and pageSize.
+  let end = $derived(currentPage === totalPages - 1 ? totalRows - 1 : start + pageSize - 1); // The ending index of the items for the current page, derived from currentPage, totalPages, totalRows, and pageSize.
 
-  $: trimmedRows = rows.slice(start, end + 1);
-
-  $: totalRows, (currentPage = 0);
-  $: currentPage, start, end;
+  $effect(() => {
+    // Every time start or end changes, update trimmedRows to reflect the items for the current page.
+    trimmedRows = rows.slice(start, end + 1);
+  });
 </script>
 
 {#if totalRows && totalRows > pageSize}
@@ -23,7 +28,7 @@
     <button
       class="CrispButton"
       data-type="ghost"
-      on:click={() => {
+      onclick={() => {
         currentPage -= 1;
         document.body.scrollIntoView({
           behavior: 'smooth',
@@ -34,14 +39,14 @@
       aria-label="left arrow icon"
       aria-describedby="prev"
       data-icon={String.fromCharCode(58820)}
-    />
+    ></button>
     Page
     <input class="CrispInput" bind:value={currentPage} {disabled} max={totalPages - 1} />
     of {totalPages - 1}
     <button
       class="CrispButton"
       data-type="ghost"
-      on:click={() => {
+      onclick={() => {
         currentPage += 1;
         document.body.scrollIntoView({
           behavior: 'smooth',
@@ -52,7 +57,7 @@
       aria-label="right arrow icon"
       aria-describedby="next"
       data-icon={String.fromCharCode(58824)}
-    />
+    ></button>
   </div>
 {/if}
 

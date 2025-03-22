@@ -4,7 +4,7 @@
   import type { IHostel } from '$types/Amenity.types';
   import copyToClipboard from '$utils/CopyToClipboard';
 
-  export const data: IHostel = $props();
+  const data: IHostel = $props();
 </script>
 
 <div class="AmenityCard">
@@ -77,5 +77,5 @@
 </div>
 
 <style lang="scss">
-  @import './AmenityCardBase.scss';
+  @forward './AmenityCardBase.scss';
 </style>
