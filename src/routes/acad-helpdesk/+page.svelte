@@ -5,7 +5,11 @@
   import { profColors, schools } from '$data/prof';
   import type { PageData } from './$types';
 
-  export let data: PageData;
+  let {
+    data
+  }: {
+    data: PageData;
+  } = $props();
 </script>
 
 <svelte:head>

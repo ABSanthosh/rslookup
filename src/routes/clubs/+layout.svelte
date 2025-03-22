@@ -1,10 +1,19 @@
+<!-- TODO: Fix transition between club types  -->
+<!-- TEST: Add test to check if tab changes works -->
 <script lang="ts">
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
+  import type { Snippet } from 'svelte';
   import { fly } from 'svelte/transition';
   import type { LayoutData } from './$types';
   import { cubicIn, cubicOut } from 'svelte/easing';
 
-  export let data: LayoutData;
+  let {
+    data,
+    children
+  }: {
+    data: LayoutData;
+    children?: Snippet;
+  } = $props();
 
   const duration = 200;
   const delay = duration + 50;
@@ -21,12 +30,12 @@
   </section>
   <ul class="ClubLayout__tabs">
     <li>
-      <a href="/clubs/cultural" class:active={$page.url.pathname === '/clubs/cultural'}>
+      <a href="/clubs/cultural" class:active={page.url.pathname === '/clubs/cultural'}>
         Cultural
       </a>
     </li>
     <li>
-      <a href="/clubs/technical" class:active={$page.url.pathname === '/clubs/technical'}>
+      <a href="/clubs/technical" class:active={page.url.pathname === '/clubs/technical'}>
         Technical
       </a>
     </li>
@@ -35,7 +44,7 @@
 
 {#key data.url}
   <main in:fly={transitionIn} out:fly={transitionOut}>
-    <slot />
+    {@render children?.()}
   </main>
 {/key}
 

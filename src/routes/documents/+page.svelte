@@ -1,3 +1,4 @@
+<!-- TODO: Fix the image aspect ratio for logos -->
 <script lang="ts">
   import type { PageData } from './$types';
   import icon_pdf from '$images/icon_pdf.png';
@@ -6,7 +7,11 @@
   import icon_newsletter from '$images/icon_newsletter.png';
   import icon_default from '$images/icon_default.png';
 
-  export let data: PageData;
+  let {
+    data
+  }: {
+    data: PageData;
+  } = $props();
 </script>
 
 <svelte:head>

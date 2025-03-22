@@ -1,7 +1,8 @@
 <script lang="ts">
   import type { IAcademics } from '$types/Amenity.types';
   import MapsSelector from '$utils/MapsSelector';
-  export const data = $$props as IAcademics;
+
+  const data: IAcademics = $props();
 </script>
 
 <div class="AmenityCard">

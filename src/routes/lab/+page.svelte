@@ -1,31 +1,38 @@
 <script lang="ts">
   import { AcademicBlocks } from '$data/labs';
-  import { clickOutside } from '$utils/onClickOutside';
+  import clickOutside from '$utils/onClickOutside';
   import { flip } from 'svelte/animate';
   import type { PageData } from './$types';
   import { flipAnimate } from '$utils/animation';
 
-  export let data: PageData;
+  let {
+    data
+  }: {
+    data: PageData;
+  } = $props();
 
-  $: labs = data.labs;
-  $: pageSize = 20;
-  let isFilterOpen = false;
-
-  let filters = Object.keys(AcademicBlocks).map((item) => {
-    return {
-      name: AcademicBlocks[item],
-      checked: true
-    };
-  });
-
-  $: filteredLabs = labs.filter((lab) =>
-    filters
-      .filter((item) => item.checked)
-      .map((item) => item.name)
-      .includes(`${lab.block} Block`)
+  let labs = $derived(data.labs);
+  let pageSize = $state(20);
+  let isFilterOpen = $state(false);
+  let filters = $state(
+    Object.keys(AcademicBlocks).map((item) => {
+      return {
+        name: AcademicBlocks[item],
+        checked: true
+      };
+    })
   );
 
-  $: searchResult = filteredLabs.slice(0, pageSize);
+  let filteredLabs = $derived(
+    labs.filter((lab) =>
+      filters
+        .filter((item) => item.checked)
+        .map((item) => item.name)
+        .includes(`${lab.block} Block`)
+    )
+  );
+
+  let searchResult = $derived(filteredLabs.slice(0, pageSize));
 </script>
 
 <svelte:head>
@@ -54,7 +61,7 @@
     use:clickOutside
     bind:open={isFilterOpen}
     class="CrispMenu Layout__filter"
-    on:outclick={() => (isFilterOpen = false)}
+    onOutClick={() => (isFilterOpen = false)}
   >
     <summary data-no-marker data-icon={String.fromCharCode(57682)}>
       Filters
@@ -71,7 +78,7 @@
             id={filterItem.name}
             checked={filterItem.checked}
             disabled={filterItem.checked && filters.filter((item) => item.checked).length === 1}
-            on:change={() => {
+            onchange={() => {
               filterItem.checked = !filterItem.checked;
             }}
           />
@@ -107,7 +114,7 @@
   <select
     class="CrispSelect"
     value={`${pageSize}`}
-    on:change={(e) => {
+    onchange={(e) => {
       // @ts-ignore
       pageSize = Number(e.target.value);
     }}

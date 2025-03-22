@@ -9,8 +9,8 @@ declare global {
     // interface Platform {}
   }
   namespace svelteHTML {
-    interface HTMLAttributes<_> {
-      'on:outclick'?: () => boolean;
+    interface HTMLAttributes<T> {
+      onOutClick?: () => any;
     }
   }
 

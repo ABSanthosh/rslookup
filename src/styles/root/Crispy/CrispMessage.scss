@@ -1,3 +1,5 @@
+@use '../mixins' as *;
+
 .CrispMessage {
   &[data-type='error'] {
     --crp-message-icon: '\e002';

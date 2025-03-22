@@ -1,14 +1,17 @@
 <script lang="ts">
-  import { clickOutside } from '$utils/onClickOutside';
+  import clickOutside from '$utils/onClickOutside';
 
-  export let { filters, isFilterOpen } = $$props as {
+  let {
+    filters,
+    isFilterOpen
+  }: {
     filters: {
       name: string;
       checked: boolean;
       icon: number;
     }[];
     isFilterOpen: boolean;
-  };
+  } = $props();
 </script>
 
 <aside class="Amenity__filter--desktop">
@@ -27,7 +30,7 @@
           id={filterItem.name}
           checked={filterItem.checked}
           disabled={filterItem.checked && filters.filter((item) => item.checked).length === 1}
-          on:change={() => {
+          onchange={() => {
             filterItem.checked = !filterItem.checked;
           }}
         />
@@ -39,7 +42,7 @@
 <details
   use:clickOutside
   bind:open={isFilterOpen}
-  on:outclick={() => (isFilterOpen = false)}
+  onOutClick={() => (isFilterOpen = false)}
   class="CrispMenu Layout__filter Amenity__filter--mobile"
 >
   <summary data-no-marker data-icon={String.fromCharCode(57682)}>
@@ -63,7 +66,7 @@
           checked={filterItem.checked}
           id={`${filterItem.name}-${filterItem.icon}`}
           disabled={filterItem.checked && filters.filter((item) => item.checked).length === 1}
-          on:change={() => {
+          onchange={() => {
             filterItem.checked = !filterItem.checked;
           }}
         />

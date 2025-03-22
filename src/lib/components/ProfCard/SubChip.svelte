@@ -1,5 +1,13 @@
 <script lang="ts">
-  export let { label, color } = $$props;
+  const {
+    label,
+    color
+  }: {
+    label: string;
+    color: {
+      primary: string;
+    };
+  } = $props();
 </script>
 
 <div class="SubChip" data-color={color.primary} style="--type-color: {color.primary};">

@@ -3,7 +3,7 @@
   import { backInOut } from 'svelte/easing';
   import { fly } from 'svelte/transition';
 
-  let { message, timeout, type = 'default', id }: IToast = $props();
+  let { message, type = 'default', id }: IToast = $props();
 </script>
 
 <span

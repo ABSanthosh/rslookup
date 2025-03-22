@@ -13,7 +13,12 @@
   import Footer from '$components/Footer.svelte';
   import { EasterEgg } from '$utils/EasterEgg.js';
 
-  export let data;
+  import '../styles/root/global.scss';
+  import "../styles/theme/colors.css";
+  import "../styles/theme/light.css";
+  import "../styles/theme/dark.css";
+
+  let { data, children } = $props();
 
   const duration = 200;
   const delay = duration + 50;
@@ -48,12 +53,12 @@
 {#if !data.url.includes('clubs')}
   {#key data.url}
     <main class="MainContainer" in:fly={transitionIn} out:fly={transitionOut}>
-      <slot />
+      {@render children?.()}
     </main>
   {/key}
 {:else}
   <main class="MainContainer">
-    <slot />
+    {@render children?.()}
   </main>
 {/if}
 
@@ -68,10 +73,6 @@
 <Footer />
 
 <style lang="scss" global>
-  @import '../styles/root/global.scss';
-  @import "../styles/theme/colors.css";
-  @import "../styles/theme/light.css";
-  @import "../styles/theme/dark.css";
 
   .Layout {
     &__header {

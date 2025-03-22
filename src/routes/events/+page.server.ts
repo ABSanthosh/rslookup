@@ -41,8 +41,6 @@ export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
       );
     });
 
-  // console.log(validatedEvents);
-
   return {
     events: validatedEvents
   };

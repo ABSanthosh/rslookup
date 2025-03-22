@@ -1,3 +1,5 @@
+@use '../../styles/root/mixins' as *;
+
 .Clubs {
   &__content {
     gap: 30px;

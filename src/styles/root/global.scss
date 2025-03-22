@@ -1,6 +1,8 @@
-// @import "../root/Fancy/FancyLink.scss";
-@import './fonts.scss';
-@import './Crispy/index.scss';
+@use './mixins' as *;
+@use './variables' as *;
+
+@use './fonts.scss';
+@use './Crispy/index.scss';
 
 * {
   margin: 0;

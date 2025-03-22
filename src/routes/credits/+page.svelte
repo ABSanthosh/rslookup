@@ -1,9 +1,14 @@
 <script lang="ts">
-  import { fancyDate } from '$utils/calendarEvent';
   import type { PageData } from './$types';
+  import { fancyDate } from '$utils/calendarEvent';
 
-  export let data: PageData;
+  let {
+    data
+  }: {
+    data: PageData;
+  } = $props();
 
+  // TODO: Abstract this to a util
   let profile = (name: string) =>
     name
       .match(/(\b\S)?/g)!

@@ -83,7 +83,7 @@
     <div class="Row--center w-100">
       <div class="About__LogoBox">
         <img alt="hero neko gif" class="About__LogoBox--neko" src={NEKO} />
-        <span data-icon={String.fromCharCode(58829)} />
+        <span data-icon={String.fromCharCode(58829)}></span>
         <img alt="Student Council" class="About__LogoBox--sc" src={STUDENT_COUNCIL} />
       </div>
     </div>

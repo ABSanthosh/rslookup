@@ -2,7 +2,7 @@
   import type { IAdmin } from '$types/Amenity.types';
   import copyToClipboard from '$utils/CopyToClipboard';
 
-  export const data = $$props as IAdmin;
+  const data: IAdmin = $props();
 </script>
 
 <div class="AmenityCard">
@@ -20,10 +20,10 @@
           href={'tel:' + data.phone}
           title="Copy phone number"
           class="CopyButton AmenityCard__separator--content"
-          on:keydown={async () => await copyToClipboard(data.phone)}
-          on:keyup={async () => await copyToClipboard(data.phone)}
-          on:keypress={async () => await copyToClipboard(data.phone)}
-          on:click={async () => await copyToClipboard(data.phone)}
+          onkeydown={async () => await copyToClipboard(data.phone)}
+          onkeyup={async () => await copyToClipboard(data.phone)}
+          onkeypress={async () => await copyToClipboard(data.phone)}
+          onclick={async () => await copyToClipboard(data.phone)}
         >
           {data.phone}
         </a>
@@ -40,10 +40,10 @@
           href={'mail:' + data.mail}
           title="Copy phone number"
           class="CopyButton AmenityCard__separator--content"
-          on:keydown={async () => await copyToClipboard(data.mail)}
-          on:keyup={async () => await copyToClipboard(data.mail)}
-          on:keypress={async () => await copyToClipboard(data.mail)}
-          on:click={async () => await copyToClipboard(data.mail)}
+          onkeydown={async () => await copyToClipboard(data.mail)}
+          onkeyup={async () => await copyToClipboard(data.mail)}
+          onkeypress={async () => await copyToClipboard(data.mail)}
+          onclick={async () => await copyToClipboard(data.mail)}
         >
           {data.mail}
         </a>

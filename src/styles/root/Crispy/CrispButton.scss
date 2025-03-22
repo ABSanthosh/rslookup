@@ -1,3 +1,5 @@
+@use '../mixins' as *;
+
 .CrispButton {
   --crp-button-gap: 10px;
   --crp-button-width: auto;

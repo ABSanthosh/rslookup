@@ -1,13 +1,14 @@
+<!-- TODO: https://svelte.dev/docs/svelte/custom-properties for height and width -->
 <script lang="ts">
-  export let {
+  const {
     width = 27,
     height = 27,
     style
-  } = $$props as {
+  }: {
     width?: number;
     height?: number;
     style?: string;
-  };
+  } = $props();
 </script>
 
 <svg

@@ -1,9 +1,14 @@
 <script lang="ts">
-  import copyToClipboard from '$utils/CopyToClipboard';
   import type { PageData } from './$types';
+  import copyToClipboard from '$utils/CopyToClipboard';
 
-  export let data: PageData;
+  let {
+    data
+  }: {
+    data: PageData;
+  } = $props();
 
+  // TODO: Abstract this to a util
   let profile = (name: string) =>
     name
       .match(/(\b\S)?/g)!
@@ -48,13 +53,14 @@
       <p>
         {member.position}
       </p>
+      <!-- TODO: Abstract the clipboard to a directive -->
       <button
         class="CopyButton"
         data-icon={String.fromCharCode(57688)}
-        on:keydown={async () => await copyToClipboard(member.email)}
-        on:keyup={async () => await copyToClipboard(member.email)}
-        on:keypress={async () => await copyToClipboard(member.email)}
-        on:click={async () => await copyToClipboard(member.email)}
+        onkeydown={async () => await copyToClipboard(member.email)}
+        onkeyup={async () => await copyToClipboard(member.email)}
+        onkeypress={async () => await copyToClipboard(member.email)}
+        onclick={async () => await copyToClipboard(member.email)}
         title="Click to copy email"
       >
         {member.email}

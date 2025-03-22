@@ -1,3 +1,4 @@
+<!-- TODO: Add a toggle for expired events, sections sorted by month, year -->
 <script lang="ts">
   import {
     generateDate,
@@ -6,15 +7,19 @@
     outlookCalendar,
     parseDate
   } from '$utils/calendarEvent';
-  import { clickOutside } from '$utils/onClickOutside';
+  import clickOutside from '$utils/onClickOutside';
   import type { PageData } from './$types';
   import google_calendar from '$images/google-calendar.png';
   import outlook_calendar from '$images/outlook-calendar.png';
   import apple_calendar from '$images/apple-calendar.svg';
 
-  export let data: PageData;
+  let {
+    data
+  }: {
+    data: PageData;
+  } = $props();
 
-  $: isCalendarOpen = {} as Record<string, boolean>;
+  let isCalendarOpen = $derived({} as Record<string, boolean>);
 </script>
 
 <svelte:head>
@@ -103,7 +108,7 @@
                 use:clickOutside
                 bind:open={isCalendarOpen[index]}
                 class="CrispMenu Event__calendarTab"
-                on:outclick={() => (isCalendarOpen[index] = false)}
+                onOutClick={() => (isCalendarOpen[index] = false)}
               >
                 <summary>
                   <span data-icon={String.fromCharCode(61317)}> Add to calendar </span>

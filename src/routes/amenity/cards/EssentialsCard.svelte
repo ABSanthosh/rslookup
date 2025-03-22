@@ -1,10 +1,10 @@
 <script lang="ts">
-  import type { IEssentials } from '$types/Amenity.types';
   import MapsSelector from '$utils/MapsSelector';
-  import copyToClipboard from '$utils/CopyToClipboard';
   import WeekDays from '$components/WeekDays.svelte';
+  import copyToClipboard from '$utils/CopyToClipboard';
+  import type { IEssentials } from '$types/Amenity.types';
 
-  export const data = $$props as IEssentials;
+  const data: IEssentials = $props();
 </script>
 
 <div class="AmenityCard">
@@ -52,10 +52,10 @@
             href={'tel:' + data.phone}
             title="Copy phone number"
             class="CopyButton AmenityCard__separator--content"
-            on:keydown={async () => await copyToClipboard(data.phone)}
-            on:keyup={async () => await copyToClipboard(data.phone)}
-            on:keypress={async () => await copyToClipboard(data.phone)}
-            on:click={async () => await copyToClipboard(data.phone)}
+            onkeydown={async () => await copyToClipboard(data.phone)}
+            onkeyup={async () => await copyToClipboard(data.phone)}
+            onkeypress={async () => await copyToClipboard(data.phone)}
+            onclick={async () => await copyToClipboard(data.phone)}
           >
             {item.trim()}
           </a>
@@ -73,10 +73,10 @@
           href={'mail:' + data.mail}
           title="Copy phone number"
           class="CopyButton AmenityCard__separator--content"
-          on:keydown={async () => await copyToClipboard(data.mail)}
-          on:keyup={async () => await copyToClipboard(data.mail)}
-          on:keypress={async () => await copyToClipboard(data.mail)}
-          on:click={async () => await copyToClipboard(data.mail)}
+          onkeydown={async () => await copyToClipboard(data.mail)}
+          onkeyup={async () => await copyToClipboard(data.mail)}
+          onkeypress={async () => await copyToClipboard(data.mail)}
+          onclick={async () => await copyToClipboard(data.mail)}
         >
           {data.mail}
         </a>
@@ -102,5 +102,5 @@
 </div>
 
 <style lang="scss">
-  @import './AmenityCardBase.scss';
+  @forward './AmenityCardBase.scss';
 </style>

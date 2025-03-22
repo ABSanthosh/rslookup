@@ -1,5 +1,14 @@
 <script lang="ts">
-  export let { label, color } = $$props;
+  const {
+    label,
+    color
+  }: {
+    label: string;
+    color: {
+      primary: string;
+      secondary: string;
+    };
+  } = $props();
 </script>
 
 <div

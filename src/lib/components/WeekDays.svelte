@@ -1,6 +1,9 @@
+<!-- TODO: Fix the sizing -->
 <!-- Ref: https://svelte.dev/repl/1565708677134e418e256234984d90ef?version=3.12.1 -->
 <script lang="ts">
-  export let { days } = $$props as {
+  const {
+    days
+  }: {
     days: {
       MO: boolean;
       TU: boolean;
@@ -10,19 +13,18 @@
       SA: boolean;
       SU: boolean;
     };
-  };
+  } = $props();
 
-  const valueOf = (day: string) => {
-    // @ts-expect-error
+  const valueOf = (day: keyof typeof days) => {
     return days[day];
   };
 </script>
 
 <ul class="WeekDays">
   {#each Object.keys(days) as day}
-    {#if valueOf(day)}
+    {#if valueOf(day as keyof typeof days)}
       <label class="WeekDay__item" for={day}>
-        <input type="checkbox" id={day} name={day} checked={valueOf(day)} />
+        <input type="checkbox" id={day} name={day} checked={valueOf(day as keyof typeof days)} />
         <span>
           {day}
         </span>

@@ -1,3 +1,5 @@
+@use '../mixins' as *;
+
 .CrispInput {
   --crp-input-border: 1px solid var(--t-crp-border);
   --crp-input-border-hover: 1px solid var(--t-crp-border-hover);

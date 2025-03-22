@@ -1,4 +1,14 @@
-<slot />
+<script lang="ts">
+  import type { Snippet } from 'svelte';
+
+  let {
+    children
+  }: {
+    children?: Snippet;
+  } = $props();
+</script>
+
+{@render children?.()}
 
 <style lang="scss" global>
   [data-theme='light']:has(#convocation-2024),
