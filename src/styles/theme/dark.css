@@ -1,67 +1,67 @@
 [data-theme='dark'] {
-  --scroll: var(--gray-10);
-  --foreground: var(--gray-03);
-  --subFg-1: var(--gray-09);
-  --subFg-2: var(--gray-21);
-  --background: var(--gray-17);
-  --iconColor: var(--gray-11);
-  --elevation-1: var(--gray-16);
+  --scroll: gray;
+  --foreground: #e6e6e6;
+  --subFg-1: #91999e;
+  --subFg-2: #aaaaaa;
+  --background: #030303;
+  --iconColor: #7d8590;
+  --elevation-1: #1a1a1b;
   --elevation-2: #1f2328a1;
 
-  --home-card-background-color: var(--gray-16);
-  --prof-card-background-color: var(--gray-26);
-  --prof-card-website-bg: var(--gray-29);
-  --prof-card-website-bg-disabled: var(--gray-28);
-  --prof-card-website-fg-disabled: var(--gray-07);
-  --lab-item-bg: var(--gray-35);
-  --lab-item-separator: var(--gray-34);
+  --home-card-background-color: #1a1a1b;
+  --prof-card-background-color: #1c1c1c;
+  --prof-card-website-bg: #4f4f4f;
+  --prof-card-website-bg-disabled: #323232;
+  --prof-card-website-fg-disabled: #a3a3a3;
+  --lab-item-bg: #292929;
+  --lab-item-separator: #3e3e3e;
   --amenity-filter-active-bg: #b1bac41f;
-  --amenity-filter-bg: var(--gray-16);
+  --amenity-filter-bg: #1a1a1b;
 
-  --events-accent: var(--red-03);
+  --events-accent: #cd1739;
 
   /* Crisp theme */
-  --t-crp-disabled-color: var(--gray-01);
-  --t-crp-background-hover: var(--gray-14);
-  --t-crp-disabled-background-color: var(--gray-14);
-  --t-crp-link-primary: var(--violet-00);
+  --t-crp-disabled-color: #eaeaea;
+  --t-crp-background-hover: #2f3337;
+  --t-crp-disabled-background-color: #2f3337;
+  --t-crp-link-primary: #b49bff;
 
-  --t-crp-border: var(--gray-13);
-  --t-crp-light-border: var(--gray-19);
-  --t-crp-border-hover: var(--gray-08);
-  --t-crp-disabled-border: var(--gray-14);
+  --t-crp-border: #343536;
+  --t-crp-light-border: #2f2e2e;
+  --t-crp-border-hover: #8b949e;
+  --t-crp-disabled-border: #2f3337;
 
   --tableHeaderFG: #7d8590;
   --tableHeaderBG: #161b22;
 
   --credits-border: #333333;
 
-  /* presets */
+  /* Presets */
   --t-crp-box-shadow: #00000000 0px 0px 0px 0px, #00000000 0px 0px 0px 0px;
   --t-crp-elevation-shadow: #191a1a 0px 8px 24px 0px;
   --t-crp-select-downArrow: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
   --home-card-box-shadow: '';
   --pane-backdrop-background: rgba(0, 0, 0, 0.5);
-  --pane-background: var(--gray-30);
+  --pane-background: #1f2328;
 
   /* Chip Colors */
-  --bluePrimary: var(--blue-01);
-  --blueSecondary: var(--blue-02);
-  --greenPrimary: var(--green-01);
-  --greenSecondary: var(--green-02);
-  --yellowPrimary: var(--yellow-01);
-  --yellowSecondary: var(--yellow-02);
-  --redPrimary: var(--red-01);
-  --redSecondary: var(--red-02);
-  --grayPrimary: var(--grayish-00);
-  --graySecondary: var(--grayish-01);
+  --bluePrimary: #6b91fb;
+  --blueSecondary: #303849;
+  --greenPrimary: #618b4c;
+  --greenSecondary: #22301e;
+  --yellowPrimary: #af8a30;
+  --yellowSecondary: #302b20;
+  --redPrimary: #af3f36;
+  --redSecondary: #2f1f1e;
+  --grayPrimary: #a1a1a3;
+  --graySecondary: #2e2e2e;
 
   --crp-message-color-error: #942926;
   --crp-message-border-color-error: #942926;
   --crp-message-background-color-error: #ffe6e6;
 
-  --crp-message-color-info: var(--foreground);
-  --crp-message-border-color-info: var(--bluePrimary);
+  --crp-message-color-info: #e6e6e6;
+  --crp-message-border-color-info: #6b91fb;
   --crp-message-background-color-info: #303849;
 
   --crp-message-color-convo2024: #c3b197;

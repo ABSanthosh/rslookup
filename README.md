@@ -7,6 +7,7 @@
 - [x] update toast store
 - [ ] Error handling for all fetch requests to handle empty fields
 - [ ] Try to use route grouping to make home header and directory header separate
+- [ ] add user select none to hero image 
 
 - [x] General
   - [x] prevent zoom on double tap

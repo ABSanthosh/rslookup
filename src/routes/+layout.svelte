@@ -13,9 +13,10 @@
   import { EasterEgg } from '$utils/EasterEgg.js';
 
   import '../styles/root/global.scss';
-  import '../styles/theme/colors.css';
-  import '../styles/theme/light.css';
-  import '../styles/theme/dark.css';
+  // import '../styles/theme/light.css';
+  // import '../styles/theme/dark.css';
+  import '../styles/root/theme.css';
+
 
   let { data, children } = $props();
 
