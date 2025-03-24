@@ -28,11 +28,11 @@
     const saved_theme = document.documentElement.getAttribute('data-theme');
     if (saved_theme) {
       setTheme(saved_theme as Theme);
-      return;
+    } else {
+      const preference_is_dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = preference_is_dark ? 'dark' : 'light';
+      setTheme(theme);
     }
-    const preference_is_dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const theme = preference_is_dark ? 'dark' : 'light';
-    setTheme(theme);
 
     if (process.env.NODE_ENV === 'production') EasterEgg();
   });
