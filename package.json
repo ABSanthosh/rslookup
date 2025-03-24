@@ -11,7 +11,7 @@
     "lint": "prettier --check . && eslint . --fix",
     "format": "prettier --write .",
     "deploy": "git checkout prod && git merge master && git push && git checkout master",
-    "stage": "git checkout stage && git merge migration && git push && git checkout master"
+    "stage": "git checkout stage && git merge migration && git push && git checkout migration"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^4.0.0",
