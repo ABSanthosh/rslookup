@@ -26,11 +26,14 @@
   const transitionOut = { easing: cubicIn, x: -x, duration };
 
   onMount(() => {
-    const cookieTheme = getCookie(document.cookie, 'theme') as Theme | null | '';
-
-    if (cookieTheme) theme.set(cookieTheme);
-    else if (window.matchMedia('(prefers-color-scheme: light)').matches) setTheme('light');
-    else setTheme('dark');
+    const saved_theme = document.documentElement.getAttribute('data-theme');
+    if (saved_theme) {
+      setTheme(saved_theme as Theme);
+      return;
+    }
+    const preference_is_dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = preference_is_dark ? 'dark' : 'light';
+    setTheme(theme);
 
     if (process.env.NODE_ENV === 'production') EasterEgg();
   });
