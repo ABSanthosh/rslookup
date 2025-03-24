@@ -13,10 +13,8 @@
   import { EasterEgg } from '$utils/EasterEgg.js';
 
   import '../styles/root/global.scss';
-  // import '../styles/theme/light.css';
-  // import '../styles/theme/dark.css';
   import '../styles/root/theme.css';
-
+  import { getCookie } from '$utils/cookie';
 
   let { data, children } = $props();
 
@@ -28,15 +26,11 @@
   const transitionOut = { easing: cubicIn, x: -x, duration };
 
   onMount(() => {
-    if (localStorage.getItem('theme')) {
-      setTheme(localStorage.getItem('theme') as 'light' | 'dark');
-    } else {
-      if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-        setTheme('light');
-      } else {
-        setTheme('dark');
-      }
-    }
+    const cookieTheme = getCookie(document.cookie, 'theme') as Theme | null | '';
+
+    if (cookieTheme) theme.set(cookieTheme);
+    else if (window.matchMedia('(prefers-color-scheme: light)').matches) setTheme('light');
+    else setTheme('dark');
 
     if (process.env.NODE_ENV === 'production') EasterEgg();
   });

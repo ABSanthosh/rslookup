@@ -8,9 +8,7 @@
       content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no"
     />
     <meta name="author" content="Santhosh" />
-
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
     <meta name="google-site-verification" content="Xg5sYLQpkU_Dm1L44RVHhJIOjnhjMnGwqGvVghuXCSc" />
 
     <meta
@@ -45,22 +43,6 @@
 
     <link rel="manifest" href="/manifest.json" />
 
-    <script>
-      if (
-        !('theme' in localStorage) &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches &&
-        (document.documentElement.getAttribute('data-theme') !== '' ||
-          !document.cookie.includes('theme=dark'))
-      ) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.theme = 'dark';
-      } else if (localStorage.theme) {
-        document.documentElement.setAttribute('data-theme', localStorage.theme);
-      } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.theme = 'light';
-      }
-    </script>
     %sveltekit.head%
   </head>
 
