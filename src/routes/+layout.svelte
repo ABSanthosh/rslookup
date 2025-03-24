@@ -14,7 +14,6 @@
 
   import '../styles/root/global.scss';
   import '../styles/root/theme.css';
-  import { getCookie } from '$utils/cookie';
 
   let { data, children } = $props();
 
@@ -50,6 +49,14 @@
 {#if navigating.type}
   <BlurredSpinner style="position: fixed;" />
 {/if}
+
+<!-- <button
+  style="z-index: 1000;"
+  onclick={() =>
+    (document.cookie = `theme=dark; max-age=${Date.now() + 1000 * 60 * 60 * 24 * 365}; path=/`)}
+>
+  set Theme
+</button> -->
 
 {#if !data.url.includes('clubs')}
   {#key data.url}
