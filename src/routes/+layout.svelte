@@ -50,14 +50,6 @@
   <BlurredSpinner style="position: fixed;" />
 {/if}
 
-<!-- <button
-  style="z-index: 1000;"
-  onclick={() =>
-    (document.cookie = `theme=dark; max-age=${Date.now() + 1000 * 60 * 60 * 24 * 365}; path=/`)}
->
-  set Theme
-</button> -->
-
 {#if !data.url.includes('clubs')}
   {#key data.url}
     <main class="MainContainer" in:fly={transitionIn} out:fly={transitionOut}>

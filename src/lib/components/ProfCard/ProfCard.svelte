@@ -5,6 +5,7 @@
   import { profColors, schools } from '$data/prof';
   import copyToClipboard from '$utils/CopyToClipboard';
   import type { ProfItem } from '$lib/types/Prof.types';
+  import userNamePlaceholder from '$utils/userNamePlaceholder';
 
   let {
     img,
@@ -19,14 +20,6 @@
     timesheet,
     department
   }: ProfItem = $props();
-
-  let profile = () =>
-    (name ? name : '')
-      .match(/(\b\S)?/g)!
-      .join('')
-      .match(/(^\S|\S$)?/g)!
-      .join('')
-      .toUpperCase();
 
   let isProfPaneOpen = $state(false);
   $effect(() => {
@@ -60,7 +53,7 @@
           color: {profColors[schools[school]?.color]?.primary || profColors.gray.primary};
           "
           >
-            {profile()}
+            {userNamePlaceholder(name)}
           </h2>
           {@html `
           <img 
@@ -136,7 +129,7 @@
         color: {profColors[schools[school]?.color]?.primary || profColors.gray.primary}
         "
       >
-        {profile()}
+        {userNamePlaceholder(name)}
       </h2>
       {@html `
         <img 

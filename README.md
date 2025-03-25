@@ -1,13 +1,16 @@
 ## ToDo
 
 - [x] Migrate to sveltekit 2
-- [ ] Change how theme colors are handled
+- [x] Change how theme colors are handled
 - [x] Theme switcher works in dev but not in prod. It returns to the default theme after a reload
 - [ ] Fetch only the first n items from google sheets
 - [x] update toast store
-- [ ] Error handling for all fetch requests to handle empty fields
 - [ ] Try to use route grouping to make home header and directory header separate
+- [ ] Error handling for all fetch requests to handle empty fields
 - [ ] add user select none to hero image 
+- [ ] abstract the user-name placeholder function
+- [ ] abstract view-transition to a directive
+- [ ] Tests for calender functions
 
 - [x] General
   - [x] prevent zoom on double tap
@@ -21,7 +24,7 @@
 - [ ] Clubs
   - [ ] random overlap in the list
 - [x] Convert all theme elements to light-dark() css function
-- [ ] change theme to use color-scheme css property
+- [x] change theme to use color-scheme css property
 
 
 ### Find a deleted file in git history

@@ -1,21 +1,13 @@
 <script lang="ts">
   import type { PageData } from './$types';
   import copyToClipboard from '$utils/CopyToClipboard';
+  import userNamePlaceholder from '$utils/userNamePlaceholder';
 
   let {
     data
   }: {
     data: PageData;
   } = $props();
-
-  // TODO: Abstract this to a util
-  let profile = (name: string) =>
-    name
-      .match(/(\b\S)?/g)!
-      .join('')
-      .match(/(^\S|\S$)?/g)!
-      .join('')
-      .toUpperCase();
 </script>
 
 <svelte:head>
@@ -35,8 +27,9 @@
   {#each data.studentCouncil as member}
     <li class="SC__members--item">
       <span class="SC__members--profileBox">
+        <!-- TODO: Abstract missing image placeholder to a separate component -->
         <h2>
-          {profile(member.name)}
+          {userNamePlaceholder(member.name)}
         </h2>
         {@html `
 					<img 
