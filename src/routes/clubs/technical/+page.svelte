@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { PageData } from './$types';
-  import copyToClipboard from '$utils/CopyToClipboard';
+  import { clipboard } from '$utils/CopyToClipboard';
 
   let {
     data
@@ -24,12 +24,9 @@
         <h2>{club.name}</h2>
         <button
           class="CopyButton"
-          data-icon={String.fromCharCode(57688)}
-          onkeydown={async () => await copyToClipboard(club.email)}
-          onkeyup={async () => await copyToClipboard(club.email)}
-          onkeypress={async () => await copyToClipboard(club.email)}
-          onclick={async () => await copyToClipboard(club.email)}
           title="Click to copy email"
+          use:clipboard={{ text: club.email }}
+          data-icon={String.fromCharCode(57688)}
         >
           {club.email}
         </button>

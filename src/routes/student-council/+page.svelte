@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { PageData } from './$types';
-  import copyToClipboard from '$utils/CopyToClipboard';
+  import { clipboard } from '$utils/CopyToClipboard';
   import userNamePlaceholder from '$utils/userNamePlaceholder';
 
   let {
@@ -49,12 +49,9 @@
       <!-- TODO: Abstract the clipboard to a directive -->
       <button
         class="CopyButton"
-        data-icon={String.fromCharCode(57688)}
-        onkeydown={async () => await copyToClipboard(member.email)}
-        onkeyup={async () => await copyToClipboard(member.email)}
-        onkeypress={async () => await copyToClipboard(member.email)}
-        onclick={async () => await copyToClipboard(member.email)}
         title="Click to copy email"
+        data-icon={String.fromCharCode(57688)}
+        use:clipboard={{ text: member.email }}
       >
         {member.email}
       </button>

@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { IAdmin } from '$types/Amenity.types';
-  import copyToClipboard from '$utils/CopyToClipboard';
+  import { clipboard } from '$utils/CopyToClipboard';
 
   const data: IAdmin = $props();
 </script>
@@ -20,10 +20,7 @@
           href={'tel:' + data.phone}
           title="Copy phone number"
           class="CopyButton AmenityCard__separator--content"
-          onkeydown={async () => await copyToClipboard(data.phone)}
-          onkeyup={async () => await copyToClipboard(data.phone)}
-          onkeypress={async () => await copyToClipboard(data.phone)}
-          onclick={async () => await copyToClipboard(data.phone)}
+          use:clipboard={{ text: data.phone }}
         >
           {data.phone}
         </a>
@@ -40,10 +37,7 @@
           href={'mail:' + data.mail}
           title="Copy phone number"
           class="CopyButton AmenityCard__separator--content"
-          onkeydown={async () => await copyToClipboard(data.mail)}
-          onkeyup={async () => await copyToClipboard(data.mail)}
-          onkeypress={async () => await copyToClipboard(data.mail)}
-          onclick={async () => await copyToClipboard(data.mail)}
+          use:clipboard={{ text: data.mail }}
         >
           {data.mail}
         </a>

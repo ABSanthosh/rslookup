@@ -1,7 +1,7 @@
 <script lang="ts">
   import MapsSelector from '$utils/MapsSelector';
   import WeekDays from '$components/WeekDays.svelte';
-  import copyToClipboard from '$utils/CopyToClipboard';
+  import copyToClipboard, { clipboard } from '$utils/CopyToClipboard';
   import type { IEssentials } from '$types/Amenity.types';
 
   const data: IEssentials = $props();
@@ -52,10 +52,7 @@
             href={'tel:' + data.phone}
             title="Copy phone number"
             class="CopyButton AmenityCard__separator--content"
-            onkeydown={async () => await copyToClipboard(data.phone)}
-            onkeyup={async () => await copyToClipboard(data.phone)}
-            onkeypress={async () => await copyToClipboard(data.phone)}
-            onclick={async () => await copyToClipboard(data.phone)}
+            use:clipboard={{ text: data.phone }}
           >
             {item.trim()}
           </a>
@@ -73,10 +70,7 @@
           href={'mail:' + data.mail}
           title="Copy phone number"
           class="CopyButton AmenityCard__separator--content"
-          onkeydown={async () => await copyToClipboard(data.mail)}
-          onkeyup={async () => await copyToClipboard(data.mail)}
-          onkeypress={async () => await copyToClipboard(data.mail)}
-          onclick={async () => await copyToClipboard(data.mail)}
+          use:clipboard={{ text: data.mail }}
         >
           {data.mail}
         </a>

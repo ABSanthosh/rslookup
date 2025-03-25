@@ -3,7 +3,7 @@
   import Pane from '$components/Pane.svelte';
   import SchoolChip from './SchoolChip.svelte';
   import { profColors, schools } from '$data/prof';
-  import copyToClipboard from '$utils/CopyToClipboard';
+  import { clipboard } from '$utils/CopyToClipboard';
   import type { ProfItem } from '$lib/types/Prof.types';
   import userNamePlaceholder from '$utils/userNamePlaceholder';
 
@@ -184,10 +184,7 @@
         <button
           class="CopyButton w-100"
           data-icon={String.fromCharCode(57520)}
-          onkeydown={async () => await copyToClipboard(phone)}
-          onkeyup={async () => await copyToClipboard(phone)}
-          onkeypress={async () => await copyToClipboard(phone)}
-          onclick={async () => await copyToClipboard(phone)}
+          use:clipboard={{ text: phone }}
           title="Click to copy extension"
         >
           <span>
@@ -199,10 +196,7 @@
         <button
           class="CopyButton w-100"
           data-icon={String.fromCharCode(57688)}
-          onkeydown={async () => await copyToClipboard(mail)}
-          onkeyup={async () => await copyToClipboard(mail)}
-          onkeypress={async () => await copyToClipboard(mail)}
-          onclick={async () => await copyToClipboard(mail)}
+          use:clipboard={{ text: mail }}
           title="Click to copy email"
         >
           <span>
