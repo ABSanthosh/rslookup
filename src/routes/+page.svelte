@@ -50,8 +50,7 @@
     @include box();
     min-height: 80vh;
     grid-template-columns: 1.2fr 1fr;
-    grid-template-areas:
-      'left right';
+    grid-template-areas: 'left right';
 
     @include respondAt(870px) {
       gap: 30px;

@@ -146,7 +146,7 @@
   class="Prof__disclaimer CrispMessage"
   onOutClick={() => (isDisclaimerOpen = false)}
 >
-  <summary class="CrispMessage" data-type="info" style="margin-bottom: -8px;">
+  <summary class="CrispMessage" data-type="info">
     Disclosure -
     <i style="color: inherit;"> Click to expand </i>
   </summary>
@@ -269,9 +269,11 @@
       background-size: right 5px top 50%;
       background-position: right 5px top 7px;
       background-image: var(--t-crp-select-downArrow);
+      @include make-flex($just: flex-start, $align: flex-start);
 
       & > summary {
         cursor: pointer;
+        margin-bottom: -8px;
         list-style: none;
 
         &::marker,

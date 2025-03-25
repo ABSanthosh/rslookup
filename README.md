@@ -11,6 +11,8 @@
 - [ ] abstract the user-name placeholder function
 - [ ] abstract view-transition to a directive
 - [ ] Tests for calender functions
+- [ ] Abstract the clipboard to a directive
+- [x] Animate pane and crisp menu
 
 - [x] General
   - [x] prevent zoom on double tap

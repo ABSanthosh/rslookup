@@ -123,14 +123,6 @@
       --paneWidth: auto !important;
     }
 
-    &--preClose {
-      animation: slideOut 0.5s cubic-bezier(0.87, 0, 0.13, 1) forwards !important;
-
-      &::backdrop {
-        animation: fadeOut 0.7s ease-out forwards !important;
-      }
-    }
-
     & > div {
       z-index: 1;
       background-color: var(--prof-card-background-color);
@@ -167,6 +159,15 @@
       }
     }
 
+    --animation: cubic-bezier(0.25, 0.1, 0.25, 1);;
+    &--preClose {
+      animation: slideOut 0.4s var(--animation) forwards !important;
+
+      &::backdrop {
+        animation: fadeOut 0.7s ease-out forwards !important;
+      }
+    }
+
     &::backdrop {
       @include box(100vw, 100vh);
       backdrop-filter: blur(1px);
@@ -174,7 +175,7 @@
     }
 
     &[open] {
-      animation: slideIn 0.5s cubic-bezier(0.87, 0, 0.13, 1);
+      animation: slideIn 0.4s var(--animation);
 
       &::backdrop {
         animation: fadeIn 0.5s ease-out;

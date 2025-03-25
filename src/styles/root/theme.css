@@ -1,12 +1,14 @@
 :root {
+  --white: #ffffff;
+
   /* Base Colors */
   --scroll: light-dark(#d0d0d0, gray);
   --foreground: light-dark(#262626, #e6e6e6);
   --subFg-1: light-dark(#91999e, #91999e);
   --subFg-2: light-dark(#555555, #aaaaaa);
-  --background: light-dark(#ffffff, #030303);
+  --background: light-dark(#fafafa, #030303);
   --iconColor: light-dark(#656d76, #7d8590);
-  --elevation-1: light-dark(#f6f8fa, #1a1a1b);
+  --elevation-1: light-dark(#f9fbfb, #1a1a1b);
   --elevation-2: light-dark(#1f232814, #1f2328a1);
 
   /* Component-Specific Colors */

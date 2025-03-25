@@ -30,7 +30,7 @@
     border: 1px solid var(--crp-message-border-color);
     background-color: var(--crp-message-background-color);
     padding: var(--crp-message-padding);
-    @include make-flex($just: flex-start, $align: flex-start);
+    // @include make-flex($just: flex-start, $align: flex-start);
   }
 
   gap: 8px;
