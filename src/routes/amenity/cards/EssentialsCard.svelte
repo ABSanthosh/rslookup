@@ -1,7 +1,7 @@
 <script lang="ts">
   import MapsSelector from '$utils/MapsSelector';
   import WeekDays from '$components/WeekDays.svelte';
-  import copyToClipboard, { clipboard } from '$utils/CopyToClipboard';
+  import { clipboard } from '$utils/CopyToClipboard';
   import type { IEssentials } from '$types/Amenity.types';
 
   const data: IEssentials = $props();

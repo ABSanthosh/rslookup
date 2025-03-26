@@ -1,3 +1,33 @@
+:root::view-transition-old(root),
+:root::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* We need to change z index of the old and new frames based on the current theme
+Ref: https://github.com/Daydreamer-riri/riri-me/blob/74c1f3070942756ae547b31406a8300a935f0cc1/src/styles/main.css#L120
+https://daydreamer-riri.me/posts/toggle-theme-with-view-transition/
+https://antfu.me/ */
+[data-theme='light'] {
+  &::view-transition-old(root) {
+    z-index: 101;
+  }
+
+  &::view-transition-new(root) {
+    z-index: 100;
+  }
+}
+
+[data-theme='dark'] {
+  &::view-transition-new(root) {
+    z-index: 101;
+  }
+
+  &::view-transition-old(root) {
+    z-index: 100;
+  }
+}
+
 :root {
   --white: #ffffff;
 

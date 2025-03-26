@@ -8,8 +8,8 @@
 - [ ] Try to use route grouping to make home header and directory header separate
 - [ ] Error handling for all fetch requests to handle empty fields
 - [ ] add user select none to hero image 
-- [ ] abstract the user-name placeholder function
-- [ ] abstract view-transition to a directive
+- [x] abstract the user-name placeholder function
+- [x] abstract view-transition to a directive
 - [ ] Tests for calender functions
 - [x] Abstract the clipboard to a directive
 - [x] Animate pane and crisp menu

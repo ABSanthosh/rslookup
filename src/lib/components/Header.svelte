@@ -1,61 +1,19 @@
 <script lang="ts">
   import { page } from '$app/state';
-  import { theme, setTheme } from '$stores/ThemeStore';
-  import { query } from '$stores/QueryStore';
-  import { afterNavigate } from '$app/navigation';
-  import { HOME_ROUTES, ROUTES } from '$data/routes';
-  import clickOutside from '$utils/onClickOutside';
-  import { fade } from 'svelte/transition';
   import debounce from '$utils/debounce';
+  import { fade } from 'svelte/transition';
+  import { theme } from '$stores/ThemeStore';
+  import { query } from '$stores/QueryStore';
   import Spinner from './Spinner/Spinner.svelte';
+  import { afterNavigate } from '$app/navigation';
+  import clickOutside from '$utils/onClickOutside';
+  import { HOME_ROUTES, ROUTES } from '$data/routes';
+  import { themeToggleTransition } from '$utils/themeToggle';
 
   afterNavigate(() => {
     isNavOpen = false;
     query.set('');
   });
-
-  let themeToggle: HTMLButtonElement | null = $state(null);
-
-  const themeToggleTransition = async () => {
-    if (
-      !themeToggle ||
-      !document.startViewTransition ||
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    ) {
-      setTheme($theme === 'dark' ? 'light' : 'dark');
-      return;
-    }
-
-    document
-      .startViewTransition(async () => {
-        setTheme($theme === 'dark' ? 'light' : 'dark');
-      })
-      .ready.then(() => {
-        // https://akashhamirwasia.com/blog/full-page-theme-toggle-animation-with-view-transitions-api/#what-is-the-grow-animation
-        const { top, left, width, height } = themeToggle!.getBoundingClientRect();
-        const x = left + width / 2;
-        const y = top + height / 2;
-        const right = window.innerWidth - left;
-        const bottom = window.innerHeight - top;
-        const maxRadius = Math.hypot(Math.max(left, right), Math.max(top, bottom));
-        const isDark = $theme !== 'dark';
-        const clipPath = [
-          `circle(0px at ${x}px ${y}px)`,
-          `circle(${maxRadius}px at ${x}px ${y}px)`
-        ];
-
-        document.documentElement.animate(
-          {
-            clipPath: isDark ? clipPath.reverse() : clipPath
-          },
-          {
-            duration: 500,
-            easing: 'ease-in-out',
-            pseudoElement: isDark ? '::view-transition-old(root)' : '::view-transition-new(root)'
-          }
-        );
-      });
-  };
 
   const noThemeRoutes = ['/convocation-2024'];
 
@@ -180,10 +138,9 @@
     {/if}
     {#if !noThemeRoutes.includes(page.url.pathname)}
       <button
-        bind:this={themeToggle}
         aria-label="Toggle theme"
+        use:themeToggleTransition
         class="CrispButton Header__theme-toggle"
-        onclick={async () => await themeToggleTransition()}
         data-icon={String.fromCharCode($theme === 'dark' ? 58416 : 58652)}
       ></button>
     {/if}
@@ -191,14 +148,6 @@
 </header>
 
 <style lang="scss">
-  :root {
-    &::view-transition-old(root),
-    &::view-transition-new(root) {
-      animation: none;
-      mix-blend-mode: normal;
-    }
-  }
-
   .Header {
     top: 0;
     left: 0;
