@@ -1,19 +1,19 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { fly } from 'svelte/transition';
-  import Toast from '$components/Toast.svelte';
+  import { navigating } from '$app/state';
   import GoTop from '$components/GoTop.svelte';
+  import Toast from '$components/Toast.svelte';
+  import Footer from '$components/Footer.svelte';
   import Header from '$components/Header.svelte';
+  import { EasterEgg } from '$utils/EasterEgg.js';
   import { cubicIn, cubicOut } from 'svelte/easing';
   import { ToastStore } from '$stores/ToastStore.js';
   import { theme, setTheme } from '$stores/ThemeStore';
-  import { navigating } from '$app/state';
   import BlurredSpinner from '$components/Spinner/BlurredSpinner.svelte';
-  import Footer from '$components/Footer.svelte';
-  import { EasterEgg } from '$utils/EasterEgg.js';
 
   import '../styles/root/global.scss';
-  import '../styles/root/theme.css';
+  import '../styles/root/theme.scss';
 
   let { data, children } = $props();
 

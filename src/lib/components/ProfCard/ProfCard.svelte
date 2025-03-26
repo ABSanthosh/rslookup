@@ -14,7 +14,6 @@
     role,
     room,
     phone,
-    block,
     school,
     website,
     timesheet,
@@ -205,7 +204,6 @@
         </button>
       {/if}
     </div>
-
     <a
       target="_blank"
       rel="noopener noreferrer"
@@ -242,10 +240,6 @@
         line-height: 1;
         font-size: 16px;
         font-weight: 400;
-        // overflow: hidden;
-        // text-wrap: nowrap;
-        // max-width: 100%;
-        // text-overflow: ellipsis;
         color: var(--subFg-1);
       }
     }

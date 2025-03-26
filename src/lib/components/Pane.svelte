@@ -106,6 +106,7 @@
 <style lang="scss">
   .Pane {
     --pane-border: 1px solid var(--t-crp-border);
+    --animation: cubic-bezier(0.25, 0.1, 0.25, 1);
     --pane-box-shadow: var(--t-crp-elevation-shadow);
 
     border: none;
@@ -159,7 +160,6 @@
       }
     }
 
-    --animation: cubic-bezier(0.25, 0.1, 0.25, 1);;
     &--preClose {
       animation: slideOut 0.4s var(--animation) forwards !important;
 
