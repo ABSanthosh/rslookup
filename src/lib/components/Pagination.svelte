@@ -38,7 +38,7 @@
       disabled={(currentPage === 0 ? true : false) || disabled}
       aria-label="left arrow icon"
       aria-describedby="prev"
-      data-icon={String.fromCharCode(58820)}
+      data-icon="arrow_back"
     ></button>
     Page
     <input class="CrispInput" bind:value={currentPage} {disabled} max={totalPages - 1} />
@@ -56,7 +56,7 @@
       disabled={(currentPage === totalPages - 1 ? true : false) || disabled}
       aria-label="right arrow icon"
       aria-describedby="next"
-      data-icon={String.fromCharCode(58824)}
+      data-icon="arrow_forward"
     ></button>
   </div>
 {/if}

@@ -63,7 +63,7 @@
     class="CrispMenu Layout__filter"
     onOutClick={() => (isFilterOpen = false)}
   >
-    <summary data-no-marker data-icon={String.fromCharCode(57682)}>
+    <summary data-no-marker data-icon="filter_list">
       Filters
       <span>
         {filters.filter((item) => item.checked).length}

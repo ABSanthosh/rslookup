@@ -28,7 +28,7 @@
   onOutClick={() => (isCalendarOpen = false)}
 >
   <summary>
-    <span data-icon={String.fromCharCode(61317)}>
+    <span data-icon="calendar_add_on">
       {#if eventItem.isText}
         Add to calendar
       {/if}

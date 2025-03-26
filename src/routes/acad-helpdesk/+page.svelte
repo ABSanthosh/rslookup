@@ -90,7 +90,7 @@
           <div class="Col--a-start w-100 gap-5">
             <h3>{item.name}</h3>
             <div class="AcadCard__separator">
-              <span class="AcadCard__separator--icon" data-icon={String.fromCharCode(57544)}>
+              <span class="AcadCard__separator--icon" data-icon="location_on">
                 Room
               </span>
               <hr />

@@ -7,18 +7,8 @@
   import type { ProfItem } from '$lib/types/Prof.types';
   import userNamePlaceholder from '$utils/userNamePlaceholder';
 
-  let {
-    img,
-    name,
-    mail,
-    role,
-    room,
-    phone,
-    school,
-    website,
-    timesheet,
-    department
-  }: ProfItem = $props();
+  let { img, name, mail, role, room, phone, school, website, timesheet, department }: ProfItem =
+    $props();
 
   let isProfPaneOpen = $state(false);
   $effect(() => {
@@ -106,7 +96,7 @@
         target="_blank"
         style="height: 35px;"
         rel="noopener noreferrer"
-        data-icon-after={String.fromCharCode(58840)}
+        data-icon-after="arrow_upward"
         class:disabled={website === '' || website === '-'}
         class="ProfCard__bottom--website Row--between gap-10 w-100"
         href={website === '' || website === '-' ? '#' : website}
@@ -162,7 +152,7 @@
         title="Click to view timesheet"
         aria-label="View timesheet"
         onclick={() => (isProfPaneOpen = true)}
-        data-icon={String.fromCharCode(59573)}
+        data-icon="schedule"
       ></button>
     {/if}
   </div>
@@ -182,7 +172,7 @@
       {#if phone !== undefined && phone !== ''}
         <button
           class="CopyButton w-100"
-          data-icon={String.fromCharCode(57520)}
+          data-icon="call"
           use:clipboard={{ text: phone }}
           title="Click to copy extension"
         >
@@ -194,7 +184,7 @@
       {#if mail !== undefined && mail !== ''}
         <button
           class="CopyButton w-100"
-          data-icon={String.fromCharCode(57688)}
+          data-icon="mail"
           use:clipboard={{ text: mail }}
           title="Click to copy email"
         >
@@ -207,7 +197,7 @@
     <a
       target="_blank"
       rel="noopener noreferrer"
-      data-icon-after={String.fromCharCode(58840)}
+      data-icon-after="arrow_upward"
       class:disabled={website === '' || website === '-'}
       class="ProfCard__bottom--website Row--between gap-10"
       href={website === '' || website === '-' ? '#' : website}

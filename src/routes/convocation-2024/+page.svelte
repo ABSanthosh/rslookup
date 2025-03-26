@@ -306,6 +306,13 @@
     name="keywords"
     content={`convocation, 2024, snu, snioe, graduation, ceremony, event, speakers, itinerary, schedule, guests`}
   />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap"
+    rel="stylesheet"
+  />
+  <!-- font-family: "Eczar", serif; -->
+
   <meta name="author" content="Santhosh" />
   <meta name="robots" content="index, follow" />
 </svelte:head>

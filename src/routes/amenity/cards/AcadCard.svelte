@@ -9,7 +9,7 @@
   <h3>{data.name}</h3>
   <a
     class="CrispButton AmenityCard__bottom--map"
-    data-icon={String.fromCharCode(58715)}
+    data-icon="map"
     href={MapsSelector(data.lat, data.lng)}
     target="_blank"
     rel="noopener noreferrer"

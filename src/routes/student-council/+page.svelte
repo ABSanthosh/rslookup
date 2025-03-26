@@ -46,11 +46,10 @@
       <p>
         {member.position}
       </p>
-      <!-- TODO: Abstract the clipboard to a directive -->
       <button
+        data-icon="mail"
         class="CopyButton"
         title="Click to copy email"
-        data-icon={String.fromCharCode(57688)}
         use:clipboard={{ text: member.email }}
       >
         {member.email}

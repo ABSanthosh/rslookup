@@ -170,13 +170,11 @@
         />
         <button
           data-type="danger"
+          data-icon="close"
           class="CrispButton"
           aria-label="Delete Course"
-          data-icon={String.fromCharCode(58829)}
           disabled={$AttendanceStore.length === 1}
-          onclick={() => {
-            $AttendanceStore = $AttendanceStore.filter((_, i) => i !== index);
-          }}
+          onclick={() => ($AttendanceStore = $AttendanceStore.filter((_, i) => i !== index))}
         ></button>
       </div>
       <table>

@@ -12,9 +12,7 @@
     <h3 class="AmenityCard--title">{data.name}</h3>
     {#if data['time.from'] !== '' && data['time.to'] !== ''}
       <div class="AmenityCard__separator">
-        <span class="AmenityCard__separator--icon" data-icon={String.fromCharCode(59573)}>
-          Time
-        </span>
+        <span class="AmenityCard__separator--icon" data-icon="schedule"> Time </span>
         <hr />
         <span class="AmenityCard__separator--content">
           {data['time.from']} - {data['time.to']}
@@ -23,9 +21,7 @@
     {/if}
     {#if data.MO && data.TU && data.WE && data.TH && data.FR && data.SA && data.SU && data.MO !== 'FALSE' && data.TU !== 'FALSE' && data.WE !== 'FALSE' && data.TH !== 'FALSE' && data.FR !== 'FALSE' && data.SA !== 'FALSE' && data.SU !== 'FALSE'}
       <div class="AmenityCard__separator">
-        <span class="AmenityCard__separator--icon" data-icon={String.fromCharCode(59670)}>
-          Days
-        </span>
+        <span class="AmenityCard__separator--icon" data-icon="calendar_today"> Days </span>
         <hr />
         <WeekDays
           days={{
@@ -43,16 +39,14 @@
     {#if data.phone !== ''}
       {#each data.phone.split(',') as item}
         <div class="AmenityCard__separator">
-          <span class="AmenityCard__separator--icon" data-icon={String.fromCharCode(57520)}>
-            Phone
-          </span>
+          <span class="AmenityCard__separator--icon" data-icon="call"> Phone </span>
           <hr />
           <a
             role="button"
-            href={'tel:' + data.phone}
             title="Copy phone number"
-            class="CopyButton AmenityCard__separator--content"
+            href={'tel:' + data.phone}
             use:clipboard={{ text: data.phone }}
+            class="CopyButton AmenityCard__separator--content"
           >
             {item.trim()}
           </a>
@@ -61,16 +55,14 @@
     {/if}
     {#if data.mail !== ''}
       <div class="AmenityCard__separator">
-        <span class="AmenityCard__separator--icon" data-icon={String.fromCharCode(57688)}>
-          Mail
-        </span>
+        <span class="AmenityCard__separator--icon" data-icon="mail"> Mail </span>
         <hr />
         <a
           role="button"
-          href={'mail:' + data.mail}
           title="Copy phone number"
-          class="CopyButton AmenityCard__separator--content"
+          href={'mail:' + data.mail}
           use:clipboard={{ text: data.mail }}
+          class="CopyButton AmenityCard__separator--content"
         >
           {data.mail}
         </a>
@@ -84,11 +76,11 @@
   {/if}
   <div class="AmenityCard__bottom">
     <a
-      class="CrispButton AmenityCard__bottom--map"
-      data-icon={String.fromCharCode(58715)}
-      href={MapsSelector(data.lat, data.lng)}
+      data-icon="map"
       target="_blank"
       rel="noopener noreferrer"
+      href={MapsSelector(data.lat, data.lng)}
+      class="CrispButton AmenityCard__bottom--map"
     >
       Map
     </a>

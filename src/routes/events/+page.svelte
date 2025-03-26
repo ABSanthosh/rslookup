@@ -47,7 +47,6 @@
       {@const parsedDate = parseDate(item.date)}
       {@const date = new Date(parsedDate.year, parsedDate.month, parsedDate.date)}
       {@const isExpired = date.getTime() < new Date().getTime()}
-      {@debug parsedDate, date, item}
       <li class="Event" class:expired={isExpired}>
         <div class="Event__left">
           <span>{item.category}</span>
@@ -74,18 +73,14 @@
           </div>
           <div class="Event__right">
             <div class="Event__separator">
-              <span class="Event__separator--icon" data-icon={String.fromCharCode(59573)}>
-                Time
-              </span>
+              <span class="Event__separator--icon" data-icon="schedule"> Time </span>
               <hr />
               <span class="Event__separator--content">
                 {item['time.from']} - {item['time.to']}
               </span>
             </div>
             <div class="Event__separator">
-              <span class="Event__separator--icon" data-icon={String.fromCharCode(57544)}>
-                Venue
-              </span>
+              <span class="Event__separator--icon" data-icon="location_on"> Venue </span>
               <hr />
               <span class="Event__separator--content">
                 {item.venueName}
@@ -93,12 +88,12 @@
             </div>
             <div class="Event__right--actions w-100 h-100 gap-10">
               <a
+                data-icon="map"
+                target="_blank"
                 class="CrispButton"
+                href={item.venueLink}
                 data-type="black-outline"
                 rel="noopener noreferrer"
-                data-icon={String.fromCharCode(58715)}
-                href={item.venueLink}
-                target="_blank"
               >
                 Map
               </a>
@@ -111,7 +106,7 @@
                 onOutClick={() => (isCalendarOpen[index] = false)}
               >
                 <summary>
-                  <span data-icon={String.fromCharCode(61317)}> Add to calendar </span>
+                  <span data-icon="calendar_add_on"> Add to calendar </span>
                 </summary>
                 <ul class="CrispMenu__content" data-direction="top" data-align="right">
                   <a

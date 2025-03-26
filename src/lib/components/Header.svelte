@@ -53,7 +53,7 @@
       >
         <summary>
           <p></p>
-          <span data-icon={String.fromCharCode(58834)} aria-label="Menu"></span>
+          <span data-icon="menu" aria-label="Menu"></span>
         </summary>
         <ul class="CrispMenu__content">
           {#each HOME_ROUTES as item}
@@ -65,7 +65,7 @@
       </details>
     {/if}
     {#if currentRoute?.showSearch}
-      <div transition:fade class="Header__search" data-icon={String.fromCharCode(59574)}>
+      <div transition:fade class="Header__search" data-icon="search">
         <Spinner height={20} width={20} style="display: {isSearching ? 'block' : 'none'};" />
         <input
           type="text"
@@ -98,7 +98,7 @@
               query.set('');
               localQueryValue = '';
             }}
-            data-icon={String.fromCharCode(58829)}
+            data-icon="close"
             aria-label="Clear search"
           ></button>
         {/if}
@@ -116,7 +116,7 @@
           <p>
             {currentRoute?.name}
           </p>
-          <span data-icon={String.fromCharCode(currentRoute?.icon || 0)}></span>
+          <span data-icon={currentRoute?.icon}></span>
         </summary>
         <ul class="CrispMenu__content">
           {#each ROUTES as { name, route, separator }, i}
@@ -127,7 +127,7 @@
             <a
               href="/{route}"
               onclick={() => (currentRoute = ROUTES[i])}
-              data-icon={String.fromCharCode(ROUTES[i].icon)}
+              data-icon={ROUTES[i].icon}
               class:active={page.url.pathname === `/${route}`}
             >
               {name}
@@ -141,7 +141,7 @@
         aria-label="Toggle theme"
         use:themeToggleTransition
         class="CrispButton Header__theme-toggle"
-        data-icon={String.fromCharCode($theme === 'dark' ? 58416 : 58652)}
+        data-icon={$theme === 'dark' ? 'light_mode' : 'dark_mode'}
       ></button>
     {/if}
   </div>

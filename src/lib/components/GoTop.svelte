@@ -27,7 +27,7 @@
 <button
   class="CrispButton GoTop"
   class:hidden={isHidden}
-  data-icon={String.fromCharCode(58840)}
+  data-icon="arrow_upward"
   aria-label="Go to top"
   onclick={() => {
     document.body.scrollIntoView({

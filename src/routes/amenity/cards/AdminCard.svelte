@@ -11,9 +11,7 @@
     <span class="AmenityCard--subTitle">{data.func}</span>
     {#if data.phone !== ''}
       <div class="AmenityCard__separator">
-        <span class="AmenityCard__separator--icon" data-icon={String.fromCharCode(57520)}>
-          Phone
-        </span>
+        <span class="AmenityCard__separator--icon" data-icon="call"> Phone </span>
         <hr />
         <a
           role="button"
@@ -28,9 +26,7 @@
     {/if}
     {#if data.mail}
       <div class="AmenityCard__separator">
-        <span class="AmenityCard__separator--icon" data-icon={String.fromCharCode(57688)}>
-          Mail
-        </span>
+        <span class="AmenityCard__separator--icon" data-icon="mail"> Mail </span>
         <hr />
         <a
           role="button"

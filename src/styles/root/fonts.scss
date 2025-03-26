@@ -1,15 +1,3 @@
-@font-face {
-  font-family: 'Geist';
-  font-display: swap;
-  src: url('/fonts/Geist.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Icons';
-  font-display: swap;
-  src: url('/fonts/Icons.woff2') format('woff2');
-}
-
 [data-icon],
 [data-icon-after] {
   &::after,
@@ -27,7 +15,7 @@
     font-feature-settings: 'liga';
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
-    font: normal normal normal 18px/1 'Icons';
+    font: normal normal normal 18px/1 'Material Symbols Rounded';
     font-variation-settings:
       'FILL' 0,
       'wght' 400,

@@ -84,7 +84,7 @@
             open = false;
           }
         }}
-        data-icon={String.fromCharCode(58829)}
+        data-icon="close"
       ></button>
     </header>
     {#if main}

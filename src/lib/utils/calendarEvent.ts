@@ -113,7 +113,6 @@ export function outlookCalendar({ title, description, location, start, end }: IE
     `rru=addevent`,
     `subject=${encodeURIComponent(title)}`
   ];
-  // console.log(`https://outlook.live.com/calendar/deeplink/compose?${details.join('&')}`);
 
   return `https://outlook.live.com/calendar/deeplink/compose?${details.join('&')}`;
 }

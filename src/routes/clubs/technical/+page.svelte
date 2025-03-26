@@ -23,10 +23,10 @@
       <div class="Club__header">
         <h2>{club.name}</h2>
         <button
+          data-icon="mail"
           class="CopyButton"
           title="Click to copy email"
           use:clipboard={{ text: club.email }}
-          data-icon={String.fromCharCode(57688)}
         >
           {club.email}
         </button>

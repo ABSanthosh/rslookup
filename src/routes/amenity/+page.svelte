@@ -22,43 +22,43 @@
   let filters: {
     name: string;
     checked: boolean;
-    icon: number;
+    icon: string;
     data: IHostel[] | IAcademics[] | IAdmin[] | IEssentials[] | IFood[] | ISport[];
   }[] = $state([
     {
       name: 'Hostel',
       checked: true,
-      icon: 58682,
+      icon: "hotel",
       data: data.Hostel
     },
     {
       name: 'Academics',
       checked: true,
-      icon: 59404,
+      icon: "school",
       data: data.Academics
     },
     {
       name: 'Admin',
       checked: true,
-      icon: 63056,
+      icon: "shield_person",
       data: data.Admin
     },
     {
       name: 'Essentials',
       checked: true,
-      icon: 61900,
+      icon: "local_mall",
       data: data.Essentials
     },
     {
       name: 'Food',
       checked: true,
-      icon: 58732,
+      icon: "restaurant",
       data: data.Food
     },
     {
       name: 'Sports',
       checked: true,
-      icon: 60356,
+      icon: "pool",
       data: data.Sports
     }
   ]);
