@@ -13,7 +13,7 @@ interface ICourse {
   grade: string;
 }
 
-const defaultValue = [
+let initialValue = $state([
   {
     title: 'Semester 1',
     SGPA: 0,
@@ -25,9 +25,7 @@ const defaultValue = [
       }
     ]
   }
-];
-
-let initialValue = defaultValue;
+]);
 
 if (browser && window.localStorage.getItem('GPA')) {
   initialValue = JSON.parse(window.localStorage.getItem('GPA')!);

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { GPAStore } from '$stores/GPAStore';
+  import { GPAStore } from '$stores/GPAStore.svelte';
   import { selectOnFocus } from '$utils/selectOnFocus';
 
   const SYMBOLS: {
@@ -49,11 +49,6 @@
   let currentCGPA = $state(0);
   let creditsDone = $state(0);
   let cumulative = $state(0.0);
-  // $: semesters = $GPAStore;
-
-  $effect(() => {
-    $GPAStore.map((item) => item.courses), $GPAStore.forEach((_, i) => calcSGPA(i));
-  });
 
   const calcSGPA = (index: number) => {
     // if any course has no credits, set SGPA to 0
@@ -186,13 +181,11 @@
           />
           {#if $GPAStore.length > 1}
             <button
-              class="CrispButton"
-              data-icon={String.fromCharCode(58829)}
+              data-icon="close"
               data-type="danger"
+              class="CrispButton"
               aria-label="Delete Semester"
-              onclick={() => {
-                $GPAStore = $GPAStore.filter((_, i) => i !== index);
-              }}
+              onclick={() => ($GPAStore = $GPAStore.filter((_, i) => i !== index))}
             ></button>
           {/if}
         </div>
@@ -218,12 +211,12 @@
                 </td>
                 <td data-label="Credits">
                   <input
-                    class="CrispInput"
                     type="number"
-                    placeholder="Credits"
                     use:selectOnFocus
-                    onchange={() => calcSGPA(index)}
+                    class="CrispInput"
+                    placeholder="Credits"
                     bind:value={course.credits}
+                    onchange={() => calcSGPA(index)}
                   />
                 </td>
                 <td data-label="Grade">
@@ -239,14 +232,15 @@
                 </td>
                 <td>
                   <button
+                    data-icon="close"
                     data-type="danger"
                     class="CrispButton"
                     aria-label="Delete Course"
-                    data-icon={String.fromCharCode(58829)}
                     disabled={$GPAStore[index].courses.length === 1}
-                    onclick={() => {
-                      $GPAStore[index].courses = $GPAStore[index].courses.filter((_, j) => j !== i);
-                    }}
+                    onclick={() =>
+                      ($GPAStore[index].courses = $GPAStore[index].courses.filter(
+                        (_, j) => j !== i
+                      ))}
                   ></button>
                 </td>
               </tr>
