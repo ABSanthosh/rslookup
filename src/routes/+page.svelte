@@ -37,7 +37,7 @@
   <div class="Routes__content">
     {#each ROUTES as item}
       <a href={item.route} style="--background-image: {item.background};">
-        <h2>{item.name}</h2>
+        <h2 data-icon-after="arrow_upward">{item.name}</h2>
         <p>{item.description}</p>
       </a>
     {/each}
@@ -191,22 +191,10 @@
             top: 20px;
             right: 20px;
             padding: 4px;
-            content: '\e5d8';
             border-radius: 50%;
             position: absolute;
-            @include make-flex();
             transform: rotate(45deg);
             @include box(17px, 17px);
-            color: var(--iconColor);
-            font-variation-settings:
-              'FILL' 0,
-              'wght' 300,
-              'GRAD' 0,
-              'opsz' 48;
-            transition:
-              transform 0.3s ease,
-              background-color 0.3s ease;
-            font: normal normal normal 20px/1 'Icons';
           }
         }
         p {

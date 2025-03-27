@@ -35,7 +35,7 @@
           block: 'start'
         });
       }}
-      disabled={(currentPage === 0 ? true : false) || disabled}
+      disabled={(currentPage === 1 ? true : false) || disabled}
       aria-label="left arrow icon"
       aria-describedby="prev"
       data-icon="arrow_back"

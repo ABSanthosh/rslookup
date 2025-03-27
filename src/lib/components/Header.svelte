@@ -267,7 +267,7 @@
 
         --crp-button-width: 30px;
         --crp-button-height: 100%;
-        border-radius: 0 6px 6px 0;
+        border-radius: 0 7.8px 7.8px 0;
         --crp-button-background-color: var(--elevation-2);
 
         @include respondAt(700px) {

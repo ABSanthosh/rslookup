@@ -36,13 +36,17 @@
     & > summary {
       &:not([data-no-marker]) {
         &::after {
-          top: calc(50% - 3px);
-          content: '\e5c7';
+          top: calc(50% + 3px);
+          transform: translateY(-50%);
+          content: 'arrow_drop_down';
+          font: normal normal normal 18px/1 'Material Symbols Rounded';
         }
-
+        
         &::before {
-          bottom: calc(50% - 3px);
-          content: '\e5c5';
+          bottom: calc(50% + 3px);
+          transform: translateY(50%);
+          content: 'arrow_drop_up';
+          font: normal normal normal 18px/1 'Material Symbols Rounded';
         }
       }
     }
@@ -122,7 +126,6 @@
       line-height: 0;
       font-size: 19px;
       position: absolute;
-      font-family: 'Icons';
       color: var(--crp-menu-summary-icon-color);
     }
   }

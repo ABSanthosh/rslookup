@@ -273,7 +273,7 @@
 
       & > summary {
         cursor: pointer;
-        margin-bottom: -8px;
+        // margin-bottom: -8px;
         list-style: none;
 
         &::marker,
