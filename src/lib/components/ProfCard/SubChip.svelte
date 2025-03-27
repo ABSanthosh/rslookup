@@ -19,7 +19,7 @@
     gap: 5px;
     display: grid;
     font-size: 14px;
-    padding: 4px 10px;
+    padding: 3px 12px;
     text-align: start;
     align-items: center;
     border-radius: 25px;

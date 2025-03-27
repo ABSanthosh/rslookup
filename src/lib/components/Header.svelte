@@ -323,13 +323,13 @@
 
         &:has(input:focus),
         &:has(input:active) {
-          top: 18px;
+          top: 50%;
           left: 50%;
           z-index: 2;
-          position: fixed;
+          position: absolute;
           max-width: none;
-          transform: translateX(-50%);
-          @include box(calc(100vw - 30px), 30px);
+          transform: translate(-50%, -50%);
+          @include box(calc(100vw - 30px), 33px);
 
           & > button {
             display: flex;
