@@ -1,65 +1,70 @@
 <script lang="ts">
   let {
-    rows,
-    pageSize,
     disabled,
-    trimmedRows = $bindable()
+    itemsLength = $bindable(),
+    paginationConfig = $bindable()
   }: {
-    rows: any[];
-    pageSize: number;
     disabled: boolean;
-    trimmedRows: any[];
+    itemsLength: number;
+    paginationConfig: { pageSize: number; start: number; end: number };
   } = $props();
 
   let currentPage = $state(1); // The current page number, initialized to 1.
-  let totalRows = $state(rows.length); // The total number of rows/items, derived from the length of the rows array.
-  let totalPages = Math.ceil(totalRows / pageSize); // The total number of pages, calculated based on totalRows and pageSize.
-  let start = $derived((currentPage - 1) * pageSize); // The starting index of the items for the current page, derived from currentPage and pageSize.
-  let end = $derived(currentPage === totalPages - 1 ? totalRows - 1 : start + pageSize - 1); // The ending index of the items for the current page, derived from currentPage, totalPages, totalRows, and pageSize.
+  let totalPages = $derived(Math.ceil(itemsLength / paginationConfig.pageSize)); // The total number of pages, calculated based on totalRows and pageSize.
 
   $effect(() => {
-    // Every time start or end changes, update trimmedRows to reflect the items for the current page.
-    trimmedRows = rows.slice(start, end + 1);
+    // Whenever the pagination is disabled, we reset current page to 1
+    // to reflect that there is a search and pagination config is reset
+    if (disabled) {
+      currentPage = 1;
+    }
+  });
+
+  $effect(() => {
+    // Whenever the current page changes, we update the start and end values
+    paginationConfig.start = (currentPage - 1) * paginationConfig.pageSize;
+    paginationConfig.end = currentPage * paginationConfig.pageSize;
   });
 </script>
 
-{#if totalRows && totalRows > pageSize}
-  <div class="Pagination">
-    <button
-      class="CrispButton"
-      data-type="ghost"
-      onclick={() => {
-        currentPage -= 1;
-        document.body.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }}
-      disabled={(currentPage === 1 ? true : false) || disabled}
-      aria-label="left arrow icon"
-      aria-describedby="prev"
-      data-icon="arrow_back"
-    ></button>
-    Page
-    <input class="CrispInput" bind:value={currentPage} {disabled} max={totalPages - 1} />
-    of {totalPages - 1}
-    <button
-      class="CrispButton"
-      data-type="ghost"
-      onclick={() => {
-        currentPage += 1;
-        document.body.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }}
-      disabled={(currentPage === totalPages - 1 ? true : false) || disabled}
-      aria-label="right arrow icon"
-      aria-describedby="next"
-      data-icon="arrow_forward"
-    ></button>
-  </div>
-{/if}
+<div class="Pagination">
+  <button
+    class="CrispButton"
+    data-type="ghost"
+    onclick={() => {
+      currentPage -= 1;
+
+      document.body.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }}
+    disabled={currentPage === 1 || disabled}
+    aria-label="left arrow icon"
+    aria-describedby="prev"
+    data-icon="arrow_back"
+  ></button>
+  Page
+  <input class="CrispInput" bind:value={currentPage} {disabled} max={totalPages - 1} />
+  of {totalPages - 1}
+
+  <button
+    class="CrispButton"
+    data-type="ghost"
+    onclick={() => {
+      currentPage += 1;
+
+      document.body.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }}
+    disabled={currentPage === totalPages - 1 || disabled}
+    aria-label="right arrow icon"
+    aria-describedby="next"
+    data-icon="arrow_forward"
+  ></button>
+</div>
 
 <style lang="scss">
   .Pagination {

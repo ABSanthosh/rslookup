@@ -1,11 +1,15 @@
 ## ToDo
 
+### High Priority
+- [ ] search bar in the directory page are not working sometimes till refreshed
+  - [ ] Try to use route grouping to make home header and directory header separate
+
+### Medium Priority
 - [x] Migrate to sveltekit 2
 - [x] Change how theme colors are handled
 - [x] Theme switcher works in dev but not in prod. It returns to the default theme after a reload
 - [ ] Fetch only the first n items from google sheets
 - [x] update toast store
-- [ ] Try to use route grouping to make home header and directory header separate
 - [ ] Error handling for all fetch requests to handle empty fields
 - [ ] add user select none to hero image
 - [x] abstract the user-name placeholder function
@@ -14,6 +18,9 @@
 - [ ] make icons efficient.
 - [x] Abstract the clipboard to a directive
 - [x] Animate pane and crisp menu
+- [ ] test all display sizes 
+    - Phone: [360px, 384px, 375px, 355px, 320px]
+    - Large display: [393px, 390px, 412px, 414px, 432px, 430px, 385px, 428px, 424px, 413px, 485px]
 
 - [x] General
   - [x] prevent zoom on double tap
