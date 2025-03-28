@@ -4,6 +4,9 @@
   import { flip } from 'svelte/animate';
   import type { PageData } from './$types';
   import { flipAnimate } from '$utils/animation';
+  import { onMount } from 'svelte';
+  import { query } from '$stores/QueryStore';
+  import { search } from 'fast-fuzzy';
 
   let {
     data
@@ -11,9 +14,11 @@
     data: PageData;
   } = $props();
 
-  let labs = $derived(data.labs);
-  let pageSize = $state(20);
   let isFilterOpen = $state(false);
+
+  const labs = data.labs; // won't change. This is the original data
+  let pageSize = $state(20);
+
   let filters = $state(
     Object.keys(AcademicBlocks).map((item) => {
       return {
@@ -23,16 +28,29 @@
     })
   );
 
-  let filteredLabs = $derived(
-    labs.filter((lab) =>
-      filters
-        .filter((item) => item.checked)
-        .map((item) => item.name)
-        .includes(`${lab.block} Block`)
-    )
-  );
+  let labSearch = $state(labs);
+  let finalLabList = $derived.by(() => {
+    const filteredBlocks = filters.filter((item) => item.checked).map((item) => item.name);
+    return labSearch.filter((lab) => filteredBlocks.includes(`${lab.block} Block`));
+  });
 
-  let searchResult = $derived(filteredLabs.slice(0, pageSize));
+  onMount(() => {
+    query.subscribe((q: string) => {
+      if (q === '') {
+        labSearch = labs;
+        return;
+      }
+
+      labSearch = search(q, labs, {
+        keySelector: (lab) => lab.name
+      });
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  });
 </script>
 
 <svelte:head>
@@ -91,12 +109,12 @@
 </div>
 
 <ul class="Lab__content">
-  {#if searchResult.length === 0}
+  {#if finalLabList.length === 0}
     <i class="CrispMessage" data-type="info" data-format="box" style="grid-column: 1 / 3 ;">
       No results found.
     </i>
   {:else}
-    {#each searchResult as lab (`${lab.name}-${lab.room}`)}
+    {#each finalLabList as lab (`${lab.name}-${lab.room}`)}
       <li
         class="Lab__content--item"
         animate:flip={{ duration: 250 }}
@@ -115,14 +133,13 @@
     class="CrispSelect"
     value={`${pageSize}`}
     onchange={(e) => {
-      // @ts-ignore
-      pageSize = Number(e.target.value);
+      pageSize = Number((e.target as HTMLSelectElement).value);
     }}
   >
     <option value="20">20</option>
     <option value="40">40</option>
     <option value="80">80</option>
-    <option value={`${labs.length}`}>All ({labs.length})</option>
+    <option value={`${labSearch.length}`}>All ({labSearch.length})</option>
   </select>
 </div>
 

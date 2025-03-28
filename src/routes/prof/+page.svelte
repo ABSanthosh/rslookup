@@ -63,8 +63,6 @@
         paginationConfig.pageSize = 20;
       }
 
-      console.log('searching for', q);
-
       profSearch = search(q, prof, {
         keySelector: (item) => item.name
       });
