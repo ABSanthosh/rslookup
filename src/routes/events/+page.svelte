@@ -1,4 +1,5 @@
 <!-- TODO: Add a toggle for expired events, sections sorted by month, year -->
+<!-- TODO: Use a datepicker to pick a range to show the events in that range -->
 <script lang="ts">
   import {
     generateDate,

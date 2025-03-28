@@ -1,4 +1,3 @@
-<!-- TODO: https://svelte.dev/docs/svelte/custom-properties for height and width -->
 <script lang="ts">
   const {
     width = 27,
