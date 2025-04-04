@@ -3,8 +3,8 @@
 ### High Priority
 - [x] search bar in the directory page are not working sometimes till refreshed  
   ~~- [ ] Try to use route grouping to make home header and directory header separate~~
-- [ ] Dropdown in gpa calculator page is causing overflow in mobile
-- [ ] image in attendance calculator page is causing overflow in mobile
+- [x] Dropdown in gpa calculator page is causing overflow in mobile
+- [x] image in attendance calculator page is causing overflow in mobile
 - [x] Prof page is overflowing in mobile
 - [x] make icons efficient.
 
@@ -15,7 +15,7 @@
 - [ ] Fetch only the first n items from google sheets
 - [x] update toast store
 - [ ] Error handling for all fetch requests to handle empty fields
-- [ ] add user select none to hero image
+- [x] add user select none to hero image
 - [x] abstract the user-name placeholder function
 - [x] abstract view-transition to a directive
 - [ ] Tests for calender functions

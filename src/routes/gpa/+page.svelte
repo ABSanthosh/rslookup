@@ -325,8 +325,8 @@
         <tbody>
           {#each Object.keys(SYMBOLS) as grade}
             <tr>
-              <td>{grade}</td>
-              <td>{SYMBOLS[grade]}</td>
+              <td style="white-space: unset">{grade}</td>
+              <td style="white-space: unset">{SYMBOLS[grade]}</td>
             </tr>
           {/each}
         </tbody>
@@ -546,7 +546,7 @@
 
       & > p {
         font-size: 18px;
-        text-align: justify;
+        // text-align: justify;
         line-height: 1.6;
       }
 

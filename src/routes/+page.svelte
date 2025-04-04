@@ -108,6 +108,7 @@
       & > img {
         margin-top: 100px;
         max-width: 410px;
+        user-select: none;
         max-height: 440px;
         aspect-ratio: 0.93;
         @include box(auto, 55%); // Put back to 55% after 26th may 2024

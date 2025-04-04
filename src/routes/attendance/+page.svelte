@@ -116,7 +116,7 @@
   <figure class="CrispFigure" style="margin: 0 auto;">
     <img
       src={AttendanceCreditHours}
-      style=" height: 150px; width: auto;"
+      style="width: 100%; max-width: 370px;"
       alt="Attendance Calculator"
       loading="lazy"
     />
@@ -414,7 +414,7 @@
 
       & > p {
         font-size: 18px;
-        text-align: justify;
+        // text-align: justify;
         line-height: 1.6;
       }
     }
