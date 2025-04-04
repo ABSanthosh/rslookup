@@ -116,14 +116,16 @@
   box-shadow: var(--crp-button-box-shadow);
   background-color: var(--crp-button-background-color);
 
-  &:focus:not(:disabled),
-  &:hover:not(:disabled) {
-    color: var(--crp-button-color-hover);
-    border: var(--crp-button-border-hover);
-    background-color: var(--crp-button-background-color-hover);
-
-    &::before {
+  @media (any-hover: hover) {
+    &:focus:not(:disabled),
+    &:hover:not(:disabled) {
       color: var(--crp-button-color-hover);
+      border: var(--crp-button-border-hover);
+      background-color: var(--crp-button-background-color-hover);
+
+      &::before {
+        color: var(--crp-button-color-hover);
+      }
     }
   }
 

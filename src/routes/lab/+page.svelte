@@ -1,12 +1,10 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+  import { search } from 'fast-fuzzy';
+  import type { PageData } from './$types';
+  import { query } from '$stores/QueryStore';
   import { AcademicBlocks } from '$data/labs';
   import clickOutside from '$utils/onClickOutside';
-  import { flip } from 'svelte/animate';
-  import type { PageData } from './$types';
-  import { flipAnimate } from '$utils/animation';
-  import { onMount } from 'svelte';
-  import { query } from '$stores/QueryStore';
-  import { search } from 'fast-fuzzy';
 
   let {
     data
@@ -29,9 +27,30 @@
   );
 
   let labSearch = $state(labs);
+
+  // Precompute the lookup index to avoid filtering over and over
+  let labIndex = $derived.by(() => {
+    const index = new Map();
+    for (const lab of labSearch) {
+      const blockKey = `${lab.block} Block`;
+      if (!index.has(blockKey)) {
+        index.set(blockKey, []);
+      }
+      index.get(blockKey).push(lab);
+    }
+    return index;
+  });
+
+  // Efficient filtering using a Set for O(1) lookups
   let finalLabList = $derived.by(() => {
-    const filteredBlocks = filters.filter((item) => item.checked).map((item) => item.name);
-    return labSearch.filter((lab) => filteredBlocks.includes(`${lab.block} Block`));
+    const activeBlocks = new Set(filters.filter((item) => item.checked).map((item) => item.name));
+    let result = [];
+    for (const block of activeBlocks) {
+      if (labIndex.has(block)) {
+        result.push(...labIndex.get(block)); // Fast retrieval
+      }
+    }
+    return result;
   });
 
   onMount(() => {
@@ -94,11 +113,8 @@
             type="checkbox"
             class="CrispInput"
             id={filterItem.name}
-            checked={filterItem.checked}
+            bind:checked={filterItem.checked}
             disabled={filterItem.checked && filters.filter((item) => item.checked).length === 1}
-            onchange={() => {
-              filterItem.checked = !filterItem.checked;
-            }}
           />
 
           {filterItem.name}
@@ -115,11 +131,7 @@
     </i>
   {:else}
     {#each finalLabList as lab (`${lab.name}-${lab.room}`)}
-      <li
-        class="Lab__content--item"
-        animate:flip={{ duration: 250 }}
-        use:flipAnimate={{ key: `${lab.name}-${lab.room}` }}
-      >
+      <li class="Lab__content--item">
         <h4>{lab.name}</h4>
         <hr />
         <span>{lab.room}</span>

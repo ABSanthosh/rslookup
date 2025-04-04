@@ -41,7 +41,7 @@
           content: 'arrow_drop_down';
           font: normal normal normal 18px/1 'Material Symbols Rounded';
         }
-        
+
         &::before {
           bottom: calc(50% + 3px);
           transform: translateY(50%);
@@ -99,6 +99,9 @@
     border-radius: var(--crp-menu-summary-border-radius);
 
     // Colors
+    transition:
+      all 0.1s ease-in-out,
+      border-color 0.3s ease;
     color: var(--crp-menu-color);
     border: var(--crp-menu-border);
     box-shadow: var(--crp-menu-box-shadow);
@@ -113,11 +116,14 @@
       list-style-type: none;
     }
 
-    &:hover:not(:disabled),
-    &:focus:not(:disabled) {
-      color: var(--crp-menu-color-hover);
-      border: var(--crp-menu-border-hover);
-      background-color: var(--crp-menu-background-color-hover);
+    @media (any-hover: hover) {
+      &:hover:not(:disabled),
+      &:focus:not(:disabled) {
+        outline: none;
+        color: var(--crp-menu-color-hover);
+        border: var(--crp-menu-border-hover);
+        background-color: var(--crp-menu-background-color-hover);
+      }
     }
 
     &::after,

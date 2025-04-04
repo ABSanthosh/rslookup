@@ -102,8 +102,8 @@
 
       &--content {
         gap: 8px;
-        @include respondAt(421px) {
-          width: 80vw;
+        @include respondAt(444px) {
+          width: calc(100vw - 40px);
         }
       }
 

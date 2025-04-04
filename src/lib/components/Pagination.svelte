@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { selectOnFocus } from '$utils/selectOnFocus';
+
   let {
     disabled,
     itemsLength = $bindable(),
@@ -45,7 +47,25 @@
     data-icon="arrow_back"
   ></button>
   Page
-  <input class="CrispInput" bind:value={currentPage} {disabled} max={totalPages - 1} />
+  <input
+    min="1"
+    {disabled}
+    type="number"
+    use:selectOnFocus
+    class="CrispInput"
+    max={totalPages - 1}
+    onblur={(e: Event) => {
+      if ((e.target as HTMLInputElement).valueAsNumber > totalPages - 1) {
+        currentPage = totalPages - 1;
+      } else if (
+        (e.target as HTMLInputElement).valueAsNumber < 1 ||
+        isNaN((e.target as HTMLInputElement).valueAsNumber)
+      ) {
+        currentPage = 1;
+      }
+    }}
+    bind:value={currentPage}
+  />
   of {totalPages - 1}
 
   <button

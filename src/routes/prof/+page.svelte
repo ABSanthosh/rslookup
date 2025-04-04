@@ -7,6 +7,8 @@
   import { query } from '$stores/QueryStore';
   import { search } from 'fast-fuzzy';
   import Pagination from '$components/Pagination.svelte';
+  import { flip } from 'svelte/animate';
+  import { blur } from 'svelte/transition';
 
   let { data }: { data: PageData } = $props();
 
@@ -38,17 +40,24 @@
   // 3. Paginate the search result
 
   let profSearch = $state(prof); // We alter this data according to search query
-  let finalProfList = $derived.by(() => {
-    const filteredSchools = filters.filter((item) => item.checked).map((item) => item.name);
-    const unPaginatedProfList = profSearch.filter((item) => {
-      if (!Object.keys(schools).includes(item.school)) {
-        return filteredSchools.includes('Miscellaneous');
-      }
-      return filteredSchools.includes(item.school);
-    });
 
-    return unPaginatedProfList.slice(paginationConfig.start, paginationConfig.end);
+  // We need to filter the prof data by school
+  let filteredProfList = $derived.by(() => {
+    const schoolKeys = new Set(Object.keys(schools));
+    const filteredSchools = new Set(filters.filter((f) => f.checked).map((f) => f.name));
+
+    return profSearch.filter((item) => {
+      if (!schoolKeys.has(item.school)) {
+        return filteredSchools.has('Miscellaneous');
+      }
+      return filteredSchools.has(item.school);
+    });
   });
+
+  // Do pagination on separate derived store so the reactivity is granular
+  let finalProfList = $derived.by(() =>
+    filteredProfList.slice(paginationConfig.start, paginationConfig.end)
+  );
 
   onMount(() => {
     query.subscribe((q: string) => {
@@ -162,8 +171,8 @@
   </div>
 </details>
 
-{#key finalProfList}
-  <div class="Prof__content">
+{#key paginationConfig.start}
+  <div class="Prof__content" in:blur={{ amount: 3 }}>
     {#if finalProfList.length === 0}
       <i
         class="CrispMessage"
@@ -175,7 +184,9 @@
       </i>
     {:else}
       {#each finalProfList as profItem (`${profItem.name}-${profItem.role}`)}
-        <ProfCard {...profItem} />
+        <span animate:flip={{ duration: 500 }}>
+          <ProfCard {...profItem} />
+        </span>
       {/each}
     {/if}
   </div>
