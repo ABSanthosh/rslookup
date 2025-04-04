@@ -18,11 +18,11 @@
   const noThemeRoutes = ['/convocation-2024'];
 
   let localQueryValue = $state('');
-  let isHomeRoute = $state(
+  let isHomeRoute = $derived(
     ['/', ...HOME_ROUTES.map((r) => `/${r.route}`)].includes(page.url.pathname)
   );
-  let path = $state(page.url.pathname.slice(1).split('/')[0]);
-  let currentRoute = $state(ROUTES.find((r) => r.route.includes(path === '' ? 'home' : path)));
+  let path = $derived(page.url.pathname.slice(1).split('/')[0]);
+  let currentRoute = $derived(ROUTES.find((r) => r.route.includes(path === '' ? 'home' : path)));
   let isNavOpen = $state(false);
   let isSearching = $state(false);
 </script>
@@ -45,11 +45,11 @@
         {/each}
       </ul>
       <details
+        data-no-marker
         use:clickOutside
         bind:open={isNavOpen}
-        data-no-marker
-        class="CrispMenu Header__tabs Header__navList--mobile"
         onOutClick={() => (isNavOpen = false)}
+        class="CrispMenu Header__tabs Header__navList--mobile"
       >
         <summary>
           <p></p>
@@ -126,7 +126,6 @@
 
             <a
               href="/{route}"
-              onclick={() => (currentRoute = ROUTES[i])}
               data-icon={ROUTES[i].icon}
               class:active={page.url.pathname === `/${route}`}
             >
@@ -257,6 +256,7 @@
       max-width: 260px;
       position: relative;
       @include box(100%, 30px);
+      // background-color: aqua;
 
       & > button {
         top: 50%;
@@ -345,6 +345,7 @@
 
         @include respondAt(700px) {
           padding: 0;
+          transition: width 0.1s ease-in-out;
           color: transparent;
           @include box(30px, 30px);
           &:not(:focus)::placeholder {
