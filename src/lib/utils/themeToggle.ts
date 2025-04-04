@@ -55,5 +55,3 @@ export const themeToggleTransition: Action<HTMLElement> = (node) => {
   };
 };
 
-// 1040-NR
-// 8843
