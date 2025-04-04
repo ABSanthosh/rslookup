@@ -43,12 +43,12 @@
     {/if}
   </div>
   <div class="Row--j-end gap-10 w-100">
-    {#if data.whatsapp !== ''}
+    {#if data.whatsapp !== '' && data.phone !== ''}
       <a
         target="_blank"
-        href={data.whatsapp}
         rel="noopener noreferrer"
         class="CrispButton AmenityCard__bottom--whatsapp"
+        href={`https://wa.me/${data.phone.replace(/\D/g, '')}`}
       >
         <img src={WHATSAPP} alt="WhatsApp" />
         WhatsApp

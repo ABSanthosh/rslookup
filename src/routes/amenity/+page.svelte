@@ -15,53 +15,71 @@
   import AcadCard from './cards/AcadCard.svelte';
   import AdminCard from './cards/AdminCard.svelte';
   import EssentialsCard from './cards/EssentialsCard.svelte';
+  import { flip } from 'svelte/animate';
 
   let { data }: { data: PageData } = $props();
 
   let isFilterOpen = $state(false);
-  let filters: {
-    name: string;
-    checked: boolean;
-    icon: string;
-    data: IHostel[] | IAcademics[] | IAdmin[] | IEssentials[] | IFood[] | ISport[];
-  }[] = $state([
+
+  const content = [
     {
       name: 'Hostel',
-      checked: true,
-      icon: "hotel",
+      icon: 'hotel',
       data: data.Hostel
     },
     {
       name: 'Academics',
-      checked: true,
-      icon: "school",
+      icon: 'school',
       data: data.Academics
     },
     {
       name: 'Admin',
-      checked: true,
-      icon: "shield_person",
+      icon: 'shield_person',
       data: data.Admin
     },
     {
       name: 'Essentials',
-      checked: true,
-      icon: "local_mall",
+      icon: 'local_mall',
       data: data.Essentials
     },
     {
       name: 'Food',
-      checked: true,
-      icon: "restaurant",
+      icon: 'restaurant',
       data: data.Food
     },
     {
       name: 'Sports',
-      checked: true,
-      icon: "pool",
+      icon: 'pool',
       data: data.Sports
     }
-  ]);
+  ] as const;
+
+  let filters: {
+    name: string;
+    icon: string;
+    checked: boolean;
+  }[] = $state(
+    content.map((item) => ({
+      name: item.name,
+      checked: true,
+      icon: item.icon
+    }))
+  );
+
+  let finalFilteredList: {
+    name: string;
+    icon: string;
+    data: IHostel[] | IAcademics[] | IAdmin[] | IEssentials[] | IFood[] | ISport[];
+  }[] = $derived.by(() => {
+    const checkedFilters = filters.filter((item) => item.checked);
+    let list = [];
+    for (const item of content) {
+      if (checkedFilters.find((filter) => filter.name === item.name)) {
+        list.push(item);
+      }
+    }
+    return list;
+  });
 
   $effect(() => {
     filters.map((item) => item.checked),
@@ -71,9 +89,8 @@
           behavior: 'smooth'
         });
   });
-  afterNavigate(() => {
-    isFilterOpen = false;
-  });
+
+  afterNavigate(() => (isFilterOpen = false));
 </script>
 
 <svelte:head>
@@ -90,32 +107,33 @@
   <AmenityFilter bind:filters bind:isFilterOpen />
 
   <div class="Amenity__content w-100">
-    {#each filters as item (item.name)}
-      {#if item.checked}
-        <section>
-          <h2>
-            {item.name}
-            <hr />
-          </h2>
-          <div class="Amenity__cards">
-            {#each item.data as cardData}
-              {#if item.name === 'Hostel'}
-                <HostelCard {...cardData as IHostel} />
-              {:else if item.name === 'Academics'}
-                <AcadCard {...cardData as IAcademics} />
-              {:else if item.name === 'Admin'}
-                <AdminCard {...cardData as IAdmin} />
-              {:else if item.name === 'Essentials'}
-                <EssentialsCard {...cardData as IEssentials} />
-              {:else if item.name === 'Food'}
-                <EssentialsCard {...cardData as IEssentials} />
-              {:else if item.name === 'Sports'}
-                <AcadCard {...cardData as ISport} />
-              {/if}
-            {/each}
-          </div>
-        </section>
-      {/if}
+    {#each finalFilteredList as item (item.name)}
+      <section animate:flip={{ duration: 500 }} id={item.name}>
+        <h2>
+          {item.name}
+          <hr />
+        </h2>
+        <div class="Amenity__cards">
+          {#each item.data as cardData}
+            {#if item.name === 'Hostel'}
+              <HostelCard {...cardData as IHostel} />
+            {:else if item.name === 'Academics'}
+              <AcadCard {...cardData as IAcademics} />
+            {:else if item.name === 'Admin'}
+              <AdminCard {...cardData as IAdmin} />
+            {:else if item.name === 'Essentials'}
+              <EssentialsCard {...cardData as IEssentials} />
+            {:else if item.name === 'Food'}
+              <EssentialsCard {...cardData as IEssentials} />
+            {:else if item.name === 'Sports'}
+              <AcadCard {...cardData as ISport} />
+            {/if}
+          {/each}
+        </div>
+      </section>
+      <!-- {#if item.checked}
+        
+      {/if} -->
     {/each}
   </div>
 </main>

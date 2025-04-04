@@ -1,12 +1,12 @@
 ## ToDo
 
 ### High Priority
-- [ ] Pagination not working in labs(that's why animation was slow)
-- [ ] Amenities whatsapp button doesnt work
-- [ ] amenities flip animation
-- [ ] events page revamp
-- [ ] acadamic helpdesk revamp
-- [ ] update about page
+- [x] Pagination not working in labs(that's why animation was slow)
+- [x] Amenities whatsapp button doesnt work
+- [x] amenities flip animation
+- [x] events page revamp
+- [ ] academic helpdesk revamp
+- [x] update about page
 - [x] search bar in the directory page are not working sometimes till refreshed  
   ~~- [ ] Try to use route grouping to make home header and directory header separate~~
 - [x] Dropdown in gpa calculator page is causing overflow in mobile

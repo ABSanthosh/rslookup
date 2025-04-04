@@ -27,6 +27,11 @@
       name: 'Figma',
       link: 'https://www.figma.com/file/y8tgFPWUy9p8ZVuT1eR5JN/rslookup?type=design&node-id=278%3A120&mode=design&t=ElCuS1IFfRk5SYYK-1',
       description: 'Design'
+    },
+    {
+      name: 'GoatCounter',
+      link: 'https://rslookup.goatcounter.com/',
+      description: 'Analytics'
     }
   ] as const;
 </script>
@@ -185,8 +190,8 @@
 
       &--sc {
         width: 100%;
-        max-height: 220px;
         max-width: 220px;
+        max-height: 220px;
         border-radius: 50%;
         aspect-ratio: 1 / 1;
       }
@@ -196,14 +201,14 @@
       width: 100%;
 
       &--title {
-        font-size: 36px;
         width: 100%;
+        font-size: 36px;
         font-weight: 700;
       }
 
       & > p {
-        font-size: 18px;
         width: 100%;
+        font-size: 18px;
         color: var(--subFg-2);
       }
     }
@@ -220,13 +225,11 @@
 
       & > p {
         font-size: 16px;
-        text-align: justify;
         color: var(--subFg-2);
       }
 
       & > ul {
         font-size: 16px;
-        text-align: justify;
         color: var(--subFg-2);
         padding-inline-start: 26px;
 

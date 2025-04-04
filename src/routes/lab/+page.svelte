@@ -5,6 +5,7 @@
   import { query } from '$stores/QueryStore';
   import { AcademicBlocks } from '$data/labs';
   import clickOutside from '$utils/onClickOutside';
+  import { flip } from 'svelte/animate';
 
   let {
     data
@@ -42,7 +43,7 @@
   });
 
   // Efficient filtering using a Set for O(1) lookups
-  let finalLabList = $derived.by(() => {
+  let filteredLabList = $derived.by(() => {
     const activeBlocks = new Set(filters.filter((item) => item.checked).map((item) => item.name));
     let result = [];
     for (const block of activeBlocks) {
@@ -52,6 +53,8 @@
     }
     return result;
   });
+
+  let finalLabList = $derived(filteredLabList.slice(0, pageSize));
 
   onMount(() => {
     query.subscribe((q: string) => {
@@ -131,7 +134,7 @@
     </i>
   {:else}
     {#each finalLabList as lab (`${lab.name}-${lab.room}`)}
-      <li class="Lab__content--item">
+      <li class="Lab__content--item" animate:flip={{ duration: 500 }}>
         <h4>{lab.name}</h4>
         <hr />
         <span>{lab.room}</span>
