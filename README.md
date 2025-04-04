@@ -5,7 +5,8 @@
 - [x] Amenities whatsapp button doesnt work
 - [x] amenities flip animation
 - [x] events page revamp
-- [ ] academic helpdesk revamp
+- [x] academic helpdesk revamp
+- [ ] Error handling for all fetch requests to handle empty fields
 - [x] update about page
 - [x] search bar in the directory page are not working sometimes till refreshed  
   ~~- [ ] Try to use route grouping to make home header and directory header separate~~
@@ -20,7 +21,6 @@
 - [x] Theme switcher works in dev but not in prod. It returns to the default theme after a reload
 - [ ] Fetch only the first n items from google sheets
 - [x] update toast store
-- [ ] Error handling for all fetch requests to handle empty fields
 - [x] add user select none to hero image
 - [x] abstract the user-name placeholder function
 - [x] abstract view-transition to a directive

@@ -218,7 +218,7 @@
 
     &__header {
       h3 {
-        line-height: 1;
+        line-height: calc(100% + 3px);
         font-size: 20px;
         max-width: 100%;
         overflow: hidden;
@@ -227,7 +227,7 @@
       }
 
       span {
-        line-height: 1;
+        line-height: calc(100% + 3px);
         font-size: 16px;
         font-weight: 400;
         color: var(--subFg-1);
@@ -284,7 +284,7 @@
     }
 
     &__contact {
-      gap: 5px;
+      gap: 10px;
       min-width: 0;
       font-size: 14px;
       color: var(--subFg-1);

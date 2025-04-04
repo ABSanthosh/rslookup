@@ -1,4 +1,3 @@
-<!-- TODO: Fix the image aspect ratio for logos -->
 <script lang="ts">
   import type { PageData } from './$types';
   import icon_pdf from '$images/icon_pdf.png';
@@ -50,7 +49,7 @@
           <a href={document.link} target="_blank" rel="noopener noreferrer">
             {#if document.type === 'pdf'}
               <img src={icon_pdf} alt={document.type} />
-            {:else if document.type === 'sheet'}
+            {:else if document.type === 'sheet' || document.type === 'excel'}
               <img src={icon_sheet} alt={document.type} />
             {:else if document.type === 'doc'}
               <img src={icon_doc} alt={document.type} />
@@ -79,13 +78,14 @@
 
       @include respondAt(680px) {
         padding: 0;
-        margin: 40px 0 30px 0;
+        margin: 40px 0 0px 0;
         @include make-flex($just: flex-start, $align: flex-start);
       }
 
       & > h2 {
         font-size: 45px;
         font-weight: 900;
+        line-height: normal;
 
         @include respondAt(500px) {
           font-size: 32px;
@@ -108,7 +108,7 @@
       width: 100%;
       display: grid;
       list-style: none;
-      margin-top: 25px;
+      margin-top: 5px;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 
       &--item {
@@ -134,7 +134,7 @@
           }
 
           & > img {
-            width: 60px;
+            width: 50px;
             aspect-ratio: 1/1;
           }
 

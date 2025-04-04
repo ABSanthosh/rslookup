@@ -3,6 +3,7 @@
   import SchoolChip from '$components/ProfCard/SchoolChip.svelte';
   import SubChip from '$components/ProfCard/SubChip.svelte';
   import { profColors, schools } from '$data/prof';
+  import type { IAcadAdvisors } from '$types/Acad.types';
   import type { PageData } from './$types';
 
   let {
@@ -49,7 +50,7 @@
 
 <section class="Acad__section">
   <h2>
-    Office of the Dean of Academics
+    <span> Office of the Dean of Academics </span>
     <hr />
   </h2>
   <p>
@@ -65,7 +66,7 @@
         name={item.name}
         img={item.image}
         mail={item.email}
-        block={""}
+        block={''}
         role={item.position}
         website={item.website}
         room={item.room}
@@ -78,81 +79,92 @@
   </div>
 </section>
 
-<section class="Acad__section" style="padding-top: 40px;">
+{#snippet AdvisorCard(item: IAcadAdvisors)}
+  <div
+    class="AcadCard gap-20"
+    style="
+    --background-color: {profColors[schools[item.school]?.color].secondary ||
+      profColors.gray.secondary};
+    --color: {profColors[schools[item.school]?.color].primary || profColors.gray.primary};
+    "
+  >
+    <div class="AcadCard__top Row--start gap-15">
+      <div class="Col--a-start w-100 gap-5">
+        <h3>{item.name}</h3>
+        <div class="AcadCard__separator">
+          <span class="AcadCard__separator--icon" data-icon="location_on"> Room </span>
+          <hr />
+          <span class="AcadCard__separator--content">
+            {item.room}
+          </span>
+        </div>
+      </div>
+    </div>
+    {#if item.school !== '' && item.school !== '-' && item.department !== '' && item.department !== '-'}
+      <div class="AcadCard__middle">
+        {#if item.school !== '' && item.school !== '-'}
+          <SchoolChip
+            label={item.school}
+            color={profColors[schools[item.school]?.color] || profColors.gray}
+          />
+        {/if}
+        {#if item.department !== '' && item.department !== '-'}
+          <SubChip
+            label={item.department}
+            color={profColors[schools[item.school]?.color] || profColors.gray}
+          />
+        {/if}
+      </div>
+    {/if}
+  </div>
+{/snippet}
+
+<section class="Acad__section">
   <h2>
     UG Advisors
     <hr />
   </h2>
   <div class="Acad__content">
     {#each data.advisors as item}
-      <div class="AcadCard gap-20">
-        <div class="AcadCard__top Row--start gap-15">
-          <div class="Col--a-start w-100 gap-5">
-            <h3>{item.name}</h3>
-            <div class="AcadCard__separator">
-              <span class="AcadCard__separator--icon" data-icon="location_on">
-                Room
-              </span>
-              <hr />
-              <span class="AcadCard__separator--content">
-                {item.room}
-              </span>
-            </div>
-          </div>
-        </div>
-        {#if item.school !== '' && item.school !== '-' && item.department !== '' && item.department !== '-'}
-          <div class="AcadCard__middle">
-            {#if item.school !== '' && item.school !== '-'}
-              <SchoolChip
-                label={item.school}
-                color={profColors[schools[item.school]?.color] || profColors.gray}
-              />
-            {/if}
-            {#if item.department !== '' && item.department !== '-'}
-              <SubChip
-                label={item.department}
-                color={profColors[schools[item.school]?.color] || profColors.gray}
-              />
-            {/if}
-          </div>
-        {/if}
-      </div>
+      {@render AdvisorCard(item)}
     {/each}
   </div>
 </section>
 
-<section class="Acad__section" style="padding-top: 40px;align-items: flex-start;overflow-x: auto">
+<section class="Acad__section">
   <h2>
     Academic Affairs Committee
     <hr />
   </h2>
-  <table class="CrispTable">
-    <thead>
-      <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Position</th>
-        <th scope="col">Email</th>
-        <th scope="col">Major</th>
-      </tr>
-    </thead>
-    <tbody>
-      {#each data.committee as item}
+  <div style="align-items: flex-start; overflow-x: auto; width: 100%; padding-bottom: 10px">
+    <table class="CrispTable">
+      <thead>
         <tr>
-          <td data-label="Name">{item.name}</td>
-          <td data-label="Position">{item.position}</td>
-          <td data-label="Name">{item.email}</td>
-          <td data-label="Major">{item.major}</td>
+          <th scope="col">Name</th>
+          <th scope="col">Position</th>
+          <th scope="col">Email</th>
+          <th scope="col">Major</th>
         </tr>
-      {/each}
-    </tbody>
-    <tfoot>
-      <tr>
-        <td colspan="4">
-          Showing {data.committee.length} item(s)
-        </td>
-      </tr>
-    </tfoot>
-  </table>
+      </thead>
+      <tbody>
+        {#each data.committee as item}
+          <tr>
+            <td data-label="Name">{item.name}</td>
+            <td data-label="Position">{item.position}</td>
+            <td data-label="Name">{item.email}</td>
+            <td data-label="Major">{item.major}</td>
+          </tr>
+        {/each}
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4">
+            Showing {data.committee.length} item(s)
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
 </section>
 
 <style lang="scss">
@@ -160,8 +172,8 @@
     @include box();
     padding: 15px;
     border-radius: 20px;
-    border: 1px solid var(--t-crp-border);
-    background: var(--prof-card-background-color);
+    border: 1px solid var(--color);
+    background: var(--background-color);
 
     @include make-flex();
     align-items: stretch;
@@ -242,9 +254,14 @@
       margin: 40px 0 30px 0;
       gap: 10px;
 
+      @include respondAt(680px) {
+        margin: 40px 0 0 0;
+      }
+
       & > h2 {
         font-size: 40px;
         font-weight: 900;
+        line-height: normal;
         color: var(--foreground);
       }
 
@@ -263,25 +280,31 @@
 
     &__section {
       @include box();
-      padding-top: 10px;
+      // padding-top: 10px;
       gap: 20px;
       @include make-flex($just: flex-start);
 
       @include respondAt(680px) {
         padding: 0;
-        margin: 20px 0 20px 0;
+        margin: 10px 0 0px 0;
         @include make-flex($just: flex-start, $align: flex-start);
       }
 
       & > h2 {
         gap: 10px;
+        line-height: normal;
         white-space: nowrap;
         @include box($height: auto);
         @include make-flex($dir: row, $just: flex-start);
 
+        @include respondAt(430px) {
+          white-space: normal;
+        }
+
         & > hr {
           background: var(--lab-item-separator);
-          @include box(100%, 1px);
+          height: 1px;
+          flex-grow: 1;
           border: none;
         }
       }
