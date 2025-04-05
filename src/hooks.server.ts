@@ -1,6 +1,5 @@
 export const handle = async ({ event, resolve }) => {
   const theme = event.cookies.get('theme');
-  console.log('Theme cookie:', theme);
 
   const iconsToRequest = [
     ...[
