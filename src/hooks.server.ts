@@ -44,9 +44,9 @@ export const handle = async ({ event, resolve }) => {
   ] as const;
 
   const googleFontIconLink = `<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0..1,-50..200&icon_names=${iconsToRequest.join(',')}&display=block"
-/>
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0..1,-50..200&icon_names=${iconsToRequest.join(',')}&display=block"
+    />
   `;
 
   if (!theme) {

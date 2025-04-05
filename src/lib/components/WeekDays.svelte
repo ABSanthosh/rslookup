@@ -1,4 +1,3 @@
-<!-- TODO: Fix the sizing -->
 <!-- Ref: https://svelte.dev/repl/1565708677134e418e256234984d90ef?version=3.12.1 -->
 <script lang="ts">
   const {

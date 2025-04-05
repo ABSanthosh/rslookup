@@ -1,12 +1,12 @@
 <!-- TODO: fix line spacing for names -->
 <script lang="ts">
   import { clipboard } from '$utils/CopyToClipboard';
-  import type { LayoutServerData } from '../$types';
+  import type { PageData } from './$types';
 
   let {
     data
   }: {
-    data: LayoutServerData;
+    data: PageData;
   } = $props();
 </script>
 

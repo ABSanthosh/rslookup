@@ -131,9 +131,6 @@
           {/each}
         </div>
       </section>
-      <!-- {#if item.checked}
-        
-      {/if} -->
     {/each}
   </div>
 </main>
@@ -144,6 +141,10 @@
       gap: 10px;
       margin: 40px 0 30px 0;
       @include make-flex($align: flex-start);
+
+      @include respondAt(630px) {
+        margin: 20px 0 0px 0;
+      }
 
       & > h2 {
         font-size: 40px;

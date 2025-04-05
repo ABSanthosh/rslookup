@@ -72,6 +72,7 @@
 
           li {
             gap: 8px;
+            line-height: 1.2;
             @include make-flex($dir: column, $align: flex-start, $just: space-between);
 
             h3 {

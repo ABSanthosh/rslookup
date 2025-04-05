@@ -44,7 +44,6 @@
   <h2>Academic Helpdesk</h2>
   <p>
     Find everything you need to get your academic queries solved!
-    <em> (UI is under development.) </em>
   </p>
 </div>
 
@@ -149,10 +148,10 @@
       <tbody>
         {#each data.committee as item}
           <tr>
-            <td data-label="Name">{item.name}</td>
-            <td data-label="Position">{item.position}</td>
-            <td data-label="Name">{item.email}</td>
-            <td data-label="Major">{item.major}</td>
+            <td data-label="Name" style="white-space: wrap;">{item.name}</td>
+            <td data-label="Position" style="white-space: wrap;">{item.position}</td>
+            <td data-label="Name" style="white-space: wrap;">{item.email}</td>
+            <td data-label="Major" style="white-space: wrap;">{item.major}</td>
           </tr>
         {/each}
       </tbody>

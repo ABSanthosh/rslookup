@@ -1,5 +1,3 @@
-<!-- TODO: Fix transition between club types  -->
-<!-- TEST: Add test to check if tab changes works -->
 <script lang="ts">
   import { page } from '$app/state';
   import type { Snippet } from 'svelte';

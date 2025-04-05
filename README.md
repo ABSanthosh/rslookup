@@ -19,7 +19,7 @@
 - [x] Migrate to sveltekit 2
 - [x] Change how theme colors are handled
 - [x] Theme switcher works in dev but not in prod. It returns to the default theme after a reload
-- [ ] Fetch only the first n items from google sheets
+~~- [ ] Fetch only the first n items from google sheets~~
 - [x] update toast store
 - [x] add user select none to hero image
 - [x] abstract the user-name placeholder function
@@ -39,9 +39,9 @@
   - [x] empty search message
 - [x] Amenity page
   - [x] remove stale data message
-  - [ ] random overlap before admin section
-- [ ] Clubs
-  - [ ] random overlap in the list
+  - [x] random overlap before admin section
+- [x] Clubs
+  - [x] random overlap in the list
 - [x] Convert all theme elements to light-dark() css function
 - [x] change theme to use color-scheme css property
 
