@@ -268,12 +268,6 @@
         font-size: 20px;
         font-weight: 400;
         color: var(--subFg-1);
-
-        & > em {
-          font-size: 16px;
-          font-weight: 400;
-          color: var(--subFg-1);
-        }
       }
     }
 
