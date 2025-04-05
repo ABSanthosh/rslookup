@@ -2,7 +2,7 @@
   import { AttendanceStore } from '$stores/AttendanceStore';
   import AttendanceCreditHours from '$images/AttendanceCreditHours.png';
 
-  $: calcPercentage = (index: number) => {
+  const calcPercentage = (index: number) => {
     const { lec, tut, pra } = $AttendanceStore[index];
     // sum(lec.attended, tut.attended, pra.attended) / sum(lec.total, tut.total, pra.total)
     const percentage = (
@@ -14,7 +14,7 @@
     return percentage;
   };
 
-  $: attendAll = (index: number) => {
+  const attendAll = (index: number) => {
     // sum(lec.attended, tut.attended, pra.attended, lec.pending, tut.pending, pra.pending) /
     // sum(lec.total, tut.total, pra.total, lec.pending, tut.pending, pra.pending)
     const { lec, tut, pra } = $AttendanceStore[index];
@@ -28,7 +28,7 @@
     return percentage;
   };
 
-  $: skipAll = (index: number) => {
+  const skipAll = (index: number) => {
     // sum(lec.attended, tut.attended, pra.attended) /
     // sum(lec.total, tut.total, pra.total, lec.pending, tut.pending, pra.pending)
     const { lec, tut, pra } = $AttendanceStore[index];
@@ -42,7 +42,7 @@
     return percentage;
   };
 
-  $: attendMin = (index: number) => {
+  const attendMin = (index: number) => {
     const { lec, tut, pra } = $AttendanceStore[index];
     // =IF((0.75*SUM(C6:E6,C7:E7)-SUM(C5:E5))<0,0, 0.75*SUM(C6:E6,C7:E7)-SUM(C5:E5))
     // SUM(C6:E6,C7:E7) = sum(lec.total, tut.total, pra.total, lec.pending, tut.pending, pra.pending)
@@ -57,7 +57,7 @@
     return percentage;
   };
 
-  $: canOrCannotMakeIt = (index: number) => {
+  const canOrCannotMakeIt = (index: number) => {
     const { lec, tut, pra } = $AttendanceStore[index];
     // if sum(lec.pending, tut.pending, pra.pending) > attendMin(index) then "You can make it to 75%"
     // else "You cannot make it to 75%"
@@ -116,7 +116,7 @@
   <figure class="CrispFigure" style="margin: 0 auto;">
     <img
       src={AttendanceCreditHours}
-      style=" height: 150px; width: auto;"
+      style="width: 100%; max-width: 370px;"
       alt="Attendance Calculator"
       loading="lazy"
     />
@@ -127,7 +127,7 @@
 <div class="w-100 Row--j-end">
   <button
     class="CrispButton"
-    on:click={() => {
+    onclick={() => {
       $AttendanceStore = [
         ...$AttendanceStore,
         {
@@ -169,21 +169,20 @@
           bind:value={$AttendanceStore[index].code}
         />
         <button
-          class="CrispButton"
-          data-icon={String.fromCharCode(58829)}
           data-type="danger"
+          data-icon="close"
+          class="CrispButton"
+          aria-label="Delete Course"
           disabled={$AttendanceStore.length === 1}
-          on:click={() => {
-            $AttendanceStore = $AttendanceStore.filter((_, i) => i !== index);
-          }}
-        />
+          onclick={() => ($AttendanceStore = $AttendanceStore.filter((_, i) => i !== index))}
+        ></button>
       </div>
       <table>
         <thead>
           <tr>
-            <th />
+            <th></th>
             <th>Attended</th>
-            <th />
+            <th></th>
             <th>Total</th>
             <th>Pending</th>
           </tr>
@@ -196,9 +195,10 @@
                 type="number"
                 class="CrispInput"
                 bind:value={$AttendanceStore[index].lec.attended}
-                on:focus={({ target }) => {
-                  // @ts-ignore
-                  target.select();
+                onfocus={({ target }: Event) => {
+                  if (target instanceof HTMLInputElement) {
+                    target.select();
+                  }
                 }}
               />
             </td>
@@ -208,9 +208,10 @@
                 type="number"
                 class="CrispInput"
                 bind:value={$AttendanceStore[index].lec.total}
-                on:focus={({ target }) => {
-                  // @ts-ignore
-                  target.select();
+                onfocus={({ target }: Event) => {
+                  if (target instanceof HTMLInputElement) {
+                    target.select();
+                  }
                 }}
               />
             </td>
@@ -220,9 +221,10 @@
                 class="CrispInput"
                 style="--crp-input-min-width: 68px;"
                 bind:value={$AttendanceStore[index].lec.pending}
-                on:focus={({ target }) => {
-                  // @ts-ignore
-                  target.select();
+                onfocus={({ target }: Event) => {
+                  if (target instanceof HTMLInputElement) {
+                    target.select();
+                  }
                 }}
               />
             </td>
@@ -234,9 +236,10 @@
                 type="number"
                 class="CrispInput"
                 bind:value={$AttendanceStore[index].tut.attended}
-                on:focus={({ target }) => {
-                  // @ts-ignore
-                  target.select();
+                onfocus={({ target }: Event) => {
+                  if (target instanceof HTMLInputElement) {
+                    target.select();
+                  }
                 }}
               />
             </td>
@@ -246,9 +249,10 @@
                 type="number"
                 class="CrispInput"
                 bind:value={$AttendanceStore[index].tut.total}
-                on:focus={({ target }) => {
-                  // @ts-ignore
-                  target.select();
+                onfocus={({ target }: Event) => {
+                  if (target instanceof HTMLInputElement) {
+                    target.select();
+                  }
                 }}
               />
             </td>
@@ -258,9 +262,10 @@
                 class="CrispInput"
                 style="--crp-input-min-width: 68px;"
                 bind:value={$AttendanceStore[index].tut.pending}
-                on:focus={({ target }) => {
-                  // @ts-ignore
-                  target.select();
+                onfocus={({ target }: Event) => {
+                  if (target instanceof HTMLInputElement) {
+                    target.select();
+                  }
                 }}
               />
             </td>
@@ -272,9 +277,10 @@
                 class="CrispInput"
                 type="number"
                 bind:value={$AttendanceStore[index].pra.attended}
-                on:focus={({ target }) => {
-                  // @ts-ignore
-                  target.select();
+                onfocus={({ target }: Event) => {
+                  if (target instanceof HTMLInputElement) {
+                    target.select();
+                  }
                 }}
               />
             </td>
@@ -284,9 +290,10 @@
                 class="CrispInput"
                 type="number"
                 bind:value={$AttendanceStore[index].pra.total}
-                on:focus={({ target }) => {
-                  // @ts-ignore
-                  target.select();
+                onfocus={({ target }: Event) => {
+                  if (target instanceof HTMLInputElement) {
+                    target.select();
+                  }
                 }}
               />
             </td>
@@ -296,9 +303,10 @@
                 type="number"
                 style="--crp-input-min-width: 68px;"
                 bind:value={$AttendanceStore[index].pra.pending}
-                on:focus={({ target }) => {
-                  // @ts-ignore
-                  target.select();
+                onfocus={({ target }: Event) => {
+                  if (target instanceof HTMLInputElement) {
+                    target.select();
+                  }
                 }}
               />
             </td>
@@ -406,7 +414,7 @@
 
       & > p {
         font-size: 18px;
-        text-align: justify;
+        // text-align: justify;
         line-height: 1.6;
       }
     }

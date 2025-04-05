@@ -2,7 +2,7 @@ import Convocation2024 from '$images/Archive/Convocation-2024.png';
 
 export const ROUTES = [
   {
-    icon: 59389,
+    icon: 'person',
     route: 'prof',
     showSearch: true,
     separator: false,
@@ -13,7 +13,7 @@ export const ROUTES = [
       'Locate your professors on campus hassle-free. Say goodbye to wandering through hallways or frantically searching for room numbers.'
   },
   {
-    icon: 59962,
+    icon: 'biotech',
     name: 'Labs',
     route: 'lab',
     separator: false,
@@ -24,7 +24,7 @@ export const ROUTES = [
       'Finding your designated lab spaces with ease. No more wandering around campus, feeling lost and bewildered.'
   },
   {
-    icon: 59507,
+    icon: 'description',
     route: 'documents',
     separator: false,
     showSearch: false,
@@ -34,7 +34,7 @@ export const ROUTES = [
     description: 'Essential Resources at Your Fingertips: Access Crucial Documents'
   },
   {
-    icon: 62874,
+    icon: 'person_raised_hand',
     route: 'acad-helpdesk',
     showSearch: false,
     separator: true,
@@ -45,7 +45,7 @@ export const ROUTES = [
       'Find all the Academic POCs in one place. Get your academic queries resolved in no time.'
   },
   {
-    icon: 62003,
+    icon: 'group',
     route: 'student-council',
     showSearch: false,
     separator: false,
@@ -55,7 +55,7 @@ export const ROUTES = [
     description: 'Meet the Faces Behind Your Voice: Get to Know the Members of the Student Council!'
   },
   {
-    icon: 59999,
+    icon: 'calculate',
     route: 'gpa',
     separator: false,
     showSearch: false,
@@ -65,7 +65,7 @@ export const ROUTES = [
     description: 'Estimate your academic growth with ease. No more manual calculations.'
   },
   {
-    icon: 60144,
+    icon: 'co_present',
     route: 'attendance',
     separator: false,
     showSearch: false,
@@ -75,7 +75,7 @@ export const ROUTES = [
     description: 'Missed a few classes? Calculate your attendance to know where you stand.'
   },
   {
-    icon: 59601,
+    icon: 'store',
     route: 'amenity',
     name: 'Amenities',
     showSearch: false,
@@ -87,7 +87,7 @@ export const ROUTES = [
       'Find every amenity on campus, from Academic Blocks to Cafeterias, all in one place.'
   },
   {
-    icon: 59939,
+    icon: 'trophy',
     route: 'events',
     showSearch: false,
     separator: false,
@@ -97,7 +97,7 @@ export const ROUTES = [
     description: 'Stay Updated with the Latest Campus Events: Never Miss Out on the Fun!'
   },
   {
-    icon: 59526,
+    icon: "group_work",
     route: 'clubs/cultural',
     showSearch: false,
     separator: false,

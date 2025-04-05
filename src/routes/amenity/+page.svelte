@@ -15,63 +15,82 @@
   import AcadCard from './cards/AcadCard.svelte';
   import AdminCard from './cards/AdminCard.svelte';
   import EssentialsCard from './cards/EssentialsCard.svelte';
+  import { flip } from 'svelte/animate';
 
-  export let data: PageData;
-  let isFilterOpen = false;
-  let filters: {
-    name: string;
-    checked: boolean;
-    icon: number;
-    data: IHostel[] | IAcademics[] | IAdmin[] | IEssentials[] | IFood[] | ISport[];
-  }[] = [
+  let { data }: { data: PageData } = $props();
+
+  let isFilterOpen = $state(false);
+
+  const content = [
     {
       name: 'Hostel',
-      checked: true,
-      icon: 58682,
+      icon: 'hotel',
       data: data.Hostel
     },
     {
       name: 'Academics',
-      checked: true,
-      icon: 59404,
+      icon: 'school',
       data: data.Academics
     },
     {
       name: 'Admin',
-      checked: true,
-      icon: 63056,
+      icon: 'shield_person',
       data: data.Admin
     },
     {
       name: 'Essentials',
-      checked: true,
-      icon: 61900,
+      icon: 'local_mall',
       data: data.Essentials
     },
     {
       name: 'Food',
-      checked: true,
-      icon: 58732,
+      icon: 'restaurant',
       data: data.Food
     },
     {
       name: 'Sports',
-      checked: true,
-      icon: 60356,
+      icon: 'pool',
       data: data.Sports
     }
-  ];
+  ] as const;
 
-  $: filters.map((item) => item.checked),
-    browser &&
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+  let filters: {
+    name: string;
+    icon: string;
+    checked: boolean;
+  }[] = $state(
+    content.map((item) => ({
+      name: item.name,
+      checked: true,
+      icon: item.icon
+    }))
+  );
 
-  afterNavigate(() => {
-    isFilterOpen = false;
+  let finalFilteredList: {
+    name: string;
+    icon: string;
+    data: IHostel[] | IAcademics[] | IAdmin[] | IEssentials[] | IFood[] | ISport[];
+  }[] = $derived.by(() => {
+    const checkedFilters = filters.filter((item) => item.checked);
+    let list = [];
+    for (const item of content) {
+      if (checkedFilters.find((filter) => filter.name === item.name)) {
+        list.push(item);
+      }
+    }
+    return list;
   });
+
+  $effect(() => {
+    filters.map((item) => item.checked),
+      browser &&
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+  });
+
+  afterNavigate(() => (isFilterOpen = false));
 </script>
 
 <svelte:head>
@@ -88,32 +107,30 @@
   <AmenityFilter bind:filters bind:isFilterOpen />
 
   <div class="Amenity__content w-100">
-    {#each filters as item (item.name)}
-      {#if item.checked}
-        <section>
-          <h2>
-            {item.name}
-            <hr />
-          </h2>
-          <div class="Amenity__cards">
-            {#each item.data as cardData}
-              {#if item.name === 'Hostel'}
-                <HostelCard {...cardData} />
-              {:else if item.name === 'Academics'}
-                <AcadCard {...cardData} />
-              {:else if item.name === 'Admin'}
-                <AdminCard {...cardData} />
-              {:else if item.name === 'Essentials'}
-                <EssentialsCard {...cardData} />
-              {:else if item.name === 'Food'}
-                <EssentialsCard {...cardData} />
-              {:else if item.name === 'Sports'}
-                <AcadCard {...cardData} />
-              {/if}
-            {/each}
-          </div>
-        </section>
-      {/if}
+    {#each finalFilteredList as item (item.name)}
+      <section animate:flip={{ duration: 500 }} id={item.name}>
+        <h2>
+          {item.name}
+          <hr />
+        </h2>
+        <div class="Amenity__cards">
+          {#each item.data as cardData}
+            {#if item.name === 'Hostel'}
+              <HostelCard {...cardData as IHostel} />
+            {:else if item.name === 'Academics'}
+              <AcadCard {...cardData as IAcademics} />
+            {:else if item.name === 'Admin'}
+              <AdminCard {...cardData as IAdmin} />
+            {:else if item.name === 'Essentials'}
+              <EssentialsCard {...cardData as IEssentials} />
+            {:else if item.name === 'Food'}
+              <EssentialsCard {...cardData as IEssentials} />
+            {:else if item.name === 'Sports'}
+              <AcadCard {...cardData as ISport} />
+            {/if}
+          {/each}
+        </div>
+      </section>
     {/each}
   </div>
 </main>
@@ -124,6 +141,10 @@
       gap: 10px;
       margin: 40px 0 30px 0;
       @include make-flex($align: flex-start);
+
+      @include respondAt(630px) {
+        margin: 20px 0 0px 0;
+      }
 
       & > h2 {
         font-size: 40px;

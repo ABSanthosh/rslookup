@@ -1,6 +1,8 @@
-// @import "../root/Fancy/FancyLink.scss";
-@import './fonts.scss';
-@import './Crispy/index.scss';
+@use './mixins' as *;
+@use './variables' as *;
+
+@use './fonts.scss';
+@use './Crispy/index.scss';
 
 * {
   margin: 0;
@@ -15,50 +17,27 @@
   @include box($scrollbarWidth, $scrollbarWidth);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--scroll);
   border-radius: 10px;
+  background: var(--scroll);
   @include box($scrollbarWidth, $scrollbarWidth);
 }
 ::-webkit-scrollbar-track {
-  @include box($scrollbarWidth, $scrollbarWidth);
   background: transparent;
+  @include box($scrollbarWidth, $scrollbarWidth);
 }
 
 html {
   overflow-y: auto;
-  overflow-x: hidden;
   line-height: 1.75;
+  overflow-x: hidden;
   font-optical-sizing: auto;
   font-family: 'Inter', sans-serif;
 
-  @include make-flex($just: flex-start);
-  @include box(100vw, auto);
   min-height: 100vh;
-  scrollbar-gutter: stable;
   scroll-behavior: smooth;
-}
-
-// We need to change z index of the old and new frames based on the current theme
-// Ref: https://github.com/Daydreamer-riri/riri-me/blob/74c1f3070942756ae547b31406a8300a935f0cc1/src/styles/main.css#L120
-// https://daydreamer-riri.me/posts/toggle-theme-with-view-transition/
-// https://antfu.me/
-[data-theme='light'] {
-  &::view-transition-old(root) {
-    z-index: 101;
-  }
-
-  &::view-transition-new(root) {
-    z-index: 100;
-  }
-}
-[data-theme='dark'] {
-  &::view-transition-new(root) {
-    z-index: 101;
-  }
-
-  &::view-transition-old(root) {
-    z-index: 100;
-  }
+  scrollbar-gutter: stable;
+  @include box(100vw, auto);
+  @include make-flex($just: flex-start);
 }
 
 body,
@@ -75,9 +54,9 @@ body,
 .MainContainer {
   gap: 25px;
   @include box();
-  min-height: calc(100dvh - 70px);
   max-width: $maxWidth;
   padding: 64px 20px 20px 20px;
+  min-height: calc(100dvh - 70px);
   @include make-flex($just: flex-start);
 }
 

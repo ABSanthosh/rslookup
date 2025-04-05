@@ -1,60 +1,90 @@
 <script lang="ts">
-  export let { rows, pageSize, trimmedRows, disabled } = $$props as {
-    rows: any[];
-    pageSize: number;
-    trimmedRows: any[];
+  import { selectOnFocus } from '$utils/selectOnFocus';
+
+  let {
+    disabled,
+    itemsLength = $bindable(),
+    paginationConfig = $bindable()
+  }: {
     disabled: boolean;
-  };
+    itemsLength: number;
+    paginationConfig: { pageSize: number; start: number; end: number };
+  } = $props();
 
-  $: totalRows = rows.length;
-  $: currentPage = 0;
-  $: totalPages = Math.ceil(totalRows / pageSize);
-  $: start = currentPage * pageSize;
-  $: end = currentPage === totalPages - 1 ? totalRows - 1 : start + pageSize - 1;
+  let currentPage = $state(1); // The current page number, initialized to 1.
+  let totalPages = $derived(Math.ceil(itemsLength / paginationConfig.pageSize)); // The total number of pages, calculated based on totalRows and pageSize.
 
-  $: trimmedRows = rows.slice(start, end + 1);
+  $effect(() => {
+    // Whenever the pagination is disabled, we reset current page to 1
+    // to reflect that there is a search and pagination config is reset
+    if (disabled) {
+      currentPage = 1;
+    }
+  });
 
-  $: totalRows, (currentPage = 0);
-  $: currentPage, start, end;
+  $effect(() => {
+    // Whenever the current page changes, we update the start and end values
+    paginationConfig.start = (currentPage - 1) * paginationConfig.pageSize;
+    paginationConfig.end = currentPage * paginationConfig.pageSize;
+  });
 </script>
 
-{#if totalRows && totalRows > pageSize}
-  <div class="Pagination">
-    <button
-      class="CrispButton"
-      data-type="ghost"
-      on:click={() => {
-        currentPage -= 1;
-        document.body.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }}
-      disabled={(currentPage === 0 ? true : false) || disabled}
-      aria-label="left arrow icon"
-      aria-describedby="prev"
-      data-icon={String.fromCharCode(58820)}
-    />
-    Page
-    <input class="CrispInput" bind:value={currentPage} {disabled} max={totalPages - 1} />
-    of {totalPages - 1}
-    <button
-      class="CrispButton"
-      data-type="ghost"
-      on:click={() => {
-        currentPage += 1;
-        document.body.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }}
-      disabled={(currentPage === totalPages - 1 ? true : false) || disabled}
-      aria-label="right arrow icon"
-      aria-describedby="next"
-      data-icon={String.fromCharCode(58824)}
-    />
-  </div>
-{/if}
+<div class="Pagination">
+  <button
+    class="CrispButton"
+    data-type="ghost"
+    onclick={() => {
+      currentPage -= 1;
+
+      document.body.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }}
+    disabled={currentPage === 1 || disabled}
+    aria-label="left arrow icon"
+    aria-describedby="prev"
+    data-icon="arrow_back"
+  ></button>
+  Page
+  <input
+    min="1"
+    {disabled}
+    type="number"
+    use:selectOnFocus
+    class="CrispInput"
+    max={totalPages - 1}
+    onblur={(e: Event) => {
+      if ((e.target as HTMLInputElement).valueAsNumber > totalPages - 1) {
+        currentPage = totalPages - 1;
+      } else if (
+        (e.target as HTMLInputElement).valueAsNumber < 1 ||
+        isNaN((e.target as HTMLInputElement).valueAsNumber)
+      ) {
+        currentPage = 1;
+      }
+    }}
+    bind:value={currentPage}
+  />
+  of {totalPages - 1}
+
+  <button
+    class="CrispButton"
+    data-type="ghost"
+    onclick={() => {
+      currentPage += 1;
+
+      document.body.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }}
+    disabled={currentPage === totalPages - 1 || disabled}
+    aria-label="right arrow icon"
+    aria-describedby="next"
+    data-icon="arrow_forward"
+  ></button>
+</div>
 
 <style lang="scss">
   .Pagination {

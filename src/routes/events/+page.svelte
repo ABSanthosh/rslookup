@@ -6,15 +6,20 @@
     outlookCalendar,
     parseDate
   } from '$utils/calendarEvent';
-  import { clickOutside } from '$utils/onClickOutside';
+  import clickOutside from '$utils/onClickOutside';
   import type { PageData } from './$types';
   import google_calendar from '$images/google-calendar.png';
   import outlook_calendar from '$images/outlook-calendar.png';
   import apple_calendar from '$images/apple-calendar.svg';
+  import type { IEvents } from '$types/Events.types';
 
-  export let data: PageData;
+  let {
+    data
+  }: {
+    data: PageData;
+  } = $props();
 
-  $: isCalendarOpen = {} as Record<string, boolean>;
+  let isCalendarOpen = $derived({} as Record<string, boolean>);
 </script>
 
 <svelte:head>
@@ -36,135 +41,147 @@
   <p>Find all the events happening at SNU here.</p>
 </div>
 
-<ul class="Events__content">
-  {#if data.events.length !== 0}
-    {#each data.events as item, index}
-      {@const parsedDate = parseDate(item.date)}
-      {@const date = new Date(parsedDate.year, parsedDate.month, parsedDate.date)}
-      {@const isExpired = date.getTime() < new Date().getTime()}
-      {@debug parsedDate, date, item}
-      <li class="Event" class:expired={isExpired}>
-        <div class="Event__left">
-          <span>{item.category}</span>
-          <h2>{isValidDate(date) ? parseDate(item.date).date : 'TBA'}</h2>
-          <span>
-            {#if isValidDate(date)}
-              {date.toLocaleString('default', { month: 'short' })}
-              {"'"}
-              {date.toLocaleString('default', { year: '2-digit' })}
-            {:else}
-              TBA
-            {/if}
+{#snippet EventCard(item: IEvents, isExpired: boolean, index: number)}
+  {@const parsedDate = parseDate(item.date)}
+  {@const date = new Date(parsedDate.year, parsedDate.month, parsedDate.date)}
+  <li class="Event" class:expired={isExpired}>
+    <div class="Event__left">
+      <span>{item.category}</span>
+      <h2>{isValidDate(date) ? parseDate(item.date).date : 'TBA'}</h2>
+      <span>
+        {#if isValidDate(date)}
+          {date.toLocaleString('default', { month: 'short' })}
+          {"'"}
+          {date.toLocaleString('default', { year: '2-digit' })}
+        {:else}
+          TBA
+        {/if}
+      </span>
+    </div>
+    <div class="Event__middle">
+      <div class="Event__header">
+        <h3>{item.name}</h3>
+        {#if item.club}
+          <p class="Event__header--club">{item.club}</p>
+        {/if}
+        {#if item.description}
+          <p class="Event__header--desc">{item.description}</p>
+        {/if}
+      </div>
+      <div class="Event__right">
+        <div class="Event__separator">
+          <span class="Event__separator--icon" data-icon="schedule"> Time </span>
+          <hr />
+          <span class="Event__separator--content">
+            {item['time.from']} - {item['time.to']}
           </span>
         </div>
-        <div class="Event__middle">
-          <div class="Event__header">
-            <h3>{item.name}</h3>
-            {#if item.club}
-              <p class="Event__header--club">{item.club}</p>
-            {/if}
-            {#if item.description}
-              <p class="Event__header--desc">{item.description}</p>
-            {/if}
-          </div>
-          <div class="Event__right">
-            <div class="Event__separator">
-              <span class="Event__separator--icon" data-icon={String.fromCharCode(59573)}>
-                Time
-              </span>
-              <hr />
-              <span class="Event__separator--content">
-                {item['time.from']} - {item['time.to']}
-              </span>
-            </div>
-            <div class="Event__separator">
-              <span class="Event__separator--icon" data-icon={String.fromCharCode(57544)}>
-                Venue
-              </span>
-              <hr />
-              <span class="Event__separator--content">
-                {item.venueName}
-              </span>
-            </div>
-            <div class="Event__right--actions w-100 h-100 gap-10">
-              <a
-                class="CrispButton"
-                data-type="black-outline"
-                rel="noopener noreferrer"
-                data-icon={String.fromCharCode(58715)}
-                href={item.venueLink}
-                target="_blank"
-              >
-                Map
-              </a>
-
-              <details
-                data-no-marker
-                use:clickOutside
-                bind:open={isCalendarOpen[index]}
-                class="CrispMenu Event__calendarTab"
-                on:outclick={() => (isCalendarOpen[index] = false)}
-              >
-                <summary>
-                  <span data-icon={String.fromCharCode(61317)}> Add to calendar </span>
-                </summary>
-                <ul class="CrispMenu__content" data-direction="top" data-align="right">
-                  <a
-                    class="Event__calendarTab--item"
-                    href={googleCalendar({
-                      title: item.name,
-                      description: item.description,
-                      start: generateDate(item.date, item['time.from']),
-                      end: generateDate(item.date, item['time.to']),
-                      location: item.venueName
-                    })}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img src={google_calendar} alt="Google Calendar" />
-                    Google Calendar
-                  </a>
-                  <a
-                    class="Event__calendarTab--item"
-                    href={outlookCalendar({
-                      title: item.name,
-                      description: item.description,
-                      start: generateDate(item.date, item['time.from']),
-                      end: generateDate(item.date, item['time.to']),
-                      location: item.venueName
-                    })}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img src={outlook_calendar} alt="Outlook Calendar" />
-                    Outlook Calendar
-                  </a>
-                  <a
-                    class="Event__calendarTab--item"
-                    href={`/events/api?&title=${item.name}&description=${item.description}&start=${generateDate(item.date, item['time.from'])}&end=${generateDate(item.date, item['time.to'])}&location=${item.venueName}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img src={apple_calendar} alt="Apple Calendar" />
-                    Apple Calendar
-                  </a>
-                </ul>
-              </details>
-            </div>
-          </div>
+        <div class="Event__separator">
+          <span class="Event__separator--icon" data-icon="location_on"> Venue </span>
+          <hr />
+          <span class="Event__separator--content">
+            {item.venueName}
+          </span>
         </div>
-      </li>
+        <div class="Event__right--actions w-100 h-100 gap-10">
+          <a
+            data-icon="map"
+            target="_blank"
+            class="CrispButton"
+            href={item.venueLink}
+            data-type="black-outline"
+            rel="noopener noreferrer"
+          >
+            Map
+          </a>
+
+          <details
+            data-no-marker
+            use:clickOutside
+            bind:open={isCalendarOpen[index]}
+            class="CrispMenu Event__calendarTab"
+            onOutClick={() => (isCalendarOpen[index] = false)}
+          >
+            <summary>
+              <span data-icon="calendar_add_on"> Add to calendar </span>
+            </summary>
+            <ul class="CrispMenu__content" data-direction="top" data-align="right">
+              <a
+                class="Event__calendarTab--item"
+                href={googleCalendar({
+                  title: item.name,
+                  description: item.description,
+                  start: generateDate(item.date, item['time.from']),
+                  end: generateDate(item.date, item['time.to']),
+                  location: item.venueName
+                })}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={google_calendar} alt="Google Calendar" />
+                Google Calendar
+              </a>
+              <a
+                class="Event__calendarTab--item"
+                href={outlookCalendar({
+                  title: item.name,
+                  description: item.description,
+                  start: generateDate(item.date, item['time.from']),
+                  end: generateDate(item.date, item['time.to']),
+                  location: item.venueName
+                })}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={outlook_calendar} alt="Outlook Calendar" />
+                Outlook Calendar
+              </a>
+              <a
+                class="Event__calendarTab--item"
+                href={`/events/api?&title=${item.name}&description=${item.description}&start=${generateDate(item.date, item['time.from'])}&end=${generateDate(item.date, item['time.to'])}&location=${item.venueName}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={apple_calendar} alt="Apple Calendar" />
+                Apple Calendar
+              </a>
+            </ul>
+          </details>
+        </div>
+      </div>
+    </div>
+  </li>
+{/snippet}
+
+<ul class="Events__content">
+  {#if data.upcomingEvents.length !== 0}
+    {#each data.upcomingEvents as item, index}
+      {@render EventCard(item, false, index)}
     {/each}
   {:else}
     <i class="CrispMessage" data-type="info" data-format="box">
-      No events found at the moment. Check the official
-      <a href="https://snu.edu.in/events/" target="_blank" rel="noopener noreferrer">
-        SNU website
-      </a>
-      for departmental events.
+      <span style="line-height: 1.3;">
+        No upcoming events found at the moment. Check the official
+        <a href="https://snu.edu.in/events/" target="_blank" rel="noopener noreferrer">
+          SNU website
+        </a>
+        for departmental events.
+      </span>
     </i>
   {/if}
 </ul>
+
+{#if data.expiredEvents.length !== 0}
+  <div class="Events__header">
+    <h2>Expired Events</h2>
+    <p>These events have already passed.</p>
+  </div>
+  <ul class="Events__content">
+    {#each data.expiredEvents as item, index}
+      {@render EventCard(item, true, index)}
+    {/each}
+  </ul>
+{/if}
 
 <style lang="scss">
   .Events {
@@ -175,7 +192,7 @@
 
       @include respondAt(680px) {
         padding: 0;
-        margin: 40px 0 30px 0;
+        margin: 40px 0 0px 0;
         @include make-flex($just: flex-start, $align: flex-start);
       }
 
@@ -205,6 +222,10 @@
       margin-top: 30px;
       list-style: none;
       @include make-flex($just: flex-start);
+
+      @include respondAt(680px) {
+        margin: 0;
+      }
     }
   }
 
@@ -293,8 +314,7 @@
         font-size: 32px;
         font-weight: 600;
         @include respondAt(500px) {
-          font-size: 24px;
-          margin-bottom: -2px;
+          font-size: 16px;
         }
       }
     }

@@ -1,56 +1,80 @@
 <script lang="ts">
-  import { search } from 'fast-fuzzy';
-  import { flip } from 'svelte/animate';
-  import type { PageData } from './$types';
-  import { beforeNavigate } from '$app/navigation';
-  import { profColors, schools } from '$data/prof';
-  import { flipAnimate } from '$utils/animation';
-  import { clickOutside } from '$utils/onClickOutside';
   import ProfCard from '$components/ProfCard/ProfCard.svelte';
-  import { query } from '$stores/QueryStore';
+  import { profColors, schools } from '$data/prof';
+  import clickOutside from '$utils/onClickOutside';
   import { onMount } from 'svelte';
+  import type { PageData } from './$types';
+  import { query } from '$stores/QueryStore';
+  import { search } from 'fast-fuzzy';
   import Pagination from '$components/Pagination.svelte';
+  import { flip } from 'svelte/animate';
   import { blur } from 'svelte/transition';
 
-  export let data: PageData;
-  $: isFilterOpen = false;
-  $: isDisclaimerOpen = false;
-  let filters = Object.keys(schools).map((item) => {
-    return {
-      name: item,
-      checked: true,
-      slug: schools[item].slug,
-      color: schools[item].color
-    };
+  let { data }: { data: PageData } = $props();
+
+  let isFilterOpen = $state(false);
+  let isDisclaimerOpen = $state(false);
+
+  let filters = $state(
+    Object.keys(schools).map((item) => {
+      return {
+        name: item,
+        checked: true,
+        slug: schools[item].slug,
+        color: schools[item].color
+      };
+    })
+  );
+
+  const prof = data.prof; // won't change. This is the original data
+
+  let paginationConfig = $state({
+    pageSize: 20,
+    start: 0,
+    end: 20
   });
 
-  let pageSize = 20;
-  $: prof = data.prof;
-  $: filteredSchools = filters.filter((item) => item.checked).map((item) => item.name);
-  $: filteredProf = data.prof.filter((item) => {
-    if (!Object.keys(schools).includes(item.school)) {
-      return filteredSchools.includes('Miscellaneous');
-    }
-    return filteredSchools.includes(item.school);
-  });
-  $: searchResult = filteredProf.slice(0, pageSize);
-  let paginatedValues = searchResult;
+  // We need 3 filters applied to the prof data here
+  // 1. Filter by school
+  // 2. Filter by search query on the filtered by school data
+  // 3. Paginate the search result
 
-  beforeNavigate(() => {
-    isFilterOpen = false;
-    isDisclaimerOpen = false;
+  let profSearch = $state(prof); // We alter this data according to search query
+
+  // We need to filter the prof data by school
+  let filteredProfList = $derived.by(() => {
+    const schoolKeys = new Set(Object.keys(schools));
+    const filteredSchools = new Set(filters.filter((f) => f.checked).map((f) => f.name));
+
+    return profSearch.filter((item) => {
+      if (!schoolKeys.has(item.school)) {
+        return filteredSchools.has('Miscellaneous');
+      }
+      return filteredSchools.has(item.school);
+    });
   });
+
+  // Do pagination on separate derived store so the reactivity is granular
+  let finalProfList = $derived.by(() =>
+    filteredProfList.slice(paginationConfig.start, paginationConfig.end)
+  );
 
   onMount(() => {
-    query.subscribe((q) => {
+    query.subscribe((q: string) => {
       if (q === '') {
-        searchResult = data.prof.slice(0, pageSize);
+        profSearch = prof;
         return;
       }
 
-      searchResult = search(q, filteredProf, {
-        keySelector: (obj) => obj.name
-      }).slice(0, pageSize);
+      if (paginationConfig.start !== 0 || paginationConfig.end !== paginationConfig.pageSize) {
+        paginationConfig.start = 0;
+        paginationConfig.end = 20;
+        paginationConfig.pageSize = 20;
+      }
+
+      profSearch = search(q, prof, {
+        keySelector: (item) => item.name
+      });
 
       window.scrollTo({
         top: 0,
@@ -90,9 +114,9 @@
     use:clickOutside
     bind:open={isFilterOpen}
     class="CrispMenu Layout__filter"
-    on:outclick={() => (isFilterOpen = false)}
+    onOutClick={() => (isFilterOpen = false)}
   >
-    <summary data-no-marker data-icon={String.fromCharCode(57682)}>
+    <summary data-no-marker data-icon="filter_list">
       Filters
       <span>
         {filters.filter((item) => item.checked).length}
@@ -115,7 +139,7 @@
             id={filterItem.slug}
             checked={filterItem.checked}
             disabled={filterItem.checked && filters.filter((item) => item.checked).length === 1}
-            on:change={() => {
+            onchange={() => {
               filterItem.checked = !filterItem.checked;
             }}
           />
@@ -134,7 +158,7 @@
   use:clickOutside
   bind:open={isDisclaimerOpen}
   class="Prof__disclaimer CrispMessage"
-  on:outclick={() => (isDisclaimerOpen = false)}
+  onOutClick={() => (isDisclaimerOpen = false)}
 >
   <summary class="CrispMessage" data-type="info">
     Disclosure -
@@ -147,9 +171,9 @@
   </div>
 </details>
 
-{#key paginatedValues}
+{#key paginationConfig.start}
   <div class="Prof__content" in:blur={{ amount: 3 }}>
-    {#if searchResult.length === 0}
+    {#if finalProfList.length === 0}
       <i
         class="CrispMessage"
         data-type="error"
@@ -158,13 +182,10 @@
       >
         No results found.
       </i>
-    {:else if paginatedValues}
-      {#each $query === '' ? paginatedValues : searchResult as result (`${result.name}-${result.role}`)}
-        <span
-          animate:flip={{ duration: 250 }}
-          use:flipAnimate={{ key: `${result.name}-${result.role}` }}
-        >
-          <ProfCard {...result} />
+    {:else}
+      {#each finalProfList as profItem (`${profItem.name}-${profItem.role}`)}
+        <span animate:flip={{ duration: 500 }}>
+          <ProfCard {...profItem} />
         </span>
       {/each}
     {/if}
@@ -174,24 +195,23 @@
 <div class="Prof__bottom w-100">
   <select
     class="CrispSelect"
-    value={`${pageSize}`}
-    on:change={(e) => {
-      // @ts-ignore
-      pageSize = Number(e.target.value);
+    value={`${paginationConfig.pageSize}`}
+    onchange={(e: Event) => {
+      const target = e.target as HTMLSelectElement;
+      if (target) {
+        paginationConfig.pageSize = Number(target.value);
+        paginationConfig.start = 0;
+        paginationConfig.end = paginationConfig.pageSize;
+      }
     }}
     disabled={$query !== ''}
   >
     <option value="20">20</option>
     <option value="40">40</option>
     <option value="80">80</option>
-    <option value={`${filteredProf.length}`}>All ({filteredProf.length})</option>
+    <option value={`${prof.length}`}>All ({prof.length})</option>
   </select>
-  <Pagination
-    disabled={$query !== ''}
-    rows={filteredProf}
-    {pageSize}
-    bind:trimmedRows={paginatedValues}
-  />
+  <Pagination disabled={$query !== ''} bind:paginationConfig bind:itemsLength={profSearch.length} />
 </div>
 
 <style lang="scss">
@@ -252,10 +272,12 @@
 
     &__disclaimer {
       --crp-message-padding: 8px;
+      margin-bottom: -8px;
       background-repeat: no-repeat;
       background-size: right 5px top 50%;
       background-position: right 5px top 7px;
       background-image: var(--t-crp-select-downArrow);
+      @include make-flex($just: flex-start, $align: flex-start);
 
       & > summary {
         cursor: pointer;
@@ -273,6 +295,7 @@
 
       &--content {
         @include box();
+        line-height: 1.4;
         padding: 10px 6px 4px 6px;
       }
     }

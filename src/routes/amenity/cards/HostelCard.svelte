@@ -1,10 +1,10 @@
 <script lang="ts">
-  import type { IHostel } from '$types/Amenity.types';
   import MapsSelector from '$utils/MapsSelector';
-  import copyToClipboard from '$utils/CopyToClipboard';
   import WHATSAPP from '$images/logo-whatsapp.png';
+  import type { IHostel } from '$types/Amenity.types';
+  import { clipboard } from '$utils/CopyToClipboard';
 
-  export const data = $$props as IHostel;
+  const data: IHostel = $props();
 </script>
 
 <div class="AmenityCard">
@@ -13,19 +13,14 @@
     <span class="AmenityCard--subTitle">{data.warden}</span>
     {#if data.phone !== ''}
       <div class="AmenityCard__separator">
-        <span class="AmenityCard__separator--icon" data-icon={String.fromCharCode(57520)}>
-          Phone
-        </span>
+        <span class="AmenityCard__separator--icon" data-icon="call"> Phone </span>
         <hr />
         <a
           role="button"
-          href={'tel:' + data.phone}
           title="Copy phone number"
+          href={'tel:' + data.phone}
+          use:clipboard={{ text: data.phone }}
           class="CopyButton AmenityCard__separator--content"
-          on:keydown={async () => await copyToClipboard(data.phone)}
-          on:keyup={async () => await copyToClipboard(data.phone)}
-          on:keypress={async () => await copyToClipboard(data.phone)}
-          on:click={async () => await copyToClipboard(data.phone)}
         >
           {data.phone}
         </a>
@@ -33,19 +28,14 @@
     {/if}
     {#if data.mail}
       <div class="AmenityCard__separator">
-        <span class="AmenityCard__separator--icon" data-icon={String.fromCharCode(57688)}>
-          Mail
-        </span>
+        <span class="AmenityCard__separator--icon" data-icon="mail"> Mail </span>
         <hr />
         <a
           role="button"
-          href={'mail:' + data.mail}
           title="Copy phone number"
+          href={'mail:' + data.mail}
+          use:clipboard={{ text: data.mail }}
           class="CopyButton AmenityCard__separator--content"
-          on:keydown={async () => await copyToClipboard(data.mail)}
-          on:keyup={async () => await copyToClipboard(data.mail)}
-          on:keypress={async () => await copyToClipboard(data.mail)}
-          on:click={async () => await copyToClipboard(data.mail)}
         >
           {data.mail}
         </a>
@@ -53,23 +43,23 @@
     {/if}
   </div>
   <div class="Row--j-end gap-10 w-100">
-    {#if data.whatsapp !== ''}
+    {#if data.whatsapp !== '' && data.phone !== ''}
       <a
-        class="CrispButton AmenityCard__bottom--whatsapp"
-        href={data.whatsapp}
         target="_blank"
         rel="noopener noreferrer"
+        class="CrispButton AmenityCard__bottom--whatsapp"
+        href={`https://wa.me/${data.phone.replace(/\D/g, '')}`}
       >
         <img src={WHATSAPP} alt="WhatsApp" />
         WhatsApp
       </a>
     {/if}
     <a
-      class="CrispButton AmenityCard__bottom--map"
-      data-icon={String.fromCharCode(58715)}
-      href={MapsSelector(data.lat, data.lng)}
+      data-icon="map"
       target="_blank"
       rel="noopener noreferrer"
+      href={MapsSelector(data.lat, data.lng)}
+      class="CrispButton AmenityCard__bottom--map"
     >
       Map
     </a>
@@ -77,5 +67,5 @@
 </div>
 
 <style lang="scss">
-  @import './AmenityCardBase.scss';
+  @forward './AmenityCardBase.scss';
 </style>

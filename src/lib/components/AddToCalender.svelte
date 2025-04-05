@@ -3,20 +3,21 @@
   import outlook_calendar from '$images/outlook-calendar.png';
   import apple_calendar from '$images/apple-calendar.svg';
   import { googleCalendar, outlookCalendar } from '$utils/calendarEvent';
-  import { clickOutside } from '$utils/onClickOutside';
+  import clickOutside from '$utils/onClickOutside';
 
-  $: isCalendarOpen = false;
-
-  export const eventItem = $$props as {
+  const eventItem: {
     name: string;
     description: string;
-    date: string;
+    // TODO: Why is date not used here. It should be used in the calender to combine with start and end time
+    date?: string;
     startTime: Date;
     endTime: Date;
     venueName: string;
     calenders: ('google' | 'outlook' | 'apple')[];
     isText?: boolean;
-  };
+  } = $props();
+
+  let isCalendarOpen = $state(false);
 </script>
 
 <details
@@ -24,10 +25,10 @@
   use:clickOutside
   bind:open={isCalendarOpen}
   class="CrispMenu AddToCalender"
-  on:outclick={() => (isCalendarOpen = false)}
+  onOutClick={() => (isCalendarOpen = false)}
 >
   <summary>
-    <span data-icon={String.fromCharCode(61317)}>
+    <span data-icon="calendar_add_on">
       {#if eventItem.isText}
         Add to calendar
       {/if}

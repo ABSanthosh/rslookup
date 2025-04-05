@@ -1,6 +1,11 @@
 <script lang="ts">
-  export let showOnPx = 150;
-  $: isHidden = true;
+  let {
+    showOnPx = 150
+  }: {
+    showOnPx?: number;
+  } = $props();
+
+  let isHidden = $state(true);
 
   function scrollContainer() {
     return document.documentElement || document.body;
@@ -8,7 +13,7 @@
 </script>
 
 <svelte:window
-  on:scroll={() => {
+  onscroll={() => {
     if (!scrollContainer()) {
       return;
     }
@@ -22,14 +27,15 @@
 <button
   class="CrispButton GoTop"
   class:hidden={isHidden}
-  data-icon={String.fromCharCode(58840)}
-  on:click={() => {
+  data-icon="arrow_upward"
+  aria-label="Go to top"
+  onclick={() => {
     document.body.scrollIntoView({
       behavior: 'smooth',
       block: 'start'
     });
   }}
-/>
+></button>
 
 <style lang="scss">
   .GoTop {

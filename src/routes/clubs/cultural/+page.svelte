@@ -1,8 +1,13 @@
+<!-- TODO: fix line spacing for names -->
 <script lang="ts">
-  import copyToClipboard from '$utils/CopyToClipboard';
-  import type { LayoutServerData } from '../$types';
+  import { clipboard } from '$utils/CopyToClipboard';
+  import type { PageData } from './$types';
 
-  export let data: LayoutServerData;
+  let {
+    data
+  }: {
+    data: PageData;
+  } = $props();
 </script>
 
 <svelte:head>
@@ -19,13 +24,10 @@
       <div class="Club__header">
         <h2>{club.name}</h2>
         <button
+          data-icon="email"
           class="CopyButton"
-          data-icon={String.fromCharCode(57688)}
-          on:keydown={async () => await copyToClipboard(club.email)}
-          on:keyup={async () => await copyToClipboard(club.email)}
-          on:keypress={async () => await copyToClipboard(club.email)}
-          on:click={async () => await copyToClipboard(club.email)}
           title="Click to copy email"
+          use:clipboard={{ text: club.email }}
         >
           {club.email}
         </button>
@@ -61,5 +63,5 @@
 </ul>
 
 <style lang="scss">
-  @import '../ClubStyle.scss';
+  @forward '../ClubStyle.scss';
 </style>

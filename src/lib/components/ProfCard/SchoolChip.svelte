@@ -1,5 +1,14 @@
 <script lang="ts">
-  export let { label, color } = $$props;
+  const {
+    label,
+    color
+  }: {
+    label: string;
+    color: {
+      primary: string;
+      secondary: string;
+    };
+  } = $props();
 </script>
 
 <div
@@ -16,7 +25,7 @@
     font-size: 14px;
     font-weight: 500;
     text-align: start;
-    padding: 4px 10px;
+    padding: 3px 12px;
     border-radius: 25px;
     @include box(auto, auto);
 

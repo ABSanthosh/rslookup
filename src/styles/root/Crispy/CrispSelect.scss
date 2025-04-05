@@ -1,3 +1,5 @@
+@use '../mixins' as *;
+
 .CrispSelect {
   --crp-select-width: auto;
   --crp-select-height: 30px;

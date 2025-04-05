@@ -1,3 +1,5 @@
+@use '../mixins' as *;
+
 .CrispFigure {
   @include make-flex();
   gap: 10px;

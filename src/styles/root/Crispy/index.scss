@@ -1,7 +1,7 @@
-@import './CrispButton.scss';
-@import './CrispInput.scss';
-@import './CrispMenu.scss';
-@import './CrispSelect.scss';
-@import './CrispFigure.scss';
-@import './CrispMessage.scss';
-@import './CrispTable.scss';
+@forward './CrispButton.scss';
+@forward './CrispInput.scss';
+@forward './CrispMenu.scss';
+@forward './CrispSelect.scss';
+@forward './CrispFigure.scss';
+@forward './CrispMessage.scss';
+@forward './CrispTable.scss';

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { GPAStore } from '$stores/GPAStore';
+  import { GPAStore } from '$stores/GPAStore.svelte';
   import { selectOnFocus } from '$utils/selectOnFocus';
 
   const SYMBOLS: {
@@ -46,12 +46,9 @@
     'F*': 0
   } as const;
 
-  $: currentCGPA = 0;
-  $: creditsDone = 0;
-  $: cumulative = 0.0;
-  // $: semesters = $GPAStore;
-
-  $: $GPAStore.map((item) => item.courses), $GPAStore.forEach((_, i) => calcSGPA(i));
+  let currentCGPA = $state(0);
+  let creditsDone = $state(0);
+  let cumulative = $state(0.0);
 
   const calcSGPA = (index: number) => {
     // if any course has no credits, set SGPA to 0
@@ -184,13 +181,12 @@
           />
           {#if $GPAStore.length > 1}
             <button
-              class="CrispButton"
-              data-icon={String.fromCharCode(58829)}
+              data-icon="close"
               data-type="danger"
-              on:click={() => {
-                $GPAStore = $GPAStore.filter((_, i) => i !== index);
-              }}
-            />
+              class="CrispButton"
+              aria-label="Delete Semester"
+              onclick={() => ($GPAStore = $GPAStore.filter((_, i) => i !== index))}
+            ></button>
           {/if}
         </div>
         <table>
@@ -199,7 +195,7 @@
               <th scope="col">Course</th>
               <th scope="col">Credits</th>
               <th scope="col">Grade</th>
-              <th />
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -215,19 +211,19 @@
                 </td>
                 <td data-label="Credits">
                   <input
-                    class="CrispInput"
                     type="number"
-                    placeholder="Credits"
                     use:selectOnFocus
-                    on:change={() => calcSGPA(index)}
+                    class="CrispInput"
+                    placeholder="Credits"
                     bind:value={course.credits}
+                    onchange={() => calcSGPA(index)}
                   />
                 </td>
                 <td data-label="Grade">
                   <select
                     class="CrispSelect"
                     bind:value={course.grade}
-                    on:change={() => calcSGPA(index)}
+                    onchange={() => calcSGPA(index)}
                   >
                     {#each Object.keys(GRADES) as grade}
                       <option value={grade}>{grade}</option>
@@ -236,14 +232,16 @@
                 </td>
                 <td>
                   <button
-                    class="CrispButton"
-                    disabled={$GPAStore[index].courses.length === 1}
-                    data-icon={String.fromCharCode(58829)}
+                    data-icon="close"
                     data-type="danger"
-                    on:click={() => {
-                      $GPAStore[index].courses = $GPAStore[index].courses.filter((_, j) => j !== i);
-                    }}
-                  />
+                    class="CrispButton"
+                    aria-label="Delete Course"
+                    disabled={$GPAStore[index].courses.length === 1}
+                    onclick={() =>
+                      ($GPAStore[index].courses = $GPAStore[index].courses.filter(
+                        (_, j) => j !== i
+                      ))}
+                  ></button>
                 </td>
               </tr>
             {/each}
@@ -252,7 +250,7 @@
         <button
           class="CrispButton"
           data-type="success"
-          on:click={() => {
+          onclick={() => {
             $GPAStore[index].courses = [
               ...$GPAStore[index].courses,
               {
@@ -270,7 +268,7 @@
     <button
       class="CrispButton"
       disabled={$GPAStore.length >= 10}
-      on:click={() => {
+      onclick={() => {
         if ($GPAStore.length >= 10) return;
         $GPAStore = [
           ...$GPAStore,
@@ -327,8 +325,8 @@
         <tbody>
           {#each Object.keys(SYMBOLS) as grade}
             <tr>
-              <td>{grade}</td>
-              <td>{SYMBOLS[grade]}</td>
+              <td style="white-space: unset">{grade}</td>
+              <td style="white-space: unset">{SYMBOLS[grade]}</td>
             </tr>
           {/each}
         </tbody>
@@ -548,7 +546,7 @@
 
       & > p {
         font-size: 18px;
-        text-align: justify;
+        // text-align: justify;
         line-height: 1.6;
       }
 

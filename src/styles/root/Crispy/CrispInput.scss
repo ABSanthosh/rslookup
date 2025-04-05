@@ -1,3 +1,5 @@
+@use '../mixins' as *;
+
 .CrispInput {
   --crp-input-border: 1px solid var(--t-crp-border);
   --crp-input-border-hover: 1px solid var(--t-crp-border-hover);
@@ -34,9 +36,10 @@
   outline: none;
   color: var(--crp-input-color);
   border: var(--crp-input-border);
-  transition: all 0.1s ease-in-out;
+  transition:
+    all 0.1s ease-in-out,
+    border-color 0.3s ease;
   padding: var(--crp-input-padding);
-  transition: border-color 0.3s ease;
   min-width: var(--crp-input-min-width);
   font-size: var(--crp-input-font-size);
   box-shadow: var(--crp-input-box-shadow);
@@ -59,6 +62,7 @@
   }
 
   &[type='number'] {
+    -moz-appearance: textfield;
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
       margin: 0;
@@ -70,10 +74,12 @@
     border-color: var(--crp-input-border-color-error);
   }
 
-  &:hover:not(:disabled),
-  &:focus:not(:disabled) {
-    border: var(--crp-input-border-hover);
-    background-color: var(--crp-input-background-hover);
+  @media (any-hover: hover) {
+    &:hover:not(:disabled),
+    &:focus:not(:disabled) {
+      border: var(--crp-input-border-hover);
+      background-color: var(--crp-input-background-hover);
+    }
   }
 
   &[type='date'],
@@ -111,6 +117,8 @@
     appearance: none;
     cursor: pointer;
     background-size: 100% 100%;
+    min-width: var(--crp-input-width);
+    min-height: var(--crp-input-height);
     background-position: 50%;
     background-repeat: no-repeat;
     transition: background-color 0.2s ease;
