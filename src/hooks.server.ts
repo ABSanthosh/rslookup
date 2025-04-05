@@ -1,5 +1,6 @@
 export const handle = async ({ event, resolve }) => {
   const theme = event.cookies.get('theme');
+  console.log('Theme cookie:', theme);
 
   const iconsToRequest = [
     ...[
@@ -48,6 +49,14 @@ export const handle = async ({ event, resolve }) => {
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0..1,-50..200&icon_names=${iconsToRequest.join(',')}&display=block"
     />
   `;
+
+  if (event.cookies.get('theme') === '') {
+    console.log('Theme cookie is empty, deleting it');
+    event.cookies.delete('theme', {
+      path: '/',
+      domain: new URL(event.request.url).hostname
+    });
+  }
 
   if (!theme) {
     return await resolve(event, {
