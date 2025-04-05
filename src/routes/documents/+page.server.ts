@@ -4,27 +4,39 @@ import { convertCSVtoJSON } from '$utils/toJson';
 import { cacheConfig } from '$utils/CacheControl';
 import type { IDocument } from '$types/Documents.types';
 
+function groupByCategory(data: IDocument[]): Record<string, IDocument[]> {
+  return data.reduce(
+    (acc, doc) => {
+      (acc[doc.category] ||= []).push(doc);
+      return acc;
+    },
+    {} as Record<string, IDocument[]>
+  );
+}
+
 export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
   setHeaders(cacheConfig());
 
-  const data = await fetch(`${DATA_SOURCE_BASE}${DATA_SOURCE_DOCUMENTS}`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'text/csv'
-    }
-  });
-  const csv = convertCSVtoJSON(await data.text()) as unknown as IDocument[];
-  const formattedData: { [key: string]: IDocument[] } = {};
+  try {
+    const res = await fetch(`${DATA_SOURCE_BASE}${DATA_SOURCE_DOCUMENTS}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'text/csv'
+      }
+    });
 
-  // Take all the documents and group them by category
-  csv.forEach((item) => {
-    if (!formattedData[item.category]) {
-      formattedData[item.category] = [];
+    if (!res.ok) {
+      throw new Error(`Failed to fetch documents: ${res.statusText}`);
     }
-    formattedData[item.category].push(item);
-  });
 
-  return {
-    documents: formattedData
-  };
+    const data = convertCSVtoJSON(await res.text()) as unknown as IDocument[];
+    const documents = groupByCategory(data);
+
+    return { documents };
+  } catch (err) {
+    if (import.meta.env.DEV) {
+      console.error('Document load error:', err);
+    }
+    return { documents: {} }; // fallback
+  }
 };

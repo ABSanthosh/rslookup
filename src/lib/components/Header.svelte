@@ -1,71 +1,30 @@
 <script lang="ts">
-  import { page } from '$app/stores';
-  import { theme, setTheme } from '$stores/ThemeStore';
-  import { query } from '$stores/QueryStore';
-  import { afterNavigate } from '$app/navigation';
-  import { HOME_ROUTES, ROUTES } from '$data/routes';
-  import { clickOutside } from '$utils/onClickOutside';
-  import { fade } from 'svelte/transition';
+  import { page } from '$app/state';
   import debounce from '$utils/debounce';
+  import { fade } from 'svelte/transition';
+  import { theme } from '$stores/ThemeStore';
+  import { query } from '$stores/QueryStore';
   import Spinner from './Spinner/Spinner.svelte';
+  import { afterNavigate } from '$app/navigation';
+  import clickOutside from '$utils/onClickOutside';
+  import { HOME_ROUTES, ROUTES } from '$data/routes';
+  import { themeToggleTransition } from '$utils/themeToggle';
 
   afterNavigate(() => {
     isNavOpen = false;
     query.set('');
   });
 
-  let themeToggle: HTMLButtonElement;
-
-  const themeToggleTransition = async () => {
-    if (
-      !themeToggle ||
-      !document.startViewTransition ||
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    ) {
-      setTheme($theme === 'dark' ? 'light' : 'dark');
-      return;
-    }
-
-    document
-      .startViewTransition(async () => {
-        setTheme($theme === 'dark' ? 'light' : 'dark');
-      })
-      .ready.then(() => {
-        // https://akashhamirwasia.com/blog/full-page-theme-toggle-animation-with-view-transitions-api/#what-is-the-grow-animation
-        const { top, left, width, height } = themeToggle.getBoundingClientRect();
-        const x = left + width / 2;
-        const y = top + height / 2;
-        const right = window.innerWidth - left;
-        const bottom = window.innerHeight - top;
-        const maxRadius = Math.hypot(Math.max(left, right), Math.max(top, bottom));
-        const isDark = $theme !== 'dark';
-        const clipPath = [
-          `circle(0px at ${x}px ${y}px)`,
-          `circle(${maxRadius}px at ${x}px ${y}px)`
-        ];
-
-        document.documentElement.animate(
-          {
-            clipPath: isDark ? clipPath.reverse() : clipPath
-          },
-          {
-            duration: 500,
-            easing: 'ease-in-out',
-            pseudoElement: isDark ? '::view-transition-old(root)' : '::view-transition-new(root)'
-          }
-        );
-      });
-  };
-
   const noThemeRoutes = ['/convocation-2024'];
 
-  let localQueryValue: string;
-  $: isHomeRoute = ['/', ...HOME_ROUTES.map((r) => `/${r.route}`)].includes($page.url.pathname);
-  $: path = $page.url.pathname.slice(1).split('/')[0];
-  $: currentRoute = ROUTES.find((r) => r.route.includes(path === '' ? 'home' : path));
-  $: isNavOpen = false;
-  $: isHomeNavOpen = false;
-  $: isSearching = false;
+  let localQueryValue = $state('');
+  let isHomeRoute = $derived(
+    ['/', ...HOME_ROUTES.map((r) => `/${r.route}`)].includes(page.url.pathname)
+  );
+  let path = $derived(page.url.pathname.slice(1).split('/')[0]);
+  let currentRoute = $derived(ROUTES.find((r) => r.route.includes(path === '' ? 'home' : path)));
+  let isNavOpen = $state(false);
+  let isSearching = $state(false);
 </script>
 
 <header class="Header">
@@ -79,26 +38,26 @@
       <ul class="Header__navList Header__navList--desktop">
         {#each HOME_ROUTES as item}
           <li>
-            <a href={item.route} class:active={$page.url.pathname === `/${item.route}`}>
+            <a href={item.route} class:active={page.url.pathname === `/${item.route}`}>
               {item.name}
             </a>
           </li>
         {/each}
       </ul>
       <details
+        data-no-marker
         use:clickOutside
         bind:open={isNavOpen}
-        data-no-marker
+        onOutClick={() => (isNavOpen = false)}
         class="CrispMenu Header__tabs Header__navList--mobile"
-        on:outclick={() => (isNavOpen = false)}
       >
         <summary>
           <p></p>
-          <span data-icon={String.fromCharCode(58834)} />
+          <span data-icon="menu" aria-label="Menu"></span>
         </summary>
         <ul class="CrispMenu__content">
           {#each HOME_ROUTES as item}
-            <a href={item.route} class:active={$page.url.pathname === `/${item.route}`}>
+            <a href={item.route} class:active={page.url.pathname === `/${item.route}`}>
               {item.name}
             </a>
           {/each}
@@ -106,7 +65,7 @@
       </details>
     {/if}
     {#if currentRoute?.showSearch}
-      <div transition:fade class="Header__search" data-icon={String.fromCharCode(59574)}>
+      <div transition:fade class="Header__search" data-icon="search">
         <Spinner height={20} width={20} style="display: {isSearching ? 'block' : 'none'};" />
         <input
           type="text"
@@ -121,7 +80,7 @@
             },
             duration: 500
           }}
-          on:input={(e) => {
+          oninput={(e) => {
             if (!(e.target instanceof HTMLInputElement)) return;
             if (e.target.value === '') {
               query.set('');
@@ -135,12 +94,13 @@
           <button
             class="CrispButton"
             data-type="danger"
-            on:click={() => {
+            onclick={() => {
               query.set('');
               localQueryValue = '';
             }}
-            data-icon={String.fromCharCode(58829)}
-          />
+            data-icon="close"
+            aria-label="Clear search"
+          ></button>
         {/if}
       </div>
       <hr />
@@ -150,13 +110,13 @@
         use:clickOutside
         bind:open={isNavOpen}
         class="CrispMenu Header__tabs"
-        on:outclick={() => (isNavOpen = false)}
+        onOutClick={() => (isNavOpen = false)}
       >
         <summary>
           <p>
             {currentRoute?.name}
           </p>
-          <span data-icon={String.fromCharCode(currentRoute?.icon || 0)} />
+          <span data-icon={currentRoute?.icon}></span>
         </summary>
         <ul class="CrispMenu__content">
           {#each ROUTES as { name, route, separator }, i}
@@ -166,9 +126,8 @@
 
             <a
               href="/{route}"
-              on:click={() => (currentRoute = ROUTES[i])}
-              data-icon={String.fromCharCode(ROUTES[i].icon)}
-              class:active={$page.url.pathname === `/${route}`}
+              data-icon={ROUTES[i].icon}
+              class:active={page.url.pathname === `/${route}`}
             >
               {name}
             </a>
@@ -176,27 +135,18 @@
         </ul>
       </details>
     {/if}
-    {#if !noThemeRoutes.includes($page.url.pathname)}
+    {#if !noThemeRoutes.includes(page.url.pathname)}
       <button
-        bind:this={themeToggle}
         aria-label="Toggle theme"
+        use:themeToggleTransition
         class="CrispButton Header__theme-toggle"
-        on:click={async () => await themeToggleTransition()}
-        data-icon={String.fromCharCode($theme === 'dark' ? 58416 : 58652)}
-      />
+        data-icon={$theme === 'dark' ? 'light_mode' : 'dark_mode'}
+      ></button>
     {/if}
   </div>
 </header>
 
 <style lang="scss">
-  :root {
-    &::view-transition-old(root),
-    &::view-transition-new(root) {
-      animation: none;
-      mix-blend-mode: normal;
-    }
-  }
-
   .Header {
     top: 0;
     left: 0;
@@ -306,6 +256,7 @@
       max-width: 260px;
       position: relative;
       @include box(100%, 30px);
+      // background-color: aqua;
 
       & > button {
         top: 50%;
@@ -316,7 +267,7 @@
 
         --crp-button-width: 30px;
         --crp-button-height: 100%;
-        border-radius: 0 6px 6px 0;
+        border-radius: 0 7.8px 7.8px 0;
         --crp-button-background-color: var(--elevation-2);
 
         @include respondAt(700px) {
@@ -372,13 +323,13 @@
 
         &:has(input:focus),
         &:has(input:active) {
-          top: 18px;
+          top: 50%;
           left: 50%;
           z-index: 2;
-          position: fixed;
+          position: absolute;
           max-width: none;
-          transform: translateX(-50%);
-          @include box(calc(100vw - 30px), 30px);
+          transform: translate(-50%, -50%);
+          @include box(calc(100vw - 30px), 33px);
 
           & > button {
             display: flex;
@@ -394,6 +345,7 @@
 
         @include respondAt(700px) {
           padding: 0;
+          transition: width 0.1s ease-in-out;
           color: transparent;
           @include box(30px, 30px);
           &:not(:focus)::placeholder {

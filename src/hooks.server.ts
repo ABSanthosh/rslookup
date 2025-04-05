@@ -1,29 +1,75 @@
 export const handle = async ({ event, resolve }) => {
-  const response = await resolve(event, {
-    transformPageChunk: ({ html }) => {
-      let currentTheme = event.cookies.get('theme');
+  const theme = event.cookies.get('theme');
 
-      if (!currentTheme) {
-        const userPrefersDark = event.request.headers.get('sec-ch-prefers-color-scheme') === 'dark';
-        currentTheme = userPrefersDark ? 'dark' : '';
+  const iconsToRequest = [
+    ...[
+      'map',
+      'pool',
+      'menu',
+      'call',
+      'mail',
+      'info',
+      'group',
+      'close',
+      'store',
+      'hotel',
+      'search',
+      'report',
+      'trophy',
+      'delete',
+      'person',
+      'school',
+      'biotech',
+      'schedule',
+      'dark_mode',
+      'calculate',
+      'group_work',
+      'light_mode',
+      'arrow_back',
+      'co_present',
+      'local_mall',
+      'restaurant',
+      'filter_list',
+      'description',
+      'location_on',
+      'arrow_upward',
+      'arrow_forward',
+      'arrow_drop_up',
+      'arrow_drop_down',
+      'shield_person',
+      'calendar_today',
+      'calendar_add_on',
+      'person_raised_hand'
+    ].sort((a, b) => a.localeCompare(b))
+  ] as const;
 
-        event.cookies.set('theme', currentTheme, {
-          path: '/',
-          expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 365),
-          maxAge: 1000 * 60 * 60 * 24 * 365,
-          httpOnly: false,
-          domain: new URL(event.request.url).hostname,
-          sameSite: 'strict'
-        });
+  const googleFontIconLink = `<link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0..1,-50..200&icon_names=${iconsToRequest.join(',')}&display=block"
+    />
+  `;
+
+  if (event.cookies.get('theme') === '') {
+    console.log('Theme cookie is empty, deleting it');
+    event.cookies.delete('theme', {
+      path: '/',
+      domain: new URL(event.request.url).hostname
+    });
+  }
+
+  if (!theme) {
+    return await resolve(event, {
+      transformPageChunk: ({ html }) => {
+        return html.replace('%iconFont%', googleFontIconLink);
       }
+    });
+  }
 
-      return html.replace(`data-theme=""`, `data-theme="${currentTheme}"`);
+  return await resolve(event, {
+    transformPageChunk: ({ html }) => {
+      return html
+        .replace('data-theme=""', `data-theme="${theme}"`)
+        .replace('%iconFont%', googleFontIconLink);
     }
   });
-
-  response.headers.set('Accept-CH', 'Sec-CH-Prefers-Color-Scheme');
-  response.headers.set('Vary', 'Sec-CH-Prefers-Color-Scheme');
-  response.headers.set('Critical-CH', 'Sec-CH-Prefers-Color-Scheme');
-
-  return response;
 };

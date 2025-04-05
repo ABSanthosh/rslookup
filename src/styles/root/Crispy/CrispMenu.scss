@@ -1,3 +1,5 @@
+@use '../mixins' as *;
+
 /**
  * @usage
 <details class="CrispMenu Demo">
@@ -34,13 +36,17 @@
     & > summary {
       &:not([data-no-marker]) {
         &::after {
-          top: calc(50% - 3px);
-          content: '\e5c7';
+          top: calc(50% + 3px);
+          transform: translateY(-50%);
+          content: 'arrow_drop_down';
+          font: normal normal normal 18px/1 'Material Symbols Rounded';
         }
 
         &::before {
-          bottom: calc(50% - 3px);
-          content: '\e5c5';
+          bottom: calc(50% + 3px);
+          transform: translateY(50%);
+          content: 'arrow_drop_up';
+          font: normal normal normal 18px/1 'Material Symbols Rounded';
         }
       }
     }
@@ -93,6 +99,9 @@
     border-radius: var(--crp-menu-summary-border-radius);
 
     // Colors
+    transition:
+      all 0.1s ease-in-out,
+      border-color 0.3s ease;
     color: var(--crp-menu-color);
     border: var(--crp-menu-border);
     box-shadow: var(--crp-menu-box-shadow);
@@ -107,11 +116,14 @@
       list-style-type: none;
     }
 
-    &:hover:not(:disabled),
-    &:focus:not(:disabled) {
-      color: var(--crp-menu-color-hover);
-      border: var(--crp-menu-border-hover);
-      background-color: var(--crp-menu-background-color-hover);
+    @media (any-hover: hover) {
+      &:hover:not(:disabled),
+      &:focus:not(:disabled) {
+        outline: none;
+        color: var(--crp-menu-color-hover);
+        border: var(--crp-menu-border-hover);
+        background-color: var(--crp-menu-background-color-hover);
+      }
     }
 
     &::after,
@@ -120,7 +132,6 @@
       line-height: 0;
       font-size: 19px;
       position: absolute;
-      font-family: 'Icons';
       color: var(--crp-menu-summary-icon-color);
     }
   }
@@ -133,6 +144,11 @@
     position: absolute;
     @include make-flex();
     @include box(var(--crp-menu-content-width), var(--crp-menu-content-height));
+    animation: fadeIn 0.3s ease-out forwards;
+
+    &[data-preclose] {
+      animation: fadeOut 0.3s ease-out forwards !important;
+    }
 
     // If its a list, remove list styles
     list-style: none;
@@ -256,6 +272,24 @@
     &:hover {
       color: var(--crp-menu-color-hover);
       background-color: var(--crp-menu-background-color-hover);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
     }
   }
 }

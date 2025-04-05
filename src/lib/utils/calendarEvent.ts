@@ -54,16 +54,6 @@ export function generateDate(dateString: string, time: string) {
   const { year, month, date } = parseDate(dateString);
   const { hours, minutes } = parseTime(time);
 
-  console.log(
-    year,
-    month,
-    date,
-    hours,
-    minutes,
-    dateString,
-    time,
-    new Date(year, month, date, hours, minutes)
-  );
   // return new Date(year, month, date, hours, minutes);
   return new Date(year, month, date, hours, minutes);
 }
@@ -123,7 +113,6 @@ export function outlookCalendar({ title, description, location, start, end }: IE
     `rru=addevent`,
     `subject=${encodeURIComponent(title)}`
   ];
-  // console.log(`https://outlook.live.com/calendar/deeplink/compose?${details.join('&')}`);
 
   return `https://outlook.live.com/calendar/deeplink/compose?${details.join('&')}`;
 }

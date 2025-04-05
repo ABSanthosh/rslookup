@@ -1,0 +1,121 @@
+:root::view-transition-old(root),
+:root::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* We need to change z index of the old and new frames based on the current theme
+Ref: https://github.com/Daydreamer-riri/riri-me/blob/74c1f3070942756ae547b31406a8300a935f0cc1/src/styles/main.css#L120
+https://daydreamer-riri.me/posts/toggle-theme-with-view-transition/
+https://antfu.me/ */
+[data-theme='light'] {
+  &::view-transition-old(root) {
+    z-index: 101;
+  }
+
+  &::view-transition-new(root) {
+    z-index: 100;
+  }
+}
+
+[data-theme='dark'] {
+  &::view-transition-new(root) {
+    z-index: 101;
+  }
+
+  &::view-transition-old(root) {
+    z-index: 100;
+  }
+}
+
+:root {
+  --white: #ffffff;
+
+  /* Base Colors */
+  --scroll: light-dark(#d0d0d0, gray);
+  --foreground: light-dark(#262626, #e6e6e6);
+  --subFg-1: light-dark(#91999e, #91999e);
+  --subFg-2: light-dark(#555555, #aaaaaa);
+  --background: light-dark(#ffffff, #030303);
+  --iconColor: light-dark(#656d76, #7d8590);
+  --elevation-1: light-dark(#f9fbfb, #1a1a1b);
+  --elevation-2: light-dark(#1f232814, #1f2328a1);
+
+  /* Component-Specific Colors */
+  --home-card-background-color: light-dark(#fafafa, #1a1a1b);
+  --prof-card-background-color: light-dark(#fafafa, #1c1c1c);
+  --prof-card-website-bg: light-dark(#010001, #4f4f4f);
+  --prof-card-website-bg-disabled: light-dark(#a3a3a3, #323232);
+  --prof-card-website-fg-disabled: light-dark(#eaeaea, #a3a3a3);
+  --lab-item-bg: light-dark(#f3f3f3, #292929);
+  --lab-item-separator: light-dark(#dedede, #3e3e3e);
+  --amenity-filter-active-bg: light-dark(#f1f2f4, #b1bac41f);
+  --amenity-filter-bg: light-dark(#ffffff, #1a1a1b);
+
+  --events-accent: light-dark(#cd1739, #cd1739);
+
+  /* Crisp Theme */
+  --t-crp-disabled-color: light-dark(#a3a3a3, #eaeaea);
+  --t-crp-background-hover: light-dark(#eaecee, #2f3337);
+  --t-crp-disabled-background-color: light-dark(#eaecee, #2f3337);
+  --t-crp-link-primary: light-dark(#7547ff, #b49bff);
+  --t-crp-border: light-dark(#d0d7de, #343536);
+  --t-crp-light-border: light-dark(#e8edf1, #2f2e2e);
+  --t-crp-border-hover: light-dark(#ccced1, #8b949e);
+  --t-crp-disabled-border: light-dark(#eaecee, #2f3337);
+
+  --tableHeaderFG: light-dark(#656d76, #7d8590);
+  --tableHeaderBG: light-dark(#f6f8fa, #161b22);
+  --credits-border: light-dark(#e5e7eb, #333333);
+
+  /* Presets */
+  --pane-backdrop-background: light-dark(#f0f2f4bf, #00000080);
+  --pane-background: light-dark(#fbfcfd, #1f2328);
+
+  /* Chip Colors */
+  --bluePrimary: light-dark(#6b91fb, #6b91fb);
+  --blueSecondary: light-dark(#edf2fe, #303849);
+  --greenPrimary: light-dark(#618b4c, #618b4c);
+  --greenSecondary: light-dark(#eff7ed, #22301e);
+  --yellowPrimary: light-dark(#af8a30, #af8a30);
+  --yellowSecondary: light-dark(#faefd3, #302b20);
+  --redPrimary: light-dark(#af3f36, #af3f36);
+  --redSecondary: light-dark(#f8e8e7, #2f1f1e);
+  --grayPrimary: light-dark(#4a4b56, #a1a1a3);
+  --graySecondary: light-dark(#f6f8fa, #2e2e2e);
+
+  /* Message Colors */
+  --crp-message-color-error: light-dark(#b31410, #942926);
+  --crp-message-border-color-error: light-dark(#b31410, #942926);
+  --crp-message-background-color-error: light-dark(#ffe6e6, #ffe6e6);
+
+  --crp-message-color-info: light-dark(#005197, #e6e6e6);
+  --crp-message-border-color-info: light-dark(#005197, #6b91fb);
+  --crp-message-background-color-info: light-dark(#e3f0ff, #303849);
+
+  --crp-message-color-convo2024: light-dark(#c3b197, #c3b197);
+  --crp-message-border-color-convo2024: light-dark(#9d7b7b, #9d7b7b);
+  --crp-message-background-color-convo2024: light-dark(#f9efde, #dbceb8);
+
+  --crp-tab-background-color: light-dark(#f4f4f5, #27272a);
+  --crp-tab-item-background-color: light-dark(#ffffff, #09090b);
+}
+
+/* Non-color properties that can't use light-dark() */
+[data-theme='light'] {
+  color-scheme: light;
+
+  --t-crp-select-downArrow: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  --t-crp-box-shadow: #1f23280a 0px 1px 0px 0px, #ffffff40 0px 1px 0px 0px inset;
+  --t-crp-elevation-shadow: #8c959f33 0px 8px 24px 0px;
+  --home-card-box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --t-crp-select-downArrow: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  --t-crp-box-shadow: #00000000 0px 0px 0px 0px, #00000000 0px 0px 0px 0px;
+  --t-crp-elevation-shadow: #191a1a 0px 8px 24px 0px;
+  --home-card-box-shadow: '';
+}

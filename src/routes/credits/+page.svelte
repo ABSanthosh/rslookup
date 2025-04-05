@@ -1,16 +1,13 @@
 <script lang="ts">
-  import { fancyDate } from '$utils/calendarEvent';
   import type { PageData } from './$types';
+  import { fancyDate } from '$utils/calendarEvent';
+  import userNamePlaceholder from '$utils/userNamePlaceholder';
 
-  export let data: PageData;
-
-  let profile = (name: string) =>
-    name
-      .match(/(\b\S)?/g)!
-      .join('')
-      .match(/(^\S|\S$)?/g)!
-      .join('')
-      .toUpperCase();
+  let {
+    data
+  }: {
+    data: PageData;
+  } = $props();
 </script>
 
 <section class="Credits__hero">
@@ -23,7 +20,7 @@
     <li class="Credit">
       <span class="Credit__col Credit__profile">
         <h2>
-          {profile(item.name)}
+          {userNamePlaceholder(item.name)}
         </h2>
         {@html `
           <img 
@@ -59,7 +56,7 @@
     <div class="Contributor" title={item.changes.map((change) => change.description).join('\n')}>
       <span class="Credit__col Credit__profile">
         <h2>
-          {profile(item.name)}
+          {userNamePlaceholder(item.name)}
         </h2>
         {@html `
           <img 

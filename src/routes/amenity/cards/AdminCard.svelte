@@ -1,8 +1,8 @@
 <script lang="ts">
   import type { IAdmin } from '$types/Amenity.types';
-  import copyToClipboard from '$utils/CopyToClipboard';
+  import { clipboard } from '$utils/CopyToClipboard';
 
-  export const data = $$props as IAdmin;
+  const data: IAdmin = $props();
 </script>
 
 <div class="AmenityCard">
@@ -11,19 +11,14 @@
     <span class="AmenityCard--subTitle">{data.func}</span>
     {#if data.phone !== ''}
       <div class="AmenityCard__separator">
-        <span class="AmenityCard__separator--icon" data-icon={String.fromCharCode(57520)}>
-          Phone
-        </span>
+        <span class="AmenityCard__separator--icon" data-icon="call"> Phone </span>
         <hr />
         <a
           role="button"
           href={'tel:' + data.phone}
           title="Copy phone number"
           class="CopyButton AmenityCard__separator--content"
-          on:keydown={async () => await copyToClipboard(data.phone)}
-          on:keyup={async () => await copyToClipboard(data.phone)}
-          on:keypress={async () => await copyToClipboard(data.phone)}
-          on:click={async () => await copyToClipboard(data.phone)}
+          use:clipboard={{ text: data.phone }}
         >
           {data.phone}
         </a>
@@ -31,19 +26,14 @@
     {/if}
     {#if data.mail}
       <div class="AmenityCard__separator">
-        <span class="AmenityCard__separator--icon" data-icon={String.fromCharCode(57688)}>
-          Mail
-        </span>
+        <span class="AmenityCard__separator--icon" data-icon="mail"> Mail </span>
         <hr />
         <a
           role="button"
           href={'mail:' + data.mail}
           title="Copy phone number"
           class="CopyButton AmenityCard__separator--content"
-          on:keydown={async () => await copyToClipboard(data.mail)}
-          on:keyup={async () => await copyToClipboard(data.mail)}
-          on:keypress={async () => await copyToClipboard(data.mail)}
-          on:click={async () => await copyToClipboard(data.mail)}
+          use:clipboard={{ text: data.mail }}
         >
           {data.mail}
         </a>
@@ -53,5 +43,5 @@
 </div>
 
 <style lang="scss">
-  @import './AmenityCardBase.scss';
+  @forward './AmenityCardBase.scss';
 </style>

@@ -1,5 +1,13 @@
 <script lang="ts">
-  export let { label, color } = $$props;
+  const {
+    label,
+    color
+  }: {
+    label: string;
+    color: {
+      primary: string;
+    };
+  } = $props();
 </script>
 
 <div class="SubChip" data-color={color.primary} style="--type-color: {color.primary};">
@@ -11,7 +19,7 @@
     gap: 5px;
     display: grid;
     font-size: 14px;
-    padding: 4px 10px;
+    padding: 3px 12px;
     text-align: start;
     align-items: center;
     border-radius: 25px;

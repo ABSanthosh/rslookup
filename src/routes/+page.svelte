@@ -37,7 +37,7 @@
   <div class="Routes__content">
     {#each ROUTES as item}
       <a href={item.route} style="--background-image: {item.background};">
-        <h2>{item.name}</h2>
+        <h2 data-icon-after="arrow_upward">{item.name}</h2>
         <p>{item.description}</p>
       </a>
     {/each}
@@ -50,8 +50,7 @@
     @include box();
     min-height: 80vh;
     grid-template-columns: 1.2fr 1fr;
-    grid-template-areas:
-      'left right';
+    grid-template-areas: 'left right';
 
     @include respondAt(870px) {
       gap: 30px;
@@ -109,6 +108,7 @@
       & > img {
         margin-top: 100px;
         max-width: 410px;
+        user-select: none;
         max-height: 440px;
         aspect-ratio: 0.93;
         @include box(auto, 55%); // Put back to 55% after 26th may 2024
@@ -192,22 +192,10 @@
             top: 20px;
             right: 20px;
             padding: 4px;
-            content: '\e5d8';
             border-radius: 50%;
             position: absolute;
-            @include make-flex();
             transform: rotate(45deg);
             @include box(17px, 17px);
-            color: var(--iconColor);
-            font-variation-settings:
-              'FILL' 0,
-              'wght' 300,
-              'GRAD' 0,
-              'opsz' 48;
-            transition:
-              transform 0.3s ease,
-              background-color 0.3s ease;
-            font: normal normal normal 20px/1 'Icons';
           }
         }
         p {

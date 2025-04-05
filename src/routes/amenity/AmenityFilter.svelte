@@ -1,14 +1,17 @@
 <script lang="ts">
-  import { clickOutside } from '$utils/onClickOutside';
+  import clickOutside from '$utils/onClickOutside';
 
-  export let { filters, isFilterOpen } = $$props as {
+  let {
+    filters = $bindable(),
+    isFilterOpen = $bindable()
+  }: {
     filters: {
       name: string;
       checked: boolean;
-      icon: number;
+      icon: string;
     }[];
     isFilterOpen: boolean;
-  };
+  } = $props();
 </script>
 
 <aside class="Amenity__filter--desktop">
@@ -16,9 +19,9 @@
     {#each filters as filterItem}
       <label
         for={filterItem.name}
+        data-icon={filterItem.icon}
         class="Amenity__filter--item"
         class:active={filterItem.checked}
-        data-icon={String.fromCharCode(filterItem.icon)}
       >
         {filterItem.name}
         <input
@@ -26,10 +29,8 @@
           class="CrispInput"
           id={filterItem.name}
           checked={filterItem.checked}
+          onchange={() => (filterItem.checked = !filterItem.checked)}
           disabled={filterItem.checked && filters.filter((item) => item.checked).length === 1}
-          on:change={() => {
-            filterItem.checked = !filterItem.checked;
-          }}
         />
       </label>
     {/each}
@@ -39,10 +40,10 @@
 <details
   use:clickOutside
   bind:open={isFilterOpen}
-  on:outclick={() => (isFilterOpen = false)}
+  onOutClick={() => (isFilterOpen = false)}
   class="CrispMenu Layout__filter Amenity__filter--mobile"
 >
-  <summary data-no-marker data-icon={String.fromCharCode(57682)}>
+  <summary data-no-marker data-icon="filter_list">
     Filters
     <span>
       {filters.filter((item) => item.checked).length}
@@ -51,10 +52,10 @@
   <ul class="Amenity__filterBox CrispMenu__content Layout__filter--content">
     {#each filters as filterItem}
       <label
-        for={`${filterItem.name}-${filterItem.icon}`}
+        data-icon={filterItem.icon}
         class="Amenity__filter--item"
         class:active={filterItem.checked}
-        data-icon={String.fromCharCode(filterItem.icon)}
+        for={`${filterItem.name}-${filterItem.icon}`}
       >
         {filterItem.name}
         <input
@@ -62,10 +63,8 @@
           class="CrispInput"
           checked={filterItem.checked}
           id={`${filterItem.name}-${filterItem.icon}`}
+          onchange={() => (filterItem.checked = !filterItem.checked)}
           disabled={filterItem.checked && filters.filter((item) => item.checked).length === 1}
-          on:change={() => {
-            filterItem.checked = !filterItem.checked;
-          }}
         />
       </label>
     {/each}

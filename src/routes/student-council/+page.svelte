@@ -1,16 +1,13 @@
 <script lang="ts">
-  import copyToClipboard from '$utils/CopyToClipboard';
   import type { PageData } from './$types';
+  import { clipboard } from '$utils/CopyToClipboard';
+  import userNamePlaceholder from '$utils/userNamePlaceholder';
 
-  export let data: PageData;
-
-  let profile = (name: string) =>
-    name
-      .match(/(\b\S)?/g)!
-      .join('')
-      .match(/(^\S|\S$)?/g)!
-      .join('')
-      .toUpperCase();
+  let {
+    data
+  }: {
+    data: PageData;
+  } = $props();
 </script>
 
 <svelte:head>
@@ -30,8 +27,9 @@
   {#each data.studentCouncil as member}
     <li class="SC__members--item">
       <span class="SC__members--profileBox">
+        <!-- TODO: Abstract missing image placeholder to a separate component -->
         <h2>
-          {profile(member.name)}
+          {userNamePlaceholder(member.name)}
         </h2>
         {@html `
 					<img 
@@ -49,13 +47,10 @@
         {member.position}
       </p>
       <button
+        data-icon="mail"
         class="CopyButton"
-        data-icon={String.fromCharCode(57688)}
-        on:keydown={async () => await copyToClipboard(member.email)}
-        on:keyup={async () => await copyToClipboard(member.email)}
-        on:keypress={async () => await copyToClipboard(member.email)}
-        on:click={async () => await copyToClipboard(member.email)}
         title="Click to copy email"
+        use:clipboard={{ text: member.email }}
       >
         {member.email}
       </button>

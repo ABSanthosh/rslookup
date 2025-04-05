@@ -1,31 +1,78 @@
 <script lang="ts">
-  import { AcademicBlocks } from '$data/labs';
-  import { clickOutside } from '$utils/onClickOutside';
-  import { flip } from 'svelte/animate';
+  import { onMount } from 'svelte';
+  import { search } from 'fast-fuzzy';
   import type { PageData } from './$types';
-  import { flipAnimate } from '$utils/animation';
+  import { query } from '$stores/QueryStore';
+  import { AcademicBlocks } from '$data/labs';
+  import clickOutside from '$utils/onClickOutside';
+  import { flip } from 'svelte/animate';
 
-  export let data: PageData;
+  let {
+    data
+  }: {
+    data: PageData;
+  } = $props();
 
-  $: labs = data.labs;
-  $: pageSize = 20;
-  let isFilterOpen = false;
+  let isFilterOpen = $state(false);
 
-  let filters = Object.keys(AcademicBlocks).map((item) => {
-    return {
-      name: AcademicBlocks[item],
-      checked: true
-    };
-  });
+  const labs = data.labs; // won't change. This is the original data
+  let pageSize = $state(20);
 
-  $: filteredLabs = labs.filter((lab) =>
-    filters
-      .filter((item) => item.checked)
-      .map((item) => item.name)
-      .includes(`${lab.block} Block`)
+  let filters = $state(
+    Object.keys(AcademicBlocks).map((item) => {
+      return {
+        name: AcademicBlocks[item],
+        checked: true
+      };
+    })
   );
 
-  $: searchResult = filteredLabs.slice(0, pageSize);
+  let labSearch = $state(labs);
+
+  // Precompute the lookup index to avoid filtering over and over
+  let labIndex = $derived.by(() => {
+    const index = new Map();
+    for (const lab of labSearch) {
+      const blockKey = `${lab.block} Block`;
+      if (!index.has(blockKey)) {
+        index.set(blockKey, []);
+      }
+      index.get(blockKey).push(lab);
+    }
+    return index;
+  });
+
+  // Efficient filtering using a Set for O(1) lookups
+  let filteredLabList = $derived.by(() => {
+    const activeBlocks = new Set(filters.filter((item) => item.checked).map((item) => item.name));
+    let result = [];
+    for (const block of activeBlocks) {
+      if (labIndex.has(block)) {
+        result.push(...labIndex.get(block)); // Fast retrieval
+      }
+    }
+    return result;
+  });
+
+  let finalLabList = $derived(filteredLabList.slice(0, pageSize));
+
+  onMount(() => {
+    query.subscribe((q: string) => {
+      if (q === '') {
+        labSearch = labs;
+        return;
+      }
+
+      labSearch = search(q, labs, {
+        keySelector: (lab) => lab.name
+      });
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  });
 </script>
 
 <svelte:head>
@@ -54,9 +101,9 @@
     use:clickOutside
     bind:open={isFilterOpen}
     class="CrispMenu Layout__filter"
-    on:outclick={() => (isFilterOpen = false)}
+    onOutClick={() => (isFilterOpen = false)}
   >
-    <summary data-no-marker data-icon={String.fromCharCode(57682)}>
+    <summary data-no-marker data-icon="filter_list">
       Filters
       <span>
         {filters.filter((item) => item.checked).length}
@@ -69,11 +116,8 @@
             type="checkbox"
             class="CrispInput"
             id={filterItem.name}
-            checked={filterItem.checked}
+            bind:checked={filterItem.checked}
             disabled={filterItem.checked && filters.filter((item) => item.checked).length === 1}
-            on:change={() => {
-              filterItem.checked = !filterItem.checked;
-            }}
           />
 
           {filterItem.name}
@@ -84,17 +128,13 @@
 </div>
 
 <ul class="Lab__content">
-  {#if searchResult.length === 0}
+  {#if finalLabList.length === 0}
     <i class="CrispMessage" data-type="info" data-format="box" style="grid-column: 1 / 3 ;">
       No results found.
     </i>
   {:else}
-    {#each searchResult as lab (`${lab.name}-${lab.room}`)}
-      <li
-        class="Lab__content--item"
-        animate:flip={{ duration: 250 }}
-        use:flipAnimate={{ key: `${lab.name}-${lab.room}` }}
-      >
+    {#each finalLabList as lab (`${lab.name}-${lab.room}`)}
+      <li class="Lab__content--item" animate:flip={{ duration: 500 }}>
         <h4>{lab.name}</h4>
         <hr />
         <span>{lab.room}</span>
@@ -107,15 +147,14 @@
   <select
     class="CrispSelect"
     value={`${pageSize}`}
-    on:change={(e) => {
-      // @ts-ignore
-      pageSize = Number(e.target.value);
+    onchange={(e) => {
+      pageSize = Number((e.target as HTMLSelectElement).value);
     }}
   >
     <option value="20">20</option>
     <option value="40">40</option>
     <option value="80">80</option>
-    <option value={`${labs.length}`}>All ({labs.length})</option>
+    <option value={`${labSearch.length}`}>All ({labSearch.length})</option>
   </select>
 </div>
 

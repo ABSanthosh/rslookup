@@ -2,7 +2,7 @@
   import AddToCalender from '$components/AddToCalender.svelte';
   import ConvoHeroBottom from '$images/ConvoHeroBottom.jpg';
   import ConvoHeroTop from '$images/ConvoHeroTop.jpg';
-  import poster from '$images/poster.jpeg';
+  // import poster from '$images/poster.jpeg';
   import { onMount } from 'svelte';
 
   const quickLinks = [
@@ -284,7 +284,7 @@
     window.history.pushState({ path: url.href }, '', url.href);
   };
 
-  $: activeItinerary = Object.keys(itinerary)[0];
+  let activeItinerary = $state(Object.keys(itinerary)[0]);
 
   onMount(() => {
     // detect if tab is present in url query params
@@ -306,11 +306,18 @@
     name="keywords"
     content={`convocation, 2024, snu, snioe, graduation, ceremony, event, speakers, itinerary, schedule, guests`}
   />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap"
+    rel="stylesheet"
+  />
+  <!-- font-family: "Eczar", serif; -->
+
   <meta name="author" content="Santhosh" />
   <meta name="robots" content="index, follow" />
 </svelte:head>
 
-<span id="convocation-2024" style="display: none; visibility: hidden;" />
+<span id="convocation-2024" style="display: none; visibility: hidden;"></span>
 
 <main class="ConvoHome">
   <!-- <img
@@ -351,7 +358,7 @@
           <a
             href={`?tab=${date.replaceAll(' ', '+')}`}
             class="CrispButton"
-            on:click={(e) => {
+            onclick={(e) => {
               e.preventDefault();
               activeItinerary = date;
               setStateToURL(date);
@@ -420,7 +427,7 @@
     <iframe
       width="100%"
       style="aspect-ratio: 16/9;"
-      src="https://www.youtube.com/embed/6y9WSP8cFMU?si=X_FxWB-D5We3gdkR"
+      src="https://www.youtube.com/embed/6y9WSP8cFMU?si=wTbBZKQKLHTHInGz"
       title="YouTube video player"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

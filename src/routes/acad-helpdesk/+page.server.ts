@@ -4,29 +4,27 @@ import {
   DATA_SOURCE_ACAD_ADVISORS,
   DATA_SOURCE_ACAD_COMMITTEE
 } from '$env/static/private';
-import type { IAcadAdvisors, IAcadCommittee, IAcadOffice } from '$types/Acad.types';
-import { cacheConfig } from '$utils/CacheControl';
-import { convertCSVtoJSON } from '$utils/toJson';
+
 import type { PageServerLoad } from './$types';
+import { convertCSVtoJSON } from '$utils/toJson';
+import { cacheConfig } from '$utils/CacheControl';
+import type { IAcadAdvisors, IAcadCommittee, IAcadOffice } from '$types/Acad.types';
+
+async function fetchAndParse<T>(url: string, fetch: typeof globalThis.fetch): Promise<T[]> {
+  const res = await fetch(url);
+  if (!res.ok) return [];
+  const text = await res.text();
+  return convertCSVtoJSON(text) as unknown as T[];
+}
 
 export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
   setHeaders(cacheConfig());
 
   const [office, advisors, committee] = await Promise.all([
-    fetch(`${DATA_SOURCE_BASE}${DATA_SOURCE_ACAD_OFFICE}`),
-    fetch(`${DATA_SOURCE_BASE}${DATA_SOURCE_ACAD_ADVISORS}`),
-    fetch(`${DATA_SOURCE_BASE}${DATA_SOURCE_ACAD_COMMITTEE}`)
+    fetchAndParse<IAcadOffice>(`${DATA_SOURCE_BASE}${DATA_SOURCE_ACAD_OFFICE}`, fetch),
+    fetchAndParse<IAcadAdvisors>(`${DATA_SOURCE_BASE}${DATA_SOURCE_ACAD_ADVISORS}`, fetch),
+    fetchAndParse<IAcadCommittee>(`${DATA_SOURCE_BASE}${DATA_SOURCE_ACAD_COMMITTEE}`, fetch)
   ]);
 
-  const [officeData, advisorsData, committeeData] = await Promise.all([
-    office.ok ? (convertCSVtoJSON(await office.text()) as unknown as IAcadOffice[]) : [],
-    advisors.ok ? (convertCSVtoJSON(await advisors.text()) as unknown as IAcadAdvisors[]) : [],
-    committee.ok ? (convertCSVtoJSON(await committee.text()) as unknown as IAcadCommittee[]) : []
-  ]);
-
-  return {
-    office: officeData,
-    advisors: advisorsData,
-    committee: committeeData
-  };
+  return { office, advisors, committee };
 };

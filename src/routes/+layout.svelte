@@ -1,19 +1,21 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { fly } from 'svelte/transition';
-  import { getCookie } from '$utils/cookie';
-  import Toast from '$components/Toast.svelte';
+  import { navigating } from '$app/state';
   import GoTop from '$components/GoTop.svelte';
+  import Toast from '$components/Toast.svelte';
+  import Footer from '$components/Footer.svelte';
   import Header from '$components/Header.svelte';
+  import { EasterEgg } from '$utils/EasterEgg.js';
   import { cubicIn, cubicOut } from 'svelte/easing';
   import { ToastStore } from '$stores/ToastStore.js';
   import { theme, setTheme } from '$stores/ThemeStore';
-  import { navigating } from '$app/stores';
   import BlurredSpinner from '$components/Spinner/BlurredSpinner.svelte';
-  import Footer from '$components/Footer.svelte';
-  import { EasterEgg } from '$utils/EasterEgg.js';
 
-  export let data;
+  import '../styles/root/global.scss';
+  import '../styles/root/theme.scss';
+
+  let { data, children } = $props();
 
   const duration = 200;
   const delay = duration + 50;
@@ -23,11 +25,14 @@
   const transitionOut = { easing: cubicIn, x: -x, duration };
 
   onMount(() => {
-    const cookieTheme = getCookie(document.cookie, 'theme') as Theme | null | '';
-
-    if (cookieTheme) theme.set(cookieTheme);
-    else if (window.matchMedia('(prefers-color-scheme: light)').matches) setTheme('light');
-    else setTheme('dark');
+    const saved_theme = document.documentElement.getAttribute('data-theme');
+    if (saved_theme) {
+      setTheme(saved_theme as Theme);
+    } else {
+      const preference_is_dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = preference_is_dark ? 'dark' : 'light';
+      setTheme(theme);
+    }
 
     if (process.env.NODE_ENV === 'production') EasterEgg();
   });
@@ -41,19 +46,19 @@
 
 <Header />
 
-{#if $navigating}
+{#if navigating.type}
   <BlurredSpinner style="position: fixed;" />
 {/if}
 
 {#if !data.url.includes('clubs')}
   {#key data.url}
     <main class="MainContainer" in:fly={transitionIn} out:fly={transitionOut}>
-      <slot />
+      {@render children?.()}
     </main>
   {/key}
 {:else}
   <main class="MainContainer">
-    <slot />
+    {@render children?.()}
   </main>
 {/if}
 
@@ -68,11 +73,6 @@
 <Footer />
 
 <style lang="scss" global>
-  @import '../styles/root/global.scss';
-  @import "../styles/theme/colors.css";
-  @import "../styles/theme/light.css";
-  @import "../styles/theme/dark.css";
-
   .Layout {
     &__header {
       margin-top: 20px;
@@ -102,8 +102,8 @@
 
       &--content {
         gap: 8px;
-        @include respondAt(421px) {
-          width: 80vw;
+        @include respondAt(444px) {
+          width: calc(100vw - 40px);
         }
       }
 

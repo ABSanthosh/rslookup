@@ -1,25 +1,17 @@
 <script lang="ts">
   import SubChip from './SubChip.svelte';
-  import copyToClipboard from '$utils/CopyToClipboard';
-  import SchoolChip from './SchoolChip.svelte';
   import Pane from '$components/Pane.svelte';
-  import { browser } from '$app/environment';
-  import type { ProfItem } from '$lib/types/Prof.types';
+  import SchoolChip from './SchoolChip.svelte';
   import { profColors, schools } from '$data/prof';
+  import { clipboard } from '$utils/CopyToClipboard';
+  import type { ProfItem } from '$lib/types/Prof.types';
+  import userNamePlaceholder from '$utils/userNamePlaceholder';
 
-  let { name, role, room, website, school, phone, department, img, mail, timesheet } =
-    $$props as ProfItem;
+  let { img, name, mail, role, room, phone, school, website, timesheet, department }: ProfItem =
+    $props();
 
-  let profile = () =>
-    (name ? name : '')
-      .match(/(\b\S)?/g)!
-      .join('')
-      .match(/(^\S|\S$)?/g)!
-      .join('')
-      .toUpperCase();
-
-  $: isProfPaneOpen = false;
-  $: if (browser) {
+  let isProfPaneOpen = $state(false);
+  $effect(() => {
     if (isProfPaneOpen) {
       document.documentElement.style.scrollbarGutter = 'unset';
       document.documentElement.style.overflow = 'hidden';
@@ -27,44 +19,46 @@
       document.documentElement.style.scrollbarGutter = '';
       document.documentElement.style.overflow = '';
     }
-  }
+  });
 </script>
 
 {#if isProfPaneOpen}
   <Pane
     bind:open={isProfPaneOpen}
     style="--paneWidth: 380px;"
-    on:close={() => (isProfPaneOpen = false)}
+    onclose={() => (isProfPaneOpen = false)}
   >
-    <p slot="header">Prof: {name}</p>
-    <svelte:fragment slot="main">
+    {#snippet header()}
+      <p>Prof: {name}</p>
+    {/snippet}
+    {#snippet main()}
       <div class="ProfCardPane">
         <span class="ProfCardPane__top--profileBox">
           <h2
             class="ProfCardPane__top--profile"
             style="
-            background-color: {profColors[schools[school]?.color]?.secondary ||
+          background-color: {profColors[schools[school]?.color]?.secondary ||
               profColors.gray.secondary};
-            color: {profColors[schools[school]?.color]?.primary || profColors.gray.primary};
-            "
+          color: {profColors[schools[school]?.color]?.primary || profColors.gray.primary};
+          "
           >
-            {profile()}
+            {userNamePlaceholder(name)}
           </h2>
           {@html `
-            <img 
-              src="${img}" 
-              alt="${name}" 
-              onerror="this.style.visibility = 'hidden'" 
-              loading="lazy" 
-              style = "
-                background-color: ${
-                  profColors[schools[school]?.color]?.secondary || profColors.gray.secondary
-                };
-                border: 1px solid ${
-                  profColors[schools[school]?.color]?.primary || profColors.gray.primary
-                }
-              "/>
-            `}
+          <img 
+            src="${img}" 
+            alt="${name}" 
+            onerror="this.style.visibility = 'hidden'" 
+            loading="lazy" 
+            style = "
+              background-color: ${
+                profColors[schools[school]?.color]?.secondary || profColors.gray.secondary
+              };
+              border: 1px solid ${
+                profColors[schools[school]?.color]?.primary || profColors.gray.primary
+              }
+            "/>
+          `}
         </span>
         <div class="Col--center w-100 gap-5">
           <h3 class="ProfCardPane__title">
@@ -96,20 +90,20 @@
           <p>{timesheet}</p>
         </div>
       </div>
-    </svelte:fragment>
-    <svelte:fragment slot="footer">
+    {/snippet}
+    {#snippet footer()}
       <a
         target="_blank"
         style="height: 35px;"
         rel="noopener noreferrer"
-        data-icon-after={String.fromCharCode(58840)}
+        data-icon-after="arrow_upward"
         class:disabled={website === '' || website === '-'}
         class="ProfCard__bottom--website Row--between gap-10 w-100"
         href={website === '' || website === '-' ? '#' : website}
       >
         <span> website </span>
       </a>
-    </svelte:fragment>
+    {/snippet}
   </Pane>
 {/if}
 
@@ -124,7 +118,7 @@
         color: {profColors[schools[school]?.color]?.primary || profColors.gray.primary}
         "
       >
-        {profile()}
+        {userNamePlaceholder(name)}
       </h2>
       {@html `
         <img 
@@ -156,9 +150,10 @@
         --crp-button-background-color: var(--prof-card-background-color);
       "
         title="Click to view timesheet"
-        on:click={() => (isProfPaneOpen = true)}
-        data-icon={String.fromCharCode(59573)}
-      />
+        aria-label="View timesheet"
+        onclick={() => (isProfPaneOpen = true)}
+        data-icon="schedule"
+      ></button>
     {/if}
   </div>
   {#if school && department && school !== '' && school !== '-' && department !== '' && department !== '-'}
@@ -177,11 +172,8 @@
       {#if phone !== undefined && phone !== ''}
         <button
           class="CopyButton w-100"
-          data-icon={String.fromCharCode(57520)}
-          on:keydown={async () => await copyToClipboard(phone)}
-          on:keyup={async () => await copyToClipboard(phone)}
-          on:keypress={async () => await copyToClipboard(phone)}
-          on:click={async () => await copyToClipboard(phone)}
+          data-icon="call"
+          use:clipboard={{ text: phone }}
           title="Click to copy extension"
         >
           <span>
@@ -192,11 +184,8 @@
       {#if mail !== undefined && mail !== ''}
         <button
           class="CopyButton w-100"
-          data-icon={String.fromCharCode(57688)}
-          on:keydown={async () => await copyToClipboard(mail)}
-          on:keyup={async () => await copyToClipboard(mail)}
-          on:keypress={async () => await copyToClipboard(mail)}
-          on:click={async () => await copyToClipboard(mail)}
+          data-icon="mail"
+          use:clipboard={{ text: mail }}
           title="Click to copy email"
         >
           <span>
@@ -205,11 +194,10 @@
         </button>
       {/if}
     </div>
-
     <a
       target="_blank"
       rel="noopener noreferrer"
-      data-icon-after={String.fromCharCode(58840)}
+      data-icon-after="arrow_upward"
       class:disabled={website === '' || website === '-'}
       class="ProfCard__bottom--website Row--between gap-10"
       href={website === '' || website === '-' ? '#' : website}
@@ -230,7 +218,7 @@
 
     &__header {
       h3 {
-        line-height: 1;
+        line-height: calc(100% + 3px);
         font-size: 20px;
         max-width: 100%;
         overflow: hidden;
@@ -239,13 +227,9 @@
       }
 
       span {
-        line-height: 1;
+        line-height: calc(100% + 3px);
         font-size: 16px;
         font-weight: 400;
-        // overflow: hidden;
-        // text-wrap: nowrap;
-        // max-width: 100%;
-        // text-overflow: ellipsis;
         color: var(--subFg-1);
       }
     }
@@ -300,7 +284,7 @@
     }
 
     &__contact {
-      gap: 5px;
+      gap: 10px;
       min-width: 0;
       font-size: 14px;
       color: var(--subFg-1);

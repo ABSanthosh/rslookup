@@ -1,9 +1,11 @@
 <script lang="ts">
   import Spinner from './Spinner.svelte';
 
-  export let { style } = $$props as {
+  const {
+    style
+  }: {
     style?: string;
-  };
+  } = $props();
 </script>
 
 <div class="BlurredSpinnerWrapper" {style}>

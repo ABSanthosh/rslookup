@@ -41,9 +41,21 @@ export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
       );
     });
 
-  // console.log(validatedEvents);
+  const expiredEvents = validatedEvents.filter((event) => {
+    const date = parseDate(event.date);
+    const today = new Date();
+    const eventDate = new Date(date.year, date.month, date.date);
+    return eventDate.getTime() < today.getTime();
+  });
+  const upcomingEvents = validatedEvents.filter((event) => {
+    const date = parseDate(event.date);
+    const today = new Date();
+    const eventDate = new Date(date.year, date.month, date.date);
+    return eventDate.getTime() >= today.getTime();
+  });
 
   return {
-    events: validatedEvents
+    upcomingEvents,
+    expiredEvents
   };
 };
