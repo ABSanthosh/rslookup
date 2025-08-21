@@ -20,5 +20,6 @@ export interface IAcadCommittee {
   name: string;
   position: string;
   email: string;
+  school: string;
   major: string;
 }

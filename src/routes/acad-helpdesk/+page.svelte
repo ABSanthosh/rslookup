@@ -42,9 +42,7 @@
 
 <div class="Acad__header w-100">
   <h2>Academic Helpdesk</h2>
-  <p>
-    Find everything you need to get your academic queries solved!
-  </p>
+  <p>Find everything you need to get your academic queries solved!</p>
 </div>
 
 <section class="Acad__section">
@@ -142,6 +140,7 @@
           <th scope="col">Name</th>
           <th scope="col">Position</th>
           <th scope="col">Email</th>
+          <th scope="col">School</th>
           <th scope="col">Major</th>
         </tr>
       </thead>
@@ -150,14 +149,15 @@
           <tr>
             <td data-label="Name" style="white-space: wrap;">{item.name}</td>
             <td data-label="Position" style="white-space: wrap;">{item.position}</td>
-            <td data-label="Name" style="white-space: wrap;">{item.email}</td>
+            <td data-label="Email" style="white-space: wrap;">{item.email}</td>
+            <td data-label="School" style="white-space: wrap;">{item.school}</td>
             <td data-label="Major" style="white-space: wrap;">{item.major}</td>
           </tr>
         {/each}
       </tbody>
       <tfoot>
         <tr>
-          <td colspan="4">
+          <td colspan="5">
             Showing {data.committee.length} item(s)
           </td>
         </tr>
