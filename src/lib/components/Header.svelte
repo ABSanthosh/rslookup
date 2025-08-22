@@ -7,8 +7,10 @@
   import Spinner from './Spinner/Spinner.svelte';
   import { afterNavigate } from '$app/navigation';
   import clickOutside from '$utils/onClickOutside';
-  import { HOME_ROUTES, ROUTES } from '$data/routes';
+  import { APP_ROUTES, HOME_ROUTES, ROUTES } from '$data/routes';
   import { themeToggleTransition } from '$utils/themeToggle';
+  import { getContext } from 'svelte';
+  import type { User } from '$types/db/User.type';
 
   afterNavigate(() => {
     isNavOpen = false;
@@ -23,8 +25,12 @@
   );
   let path = $derived(page.url.pathname.slice(1).split('/')[0]);
   let currentRoute = $derived(ROUTES.find((r) => r.route.includes(path === '' ? 'home' : path)));
+
+  let isAppRoute = $derived(page.url.pathname.startsWith('/app'));
   let isNavOpen = $state(false);
   let isSearching = $state(false);
+
+  const { user }: { user: User } = getContext('user');
 </script>
 
 <header class="Header">
@@ -134,6 +140,22 @@
           {/each}
         </ul>
       </details>
+    {/if}
+    {#if isAppRoute}
+      <ul class="Header__navList Header__navList--desktop">
+        {#each APP_ROUTES as item}
+          <li>
+            <a href={item.route} class:active={page.url.pathname === `/${item.route}`}>
+              {item.name}
+            </a>
+          </li>
+        {/each}
+      </ul>
+    {:else if user}
+      <a href="app" class="CrispButton">Dashboard</a>
+    {:else}
+      <form hidden action="/auth?/login" method="POST" id="google-login"></form>
+      <button class="CrispButton" type="submit" form="google-login">Sign In</button>
     {/if}
     {#if !noThemeRoutes.includes(page.url.pathname)}
       <button

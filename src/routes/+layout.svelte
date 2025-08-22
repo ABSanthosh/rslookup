@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { onMount, setContext, type Snippet } from 'svelte';
   import { fly } from 'svelte/transition';
   import { navigating } from '$app/state';
   import GoTop from '$components/GoTop.svelte';
@@ -14,8 +14,9 @@
 
   import '../styles/root/global.scss';
   import '../styles/root/theme.scss';
+  import type { LayoutData } from './$types';
 
-  let { data, children } = $props();
+  let { data, children }: { data: LayoutData; children: Snippet } = $props();
 
   const duration = 200;
   const delay = duration + 50;
@@ -36,6 +37,11 @@
 
     if (process.env.NODE_ENV === 'production') EasterEgg();
   });
+
+  const user = $state(data);
+  $inspect(user, 'user');
+
+  setContext('user', user);
 </script>
 
 <svelte:head>

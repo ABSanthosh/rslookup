@@ -97,7 +97,7 @@ export const ROUTES = [
     description: 'Stay Updated with the Latest Campus Events: Never Miss Out on the Fun!'
   },
   {
-    icon: "group_work",
+    icon: 'group_work',
     route: 'clubs/cultural',
     showSearch: false,
     separator: false,
@@ -130,5 +130,12 @@ export const ARCHIVE_ROUTES = [
     desc: 'A page made for Convocation 2024 with all the itineraries that parents need to know.',
     image: Convocation2024,
     route: 'convocation-2024'
+  }
+];
+
+export const APP_ROUTES = [
+  {
+    name: 'test',
+    route: 'app/test'
   }
 ];

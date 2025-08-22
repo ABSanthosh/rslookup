@@ -20,6 +20,7 @@ const config = {
   kit: {
     adapter: adapter(),
     alias: {
+      $db: 'src/lib/db/*',
       $data: 'src/lib/data/*',
       $utils: 'src/lib/utils/*',
       $types: 'src/lib/types/*',

@@ -11,7 +11,9 @@
     "lint": "prettier --check . && eslint . --fix",
     "format": "prettier --write .",
     "deploy": "git checkout prod && git merge master && git push && git checkout master",
-    "stage": "git checkout stage && git merge master && git push && git checkout master"
+    "stage": "git checkout stage && git merge master && git push && git checkout master",
+    "db:push": "drizzle-kit generate && drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^4.0.0",
@@ -23,6 +25,7 @@
     "@typescript-eslint/eslint-plugin": "^8.26.1",
     "@typescript-eslint/parser": "^8.26.1",
     "autoprefixer": "^10.4.21",
+    "drizzle-kit": "^0.31.4",
     "eslint": "^9.22.0",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-svelte": "^3.3.2",
@@ -39,7 +42,10 @@
   },
   "type": "module",
   "dependencies": {
+    "@libsql/client": "^0.15.12",
+    "drizzle-orm": "^0.44.4",
     "fast-fuzzy": "^1.12.0",
+    "google-auth-library": "^10.2.1",
     "papaparse": "^5.4.1"
   }
 }
