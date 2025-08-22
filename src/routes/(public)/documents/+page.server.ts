@@ -2,7 +2,7 @@ import { DATA_SOURCE_BASE, DATA_SOURCE_DOCUMENTS } from '$env/static/private';
 import type { PageServerLoad } from './$types';
 import { convertCSVtoJSON } from '$utils/toJson';
 import { cacheConfig } from '$utils/CacheControl';
-import type { IDocument } from '$types/Documents.types';
+import type { IDocument } from '$types/sheet-data/Documents.types';
 
 function groupByCategory(data: IDocument[]): Record<string, IDocument[]> {
   return data.reduce(

@@ -1,5 +1,5 @@
 import { DATA_SOURCE_BASE, DATA_SOURCE_LAB } from '$env/static/private';
-import type { Lab } from '$types/Labs.types';
+import type { Lab } from '$types/sheet-data/Labs.types';
 import { cacheConfig } from '$utils/CacheControl';
 import { convertCSVtoJSON } from '$utils/toJson';
 import type { PageServerLoad } from './$types';

@@ -10,7 +10,7 @@ import {
 import type { PageServerLoad } from './$types';
 import { cacheConfig } from '$utils/CacheControl';
 import { convertCSVtoJSON } from '$utils/toJson';
-import type { IAcademics, IAdmin, IEssentials, IFood, IHostel, ISport } from '$types/Amenity.types';
+import type { IAcademics, IAdmin, IEssentials, IFood, IHostel, ISport } from '$types/sheet-data/Amenity.types';
 
 async function fetchAndParse<T>(url: string, fetch: typeof globalThis.fetch): Promise<T[]> {
   try {

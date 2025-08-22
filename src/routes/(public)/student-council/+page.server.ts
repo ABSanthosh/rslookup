@@ -2,7 +2,7 @@ import getImageSrc from '$utils/getImageSrc';
 import type { PageServerLoad } from './$types';
 import { convertCSVtoJSON } from '$utils/toJson';
 import { cacheConfig } from '$utils/CacheControl';
-import type { StudentCouncil } from '$types/SC.types';
+import type { StudentCouncil } from '$types/sheet-data/SC.types';
 import { DATA_SOURCE_BASE, DATA_SOURCE_STUDENT_COUNCIL } from '$env/static/private';
 
 export const load: PageServerLoad = async ({ fetch, setHeaders }) => {

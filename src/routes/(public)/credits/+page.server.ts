@@ -1,5 +1,5 @@
 import { DATA_SOURCE_BASE, DATA_SOURCE_META_CREDITS } from '$env/static/private';
-import type { IConsolidatedCredit, ICredit } from '$types/Credits.types';
+import type { IConsolidatedCredit, ICredit } from '$types/sheet-data/Credits.types';
 import { cacheConfig } from '$utils/CacheControl';
 import { generateDate } from '$utils/calendarEvent';
 import getImageSrc from '$utils/getImageSrc';

@@ -2,7 +2,7 @@
   import MapsSelector from '$utils/MapsSelector';
   import WeekDays from '$components/WeekDays.svelte';
   import { clipboard } from '$utils/CopyToClipboard';
-  import type { IEssentials } from '$types/Amenity.types';
+  import type { IEssentials } from '$types/sheet-data/Amenity.types';
 
   const data: IEssentials = $props();
 </script>

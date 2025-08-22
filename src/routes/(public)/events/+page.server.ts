@@ -1,7 +1,7 @@
 import { DATA_SOURCE_BASE, DATA_SOURCE_CLUB_EVENTS } from '$env/static/private';
 import type { PageServerLoad } from './$types';
 import { convertCSVtoJSON } from '$utils/toJson';
-import type { IEvents } from '$types/Events.types';
+import type { IEvents } from '$types/sheet-data/Events.types';
 import { parseDate } from '$utils/calendarEvent';
 import { cacheConfig } from '$utils/CacheControl';
 

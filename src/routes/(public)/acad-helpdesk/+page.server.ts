@@ -8,7 +8,7 @@ import {
 import type { PageServerLoad } from './$types';
 import { convertCSVtoJSON } from '$utils/toJson';
 import { cacheConfig } from '$utils/CacheControl';
-import type { IAcadAdvisors, IAcadCommittee, IAcadOffice } from '$types/Acad.types';
+import type { IAcadAdvisors, IAcadCommittee, IAcadOffice } from '$types/sheet-data/Acad.types';
 
 async function fetchAndParse<T>(url: string, fetch: typeof globalThis.fetch): Promise<T[]> {
   const res = await fetch(url);

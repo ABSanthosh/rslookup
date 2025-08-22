@@ -1,14 +1,14 @@
 import {
   DATA_SOURCE_BASE,
-  DATA_SOURCE_CLUB_CULTURAL,
-  DATA_SOURCE_CLUB_CULTURAL_CORE
+  DATA_SOURCE_CLUB_TECHNICAL,
+  DATA_SOURCE_CLUB_TECHNICAL_CORE
 } from '$env/static/private';
 
 import getImageSrc from '$utils/getImageSrc';
 import type { PageServerLoad } from './$types';
 import { convertCSVtoJSON } from '$utils/toJson';
 import { cacheConfig } from '$utils/CacheControl';
-import type { IClub, IClubCore } from '$types/Club.types';
+import type { IClub, IClubCore } from '$types/sheet-data/Club.types';
 
 async function fetchAndParse<T>(url: string, fetch: typeof globalThis.fetch): Promise<T[]> {
   try {
@@ -39,12 +39,12 @@ function mapClubData(clubs: IClub[], coreData: IClubCore[]) {
 export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
   setHeaders(cacheConfig());
 
-  const [culturalClubs, culturalClubCore] = await Promise.all([
-    fetchAndParse<IClub>(`${DATA_SOURCE_BASE}${DATA_SOURCE_CLUB_CULTURAL}`, fetch),
-    fetchAndParse<IClubCore>(`${DATA_SOURCE_BASE}${DATA_SOURCE_CLUB_CULTURAL_CORE}`, fetch)
+  const [technicalClubs, technicalClubCore] = await Promise.all([
+    fetchAndParse<IClub>(`${DATA_SOURCE_BASE}${DATA_SOURCE_CLUB_TECHNICAL}`, fetch),
+    fetchAndParse<IClubCore>(`${DATA_SOURCE_BASE}${DATA_SOURCE_CLUB_TECHNICAL_CORE}`, fetch)
   ]);
 
   return {
-    cultural: mapClubData(culturalClubs, culturalClubCore)
+    technical: mapClubData(technicalClubs, technicalClubCore)
   };
 };

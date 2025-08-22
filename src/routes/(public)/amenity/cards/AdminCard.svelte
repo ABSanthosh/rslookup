@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { IAdmin } from '$types/Amenity.types';
+  import type { IAdmin } from '$types/sheet-data/Amenity.types';
   import { clipboard } from '$utils/CopyToClipboard';
 
   const data: IAdmin = $props();
