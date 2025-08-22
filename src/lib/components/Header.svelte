@@ -148,6 +148,17 @@
             <a href={item.route} class:active={page.url.pathname === `/${item.route}`}>
               {item.name}
             </a>
+            <!-- logout -->
+            <form hidden action="/auth?/logout" method="POST" id="logout-form"></form>
+            <button
+              class="CrispButton"
+              type="submit"
+              form="logout-form"
+              data-icon="logout"
+              aria-label="Logout"
+            >
+              Logout
+            </button>
           </li>
         {/each}
       </ul>

@@ -1,9 +1,21 @@
 <script lang="ts">
+  import { page } from '$app/state';
   // https://www.css-gradient.com/
   // https://coolors.co/gradient-maker
 
   import { ROUTES } from '$data/routes';
   import NEKO from '$images/neko.gif';
+  import { addToast } from '$stores/ToastStore';
+
+  $effect(() => {
+    let error = new URL(page.url).searchParams;
+    if (error.get('error') === 'unauthorized_domain') {
+      addToast({
+        message: `Unauthorized domain: ${error.get('domain')}`,
+        type: 'danger'
+      });
+    }
+  });
 </script>
 
 <svelte:head>

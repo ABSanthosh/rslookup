@@ -82,6 +82,7 @@ const performance: Handle = async ({ event, resolve }) => {
       'trophy',
       'delete',
       'person',
+      'logout',
       'school',
       'biotech',
       'schedule',
